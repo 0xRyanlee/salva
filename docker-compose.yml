@@ -1,0 +1,100 @@
+services:
+  salva:
+    build: .
+    ports:
+      - "8765:8765"
+    volumes:
+      - ./data:/app/data          # SQLite persistence
+    environment:
+      # Search providers
+      SEARXNG_URL: ${SEARXNG_URL:-http://host.docker.internal:8080}
+      WHOOGLE_URL: ${WHOOGLE_URL:-}
+
+      # OMLX enrichment
+      OMLX_BASE_URL: ${OMLX_BASE_URL:-http://host.docker.internal:8140}
+      OMLX_AUTH_TOKEN: ${OMLX_AUTH_TOKEN:-}
+      OMLX_MODEL: ${OMLX_MODEL:-gemma-4-e2b-it-4bit}
+
+      # SQLite path inside container
+      SALVA_SQLITE_PATH: /app/data/salva.db
+
+      # Vector backend configuration (Performance optimizations v2)
+      SALVA_SEMANTIC_VECTOR_BACKEND: ${SALVA_SEMANTIC_VECTOR_BACKEND:-hybrid_hash}
+      SALVA_SEMANTIC_VECTOR_DIMENSIONS: ${SALVA_SEMANTIC_VECTOR_DIMENSIONS:-96}
+      SALVA_USE_ANN_SEARCH: ${SALVA_USE_ANN_SEARCH:-false}
+      SALVA_EMBEDDING_CACHE_SIZE: ${SALVA_EMBEDDING_CACHE_SIZE:-1000}
+      SALVA_EMBEDDING_MODEL: ${SALVA_EMBEDDING_MODEL:-all-MiniLM-L6-v2}
+      SALVA_VEC_DB_PATH: /app/data/vec_index.db
+
+      # Obscura headless browser (pre-installed in image)
+      OBSCURA_BIN: obscura
+      OBSCURA_STEALTH: ${OBSCURA_STEALTH:-false}
+      OBSCURA_PROXY: ${OBSCURA_PROXY:-}
+
+      # Optional OSINT tools (if installed in image)
+      SPIDERFOOT_COMMAND: ${SPIDERFOOT_COMMAND:-}
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8765/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    stop_grace_period: 30s
+
+  salva-mcp:
+    build: .
+    command: ["python3", "-m", "apps.mcp", "--transport", "http", "--port", "8001"]
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./data:/app/data
+    environment:
+      SALVA_SQLITE_PATH: /app/data/salva.db
+      SALVA_API_KEY: ${SALVA_API_KEY:-}
+      SALVA_MCP_API_KEY: ${SALVA_MCP_API_KEY:-}
+      SEARXNG_URL: ${SEARXNG_URL:-http://host.docker.internal:8080}
+      WHOOGLE_URL: ${WHOOGLE_URL:-}
+      OMLX_BASE_URL: ${OMLX_BASE_URL:-http://host.docker.internal:8140}
+      OMLX_AUTH_TOKEN: ${OMLX_AUTH_TOKEN:-}
+      OMLX_MODEL: ${OMLX_MODEL:-gemma-4-e2b-it-4bit}
+      OBSCURA_BIN: obscura
+      OBSCURA_STEALTH: ${OBSCURA_STEALTH:-false}
+      OBSCURA_PROXY: ${OBSCURA_PROXY:-}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python3",
+          "-c",
+          "import socket; s=socket.create_connection(('127.0.0.1', 8001), 2); s.close()",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    stop_grace_period: 30s
+
+  salva-worker:
+    build: .
+    command: ["python3", "scripts/run_worker.py", "--poll-interval", "2.0"]
+    volumes:
+      - ./data:/app/data
+    environment:
+      SALVA_SQLITE_PATH: /app/data/salva.db
+      SEARXNG_URL: ${SEARXNG_URL:-http://host.docker.internal:8080}
+      WHOOGLE_URL: ${WHOOGLE_URL:-}
+      OMLX_BASE_URL: ${OMLX_BASE_URL:-http://host.docker.internal:8140}
+      OMLX_AUTH_TOKEN: ${OMLX_AUTH_TOKEN:-}
+      OMLX_MODEL: ${OMLX_MODEL:-gemma-4-e2b-it-4bit}
+      OBSCURA_BIN: obscura
+      OBSCURA_STEALTH: ${OBSCURA_STEALTH:-false}
+      OBSCURA_PROXY: ${OBSCURA_PROXY:-}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    stop_grace_period: 30s

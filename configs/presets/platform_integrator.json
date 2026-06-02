@@ -1,0 +1,21 @@
+{
+  "name": "platform_integrator",
+  "title": "Platform Integrator",
+  "description": "A contract-first preset for agents and downstream platform consumers.",
+  "experience_profile": "platform_integrator",
+  "objective": "find_companies",
+  "output_profile": "company_profile",
+  "retrieval_mode": "resilient",
+  "enrichment_mode": "selected",
+  "prompt_patch": [
+    "Expose provider and contract details explicitly.",
+    "Prefer integration visibility over narrow content focus."
+  ],
+  "next_steps": [
+    "Preserve provider overrides and contract visibility.",
+    "Prefer explainable profiles over aggressive recall."
+  ],
+  "notes": [
+    "Best when the caller cares about contracts, adapters, and APIs."
+  ]
+}

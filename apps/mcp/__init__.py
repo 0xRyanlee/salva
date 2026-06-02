@@ -1,0 +1,1 @@
+# Salva MCP server package

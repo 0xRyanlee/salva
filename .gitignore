@@ -1,0 +1,21 @@
+.DS_Store
+.env
+.env.*
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+__pycache__/
+*.pyc
+.venv/
+dist/
+build/
+
+# Local data / runtime DBs
+data/
+*.db
+*.db.*
+
+# Session artifacts (not source)
+對話log.md
+.claude/session-notes.md
+docs/integration-test-*.log

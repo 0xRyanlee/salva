@@ -1,0 +1,22 @@
+{
+  "name": "company_research",
+  "title": "Company Research",
+  "description": "A balanced preset for company profiles, partners, and market context.",
+  "experience_profile": "company_research",
+  "objective": "find_companies",
+  "output_profile": "company_profile",
+  "retrieval_mode": "resilient",
+  "enrichment_mode": "auto",
+  "preferred_domains": ["linkedin.com", "facebook.com", "eventbrite.com", "medium.com"],
+  "prompt_patch": [
+    "Ask for company pages, docs, partnerships, funding, and hiring signals.",
+    "Use balanced recall with controlled site constraints."
+  ],
+  "next_steps": [
+    "Keep balanced retrieval and enrich only high-value candidates.",
+    "Pull source attempts into the audit before expanding scope."
+  ],
+  "notes": [
+    "Balanced profile for internal research and profile export."
+  ]
+}

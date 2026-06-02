@@ -1,0 +1,21 @@
+{
+  "name": "deep_investigation",
+  "title": "Deep Investigation",
+  "description": "A high-recall preset for multi-round probing, evidence retention, and fallback-aware search.",
+  "experience_profile": "deep_investigation",
+  "objective": "find_partnership_signals",
+  "output_profile": "activity_signal",
+  "retrieval_mode": "wall_guarded",
+  "enrichment_mode": "all",
+  "prompt_patch": [
+    "Request multi-round retrieval and evidence retention.",
+    "Prefer fallback-aware, multi-provider probing with strict dedupe."
+  ],
+  "next_steps": [
+    "Use multi-round retrieval and preserve raw evidence snapshots.",
+    "Trigger deeper enrichment only after signal quality improves."
+  ],
+  "notes": [
+    "For noisy domains, ambiguous relationships, and audit-heavy work."
+  ]
+}

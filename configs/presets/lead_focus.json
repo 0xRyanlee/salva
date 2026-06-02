@@ -1,0 +1,22 @@
+{
+  "name": "lead_focus",
+  "title": "Lead Focus",
+  "description": "A precision-oriented preset for outreach, qualification, and CRM sync.",
+  "experience_profile": "lead_focus",
+  "objective": "find_leads",
+  "output_profile": "lead",
+  "retrieval_mode": "resilient",
+  "enrichment_mode": "auto",
+  "preferred_domains": ["linkedin.com", "crunchbase.com", "clutch.co"],
+  "prompt_patch": [
+    "Bias toward title, role, and product signals.",
+    "Prefer exact or near-exact phrase matching before broad expansion."
+  ],
+  "next_steps": [
+    "Start with dive, then anchor if the result set is too small.",
+    "Add negative terms early when noisy domains appear."
+  ],
+  "notes": [
+    "Best for lead discovery and outreach preparation."
+  ]
+}

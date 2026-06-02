@@ -1,0 +1,22 @@
+{
+  "name": "event_discovery",
+  "title": "Event Discovery",
+  "description": "A recall-oriented preset for activities, conferences, and venue-driven exploration.",
+  "experience_profile": "event_discovery",
+  "objective": "find_events",
+  "output_profile": "event",
+  "retrieval_mode": "cautious",
+  "enrichment_mode": "auto",
+  "preferred_domains": ["facebook.com", "lu.ma", "eventbrite.com", "meetup.com"],
+  "prompt_patch": [
+    "Add date windows, venue names, and platform-specific event terms.",
+    "Favor source diversity over depth in the first pass."
+  ],
+  "next_steps": [
+    "Widen source coverage before deep enrichment.",
+    "Use pilot to switch to wall_guarded if the source success rate drops."
+  ],
+  "notes": [
+    "Useful for conference, webinar, and meetup discovery."
+  ]
+}

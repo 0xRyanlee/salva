@@ -1,0 +1,21 @@
+{
+  "name": "quick_scan",
+  "title": "Quick Scan",
+  "description": "A low-friction preset for one-pass discovery and fast qualification.",
+  "experience_profile": "quick_scan",
+  "objective": "find_leads",
+  "output_profile": "lead",
+  "retrieval_mode": "normal",
+  "enrichment_mode": "auto",
+  "prompt_patch": [
+    "Keep the query family small and decisive.",
+    "Prefer a single high-signal pass before expanding scope."
+  ],
+  "next_steps": [
+    "Run one short discovery pass.",
+    "Escalate only if qualified signals stay low."
+  ],
+  "notes": [
+    "Useful for tight time budgets and first-pass scans."
+  ]
+}
