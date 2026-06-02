@@ -243,4 +243,12 @@ curl http://localhost:8000/health
 
 ---
 
+## License
+
+採用 [Apache License 2.0](LICENSE)。允許商用、修改與私有部署,並附帶專利授權;再散布時請保留版權與授權聲明。
+
+Copyright © 2026 Ryan Lee.
+
+---
+
 *更多語言：[English](README.md) | [中文](README.zh.md)*
