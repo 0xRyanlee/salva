@@ -1,8 +1,7 @@
 from __future__ import annotations
 
-import time
 from typing import Any, Literal, Protocol, cast
-from concurrent.futures import ThreadPoolExecutor, as_completed, Future
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeout, as_completed, Future
 
 from retrieval.models import RetrievalAttempt
 from retrieval.registry import build_provider_chain
@@ -90,9 +89,8 @@ class RoutedRetriever:
         return _dedupe_results(results)[:n]
 
     def _search_parallel(self, query: str, n: int) -> list[dict[str, Any]]:
-        """Parallel with time budget: wait for all but with timeout."""
+        """Parallel with time budget: wait for all providers, bounded by a timeout."""
         results: list[dict[str, Any]] = []
-        start_time = time.time()
         time_budget = self.policy.request_timeout * 1.5
 
         with ThreadPoolExecutor(max_workers=len(self.providers)) as executor:
@@ -101,31 +99,19 @@ class RoutedRetriever:
                 for provider in self.providers
             }
 
-            remaining_futures = set(futures.keys())
-
-            while remaining_futures and (time.time() - start_time) < time_budget:
-                done, _ = set(), set()
-                for f in remaining_futures:
-                    if f.done():
-                        done.add(f)
-
-                for future in done:
-                    remaining_futures.discard(future)
+            try:
+                for future in as_completed(futures, timeout=time_budget):
                     provider = futures[future]
-
                     try:
                         provider_results = future.result()
                     except Exception:
                         provider_results = []
 
                     self.last_attempts.extend(provider.last_attempts)
-
                     if provider_results:
                         results.extend(provider_results)
-
-                if not done:
-                    time.sleep(0.1)
-                    break
+            except FuturesTimeout:
+                pass
 
             for f in futures:
                 if not f.done():

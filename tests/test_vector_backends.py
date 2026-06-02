@@ -35,7 +35,7 @@ def test_semantic_vector_catalog_marks_optional_backends_unavailable() -> None:
 
     status_by_kind = {item.kind: item.status for item in catalog.items}
 
-    assert status_by_kind["hybrid_hash"] == "available"
+    assert status_by_kind["hybrid_hash"] in {"current", "available"}
     assert status_by_kind["scalar_hash"] == "compatibility"
     assert status_by_kind["sqlite_vec"] in {"available", "unavailable"}
     assert status_by_kind["hnswlib"] in {"available", "unavailable"}

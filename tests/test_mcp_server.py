@@ -1,8 +1,11 @@
+import importlib.util
+
 from apps.mcp import server
 
 
 def test_mcp_server_imports_without_optional_dependency() -> None:
-    assert server.mcp.available is False
+    if importlib.util.find_spec("mcp") is None:
+        assert server.mcp.available is False
     assert server.mcp.name == "salva-runtime"
     assert "salva_discover" in server.mcp.instructions
     assert callable(server.salva_discover)

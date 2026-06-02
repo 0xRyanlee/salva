@@ -36,7 +36,7 @@ def test_routed_retriever_merges_provider_results(monkeypatch) -> None:
     ]
     monkeypatch.setattr(router_module, "_build_provider_chain", lambda policy, strategy: providers)
 
-    retriever = RoutedRetriever(policy=RetrievalPolicy(), strategy="radar")
+    retriever = RoutedRetriever(policy=RetrievalPolicy(), strategy="radar", retrieval_mode="parallel")
     results = retriever.search("software expo", n=10)
 
     assert len(results) == 2
