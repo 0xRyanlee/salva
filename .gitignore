@@ -19,3 +19,4 @@ data/
 對話log.md
 .claude/session-notes.md
 docs/integration-test-*.log
+benchmark/results.md
