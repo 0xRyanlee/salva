@@ -5,6 +5,7 @@
 重複或離題的只在下表登錄處置與原始位置,vault 原文保留不動。
 
 - **提煉結論見 [`00_SYNTHESIS_for_project.md`](00_SYNTHESIS_for_project.md)** —— 對精簡工具真正有益的部分。
+- **戰略討論與決策記錄見 [`01_DISCUSSION_AND_DECISIONS.md`](01_DISCUSSION_AND_DECISIONS.md)** —— 八維分析、競品全景、多輪收束、超圖架構裁決、prove-first 實驗。
 - 原始 vault 路徑前綴:`~/Library/Mobile Documents/iCloud~md~obsidian/Documents/workspace/`
 
 處置定義:
