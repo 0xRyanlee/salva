@@ -12,7 +12,7 @@
 | VP2 | 公開源能提供股權事實(分法域可得性) | ✅ E2(US 證;CN/TW 上市待真拉) |
 | VP3 | 雜亂真實 filing → 結構化 n-ary 事實(端到端獲取) | ✅ E3(SEC) |
 | VP4 | 路由表從 source_attempts 自我優化(authority ≠ reachability) | ✅ E4(in-memory;持久化待 E9) |
-| **VP5** | **跨語言實體解析**:同一主體在 中/英/拼音/ticker/簡稱 下能合併成一個 canonical entity | ⬜ E5 |
+| **VP5** | **跨語言實體解析**:同一主體在 中/英/拼音/ticker/簡稱 下能合併成一個 canonical entity | ✅ E5(字串證偽;需 embedding 橋接;E5b 待 Jina) |
 | **VP6** | **跨語義關係/事實合併**:等義關係與角色(控股/ownership/持股;董事長/chairman)正規化;多源同一事實合併為一條超邊+多證據 | ⬜ E6 |
 | VP7 | 超圖上的語義檢索 + 二跳:embedding 預篩 + 結構擴展,勝過關鍵詞 | ⬜ E7 |
 | VP8 | 投影/互通:canonical 超圖 → HIF round-trip;bipartite/star 投影視覺窗(非黑箱) | ⬜ E8 |
@@ -39,11 +39,9 @@
 
 ## 待執行(E5–E9)
 
-### E5 — 跨語言實體解析(VP5)〔最高優先,user 指定〕
-- **假設**:同一主體跨 中/英/拼音/ticker/別名 可被解析為一個 canonical entity,且 normalized+embedding 法顯著優於 naive 字串比對。
-- **方法**:建跨語言別名資料集(例:台積電 / TSMC / Taiwan Semiconductor Manufacturing / 台湾积体电路 / TSM / 2330)。比較 (a) exact、(b) normalized(轉拼音/繁簡/去後綴 Ltd/股份有限公司)、(c) embedding 相似(Jina multilingual)、(d) 借 OpenSanctions Yente/Nomenklatura 思路。真實樣本:CN registry 名 vs SEC 名 vs 新聞名。
-- **存檔**:各法的 recall/precision + 何種組合最穩。
-- **裁決標準**:跨語言對能否在可接受精度下合併;哪一層(規則 vs embedding)貢獻最大。
+### E5 — 跨語言實體解析(VP5)✅ 完成
+- 結果見 `hg_penetration/E5_FINDINGS.md`。**裁決:字串/模糊/正規化僅 ~0–7% recall(只能同字形內合併,精度 1.00 無誤併);中文↔English↔ticker 零共享訊號,字串本質做不到;唯 gazetteer 達全 recall 但不泛化。** → 開發須接 multilingual embedding(Jina)+ 別名表 + 轉寫(opencc/pypinyin)。
+- **E5b(待 Jina)**:在同資料集 benchmark embedding 橋接是否能泛化地救回跨字形對、精度多少。
 
 ### E6 — 跨語義關係/事實合併(VP6)〔user 指定〕
 - **假設**:等義關係/角色跨語言可正規化到一套 schema;多源同一事實能合併為一條超邊 + 多 evidence(provenance 不丟)。
