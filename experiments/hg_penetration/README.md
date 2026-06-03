@@ -10,10 +10,24 @@ Tests one falsifiable claim:
 ## Run
 
 ```bash
-python -m experiments.hg_penetration.run
+python -m experiments.hg_penetration.run          # synthetic: hypergraph vs binary penetration
+python -m experiments.hg_penetration.probe_sec    # data probe: SEC equity-fact availability
+python -m experiments.hg_penetration.run_real      # REAL: SEC group → n-ary hyperedge + routing learns
 ```
 
-No dependencies (stdlib `sqlite3`). Runs in the repo venv.
+Stdlib only (`sqlite3`, `urllib`). `probe_sec` / `run_real` need network (SEC EDGAR).
+
+### Real end-to-end (`run_real.py`)
+
+- **Part 1** acquires a real SEC SC 13D **group** filing (e.g. Chatham Lodging
+  Trust, a 15-entity BlueMountain §13(d)(3) group, 2013), extracts the reporting
+  persons from the cover pages, and builds **one n-ary concert hyperedge** with
+  the SEC URL as evidence. Binary decomposition turns it into 15 "independent"
+  minority holders — the coordinated-group fact is lost.
+- **Part 2** records real `source_attempts` and re-ranks the registry: US SEC
+  EDGAR is boosted (real hit), **CN gsxt is demoted below aggregators/news after
+  a real failed automated attempt** (anti-bot). The route map *self-optimises* —
+  authority ≠ reachability, and the pipeline learns the difference.
 
 ## What it shows (honest result)
 
@@ -58,9 +72,12 @@ which source works for which jurisdiction/fact, so future searches have a path t
 Seeded: CN (gsxt + aggregators + news), TW listed (MOPS) / private (商工登記/TDCC),
 US (SEC EDGAR + state), UK (Companies House PSC).
 
-## Next increments (not done here)
+## Increments
 
-1. **Real acquisition probe** — can the open web reliably yield equity facts for
-   CN/TW real companies? (the "data death-valley" risk). Feed `source_attempts`.
-2. Wire `source_attempts` → re-rank the registry (prove the routing *learns*).
-3. HIF export; bipartite/star projection for a viz window.
+- [x] Representation: hypergraph vs binary penetration (`run.py`).
+- [x] Data probe: SEC equity-fact availability (`probe_sec.py`, `PROBE_FINDINGS.md`).
+- [x] Real acquisition: SEC SC 13D group → n-ary hyperedge with evidence (`run_real.py`).
+- [x] `source_attempts` → registry re-rank (routing learns; `routing.py`).
+- [ ] CN/TW real listed acquisition (MOPS / cninfo / Tushare).
+- [ ] HIF export; bipartite/star projection for a viz window.
+- [ ] Cross-source entity resolution (reuse Nomenklatura/Yente).
