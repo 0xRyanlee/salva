@@ -13,7 +13,7 @@
 | VP3 | 雜亂真實 filing → 結構化 n-ary 事實(端到端獲取) | ✅ E3(SEC) |
 | VP4 | 路由表從 source_attempts 自我優化(authority ≠ reachability) | ✅ E4(in-memory;持久化待 E9) |
 | **VP5** | **跨語言實體解析**:同一主體在 中/英/拼音/ticker/簡稱 下能合併成一個 canonical entity | ✅ E5(字串證偽;需 embedding 橋接;E5b 待 Jina) |
-| **VP6** | **跨語義關係/事實合併**:等義關係與角色(控股/ownership/持股;董事長/chairman)正規化;多源同一事實合併為一條超邊+多證據 | ⬜ E6 |
+| **VP6** | **跨語義關係/事實合併**:等義關係與角色(控股/ownership/持股;董事長/chairman)正規化;多源同一事實合併為一條超邊+多證據 | ✅ E6(7→3,證據保留+衝突浮現+不誤併) |
 | VP7 | 超圖上的語義檢索 + 二跳:embedding 預篩 + 結構擴展,勝過關鍵詞 | ⬜ E7 |
 | VP8 | 投影/互通:canonical 超圖 → HIF round-trip;bipartite/star 投影視覺窗(非黑箱) | ⬜ E8 |
 | VP9 | 持久化複利:跨多 run 在同領域上 yield/精度可量測上升(誠實版複利) | ⬜ E9 |
@@ -43,11 +43,8 @@
 - 結果見 `hg_penetration/E5_FINDINGS.md`。**裁決:字串/模糊/正規化僅 ~0–7% recall(只能同字形內合併,精度 1.00 無誤併);中文↔English↔ticker 零共享訊號,字串本質做不到;唯 gazetteer 達全 recall 但不泛化。** → 開發須接 multilingual embedding(Jina)+ 別名表 + 轉寫(opencc/pypinyin)。
 - **E5b(待 Jina)**:在同資料集 benchmark embedding 橋接是否能泛化地救回跨字形對、精度多少。
 
-### E6 — 跨語義關係/事實合併(VP6)〔user 指定〕
-- **假設**:等義關係/角色跨語言可正規化到一套 schema;多源同一事實能合併為一條超邊 + 多 evidence(provenance 不丟)。
-- **方法**:關係/角色對映表(控股=持股=ownership;董事長=chairman=Chair;董事=director)→ FtM 對齊。測「控股 70%」「owns 70%」「持股 70%」三源 → 合併成一條 Ownership 超邊,保留三條 evidence。衝突處理(不同來源不同 %)。
-- **存檔**:對映表 + 合併前後 + 衝突案例。
-- **裁決標準**:多源多語言能否收斂成一致 schema 而不丟 provenance、不誤併。
+### E6 — 跨語義關係/事實合併(VP6)✅ 完成
+- 結果見 `hg_penetration/E6_FINDINGS.md`。**裁決:7 碎片記錄 → 3 canonical 超邊;ownership 合併 4 條多語言證據、70% vs 65% 衝突浮現不覆蓋;投資不被誤併。** 須建 FtM 對齊關係 ontology(as data)+ E5 實體橋 + conflict-preserving merge;長尾靠 embedding/LLM。
 
 ### E7 — 超圖語義檢索 + 二跳(VP7)
 - **假設**:node/hyperedge 文本 embedding 預篩 + 二跳遍歷,回傳相關子圖優於關鍵詞。
