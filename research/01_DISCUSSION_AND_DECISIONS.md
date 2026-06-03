@@ -125,3 +125,32 @@
 - OSS RAG / deep research: [RAGFlow](https://github.com/infiniflow/ragflow)、[GPT Researcher](https://github.com/assafelovic/gpt-researcher)、[LangChain open_deep_research](https://github.com/langchain-ai/open_deep_research)、[firecrawl best OSS RAG](https://www.firecrawl.dev/blog/best-open-source-rag-frameworks)
 - 自架 AI 搜尋:[Perplexica self-host](https://ossalt.com/guides/how-to-self-host-perplexica-open-source-perplexity-2026)、[SpiderFoot](https://github.com/smicallef/spiderfoot)
 - 商業實體情報 / FtM:[OpenSanctions entities](https://www.opensanctions.org/docs/entities/)、[FtM (Aleph docs)](https://docs.aleph.occrp.org/developers/explanation/followthemoney/)、[FtM 4.0](https://www.opensanctions.org/articles/2025-07-13-followthemoney/)、[Sayari Graph](https://sayari.com/platform/graph/)、[OpenCorporates KG](https://blog.opencorporates.com/2025/10/01/legal-entity-knowledge-graphs/)
+- 台灣股權來源:[MOPS 公開資訊觀測站](https://mops.twse.com.tw/mops/web/stapap1)、[負責人及主要股東資訊查詢平臺 (TDCC)](https://ctp.tdcc.com.tw/inq)、商工登記公示資料查詢 (gcis)
+
+---
+
+## 9. 設計細化:Jurisdiction Source Registry(法域來源路由表)
+
+> 「不同法域有不同權威來源」這件事本身,就是 pipeline 自我優化能力的真身。
+
+`(jurisdiction, fact_type) → ranked [{source, access, reliability, legal_availability}]`
+
+- **`legal_availability` 一等屬性**:只路由合法公開源(例:TW 私人公司完整股東名冊依公司法 §210 不公開 → 不路由)。合規 by design,擋掉 OSINT 灰區。
+- **就是 Salva 既有結構該做的**:`DomainVocab.source_hints`(改 jurisdiction-keyed)+ `source_attempts` telemetry(學習信號)+ route catalog(可選路徑)。
+- **誠實的「複利」**:不是學關鍵詞(benchmark 證實套套邏輯),是學「哪個法域用哪個源拿哪類事實最有效」→ 未來搜類似東西有學過的路徑可選。
+- 已 seed:CN(gsxt + aggregators + news)、TW listed(MOPS)/ private(商工登記/TDCC)、US(SEC EDGAR + state)、UK(Companies House PSC)。
+
+## 10. 實驗結果(prove-first,已落地)
+
+`experiment/hg-penetration` 分支,`experiments/hg_penetration/`(commit `6ce3462`)。
+
+**命題**:typed n-ary 超圖(role+arity+evidence)保留二元 FtM 分解會丟的控制事實。
+
+**結果(誠實)**:在 75% 一致行動人控制結構上——
+- 超圖:偵測到 **75% concert bloc 控制** ✓
+- FtM 二元:報 **「無控制股東」**(最大 30%)✗ — 漏判
+- 有效持股兩邊**相同**(都 42%)→ 分層穿透**不是**差異化,**只有 n-ary 協同控制語義是**。
+
+**裁決**:論點在「n-ary group-level fact(一致行動人 / 多角色事件)」上**成立且可展示**;在「分層有效持股」上**不成立**(二元也能做)。誠實、不浮誇。
+
+**未做(下一增量)**:真實公司獲取探針(資料死穴風險)、`source_attempts` 回饋讓路由表真的學、HIF export、bipartite/star 投影視覺窗。
