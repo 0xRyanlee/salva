@@ -128,7 +128,29 @@ def execute_discovery(
     }
     extractor    = BaseExtractor()
     deduplicator = MemoryDeduplicator(fuzzy_title=True)
-    scorer       = QualificationScorer()
+    # Wire caller-supplied domain_hints into scorer config when provided
+    _hints = payload.intent.domain_hints
+    if _hints and (_hints.signal_terms or _hints.source_hints or _hints.noise_terms):
+        from processing.scorer import DOMAIN_CONFIGS, ScorerConfig
+        _base = DOMAIN_CONFIGS.get(intent.domain, ScorerConfig())
+        scorer = QualificationScorer(ScorerConfig(
+            high_signals=list(_hints.signal_terms) or _base.high_signals,
+            med_signals=_base.med_signals,
+            negative_signals=list(_hints.noise_terms) or _base.negative_signals,
+            noise_domains=_base.noise_domains,
+            trusted_sources=(
+                frozenset(_hints.source_hints) | _base.trusted_sources
+                if _hints.source_hints else _base.trusted_sources
+            ),
+            w_content=_base.w_content,
+            w_contact=_base.w_contact,
+            w_signal=_base.w_signal,
+            w_region=_base.w_region,
+            w_source=_base.w_source,
+            w_recency=_base.w_recency,
+        ))
+    else:
+        scorer = QualificationScorer()
 
     from core.keyword_graph import KeywordGraph
     graph = KeywordGraph(intent=intent, vocab=vocab)
@@ -142,6 +164,7 @@ def execute_discovery(
         extractor=extractor,
         deduplicator=deduplicator,
         scorer=scorer,
+        qualify_threshold=payload.qualify_threshold,
         results_per_query=min(10, max(1, payload.max_results)),
         keyword_graph=graph,
         experience_profile=experience_plan.profile,

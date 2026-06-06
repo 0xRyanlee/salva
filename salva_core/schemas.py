@@ -435,6 +435,7 @@ class DiscoveryRequest(BaseModel):
     retrieval: RetrievalPolicy = Field(default_factory=RetrievalPolicy)
     enrichment: EnrichmentPolicy = Field(default_factory=EnrichmentPolicy)
     max_results: int = Field(default=50, ge=1, le=500)
+    qualify_threshold: float = Field(default=0.4, ge=0.0, le=1.0)
 
 
 class TopologyProbeRequest(BaseModel):

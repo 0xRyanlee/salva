@@ -88,6 +88,32 @@ DOMAIN_CONFIGS: dict[str, ScorerConfig] = {
             "bloomberg.com", "reuters.com", "techcrunch.com", "forbes.com",
         }),
     ),
+    # Taiwan hardware manufacturers / Computex exhibitors
+    "taiwan_hardware": ScorerConfig(
+        high_signals=[
+            "展商", "參展", "廠商", "IC設計", "半導體", "伺服器", "主機板", "製造商",
+            "exhibitor", "manufacturer", "OEM", "ODM", "foundry", "fab",
+            "Computex", "台灣大廠", "AI server", "GPU server", "AIoT",
+        ],
+        med_signals=[
+            "科技", "電子", "hardware", "server", "chip", "PCB", "DRAM",
+            "notebook", "networking", "embedded", "industrial",
+        ],
+        negative_signals=["blog", "review", "求職", "招募", "salary", "消費者"],
+        trusted_sources=frozenset({
+            "computextaipei.com.tw", "computex.biz",
+            "digitimes.com", "ithome.com.tw",
+            "taitra.org.tw", "ctee.com.tw",
+            "teema.org.tw", "teeia.org.tw",
+        }),
+        # Lower weight on contact (snippets rarely have contact info) — up region+signal
+        w_content=0.30,
+        w_contact=0.05,
+        w_signal=0.30,
+        w_region=0.20,
+        w_source=0.10,
+        w_recency=0.05,
+    ),
 }
 
 
