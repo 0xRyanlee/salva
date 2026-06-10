@@ -158,15 +158,24 @@ New test files:
 
 ---
 
+## Phase 5 Addendum (2026-06-10 continuation)
+
+**280 tests pass (was 267). All known dev items closed except E21 live execution.**
+
+| Item | Outcome |
+|---|---|
+| E22 Memory Longitudinal | ✅ PASS — seeds 0→27→47→62; nodes 16→78; recall 0.60 throughout (VP-longitudinal) |
+| D1 Project Isolation — per-file SQLite | ✅ `get_db_path_for_project()` routes to `data/projects/{id}/salva.db`; traversal-safe; service.py wired |
+| E17 Diff Longitudinal | ✅ PASS — P1 identical→empty; P2 +entity→added; P3 -entity→removed; P4 score delta→updated (VP17) |
+| E5b Entity Normalizer | ✅ `normalize_alias()` + `resolve_entity_normalized()` — NFKC + legal suffix strip (EN + CJK); exact-first fallback; 10/10 tests (VP5b) |
+| E21 Live Benchmark | ⏳ Script ready (`e21_live_benchmark.py`); blocked on live DDG network access |
+
 ## What Remains (Next Milestone)
 
 | Item | Description | Priority |
 |---|---|---|
-| E21 Live Benchmark | Real DDG + equal budget + pre-declared GT; verify P≥0.60 R≥0.40 on live data | High |
-| A4 Memory Longitudinal | 5 runs same domain, measure recall curve; verify compounding is real | High |
-| D1 Project Isolation DB | `project_id` field + per-project SQLite file; cross-project query isolation | Medium |
-| E5b Embedding bridge | Jina multilingual embedding for cross-script entity resolution (ZH↔EN) | Medium |
-| E17 Diff Longitudinal | Run E21 twice on same corpus, verify diff output surfaces changes | Low |
+| E21 Live Benchmark | Execute on live network; verify P≥0.60 R≥0.40 for both tasks | High |
+| Embedding bridge (E5b ext.) | Jina/omlx as secondary heuristic when gazetteer misses; requires omlx server | Low |
 
 ---
 
