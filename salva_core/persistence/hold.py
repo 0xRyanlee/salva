@@ -2,11 +2,34 @@
 from __future__ import annotations
 
 import json
+import re
+import unicodedata
 import uuid
 from datetime import UTC, datetime
 from typing import Any
 
 from .db import DEFAULT_DB_PATH, get_conn
+
+# ---------------------------------------------------------------------------
+# Entity alias normalisation (for fuzzy canonical resolution)
+# ---------------------------------------------------------------------------
+
+_LEGAL_SUFFIXES = re.compile(
+    r"[\s,\.]*(?:co[\.,]+\s*ltd[\.,]*|ltd|limited|inc|corp|corporation|co|gmbh|ag|sa|llc|plc|bv|nv)"
+    r"[\.,]*\s*$",
+    re.IGNORECASE,
+)
+_CJK_LEGAL_SUFFIXES = re.compile(
+    r"(?:股份有限公司|有限公司|集团控股有限公司|集团控股|控股有限公司|精密工業股份有限公司|精密工業|工業|集团|控股)$"
+)
+
+
+def normalize_alias(text: str) -> str:
+    """Canonical form for fuzzy alias matching: NFKC, lowercase, strip legal suffixes."""
+    text = unicodedata.normalize("NFKC", text).strip()
+    text = _CJK_LEGAL_SUFFIXES.sub("", text).strip()
+    text = _LEGAL_SUFFIXES.sub("", text).strip()
+    return text.lower()
 
 # ---------------------------------------------------------------------------
 # Hyperedge incidences (C1)
@@ -134,6 +157,29 @@ def resolve_canonical_id(
             (alias,),
         ).fetchone()
     return row[0] if row else None
+
+
+def resolve_entity_normalized(
+    alias: str,
+    path: str = DEFAULT_DB_PATH,
+) -> str | None:
+    """Resolve alias to canonical_id: exact match first, then normalized form.
+
+    Handles legal-suffix variation (TSMC Ltd → TSMC) and NFKC form differences.
+    Returns None if no match found in either pass.
+    """
+    exact = resolve_canonical_id(alias, path=path)
+    if exact:
+        return exact
+    normalized = normalize_alias(alias)
+    with get_conn(path) as conn:
+        rows = conn.execute(
+            "SELECT canonical_id, alias FROM entity_aliases",
+        ).fetchall()
+    for canonical_id, stored_alias in rows:
+        if normalize_alias(stored_alias) == normalized:
+            return canonical_id
+    return None
 
 
 def get_aliases_for_canonical(

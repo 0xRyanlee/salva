@@ -17,7 +17,7 @@ from salva_core.execution import execution_meta, resolve_execution_request
 from salva_core.legacy import legacy_result_relations, legacy_result_to_entity
 from salva_core.mode_resolver import resolve_experience_plan
 from salva_core.navigation import build_mate_report, build_pilot_advice
-from salva_core.persistence import persist_discovery_run, update_run_meta
+from salva_core.persistence import get_db_path_for_project, persist_discovery_run, update_run_meta
 from salva_core.routes import PROFILE_ROUTE_HINTS
 from salva_core.schemas import (
     CanonicalEntity,
@@ -104,11 +104,12 @@ def run_discovery(payload: DiscoveryRequest) -> tuple[list[CanonicalEntity], lis
         meta["feedback"] = {}
         return entities, relations, telemetry, meta
 
-    run_id = persist_discovery_run(payload, entities, relations, telemetry, meta, source_attempts=source_attempts)
-    feedback = build_request_feedback(run_id, payload)
+    db_path = get_db_path_for_project(payload.execution.project_id)
+    run_id = persist_discovery_run(payload, entities, relations, telemetry, meta, source_attempts=source_attempts, path=db_path)
+    feedback = build_request_feedback(run_id, payload, path=db_path)
     meta["run_id"] = run_id
     meta["feedback"] = feedback
-    update_run_meta(run_id, {"feedback": feedback})
+    update_run_meta(run_id, {"feedback": feedback}, path=db_path)
     return entities, relations, telemetry, meta
 
 

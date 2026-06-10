@@ -27,6 +27,21 @@ FALLBACK_DB_PATH = os.getenv(
     str(Path(tempfile.gettempdir()) / "salva_runtime.db"),
 )
 
+_SAFE_PROJECT_ID_CHARS = frozenset(
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-"
+)
+
+
+def get_db_path_for_project(project_id: str | None) -> str:
+    """Return the SQLite path for a project, or DEFAULT_DB_PATH if project_id is None."""
+    if not project_id:
+        return DEFAULT_DB_PATH
+    safe = "".join(c for c in project_id if c in _SAFE_PROJECT_ID_CHARS)
+    if not safe:
+        return DEFAULT_DB_PATH
+    data_dir = Path(DEFAULT_DB_PATH).parent
+    return str(data_dir / "projects" / safe / "salva.db")
+
 
 SCHEMA_SQL = """
 CREATE TABLE IF NOT EXISTS discovery_runs (
