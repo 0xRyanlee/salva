@@ -151,14 +151,18 @@ class SearXNGRetriever:
         n: int,
         engines: str,
     ) -> tuple[list[dict[str, Any]], str | None]:
-        params = urllib.parse.urlencode(
-            {
-                "q": query,
-                "format": "json",
-                "engines": engines,
-                "limit": n,
-            }
-        )
+        search_params: dict[str, str | int] = {
+            "q": query,
+            "format": "json",
+            "engines": engines,
+            "limit": n,
+        }
+        if self.policy.region_hint:
+            # e.g. "de-de" → language="de", region="de-de"
+            lang = self.policy.region_hint.split("-")[0]
+            search_params["language"] = lang
+            search_params["region"] = self.policy.region_hint
+        params = urllib.parse.urlencode(search_params)
         url = f"{base}/search?{params}"
         try:
             req = urllib.request.Request(

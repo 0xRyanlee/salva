@@ -90,7 +90,9 @@ def run_live_task(
     )
 
     # Live retriever — real DDG/SearXNG
-    policy = RetrievalPolicy()
+    # region_hint maps to SearXNG language/region params for geographically relevant results
+    region_hint = "de-de" if task == "naturehike" else "zh-tw"
+    policy = RetrievalPolicy(region_hint=region_hint)
     retriever = RoutedRetriever(policy=policy, strategy="dive")
 
     # Request count proxy via monkey-patching
