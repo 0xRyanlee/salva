@@ -86,6 +86,7 @@ def salva_discover(
     extra_keywords: str = "",
     negative_keywords: str = "",
     domain_hints_json: str = "",
+    project_id: str = "",
     campaign_id: str = "",
     continuation_id: str = "",
     memory_read_scope: str = "none",
@@ -123,6 +124,7 @@ def salva_discover(
         output_profile=output_profile,
         max_results=max(1, min(20, max_results)),
         execution=ExecutionContext(
+            project_id=project_id or None,
             campaign_id=campaign_id or None,
             continuation_id=continuation_id or None,
             persistence=persistence,

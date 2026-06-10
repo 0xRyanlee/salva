@@ -63,6 +63,7 @@ def find(
     extra_keywords:     str = typer.Option("",                 help="Comma-separated extra keywords"),
     negative_keywords:  str = typer.Option("",                 help="Comma-separated exclusions"),
     domain_hints:       str = typer.Option("",                 help="JSON domain hints"),
+    project_id:         str = typer.Option("",                 help="Project scope for isolation"),
     campaign_id:        str = typer.Option("",                 help="Research campaign scope"),
     continuation_id:    str = typer.Option("",                 help="Research continuation ID"),
     memory_read_scope:  str = typer.Option("none",             help="Memory read scope"),
@@ -102,6 +103,7 @@ def find(
         output_profile=output_profile,
         max_results=max(1, min(200, max_results)),
         execution=ExecutionContext(
+            project_id=project_id or None,
             campaign_id=campaign_id or None,
             continuation_id=continuation_id or None,
             persistence=persistence,
@@ -210,13 +212,14 @@ def job_status(
 
 @job_app.command("list")
 def job_list(
-    status:  str | None = typer.Option(None, help="Filter by status"),
+    status:     str | None = typer.Option(None, help="Filter by status"),
+    project_id: str | None = typer.Option(None, "--project-id", help="Filter by project"),
     limit:   int           = typer.Option(20),
     as_json: bool          = typer.Option(False, "--json"),
 ) -> None:
     """List recent jobs."""
     from salva_core.persistence import list_jobs
-    items, total = list_jobs(limit=limit, status=status)
+    items, total = list_jobs(limit=limit, status=status, project_id=project_id)
     if as_json:
         typer.echo(json.dumps(
             {"items": [j.model_dump(mode="json") for j in items], "total": total},

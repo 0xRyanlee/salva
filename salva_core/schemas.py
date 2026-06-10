@@ -274,6 +274,13 @@ class CachePolicy(BaseModel):
 
 
 class ExecutionContext(BaseModel):
+    project_id: str | None = Field(
+        default=None,
+        min_length=1,
+        max_length=128,
+        pattern=r"^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        description="Project scope for run/job isolation. Runs with different project_ids are logically isolated.",
+    )
     campaign_id: str | None = Field(
         default=None,
         min_length=1,
@@ -698,6 +705,7 @@ class RunRecord(BaseModel):
     created_at: datetime
     request: dict[str, Any]
     meta: dict[str, Any]
+    project_id: str | None = None
     campaign_id: str | None = None
     continuation_id: str | None = None
     entity_count: int = 0
@@ -1138,6 +1146,7 @@ class JobRecord(BaseModel):
     status: JobStatus
     objective: str
     output_profile: str
+    project_id: str | None = None
     tenant_id: str | None = None
     created_at: datetime
     updated_at: datetime

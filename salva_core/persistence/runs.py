@@ -18,9 +18,8 @@ from salva_core.schemas import (
     CanonicalRelation,
     DiscoveryRequest,
     EvidenceChainLink,
-    EvidenceChainRecord,
-    HoldHyperedgeRecord,
     HoldHyperedgeMember,
+    HoldHyperedgeRecord,
     QueryFamilyMemoryRecord,
     RunRecord,
     SourceAttemptRecord,
@@ -32,6 +31,7 @@ from salva_core.semantic import (
     build_semantic_vector_id,
     vector_norm,
 )
+
 from .db import DEFAULT_DB_PATH, get_conn
 
 
@@ -53,14 +53,19 @@ def persist_discovery_run(
         conn.execute(
             """
             INSERT INTO discovery_runs (
-                run_id, objective, output_profile, request_json,
-                entities_json, relations_json, meta_json, created_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                run_id, objective, output_profile, project_id, campaign_id, continuation_id,
+                persistence_mode, request_json, entities_json, relations_json,
+                meta_json, created_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 run_id,
                 request.objective,
                 request.output_profile,
+                request.execution.project_id,
+                request.execution.campaign_id,
+                request.execution.continuation_id,
+                request.execution.persistence,
                 request.model_dump_json(),
                 json.dumps([entity.model_dump(mode="json") for entity in entities], ensure_ascii=False),
                 json.dumps([relation.model_dump(mode="json") for relation in relations], ensure_ascii=False),
@@ -268,11 +273,15 @@ def persist_discovery_run(
                 deduped_chain_rows,
             )
 
-        query_family_rows = []
-        semantic_vector_rows = []
-        for record in telemetry:
+        query_family_rows: list[tuple[object, ...]] = []
+        semantic_vector_rows: list[tuple[object, ...]] = []
+        memory_write_mode = request.execution.memory.write_mode
+        memory_status = "promoted" if memory_write_mode == "promote" else "quarantine"
+        promoted_at = now if memory_status == "promoted" else None
+        for record in telemetry if memory_write_mode != "none" else []:
             metadata = record.metadata or {}
             source_nodes = list(metadata.get("source_nodes", []))
+            content_nodes = list(metadata.get("content_terms", []))
             content_weights = dict(metadata.get("content_weights", {}))
             source_hints = list(metadata.get("source_hints", []))
             notes = list(metadata.get("notes", []))
@@ -283,6 +292,10 @@ def persist_discovery_run(
             temporary_query_family = QueryFamilyMemoryRecord(
                 memory_id=memory_id,
                 run_id=run_id,
+                campaign_id=request.execution.campaign_id,
+                continuation_id=request.execution.continuation_id,
+                memory_status=memory_status,
+                promoted_at=datetime.fromisoformat(promoted_at) if promoted_at else None,
                 domain=domain,
                 objective=request.objective,
                 output_profile=request.output_profile,
@@ -307,6 +320,10 @@ def persist_discovery_run(
                 (
                     memory_id,
                     run_id,
+                    request.execution.campaign_id,
+                    request.execution.continuation_id,
+                    memory_status,
+                    promoted_at,
                     domain,
                     request.objective,
                     request.output_profile,
@@ -323,6 +340,7 @@ def persist_discovery_run(
                     record.avg_score,
                     temporary_query_family.success_score,
                     now,
+                    json.dumps(content_nodes, ensure_ascii=False),
                 )
             )
             semantic_vector_rows.append(
@@ -345,11 +363,12 @@ def persist_discovery_run(
             conn.executemany(
                 """
                 INSERT INTO query_family_memory (
-                    memory_id, run_id, domain, objective, output_profile, round_num, strategy,
+                    memory_id, run_id, campaign_id, continuation_id, memory_status,
+                    promoted_at, domain, objective, output_profile, round_num, strategy,
                     query, query_signature, source_nodes_json, content_weights_json,
                     source_hints_json, notes_json, raw_total, qualified_total,
-                    avg_score, success_score, created_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    avg_score, success_score, created_at, content_nodes_json
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 query_family_rows,
             )
@@ -370,33 +389,57 @@ def persist_discovery_run(
 def list_runs(
     limit: int = 20,
     offset: int = 0,
+    project_id: str | None = None,
+    campaign_id: str | None = None,
+    continuation_id: str | None = None,
     path: str = DEFAULT_DB_PATH,
 ) -> tuple[list[RunRecord], int]:
+    clauses: list[str] = []
+    params: list[object] = []
+    if project_id:
+        clauses.append("project_id = ?")
+        params.append(project_id)
+    if campaign_id:
+        clauses.append("campaign_id = ?")
+        params.append(campaign_id)
+    if continuation_id:
+        clauses.append("continuation_id = ?")
+        params.append(continuation_id)
+    where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
+
     with get_conn(path) as conn:
-        total = conn.execute("SELECT COUNT(*) FROM discovery_runs").fetchone()[0]
+        total = conn.execute(
+            f"SELECT COUNT(*) FROM discovery_runs {where}",
+            params,
+        ).fetchone()[0]
         rows = conn.execute(
-            """
-            SELECT run_id, objective, output_profile, request_json, entities_json, relations_json, meta_json, created_at
+            f"""
+            SELECT run_id, objective, output_profile, project_id, campaign_id, continuation_id,
+                   request_json, entities_json, relations_json, meta_json, created_at
             FROM discovery_runs
+            {where}
             ORDER BY created_at DESC
             LIMIT ? OFFSET ?
             """,
-            (limit, offset),
+            [*params, limit, offset],
         ).fetchall()
 
     items: list[RunRecord] = []
     for row in rows:
-        entities = json.loads(row[4])
-        relations = json.loads(row[5])
-        meta = json.loads(row[6])
+        entities = json.loads(row[7])
+        relations = json.loads(row[8])
+        meta = json.loads(row[9])
         items.append(
             RunRecord(
                 run_id=row[0],
                 objective=row[1],
                 output_profile=row[2],
-                request=json.loads(row[3]),
+                project_id=row[3],
+                campaign_id=row[4],
+                continuation_id=row[5],
+                request=json.loads(row[6]),
                 meta=meta,
-                created_at=datetime.fromisoformat(row[7]),
+                created_at=datetime.fromisoformat(row[10]),
                 entity_count=len(entities),
                 relation_count=len(relations),
             )
@@ -408,7 +451,9 @@ def get_run(run_id: str, path: str = DEFAULT_DB_PATH) -> dict[str, Any] | None:
     with get_conn(path) as conn:
         row = conn.execute(
             """
-            SELECT run_id, objective, output_profile, request_json, entities_json, relations_json, meta_json, created_at
+            SELECT run_id, objective, output_profile, campaign_id, continuation_id,
+                   persistence_mode, request_json, entities_json, relations_json,
+                   meta_json, created_at
             FROM discovery_runs
             WHERE run_id = ?
             """,
@@ -422,11 +467,14 @@ def get_run(run_id: str, path: str = DEFAULT_DB_PATH) -> dict[str, Any] | None:
         "run_id": row[0],
         "objective": row[1],
         "output_profile": row[2],
-        "request": json.loads(row[3]),
-        "entities": json.loads(row[4]),
-        "relations": json.loads(row[5]),
-        "meta": json.loads(row[6]),
-        "created_at": row[7],
+        "campaign_id": row[3],
+        "continuation_id": row[4],
+        "persistence_mode": row[5],
+        "request": json.loads(row[6]),
+        "entities": json.loads(row[7]),
+        "relations": json.loads(row[8]),
+        "meta": json.loads(row[9]),
+        "created_at": row[10],
     }
 
 

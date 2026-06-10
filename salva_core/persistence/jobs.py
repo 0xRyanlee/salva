@@ -6,6 +6,7 @@ import uuid
 from datetime import UTC, datetime
 
 from salva_core.schemas import DiscoveryRequest, JobRecord, StreamEventRecord
+
 from .db import DEFAULT_DB_PATH, get_conn
 
 
@@ -19,19 +20,21 @@ def create_job(
     meta_payload = dict(meta or {})
     if request.tenant_id is not None:
         meta_payload.setdefault("tenant_id", request.tenant_id)
+    project_id = request.execution.project_id if request.execution else None
     with get_conn(path) as conn:
         conn.execute(
             """
             INSERT INTO jobs (
-                job_id, status, objective, output_profile, tenant_id, request_json,
-                run_id, error, meta_json, created_at, updated_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                job_id, status, objective, output_profile, project_id, tenant_id,
+                request_json, run_id, error, meta_json, created_at, updated_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 job_id,
                 "queued",
                 request.objective,
                 request.output_profile,
+                project_id,
                 request.tenant_id,
                 request.model_dump_json(),
                 None,
@@ -119,13 +122,18 @@ def list_jobs(
     limit: int = 20,
     offset: int = 0,
     status: str | None = None,
+    project_id: str | None = None,
     path: str = DEFAULT_DB_PATH,
 ) -> tuple[list[JobRecord], int]:
-    where = ""
+    clauses: list[str] = []
     params: list[object] = []
     if status:
-        where = "WHERE status = ?"
+        clauses.append("status = ?")
         params.append(status)
+    if project_id:
+        clauses.append("project_id = ?")
+        params.append(project_id)
+    where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
 
     with get_conn(path) as conn:
         total = conn.execute(
@@ -134,8 +142,8 @@ def list_jobs(
         ).fetchone()[0]
         rows = conn.execute(
             f"""
-            SELECT job_id, status, objective, output_profile, tenant_id, request_json,
-                   run_id, error, meta_json, created_at, updated_at
+            SELECT job_id, status, objective, output_profile, project_id, tenant_id,
+                   request_json, run_id, error, meta_json, created_at, updated_at
             FROM jobs
             {where}
             ORDER BY created_at DESC
@@ -150,13 +158,14 @@ def list_jobs(
             status=row[1],
             objective=row[2],
             output_profile=row[3],
-            tenant_id=row[4],
-            request=json.loads(row[5]),
-            run_id=row[6],
-            error=row[7],
-            meta=json.loads(row[8]),
-            created_at=datetime.fromisoformat(row[9]),
-            updated_at=datetime.fromisoformat(row[10]),
+            project_id=row[4],
+            tenant_id=row[5],
+            request=json.loads(row[6]),
+            run_id=row[7],
+            error=row[8],
+            meta=json.loads(row[9]),
+            created_at=datetime.fromisoformat(row[10]),
+            updated_at=datetime.fromisoformat(row[11]),
         )
         for row in rows
     ]
@@ -167,8 +176,8 @@ def get_job(job_id: str, path: str = DEFAULT_DB_PATH) -> JobRecord | None:
     with get_conn(path) as conn:
         row = conn.execute(
             """
-            SELECT job_id, status, objective, output_profile, tenant_id, request_json,
-                   run_id, error, meta_json, created_at, updated_at
+            SELECT job_id, status, objective, output_profile, project_id, tenant_id,
+                   request_json, run_id, error, meta_json, created_at, updated_at
             FROM jobs
             WHERE job_id = ?
             """,
@@ -183,13 +192,14 @@ def get_job(job_id: str, path: str = DEFAULT_DB_PATH) -> JobRecord | None:
         status=row[1],
         objective=row[2],
         output_profile=row[3],
-        tenant_id=row[4],
-        request=json.loads(row[5]),
-        run_id=row[6],
-        error=row[7],
-        meta=json.loads(row[8]),
-        created_at=datetime.fromisoformat(row[9]),
-        updated_at=datetime.fromisoformat(row[10]),
+        project_id=row[4],
+        tenant_id=row[5],
+        request=json.loads(row[6]),
+        run_id=row[7],
+        error=row[8],
+        meta=json.loads(row[9]),
+        created_at=datetime.fromisoformat(row[10]),
+        updated_at=datetime.fromisoformat(row[11]),
     )
 
 
