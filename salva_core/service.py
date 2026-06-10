@@ -4,33 +4,32 @@ from typing import Any
 
 from core.controller import RoundSummary, SalvaController
 from core.domain_vocab import DomainVocab, get_vocab
+from core.types import Intent
 from enrichment.plugins import enrich_entities
 from processing.dedup import MemoryDeduplicator
 from processing.extractor import BaseExtractor
 from processing.scorer import QualificationScorer
 from retrieval.policies import resolve_retrieval_policy
 from retrieval.registry import available_provider_kinds
-from retrieval.source_metadata import classify_source_attempt
 from retrieval.router import RoutedRetriever
-from salva_core.mode_resolver import resolve_experience_plan
-from salva_core.routes import PROFILE_ROUTE_HINTS
-from salva_core.navigation import build_mate_report, build_pilot_advice
+from retrieval.source_metadata import classify_source_attempt
+from salva_core.execution import execution_meta, resolve_execution_request
 from salva_core.legacy import legacy_result_relations, legacy_result_to_entity
+from salva_core.mode_resolver import resolve_experience_plan
+from salva_core.navigation import build_mate_report, build_pilot_advice
 from salva_core.persistence import persist_discovery_run, update_run_meta
-from salva_core.topology import plan_route
+from salva_core.routes import PROFILE_ROUTE_HINTS
 from salva_core.schemas import (
     CanonicalEntity,
     CanonicalRelation,
     DiscoveryRequest,
-    DomainHints,
     PilotRequest,
     RetrievalPolicy,
     RetrievalProviderConfig,
     SourceAttemptRecord,
     TelemetryRecord,
 )
-from core.types import Intent
-
+from salva_core.topology import plan_route
 
 # ---------------------------------------------------------------------------
 # Objective → domain mapping
@@ -71,8 +70,8 @@ def discovery_request_to_legacy_intent(payload: DiscoveryRequest) -> Intent:
     primary_terms: list[str] = []
     if payload.intent.product:
         primary_terms.append(payload.intent.product)
-    if payload.intent.role:
-        primary_terms.append(payload.intent.role)
+    # role is NOT added to primary_terms — it goes into Intent.roles and becomes a
+    # role-type node in the keyword graph, keeping product as the lead primary term.
     primary_terms.extend(payload.intent.extra_keywords)
     if not primary_terms:
         primary_terms.append(payload.intent.industry)
@@ -98,7 +97,13 @@ def discovery_request_to_legacy_intent(payload: DiscoveryRequest) -> Intent:
 
 
 def run_discovery(payload: DiscoveryRequest) -> tuple[list[CanonicalEntity], list[CanonicalRelation], list[TelemetryRecord], dict[str, Any]]:
+    payload = resolve_execution_request(payload)
     entities, relations, telemetry, meta, source_attempts = execute_discovery(payload)
+    if payload.execution.persistence == "none":
+        meta["run_id"] = None
+        meta["feedback"] = {}
+        return entities, relations, telemetry, meta
+
     run_id = persist_discovery_run(payload, entities, relations, telemetry, meta, source_attempts=source_attempts)
     feedback = build_request_feedback(run_id, payload)
     meta["run_id"] = run_id
@@ -127,30 +132,12 @@ def execute_discovery(
         "pirate": RoutedRetriever(policy=retrieval_policy, strategy="pirate", retrieval_mode=retrieval_mode),
     }
     extractor    = BaseExtractor()
-    deduplicator = MemoryDeduplicator(fuzzy_title=True)
-    # Wire caller-supplied domain_hints into scorer config when provided
-    _hints = payload.intent.domain_hints
-    if _hints and (_hints.signal_terms or _hints.source_hints or _hints.noise_terms):
-        from processing.scorer import DOMAIN_CONFIGS, ScorerConfig
-        _base = DOMAIN_CONFIGS.get(intent.domain, ScorerConfig())
-        scorer = QualificationScorer(ScorerConfig(
-            high_signals=list(_hints.signal_terms) or _base.high_signals,
-            med_signals=_base.med_signals,
-            negative_signals=list(_hints.noise_terms) or _base.negative_signals,
-            noise_domains=_base.noise_domains,
-            trusted_sources=(
-                frozenset(_hints.source_hints) | _base.trusted_sources
-                if _hints.source_hints else _base.trusted_sources
-            ),
-            w_content=_base.w_content,
-            w_contact=_base.w_contact,
-            w_signal=_base.w_signal,
-            w_region=_base.w_region,
-            w_source=_base.w_source,
-            w_recency=_base.w_recency,
-        ))
-    else:
-        scorer = QualificationScorer()
+    from processing.dedup import BM25_DOMAIN_THRESHOLDS
+    deduplicator = MemoryDeduplicator(
+        fuzzy_title=True,
+        bm25_threshold=BM25_DOMAIN_THRESHOLDS.get(intent.domain, 0.85),
+    )
+    scorer = _build_scorer(payload, intent.domain)
 
     from core.keyword_graph import KeywordGraph
     graph = KeywordGraph(intent=intent, vocab=vocab)
@@ -207,10 +194,35 @@ def execute_discovery(
         "domain":                 intent.domain,
         "domain_hints_active":    payload.intent.domain_hints is not None,
         "memory_seeds_used":      memory_seeds,
+        "execution":              execution_meta(payload),
     }
     if payload.tenant_id is not None:
         meta["tenant_id"] = payload.tenant_id
     return entities, relations, telemetry, meta, source_attempts
+
+
+def _build_scorer(payload: DiscoveryRequest, domain: str) -> QualificationScorer:
+    """Apply vocabulary hints without allowing callers to self-declare source trust."""
+    hints = payload.intent.domain_hints
+    if not hints or not (hints.signal_terms or hints.noise_terms):
+        return QualificationScorer()
+
+    from processing.scorer import DOMAIN_CONFIGS, ScorerConfig
+
+    base = DOMAIN_CONFIGS.get(domain, ScorerConfig())
+    return QualificationScorer(ScorerConfig(
+        high_signals=list(hints.signal_terms) or base.high_signals,
+        med_signals=base.med_signals,
+        negative_signals=list(hints.noise_terms) or base.negative_signals,
+        noise_domains=base.noise_domains,
+        trusted_sources=base.trusted_sources,
+        w_content=base.w_content,
+        w_contact=base.w_contact,
+        w_signal=base.w_signal,
+        w_region=base.w_region,
+        w_source=base.w_source,
+        w_recency=base.w_recency,
+    ))
 
 
 def _seed_graph_from_memory(
@@ -224,14 +236,30 @@ def _seed_graph_from_memory(
     Wire A3: build a memory_reader closure and call graph.seed_from_memory().
     Returns the number of nodes injected (0 if no memory or error).
     """
-    from salva_core.persistence import read_top_query_families_for_seeding, DEFAULT_DB_PATH
+    from salva_core.persistence import DEFAULT_DB_PATH, read_top_query_families_for_seeding
+    memory_policy = payload.execution.memory
+    if memory_policy.read_scope == "none":
+        return 0
+
     db_path = path or DEFAULT_DB_PATH
+    campaign_id: str | None = None
+    memory_status: str | None = None
+    if memory_policy.read_scope == "campaign_promoted":
+        campaign_id = payload.execution.campaign_id
+        memory_status = "promoted"
+    elif memory_policy.read_scope == "campaign_all":
+        campaign_id = payload.execution.campaign_id
+    elif memory_policy.read_scope == "global_legacy":
+        memory_status = "legacy"
 
     def memory_reader(d: str, k: int) -> list[dict[str, Any]]:
         return read_top_query_families_for_seeding(
             domain=d,
             objective=payload.objective,
+            campaign_id=campaign_id,
+            memory_status=memory_status,
             top_k=k,
+            min_success_score=memory_policy.min_success_score,
             path=db_path,
         )
 

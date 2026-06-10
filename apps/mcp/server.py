@@ -14,7 +14,6 @@ from __future__ import annotations
 
 import json
 import os
-import sys
 from typing import Any
 
 try:
@@ -41,23 +40,23 @@ except ImportError:
 
     FastMCP = _MissingFastMCP
 
-from salva_core.schemas import (
-    DiscoveryIntent,
-    DiscoveryRequest,
-    DomainHints,
-    PilotRequest,
-    TopologyProbeRequest,
-)
-from salva_core.service import execute_discovery, run_discovery
+from salva_core.evaluation import build_audit_report
+from salva_core.navigation import build_pilot_advice
 from salva_core.persistence import (
     create_job,
     get_job,
     get_run,
-    DEFAULT_DB_PATH,
 )
-from salva_core.evaluation import build_audit_report
-from salva_core.navigation import build_pilot_advice
-
+from salva_core.schemas import (
+    DiscoveryIntent,
+    DiscoveryRequest,
+    DomainHints,
+    ExecutionContext,
+    MemoryPolicy,
+    PilotRequest,
+    TopologyProbeRequest,
+)
+from salva_core.service import run_discovery
 
 mcp = FastMCP(
     "salva-runtime",
@@ -87,6 +86,11 @@ def salva_discover(
     extra_keywords: str = "",
     negative_keywords: str = "",
     domain_hints_json: str = "",
+    campaign_id: str = "",
+    continuation_id: str = "",
+    memory_read_scope: str = "none",
+    memory_write_mode: str = "quarantine",
+    persistence: str = "audit",
 ) -> str:
     """
     Run a synchronous discovery search and return scored entities.
@@ -118,6 +122,15 @@ def salva_discover(
         objective=objective,
         output_profile=output_profile,
         max_results=max(1, min(20, max_results)),
+        execution=ExecutionContext(
+            campaign_id=campaign_id or None,
+            continuation_id=continuation_id or None,
+            persistence=persistence,
+            memory=MemoryPolicy(
+                read_scope=memory_read_scope,
+                write_mode=memory_write_mode,
+            ),
+        ),
         intent=DiscoveryIntent(
             market=market,
             industry=industry,
@@ -143,6 +156,7 @@ def salva_discover(
             "rounds": meta.get("rounds", 0),
             "domain": meta.get("domain"),
             "memory_seeds_used": meta.get("memory_seeds_used", 0),
+            "execution": meta.get("execution", {}),
             "entities": [_compact_entity(e.model_dump(mode="json")) for e in entities],
             "feedback": {
                 "mate": meta.get("feedback", {}).get("mate", {}),
@@ -174,6 +188,11 @@ def salva_job_create(
     extra_keywords: str = "",
     negative_keywords: str = "",
     domain_hints_json: str = "",
+    campaign_id: str = "",
+    continuation_id: str = "",
+    memory_read_scope: str = "none",
+    memory_write_mode: str = "quarantine",
+    persistence: str = "audit",
 ) -> str:
     """
     Create a background discovery job and return the job_id immediately.
@@ -201,6 +220,15 @@ def salva_job_create(
         objective=objective,
         output_profile=output_profile,
         max_results=max(1, min(200, max_results)),
+        execution=ExecutionContext(
+            campaign_id=campaign_id or None,
+            continuation_id=continuation_id or None,
+            persistence=persistence,
+            memory=MemoryPolicy(
+                read_scope=memory_read_scope,
+                write_mode=memory_write_mode,
+            ),
+        ),
         intent=DiscoveryIntent(
             market=market,
             industry=industry,
@@ -291,7 +319,7 @@ def salva_job_cancel(job_id: str, force: bool = False) -> str:
     if job.status == "failed" and not force:
         return json.dumps({"error": f"job already failed: {job_id}", "ok": False})
     if job.status == "running" and not force:
-        return json.dumps({"error": f"job is running, use force=true to cancel", "ok": False})
+        return json.dumps({"error": "job is running, use force=true to cancel", "ok": False})
 
     from salva_core.persistence import update_job_status
     update_job_status(job_id, "cancelled", meta={"cancelled_at": datetime.now().isoformat()})
@@ -427,6 +455,163 @@ def salva_pilot(
 
 
 # ---------------------------------------------------------------------------
+# salva_research_report — aggregate research report for a run
+# ---------------------------------------------------------------------------
+
+@mcp.tool()
+def salva_research_report(run_id: str, max_entities: int = 50) -> str:
+    """
+    Generate a structured research report for a completed discovery run.
+
+    Returns executive summary, key findings, coverage map, source attribution,
+    and identified gaps. Analogous to GPT deep-research schema output.
+
+    Args:
+        run_id: The run ID to report on
+        max_entities: Max entities to include in analysis (default 50)
+    """
+    run = get_run(run_id)
+    if run is None:
+        return json.dumps({"error": f"run not found: {run_id}", "ok": False})
+
+    try:
+        from salva_core.schemas import CanonicalEntity
+        from salva_core.transforms import build_research_report
+        raw_entities = run.get("entities", [])[:max_entities]
+        entities = [CanonicalEntity.model_validate(e) for e in raw_entities]
+        meta = run.get("meta", {})
+        meta["run_id"] = run_id
+        report = build_research_report(entities, meta)
+    except Exception as exc:
+        return json.dumps({"error": str(exc), "ok": False})
+
+    return json.dumps({"ok": True, "run_id": run_id, "report": report},
+                      ensure_ascii=False, default=str)
+
+
+# ---------------------------------------------------------------------------
+# salva_run_diff — compare two runs
+# ---------------------------------------------------------------------------
+
+@mcp.tool()
+def salva_run_diff(run_id_a: str, run_id_b: str) -> str:
+    """
+    Compare two discovery runs and return added, removed, and updated entities.
+
+    Useful for tracking changes across repeated searches on the same topic.
+
+    Args:
+        run_id_a: The baseline run ID
+        run_id_b: The comparison run ID
+    """
+    run_a = get_run(run_id_a)
+    run_b = get_run(run_id_b)
+    if run_a is None:
+        return json.dumps({"error": f"run not found: {run_id_a}", "ok": False})
+    if run_b is None:
+        return json.dumps({"error": f"run not found: {run_id_b}", "ok": False})
+
+    def entity_key(e: dict) -> str:
+        title = (e.get("title") or "").lower().strip()
+        domain = (e.get("domain") or "").lower().strip()
+        return f"{title}|{domain}"
+
+    a_map = {entity_key(e): e for e in run_a.get("entities", [])}
+    b_map = {entity_key(e): e for e in run_b.get("entities", [])}
+
+    added   = [b_map[k] for k in b_map if k not in a_map]
+    removed = [a_map[k] for k in a_map if k not in b_map]
+    updated, unchanged = [], []
+    for k in a_map:
+        if k not in b_map:
+            continue
+        a_s = a_map[k].get("score") or a_map[k].get("confidence") or 0.0
+        b_s = b_map[k].get("score") or b_map[k].get("confidence") or 0.0
+        if abs(a_s - b_s) > 0.01:
+            updated.append({"title": b_map[k].get("title"), "score_a": a_s, "score_b": b_s})
+        else:
+            unchanged.append(b_map[k])
+
+    return json.dumps({
+        "ok": True,
+        "run_id_a": run_id_a,
+        "run_id_b": run_id_b,
+        "added_count":     len(added),
+        "removed_count":   len(removed),
+        "updated_count":   len(updated),
+        "unchanged_count": len(unchanged),
+        "added":   [_compact_entity(e) for e in added[:20]],
+        "removed": [_compact_entity(e) for e in removed[:20]],
+        "updated": updated[:20],
+    }, ensure_ascii=False, default=str)
+
+
+# ---------------------------------------------------------------------------
+# salva_graph_export — export run as HIF JSON
+# ---------------------------------------------------------------------------
+
+@mcp.tool()
+def salva_graph_export(run_id: str, fmt: str = "hif") -> str:
+    """
+    Export the entity/relation graph of a run as HIF JSON or DOT.
+
+    Args:
+        run_id: The run ID to export
+        fmt: Output format — "hif" (default) or "dot"
+    """
+    run = get_run(run_id)
+    if run is None:
+        return json.dumps({"error": f"run not found: {run_id}", "ok": False})
+
+    entities  = run.get("entities", [])
+    relations = run.get("relations", [])
+
+    nodes = [
+        {
+            "id": e.get("entity_id") or (e.get("title") or "").replace(" ", "_"),
+            "attrs": {
+                "title":       e.get("title"),
+                "entity_type": e.get("entity_type"),
+                "score":       e.get("score") or e.get("confidence"),
+            },
+        }
+        for e in entities
+    ]
+    edges = [
+        {
+            "source": r.get("subject_id") or r.get("source_entity_id"),
+            "target": r.get("object_id") or r.get("target_entity_id"),
+            "type":   r.get("relation_type") or r.get("type"),
+        }
+        for r in relations
+    ]
+
+    if fmt == "dot":
+        lines = [f'digraph "{run_id}" {{', '  rankdir=LR;']
+        for n in nodes:
+            nid   = (n["id"] or "").replace('"', '\\"')
+            label = (n["attrs"].get("title") or nid).replace('"', '\\"')
+            score = n["attrs"].get("score") or 0.0
+            lines.append(f'  "{nid}" [label="{label}\\n{score:.2f}"];')
+        for e in edges:
+            src = (e.get("source") or "").replace('"', '\\"')
+            tgt = (e.get("target") or "").replace('"', '\\"')
+            rel = e.get("type") or "related"
+            if src and tgt:
+                lines.append(f'  "{src}" -> "{tgt}" [label="{rel}"];')
+        lines.append("}")
+        return json.dumps({"ok": True, "run_id": run_id, "format": "dot", "dot": "\n".join(lines)})
+
+    return json.dumps({
+        "ok": True,
+        "run_id": run_id,
+        "format": "hif",
+        "nodes": nodes,
+        "edges": edges,
+    }, ensure_ascii=False, default=str)
+
+
+# ---------------------------------------------------------------------------
 # salva_vocab — domain vocabulary query
 # ---------------------------------------------------------------------------
 
@@ -440,7 +625,7 @@ def salva_vocab(domain: str = "", list_all: bool = False) -> str:
         list_all: If True, list all available domains (default False)
     """
     try:
-        from core.domain_vocab import list_domains, get_vocab
+        from core.domain_vocab import get_vocab, list_domains
     except Exception as exc:
         return json.dumps({"error": f"failed to import domain_vocab: {exc}", "ok": False})
 
@@ -577,7 +762,7 @@ def _parse_domain_hints(hints_json: str) -> DomainHints | None:
     if value.startswith("@"):
         file_path = value[1:].strip()
         try:
-            with open(file_path, "r", encoding="utf-8") as f:
+            with open(file_path, encoding="utf-8") as f:
                 value = f.read()
         except Exception:
             return None

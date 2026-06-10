@@ -10,12 +10,40 @@ need to look up hints separately.
 """
 from __future__ import annotations
 
-from typing import Any, TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 from core.types import Intent, KeywordNode, QueryFamily
 
 if TYPE_CHECKING:
     from core.domain_vocab import DomainVocab
+
+
+def _compute_role_angles(intent: Intent, vocab: "DomainVocab | None") -> list[str]:
+    """Expand intent.roles into orthogonal discovery angles via vocab synonym groups.
+
+    "distributor" → ["distributor", "wholesaler", "importer", "dealer", ...]
+    so dive queries cover multiple entry points instead of lexical variants of one term.
+    """
+    if not intent.roles:
+        return []
+    angles: list[str] = []
+    for role in intent.roles:
+        angles.append(role)
+        if vocab is not None:
+            for canonical, variants in vocab.synonym_groups.items():
+                all_forms = [canonical.lower()] + [v.lower() for v in variants]
+                if role.lower() in all_forms:
+                    if canonical.lower() != role.lower():
+                        angles.append(canonical)
+                    angles.extend(v for v in variants if v.lower() != role.lower())
+    seen: set[str] = set()
+    result: list[str] = []
+    for a in angles:
+        key = a.lower()
+        if key not in seen:
+            seen.add(key)
+            result.append(a)
+    return result
 
 
 GLOBAL_NEGATIVES = [
@@ -52,7 +80,7 @@ def build_strategy_profile(
     intent: Intent,
     strategy: str,
     round_num: int,
-    vocab: "DomainVocab | None" = None,
+    vocab: DomainVocab | None = None,
 ) -> dict[str, Any]:
     """
     Build a strategy profile dict for one retrieval round.
@@ -117,10 +145,18 @@ def build_strategy_profile(
         from core.domain_vocab import get_vocab
         source_hints = get_vocab(intent.domain).source_hints
 
+    # Role angles: expand intent roles to orthogonal discovery synonyms
+    _vocab = vocab
+    if _vocab is None:
+        from core.domain_vocab import get_vocab
+        _vocab = get_vocab(intent.domain)
+    role_angles = _compute_role_angles(intent, _vocab)
+
     return {
         "content_weights": content_weights,
         "source_hints":    source_hints,
         "notes":           notes,
+        "role_angles":     role_angles,
     }
 
 
@@ -131,7 +167,7 @@ def build_query_family(
     strategy: str,
     max_queries: int = 10,
     profile: dict[str, Any] | None = None,
-    vocab: "DomainVocab | None" = None,
+    vocab: DomainVocab | None = None,
 ) -> QueryFamily:
     profile = profile or build_strategy_profile(intent, strategy, round_num, vocab)
     queries = build_queries(intent, nodes, round_num, strategy, max_queries, profile)
@@ -174,23 +210,47 @@ def _build_dive_queries(
     profile: dict[str, Any],
 ) -> list[str]:
     primaries = [nd.phrase for nd in nodes if nd.node_type == "primary"][:2]
-    regions   = [nd.phrase for nd in nodes if nd.node_type == "region"][:2]
+    # role_angles from profile (pre-computed by build_strategy_profile via vocab);
+    # fall back to role nodes from graph for backwards compatibility.
+    role_angles: list[str] = profile.get("role_angles") or [
+        nd.phrase for nd in nodes if nd.node_type == "role"
+    ]
+    regions = [nd.phrase for nd in nodes if nd.node_type == "region"][:2]
     neg = " ".join(f"-{term}" for term in build_negative_terms(intent))
 
     queries: list[str] = []
+    region_str = regions[0] if regions else ""
+
+    # Budget: allocate angles per primary so the total stays within n
+    per_primary = max(2, n // max(len(primaries), 1))
+    angles_to_use = role_angles[:per_primary]
+
     for primary in primaries:
         base = f'"{primary}"'
-        if regions:
-            for region in regions[:2]:
-                queries.append(f"{base} {region} {neg}".strip())
+        if angles_to_use:
+            for angle in angles_to_use:
+                if region_str:
+                    queries.append(f"{base} {angle} {region_str} {neg}".strip())
+                    # second region variant broadens reach without repeating primary
+                    if len(regions) > 1 and len(queries) < n:
+                        queries.append(f"{base} {angle} {regions[1]} {neg}".strip())
+                else:
+                    queries.append(f"{base} {angle} {neg}".strip())
         else:
-            queries.append(f"{base} {neg}".strip())
+            # No role — plain primary + region dive
+            if region_str:
+                queries.append(f"{base} {region_str} {neg}".strip())
+            else:
+                queries.append(f"{base} {neg}".strip())
+
         if round_num >= 2:
-            queries.append(f"{base} filetype:pdf {neg}".strip())
+            angle_prefix = f" {angles_to_use[0]}" if angles_to_use else ""
+            queries.append(f"{base}{angle_prefix} filetype:pdf {neg}".strip())
             queries.append(f'intitle:"{primary}" {neg}'.strip())
         if round_num >= 3:
             for hint in profile["source_hints"][:2]:
                 queries.append(f"site:{hint} {base} {neg}".strip())
+
     return queries[:n]
 
 

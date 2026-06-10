@@ -1,7 +1,8 @@
 from __future__ import annotations
 
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import TimeoutError as FuturesTimeout
 from typing import Any, Literal, Protocol, cast
-from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeout, as_completed, Future
 
 from retrieval.models import RetrievalAttempt
 from retrieval.registry import build_provider_chain
@@ -43,21 +44,29 @@ class RoutedRetriever:
             return self._search_parallel(query, n)
 
     def _search_sequential(self, query: str, n: int) -> list[dict[str, Any]]:
-        """Sequential fallback: try providers one by one, stop on first success."""
-        results: list[dict[str, Any]] = []
+        """Sequential fallback: try providers one by one.
+
+        Falls through to the next provider when results have no snippet content
+        (e.g. DDG HTML returning title-only hits). Keeps the first non-empty set
+        as a last-resort fallback; E12 score cap handles snippet-less results.
+        """
+        fallback_results: list[dict[str, Any]] = []
 
         for provider in self.providers:
             try:
                 provider_results = provider.search(query, n)
-                self.last_attempts.extend(provider.last_attempts)
-                if provider_results:
-                    results.extend(provider_results)
-                    break
+                self.last_attempts.extend(getattr(provider, "last_attempts", []))
+                if not provider_results:
+                    continue
+                if _has_content(provider_results):
+                    return _dedupe_results(provider_results)[:n]
+                if not fallback_results:
+                    fallback_results = provider_results
             except Exception:
-                self.last_attempts.extend(provider.last_attempts)
+                self.last_attempts.extend(getattr(provider, "last_attempts", []))
                 continue
 
-        return _dedupe_results(results)[:n]
+        return _dedupe_results(fallback_results)[:n]
 
     def _search_adaptive(self, query: str, n: int) -> list[dict[str, Any]]:
         """Adaptive: start parallel but stop early if enough results."""
@@ -118,6 +127,18 @@ class RoutedRetriever:
                     f.cancel()
 
         return _dedupe_results(results)[:n]
+
+
+def _has_content(results: list[dict[str, Any]]) -> bool:
+    """True if ≥40% of results carry a non-empty snippet.
+
+    Used by sequential fallback to detect DDG-style title-only responses
+    and try the next provider before falling back to score-capped results.
+    """
+    if not results:
+        return False
+    with_snippet = sum(1 for r in results if str(r.get("snippet", "")).strip())
+    return with_snippet / len(results) >= 0.4
 
 
 def _build_provider_chain(policy: RetrievalPolicy, strategy: str) -> list[RetrieverProtocol]:

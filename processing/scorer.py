@@ -15,7 +15,9 @@ Domain-specific signal lists and source trust lists are injected via ScorerConfi
 not hardcoded — callers control which domains are noise or trusted for their use case.
 """
 from __future__ import annotations
+
 from dataclasses import dataclass, field
+from datetime import UTC
 from typing import Any
 
 from core.types import Intent, UnifiedResult
@@ -50,6 +52,9 @@ class ScorerConfig:
     w_source: float = 0.10
     w_recency: float = 0.10
 
+    # Per-domain qualify threshold; read by QualificationScorer.domain_threshold()
+    qualify_threshold: float = 0.40
+
 
 DOMAIN_CONFIGS: dict[str, ScorerConfig] = {
     "events": ScorerConfig(
@@ -61,12 +66,26 @@ DOMAIN_CONFIGS: dict[str, ScorerConfig] = {
         }),
     ),
     "bd_leads": ScorerConfig(
-        high_signals=["distributor", "wholesale", "wholesaler", "supplier", "bulk", "b2b"],
-        med_signals=["importer", "exporter", "trading", "dealer", "manufacturer", "reseller", "partner"],
-        negative_signals=["blog", "review", "reddit", "amazon", "retail"],
+        high_signals=[
+            "distributor", "wholesale", "wholesaler", "supplier", "bulk", "b2b",
+            "buying group", "retail alliance", "verbundgruppe", "distribution network",
+        ],
+        med_signals=[
+            "importer", "exporter", "trading", "dealer", "manufacturer", "reseller",
+            "partner", "retailer", "sport",
+        ],
+        negative_signals=["blog", "review", "reddit", "amazon"],
         trusted_sources=frozenset({
             "linkedin.com", "crunchbase.com", "clutch.co",
         }),
+        # B2B distributor snippets rarely surface email — don't penalise missing contact
+        w_content=0.30,
+        w_contact=0.05,
+        w_signal=0.35,
+        w_region=0.15,
+        w_source=0.10,
+        w_recency=0.05,
+        qualify_threshold=0.35,
     ),
     "companies": ScorerConfig(
         high_signals=["founded", "headquarters", "employees", "revenue", "funding",
@@ -113,6 +132,7 @@ DOMAIN_CONFIGS: dict[str, ScorerConfig] = {
         w_region=0.20,
         w_source=0.10,
         w_recency=0.05,
+        qualify_threshold=0.35,
     ),
 }
 
@@ -122,10 +142,30 @@ class QualificationScorer:
     def __init__(self, config: ScorerConfig | None = None):
         self.config = config
 
+    @staticmethod
+    def domain_threshold(domain: str) -> float:
+        """Return the recommended qualify_threshold for a domain.
+
+        Falls back to 0.40 for unknown domains. Callers can pass this as
+        qualify_threshold to SalvaController to get domain-calibrated gating.
+        """
+        cfg = DOMAIN_CONFIGS.get(domain)
+        return cfg.qualify_threshold if cfg is not None else 0.40
+
     def score(self, result: UnifiedResult, intent: Intent, context: dict[str, Any] | None = None) -> float:
         cfg = self.config or DOMAIN_CONFIGS.get(intent.domain, ScorerConfig())
         cfg = self._apply_context(cfg, context)
         text = f"{result.title} {result.description}".lower()
+
+        # No snippet → classifier is blind; cap below qualify_threshold to prevent
+        # title-only noise from passing as qualified results.
+        if not result.description:
+            result.reject_reasons.append("no_snippet")
+            partial = (
+                cfg.w_content * self._content_match(text, intent)
+                + cfg.w_source * self._source_trust(result.source_url, cfg)
+            )
+            return round(min(0.30, partial), 4)
 
         content_score = self._content_match(text, intent)
         contact_score = self._contact_completeness(result)
@@ -134,8 +174,8 @@ class QualificationScorer:
         source_score = self._source_trust(result.source_url, cfg)
         recency_score = self._recency(result)
 
-        # Negative signals hard-penalize
-        if any(neg in text for neg in cfg.negative_signals):
+        # Negative signals hard-penalize (case-insensitive, text is pre-lowercased)
+        if any(neg.lower() in text for neg in cfg.negative_signals):
             return max(0.0, signal_score * 0.3)
 
         composite = (
@@ -179,27 +219,36 @@ class QualificationScorer:
             w_recency=cfg.w_recency,
         )
 
-        if "precision_first" in notes:
-            adjusted.w_content = 0.30
-            adjusted.w_contact = 0.20
-            adjusted.w_signal = 0.22
-            adjusted.w_region = 0.16
-            adjusted.w_source = 0.07
-            adjusted.w_recency = 0.05
-        elif "graph_expansion" in notes:
-            adjusted.w_content = 0.24
-            adjusted.w_contact = 0.18
-            adjusted.w_signal = 0.20
-            adjusted.w_region = 0.16
-            adjusted.w_source = 0.10
-            adjusted.w_recency = 0.12
-        elif "source_discovery" in notes:
-            adjusted.w_content = 0.18
-            adjusted.w_contact = 0.14
-            adjusted.w_signal = 0.16
-            adjusted.w_region = 0.10
-            adjusted.w_source = 0.24
-            adjusted.w_recency = 0.18
+        # Note-based presets apply only when using the default ScorerConfig weights.
+        # Domain-specific configs (bd_leads, taiwan_hardware, …) already encode
+        # calibrated weights and must not be overridden by strategy presets.
+        _is_default_weights = (
+            abs(cfg.w_content - 0.25) < 1e-6
+            and abs(cfg.w_contact - 0.20) < 1e-6
+            and abs(cfg.w_signal - 0.20) < 1e-6
+        )
+        if _is_default_weights:
+            if "precision_first" in notes:
+                adjusted.w_content = 0.30
+                adjusted.w_contact = 0.20
+                adjusted.w_signal = 0.22
+                adjusted.w_region = 0.16
+                adjusted.w_source = 0.07
+                adjusted.w_recency = 0.05
+            elif "graph_expansion" in notes:
+                adjusted.w_content = 0.24
+                adjusted.w_contact = 0.18
+                adjusted.w_signal = 0.20
+                adjusted.w_region = 0.16
+                adjusted.w_source = 0.10
+                adjusted.w_recency = 0.12
+            elif "source_discovery" in notes:
+                adjusted.w_content = 0.18
+                adjusted.w_contact = 0.14
+                adjusted.w_signal = 0.16
+                adjusted.w_region = 0.10
+                adjusted.w_source = 0.24
+                adjusted.w_recency = 0.18
 
         if isinstance(content_weights, dict):
             platform_weight = float(content_weights.get("platform", 0.0) or 0.0)
@@ -256,19 +305,23 @@ class QualificationScorer:
 
     @staticmethod
     def _signal_strength(text: str, cfg: ScorerConfig) -> float:
-        high = sum(2 for kw in cfg.high_signals if kw in text)
-        med = sum(1 for kw in cfg.med_signals if kw in text)
+        # text is pre-lowercased; normalize keywords to match case-insensitively
+        high = sum(2 for kw in cfg.high_signals if kw.lower() in text)
+        med = sum(1 for kw in cfg.med_signals if kw.lower() in text)
         return min(1.0, (high + med) / 6.0)
 
     @staticmethod
     def _region_match(text: str, result: UnifiedResult, intent: Intent) -> float:
         if not intent.region:
             return 0.5
-        region = intent.region.lower()
-        if region in text:
-            return 1.0
-        if result.city and region in result.city.lower():
-            return 1.0
+        # Split compound regions ("Germany Austria Switzerland") and match any part.
+        # Single-token regions work unchanged; multi-token regions no longer return 0.
+        region_tokens = [t.strip().lower() for t in intent.region.replace(",", " ").split() if len(t.strip()) > 1]
+        for token in region_tokens:
+            if token in text:
+                return 1.0
+            if result.city and token in result.city.lower():
+                return 1.0
         return 0.0
 
     @staticmethod
@@ -287,12 +340,11 @@ class QualificationScorer:
     def _recency(result: UnifiedResult) -> float:
         if not result.starts_at:
             return 0.3
-        from datetime import datetime, timezone
-        now = datetime.now(timezone.utc)
+        from datetime import datetime
+        now = datetime.now(UTC)
         starts = result.starts_at
         if starts.tzinfo is None:
-            from datetime import timezone
-            starts = starts.replace(tzinfo=timezone.utc)
+            starts = starts.replace(tzinfo=UTC)
         days_ahead = (starts - now).days
         if days_ahead < 0:
             return 0.0      # past event

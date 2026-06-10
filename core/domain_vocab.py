@@ -32,7 +32,7 @@ class DomainVocab:
     source_hints:    list[str]            = field(default_factory=list)
     noise_terms:     list[str]            = field(default_factory=list)
 
-    def merge(self, hints: "DomainVocab") -> "DomainVocab":
+    def merge(self, hints: DomainVocab) -> DomainVocab:
         """
         Return a new DomainVocab with caller-supplied hints overlaid on top.
         Caller additions extend lists; they do not replace them.
@@ -90,13 +90,18 @@ _REGISTRY: dict[str, DomainVocab] = {
 
     "bd_leads": DomainVocab(
         synonym_groups={
-            "distributor":   ["wholesaler", "importer", "dealer", "reseller", "supplier"],
-            "channel partner": ["official distributor", "partner program", "dealer network"],
+            "distributor":   ["wholesaler", "importer", "dealer", "reseller", "supplier",
+                              "buying group", "trade alliance", "wholesale partner"],
+            "channel partner": ["official distributor", "partner program", "dealer network",
+                                "retail alliance", "verbundgruppe"],
             "manufacturer":  ["OEM", "ODM", "factory", "producer"],
         },
         region_variants={
             "Europe":  ["EU", "European"],
             "Germany": ["DE", "German", "Deutschland"],
+            "Austria": ["AT", "Österreich", "Oesterreich"],
+            "Switzerland": ["CH", "Swiss", "Schweiz"],
+            "DACH": ["Germany", "Austria", "Switzerland", "DE", "AT", "CH"],
             "Japan":   ["JP", "Japanese", "日本"],
             "US":      ["USA", "United States", "North America"],
             "Taiwan":  ["TW", "台灣"],
@@ -107,12 +112,14 @@ _REGISTRY: dict[str, DomainVocab] = {
             "wholesale inquiry", "B2B", "bulk order",
             "trade fair", "exhibitor", "partner program",
             "exclusive distribution", "authorized reseller",
+            "buying group", "verbundgruppe", "retail alliance",
+            "importer", "wholesale partner", "distribution network",
         ],
         source_hints=[
             "linkedin.com", "crunchbase.com", "clutch.co", "g2.com",
             "kompass.com", "globalsources.com",
         ],
-        noise_terms=["blog", "review", "reddit", "amazon", "retail", "consumer"],
+        noise_terms=["blog", "review", "reddit", "amazon", "consumer"],
     ),
 
     "companies": DomainVocab(
@@ -187,6 +194,30 @@ _REGISTRY: dict[str, DomainVocab] = {
             "crunchbase.com", "techcrunch.com", "venturebeat.com",
         ],
         noise_terms=["personal", "blog", "reddit", "forum", "review"],
+    ),
+
+    "taiwan_hardware": DomainVocab(
+        synonym_groups={
+            "exhibitor":   ["manufacturer", "OEM", "ODM", "vendor", "participant", "showcasing"],
+            "semiconductor": ["IC design", "fab", "foundry", "chip", "chip maker"],
+            "hardware":    ["electronics", "components", "device maker", "embedded"],
+        },
+        region_variants={
+            "Taiwan": ["TW", "台灣", "Taipei", "台北", "ROC"],
+            "Computex": ["Computex 2026", "Computex Taipei", "COMPUTEX"],
+        },
+        signal_terms=[
+            "Computex", "exhibitor", "manufacturer", "OEM", "ODM",
+            "台灣", "參展", "展商", "廠商", "伺服器", "主機板",
+            "AI server", "GPU", "semiconductor", "IC design",
+            "AIoT", "embedded", "industrial", "server solution",
+        ],
+        source_hints=[
+            "computextaipei.com.tw", "computex.biz",
+            "digitimes.com", "ithome.com.tw",
+            "taitra.org.tw", "ctee.com.tw",
+        ],
+        noise_terms=["review", "reddit", "blog", "consumer", "forum"],
     ),
 
     # General fallback — used when objective has no domain mapping.

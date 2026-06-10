@@ -18,11 +18,11 @@ from __future__ import annotations
 import json
 import sys
 from datetime import datetime
-from typing import Optional
 
 try:
-    import typer
     from typing import Annotated
+
+    import typer
 except ImportError:
     print(
         "ERROR: typer not installed.\n"
@@ -40,9 +40,11 @@ app = typer.Typer(
 vocab_app = typer.Typer(help="Domain vocabulary commands")
 job_app   = typer.Typer(help="Job queue commands")
 run_app   = typer.Typer(help="Run result commands")
+graph_app = typer.Typer(help="Graph export commands")
 app.add_typer(vocab_app, name="vocab")
 app.add_typer(job_app,   name="job")
 app.add_typer(run_app,   name="run")
+app.add_typer(graph_app, name="graph")
 
 
 # ---------------------------------------------------------------------------
@@ -61,10 +63,21 @@ def find(
     extra_keywords:     str = typer.Option("",                 help="Comma-separated extra keywords"),
     negative_keywords:  str = typer.Option("",                 help="Comma-separated exclusions"),
     domain_hints:       str = typer.Option("",                 help="JSON domain hints"),
+    campaign_id:        str = typer.Option("",                 help="Research campaign scope"),
+    continuation_id:    str = typer.Option("",                 help="Research continuation ID"),
+    memory_read_scope:  str = typer.Option("none",             help="Memory read scope"),
+    memory_write_mode:  str = typer.Option("quarantine",       help="Memory write mode"),
+    persistence:        str = typer.Option("audit",            help="Persistence: audit or none"),
     as_json: bool           = typer.Option(False, "--json",    help="Output raw JSON"),
 ) -> None:
     """Run a synchronous discovery search."""
-    from salva_core.schemas import DiscoveryIntent, DiscoveryRequest, DomainHints
+    from salva_core.schemas import (
+        DiscoveryIntent,
+        DiscoveryRequest,
+        DomainHints,
+        ExecutionContext,
+        MemoryPolicy,
+    )
     from salva_core.service import run_discovery
 
     hints: DomainHints | None = None
@@ -73,7 +86,7 @@ def find(
         if value.startswith("@"):
             file_path = value[1:].strip()
             try:
-                with open(file_path, "r", encoding="utf-8") as f:
+                with open(file_path, encoding="utf-8") as f:
                     value = f.read()
             except Exception as e:
                 typer.echo(f"Error reading --domain-hints file: {e}", err=True)
@@ -88,6 +101,15 @@ def find(
         objective=objective,
         output_profile=output_profile,
         max_results=max(1, min(200, max_results)),
+        execution=ExecutionContext(
+            campaign_id=campaign_id or None,
+            continuation_id=continuation_id or None,
+            persistence=persistence,
+            memory=MemoryPolicy(
+                read_scope=memory_read_scope,
+                write_mode=memory_write_mode,
+            ),
+        ),
         intent=DiscoveryIntent(
             market=market,
             industry=industry,
@@ -110,6 +132,7 @@ def find(
                 "qualified_count": meta.get("qualified_count", 0),
                 "domain": meta.get("domain"),
                 "memory_seeds_used": meta.get("memory_seeds_used", 0),
+                "execution": meta.get("execution", {}),
                 "entities": [e.model_dump(mode="json") for e in entities],
             },
             ensure_ascii=False,
@@ -131,10 +154,32 @@ def discover(
     extra_keywords:     str = typer.Option("",                 help="Comma-separated extra keywords"),
     negative_keywords:  str = typer.Option("",                 help="Comma-separated exclusions"),
     domain_hints:       str = typer.Option("",                 help="JSON domain hints or @file path"),
+    campaign_id:        str = typer.Option("",                 help="Research campaign scope"),
+    continuation_id:    str = typer.Option("",                 help="Research continuation ID"),
+    memory_read_scope:  str = typer.Option("none",             help="Memory read scope"),
+    memory_write_mode:  str = typer.Option("quarantine",       help="Memory write mode"),
+    persistence:        str = typer.Option("audit",            help="Persistence: audit or none"),
     as_json: bool           = typer.Option(False, "--json",    help="Output raw JSON"),
 ) -> None:
     """Run a synchronous discovery search (alias for find)."""
-    find(market, industry, objective, product, role, max_results, output_profile, extra_keywords, negative_keywords, domain_hints, as_json)
+    find(
+        market,
+        industry,
+        objective,
+        product,
+        role,
+        max_results,
+        output_profile,
+        extra_keywords,
+        negative_keywords,
+        domain_hints,
+        campaign_id,
+        continuation_id,
+        memory_read_scope,
+        memory_write_mode,
+        persistence,
+        as_json,
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -165,7 +210,7 @@ def job_status(
 
 @job_app.command("list")
 def job_list(
-    status:  Optional[str] = typer.Option(None, help="Filter by status"),
+    status:  str | None = typer.Option(None, help="Filter by status"),
     limit:   int           = typer.Option(20),
     as_json: bool          = typer.Option(False, "--json"),
 ) -> None:
@@ -219,6 +264,88 @@ def job_cancel(
 # ---------------------------------------------------------------------------
 # salva run show
 # ---------------------------------------------------------------------------
+
+@run_app.command("diff")
+def run_diff(
+    run_id_a: str,
+    run_id_b: str,
+    as_json:  bool = typer.Option(False, "--json"),
+) -> None:
+    """Compare two discovery runs — show added, removed, and updated entities."""
+    from salva_core.persistence import get_run
+
+    run_a = get_run(run_id_a)
+    run_b = get_run(run_id_b)
+    if run_a is None:
+        typer.echo(f"Run not found: {run_id_a}", err=True)
+        raise typer.Exit(1)
+    if run_b is None:
+        typer.echo(f"Run not found: {run_id_b}", err=True)
+        raise typer.Exit(1)
+
+    diff = _compute_run_diff(run_a, run_b)
+
+    if as_json:
+        typer.echo(json.dumps(diff, ensure_ascii=False, default=str))
+    else:
+        typer.echo(f"Diff: {run_id_a} → {run_id_b}")
+        typer.echo(f"  added   : {len(diff['added'])}")
+        typer.echo(f"  removed : {len(diff['removed'])}")
+        typer.echo(f"  updated : {len(diff['updated'])}")
+        typer.echo(f"  unchanged: {len(diff['unchanged'])}")
+        if diff["added"]:
+            typer.echo("\nAdded:")
+            for e in diff["added"][:10]:
+                typer.echo(f"  + [{e.get('score', 0):.2f}] {e.get('title')}")
+        if diff["removed"]:
+            typer.echo("\nRemoved:")
+            for e in diff["removed"][:10]:
+                typer.echo(f"  - [{e.get('score', 0):.2f}] {e.get('title')}")
+        if diff["updated"]:
+            typer.echo("\nUpdated (score changed):")
+            for u in diff["updated"][:10]:
+                typer.echo(f"  ~ {u['title']}: {u['score_a']:.2f} → {u['score_b']:.2f}")
+
+
+def _entity_key(entity: dict) -> str:
+    title = (entity.get("title") or "").lower().strip()
+    domain = (entity.get("domain") or "").lower().strip()
+    return f"{title}|{domain}"
+
+
+def _compute_run_diff(run_a: dict, run_b: dict) -> dict:
+    a_entities = {_entity_key(e): e for e in run_a.get("entities", [])}
+    b_entities = {_entity_key(e): e for e in run_b.get("entities", [])}
+
+    added   = [b_entities[k] for k in b_entities if k not in a_entities]
+    removed = [a_entities[k] for k in a_entities if k not in b_entities]
+    updated = []
+    unchanged = []
+
+    for k in a_entities:
+        if k not in b_entities:
+            continue
+        a_score = a_entities[k].get("score") or a_entities[k].get("confidence") or 0.0
+        b_score = b_entities[k].get("score") or b_entities[k].get("confidence") or 0.0
+        if abs(a_score - b_score) > 0.01:
+            updated.append({
+                "title":   b_entities[k].get("title"),
+                "score_a": a_score,
+                "score_b": b_score,
+                "entity":  b_entities[k],
+            })
+        else:
+            unchanged.append(b_entities[k])
+
+    return {
+        "run_id_a":  run_a.get("run_id") or "",
+        "run_id_b":  run_b.get("run_id") or "",
+        "added":     added,
+        "removed":   removed,
+        "updated":   updated,
+        "unchanged": unchanged,
+    }
+
 
 @run_app.command("show")
 def run_show(
@@ -303,8 +430,8 @@ def pilot(
     as_json:          bool = typer.Option(False, "--json"),
 ) -> None:
     """Get next-step search recommendations based on a run."""
-    from salva_core.persistence import get_run
     from salva_core.navigation import build_pilot_advice
+    from salva_core.persistence import get_run
     from salva_core.schemas import DiscoveryRequest, PilotRequest
 
     run = get_run(run_id)
@@ -342,7 +469,7 @@ def pilot(
 @vocab_app.command("list")
 def vocab_list(as_json: bool = typer.Option(False, "--json")) -> None:
     """List all registered domain vocabularies."""
-    from core.domain_vocab import list_domains, get_vocab
+    from core.domain_vocab import get_vocab, list_domains
     domains = list_domains()
     if as_json:
         typer.echo(json.dumps({
@@ -435,6 +562,83 @@ def providers(as_json: bool = typer.Option(False, "--json")) -> None:
 
 
 # ---------------------------------------------------------------------------
+# salva graph export
+# ---------------------------------------------------------------------------
+
+@graph_app.command("export")
+def graph_export(
+    run_id:  str,
+    fmt:     str  = typer.Option("hif", "--format", "-f", help="Output format: hif or dot"),
+    out:     str  = typer.Option("", "--out", "-o", help="Output file path (default: stdout)"),
+) -> None:
+    """Export the entity/relation graph of a run as HIF JSON or DOT."""
+    from salva_core.persistence import get_run
+
+    run = get_run(run_id)
+    if run is None:
+        typer.echo(f"Run not found: {run_id}", err=True)
+        raise typer.Exit(1)
+
+    entities = run.get("entities", [])
+    relations = run.get("relations", [])
+
+    if fmt == "dot":
+        output = _build_dot(run_id, entities, relations)
+    else:
+        output = json.dumps(_build_hif(run_id, entities, relations), ensure_ascii=False, indent=2)
+
+    if out:
+        with open(out, "w", encoding="utf-8") as f:
+            f.write(output)
+        typer.echo(f"Written to {out}", err=True)
+    else:
+        typer.echo(output)
+
+
+def _build_hif(run_id: str, entities: list, relations: list) -> dict:
+    nodes = [
+        {
+            "id": e.get("entity_id") or e.get("title", "").replace(" ", "_"),
+            "attrs": {
+                "title":       e.get("title"),
+                "entity_type": e.get("entity_type"),
+                "domain":      e.get("domain"),
+                "score":       e.get("score") or e.get("confidence"),
+                "source_url":  (e.get("source_urls") or [None])[0],
+            },
+        }
+        for e in entities
+    ]
+    edges = [
+        {
+            "source": r.get("subject_id") or r.get("source_entity_id"),
+            "target": r.get("object_id") or r.get("target_entity_id"),
+            "type":   r.get("relation_type") or r.get("type"),
+            "attrs":  {"weight": r.get("weight", 1.0)},
+        }
+        for r in relations
+    ]
+    return {"run_id": run_id, "format": "hif", "nodes": nodes, "edges": edges}
+
+
+def _build_dot(run_id: str, entities: list, relations: list) -> str:
+    lines = [f'digraph "{run_id}" {{', '  rankdir=LR;']
+    for e in entities:
+        nid = (e.get("entity_id") or e.get("title", "node")).replace('"', '\\"')
+        label = (e.get("title") or nid).replace('"', '\\"')
+        score = e.get("score") or e.get("confidence") or 0.0
+        lines.append(f'  "{nid}" [label="{label}\\n{score:.2f}"];')
+    for r in relations:
+        src = (r.get("subject_id") or r.get("source_entity_id") or "").replace('"', '\\"')
+        tgt = (r.get("object_id") or r.get("target_entity_id") or "").replace('"', '\\"')
+        rel = r.get("relation_type") or r.get("type") or "related"
+        if src and tgt:
+            lines.append(f'  "{src}" -> "{tgt}" [label="{rel}"];')
+    lines.append("}")
+    return "\n".join(lines)
+
+
+# ---------------------------------------------------------------------------
 # salva topology
 # ---------------------------------------------------------------------------
 
@@ -480,6 +684,7 @@ def topology(
 # ---------------------------------------------------------------------------
 
 from contextlib import contextmanager
+
 
 @contextmanager
 def _spinner(message: str, suppress: bool):
