@@ -18,6 +18,7 @@ from salva_core.legacy import legacy_result_relations, legacy_result_to_entity
 from salva_core.mode_resolver import resolve_experience_plan
 from salva_core.navigation import build_mate_report, build_pilot_advice
 from salva_core.persistence import get_db_path_for_project, persist_discovery_run, update_run_meta
+from salva_core.persistence.hold import list_routing_memory, record_source_attempt as _record_source_attempt
 from salva_core.routes import PROFILE_ROUTE_HINTS
 from salva_core.schemas import (
     CanonicalEntity,
@@ -110,13 +111,22 @@ def run_discovery(payload: DiscoveryRequest) -> tuple[list[CanonicalEntity], lis
     meta["run_id"] = run_id
     meta["feedback"] = feedback
     update_run_meta(run_id, {"feedback": feedback}, path=db_path)
+    for attempt in source_attempts:
+        if attempt.base_url:
+            _record_source_attempt(attempt.base_url, attempt.succeeded, path=db_path)
     return entities, relations, telemetry, meta
 
 
 def execute_discovery(
     payload: DiscoveryRequest,
 ) -> tuple[list[CanonicalEntity], list[CanonicalRelation], list[TelemetryRecord], dict[str, Any], list[SourceAttemptRecord]]:
-    topology_plan = plan_route(payload, probe_budget=4)
+    routing_boosts: dict[str, float] | None = None
+    if payload.execution.persistence != "none":
+        _db = get_db_path_for_project(payload.execution.project_id)
+        _mem = list_routing_memory(top_k=50, path=_db)
+        if _mem:
+            routing_boosts = {r["source_url"]: r["authority_boost"] for r in _mem if r["authority_boost"] != 0.0}
+    topology_plan = plan_route(payload, probe_budget=4, routing_boosts=routing_boosts or None)
     experience_plan = resolve_experience_plan(payload, topology_plan=topology_plan)
     intent = discovery_request_to_legacy_intent(payload)
     vocab = _resolve_vocab(payload, intent.domain)
