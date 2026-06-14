@@ -13,6 +13,9 @@ from salva_core.schemas import (
     TopologyRoutePlan,
 )
 
+# Live probe is imported lazily inside _apply_live_probe to avoid pulling in
+# retrieval/ at module import time (keeps unit tests fast).
+
 
 def probe_topology(
     request: DiscoveryRequest,
@@ -24,6 +27,14 @@ def probe_topology(
         request, caller_preset=caller_preset, routing_boosts=routing_boosts
     )
     probe_queries = _build_probe_queries(request, topology=topology, caller_preset=caller_preset, probe_budget=probe_budget)
+
+    # L0-B: Adjust topology/confidence from live environment probe.
+    # Skipped for caller_preset requests (preset implies caller already knows their topology).
+    if probe_queries and not caller_preset:
+        topology, confidence, notes = _apply_live_probe(
+            topology, confidence, notes, probe_queries[0]
+        )
+
     error_surface = _build_error_surface(request, topology=topology, probe_queries=probe_queries)
     return TopologyProbeResult(
         topology=topology,
@@ -310,3 +321,49 @@ def _collect_source_hints(intent: Any) -> list[str]:
 
 def _confidence(signal_count: int) -> float:
     return min(0.95, round(0.45 + 0.08 * signal_count, 2))
+
+
+def _apply_live_probe(
+    topology: TopologyClass,
+    confidence: float,
+    notes: list[str],
+    probe_query: str,
+) -> tuple[TopologyClass, float, list[str]]:
+    """Adjust topology/confidence using a live SearXNG probe (cached per TTL).
+
+    Degrades gracefully: any import error or disabled SearXNG returns inputs unchanged.
+    On success, writes the observation back to routing_memory.
+    """
+    try:
+        from salva_core.live_probe import get_or_run_probe
+        signal = get_or_run_probe(probe_query, timeout=3.0)
+    except Exception:
+        return topology, confidence, notes
+
+    if signal is None:
+        return topology, confidence, notes
+
+    if signal.has_error:
+        return topology, confidence, [*notes, "live_probe_error"]
+
+    # Write probe result back to routing_memory so the next run sees it.
+    # Import the module (not the function) so monkeypatching in tests works correctly.
+    try:
+        import salva_core.persistence.hold as _hold
+        _hold.record_source_attempt(signal.searxng_url, signal.result_count > 0)
+    except Exception:
+        pass
+
+    if signal.result_count == 0:
+        # Provider returned nothing — hard degrade; static topology is unreliable.
+        return (
+            cast(TopologyClass, "unstructured"),
+            0.35,
+            [*notes, "live_probe_empty"],
+        )
+
+    if signal.result_count < 3:
+        # Weak coverage — lower confidence but keep topology.
+        return topology, round(confidence * 0.75, 2), [*notes, "live_probe_degraded"]
+
+    return topology, confidence, [*notes, f"live_probe_ok(n={signal.result_count})"]
