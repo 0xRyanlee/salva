@@ -1,0 +1,30 @@
+{
+  "experiment_id": "execution-isolation-adversarial",
+  "checks": {
+    "cross_campaign_blocked": true,
+    "promoted_memory_available": true,
+    "quarantine_blocked": true,
+    "campaign_all_explicitly_reads_quarantine": true,
+    "memory_off_reads_nothing": true,
+    "source_hint_cannot_self_declare_trust": true
+  },
+  "passed": true,
+  "observed": {
+    "campaign_promoted_nodes": [
+      "CLEAN_VENDOR_TERM"
+    ],
+    "campaign_all_nodes": [
+      "CLEAN_VENDOR_TERM",
+      "UNREVIEWED_TERM"
+    ],
+    "memory_off_nodes": [],
+    "trusted_sources": [
+      "bloomberg.com",
+      "builtin.com",
+      "crunchbase.com",
+      "linkedin.com",
+      "pitchbook.com",
+      "techcrunch.com"
+    ]
+  }
+}

@@ -54,9 +54,14 @@ RetrievalMode = Literal[
 RetrievalProviderKind = Literal[
     "searxng",
     "whoogle",
+    "ddgs",
     "ddg_html",
+    "marginalia",
     "site_html",
     "obscura_browser",
+    "sitemap",
+    "rss",
+    "searxng_pool",
 ]
 
 ProviderFamily = Literal[

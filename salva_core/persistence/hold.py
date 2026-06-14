@@ -179,6 +179,18 @@ def resolve_entity_normalized(
     for canonical_id, stored_alias in rows:
         if normalize_alias(stored_alias) == normalized:
             return canonical_id
+
+    # External fallback: GLEIF legal entity database (2.5M+ entities, free)
+    import os as _os
+    if _os.getenv("GLEIF_IN_RESOLUTION", "true").lower() not in ("0", "false", "no"):
+        try:
+            from salva_core.resolvers.gleif import gleif_resolve
+            gleif_name = gleif_resolve(alias)
+            if gleif_name:
+                return gleif_name
+        except Exception:
+            pass
+
     return None
 
 

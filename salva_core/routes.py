@@ -1,11 +1,10 @@
 from __future__ import annotations
 
-from typing import cast
 from pathlib import Path
+from typing import cast
 
 from salva_core.presets import DEFAULT_PRESET_DIR, load_preset_profiles
 from salva_core.schemas import RouteCatalogEntry, RouteCatalogResponse
-
 
 PROFILE_ROUTE_HINTS: dict[str, dict[str, object]] = {
     # provider_kinds: ordered preference list; runtime filters by availability.

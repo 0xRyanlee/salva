@@ -1,16 +1,15 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-from datetime import UTC, datetime
-from time import perf_counter
-from typing import Literal
 import json
 import os
 import urllib.error
 import urllib.request
+from dataclasses import dataclass
+from datetime import UTC, datetime
+from time import perf_counter
+from typing import Literal
 
 from pydantic import BaseModel, Field
-
 
 LLMTask = Literal["expansion", "extraction", "summarization", "output_shaping"]
 

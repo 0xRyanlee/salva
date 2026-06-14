@@ -10,7 +10,6 @@ from pathlib import Path
 from typing import Any
 from urllib.request import Request, urlopen
 
-
 _PRICING_PATH_ENV = os.environ.get("SALVA_PRICING_CATALOG_PATH")
 DEFAULT_PRICING_PATH = Path(_PRICING_PATH_ENV).expanduser() if _PRICING_PATH_ENV else None
 _PRICING_URL_ENV = os.environ.get("SALVA_PRICING_CATALOG_URL")

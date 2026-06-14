@@ -4,8 +4,8 @@ Python version detection script for Salva Runtime.
 
 Checks if the current Python version meets the minimum requirement (3.11+).
 """
-import sys
 import subprocess
+import sys
 
 
 def get_python_version() -> tuple[int, int, int]:
@@ -97,17 +97,17 @@ def main():
     # Virtual environment check
     venv_info = check_venv()
     if venv_info["in_venv"]:
-        print(f"Virtual Environment: ✅ Active")
+        print("Virtual Environment: ✅ Active")
         print(f"  Path: {venv_info['venv_path']}")
     else:
-        print(f"Virtual Environment: ⚠️  Not active")
+        print("Virtual Environment: ⚠️  Not active")
     
     # Version check
     if check_minimum_version():
-        print(f"\n✅ Python version OK (>= 3.11)")
+        print("\n✅ Python version OK (>= 3.11)")
     else:
-        print(f"\n❌ Python version too old (requires >= 3.11)")
-        print(f"\nAvailable Python installations:")
+        print("\n❌ Python version too old (requires >= 3.11)")
+        print("\nAvailable Python installations:")
         
         available = check_available_pythons()
         if available:

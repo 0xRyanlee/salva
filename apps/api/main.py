@@ -6,8 +6,17 @@ from typing import Annotated
 from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.responses import StreamingResponse
 
+from apps.api.auth import require_auth
+from apps.api.errors import register_exception_handlers
 from bay.manifest import BayManifest, build_bay_manifest
 from enrichment.plugins import list_plugin_descriptors
+from hold.backends import HoldBackendCatalogResponse, build_hold_backend_catalog
+from hold.projection import (
+    HoldProjectionResponse,
+    HoldViewsResponse,
+    build_hold_views,
+    project_hold_view,
+)
 from hold.schema import (
     HoldEntitySchemasResponse,
     HoldRelationSchemasResponse,
@@ -16,18 +25,16 @@ from hold.schema import (
     build_hold_relation_schemas,
     build_hold_schema,
 )
-from hold.projection import HoldProjectionResponse, HoldViewsResponse, build_hold_views, project_hold_view
-from hold.backends import HoldBackendCatalogResponse, build_hold_backend_catalog
-from hold.walk import HoldGraphWalkResponse, build_hold_graph_walk
 from hold.storage import HoldStorageCatalog, build_hold_storage_catalog
+from hold.walk import HoldGraphWalkResponse, build_hold_graph_walk
 from retrieval.registry import list_provider_descriptors
 from salva_core import service
 from salva_core.benchmark import build_benchmark_report, write_benchmark_report
 from salva_core.evaluation import build_audit_report, compare_audits
 from salva_core.exporting import build_run_snapshot, write_run_snapshot
 from salva_core.llm import list_llm_provider_descriptors, probe_omlx_health
-from salva_core.providers import build_provider_catalog
-from salva_core.pricing import build_pricing_catalog_response
+from salva_core.mode_resolver import explain_experience_plan
+from salva_core.navigation import build_mate_report, build_pilot_advice
 from salva_core.persistence import (
     create_job,
     get_job,
@@ -40,65 +47,67 @@ from salva_core.persistence import (
     list_plugin_reports,
     list_query_family_memory,
     list_relations,
-    search_query_family_memory,
     list_runs,
     list_source_attempts,
     list_stream_events,
     list_telemetry,
     list_usage_telemetry,
+    promote_query_family_memory,
+    search_query_family_memory,
 )
-from salva_core.navigation import build_mate_report, build_pilot_advice
-from salva_core.mode_resolver import explain_experience_plan
+from salva_core.planner import build_planner_response
 from salva_core.presets import build_preset_catalog, resolve_preset_profile
+from salva_core.pricing import build_pricing_catalog_response
+from salva_core.providers import build_provider_catalog
 from salva_core.quotas import evaluate_tenant_quota, load_quota_policy
 from salva_core.routes import build_route_catalog, resolve_route_entry
 from salva_core.schemas import (
-    DiscoveryRequest,
-    DiscoveryResponse,
-    ExperiencePlanExplanation,
-    ExperiencePlanRequest,
-    LLMHealthResponse,
-    LLMProvidersResponse,
-    JobCreateRequest,
-    JobRecord,
-    JobsResponse,
-    RunSnapshot,
-    PluginsResponse,
-    PluginReportsResponse,
-    AuditReport,
     AuditComparison,
+    AuditReport,
     BenchmarkExportResult,
     BenchmarkReport,
     BenchmarkRequest,
-    MateRequest,
+    DiscoveryRequest,
+    DiscoveryResponse,
+    EvidenceChainsResponse,
+    EvidenceResponse,
+    ExperiencePlanExplanation,
+    ExperiencePlanRequest,
+    HoldMigrationsResponse,
+    HyperedgesResponse,
+    JobCreateRequest,
+    JobRecord,
+    JobsResponse,
+    LLMHealthResponse,
+    LLMProvidersResponse,
     MateReport,
+    MateRequest,
+    OutputTransformCatalog,
     PilotAdvice,
     PilotRequest,
     PlannerRequest,
     PlannerResponse,
-    PricingCatalogResponse,
-    ProvidersResponse,
-    SnapshotExportRequest,
-    SnapshotExportResult,
-    RunsResponse,
-    EvidenceResponse,
-    EvidenceChainsResponse,
-    HyperedgesResponse,
-    HoldMigrationsResponse,
-    RelationsResponse,
-    QueryFamilyMemoryResponse,
-    OutputTransformCatalog,
+    PluginReportsResponse,
+    PluginsResponse,
     PresetCatalogResponse,
     PresetProfile,
-    TopologyProbeRequest,
-    TopologyProbeResponse,
+    PricingCatalogResponse,
+    ProviderCatalogResponse,
+    ProvidersResponse,
+    QueryFamilyMemoryResponse,
+    RelationsResponse,
     RouteCatalogEntry,
     RouteCatalogResponse,
-    ProviderCatalogResponse,
+    RunSnapshot,
+    RunsResponse,
+    SnapshotExportRequest,
+    SnapshotExportResult,
     SourceAttemptsResponse,
     StreamEventsResponse,
     TelemetryResponse,
     TenantQuotaResponse,
+    TopologyProbeRequest,
+    TopologyProbeResponse,
     UsageTelemetryResponse,
 )
 from salva_core.semantic import (
@@ -109,14 +118,9 @@ from salva_core.semantic import (
     build_semantic_backend_benchmark,
     build_semantic_vector_catalog,
 )
-from salva_core.transforms import build_output_transform_catalog, transform_entities
-from salva_core.planner import build_planner_response
 from salva_core.topology import build_topology_probe_response
+from salva_core.transforms import build_output_transform_catalog, transform_entities
 from salva_core.worker import run_job
-
-
-from apps.api.auth import require_auth
-from apps.api.errors import register_exception_handlers
 
 app = FastAPI(
     title="Salva Runtime",
@@ -400,8 +404,15 @@ async def job_stream(job_id: str) -> StreamingResponse:
 async def runs(
     limit: Annotated[int, Query(ge=1, le=200)] = 20,
     offset: Annotated[int, Query(ge=0)] = 0,
+    campaign_id: Annotated[str | None, Query()] = None,
+    continuation_id: Annotated[str | None, Query()] = None,
 ) -> RunsResponse:
-    items, total = list_runs(limit=limit, offset=offset)
+    items, total = list_runs(
+        limit=limit,
+        offset=offset,
+        campaign_id=campaign_id,
+        continuation_id=continuation_id,
+    )
     return RunsResponse(items=items, total=total)
 
 
@@ -512,17 +523,44 @@ async def query_families(
     run_id: Annotated[str | None, Query()] = None,
     objective: Annotated[str | None, Query()] = None,
     strategy: Annotated[str | None, Query()] = None,
+    campaign_id: Annotated[str | None, Query()] = None,
+    continuation_id: Annotated[str | None, Query()] = None,
+    memory_status: Annotated[str | None, Query()] = None,
     limit: Annotated[int, Query(ge=1, le=500)] = 200,
     offset: Annotated[int, Query(ge=0)] = 0,
 ) -> QueryFamilyMemoryResponse:
+    filters = {
+        "run_id": run_id,
+        "objective": objective,
+        "strategy": strategy,
+        "limit": limit,
+        "offset": offset,
+    }
+    filters.update({
+        key: value
+        for key, value in {
+            "campaign_id": campaign_id,
+            "continuation_id": continuation_id,
+            "memory_status": memory_status,
+        }.items()
+        if value is not None
+    })
     items, total = list_query_family_memory(
-        run_id=run_id,
-        objective=objective,
-        strategy=strategy,
-        limit=limit,
-        offset=offset,
+        **filters,
     )
     return QueryFamilyMemoryResponse(items=items, total=total)
+
+
+@app.post("/v1/query-families/{memory_id}/promote")
+async def promote_query_family(
+    memory_id: str,
+    campaign_id: Annotated[str, Query(min_length=1)],
+) -> dict:
+    try:
+        item = promote_query_family_memory(memory_id, campaign_id=campaign_id)
+    except KeyError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+    return item.model_dump(mode="json")
 
 
 @app.get("/v1/semantic/query-families", response_model=SemanticQueryFamilySearchResponse)
@@ -530,15 +568,28 @@ async def semantic_query_families(
     query: Annotated[str, Query(min_length=1)],
     objective: Annotated[str | None, Query()] = None,
     strategy: Annotated[str | None, Query()] = None,
+    campaign_id: Annotated[str | None, Query()] = None,
+    memory_status: Annotated[str | None, Query()] = None,
     limit: Annotated[int, Query(ge=1, le=50)] = 5,
     offset: Annotated[int, Query(ge=0)] = 0,
 ) -> SemanticQueryFamilySearchResponse:
+    filters = {
+        "query": query,
+        "objective": objective,
+        "strategy": strategy,
+        "limit": limit,
+        "offset": offset,
+    }
+    filters.update({
+        key: value
+        for key, value in {
+            "campaign_id": campaign_id,
+            "memory_status": memory_status,
+        }.items()
+        if value is not None
+    })
     matches, total = search_query_family_memory(
-        query=query,
-        objective=objective,
-        strategy=strategy,
-        limit=limit,
-        offset=offset,
+        **filters,
     )
     items = []
     for memory, score, vector_id in matches:

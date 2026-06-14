@@ -2,9 +2,9 @@
 from __future__ import annotations
 
 import json
-from datetime import datetime
 
 from salva_core.schemas import PluginReportRecord, SourceAttemptRecord, TelemetryRecord
+
 from .db import DEFAULT_DB_PATH, get_conn
 
 

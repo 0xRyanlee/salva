@@ -5,9 +5,9 @@ import math
 import os
 import re
 import threading
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from hashlib import sha256
-from typing import Protocol
+from typing import Any, Protocol
 
 _TOKEN_RE = re.compile(r"[a-z0-9]+")
 
@@ -121,8 +121,55 @@ class HybridHashVectorBackend:
         return sum(l * r for l, r in zip(left, right, strict=True))
 
 
+@dataclass(slots=True)
+class JinaOmlxVectorBackend:
+    """Multilingual embedding via Jina v5 served by local omlx."""
+
+    base_url: str = field(default_factory=lambda: os.environ.get("OMLX_BASE_URL", "http://localhost:8140"))
+    model: str = "jina-embeddings-v5-text-small-retrieval-mlx"
+    dimensions: int = 1024
+    name: str = "jina_omlx"
+    kind: str = "jina_omlx"
+    _timeout: float = field(default=10.0, repr=False)
+    _fallback: HybridHashVectorBackend = field(init=False, repr=False)
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "_fallback", HybridHashVectorBackend(dimensions=96))
+
+    def _call(self, texts: list[str]) -> list[list[float]] | None:
+        try:
+            import httpx
+            url = f"{self.base_url.rstrip('/')}/v1/embeddings"
+            r = httpx.post(
+                url,
+                json={"model": self.model, "input": texts},
+                timeout=self._timeout,
+            )
+            r.raise_for_status()
+            data: list[dict[str, Any]] = r.json()["data"]
+            data.sort(key=lambda x: x["index"])
+            return [item["embedding"] for item in data]
+        except Exception:
+            return None
+
+    def embed(self, text: str) -> list[float]:
+        result = self._call([text])
+        if result:
+            return result[0]
+        return self._fallback.embed(text)
+
+    def score(self, left: list[float], right: list[float]) -> float:
+        if not left or not right or len(left) != len(right):
+            return 0.0
+        dot = sum(l * r for l, r in zip(left, right, strict=True))
+        nl = math.sqrt(sum(x * x for x in left))
+        nr = math.sqrt(sum(x * x for x in right))
+        return dot / (nl * nr) if nl > 0 and nr > 0 else 0.0
+
+
 _scalar_hash_instances: dict[int, ScalarHashVectorBackend] = {}
 _hybrid_hash_instances: dict[int, HybridHashVectorBackend] = {}
+_jina_omlx_instance: JinaOmlxVectorBackend | None = None
 _instance_lock = threading.Lock()
 
 
@@ -130,7 +177,15 @@ def resolve_semantic_vector_backend() -> SemanticVectorBackend:
     backend = os.environ.get("SALVA_SEMANTIC_VECTOR_BACKEND", "hybrid_hash").strip() or "hybrid_hash"
     dimensions = _read_dimensions()
 
-    global _scalar_hash_instances, _hybrid_hash_instances
+    global _scalar_hash_instances, _hybrid_hash_instances, _jina_omlx_instance
+
+    if backend == "jina_omlx":
+        if _jina_omlx_instance is None:
+            with _instance_lock:
+                if _jina_omlx_instance is None:
+                    _jina_omlx_instance = JinaOmlxVectorBackend()
+        return _jina_omlx_instance
+
     if backend == "scalar_hash":
         if dimensions not in _scalar_hash_instances:
             with _instance_lock:

@@ -20,8 +20,8 @@ from salva_core.persistence import (
 from salva_core.schemas import (
     CanonicalEntity,
     CanonicalRelation,
-    EvidenceRecord,
     EvidenceChainRecord,
+    EvidenceRecord,
     HoldHyperedgeRecord,
     PluginReportRecord,
     QueryFamilyMemoryRecord,

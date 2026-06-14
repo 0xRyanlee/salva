@@ -124,7 +124,7 @@ def build_hyperedge(store: HypergraphStore, f: Filing) -> str:
 def acquire(store: HypergraphStore, query: str = "members of a group") -> tuple[Filing | None, SourceAttempt]:
     try:
         f = find_group_filing(query)
-    except Exception as exc:
+    except Exception:
         return None, SourceAttempt("US", "equity", "SEC EDGAR", hit=False, result_count=0)
     if f is None:
         return None, SourceAttempt("US", "equity", "SEC EDGAR", hit=False, result_count=0)

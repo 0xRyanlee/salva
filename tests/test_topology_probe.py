@@ -4,7 +4,12 @@ from fastapi.testclient import TestClient
 
 from apps.api import main
 from salva_core.mode_resolver import resolve_experience_plan
-from salva_core.schemas import DiscoveryIntent, DiscoveryRequest, RetrievalPolicy, TopologyProbeRequest
+from salva_core.schemas import (
+    DiscoveryIntent,
+    DiscoveryRequest,
+    RetrievalPolicy,
+    TopologyProbeRequest,
+)
 from salva_core.topology import build_topology_probe_response
 
 

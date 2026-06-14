@@ -15,15 +15,18 @@ The controller:
 5. Repeats until max_rounds or convergence
 """
 from __future__ import annotations
+
 import logging
+import re
 from collections import Counter
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
-from collections.abc import Mapping
 from typing import Protocol, cast
 
-from core.types import Intent, QueryFamily, SearchTelemetry, UnifiedResult
 from core.keyword_graph import KeywordGraph
+from core.types import Intent, QueryFamily, SearchTelemetry, UnifiedResult
+from retrieval.seed_fetcher import fetch_entity_names
 from salva_core.routes import PROFILE_ROUTE_HINTS
 
 logger = logging.getLogger("salva.controller")
@@ -134,6 +137,7 @@ class SalvaController:
         )
 
         self._all_results: list[UnifiedResult] = []
+        self._seen_queries: set[str] = set()
         self._run: RunSummary | None = None
 
     # ------------------------------------------------------------------
@@ -143,6 +147,8 @@ class SalvaController:
     def run(self) -> tuple[list[UnifiedResult], RunSummary]:
         self._run = RunSummary(self.intent.domain, started_at=datetime.now(UTC))
         prev_rate = 1.0
+
+        self._bootstrap_seed_urls()
 
         for round_num in range(1, self.intent.max_rounds + 1):
             rotation = self._strategy_rotation
@@ -167,6 +173,14 @@ class SalvaController:
             # Feed telemetry back into keyword graph
             for t in telemetries:
                 self.graph.apply_telemetry(t)
+
+            # E14: Zero-yield recovery — if R1 produced no qualified results,
+            # rotate to anchor strategy for R2 so fresh, broader queries are tried
+            # rather than repeating the same precision-first dive queries.
+            if round_num == 1 and round_summary.qualified == 0 and len(self._strategy_rotation) > 1:
+                remaining = [s for s in self._strategy_rotation[1:] if s != "anchor"]
+                self._strategy_rotation = ["anchor"] + remaining
+                logger.info("R1 zero-qualified: rotating R2 strategy to 'anchor' for recovery")
 
             # Prune low-value nodes after round 2+
             if round_num >= 2:
@@ -196,6 +210,32 @@ class SalvaController:
         return qualified, self._run
 
     # ------------------------------------------------------------------
+    # Seed URL bootstrap
+    # ------------------------------------------------------------------
+
+    def _bootstrap_seed_urls(self) -> None:
+        """Fetch seed_urls before the main loop and inject entity names into the graph."""
+        if not self.intent.seed_urls:
+            return
+        policy = next(
+            (
+                getattr(r, "policy", None)
+                for r in self.retrievers.values()
+                if hasattr(r, "policy")
+            ),
+            None,
+        )
+        if policy is None:
+            return
+        all_names: list[str] = []
+        for url in self.intent.seed_urls:
+            names = fetch_entity_names(url, policy)
+            logger.info("seed_url %s → %d candidate names", url, len(names))
+            all_names.extend(names)
+        injected = self.graph.seed_from_terms(all_names, node_type="seed", weight=0.9)
+        logger.info("_bootstrap_seed_urls: injected %d nodes from %d seed URLs", injected, len(self.intent.seed_urls))
+
+    # ------------------------------------------------------------------
     # Round execution
     # ------------------------------------------------------------------
 
@@ -218,7 +258,14 @@ class SalvaController:
         )
         telemetries: list[SearchTelemetry] = []
 
-        for query in query_family.queries:
+        # Deduplicate queries across rounds — prevents wasting budget on repeated searches
+        fresh_queries = [q for q in query_family.queries if q not in self._seen_queries]
+        if not fresh_queries and query_family.queries:
+            # All queries already seen — force at least one attempt with a round-specific variant
+            fresh_queries = [f"{query_family.queries[0]} {round_num}"]
+        self._seen_queries.update(fresh_queries)
+
+        for query in fresh_queries:
             raw_hits = retriever.search(query, n=self.results_per_query)
             content_type_counts: Counter[str] = Counter()
             source_kind_counts: Counter[str] = Counter()
@@ -281,6 +328,10 @@ class SalvaController:
                 sum(r.relevance_score for r in self._all_results[-len(raw_hits):])
                 / max(len(raw_hits), 1)
             )
+            # Extract content terms from results that passed the pipeline for this query.
+            # These are fed back into the keyword graph so subsequent runs can seed new terms.
+            round_results = self._all_results[-qualified_in_query:] if qualified_in_query else []
+            content_terms = _extract_content_terms(round_results, existing_nodes=set(self.graph.nodes))
             telemetry.metadata.update(
                 {
                     "pipeline_stage": "fetch_extract_normalize_dedupe_classify_score",
@@ -289,6 +340,7 @@ class SalvaController:
                     "prefilter_reasons": dict(prefilter_reasons),
                     "content_type_counts": dict(content_type_counts),
                     "source_kind_counts": dict(source_kind_counts),
+                    "content_terms": content_terms,
                 }
             )
             telemetries.append(telemetry)
@@ -299,3 +351,37 @@ class SalvaController:
 
         round_summary.telemetry = telemetries
         return round_summary, telemetries
+
+
+_EN_STOPWORDS = frozenset(
+    "a an the and or of in on at to for with by from as is are was were be been "
+    "have has had do does did will would could should may might shall not no nor "
+    "its it this that these those i we you he she they what which who when where "
+    "how all any some more most other than then than so if but only just into about "
+    "up out over after before between through during since until co inc ltd llc plc "
+    "www http https com org net io gov".split()
+)
+_CJK_RE = re.compile(r"[一-鿿㐀-䶿豈-﫿]{2,}")
+_EN_TOKEN_RE = re.compile(r"[a-zA-Z][a-zA-Z0-9\-]{2,}")
+
+
+def _extract_content_terms(
+    results: list[UnifiedResult],
+    existing_nodes: set[str],
+    max_terms: int = 20,
+) -> list[str]:
+    counts: Counter[str] = Counter()
+    for r in results:
+        text = f"{r.title} {r.description}"
+        for cjk in _CJK_RE.findall(text):
+            counts[cjk] += 1
+        for tok in _EN_TOKEN_RE.findall(text):
+            lower = tok.lower()
+            if lower not in _EN_STOPWORDS and len(lower) >= 3:
+                counts[lower] += 1
+
+    new_terms = [
+        term for term, _ in counts.most_common(max_terms * 3)
+        if term not in existing_nodes
+    ]
+    return new_terms[:max_terms]

@@ -7,20 +7,6 @@ from retrieval.sources.whoogle import WhoogleRetriever
 from salva_core.schemas import RetrievalPolicy
 
 
-class _FakeResponse:
-    def __init__(self, payload: dict):
-        self._payload = payload
-
-    def __enter__(self) -> "_FakeResponse":
-        return self
-
-    def __exit__(self, exc_type, exc, tb) -> None:
-        return None
-
-    def read(self) -> str:
-        return json.dumps(self._payload)
-
-
 def test_whoogle_returns_empty_without_base_url() -> None:
     retriever = WhoogleRetriever(policy=RetrievalPolicy(), base_url="")
 
@@ -40,7 +26,7 @@ def test_whoogle_search_parses_results_and_records_attempt(monkeypatch) -> None:
 
     monkeypatch.setattr(whoogle_module.random, "choice", lambda seq: seq[0])
     monkeypatch.setattr(whoogle_module.time, "sleep", lambda _: None)
-    monkeypatch.setattr(whoogle_module.urllib.request, "urlopen", lambda req, timeout: _FakeResponse(payload))
+    monkeypatch.setattr(whoogle_module, "http_get", lambda url, headers=None, timeout=15.0: json.dumps(payload).encode())
 
     retriever = WhoogleRetriever(policy=RetrievalPolicy(request_timeout=3.0), base_url="https://whoogle.example")
     results = retriever.search("salva runtime", n=5)
@@ -70,7 +56,7 @@ def test_whoogle_failure_records_attempt(monkeypatch) -> None:
     def _boom(*args, **kwargs):
         raise OSError("boom")
 
-    monkeypatch.setattr(whoogle_module.urllib.request, "urlopen", _boom)
+    monkeypatch.setattr(whoogle_module, "http_get", _boom)
 
     retriever = WhoogleRetriever(policy=RetrievalPolicy(request_timeout=3.0), base_url="https://whoogle.example")
     results = retriever.search("salva runtime", n=5)

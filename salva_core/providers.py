@@ -2,13 +2,13 @@ from __future__ import annotations
 
 from typing import cast
 
+from retrieval.registry import list_provider_descriptors
 from salva_core.llm import list_llm_provider_descriptors
 from salva_core.schemas import (
     ProviderCatalogResponse,
     ProviderInterfaceDescriptor,
     ProviderStatus,
 )
-from retrieval.registry import list_provider_descriptors
 
 
 def build_provider_catalog() -> ProviderCatalogResponse:

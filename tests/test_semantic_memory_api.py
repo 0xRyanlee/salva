@@ -171,7 +171,10 @@ def test_semantic_backend_benchmark_reports_current_backend(tmp_path) -> None:
 
 def test_semantic_backend_benchmark_api_roundtrip(monkeypatch) -> None:
     def fake_benchmark(payload, path=None):
-        from salva_core.semantic import SemanticBackendBenchmarkResponse, SemanticBackendBenchmarkSeries
+        from salva_core.semantic import (
+            SemanticBackendBenchmarkResponse,
+            SemanticBackendBenchmarkSeries,
+        )
 
         return SemanticBackendBenchmarkResponse(
             generated_at="2026-01-01T00:00:00+00:00",
@@ -237,7 +240,9 @@ def test_semantic_query_families_skips_dimension_mismatches(tmp_path, monkeypatc
     )
 
     monkeypatch.setenv("SALVA_SEMANTIC_VECTOR_DIMENSIONS", "64")
-    from salva_core.persistence import search_query_family_memory as persistence_search_query_family_memory
+    from salva_core.persistence import (
+        search_query_family_memory as persistence_search_query_family_memory,
+    )
 
     matches, total = persistence_search_query_family_memory(
         query="software reseller germany",

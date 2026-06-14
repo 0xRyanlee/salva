@@ -22,7 +22,8 @@ and a consistent schema. Not yet a qualitative intelligence advantage.
 After several runs, `query_family_memory` accumulates high-scoring keyword nodes,
 their co-occurrence patterns, and source performance signals.
 
-Each new run calls `KeywordGraph.seed_from_memory()` before expansion:
+Runs that explicitly enable cross-run memory call
+`KeywordGraph.seed_from_memory()` before expansion:
 
 ```
 seed_from_memory()        ← inject high-scoring nodes from past runs
@@ -88,5 +89,6 @@ compound model in mind:
 - **Specs** must stay ahead of implementation changes: use `docs/spec/` as the contract layer.
 
 A Salva deployment that doesn't use its own memory is not learning.
-The seeding loop (`seed_from_memory → retrieve → score → write back`) is the
+The review-gated seeding loop
+(`promoted memory → seed_from_memory → retrieve → score → quarantine`) is the
 core product differentiator, not the search wrapper.

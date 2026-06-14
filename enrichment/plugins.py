@@ -11,7 +11,13 @@ from typing import Literal, Protocol, cast
 from urllib.parse import urlparse
 
 from enrichment.omlx import enrich as omlx_enrich
-from salva_core.schemas import CanonicalEntity, DiscoveryRequest, EnrichmentPluginName, PluginDescriptor, PluginReportRecord
+from salva_core.schemas import (
+    CanonicalEntity,
+    DiscoveryRequest,
+    EnrichmentPluginName,
+    PluginDescriptor,
+    PluginReportRecord,
+)
 
 DEFAULT_COMMAND_TIMEOUT = int(os.getenv("SALVA_PLUGIN_COMMAND_TIMEOUT", "20"))
 DEEP_ENRICH_TARGET_LIMIT = int(os.getenv("SALVA_DEEP_ENRICH_TARGET_LIMIT", "3"))

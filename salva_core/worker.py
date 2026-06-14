@@ -5,6 +5,7 @@ import time
 from typing import Any
 
 from salva_core import service
+from salva_core.execution import resolve_execution_request
 from salva_core.persistence import (
     DEFAULT_DB_PATH,
     append_stream_event,
@@ -12,8 +13,8 @@ from salva_core.persistence import (
     get_job,
     get_job_request,
     persist_discovery_run,
-    update_run_meta,
     update_job_status,
+    update_run_meta,
 )
 from salva_core.transforms import transform_entities
 
@@ -27,6 +28,7 @@ def run_job(job_id: str, path: str | None = None, execution_mode: str = "worker"
     request = get_job_request(job_id, path=db_path)
     if request is None:
         raise KeyError(f"job not found: {job_id}")
+    request = resolve_execution_request(request)
 
     update_job_status(
         job_id,
@@ -44,17 +46,20 @@ def run_job(job_id: str, path: str | None = None, execution_mode: str = "worker"
 
     try:
         entities, relations, telemetry, meta, source_attempts = service.execute_discovery(request)
-        run_id = persist_discovery_run(
-            request,
-            entities,
-            relations,
-            telemetry,
-            meta,
-            source_attempts=source_attempts,
-            path=db_path,
-        )
-        feedback = service.build_request_feedback(run_id, request, path=db_path)
-        update_run_meta(run_id, {"feedback": feedback}, path=db_path)
+        run_id: str | None = None
+        feedback: dict[str, Any] = {}
+        if request.execution.persistence == "audit":
+            run_id = persist_discovery_run(
+                request,
+                entities,
+                relations,
+                telemetry,
+                meta,
+                source_attempts=source_attempts,
+                path=db_path,
+            )
+            feedback = service.build_request_feedback(run_id, request, path=db_path)
+            update_run_meta(run_id, {"feedback": feedback}, path=db_path)
         transformed_items = transform_entities(
             entities,
             request.output_profile,
@@ -76,13 +81,14 @@ def run_job(job_id: str, path: str | None = None, execution_mode: str = "worker"
             meta=final_meta,
             path=db_path,
         )
-        append_stream_event(
-            job_id,
-            "run_persisted",
-            "Discovery run 已寫入持久化儲存。",
-            {"run_id": run_id},
-            path=db_path,
-        )
+        if run_id is not None:
+            append_stream_event(
+                job_id,
+                "run_persisted",
+                "Discovery run 已寫入持久化儲存。",
+                {"run_id": run_id},
+                path=db_path,
+            )
         append_stream_event(
             job_id,
             "job_completed",

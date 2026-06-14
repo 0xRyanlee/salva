@@ -1,11 +1,15 @@
 """
 Discovery API routes: /v1/discover, /v1/jobs
 """
+from collections.abc import AsyncGenerator
+from typing import Annotated
+
 from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import StreamingResponse
-from typing import Annotated, AsyncGenerator
 
+from apps.api.dependencies import ensure_quota_allowed, resolve_tenant_scope
 from salva_core import service
+from salva_core.quotas import evaluate_tenant_quota
 from salva_core.schemas import (
     DiscoveryRequest,
     DiscoveryResponse,
@@ -14,9 +18,7 @@ from salva_core.schemas import (
     JobsResponse,
     StreamEventsResponse,
 )
-from salva_core.quotas import evaluate_tenant_quota
 from salva_core.worker import run_job
-from apps.api.dependencies import resolve_tenant_scope, ensure_quota_allowed
 
 router = APIRouter()
 
@@ -125,9 +127,11 @@ async def job_events(
 @router.get("/jobs/{job_id}/stream")
 async def job_stream(job_id: str) -> StreamingResponse:
     """SSE stream for job status"""
-    import json
     import asyncio
+    import json
+
     from fastapi.responses import StreamingResponse
+
     from salva_core.persistence import get_job, list_stream_events
     
     item = get_job(job_id)

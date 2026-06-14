@@ -1,5 +1,9 @@
 from salva_core.semantic import build_semantic_vector_catalog
-from salva_core.vector_backends import HybridHashVectorBackend, ScalarHashVectorBackend, resolve_semantic_vector_backend
+from salva_core.vector_backends import (
+    HybridHashVectorBackend,
+    ScalarHashVectorBackend,
+    resolve_semantic_vector_backend,
+)
 
 
 def test_scalar_hash_backend_produces_normalized_vectors() -> None:

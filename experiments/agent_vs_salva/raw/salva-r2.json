@@ -1,0 +1,502 @@
+{
+  "condition": "salva",
+  "round": 2,
+  "request": {
+    "objective": "find_leads",
+    "intent": {
+      "market": "Germany Austria Switzerland",
+      "industry": "outdoor equipment",
+      "product": "camping equipment",
+      "role": "distributor",
+      "extra_keywords": [
+        "Naturehike",
+        "importer",
+        "wholesale",
+        "retailer",
+        "buying group"
+      ],
+      "negative_keywords": [],
+      "constraints": {
+        "max_rounds": 2,
+        "results_per_round": 30
+      },
+      "domain_hints": {
+        "synonym_groups": {},
+        "region_variants": {},
+        "signal_terms": [
+          "distributor",
+          "importer",
+          "wholesale",
+          "dealer network",
+          "retail group",
+          "buying group",
+          "outdoor brands",
+          "camping"
+        ],
+        "source_hints": [],
+        "noise_terms": [
+          "showroom",
+          "marketplace",
+          "consumer review",
+          "job"
+        ]
+      }
+    },
+    "tenant_id": null,
+    "output_profile": "company_profile",
+    "transform": {
+      "fields": null,
+      "rename": {},
+      "drop_nulls": true
+    },
+    "retrieval": {
+      "mode": "resilient",
+      "local_first": true,
+      "allow_public_fallback": true,
+      "prefer_builtin_instances": true,
+      "request_timeout": 10.0,
+      "request_delay": 0.2,
+      "cooldown_seconds": 90.0,
+      "max_instances_per_query": 4,
+      "html_fallback": true,
+      "engine_rotation": true,
+      "region_hint": null,
+      "extra_instances": [],
+      "site_domains": [],
+      "providers": [],
+      "proxy_url": null,
+      "obscura_stealth": false
+    },
+    "enrichment": {
+      "mode": "disabled",
+      "enabled_plugins": [],
+      "max_targets": 8,
+      "parallelism": 4,
+      "auto_merge": true,
+      "omlx_timeout": 45.0,
+      "omlx_max_retries": 3
+    },
+    "execution": {
+      "campaign_id": "naturehike-dach-2026",
+      "continuation_id": "salva-r2",
+      "persistence": "none",
+      "memory": {
+        "read_scope": "none",
+        "write_mode": "none",
+        "min_success_score": 0.3
+      },
+      "cache": {
+        "mode": "ephemeral",
+        "ttl_hours": 24,
+        "retain_artifacts": false
+      },
+      "tags": {}
+    },
+    "max_results": 30,
+    "qualify_threshold": 0.15
+  },
+  "meta": {
+    "qualified_count": 0,
+    "raw_count": 0,
+    "rounds": 2,
+    "elapsed_seconds": 5.504728,
+    "retrieval_mode": "resilient",
+    "local_first": true,
+    "html_fallback": true,
+    "source_attempt_count": 4,
+    "plugin_report_count": 0,
+    "plugin_reports": [],
+    "enrichment_mode": "disabled",
+    "provider_count": 2,
+    "provider_kinds": [
+      "DDGHTMLRetriever",
+      "ObscuraBrowserRetriever"
+    ],
+    "experience_profile": "deep_investigation",
+    "experience_ux": "深度調查",
+    "experience_notes": [
+      "deep_merge_path",
+      "topology=broad"
+    ],
+    "experience_mode_switches": [
+      "favor_multi_round_context",
+      "probe_route=deep_investigation"
+    ],
+    "topology": "broad",
+    "topology_confidence": 0.61,
+    "recommended_route": "deep_investigation",
+    "source_pack": [
+      "search",
+      "community_discussion"
+    ],
+    "strategy_bias": [
+      "dedupe_url_first",
+      "favor_source_diversity",
+      "allow_wider_fanout",
+      "role_product_anchor"
+    ],
+    "fanout_policy": "parallel_fanout",
+    "merge_policy": "loose_union",
+    "probe_queries": [
+      "Germany Austria Switzerland outdoor equipment camping equipment",
+      "Germany Austria Switzerland outdoor equipment news OR docs"
+    ],
+    "domain": "bd_leads",
+    "domain_hints_active": true,
+    "memory_seeds_used": 0,
+    "execution": {
+      "campaign_id": "naturehike-dach-2026",
+      "continuation_id": "salva-r2",
+      "persistence": "none",
+      "memory": {
+        "read_scope": "none",
+        "write_mode": "none",
+        "min_success_score": 0.3
+      },
+      "cache": {
+        "mode": "ephemeral",
+        "ttl_hours": 24,
+        "retain_artifacts": false
+      },
+      "tags": {}
+    }
+  },
+  "entities": [],
+  "relations": [],
+  "telemetry": [
+    {
+      "query": "camping equipment Germany Austria Switzerland",
+      "round_num": 1,
+      "strategy": "anchor",
+      "results_total": 0,
+      "results_qualified": 0,
+      "avg_score": 0.0,
+      "reject_reasons": [],
+      "noise_domains": [],
+      "metadata": {
+        "round_strategy": "anchor",
+        "content_weights": {
+          "title": 0.3,
+          "snippet": 0.3,
+          "document": 0.2,
+          "platform": 0.2
+        },
+        "source_hints": [
+          "g2.com",
+          "globalsources.com",
+          "crunchbase.com",
+          "linkedin.com",
+          "clutch.co",
+          "kompass.com"
+        ],
+        "notes": [
+          "graph_expansion",
+          "balance_title_snippet_document"
+        ],
+        "query_family_strategy": "anchor",
+        "source_nodes": [
+          "camping equipment",
+          "distributor",
+          "Naturehike",
+          "importer",
+          "wholesale"
+        ],
+        "pipeline_stage": "fetch_extract_normalize_dedupe_classify_score",
+        "raw_evidence_total": 0,
+        "prefilter_rejected_total": 0,
+        "prefilter_reasons": {},
+        "content_type_counts": {},
+        "source_kind_counts": {},
+        "content_terms": []
+      }
+    },
+    {
+      "query": "camping equipment dealer network",
+      "round_num": 1,
+      "strategy": "anchor",
+      "results_total": 0,
+      "results_qualified": 0,
+      "avg_score": 0.0,
+      "reject_reasons": [],
+      "noise_domains": [],
+      "metadata": {
+        "round_strategy": "anchor",
+        "content_weights": {
+          "title": 0.3,
+          "snippet": 0.3,
+          "document": 0.2,
+          "platform": 0.2
+        },
+        "source_hints": [
+          "g2.com",
+          "globalsources.com",
+          "crunchbase.com",
+          "linkedin.com",
+          "clutch.co",
+          "kompass.com"
+        ],
+        "notes": [
+          "graph_expansion",
+          "balance_title_snippet_document"
+        ],
+        "query_family_strategy": "anchor",
+        "source_nodes": [
+          "camping equipment",
+          "distributor",
+          "Naturehike",
+          "importer",
+          "wholesale"
+        ],
+        "pipeline_stage": "fetch_extract_normalize_dedupe_classify_score",
+        "raw_evidence_total": 0,
+        "prefilter_rejected_total": 0,
+        "prefilter_reasons": {},
+        "content_type_counts": {},
+        "source_kind_counts": {},
+        "content_terms": []
+      }
+    },
+    {
+      "query": "distributor Germany Austria Switzerland",
+      "round_num": 1,
+      "strategy": "anchor",
+      "results_total": 0,
+      "results_qualified": 0,
+      "avg_score": 0.0,
+      "reject_reasons": [],
+      "noise_domains": [],
+      "metadata": {
+        "round_strategy": "anchor",
+        "content_weights": {
+          "title": 0.3,
+          "snippet": 0.3,
+          "document": 0.2,
+          "platform": 0.2
+        },
+        "source_hints": [
+          "g2.com",
+          "globalsources.com",
+          "crunchbase.com",
+          "linkedin.com",
+          "clutch.co",
+          "kompass.com"
+        ],
+        "notes": [
+          "graph_expansion",
+          "balance_title_snippet_document"
+        ],
+        "query_family_strategy": "anchor",
+        "source_nodes": [
+          "camping equipment",
+          "distributor",
+          "Naturehike",
+          "importer",
+          "wholesale"
+        ],
+        "pipeline_stage": "fetch_extract_normalize_dedupe_classify_score",
+        "raw_evidence_total": 0,
+        "prefilter_rejected_total": 0,
+        "prefilter_reasons": {},
+        "content_type_counts": {},
+        "source_kind_counts": {},
+        "content_terms": []
+      }
+    },
+    {
+      "query": "distributor camping Germany Austria Switzerland",
+      "round_num": 2,
+      "strategy": "radar",
+      "results_total": 0,
+      "results_qualified": 0,
+      "avg_score": 0.0,
+      "reject_reasons": [],
+      "noise_domains": [],
+      "metadata": {
+        "round_strategy": "radar",
+        "content_weights": {
+          "title": 0.2,
+          "snippet": 0.25,
+          "document": 0.15,
+          "platform": 0.4
+        },
+        "source_hints": [
+          "g2.com",
+          "globalsources.com",
+          "crunchbase.com",
+          "linkedin.com",
+          "clutch.co",
+          "kompass.com"
+        ],
+        "notes": [
+          "source_discovery",
+          "platform_heavy"
+        ],
+        "query_family_strategy": "radar",
+        "source_nodes": [
+          "distributor",
+          "camping equipment",
+          "Naturehike",
+          "importer",
+          "wholesale"
+        ],
+        "pipeline_stage": "fetch_extract_normalize_dedupe_classify_score",
+        "raw_evidence_total": 0,
+        "prefilter_rejected_total": 0,
+        "prefilter_reasons": {},
+        "content_type_counts": {},
+        "source_kind_counts": {},
+        "content_terms": []
+      }
+    },
+    {
+      "query": "distributor dealer network Germany Austria Switzerland",
+      "round_num": 2,
+      "strategy": "radar",
+      "results_total": 0,
+      "results_qualified": 0,
+      "avg_score": 0.0,
+      "reject_reasons": [],
+      "noise_domains": [],
+      "metadata": {
+        "round_strategy": "radar",
+        "content_weights": {
+          "title": 0.2,
+          "snippet": 0.25,
+          "document": 0.15,
+          "platform": 0.4
+        },
+        "source_hints": [
+          "g2.com",
+          "globalsources.com",
+          "crunchbase.com",
+          "linkedin.com",
+          "clutch.co",
+          "kompass.com"
+        ],
+        "notes": [
+          "source_discovery",
+          "platform_heavy"
+        ],
+        "query_family_strategy": "radar",
+        "source_nodes": [
+          "distributor",
+          "camping equipment",
+          "Naturehike",
+          "importer",
+          "wholesale"
+        ],
+        "pipeline_stage": "fetch_extract_normalize_dedupe_classify_score",
+        "raw_evidence_total": 0,
+        "prefilter_rejected_total": 0,
+        "prefilter_reasons": {},
+        "content_type_counts": {},
+        "source_kind_counts": {},
+        "content_terms": []
+      }
+    },
+    {
+      "query": "distributor retail group Germany Austria Switzerland",
+      "round_num": 2,
+      "strategy": "radar",
+      "results_total": 0,
+      "results_qualified": 0,
+      "avg_score": 0.0,
+      "reject_reasons": [],
+      "noise_domains": [],
+      "metadata": {
+        "round_strategy": "radar",
+        "content_weights": {
+          "title": 0.2,
+          "snippet": 0.25,
+          "document": 0.15,
+          "platform": 0.4
+        },
+        "source_hints": [
+          "g2.com",
+          "globalsources.com",
+          "crunchbase.com",
+          "linkedin.com",
+          "clutch.co",
+          "kompass.com"
+        ],
+        "notes": [
+          "source_discovery",
+          "platform_heavy"
+        ],
+        "query_family_strategy": "radar",
+        "source_nodes": [
+          "distributor",
+          "camping equipment",
+          "Naturehike",
+          "importer",
+          "wholesale"
+        ],
+        "pipeline_stage": "fetch_extract_normalize_dedupe_classify_score",
+        "raw_evidence_total": 0,
+        "prefilter_rejected_total": 0,
+        "prefilter_reasons": {},
+        "content_type_counts": {},
+        "source_kind_counts": {},
+        "content_terms": []
+      }
+    }
+  ],
+  "source_attempts": [
+    {
+      "run_id": "pending",
+      "strategy": "anchor",
+      "base_url": "https://html.duckduckgo.com/html/",
+      "mode": "resilient",
+      "source_class": "custom_remote",
+      "trust_level": "medium",
+      "risk_level": "medium",
+      "recommended_crawl_mode": "cautious",
+      "result_count": 0,
+      "succeeded": false,
+      "error": null,
+      "format_used": "html"
+    },
+    {
+      "run_id": "pending",
+      "strategy": "anchor",
+      "base_url": "obscura_browser",
+      "mode": "resilient",
+      "source_class": "unknown",
+      "trust_level": "low",
+      "risk_level": "high",
+      "recommended_crawl_mode": "wall_guarded",
+      "result_count": 0,
+      "succeeded": false,
+      "error": "no_site_domains",
+      "format_used": "browser"
+    },
+    {
+      "run_id": "pending",
+      "strategy": "radar",
+      "base_url": "https://html.duckduckgo.com/html/",
+      "mode": "resilient",
+      "source_class": "custom_remote",
+      "trust_level": "medium",
+      "risk_level": "medium",
+      "recommended_crawl_mode": "cautious",
+      "result_count": 0,
+      "succeeded": false,
+      "error": null,
+      "format_used": "html"
+    },
+    {
+      "run_id": "pending",
+      "strategy": "radar",
+      "base_url": "obscura_browser",
+      "mode": "resilient",
+      "source_class": "unknown",
+      "trust_level": "low",
+      "risk_level": "high",
+      "recommended_crawl_mode": "wall_guarded",
+      "result_count": 0,
+      "succeeded": false,
+      "error": "no_site_domains",
+      "format_used": "browser"
+    }
+  ]
+}

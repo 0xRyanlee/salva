@@ -63,23 +63,23 @@ def run_live_task(
     if task == "naturehike":
         intent = Intent(
             domain="bd_leads",
-            primary_terms=["Naturehike", "outdoor equipment"],
+            primary_terms=["Naturehike", "outdoor equipment", "Naturehike Händler", "Naturehike Vertrieb"],
             region="Germany Austria Switzerland",
-            roles=["distributor"],
+            roles=["distributor", "Händler", "Vertriebspartner", "Importeur"],
             negative_terms=["blog", "review", "job"],
-            max_rounds=3,
-            results_per_round=30,
+            max_rounds=5,
+            results_per_round=50,
         )
         ground_truth = GROUND_TRUTH_NATUREHIKE
     else:  # computex
         intent = Intent(
             domain="taiwan_hardware",
-            primary_terms=["Computex 2026", "Taiwan hardware"],
+            primary_terms=["Computex 2026", "Taiwan hardware", "Taiwan PC manufacturer"],
             region="Taipei",
-            roles=["exhibitor"],
+            roles=["exhibitor", "manufacturer", "硬體廠商"],
             negative_terms=["job", "review", "blog"],
-            max_rounds=3,
-            results_per_round=30,
+            max_rounds=5,
+            results_per_round=50,
         )
         ground_truth = GROUND_TRUTH_COMPUTEX
 
@@ -89,27 +89,32 @@ def run_live_task(
         else scorer.domain_threshold(intent.domain)
     )
 
-    # Live retriever — real DDG/SearXNG
-    # region_hint maps to SearXNG language/region params for geographically relevant results
-    region_hint = "de-de" if task == "naturehike" else "zh-tw"
-    policy = RetrievalPolicy(region_hint=region_hint)
-    retriever = RoutedRetriever(policy=policy, strategy="dive")
+    # Live retriever — real SearXNG (Bing+Mojeek from TW IP)
+    # region_hint disabled: passing language=de/zh-tw to Bing via SearXNG causes totally
+    # incorrect results (Korean YouTube pages). Let query terms carry geo-signal instead.
+    policy = RetrievalPolicy()
 
-    # Request count proxy via monkey-patching
+    # Request count proxy — patch all strategy retrievers so budget is tracked accurately
     request_count = [0]
-    original_search = retriever._search_sequential
+    _REQUEST_DELAY = float(os.getenv("E21_REQUEST_DELAY", "3.0"))  # seconds between requests
 
-    def _counted_search(query: str, n: int) -> list[dict]:
-        if request_count[0] >= request_limit:
-            return []
-        request_count[0] += 1
-        return original_search(query, n)
+    def _make_counted(r: "RoutedRetriever") -> "RoutedRetriever":
+        import time as _time
+        orig = r._search_sequential
+        def _counted(query: str, n: int) -> list[dict]:
+            if request_count[0] >= request_limit:
+                return []
+            if request_count[0] > 0:
+                _time.sleep(_REQUEST_DELAY)
+            request_count[0] += 1
+            return orig(query, n)
+        r._search_sequential = _counted
+        return r
 
-    retriever._search_sequential = _counted_search
     retrievers = {
-        "dive": retriever,
-        "anchor": RoutedRetriever(policy=policy, strategy="anchor"),
-        "radar":  RoutedRetriever(policy=policy, strategy="radar"),
+        "dive":   _make_counted(RoutedRetriever(policy=policy, strategy="dive")),
+        "anchor": _make_counted(RoutedRetriever(policy=policy, strategy="anchor")),
+        "radar":  _make_counted(RoutedRetriever(policy=policy, strategy="radar")),
     }
 
     graph = KeywordGraph(intent=intent)
@@ -125,6 +130,7 @@ def run_live_task(
         scorer=scorer,
         qualify_threshold=effective_threshold,
         keyword_graph=graph,
+        convergence_threshold=0.0,  # disable early-stop; exhaust full budget
     )
     results, summary = controller.run()
 

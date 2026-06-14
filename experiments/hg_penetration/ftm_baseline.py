@@ -14,8 +14,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from experiments.hg_penetration.store import HypergraphStore
 from experiments.hg_penetration.penetrate import CONTROL_THRESHOLD
+from experiments.hg_penetration.store import HypergraphStore
 
 
 @dataclass

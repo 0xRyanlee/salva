@@ -48,8 +48,9 @@ def test_build_provider_chain_falls_back_to_defaults_when_all_configs_disabled()
 
     providers = registry.build_provider_chain(policy, strategy="dive")
 
-    assert len(providers) == 4
-    assert [getattr(provider, "strategy", None) for provider in providers] == ["dive", "dive", "dive", "dive"]
+    # Default chain: SearXNG + Whoogle + DDGS + Marginalia + searxng_pool + obscura/site_html = 6
+    assert len(providers) == 6
+    assert all(getattr(p, "strategy", None) == "dive" for p in providers)
 
 
 def test_merge_unique_deduplicates_and_strips_www() -> None:

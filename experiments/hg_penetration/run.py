@@ -5,7 +5,9 @@
 from __future__ import annotations
 
 from experiments.hg_penetration.ftm_baseline import (
-    analyze_control_binary, effective_ownership_binary, to_binary_edges,
+    analyze_control_binary,
+    effective_ownership_binary,
+    to_binary_edges,
 )
 from experiments.hg_penetration.penetrate import analyze_control, effective_ownership
 from experiments.hg_penetration.seed_data import JURISDICTION_SOURCES, build_store

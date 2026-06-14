@@ -2,7 +2,7 @@
 
 Salva 是一個自架的 **Discovery Intelligence Runtime** — 面向 Agent、CLI 和 API 調用的結構化檢索服務。
 
-> 它不是爬蟲，而是一個**事件驅動**的智慧 pipeline，可累積學習能力。
+> 它不是爬蟲，而是一個**事件驅動**的智慧 pipeline，每次運行後積累學習能力。
 
 ---
 
@@ -10,91 +10,95 @@ Salva 是一個自架的 **Discovery Intelligence Runtime** — 面向 Agent、C
 
 - **Event-triggered**：由調用觸發，非定時輪詢
 - **API-first**：REST API + MCP + CLI 三端整合
-- **Agent-native**：專為 AI Agent 設計的調用介面
-- **Compounding**：透過 query-family memory 讓每次檢索比前一次更聰明
+- **Agent-native**：MCP 是主要 agent 介面（Claude Code / Claude Desktop 直接接入）
+- **Review-gated compounding**：content terms 可沉澱到隔離記憶，但預設不跨 run 讀取；只有同 campaign 已提升的記憶會再次注入
 
 ---
 
 ## Pipeline 運作機制
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                           Salva Pipeline                                    │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│  1. Intent (調用端)                                                         │
-│     ├── objective: find_companies / find_leads / find_events               │
-│     ├── market: US / Taiwan / Germany / Japan                              │
-│     ├── industry: AI / fintech / gaming                                    │
-│     └── extra_keywords, negative_keywords, domain_hints                    │
-│                                                                             │
-│  ↓                                                                          │
-│                                                                             │
-│  2. Route Resolution (路由解析)                                             │
-│     ├── 選擇 experience_profile: quick_scan / lead_focus / deep_investigation
-│     ├── 選擇 retrieval_mode: normal / resilient / wall_guarded               │
-│     └── 選擇 strategy: dive / anchor / radar / pirate                      │
-│                                                                             │
-│  ↓                                                                          │
-│                                                                             │
-│  3. Query Intelligence (查詢智能)                                          │
-│     ├── KeywordGraph: 關鍵詞擴展 (synonym_groups, signal_terms)              │
-│     ├── DomainVocab: 領域詞彙註冊 (events / bd_leads / companies)            │
-│     └── seed_from_memory: 從歷史成功查詢中注入高分節點                      │
-│                                                                             │
-│  ↓                                                                          │
-│                                                                             │
-│  4. Multi-Provider Retrieval (多供應商檢索)                                  │
-│     ├── Sequential Fallback: A 失敗 → B → C                                │
-│     ├── Parallel (可選): 同時嘗試多個 provider                              │
-│     ├── Adaptive: 根據 provider 歷史響應時間動態調整                        │
-│     └── 去重: URL + title 雙重去重                                           │
-│                                                                             │
-│     Providers:                                                              │
-│     ├── SearXNG (首選，本地)                                                │
-│     ├── Whoogle (備選，本地)                                                │
-│     └── DuckDuckGo HTML (公共備用)                                          │
-│                                                                             │
-│  ↓                                                                          │
-│                                                                             │
-│  5. Processing (處理)                                                        │
-│     ├── Extractor: 從 HTML 提取結構化數據                                     │
-│     ├── Deduplicator: fuzzy title + exact URL 去重                          │
-│     └── Scorer: qualification score + confidence                            │
-│                                                                             │
-│  ↓                                                                          │
-│                                                                             │
-│  6. Enrichment (可選富化)                                                    │
-│     ├── OMLX: 本地 LLM 生成的 summary / tags                                │
-│     ├── theHarvester: email / host 被動枚舉                                 │
-│     ├── Amass: 子網域枚舉                                                   │
-│     └── SpiderFoot: OSINT 掃描                                             │
-│                                                                             │
-│  ↓                                                                          │
-│                                                                             │
-│  7. Persistence (持久化)                                                    │
-│     ├── runs: 完整執行記錄                                                   │
-│     ├── entities: CanonicalEntity + evidence                                │
-│     ├── relations: 實體關係                                                 │
-│     ├── hyperedges: 超圖結構                                                │
-│     └── query_family_memory: 語義記憶                                       │
-│                                                                             │
-│  ↓                                                                          │
-│                                                                             │
-│  8. Output (輸出)                                                            │
-│     ├── DiscoveryResponse: entities + relations + telemetry + meta          │
-│     ├── JobRecord: 異步 job 追蹤                                            │
-│     ├── AuditReport: 品質審計                                               │
-│     └── PilotAdvice: 下一步建議                                             │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
+trigger (agent / CLI / API call)
+  → Intent 解析 + domain 路由
+  → KeywordGraph 擴展（依 ExecutionContext 決定是否注入 memory seeds）
+  → Multi-round multi-provider 檢索
+  → 提取 → BM25 去重 → 評分
+  → content_terms 提取 → 沉澱進 memory
+  → 輸出 entities + relations + telemetry
 ```
+
+### 記憶與複利（B1+B2）
+
+```
+Round N 結果片段
+  → _extract_content_terms()            [B1: controller.py]
+  → telemetry.metadata["content_terms"]
+  → content_nodes_json 持久化           [B2: persistence/runs.py]
+  ↓
+後續 run（僅 campaign_promoted / campaign_all / global_legacy）
+  → seed_from_memory() 讀取允許範圍內的 content_nodes
+  → 注入圖中，擴展查詢範圍
+```
+
+預設值是 `read_scope=none`、`write_mode=quarantine`。單次呼叫內的多輪
+KeywordGraph 仍在記憶體中運作，不需要在專案根目錄建立 cache。
+
+### 執行與資料隔離
+
+```json
+{
+  "execution": {
+    "campaign_id": "naturehike-dach-2026",
+    "continuation_id": "channel-map-r1",
+    "persistence": "audit",
+    "memory": {
+      "read_scope": "campaign_promoted",
+      "write_mode": "quarantine"
+    }
+  }
+}
+```
+
+- Agent 負責宣告 objective、campaign、continuation 與是否需要舊記憶。
+- Salva 負責強制 campaign filter、quarantine/promote 與 no-write 模式。
+- 部署平台負責 auth、tenant 權限、filesystem roots、secrets。
+
+完整契約：[docs/spec/execution-context.md](docs/spec/execution-context.md)
 
 ---
 
 ## 調用方式
 
-### 1. REST API (同步)
+### 1. MCP（推薦 — Agent 首選）
+
+配置 `apps/mcp/server.py` 為 Claude Code MCP extension：
+
+```json
+{
+  "mcpServers": {
+    "salva": {
+      "command": "python3",
+      "args": ["-m", "apps.mcp"]
+    }
+  }
+}
+```
+
+可用工具：
+
+| 工具 | 用途 |
+|------|------|
+| `salva_discover` | 同步 discovery（小任務） |
+| `salva_job_create` | 異步 job（大任務） |
+| `salva_job_status` | 輪詢 job 狀態 |
+| `salva_run_result` | 取完整 run 結果 |
+| `salva_audit` | 品質審計 |
+| `salva_pilot` | 下一步建議 |
+| `salva_hold_walk` | 遍歷 n-ary 超圖 |
+| `salva_routing_table` | 查看學習到的 source 權威排名 |
+| `salva_memory_summary` | 頂層 query families + content seeds |
+
+### 2. REST API（同步）
 
 ```bash
 curl -X POST http://localhost:8000/v1/discover \
@@ -106,46 +110,23 @@ curl -X POST http://localhost:8000/v1/discover \
   }'
 ```
 
-### 2. REST API (異步)
+### 3. REST API（異步）
 
 ```bash
-# 創建 job，立即返回
+# 創建 job
 curl -X POST http://localhost:8000/v1/jobs \
   -d '{"discovery": {...}, "wait_for_completion": false}'
 
-# 輪詢狀態
+# 查狀態
 curl http://localhost:8000/v1/jobs/{job_id}
-
-# SSE 事件流
-curl http://localhost:8000/v1/jobs/{job_id}/stream
 ```
 
-### 3. CLI
+### 4. CLI
 
 ```bash
 salva find --market US --industry "AI hardware"
 salva job status <job_id>
 salva audit <run_id>
-salva pilot <run_id>
-```
-
-### 4. MCP
-
-```python
-# Claude Code / Claude Desktop 配置
-{
-  "mcpServers": {
-    "salva": {
-      "command": "python3",
-      "args": ["-m", "apps.mcp"]
-    }
-  }
-}
-
-# 調用工具
-salva_discover(market="US", industry="AI")
-salva_job_create(market="Taiwan", industry="fintech")
-salva_audit(run_id="run:xxx")
 ```
 
 ---
@@ -159,9 +140,10 @@ salva_audit(run_id="run:xxx")
 | `GET /v1/jobs/{job_id}` | Job 狀態 |
 | `GET /v1/jobs/{job_id}/stream` | SSE 事件流 |
 | `GET /v1/runs/{run_id}` | Run 結果 |
+| `GET /v1/query-families` | 依 campaign / continuation / status 查詢記憶 |
+| `POST /v1/query-families/{memory_id}/promote` | 提升已審核的 query-family memory |
 | `GET /v1/routes` | 路由目錄 |
 | `GET /v1/providers` | 供應商列表 |
-| `GET /v1/plugins` | 插件列表 |
 | `POST /v1/pilot` | 下一步建議 |
 | `POST /v1/audits/{run_id}` | 品質審計 |
 | `GET /v1/hold/walk` | 超圖遍歷 |
@@ -176,16 +158,33 @@ salva/
 ├── apps/
 │   ├── api/           # REST API (FastAPI)
 │   ├── cli/           # CLI (typer)
-│   └── mcp/           # MCP Server
-├── core/              # 協調與查詢智能
-├── retrieval/         # 供應商適配器
-├── processing/        # 提取、去重、評分
-├── enrichment/        # LLM/OSINT 富化
-├── hold/              # 超圖容器
+│   └── mcp/           # MCP Server（9 tools，agent 主要入口）
+├── core/
+│   ├── controller.py  # 協調器 + B1 content term 提取
+│   ├── keyword_graph.py  # 查詢圖 + B2 memory seed 注入
+│   └── domain_vocab.py   # 領域詞彙 registry
+├── retrieval/         # 供應商適配器（SearXNG / Whoogle / DDG）
+├── processing/
+│   ├── dedup.py       # BM25-hybrid 去重
+│   └── scorer.py      # 評分（injectable ScorerConfig）
+├── enrichment/        # LLM/OSINT 富化（omlx bounded prompts）
+├── hold/              # 超圖容器入口
+├── experiments/       # 理論驗證實驗（E1–E9）
 └── salva_core/
-    ├── persistence/  # SQLite 持久化
-    ├── schemas.py    # 數據模型
-    └── service.py     # 核心服務
+    ├── persistence/   # SQLite — 分模組
+    │   ├── db.py          # Schema + migration
+    │   ├── runs.py        # Run 記錄（含 content_nodes_json）
+    │   ├── memory.py      # Query family memory + seed 查詢
+    │   ├── hold.py        # n-ary 超邊、canonical entities、routing memory
+    │   ├── jobs.py        # Job 記錄
+    │   ├── evidence.py    # 證據鏈
+    │   ├── telemetry.py   # 遙測
+    │   └── usage.py       # 用量統計
+    ├── relation_ontology.py  # FtM 對齊關係類型（7 canonical + multilingual surface forms）
+    ├── vector_backends.py    # JinaOmlxVectorBackend（1024d）+ HybridHash fallback
+    ├── schemas.py        # Canonical types
+    ├── execution.py      # ExecutionContext 標準化與 metadata
+    └── service.py        # 核心服務
 ```
 
 ---
@@ -196,12 +195,91 @@ salva/
 # 1. 安裝
 pip install -e ".[dev]"
 
-# 2. 啟動 API
+# 2. 設置環境變數
+cp .env.example .env  # 或直接編輯 .env
+# 必填：
+# OMLX_BASE_URL=http://localhost:8140   (本地 omlx，Jina embedding + LLM)
+# SALVA_SQLITE_PATH=./data/salva.db
+# SEARXNG_ENABLED=false                 (若無本地 SearXNG)
+
+# 3. 啟動 API
 python3 -m uvicorn apps.api.main:app --port 8000
 
-# 3. 測試
+# 4. 健康檢查
 curl http://localhost:8000/health
+
+# 5. 測試
+pytest
 ```
+
+---
+
+## Embedding Backend
+
+| Backend | 啟用方式 | 用途 |
+|---------|---------|------|
+| `jina_omlx` | `SALVA_SEMANTIC_VECTOR_BACKEND=jina_omlx` | 內容語義搜索（1024d Jina v5） |
+| `hybrid_hash` | 預設 | 輕量 hash 備用（無 omlx 時自動降級） |
+
+**注意：** Jina v5 小模型不適合跨字形實體名稱解析（台積電↔TSMC cosine≈0.04）。
+跨語言實體合併依賴 `canonical_entities` + `entity_aliases` gazetteer（Hold C2）。
+
+---
+
+## n-ary 超圖（Hold）
+
+Salva 使用 n-ary 超邊表示多方關係（如 §13(d)(3) 集體持股、多方控股協議）：
+
+```python
+# 一條 acting_in_concert 超邊包含多個參與者
+hyperedge: acting_in_concert
+  ├── BlueMountain Capital  [group_lead,  5.2%]
+  ├── BM Fund A             [group_member, 2.1%]
+  ├── BM Fund B             [group_member, 1.8%]
+  └── Chatham Lodging Trust [target]
+evidence: SEC EDGAR SC 13D/A 2013-05-15
+```
+
+支援：
+- HIF（Hypergraph Interchange Format）lossless round-trip export/import
+- Bipartite projection（entity ↔ hyperedge）
+- Star projection（entity ↔ entity via shared hyperedge）
+
+---
+
+## 實驗驗證結果（E1–E9）
+
+| VP | 主張 | 結論 |
+|----|------|------|
+| VP1 | n-ary 超圖忠實度 | ✅ E1 PASS |
+| VP2 | 公開源可得性 | ✅ E2 PASS |
+| VP3 | 真實 filing → n-ary 事實 | ✅ E3 PASS |
+| VP4 | 路由表自我優化 | ✅ E4 PASS |
+| VP5 | 跨語言實體解析 | ✅ gazetteer / ⚠️ Jina FAIL（跨字形 F1=0.31） |
+| VP6 | 跨語義關係合併 | ✅ E6 PASS（7→3 canonical 超邊） |
+| VP7 | 語義+二跳 > 關鍵詞 | ⚠️ E7 INCONCLUSIVE（2-hop recall=1.00；precision 下降） |
+| VP8 | HIF round-trip + 投影 | ✅ E8 PASS（零 diff） |
+| VP9 | 持久化複利可量測 | ✅ E9 PASS（seeds 0→46，nodes 34→61） |
+
+詳細結果：`experiments/hg_penetration/E*_FINDINGS.md`
+
+### Agent-only vs Salva Dogfood（E10）
+
+Naturehike DACH 渠道檢索的 live dogfood 顯示：
+
+| Condition | Round 1 | Round 2 | Round 3 | Best pooled recall |
+|---|---:|---:|---:|---:|
+| Agent-only | 5 verified | 11 cumulative | 15 cumulative | 88.2% |
+| Salva | 2 verified | 0 snapshot | 0 snapshot | 11.8% |
+
+![Naturehike DACH comparison](experiments/agent_vs_salva/results/naturehike-dach-comparison.svg)
+
+Pooled recall 的分母是兩條路徑事後驗證候選的聯集，不是預先凍結的外部 ground
+truth。這也不是等預算 benchmark：Agent raw SERP 未完整保存、耗時不可比、Salva
+使用 DDG live provider 且 R2/R3 發生零結果。它是可重現的 dogfood 與失敗模式記錄，
+不能被解讀為一般性模型排名。
+
+詳見：[experiments/agent_vs_salva/README.md](experiments/agent_vs_salva/README.md)
 
 ---
 
@@ -209,14 +287,13 @@ curl http://localhost:8000/health
 
 | 文件 | 用途 |
 |------|------|
-| [CLAUDE.md](CLAUDE.md) | 開發者必讀：設計原則與架構 |
+| [CLAUDE.md](CLAUDE.md) | 開發者必讀：設計原則與架構邊界 |
+| [DEVELOPMENT_PROGRESS.md](DEVELOPMENT_PROGRESS.md) | 本次開發進度報告 |
 | [TODO.md](TODO.md) | 開發任務清單 |
-| [docs/spec/](docs/spec/) | 行為契約 (正式規範) |
-| [docs/README.md](docs/README.md) | 文檔索引 |
-| [docs/Salva_Runtime_使用者體驗與成熟度審計.md](docs/Salva_Runtime_使用者體驗與成熟度審計.md) | UX 審計 |
-| [docs/domain-vocab-guide.md](docs/domain-vocab-guide.md) | 領域詞彙指南 |
-| [docs/event-driven-integration.md](docs/event-driven-integration.md) | 整合指南 |
-| [docs/sdk.md](docs/sdk.md) | Python SDK |
+| [docs/spec/](docs/spec/) | 行為契約（正式規範） |
+| [docs/reports/execution-isolation-update-2026-06-08.md](docs/reports/execution-isolation-update-2026-06-08.md) | 隔離架構、風險與對抗審計 |
+| [docs/dogfood/naturehike-dach-2026-06-08.md](docs/dogfood/naturehike-dach-2026-06-08.md) | Naturehike DACH 渠道與 dogfood 結果 |
+| [experiments/EXPERIMENT_PLAN.md](experiments/EXPERIMENT_PLAN.md) | 實驗計畫與驗證狀態 |
 
 ---
 
@@ -228,27 +305,10 @@ curl http://localhost:8000/health
 - `429` — Quota 超限
 - `500` — 內部錯誤
 
-詳細規範：[docs/spec/error-contract.md](docs/spec/error-contract.md)
-
----
-
-## 狀態
-
-✅ **v1 完成** — 端到端可用
-
-待優化：
-- 錯誤訊息本地化
-- 更多 preset
-- 向量索引升級 (sqlite-vec)
-
 ---
 
 ## License
 
-採用 [Apache License 2.0](LICENSE)。允許商用、修改與私有部署,並附帶專利授權;再散布時請保留版權與授權聲明。
+採用 [Apache License 2.0](LICENSE)。允許商用、修改與私有部署，並附帶專利授權；再散布時請保留版權與授權聲明。
 
 Copyright © 2026 Ryan Lee.
-
----
-
-*更多語言：[English](README.md) | [中文](README.zh.md)*

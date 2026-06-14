@@ -8,11 +8,12 @@ from salva_core.schemas import (
     EvidenceChainLink,
     EvidenceChainRecord,
     EvidenceRecord,
-    HoldHyperedgeRecord,
     HoldHyperedgeMember,
+    HoldHyperedgeRecord,
     HoldMigrationRecord,
     RelationRecord,
 )
+
 from .db import DEFAULT_DB_PATH, get_conn
 
 

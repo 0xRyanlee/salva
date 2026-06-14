@@ -6,7 +6,13 @@ from typing import Any
 
 from pydantic import BaseModel, Field
 
-from salva_core.schemas import CanonicalEntity, CanonicalRelation, EvidenceRecord, HoldHyperedgeRecord, RunSnapshot
+from salva_core.schemas import (
+    CanonicalEntity,
+    CanonicalRelation,
+    EvidenceRecord,
+    HoldHyperedgeRecord,
+    RunSnapshot,
+)
 
 
 class HoldGraphNode(BaseModel):

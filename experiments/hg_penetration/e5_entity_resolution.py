@@ -14,7 +14,6 @@ from __future__ import annotations
 
 import itertools
 import re
-from collections import defaultdict
 
 # ---- gold dataset: real entities, cross-lingual surface forms + distractors ----
 GOLD: dict[str, list[str]] = {

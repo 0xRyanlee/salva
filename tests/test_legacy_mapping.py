@@ -1,12 +1,12 @@
 from datetime import UTC, datetime
 
+from core.types import Intent, SearchTelemetry, UnifiedResult
 from salva_core.legacy import (
     legacy_intent_to_discovery_intent,
     legacy_result_relations,
     legacy_result_to_entity,
     legacy_telemetry_to_record,
 )
-from core.types import Intent, SearchTelemetry, UnifiedResult
 
 
 def test_legacy_intent_maps_to_discovery_intent() -> None:
@@ -50,10 +50,14 @@ def test_legacy_result_maps_to_canonical_entity_and_relations() -> None:
     assert entity.market == "Germany"
     assert entity.status == "qualified"
     assert entity.source_urls == ["https://example.com/reseller"]
-    assert entity.event is not None
-    assert entity.event.organizer_email == "sales@example.com"
+    # E13: contact-only results must NOT produce event details
+    assert entity.event is None
     assert entity.evidence[0].metadata["raw_evidence"]["raw"]["title"] == "Example Reseller"
+    # organizer_email / organizer_domain captured as relations, not event fields
     assert len(relations) == 2
+    relation_types = {r.relation_type for r in relations}
+    assert "has_contact" in relation_types
+    assert "hosted_by" in relation_types
 
 
 def test_legacy_telemetry_maps_to_record() -> None:

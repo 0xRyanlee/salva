@@ -1,0 +1,766 @@
+{
+  "condition": "salva",
+  "round": 1,
+  "request": {
+    "objective": "find_leads",
+    "intent": {
+      "market": "Germany Austria Switzerland",
+      "industry": "outdoor equipment",
+      "product": "camping equipment",
+      "role": "distributor",
+      "extra_keywords": [
+        "Naturehike",
+        "importer",
+        "wholesale",
+        "retailer",
+        "buying group"
+      ],
+      "negative_keywords": [],
+      "constraints": {
+        "max_rounds": 1,
+        "results_per_round": 30
+      },
+      "domain_hints": {
+        "synonym_groups": {},
+        "region_variants": {},
+        "signal_terms": [
+          "distributor",
+          "importer",
+          "wholesale",
+          "dealer network",
+          "retail group",
+          "buying group",
+          "outdoor brands",
+          "camping"
+        ],
+        "source_hints": [],
+        "noise_terms": [
+          "showroom",
+          "marketplace",
+          "consumer review",
+          "job"
+        ]
+      }
+    },
+    "tenant_id": null,
+    "output_profile": "company_profile",
+    "transform": {
+      "fields": null,
+      "rename": {},
+      "drop_nulls": true
+    },
+    "retrieval": {
+      "mode": "resilient",
+      "local_first": true,
+      "allow_public_fallback": true,
+      "prefer_builtin_instances": true,
+      "request_timeout": 10.0,
+      "request_delay": 0.2,
+      "cooldown_seconds": 90.0,
+      "max_instances_per_query": 4,
+      "html_fallback": true,
+      "engine_rotation": true,
+      "region_hint": null,
+      "extra_instances": [],
+      "site_domains": [],
+      "providers": [],
+      "proxy_url": null,
+      "obscura_stealth": false
+    },
+    "enrichment": {
+      "mode": "disabled",
+      "enabled_plugins": [],
+      "max_targets": 8,
+      "parallelism": 4,
+      "auto_merge": true,
+      "omlx_timeout": 45.0,
+      "omlx_max_retries": 3
+    },
+    "execution": {
+      "campaign_id": "naturehike-dach-2026",
+      "continuation_id": "salva-r1",
+      "persistence": "none",
+      "memory": {
+        "read_scope": "none",
+        "write_mode": "none",
+        "min_success_score": 0.3
+      },
+      "cache": {
+        "mode": "ephemeral",
+        "ttl_hours": 24,
+        "retain_artifacts": false
+      },
+      "tags": {}
+    },
+    "max_results": 30,
+    "qualify_threshold": 0.15
+  },
+  "meta": {
+    "qualified_count": 3,
+    "raw_count": 6,
+    "rounds": 1,
+    "elapsed_seconds": 4.397198,
+    "retrieval_mode": "resilient",
+    "local_first": true,
+    "html_fallback": true,
+    "source_attempt_count": 2,
+    "plugin_report_count": 0,
+    "plugin_reports": [],
+    "enrichment_mode": "disabled",
+    "provider_count": 2,
+    "provider_kinds": [
+      "DDGHTMLRetriever",
+      "ObscuraBrowserRetriever"
+    ],
+    "experience_profile": "deep_investigation",
+    "experience_ux": "深度調查",
+    "experience_notes": [
+      "deep_merge_path",
+      "topology=broad"
+    ],
+    "experience_mode_switches": [
+      "favor_multi_round_context",
+      "probe_route=deep_investigation"
+    ],
+    "topology": "broad",
+    "topology_confidence": 0.61,
+    "recommended_route": "deep_investigation",
+    "source_pack": [
+      "search",
+      "community_discussion"
+    ],
+    "strategy_bias": [
+      "dedupe_url_first",
+      "favor_source_diversity",
+      "allow_wider_fanout",
+      "role_product_anchor"
+    ],
+    "fanout_policy": "parallel_fanout",
+    "merge_policy": "loose_union",
+    "probe_queries": [
+      "Germany Austria Switzerland outdoor equipment camping equipment",
+      "Germany Austria Switzerland outdoor equipment news OR docs"
+    ],
+    "domain": "bd_leads",
+    "domain_hints_active": true,
+    "memory_seeds_used": 0,
+    "execution": {
+      "campaign_id": "naturehike-dach-2026",
+      "continuation_id": "salva-r1",
+      "persistence": "none",
+      "memory": {
+        "read_scope": "none",
+        "write_mode": "none",
+        "min_success_score": 0.3
+      },
+      "cache": {
+        "mode": "ephemeral",
+        "ttl_hours": 24,
+        "retain_artifacts": false
+      },
+      "tags": {}
+    }
+  },
+  "entities": [
+    {
+      "entity_id": "ddg_html:6ac4983de5504769978e74c905d0eb12",
+      "entity_type": "lead",
+      "title": "A wide range of camping accessories, camping equipment and camping ...",
+      "summary": null,
+      "market": "Germany Austria Switzerland",
+      "industry": null,
+      "tags": [
+        "general",
+        "site"
+      ],
+      "source_urls": [
+        "https://www.reimo.com/en/camping-shop"
+      ],
+      "evidence": [
+        {
+          "source_url": "https://www.reimo.com/en/camping-shop",
+          "source_name": "ddg_html",
+          "title": "A wide range of camping accessories, camping equipment and camping ...",
+          "snippet": null,
+          "captured_at": "2026-06-08T21:36:04.462021Z",
+          "metadata": {
+            "query_used": "camping equipment Germany Austria Switzerland",
+            "strategy_used": "anchor",
+            "external_id": null,
+            "raw_evidence": {
+              "raw": {
+                "title": "A wide range of camping accessories, camping equipment and camping ...",
+                "url": "https://www.reimo.com/en/camping-shop/",
+                "snippet": "",
+                "engine": "ddg_html",
+                "retrieval_instance": "https://html.duckduckgo.com/html/"
+              },
+              "normalized": {
+                "title": "A wide range of camping accessories, camping equipment and camping ...",
+                "url": "https://www.reimo.com/en/camping-shop",
+                "snippet": "",
+                "engine": "ddg_html",
+                "retrieval_instance": "https://html.duckduckgo.com/html/"
+              },
+              "classification": {
+                "content_type": "general",
+                "source_kind": "site",
+                "strategy": "anchor",
+                "query_length": 5,
+                "is_event_like": false,
+                "is_company_like": false,
+                "is_contact_like": false,
+                "domain": "reimo.com"
+              },
+              "dedupe_key": "ff1e1493a19bc88f745701875a29491a64802e00",
+              "prefilter_reason": null
+            }
+          }
+        }
+      ],
+      "confidence": 0.2448,
+      "score": 0.2448,
+      "status": "qualified",
+      "event": {
+        "starts_at": null,
+        "ends_at": null,
+        "timezone": "Asia/Taipei",
+        "location_name": null,
+        "location_address": null,
+        "city": null,
+        "country": null,
+        "latitude": null,
+        "longitude": null,
+        "organizer_name": null,
+        "organizer_email": null,
+        "organizer_domain": "www.reimo.com",
+        "capacity": null,
+        "price_amount": 0.0,
+        "currency": "TWD",
+        "cover_image_url": null,
+        "speaker_names": [],
+        "venue_name": null
+      },
+      "created_at": "2026-06-08T21:36:04.462021Z",
+      "updated_at": "2026-06-08T21:36:07.243680Z",
+      "attributes": {
+        "description": "",
+        "ai_tags": [],
+        "reject_reasons": [],
+        "round_num": 1,
+        "query_used": "camping equipment Germany Austria Switzerland",
+        "strategy_used": "anchor",
+        "raw_evidence": {
+          "raw": {
+            "title": "A wide range of camping accessories, camping equipment and camping ...",
+            "url": "https://www.reimo.com/en/camping-shop/",
+            "snippet": "",
+            "engine": "ddg_html",
+            "retrieval_instance": "https://html.duckduckgo.com/html/"
+          },
+          "normalized": {
+            "title": "A wide range of camping accessories, camping equipment and camping ...",
+            "url": "https://www.reimo.com/en/camping-shop",
+            "snippet": "",
+            "engine": "ddg_html",
+            "retrieval_instance": "https://html.duckduckgo.com/html/"
+          },
+          "classification": {
+            "content_type": "general",
+            "source_kind": "site",
+            "strategy": "anchor",
+            "query_length": 5,
+            "is_event_like": false,
+            "is_company_like": false,
+            "is_contact_like": false,
+            "domain": "reimo.com"
+          },
+          "dedupe_key": "ff1e1493a19bc88f745701875a29491a64802e00",
+          "prefilter_reason": null
+        }
+      }
+    },
+    {
+      "entity_id": "ddg_html:38ba51d190ac138a176c6bd80f9d21eb",
+      "entity_type": "lead",
+      "title": "Camping Equipment & Travel Accessories | Bergfreunde",
+      "summary": null,
+      "market": "Germany Austria Switzerland",
+      "industry": null,
+      "tags": [
+        "general",
+        "site"
+      ],
+      "source_urls": [
+        "https://www.bergfreunde.eu/camping"
+      ],
+      "evidence": [
+        {
+          "source_url": "https://www.bergfreunde.eu/camping",
+          "source_name": "ddg_html",
+          "title": "Camping Equipment & Travel Accessories | Bergfreunde",
+          "snippet": null,
+          "captured_at": "2026-06-08T21:36:04.463244Z",
+          "metadata": {
+            "query_used": "camping equipment Germany Austria Switzerland",
+            "strategy_used": "anchor",
+            "external_id": null,
+            "raw_evidence": {
+              "raw": {
+                "title": "Camping Equipment & Travel Accessories | Bergfreunde",
+                "url": "https://www.bergfreunde.eu/camping/",
+                "snippet": "",
+                "engine": "ddg_html",
+                "retrieval_instance": "https://html.duckduckgo.com/html/"
+              },
+              "normalized": {
+                "title": "Camping Equipment & Travel Accessories | Bergfreunde",
+                "url": "https://www.bergfreunde.eu/camping",
+                "snippet": "",
+                "engine": "ddg_html",
+                "retrieval_instance": "https://html.duckduckgo.com/html/"
+              },
+              "classification": {
+                "content_type": "general",
+                "source_kind": "site",
+                "strategy": "anchor",
+                "query_length": 5,
+                "is_event_like": false,
+                "is_company_like": false,
+                "is_contact_like": false,
+                "domain": "bergfreunde.eu"
+              },
+              "dedupe_key": "12d91409e29adb2c775107d8b54a49abf57f5a98",
+              "prefilter_reason": null
+            }
+          }
+        }
+      ],
+      "confidence": 0.2448,
+      "score": 0.2448,
+      "status": "qualified",
+      "event": {
+        "starts_at": null,
+        "ends_at": null,
+        "timezone": "Asia/Taipei",
+        "location_name": null,
+        "location_address": null,
+        "city": null,
+        "country": null,
+        "latitude": null,
+        "longitude": null,
+        "organizer_name": null,
+        "organizer_email": null,
+        "organizer_domain": "www.bergfreunde.eu",
+        "capacity": null,
+        "price_amount": 0.0,
+        "currency": "TWD",
+        "cover_image_url": null,
+        "speaker_names": [],
+        "venue_name": null
+      },
+      "created_at": "2026-06-08T21:36:04.463244Z",
+      "updated_at": "2026-06-08T21:36:07.243731Z",
+      "attributes": {
+        "description": "",
+        "ai_tags": [],
+        "reject_reasons": [],
+        "round_num": 1,
+        "query_used": "camping equipment Germany Austria Switzerland",
+        "strategy_used": "anchor",
+        "raw_evidence": {
+          "raw": {
+            "title": "Camping Equipment & Travel Accessories | Bergfreunde",
+            "url": "https://www.bergfreunde.eu/camping/",
+            "snippet": "",
+            "engine": "ddg_html",
+            "retrieval_instance": "https://html.duckduckgo.com/html/"
+          },
+          "normalized": {
+            "title": "Camping Equipment & Travel Accessories | Bergfreunde",
+            "url": "https://www.bergfreunde.eu/camping",
+            "snippet": "",
+            "engine": "ddg_html",
+            "retrieval_instance": "https://html.duckduckgo.com/html/"
+          },
+          "classification": {
+            "content_type": "general",
+            "source_kind": "site",
+            "strategy": "anchor",
+            "query_length": 5,
+            "is_event_like": false,
+            "is_company_like": false,
+            "is_contact_like": false,
+            "domain": "bergfreunde.eu"
+          },
+          "dedupe_key": "12d91409e29adb2c775107d8b54a49abf57f5a98",
+          "prefilter_reason": null
+        }
+      }
+    },
+    {
+      "entity_id": "ddg_html:ee8492732866e13c1b4eb5a6dcb501f9",
+      "entity_type": "lead",
+      "title": "Campingausrüstung & Campingzubehör online kaufen | Bergfreunde",
+      "summary": null,
+      "market": "Germany Austria Switzerland",
+      "industry": null,
+      "tags": [
+        "general",
+        "site"
+      ],
+      "source_urls": [
+        "https://www.bergfreunde.de/camping"
+      ],
+      "evidence": [
+        {
+          "source_url": "https://www.bergfreunde.de/camping",
+          "source_name": "ddg_html",
+          "title": "Campingausrüstung & Campingzubehör online kaufen | Bergfreunde",
+          "snippet": null,
+          "captured_at": "2026-06-08T21:36:04.464205Z",
+          "metadata": {
+            "query_used": "camping equipment Germany Austria Switzerland",
+            "strategy_used": "anchor",
+            "external_id": null,
+            "raw_evidence": {
+              "raw": {
+                "title": "Campingausrüstung & Campingzubehör online kaufen | Bergfreunde",
+                "url": "https://www.bergfreunde.de/camping/",
+                "snippet": "",
+                "engine": "ddg_html",
+                "retrieval_instance": "https://html.duckduckgo.com/html/"
+              },
+              "normalized": {
+                "title": "Campingausrüstung & Campingzubehör online kaufen | Bergfreunde",
+                "url": "https://www.bergfreunde.de/camping",
+                "snippet": "",
+                "engine": "ddg_html",
+                "retrieval_instance": "https://html.duckduckgo.com/html/"
+              },
+              "classification": {
+                "content_type": "general",
+                "source_kind": "site",
+                "strategy": "anchor",
+                "query_length": 5,
+                "is_event_like": false,
+                "is_company_like": false,
+                "is_contact_like": false,
+                "domain": "bergfreunde.de"
+              },
+              "dedupe_key": "019b515c41ab5ef5c4001cc877a17449d11a0d9a",
+              "prefilter_reason": null
+            }
+          }
+        }
+      ],
+      "confidence": 0.2102,
+      "score": 0.2102,
+      "status": "qualified",
+      "event": {
+        "starts_at": null,
+        "ends_at": null,
+        "timezone": "Asia/Taipei",
+        "location_name": null,
+        "location_address": null,
+        "city": null,
+        "country": null,
+        "latitude": null,
+        "longitude": null,
+        "organizer_name": null,
+        "organizer_email": null,
+        "organizer_domain": "www.bergfreunde.de",
+        "capacity": null,
+        "price_amount": 0.0,
+        "currency": "TWD",
+        "cover_image_url": null,
+        "speaker_names": [],
+        "venue_name": null
+      },
+      "created_at": "2026-06-08T21:36:04.464205Z",
+      "updated_at": "2026-06-08T21:36:07.243749Z",
+      "attributes": {
+        "description": "",
+        "ai_tags": [],
+        "reject_reasons": [],
+        "round_num": 1,
+        "query_used": "camping equipment Germany Austria Switzerland",
+        "strategy_used": "anchor",
+        "raw_evidence": {
+          "raw": {
+            "title": "Campingausrüstung & Campingzubehör online kaufen | Bergfreunde",
+            "url": "https://www.bergfreunde.de/camping/",
+            "snippet": "",
+            "engine": "ddg_html",
+            "retrieval_instance": "https://html.duckduckgo.com/html/"
+          },
+          "normalized": {
+            "title": "Campingausrüstung & Campingzubehör online kaufen | Bergfreunde",
+            "url": "https://www.bergfreunde.de/camping",
+            "snippet": "",
+            "engine": "ddg_html",
+            "retrieval_instance": "https://html.duckduckgo.com/html/"
+          },
+          "classification": {
+            "content_type": "general",
+            "source_kind": "site",
+            "strategy": "anchor",
+            "query_length": 5,
+            "is_event_like": false,
+            "is_company_like": false,
+            "is_contact_like": false,
+            "domain": "bergfreunde.de"
+          },
+          "dedupe_key": "019b515c41ab5ef5c4001cc877a17449d11a0d9a",
+          "prefilter_reason": null
+        }
+      }
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:538ac2a65c499a9107ff48972906d7fc",
+      "schema_name": "canonical_relation",
+      "schema_version": "0.1.0",
+      "storage_version": "0.1.0",
+      "migration_version": "0.1.0",
+      "relation_type": "hosted_by",
+      "from_entity_id": "ddg_html:6ac4983de5504769978e74c905d0eb12",
+      "to_entity_id": "domain:ab8c912586d453e356a4f64f98a07050",
+      "confidence": 0.7,
+      "evidence_ids": [],
+      "attributes": {
+        "domain": "www.reimo.com"
+      }
+    },
+    {
+      "relation_id": "rel:eaf275f3d23f39d80e0beb9de25d334b",
+      "schema_name": "canonical_relation",
+      "schema_version": "0.1.0",
+      "storage_version": "0.1.0",
+      "migration_version": "0.1.0",
+      "relation_type": "hosted_by",
+      "from_entity_id": "ddg_html:38ba51d190ac138a176c6bd80f9d21eb",
+      "to_entity_id": "domain:6c57b5847e9fabe339d214259f89ef27",
+      "confidence": 0.7,
+      "evidence_ids": [],
+      "attributes": {
+        "domain": "www.bergfreunde.eu"
+      }
+    },
+    {
+      "relation_id": "rel:258933fbb76974665ce9cfa1ed36f4fd",
+      "schema_name": "canonical_relation",
+      "schema_version": "0.1.0",
+      "storage_version": "0.1.0",
+      "migration_version": "0.1.0",
+      "relation_type": "hosted_by",
+      "from_entity_id": "ddg_html:ee8492732866e13c1b4eb5a6dcb501f9",
+      "to_entity_id": "domain:1a863f4572efa92942e629c5502ef094",
+      "confidence": 0.7,
+      "evidence_ids": [],
+      "attributes": {
+        "domain": "www.bergfreunde.de"
+      }
+    }
+  ],
+  "telemetry": [
+    {
+      "query": "camping equipment Germany Austria Switzerland",
+      "round_num": 1,
+      "strategy": "anchor",
+      "results_total": 10,
+      "results_qualified": 3,
+      "avg_score": 0.06998,
+      "reject_reasons": [],
+      "noise_domains": [],
+      "metadata": {
+        "round_strategy": "anchor",
+        "content_weights": {
+          "title": 0.3,
+          "snippet": 0.3,
+          "document": 0.2,
+          "platform": 0.2
+        },
+        "source_hints": [
+          "globalsources.com",
+          "clutch.co",
+          "g2.com",
+          "kompass.com",
+          "linkedin.com",
+          "crunchbase.com"
+        ],
+        "notes": [
+          "graph_expansion",
+          "balance_title_snippet_document"
+        ],
+        "query_family_strategy": "anchor",
+        "source_nodes": [
+          "camping equipment",
+          "distributor",
+          "Naturehike",
+          "importer",
+          "wholesale"
+        ],
+        "pipeline_stage": "fetch_extract_normalize_dedupe_classify_score",
+        "raw_evidence_total": 10,
+        "prefilter_rejected_total": 0,
+        "prefilter_reasons": {},
+        "content_type_counts": {
+          "general": 10
+        },
+        "source_kind_counts": {
+          "site": 10
+        },
+        "content_terms": [
+          "accessories",
+          "equipment",
+          "bergfreunde",
+          "wide",
+          "range",
+          "travel",
+          "campingausr",
+          "stung",
+          "campingzubeh",
+          "online",
+          "kaufen"
+        ]
+      }
+    },
+    {
+      "query": "camping equipment trade fair",
+      "round_num": 1,
+      "strategy": "anchor",
+      "results_total": 10,
+      "results_qualified": 0,
+      "avg_score": 0.11327000000000001,
+      "reject_reasons": [
+        "low_signal",
+        "low_signal",
+        "low_signal"
+      ],
+      "noise_domains": [
+        "gocaf.kr",
+        "topropemedia.com",
+        "campercaravanshow.com"
+      ],
+      "metadata": {
+        "round_strategy": "anchor",
+        "content_weights": {
+          "title": 0.3,
+          "snippet": 0.3,
+          "document": 0.2,
+          "platform": 0.2
+        },
+        "source_hints": [
+          "globalsources.com",
+          "clutch.co",
+          "g2.com",
+          "kompass.com",
+          "linkedin.com",
+          "crunchbase.com"
+        ],
+        "notes": [
+          "graph_expansion",
+          "balance_title_snippet_document"
+        ],
+        "query_family_strategy": "anchor",
+        "source_nodes": [
+          "camping equipment",
+          "distributor",
+          "Naturehike",
+          "importer",
+          "wholesale"
+        ],
+        "pipeline_stage": "fetch_extract_normalize_dedupe_classify_score",
+        "raw_evidence_total": 10,
+        "prefilter_rejected_total": 0,
+        "prefilter_reasons": {},
+        "content_type_counts": {
+          "general": 9,
+          "event": 1
+        },
+        "source_kind_counts": {
+          "site": 10
+        },
+        "content_terms": []
+      }
+    },
+    {
+      "query": "distributor Germany Austria Switzerland",
+      "round_num": 1,
+      "strategy": "anchor",
+      "results_total": 0,
+      "results_qualified": 0,
+      "avg_score": 1.1327,
+      "reject_reasons": [],
+      "noise_domains": [],
+      "metadata": {
+        "round_strategy": "anchor",
+        "content_weights": {
+          "title": 0.3,
+          "snippet": 0.3,
+          "document": 0.2,
+          "platform": 0.2
+        },
+        "source_hints": [
+          "globalsources.com",
+          "clutch.co",
+          "g2.com",
+          "kompass.com",
+          "linkedin.com",
+          "crunchbase.com"
+        ],
+        "notes": [
+          "graph_expansion",
+          "balance_title_snippet_document"
+        ],
+        "query_family_strategy": "anchor",
+        "source_nodes": [
+          "camping equipment",
+          "distributor",
+          "Naturehike",
+          "importer",
+          "wholesale"
+        ],
+        "pipeline_stage": "fetch_extract_normalize_dedupe_classify_score",
+        "raw_evidence_total": 0,
+        "prefilter_rejected_total": 0,
+        "prefilter_reasons": {},
+        "content_type_counts": {},
+        "source_kind_counts": {},
+        "content_terms": []
+      }
+    }
+  ],
+  "source_attempts": [
+    {
+      "run_id": "pending",
+      "strategy": "anchor",
+      "base_url": "https://html.duckduckgo.com/html/",
+      "mode": "resilient",
+      "source_class": "custom_remote",
+      "trust_level": "medium",
+      "risk_level": "medium",
+      "recommended_crawl_mode": "cautious",
+      "result_count": 0,
+      "succeeded": false,
+      "error": null,
+      "format_used": "html"
+    },
+    {
+      "run_id": "pending",
+      "strategy": "anchor",
+      "base_url": "obscura_browser",
+      "mode": "resilient",
+      "source_class": "unknown",
+      "trust_level": "low",
+      "risk_level": "high",
+      "recommended_crawl_mode": "wall_guarded",
+      "result_count": 0,
+      "succeeded": false,
+      "error": "no_site_domains",
+      "format_used": "browser"
+    }
+  ]
+}

@@ -16,6 +16,7 @@ Use these first when debugging or changing behavior:
 | [hold-walk.md](hold-walk.md) | relation-aware graph walk over a run snapshot |
 | [hold-backends.md](hold-backends.md) | Hold backend evaluation catalog |
 | [semantic-memory.md](semantic-memory.md) | query-family semantic search and backend catalog |
+| [execution-context.md](execution-context.md) | campaign isolation, persistence, memory quarantine/promotion, cache intent |
 | [semantic-memory.md](semantic-memory.md#benchmark) | semantic backend benchmark and comparison surface |
 | [usage-telemetry.md](usage-telemetry.md) | tenant-aware usage aggregation over runs and jobs |
 | [job-storage.md](job-storage.md) | tenant-aware job record contract |

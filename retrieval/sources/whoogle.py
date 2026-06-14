@@ -6,9 +6,9 @@ import os
 import random
 import time
 import urllib.parse
-import urllib.request
 from typing import Any
 
+from retrieval.http import http_get
 from retrieval.models import RetrievalAttempt
 from salva_core.schemas import RetrievalPolicy
 
@@ -38,15 +38,15 @@ class WhoogleRetriever:
         params = urllib.parse.urlencode({"q": query, "format": "json"})
         url = f"{self.base_url}/search?{params}"
         try:
-            req = urllib.request.Request(
+            raw = http_get(
                 url,
                 headers={
                     "User-Agent": random.choice(USER_AGENTS),
                     "Accept": "application/json",
                 },
+                timeout=self.policy.request_timeout,
             )
-            with urllib.request.urlopen(req, timeout=self.policy.request_timeout) as resp:
-                data = json.load(resp)
+            data = json.loads(raw)
             time.sleep(self.policy.request_delay)
             raw_results = data.get("results", [])[:n]
             results = [
