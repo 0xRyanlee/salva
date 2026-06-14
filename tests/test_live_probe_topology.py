@@ -128,17 +128,18 @@ class TestProbeWritesRoutingMemory:
 
         # record_source_attempt is a lazy local import inside _apply_live_probe;
         # patch at the hold module level where it's actually called.
-        with patch("salva_core.persistence.hold.record_source_attempt") as mock_record:
+        with patch("salva_core.persistence.hold.record_probe_result") as mock_record:
             plan_route(_make_request())
 
-        assert mock_record.called, "record_source_attempt must be called after healthy probe"
-        assert mock_record.call_args[0][1] is True, "succeeded must be True for healthy probe"
+        assert mock_record.called, "record_probe_result must be called after healthy probe"
+        # call signature: (source_url, result_count, latency_ms)
+        assert mock_record.call_args[0][1] == 5, "result_count must match signal"
 
     def test_empty_probe_records_failure(self):
         _set_probe_cache(_fake_signal(result_count=0))
 
-        with patch("salva_core.persistence.hold.record_source_attempt") as mock_record:
+        with patch("salva_core.persistence.hold.record_probe_result") as mock_record:
             plan_route(_make_request())
 
-        assert mock_record.called, "record_source_attempt must be called after empty probe"
-        assert mock_record.call_args[0][1] is False, "succeeded must be False for empty probe"
+        assert mock_record.called, "record_probe_result must be called after empty probe"
+        assert mock_record.call_args[0][1] == 0, "result_count must be 0 for empty probe"

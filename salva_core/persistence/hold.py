@@ -42,19 +42,24 @@ def upsert_hyperedge_incidence(
     percentage: float | None = None,
     order_index: int = 0,
     props: dict[str, Any] | None = None,
+    confidence: float = 1.0,
     path: str = DEFAULT_DB_PATH,
 ) -> None:
+    now = datetime.now(UTC).isoformat()
     with get_conn(path) as conn:
         conn.execute(
             """INSERT INTO hyperedge_incidences
-               (hyperedge_id, node_id, role, percentage, order_index, props_json)
-               VALUES (?, ?, ?, ?, ?, ?)
+               (hyperedge_id, node_id, role, percentage, order_index, props_json,
+                confidence, created_at, updated_at)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                ON CONFLICT(hyperedge_id, node_id, role) DO UPDATE SET
                percentage=excluded.percentage,
                order_index=excluded.order_index,
-               props_json=excluded.props_json""",
+               props_json=excluded.props_json,
+               confidence=excluded.confidence,
+               updated_at=excluded.updated_at""",
             (hyperedge_id, node_id, role, percentage, order_index,
-             json.dumps(props or {}, ensure_ascii=False)),
+             json.dumps(props or {}, ensure_ascii=False), confidence, now, now),
         )
 
 
@@ -132,6 +137,7 @@ def add_entity_alias(
     path: str = DEFAULT_DB_PATH,
 ) -> None:
     alias_id = f"alias:{uuid.uuid4()}"
+    normalized = normalize_alias(alias)
     with get_conn(path) as conn:
         # Avoid duplicate aliases for the same canonical entity
         existing = conn.execute(
@@ -140,9 +146,10 @@ def add_entity_alias(
         ).fetchone()
         if not existing:
             conn.execute(
-                "INSERT INTO entity_aliases (alias_id, canonical_id, alias, script, source) "
-                "VALUES (?, ?, ?, ?, ?)",
-                (alias_id, canonical_id, alias, script, source),
+                "INSERT INTO entity_aliases "
+                "(alias_id, canonical_id, alias, normalized_alias, script, source) "
+                "VALUES (?, ?, ?, ?, ?, ?)",
+                (alias_id, canonical_id, alias, normalized, script, source),
             )
 
 
@@ -163,20 +170,32 @@ def resolve_entity_normalized(
     alias: str,
     path: str = DEFAULT_DB_PATH,
 ) -> str | None:
-    """Resolve alias to canonical_id: exact match first, then normalized form.
+    """Resolve alias to canonical_id: exact match, then normalized index, then GLEIF.
 
     Handles legal-suffix variation (TSMC Ltd → TSMC) and NFKC form differences.
-    Returns None if no match found in either pass.
+    Uses the normalized_alias index (added in L1-A) — O(log N) instead of O(N) scan.
+    Falls back to full-scan for rows written before L1-A migration (NULL normalized_alias).
+    Returns None if no match found.
     """
     exact = resolve_canonical_id(alias, path=path)
     if exact:
         return exact
+
     normalized = normalize_alias(alias)
     with get_conn(path) as conn:
-        rows = conn.execute(
-            "SELECT canonical_id, alias FROM entity_aliases",
+        # Fast path: normalized_alias index (populated for all new aliases)
+        row = conn.execute(
+            "SELECT canonical_id FROM entity_aliases WHERE normalized_alias = ? LIMIT 1",
+            (normalized,),
+        ).fetchone()
+        if row:
+            return row[0]
+
+        # Slow path: backfill scan for pre-L1-A rows with NULL normalized_alias
+        legacy_rows = conn.execute(
+            "SELECT canonical_id, alias FROM entity_aliases WHERE normalized_alias IS NULL",
         ).fetchall()
-    for canonical_id, stored_alias in rows:
+    for canonical_id, stored_alias in legacy_rows:
         if normalize_alias(stored_alias) == normalized:
             return canonical_id
 
@@ -289,3 +308,52 @@ def list_routing_memory(
         }
         for r in rows
     ]
+
+
+def record_probe_result(
+    source_url: str,
+    result_count: int,
+    latency_ms: float,
+    path: str = DEFAULT_DB_PATH,
+) -> None:
+    """Persist a live probe observation alongside the success/failure signal.
+
+    Writes avg_latency_ms and last_probe_at (L1-A columns). Delegates the
+    authority_boost update to record_source_attempt so the boost logic stays
+    in one place.
+    """
+    now = datetime.now(UTC).isoformat()
+    record_source_attempt(source_url, result_count > 0, path=path)
+    with get_conn(path) as conn:
+        # avg_latency_ms: rolling average — (old * n + new) / (n + 1)
+        row = conn.execute(
+            "SELECT success_count, failure_count, avg_latency_ms FROM routing_memory "
+            "WHERE source_url = ?", (source_url,)
+        ).fetchone()
+        if row:
+            sc, fc, old_avg = row
+            n = sc + fc
+            new_avg = ((old_avg or 0.0) * (n - 1) + latency_ms) / n if n > 0 else latency_ms
+            conn.execute(
+                "UPDATE routing_memory SET avg_latency_ms=?, last_probe_at=?, updated_at=? "
+                "WHERE source_url=?",
+                (new_avg, now, now, source_url),
+            )
+
+
+def backfill_normalized_aliases(path: str = DEFAULT_DB_PATH) -> int:
+    """One-time migration: populate normalized_alias for pre-L1-A rows.
+
+    Returns the number of rows updated. Safe to call repeatedly — only
+    touches rows where normalized_alias IS NULL.
+    """
+    with get_conn(path) as conn:
+        rows = conn.execute(
+            "SELECT alias_id, alias FROM entity_aliases WHERE normalized_alias IS NULL"
+        ).fetchall()
+        for alias_id, alias in rows:
+            conn.execute(
+                "UPDATE entity_aliases SET normalized_alias=? WHERE alias_id=?",
+                (normalize_alias(alias), alias_id),
+            )
+    return len(rows)

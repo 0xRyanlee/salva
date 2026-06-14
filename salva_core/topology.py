@@ -346,11 +346,11 @@ def _apply_live_probe(
     if signal.has_error:
         return topology, confidence, [*notes, "live_probe_error"]
 
-    # Write probe result back to routing_memory so the next run sees it.
+    # Write probe result back to routing_memory (authority_boost + latency).
     # Import the module (not the function) so monkeypatching in tests works correctly.
     try:
         import salva_core.persistence.hold as _hold
-        _hold.record_source_attempt(signal.searxng_url, signal.result_count > 0)
+        _hold.record_probe_result(signal.searxng_url, signal.result_count, signal.latency_ms)
     except Exception:
         pass
 

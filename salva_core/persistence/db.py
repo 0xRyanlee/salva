@@ -586,6 +586,33 @@ def _migrate_schema(conn: sqlite3.Connection) -> None:
     ):
         conn.execute(create_sql)
 
+    # L1-A: Add columns to existing Hold tables for cross-run knowledge accumulation.
+    # ALTER TABLE ADD COLUMN is non-destructive; the column-presence guard makes it idempotent.
+    hei_columns = {row[1] for row in conn.execute("PRAGMA table_info(hyperedge_incidences)").fetchall()}
+    for col, sql_type in {
+        "confidence": "REAL NOT NULL DEFAULT 1.0",
+        "created_at": "TEXT",
+        "updated_at": "TEXT",
+    }.items():
+        if col not in hei_columns:
+            conn.execute(f"ALTER TABLE hyperedge_incidences ADD COLUMN {col} {sql_type}")
+
+    alias_columns = {row[1] for row in conn.execute("PRAGMA table_info(entity_aliases)").fetchall()}
+    if "normalized_alias" not in alias_columns:
+        conn.execute("ALTER TABLE entity_aliases ADD COLUMN normalized_alias TEXT")
+    conn.execute(
+        "CREATE INDEX IF NOT EXISTS idx_entity_aliases_normalized "
+        "ON entity_aliases(normalized_alias)"
+    )
+
+    rm_columns = {row[1] for row in conn.execute("PRAGMA table_info(routing_memory)").fetchall()}
+    for col, sql_type in {
+        "avg_latency_ms": "REAL",
+        "last_probe_at": "TEXT",
+    }.items():
+        if col not in rm_columns:
+            conn.execute(f"ALTER TABLE routing_memory ADD COLUMN {col} {sql_type}")
+
 
 def _ensure_hold_schema_registry(conn: sqlite3.Connection) -> None:
     schema = build_hold_schema()
