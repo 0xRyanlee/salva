@@ -1,0 +1,215 @@
+{
+  "experiment_id": "naturehike-dach-agent-vs-salva-2026-06-08",
+  "target": {
+    "brand": "Naturehike",
+    "objective": "Find overseas sales channels in German-speaking Europe",
+    "countries": [
+      "Germany",
+      "Austria",
+      "Switzerland"
+    ],
+    "channel_types": [
+      "distributor",
+      "sales_agent",
+      "retail_alliance",
+      "specialist_retailer",
+      "retail_ecosystem"
+    ]
+  },
+  "design": {
+    "same_task": true,
+    "independent_collection": true,
+    "budget_parity": false,
+    "raw_result_capture": false,
+    "elapsed_time_comparable": false,
+    "reference_set_method": "pooled_verified_union",
+    "agent_round_semantics": "incremental",
+    "salva_round_semantics": "independent max-round snapshots",
+    "salva_memory_read_scope": "none",
+    "salva_persistence": "none",
+    "annotation_rule": "Relevant only when the organization can distribute, represent, aggregate, or retail outdoor products in DACH."
+  },
+  "warnings": [
+    "request and time budgets are not matched",
+    "one or more conditions lack complete raw-result capture",
+    "elapsed time is not comparable across conditions",
+    "pooled recall uses a verified union, not predeclared external ground truth"
+  ],
+  "series": [
+    {
+      "condition": "agent_only",
+      "round": 1,
+      "label": "agent_only R1",
+      "metrics": {
+        "raw_candidates": 6,
+        "unique_candidates": 6,
+        "relevant_candidates": 5,
+        "verified_relevant": 5,
+        "precision": 0.8333,
+        "pooled_recall": 0.2941,
+        "evidence_completeness": 0.5,
+        "source_diversity": 5,
+        "country_coverage": 1.0,
+        "channel_coverage": 0.4,
+        "duplicate_rate": 0.0,
+        "contamination_rate": 0.0,
+        "contamination_safety": 1.0,
+        "elapsed_seconds": 0.0,
+        "request_count": 4,
+        "matched_reference": [
+          "elementum-distribution",
+          "icon-outdoor-distribution",
+          "kundert-vario",
+          "sport-handelsagentur-weindel",
+          "vision-o"
+        ]
+      }
+    },
+    {
+      "condition": "agent_only",
+      "round": 2,
+      "label": "agent_only R2",
+      "metrics": {
+        "raw_candidates": 13,
+        "unique_candidates": 13,
+        "relevant_candidates": 11,
+        "verified_relevant": 11,
+        "precision": 0.8462,
+        "pooled_recall": 0.6471,
+        "evidence_completeness": 0.5455,
+        "source_diversity": 12,
+        "country_coverage": 1.0,
+        "channel_coverage": 0.8,
+        "duplicate_rate": 0.0,
+        "contamination_rate": 0.0,
+        "contamination_safety": 1.0,
+        "elapsed_seconds": 0.0,
+        "request_count": 8,
+        "matched_reference": [
+          "asmas",
+          "elementum-distribution",
+          "icon-outdoor-distribution",
+          "intersport-deutschland",
+          "kundert-vario",
+          "outtra",
+          "sport-2000-deutschland",
+          "sport-2000-oesterreich",
+          "sport-2000-schweiz",
+          "sport-handelsagentur-weindel",
+          "vision-o"
+        ]
+      }
+    },
+    {
+      "condition": "agent_only",
+      "round": 3,
+      "label": "agent_only R3",
+      "metrics": {
+        "raw_candidates": 18,
+        "unique_candidates": 18,
+        "relevant_candidates": 15,
+        "verified_relevant": 15,
+        "precision": 0.8333,
+        "pooled_recall": 0.8824,
+        "evidence_completeness": 0.5333,
+        "source_diversity": 16,
+        "country_coverage": 1.0,
+        "channel_coverage": 1.0,
+        "duplicate_rate": 0.0,
+        "contamination_rate": 0.0,
+        "contamination_safety": 1.0,
+        "elapsed_seconds": 0.0,
+        "request_count": 12,
+        "matched_reference": [
+          "asmas",
+          "elementum-distribution",
+          "galaxus-schweiz",
+          "icon-outdoor-distribution",
+          "interdiscount-schweiz",
+          "intersport-deutschland",
+          "kundert-vario",
+          "meister-messer",
+          "outtra",
+          "overland-outfitters",
+          "sport-2000-deutschland",
+          "sport-2000-oesterreich",
+          "sport-2000-schweiz",
+          "sport-handelsagentur-weindel",
+          "vision-o"
+        ]
+      }
+    },
+    {
+      "condition": "salva",
+      "round": 1,
+      "label": "salva R1",
+      "metrics": {
+        "raw_candidates": 3,
+        "unique_candidates": 2,
+        "relevant_candidates": 2,
+        "verified_relevant": 2,
+        "precision": 1.0,
+        "pooled_recall": 0.1176,
+        "evidence_completeness": 0.75,
+        "source_diversity": 3,
+        "country_coverage": 0.3333,
+        "channel_coverage": 0.2,
+        "duplicate_rate": 0.3333,
+        "contamination_rate": 0.0,
+        "contamination_safety": 1.0,
+        "elapsed_seconds": 4.397,
+        "request_count": 3,
+        "matched_reference": [
+          "bergfreunde",
+          "reimo"
+        ]
+      }
+    },
+    {
+      "condition": "salva",
+      "round": 2,
+      "label": "salva R2",
+      "metrics": {
+        "raw_candidates": 0,
+        "unique_candidates": 0,
+        "relevant_candidates": 0,
+        "verified_relevant": 0,
+        "precision": 0.0,
+        "pooled_recall": 0.0,
+        "evidence_completeness": 0.0,
+        "source_diversity": 0,
+        "country_coverage": 0.0,
+        "channel_coverage": 0.0,
+        "duplicate_rate": 0.0,
+        "contamination_rate": 0.0,
+        "contamination_safety": 1.0,
+        "elapsed_seconds": 5.505,
+        "request_count": 6,
+        "matched_reference": []
+      }
+    },
+    {
+      "condition": "salva",
+      "round": 3,
+      "label": "salva R3",
+      "metrics": {
+        "raw_candidates": 0,
+        "unique_candidates": 0,
+        "relevant_candidates": 0,
+        "verified_relevant": 0,
+        "precision": 0.0,
+        "pooled_recall": 0.0,
+        "evidence_completeness": 0.0,
+        "source_diversity": 0,
+        "country_coverage": 0.0,
+        "channel_coverage": 0.0,
+        "duplicate_rate": 0.0,
+        "contamination_rate": 0.0,
+        "contamination_safety": 1.0,
+        "elapsed_seconds": 5.11,
+        "request_count": 6,
+        "matched_reference": []
+      }
+    }
+  ]
+}

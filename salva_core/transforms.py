@@ -64,6 +64,20 @@ def _apply_profile(entity: CanonicalEntity, output_profile: OutputProfile) -> di
             "tags": entity.tags,
         }
 
+    if output_profile == "research_report":
+        return {
+            "title": entity.title,
+            "entity_type": entity.entity_type,
+            "market": entity.market,
+            "industry": entity.industry,
+            "summary": entity.summary,
+            "score": entity.score,
+            "confidence": entity.confidence,
+            "tags": entity.tags,
+            "source_urls": entity.source_urls,
+            "domain": _resolve_value(entity, "organizer_domain"),
+        }
+
     if output_profile == "company":
         return {
             "title": entity.title,
@@ -116,6 +130,92 @@ def _apply_options(row: dict[str, Any], options: TransformOptions) -> dict[str, 
         result = {key: value for key, value in result.items() if value is not None}
 
     return result
+
+
+def build_research_report(
+    entities: list[CanonicalEntity],
+    meta: dict[str, Any],
+) -> dict[str, Any]:
+    """
+    Aggregate entities into a structured research report.
+
+    Suitable for deep-research outputs, agent summaries, and doc exports.
+    Analogous to GPT deep-research schema: executive summary + findings +
+    coverage map + source attribution + identified gaps.
+    """
+    sorted_entities = sorted(entities, key=lambda e: e.score or 0.0, reverse=True)
+    top = sorted_entities[:10]
+
+    # Source attribution: domain → entity count
+    from urllib.parse import urlparse
+    source_map: dict[str, int] = {}
+    for e in entities:
+        for url in e.source_urls or []:
+            domain = urlparse(url).netloc.lower().removeprefix("www.")
+            if domain:
+                source_map[domain] = source_map.get(domain, 0) + 1
+    top_sources = sorted(source_map.items(), key=lambda x: x[1], reverse=True)[:10]
+
+    # Coverage map: unique markets and industries
+    markets = sorted({e.market for e in entities if e.market})
+    industries = sorted({e.industry for e in entities if e.industry})
+
+    # Tags frequency for gap detection
+    all_tags: list[str] = [t for e in entities for t in (e.tags or [])]
+    tag_freq: dict[str, int] = {}
+    for t in all_tags:
+        tag_freq[t] = tag_freq.get(t, 0) + 1
+
+    avg_score = (sum(e.score or 0.0 for e in entities) / len(entities)) if entities else 0.0
+
+    return {
+        "executive_summary": {
+            "total_entities": len(entities),
+            "qualified_count": meta.get("qualified_count", 0),
+            "avg_score": round(avg_score, 4),
+            "rounds": meta.get("rounds", 0),
+            "domain": meta.get("domain"),
+            "run_id": meta.get("run_id"),
+        },
+        "key_findings": [
+            {
+                "title": e.title,
+                "entity_type": e.entity_type,
+                "score": e.score,
+                "summary": e.summary,
+                "source_url": e.source_urls[0] if e.source_urls else None,
+                "tags": (e.tags or [])[:5],
+            }
+            for e in top
+        ],
+        "coverage_map": {
+            "markets": markets,
+            "industries": industries,
+            "source_domains": [d for d, _ in top_sources],
+        },
+        "source_attribution": [
+            {"domain": d, "entity_count": c} for d, c in top_sources
+        ],
+        "signal_distribution": sorted(tag_freq.items(), key=lambda x: x[1], reverse=True)[:20],
+        "gaps": _identify_gaps(entities, meta),
+    }
+
+
+def _identify_gaps(entities: list[CanonicalEntity], meta: dict[str, Any]) -> list[str]:
+    gaps: list[str] = []
+    if not entities:
+        gaps.append("no_entities_found")
+        return gaps
+    with_email = sum(1 for e in entities if e.attributes.get("organizer_email"))
+    if with_email / len(entities) < 0.2:
+        gaps.append("low_contact_coverage")
+    with_summary = sum(1 for e in entities if e.summary)
+    if with_summary / len(entities) < 0.5:
+        gaps.append("low_description_coverage")
+    scores = [e.score or 0.0 for e in entities]
+    if scores and (sum(scores) / len(scores)) < 0.4:
+        gaps.append("low_avg_score")
+    return gaps
 
 
 def build_output_transform_catalog() -> OutputTransformCatalog:
@@ -221,6 +321,24 @@ def build_output_transform_catalog() -> OutputTransformCatalog:
                 OutputTransformFieldSpec(name="score", source="entity.score", description="Ranking score."),
             ],
             notes=["Use when the caller only needs a small company record."],
+        ),
+        OutputTransformProfileSpec(
+            profile="research_report",
+            description="Structured research report with executive summary, key findings, coverage map, source attribution, and identified gaps.",
+            caller_types=["human", "agent", "analytics"],
+            fields=[
+                OutputTransformFieldSpec(name="title", source="entity.title", description="Entity name.", required=True),
+                OutputTransformFieldSpec(name="entity_type", source="entity.entity_type", description="Canonical entity type."),
+                OutputTransformFieldSpec(name="market", source="entity.market", description="Target market or region."),
+                OutputTransformFieldSpec(name="industry", source="entity.industry", description="Target industry or vertical."),
+                OutputTransformFieldSpec(name="summary", source="entity.summary", description="Short summary."),
+                OutputTransformFieldSpec(name="score", source="entity.score", description="Ranking score."),
+                OutputTransformFieldSpec(name="confidence", source="entity.confidence", description="Extraction confidence."),
+                OutputTransformFieldSpec(name="tags", source="entity.tags", description="Derived tags."),
+                OutputTransformFieldSpec(name="source_urls", source="entity.source_urls", description="Supporting source URLs."),
+                OutputTransformFieldSpec(name="domain", source="entity.attributes.organizer_domain", description="Primary domain."),
+            ],
+            notes=["Use build_research_report() for aggregate report; this profile is used for per-entity rows in the findings section."],
         ),
     ]
     return OutputTransformCatalog(items=items, total=len(items))

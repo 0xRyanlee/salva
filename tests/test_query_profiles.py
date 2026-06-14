@@ -1,5 +1,5 @@
-from core.types import Intent, SearchTelemetry, UnifiedResult
 from core.keyword_graph import KeywordGraph
+from core.types import Intent, SearchTelemetry, UnifiedResult
 from processing.scorer import QualificationScorer
 
 

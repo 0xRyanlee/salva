@@ -29,14 +29,19 @@ class DummyProvider:
         return self.results
 
 
-def test_routed_retriever_merges_provider_results(monkeypatch) -> None:
+def test_routed_retriever_merges_provider_results(monkeypatch, tmp_path) -> None:
     providers = [
         DummyProvider("one", [{"title": "A", "url": "https://a.example", "snippet": ""}]),
         DummyProvider("two", [{"title": "B", "url": "https://b.example", "snippet": ""}]),
     ]
     monkeypatch.setattr(router_module, "_build_provider_chain", lambda policy, strategy: providers)
 
-    retriever = RoutedRetriever(policy=RetrievalPolicy(), strategy="radar", retrieval_mode="parallel")
+    from retrieval.cache import SERPCache
+    fresh_cache = SERPCache(cache_dir=str(tmp_path / "cache"), ttl=3600)
+    retriever = RoutedRetriever(
+        policy=RetrievalPolicy(), strategy="radar", retrieval_mode="parallel",
+        cache=fresh_cache,
+    )
     results = retriever.search("software expo", n=10)
 
     assert len(results) == 2

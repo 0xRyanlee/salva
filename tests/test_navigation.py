@@ -1,7 +1,7 @@
 import json
+from datetime import UTC, datetime
 
 from fastapi.testclient import TestClient
-from datetime import UTC, datetime
 
 from apps.api import main
 from salva_core.navigation import build_mate_report, build_pilot_advice

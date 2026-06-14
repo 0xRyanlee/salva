@@ -11,7 +11,7 @@ import re
 import time
 from typing import Literal, cast
 
-from salva_core.llm import complete_with_omlx, build_bounded_prompt, DEFAULT_OMLX_TIMEOUT
+from salva_core.llm import DEFAULT_OMLX_TIMEOUT, build_bounded_prompt, complete_with_omlx
 from salva_core.schemas import DiscoveryRequest
 
 logger = logging.getLogger("salva.enrichment.omlx")

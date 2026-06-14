@@ -4,17 +4,17 @@ API Exception Handlers
 Provides unified error handling for the Salva Runtime API.
 """
 from fastapi import Request, status
-from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
 
 from salva_core.exceptions import (
-    SalvaError,
-    ProviderError,
     ExtractionError,
+    NotFoundError,
     PersistenceError,
+    ProviderError,
+    SalvaError,
     TimeoutError,
     ValidationError,
-    NotFoundError,
 )
 
 
@@ -49,7 +49,6 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
 async def generic_exception_handler(request: Request, exc: Exception) -> JSONResponse:
     """Handle unexpected exceptions"""
     import os
-    import sys
     
     # Don't expose internal error details in production
     if os.getenv("SALVA_ENV") == "production":

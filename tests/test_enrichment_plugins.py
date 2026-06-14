@@ -1,8 +1,15 @@
 from types import SimpleNamespace
 
-import enrichment.plugins as plugin_module
 import enrichment.omlx as omlx_module
-from enrichment.plugins import AmassPlugin, PluginRegistry, SiteHTMLPlugin, SpiderFootPlugin, TheHarvesterPlugin, enrich_entities
+import enrichment.plugins as plugin_module
+from enrichment.plugins import (
+    AmassPlugin,
+    PluginRegistry,
+    SiteHTMLPlugin,
+    SpiderFootPlugin,
+    TheHarvesterPlugin,
+    enrich_entities,
+)
 from salva_core.schemas import CanonicalEntity, DiscoveryIntent, DiscoveryRequest
 
 

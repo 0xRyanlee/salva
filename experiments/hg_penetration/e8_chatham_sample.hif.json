@@ -1,0 +1,108 @@
+{
+  "format": "HIF",
+  "version": "0.1",
+  "nodes": [
+    {
+      "id": "chatham",
+      "attrs": {
+        "type": "company",
+        "label": "Chatham Lodging Trust"
+      }
+    },
+    {
+      "id": "bluemountain",
+      "attrs": {
+        "type": "fund",
+        "label": "BlueMountain Capital Management"
+      }
+    },
+    {
+      "id": "bm_fund_a",
+      "attrs": {
+        "type": "fund",
+        "label": "BlueMountain Credit Alternatives"
+      }
+    },
+    {
+      "id": "bm_fund_b",
+      "attrs": {
+        "type": "fund",
+        "label": "BlueMountain Distressed"
+      }
+    },
+    {
+      "id": "bm_fund_c",
+      "attrs": {
+        "type": "fund",
+        "label": "BlueMountain Long/Short"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "he_concert_1",
+      "type": "acting_in_concert",
+      "attrs": {
+        "date": "2013-05-15",
+        "filing": "SC 13D/A",
+        "acting_in_concert": true
+      }
+    }
+  ],
+  "incidences": [
+    {
+      "edge": "he_concert_1",
+      "node": "chatham",
+      "role": "target",
+      "attrs": {
+        "order": 0
+      }
+    },
+    {
+      "edge": "he_concert_1",
+      "node": "bluemountain",
+      "role": "group_lead",
+      "attrs": {
+        "order": 1,
+        "percentage": 5.2
+      }
+    },
+    {
+      "edge": "he_concert_1",
+      "node": "bm_fund_a",
+      "role": "group_member",
+      "attrs": {
+        "order": 2,
+        "percentage": 2.1
+      }
+    },
+    {
+      "edge": "he_concert_1",
+      "node": "bm_fund_b",
+      "role": "group_member",
+      "attrs": {
+        "order": 3,
+        "percentage": 1.8
+      }
+    },
+    {
+      "edge": "he_concert_1",
+      "node": "bm_fund_c",
+      "role": "group_member",
+      "attrs": {
+        "order": 4,
+        "percentage": 1.3
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "edge": "he_concert_1",
+      "source": "SEC EDGAR",
+      "jurisdiction": "US",
+      "legal_availability": "public",
+      "url": "https://www.sec.gov/Archives/edgar/data/1475045/000119312513228891/",
+      "snippet": "§13(d)(3) group filing — BlueMountain entities acting in concert"
+    }
+  ]
+}

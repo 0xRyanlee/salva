@@ -1,10 +1,14 @@
 from __future__ import annotations
 
 from collections import Counter
-from statistics import mean
 from typing import Any
 
-from salva_core.persistence import get_run, list_plugin_reports, list_source_attempts, list_telemetry
+from salva_core.persistence import (
+    get_run,
+    list_plugin_reports,
+    list_source_attempts,
+    list_telemetry,
+)
 from salva_core.schemas import AuditComparison, AuditReport
 
 

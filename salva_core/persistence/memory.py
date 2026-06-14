@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import json
 import logging
-from datetime import datetime
+from datetime import UTC, datetime
 
 from salva_core.schemas import QueryFamilyMemoryRecord
 from salva_core.vector_backends import ScalarHashVectorBackend, resolve_semantic_vector_backend
@@ -12,11 +12,50 @@ from .db import DEFAULT_DB_PATH, get_conn
 
 logger = logging.getLogger(__name__)
 
+_MEMORY_SELECT_COLUMNS = """
+    memory_id, run_id, campaign_id, continuation_id, memory_status,
+    promoted_at, domain, objective, output_profile, round_num, strategy,
+    query, query_signature, source_nodes_json, content_nodes_json,
+    content_weights_json, source_hints_json, notes_json, raw_total,
+    qualified_total, avg_score, success_score, created_at
+"""
+
+
+def _record_from_row(row: tuple[object, ...]) -> QueryFamilyMemoryRecord:
+    return QueryFamilyMemoryRecord(
+        memory_id=str(row[0]),
+        run_id=str(row[1]),
+        campaign_id=str(row[2]) if row[2] is not None else None,
+        continuation_id=str(row[3]) if row[3] is not None else None,
+        memory_status=str(row[4]),
+        promoted_at=datetime.fromisoformat(str(row[5])) if row[5] else None,
+        domain=str(row[6]) if row[6] is not None else None,
+        objective=str(row[7]),
+        output_profile=str(row[8]),
+        round_num=int(row[9]),
+        strategy=str(row[10]),
+        query=str(row[11]),
+        query_signature=str(row[12]),
+        source_nodes=json.loads(str(row[13])),
+        content_nodes=json.loads(str(row[14])) if row[14] else [],
+        content_weights=json.loads(str(row[15])),
+        source_hints=json.loads(str(row[16])),
+        notes=json.loads(str(row[17])),
+        raw_total=int(row[18]),
+        qualified_total=int(row[19]),
+        avg_score=float(row[20]),
+        success_score=float(row[21]),
+        created_at=datetime.fromisoformat(str(row[22])),
+    )
+
 
 def list_query_family_memory(
     run_id: str | None = None,
     objective: str | None = None,
     strategy: str | None = None,
+    campaign_id: str | None = None,
+    continuation_id: str | None = None,
+    memory_status: str | None = None,
     limit: int = 200,
     offset: int = 0,
     path: str = DEFAULT_DB_PATH,
@@ -32,6 +71,15 @@ def list_query_family_memory(
     if strategy:
         clauses.append("strategy = ?")
         params.append(strategy)
+    if campaign_id:
+        clauses.append("campaign_id = ?")
+        params.append(campaign_id)
+    if continuation_id:
+        clauses.append("continuation_id = ?")
+        params.append(continuation_id)
+    if memory_status:
+        clauses.append("memory_status = ?")
+        params.append(memory_status)
     where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
 
     with get_conn(path) as conn:
@@ -41,10 +89,7 @@ def list_query_family_memory(
         ).fetchone()[0]
         rows = conn.execute(
             f"""
-            SELECT memory_id, run_id, objective, output_profile, round_num, strategy, query,
-                   query_signature, source_nodes_json, content_weights_json, source_hints_json,
-                   notes_json, raw_total, qualified_total, avg_score, success_score, created_at,
-                   domain
+            SELECT {_MEMORY_SELECT_COLUMNS}
             FROM query_family_memory
             {where}
             ORDER BY created_at DESC
@@ -53,29 +98,7 @@ def list_query_family_memory(
             [*params, limit, offset],
         ).fetchall()
 
-    items = [
-        QueryFamilyMemoryRecord(
-            memory_id=row[0],
-            run_id=row[1],
-            objective=row[2],
-            output_profile=row[3],
-            round_num=row[4],
-            strategy=row[5],
-            query=row[6],
-            query_signature=row[7],
-            source_nodes=json.loads(row[8]),
-            content_weights=json.loads(row[9]),
-            source_hints=json.loads(row[10]),
-            notes=json.loads(row[11]),
-            raw_total=row[12],
-            qualified_total=row[13],
-            avg_score=row[14],
-            success_score=row[15],
-            created_at=datetime.fromisoformat(row[16]),
-            domain=row[17],
-        )
-        for row in rows
-    ]
+    items = [_record_from_row(row) for row in rows]
     return items, int(total)
 
 
@@ -83,6 +106,8 @@ def search_query_family_memory(
     query: str,
     objective: str | None = None,
     strategy: str | None = None,
+    campaign_id: str | None = None,
+    memory_status: str | None = None,
     limit: int = 10,
     offset: int = 0,
     path: str | None = DEFAULT_DB_PATH,
@@ -102,13 +127,22 @@ def search_query_family_memory(
     if strategy:
         clauses.append("qf.strategy = ?")
         params.append(strategy)
+    if campaign_id:
+        clauses.append("qf.campaign_id = ?")
+        params.append(campaign_id)
+    if memory_status:
+        clauses.append("qf.memory_status = ?")
+        params.append(memory_status)
     where = f"WHERE {' AND '.join(clauses)}"
 
     with get_conn(path) as conn:
         rows = conn.execute(
             f"""
-            SELECT qf.memory_id, qf.run_id, qf.objective, qf.output_profile, qf.round_num,
-                   qf.strategy, qf.query, qf.query_signature, qf.source_nodes_json,
+            SELECT
+                   qf.memory_id, qf.run_id, qf.campaign_id, qf.continuation_id,
+                   qf.memory_status, qf.promoted_at, qf.domain, qf.objective,
+                   qf.output_profile, qf.round_num, qf.strategy, qf.query,
+                   qf.query_signature, qf.source_nodes_json, qf.content_nodes_json,
                    qf.content_weights_json, qf.source_hints_json, qf.notes_json,
                    qf.raw_total, qf.qualified_total, qf.avg_score, qf.success_score,
                    qf.created_at, sv.embedding_json, sv.vector_id, sv.dimensions
@@ -122,34 +156,16 @@ def search_query_family_memory(
 
     scored: list[tuple[QueryFamilyMemoryRecord, float, str]] = []
     for row in rows:
-        embedding = [float(value) for value in json.loads(row[17])]
+        embedding = [float(value) for value in json.loads(row[23])]
         score = backend.score(query_embedding, embedding)
-        if compatibility_query_embedding and row[19] == len(compatibility_query_embedding):
+        if compatibility_query_embedding and row[25] == len(compatibility_query_embedding):
             compatibility_score = compatibility_backend.score(compatibility_query_embedding, embedding)
             score = max(score, compatibility_score)
         scored.append(
             (
-                QueryFamilyMemoryRecord(
-                    memory_id=row[0],
-                    run_id=row[1],
-                    objective=row[2],
-                    output_profile=row[3],
-                    round_num=row[4],
-                    strategy=row[5],
-                    query=row[6],
-                    query_signature=row[7],
-                    source_nodes=json.loads(row[8]),
-                    content_weights=json.loads(row[9]),
-                    source_hints=json.loads(row[10]),
-                    notes=json.loads(row[11]),
-                    raw_total=row[12],
-                    qualified_total=row[13],
-                    avg_score=row[14],
-                    success_score=row[15],
-                    created_at=datetime.fromisoformat(row[16]),
-                ),
+                _record_from_row(row[:23]),
                 round(score, 4),
-                row[18],
+                row[24],
             )
         )
 
@@ -161,6 +177,8 @@ def search_query_family_memory(
 def read_top_query_families_for_seeding(
     domain: str,
     objective: str | None = None,
+    campaign_id: str | None = None,
+    memory_status: str | None = None,
     top_k: int = 5,
     min_success_score: float = 0.3,
     path: str = DEFAULT_DB_PATH,
@@ -171,6 +189,12 @@ def read_top_query_families_for_seeding(
     if objective:
         clauses.append("objective = ?")
         params.append(objective)
+    if campaign_id:
+        clauses.append("campaign_id = ?")
+        params.append(campaign_id)
+    if memory_status:
+        clauses.append("memory_status = ?")
+        params.append(memory_status)
 
     where = f"WHERE {' AND '.join(clauses)}"
 
@@ -178,7 +202,7 @@ def read_top_query_families_for_seeding(
         with get_conn(path) as conn:
             rows = conn.execute(
                 f"""
-                SELECT source_nodes_json, success_score, strategy
+                SELECT memory_id, source_nodes_json, success_score, strategy, content_nodes_json
                 FROM query_family_memory
                 {where}
                 ORDER BY success_score DESC
@@ -191,12 +215,49 @@ def read_top_query_families_for_seeding(
 
     return [
         {
-            "source_nodes": json.loads(row[0]),
-            "success_score": row[1],
-            "strategy": row[2],
+            "memory_id": row[0],
+            "source_nodes": json.loads(row[1]),
+            "success_score": row[2],
+            "strategy": row[3],
+            "content_nodes": json.loads(row[4]) if row[4] else [],
         }
         for row in rows
     ]
+
+
+def promote_query_family_memory(
+    memory_id: str,
+    campaign_id: str,
+    path: str = DEFAULT_DB_PATH,
+) -> QueryFamilyMemoryRecord:
+    campaign_id = campaign_id.strip()
+    if not campaign_id:
+        raise ValueError("campaign_id is required for memory promotion")
+
+    now = datetime.now(UTC).isoformat()
+
+    with get_conn(path) as conn:
+        cursor = conn.execute(
+            """
+            UPDATE query_family_memory
+            SET memory_status = 'promoted', promoted_at = ?
+            WHERE memory_id = ? AND campaign_id = ?
+            """,
+            (now, memory_id, campaign_id),
+        )
+        if cursor.rowcount != 1:
+            raise KeyError(f"query family memory not found: {memory_id}")
+        row = conn.execute(
+            f"""
+            SELECT {_MEMORY_SELECT_COLUMNS}
+            FROM query_family_memory
+            WHERE memory_id = ? AND campaign_id = ?
+            """,
+            (memory_id, campaign_id),
+        ).fetchone()
+        if row is None:
+            raise KeyError(f"query family memory not found after promotion: {memory_id}")
+        return _record_from_row(row)
 
 
 def _normalize_domain(domain: str) -> str:

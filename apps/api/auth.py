@@ -18,7 +18,7 @@ from __future__ import annotations
 import os
 from typing import Annotated
 
-from fastapi import Depends, HTTPException, Security, status
+from fastapi import HTTPException, Security, status
 from fastapi.security import APIKeyHeader
 
 _API_KEY = os.getenv("SALVA_API_KEY", "")

@@ -29,12 +29,13 @@ Column mapping (live DB, verified):
 Dedup key: (source, source_url) unique pair.
 """
 from __future__ import annotations
+
 import logging
 import os
 
 from adapters.base import BaseAdapter
-from core.types import UnifiedResult
 from core.controller import RunSummary
+from core.types import UnifiedResult
 from enrichment import omlx
 
 logger = logging.getLogger("salva.adapters.party")

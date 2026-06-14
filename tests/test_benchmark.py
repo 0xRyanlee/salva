@@ -1,13 +1,18 @@
-from salva_core.benchmark import build_benchmark_bundle, build_benchmark_report, render_benchmark_markdown, write_benchmark_report
+from salva_core.benchmark import (
+    build_benchmark_bundle,
+    build_benchmark_report,
+    render_benchmark_markdown,
+    write_benchmark_report,
+)
 from salva_core.persistence import persist_discovery_run
 from salva_core.schemas import (
+    BenchmarkRequest,
     CanonicalEntity,
     DiscoveryIntent,
     DiscoveryRequest,
     RetrievalPolicy,
     SourceAttemptRecord,
     TelemetryRecord,
-    BenchmarkRequest,
 )
 
 

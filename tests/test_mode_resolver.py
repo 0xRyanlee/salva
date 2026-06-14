@@ -2,7 +2,11 @@ from fastapi.testclient import TestClient
 
 from apps.api import main
 from salva_core.mode_resolver import explain_experience_plan, resolve_experience_plan
-from salva_core.schemas import DiscoveryIntent, DiscoveryRequest, ExperiencePlanRequest, RetrievalPolicy
+from salva_core.schemas import (
+    DiscoveryIntent,
+    DiscoveryRequest,
+    RetrievalPolicy,
+)
 
 
 def test_resolve_experience_plan_prefers_event_discovery_for_events() -> None:

@@ -19,10 +19,10 @@ import random
 import re
 import time
 import urllib.parse
-import urllib.request
 from html import unescape
 from typing import Any
 
+from retrieval.http import http_get
 from retrieval.models import RetrievalAttempt
 from salva_core.schemas import RetrievalPolicy
 
@@ -151,25 +151,29 @@ class SearXNGRetriever:
         n: int,
         engines: str,
     ) -> tuple[list[dict[str, Any]], str | None]:
-        params = urllib.parse.urlencode(
-            {
-                "q": query,
-                "format": "json",
-                "engines": engines,
-                "limit": n,
-            }
-        )
+        search_params: dict[str, str | int] = {
+            "q": query,
+            "format": "json",
+            "engines": engines,
+            "limit": n,
+        }
+        if self.policy.region_hint:
+            # e.g. "de-de" → language="de", region="de-de"
+            lang = self.policy.region_hint.split("-")[0]
+            search_params["language"] = lang
+            search_params["region"] = self.policy.region_hint
+        params = urllib.parse.urlencode(search_params)
         url = f"{base}/search?{params}"
         try:
-            req = urllib.request.Request(
+            raw = http_get(
                 url,
                 headers={
                     "User-Agent": random.choice(USER_AGENTS),
                     "Accept": "application/json",
                 },
+                timeout=self.policy.request_timeout,
             )
-            with urllib.request.urlopen(req, timeout=self.policy.request_timeout) as resp:
-                data = json.load(resp)
+            data = json.loads(raw)
             self._pace()
             return [
                 {
@@ -190,15 +194,15 @@ class SearXNGRetriever:
         params = urllib.parse.urlencode({"q": query})
         url = f"{base}/search?{params}"
         try:
-            req = urllib.request.Request(
+            raw = http_get(
                 url,
                 headers={
                     "User-Agent": random.choice(USER_AGENTS),
                     "Accept": "text/html,application/xhtml+xml",
                 },
+                timeout=self.policy.request_timeout,
             )
-            with urllib.request.urlopen(req, timeout=self.policy.request_timeout) as resp:
-                html = resp.read().decode("utf-8", errors="replace")
+            html = raw.decode("utf-8", errors="replace")
             self._pace()
             return self._parse_html_results(html, n, base), None
         except Exception as exc:

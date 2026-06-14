@@ -19,13 +19,14 @@ from __future__ import annotations
 
 import json
 import logging
-from dataclasses import dataclass, field, asdict
+from collections.abc import Callable
+from dataclasses import asdict
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
-from core.types import Intent, KeywordNode, KeywordEdge, QueryFamily, SearchTelemetry
 from core.domain_vocab import DomainVocab, get_vocab
 from core.query_strategy import build_query_family, build_strategy_profile
+from core.types import Intent, KeywordEdge, KeywordNode, QueryFamily, SearchTelemetry
 
 logger = logging.getLogger("salva.keyword_graph")
 
@@ -92,6 +93,11 @@ class KeywordGraph:
             for v in region_vars.get(self.intent.region, [self.intent.region]):
                 self._add_node(v, "region", weight=0.7)
 
+        # Role terms from intent (e.g. "distributor", "importer") — high weight,
+        # used in dive query construction alongside primary terms.
+        for role in self.intent.roles:
+            self._add_node(role, "role", weight=0.8)
+
         # Signal terms (cap at 12 to keep graph manageable)
         for sig in vocab.signal_terms[:12]:
             self._add_node(sig, "signal", weight=0.4)
@@ -129,7 +135,10 @@ class KeywordGraph:
 
         seen_phrases: set[str] = set(self.nodes.keys())
         for record in records:
-            for phrase in record.get("source_nodes", []):
+            # content_nodes: terms learned from result snippets in past runs (real learning)
+            # source_nodes: vocab-derived phrases (fallback for old records without content_nodes)
+            seed_phrases = record.get("content_nodes") or record.get("source_nodes", [])
+            for phrase in seed_phrases:
                 phrase = phrase.strip()
                 if not phrase or phrase in seen_phrases:
                     continue
@@ -139,6 +148,28 @@ class KeywordGraph:
 
         if injected:
             logger.debug("seed_from_memory: injected %d nodes from past runs", injected)
+        return injected
+
+    # ------------------------------------------------------------------
+    # Seed from external terms (pre-run injection)
+    # ------------------------------------------------------------------
+
+    def seed_from_terms(
+        self,
+        terms: list[str],
+        node_type: str = "seed",
+        weight: float = 0.9,
+    ) -> int:
+        """Inject a list of pre-fetched entity names as graph nodes before retrieval starts."""
+        injected = 0
+        for term in terms:
+            t = term.strip()
+            if not t or t in self.nodes:
+                continue
+            self._add_node(t, node_type, weight=weight)
+            injected += 1
+        if injected:
+            logger.debug("seed_from_terms: injected %d nodes (type=%s)", injected, node_type)
         return injected
 
     # ------------------------------------------------------------------
@@ -218,6 +249,14 @@ class KeywordGraph:
                 0.8 * node.source_score
                 + 0.2 * max(0.0, 1.0 - noise_rate) * multiplier,
             ))
+
+        # Absorb new terms extracted from result content — this is how the graph learns
+        # vocabulary not present in the original intent or vocab registry.
+        if hit_rate > 0:
+            content_terms: list[str] = profile.get("content_terms", []) if isinstance(profile, dict) else []
+            for term in content_terms:
+                if term and term not in self.nodes:
+                    self._add_node(term, "content", weight=0.15)
 
         if self.persist_path:
             self._save(self.persist_path)

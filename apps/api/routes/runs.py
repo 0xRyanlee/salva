@@ -1,11 +1,12 @@
 """
 Runs API routes: /v1/runs, /v1/runs/{run_id}
 """
-from fastapi import APIRouter, HTTPException, Query
 from typing import Annotated
 
+from fastapi import APIRouter, HTTPException, Query
+
+from salva_core.persistence import get_run, list_runs
 from salva_core.schemas import RunsResponse
-from salva_core.persistence import list_runs, get_run
 
 router = APIRouter()
 
@@ -14,9 +15,16 @@ router = APIRouter()
 async def runs(
     limit: Annotated[int, Query(ge=1, le=200)] = 20,
     offset: Annotated[int, Query(ge=0)] = 0,
+    campaign_id: Annotated[str | None, Query()] = None,
+    continuation_id: Annotated[str | None, Query()] = None,
 ) -> RunsResponse:
     """List all discovery runs"""
-    items, total = list_runs(limit=limit, offset=offset)
+    items, total = list_runs(
+        limit=limit,
+        offset=offset,
+        campaign_id=campaign_id,
+        continuation_id=continuation_id,
+    )
     return RunsResponse(items=items, total=total)
 
 

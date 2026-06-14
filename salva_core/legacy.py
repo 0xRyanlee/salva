@@ -3,7 +3,6 @@ from __future__ import annotations
 from collections.abc import Mapping
 from datetime import UTC, datetime
 from hashlib import md5
-from urllib.parse import urlparse
 
 from core.types import Intent as LegacyIntent
 from core.types import SearchTelemetry as LegacyTelemetry
@@ -12,10 +11,10 @@ from core.types import UnifiedResult as LegacyUnifiedResult
 from .schemas import (
     CanonicalEntity,
     CanonicalRelation,
-    EntityType,
     DiscoveryIntent,
-    EvidenceItem,
+    EntityType,
     EventDetails,
+    EvidenceItem,
     TelemetryRecord,
 )
 
@@ -193,6 +192,8 @@ def _build_raw_evidence(result: LegacyUnifiedResult) -> dict[str, object]:
 
 
 def _build_event_details(result: LegacyUnifiedResult) -> EventDetails | None:
+    # organizer_email and organizer_domain are contact/lead fields, not event-specific.
+    # Only build EventDetails when genuinely event-shaped data is present.
     if not any(
         [
             result.starts_at,
@@ -205,8 +206,6 @@ def _build_event_details(result: LegacyUnifiedResult) -> EventDetails | None:
             result.latitude,
             result.longitude,
             result.organizer_name,
-            result.organizer_email,
-            result.organizer_domain,
             result.capacity,
             result.price_amount,
             result.currency,

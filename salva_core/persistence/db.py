@@ -10,13 +10,12 @@ import os
 import sqlite3
 import tempfile
 import uuid
+from collections.abc import Iterator
 from contextlib import contextmanager
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Iterator
 
 from hold.schema import build_hold_schema
-
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_DB_PATH = os.getenv(
@@ -28,12 +27,30 @@ FALLBACK_DB_PATH = os.getenv(
     str(Path(tempfile.gettempdir()) / "salva_runtime.db"),
 )
 
+_SAFE_PROJECT_ID_CHARS = frozenset(
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-"
+)
+
+
+def get_db_path_for_project(project_id: str | None) -> str:
+    """Return the SQLite path for a project, or DEFAULT_DB_PATH if project_id is None."""
+    if not project_id:
+        return DEFAULT_DB_PATH
+    safe = "".join(c for c in project_id if c in _SAFE_PROJECT_ID_CHARS)
+    if not safe:
+        return DEFAULT_DB_PATH
+    data_dir = Path(DEFAULT_DB_PATH).parent
+    return str(data_dir / "projects" / safe / "salva.db")
+
 
 SCHEMA_SQL = """
 CREATE TABLE IF NOT EXISTS discovery_runs (
     run_id TEXT PRIMARY KEY,
     objective TEXT NOT NULL,
     output_profile TEXT NOT NULL,
+    campaign_id TEXT,
+    continuation_id TEXT,
+    persistence_mode TEXT NOT NULL DEFAULT 'audit',
     request_json TEXT NOT NULL,
     entities_json TEXT NOT NULL,
     relations_json TEXT NOT NULL,
@@ -207,6 +224,60 @@ CREATE TABLE IF NOT EXISTS hyperedges (
 CREATE INDEX IF NOT EXISTS idx_hyperedges_run_id ON hyperedges(run_id);
 CREATE INDEX IF NOT EXISTS idx_hyperedges_type ON hyperedges(hyperedge_type);
 
+-- Typed n-ary incidence table: each row = one node's participation in a hyperedge with a role.
+-- This is the canonical n-ary representation; members_json in hyperedges is a legacy summary.
+CREATE TABLE IF NOT EXISTS hyperedge_incidences (
+    hyperedge_id TEXT NOT NULL,
+    node_id TEXT NOT NULL,
+    role TEXT NOT NULL,
+    percentage REAL,
+    order_index INTEGER NOT NULL DEFAULT 0,
+    props_json TEXT NOT NULL DEFAULT '{}',
+    PRIMARY KEY (hyperedge_id, node_id, role),
+    FOREIGN KEY (hyperedge_id) REFERENCES hyperedges(hyperedge_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_hei_hyperedge ON hyperedge_incidences(hyperedge_id);
+CREATE INDEX IF NOT EXISTS idx_hei_node ON hyperedge_incidences(node_id);
+CREATE INDEX IF NOT EXISTS idx_hei_role ON hyperedge_incidences(role);
+
+-- Canonical entity registry: one row per resolved real-world entity.
+-- entity_id in discovery results maps to canonical_id via entity_aliases.
+CREATE TABLE IF NOT EXISTS canonical_entities (
+    canonical_id TEXT PRIMARY KEY,
+    entity_type TEXT NOT NULL,
+    primary_label TEXT NOT NULL,
+    jurisdiction TEXT,
+    props_json TEXT NOT NULL DEFAULT '{}',
+    created_at TEXT NOT NULL
+);
+
+-- Cross-lingual and cross-source aliases for canonical entities.
+-- Used for gazetteer-based entity resolution (Jina embedding bridge deferred).
+CREATE TABLE IF NOT EXISTS entity_aliases (
+    alias_id TEXT PRIMARY KEY,
+    canonical_id TEXT NOT NULL,
+    alias TEXT NOT NULL,
+    script TEXT,
+    source TEXT,
+    FOREIGN KEY (canonical_id) REFERENCES canonical_entities(canonical_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_entity_aliases_canonical ON entity_aliases(canonical_id);
+CREATE INDEX IF NOT EXISTS idx_entity_aliases_alias ON entity_aliases(alias);
+
+-- Cross-run routing memory: aggregates source_attempts for persistent routing optimisation.
+-- authority_boost increases on success; is decremented on failure.
+CREATE TABLE IF NOT EXISTS routing_memory (
+    source_url TEXT PRIMARY KEY,
+    success_count INTEGER NOT NULL DEFAULT 0,
+    failure_count INTEGER NOT NULL DEFAULT 0,
+    last_success_at TEXT,
+    last_failure_at TEXT,
+    authority_boost REAL NOT NULL DEFAULT 0.0,
+    updated_at TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS hold_schema_registry (
     registry_id TEXT PRIMARY KEY,
     schema_name TEXT NOT NULL,
@@ -225,6 +296,10 @@ CREATE INDEX IF NOT EXISTS idx_hold_schema_registry_versions ON hold_schema_regi
 CREATE TABLE IF NOT EXISTS query_family_memory (
     memory_id TEXT PRIMARY KEY,
     run_id TEXT NOT NULL,
+    campaign_id TEXT,
+    continuation_id TEXT,
+    memory_status TEXT NOT NULL DEFAULT 'legacy',
+    promoted_at TEXT,
     domain TEXT NOT NULL,
     objective TEXT NOT NULL,
     output_profile TEXT NOT NULL,
@@ -342,6 +417,38 @@ def _probe_writable(conn: sqlite3.Connection) -> None:
 
 
 def _migrate_schema(conn: sqlite3.Connection) -> None:
+    discovery_run_columns = {
+        row[1] for row in conn.execute("PRAGMA table_info(discovery_runs)").fetchall()
+    }
+    discovery_run_required_columns = {
+        "campaign_id": "TEXT",
+        "continuation_id": "TEXT",
+        "persistence_mode": "TEXT NOT NULL DEFAULT 'audit'",
+        "project_id": "TEXT",
+    }
+    for column, sql_type in discovery_run_required_columns.items():
+        if column not in discovery_run_columns:
+            conn.execute(f"ALTER TABLE discovery_runs ADD COLUMN {column} {sql_type}")
+    conn.execute(
+        "CREATE INDEX IF NOT EXISTS idx_discovery_runs_campaign "
+        "ON discovery_runs(campaign_id)"
+    )
+    conn.execute(
+        "CREATE INDEX IF NOT EXISTS idx_discovery_runs_continuation "
+        "ON discovery_runs(continuation_id)"
+    )
+    conn.execute(
+        "CREATE INDEX IF NOT EXISTS idx_discovery_runs_project "
+        "ON discovery_runs(project_id)"
+    )
+
+    job_columns = {
+        row[1] for row in conn.execute("PRAGMA table_info(jobs)").fetchall()
+    }
+    if "project_id" not in job_columns:
+        conn.execute("ALTER TABLE jobs ADD COLUMN project_id TEXT")
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_jobs_project ON jobs(project_id)")
+
     source_attempt_columns = {
         row[1] for row in conn.execute("PRAGMA table_info(source_attempts)").fetchall()
     }
@@ -430,7 +537,54 @@ def _migrate_schema(conn: sqlite3.Connection) -> None:
     }
     if "domain" not in query_family_columns:
         conn.execute("ALTER TABLE query_family_memory ADD COLUMN domain TEXT NOT NULL DEFAULT 'general'")
+    if "content_nodes_json" not in query_family_columns:
+        conn.execute("ALTER TABLE query_family_memory ADD COLUMN content_nodes_json TEXT NOT NULL DEFAULT '[]'")
+    query_family_required_columns = {
+        "campaign_id": "TEXT",
+        "continuation_id": "TEXT",
+        "memory_status": "TEXT NOT NULL DEFAULT 'legacy'",
+        "promoted_at": "TEXT",
+    }
+    for column, sql_type in query_family_required_columns.items():
+        if column not in query_family_columns:
+            conn.execute(f"ALTER TABLE query_family_memory ADD COLUMN {column} {sql_type}")
     conn.execute("CREATE INDEX IF NOT EXISTS idx_query_family_memory_domain ON query_family_memory(domain)")
+    conn.execute(
+        "CREATE INDEX IF NOT EXISTS idx_query_family_memory_campaign "
+        "ON query_family_memory(campaign_id)"
+    )
+    conn.execute(
+        "CREATE INDEX IF NOT EXISTS idx_query_family_memory_status "
+        "ON query_family_memory(memory_status)"
+    )
+
+    # Ensure new Hold upgrade tables exist (idempotent — CREATE IF NOT EXISTS handles re-runs)
+    for create_sql in (
+        """CREATE TABLE IF NOT EXISTS hyperedge_incidences (
+            hyperedge_id TEXT NOT NULL, node_id TEXT NOT NULL, role TEXT NOT NULL,
+            percentage REAL, order_index INTEGER NOT NULL DEFAULT 0,
+            props_json TEXT NOT NULL DEFAULT '{}',
+            PRIMARY KEY (hyperedge_id, node_id, role))""",
+        "CREATE INDEX IF NOT EXISTS idx_hei_hyperedge ON hyperedge_incidences(hyperedge_id)",
+        "CREATE INDEX IF NOT EXISTS idx_hei_node ON hyperedge_incidences(node_id)",
+        """CREATE TABLE IF NOT EXISTS canonical_entities (
+            canonical_id TEXT PRIMARY KEY, entity_type TEXT NOT NULL,
+            primary_label TEXT NOT NULL, jurisdiction TEXT,
+            props_json TEXT NOT NULL DEFAULT '{}', created_at TEXT NOT NULL)""",
+        """CREATE TABLE IF NOT EXISTS entity_aliases (
+            alias_id TEXT PRIMARY KEY, canonical_id TEXT NOT NULL,
+            alias TEXT NOT NULL, script TEXT, source TEXT)""",
+        "CREATE INDEX IF NOT EXISTS idx_entity_aliases_canonical ON entity_aliases(canonical_id)",
+        "CREATE INDEX IF NOT EXISTS idx_entity_aliases_alias ON entity_aliases(alias)",
+        """CREATE TABLE IF NOT EXISTS routing_memory (
+            source_url TEXT PRIMARY KEY,
+            success_count INTEGER NOT NULL DEFAULT 0,
+            failure_count INTEGER NOT NULL DEFAULT 0,
+            last_success_at TEXT, last_failure_at TEXT,
+            authority_boost REAL NOT NULL DEFAULT 0.0,
+            updated_at TEXT NOT NULL)""",
+    ):
+        conn.execute(create_sql)
 
 
 def _ensure_hold_schema_registry(conn: sqlite3.Connection) -> None:

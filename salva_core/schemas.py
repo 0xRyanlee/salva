@@ -5,7 +5,6 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, Field, model_validator
 
-
 Objective = Literal[
     "find_leads",
     "find_companies",
@@ -22,6 +21,7 @@ OutputProfile = Literal[
     "activity_signal",
     "crm_contact",
     "company_profile",
+    "research_report",
 ]
 
 EnrichmentMode = Literal[
@@ -30,6 +30,11 @@ EnrichmentMode = Literal[
     "selected",
     "all",
 ]
+
+PersistenceMode = Literal["none", "audit"]
+MemoryReadScope = Literal["none", "campaign_promoted", "campaign_all", "global_legacy"]
+MemoryWriteMode = Literal["none", "quarantine", "promote"]
+CacheMode = Literal["ephemeral", "content_addressed"]
 
 EnrichmentPluginName = Literal[
     "omlx",
@@ -49,9 +54,14 @@ RetrievalMode = Literal[
 RetrievalProviderKind = Literal[
     "searxng",
     "whoogle",
+    "ddgs",
     "ddg_html",
+    "marginalia",
     "site_html",
     "obscura_browser",
+    "sitemap",
+    "rss",
+    "searxng_pool",
 ]
 
 ProviderFamily = Literal[
@@ -218,7 +228,7 @@ class RetrievalPolicy(BaseModel):
     region_hint: str | None = None
     extra_instances: list[str] = Field(default_factory=list)
     site_domains: list[str] = Field(default_factory=list)
-    providers: list["RetrievalProviderConfig"] = Field(default_factory=list)
+    providers: list[RetrievalProviderConfig] = Field(default_factory=list)
     proxy_url: str | None = None
     obscura_stealth: bool = False
 
@@ -248,6 +258,62 @@ class EnrichmentPolicy(BaseModel):
     auto_merge: bool = True
     omlx_timeout: float = 45.0  # Timeout for OMLX enrichment calls (seconds)
     omlx_max_retries: int = 3  # Maximum retry attempts for failed calls
+
+
+class MemoryPolicy(BaseModel):
+    read_scope: MemoryReadScope = "none"
+    write_mode: MemoryWriteMode = "quarantine"
+    min_success_score: float = Field(default=0.3, ge=0.0, le=1.0)
+
+
+class CachePolicy(BaseModel):
+    mode: CacheMode = "ephemeral"
+    ttl_hours: int = Field(default=24, ge=1, le=24 * 365)
+    retain_artifacts: bool = False
+
+    @model_validator(mode="after")
+    def _reject_unimplemented_mode(self) -> CachePolicy:
+        if self.mode != "ephemeral":
+            raise ValueError("content_addressed cache is not implemented")
+        return self
+
+
+class ExecutionContext(BaseModel):
+    project_id: str | None = Field(
+        default=None,
+        min_length=1,
+        max_length=128,
+        pattern=r"^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        description="Project scope for run/job isolation. Runs with different project_ids are logically isolated.",
+    )
+    campaign_id: str | None = Field(
+        default=None,
+        min_length=1,
+        max_length=128,
+        pattern=r"^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        description="Agent-declared research scope. Salva enforces memory isolation within it.",
+    )
+    continuation_id: str | None = Field(
+        default=None,
+        min_length=1,
+        max_length=128,
+        pattern=r"^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        description="Optional research-thread identifier reused across related runs.",
+    )
+    persistence: PersistenceMode = "audit"
+    memory: MemoryPolicy = Field(default_factory=MemoryPolicy)
+    cache: CachePolicy = Field(default_factory=CachePolicy)
+    tags: dict[str, str] = Field(default_factory=dict)
+
+    @model_validator(mode="after")
+    def _validate_memory_scope(self) -> ExecutionContext:
+        if self.memory.read_scope in {"campaign_promoted", "campaign_all"} and not self.campaign_id:
+            raise ValueError(f"{self.memory.read_scope} requires campaign_id")
+        if self.memory.write_mode == "promote" and not self.campaign_id:
+            raise ValueError("memory.write_mode=promote requires campaign_id")
+        if self.persistence == "none" and self.memory.write_mode != "none":
+            self.memory = self.memory.model_copy(update={"write_mode": "none"})
+        return self
 
 
 class EvidenceItem(BaseModel):
@@ -434,7 +500,9 @@ class DiscoveryRequest(BaseModel):
     transform: TransformOptions = Field(default_factory=TransformOptions)
     retrieval: RetrievalPolicy = Field(default_factory=RetrievalPolicy)
     enrichment: EnrichmentPolicy = Field(default_factory=EnrichmentPolicy)
+    execution: ExecutionContext = Field(default_factory=ExecutionContext)
     max_results: int = Field(default=50, ge=1, le=500)
+    qualify_threshold: float = Field(default=0.4, ge=0.0, le=1.0)
 
 
 class TopologyProbeRequest(BaseModel):
@@ -506,7 +574,7 @@ class PlannerRequest(BaseModel):
     allow_llm_preprompt: bool = True
 
     @model_validator(mode="after")
-    def _ensure_discovery(self) -> "PlannerRequest":
+    def _ensure_discovery(self) -> PlannerRequest:
         if self.discovery is None:
             if self.objective is None or self.intent is None:
                 raise ValueError("PlannerRequest requires discovery or objective + intent")
@@ -642,6 +710,9 @@ class RunRecord(BaseModel):
     created_at: datetime
     request: dict[str, Any]
     meta: dict[str, Any]
+    project_id: str | None = None
+    campaign_id: str | None = None
+    continuation_id: str | None = None
     entity_count: int = 0
     relation_count: int = 0
 
@@ -811,6 +882,10 @@ class HoldMigrationsResponse(BaseModel):
 class QueryFamilyMemoryRecord(BaseModel):
     memory_id: str
     run_id: str
+    campaign_id: str | None = None
+    continuation_id: str | None = None
+    memory_status: Literal["legacy", "quarantine", "promoted"] = "legacy"
+    promoted_at: datetime | None = None
     domain: str | None = None
     objective: str
     output_profile: str
@@ -819,6 +894,7 @@ class QueryFamilyMemoryRecord(BaseModel):
     query: str
     query_signature: str
     source_nodes: list[str] = Field(default_factory=list)
+    content_nodes: list[str] = Field(default_factory=list)
     content_weights: dict[str, float] = Field(default_factory=dict)
     source_hints: list[str] = Field(default_factory=list)
     notes: list[str] = Field(default_factory=list)
@@ -1075,6 +1151,7 @@ class JobRecord(BaseModel):
     status: JobStatus
     objective: str
     output_profile: str
+    project_id: str | None = None
     tenant_id: str | None = None
     created_at: datetime
     updated_at: datetime

@@ -6,6 +6,7 @@ This spec defines the query-family semantic memory surface.
 
 Semantic memory exists to make future runs better than the first run.
 It stores successful query-family records and exposes them through a stable search contract.
+Reuse is always governed by `ExecutionContext`; storage does not imply automatic trust.
 
 ## Source of truth
 
@@ -17,6 +18,10 @@ It stores successful query-family records and exposes them through a stable sear
 ## Search contract
 
 - Query-family search uses the current semantic vector plane.
+- Query-family list and search support campaign and memory-status filters.
+- Default discovery execution does not read cross-run memory.
+- `campaign_promoted` may seed only promoted records from the same campaign.
+- New records default to `quarantine`.
 - Search output must remain stable even if the vector backend changes later.
 - The current built-in backend is a deterministic hybrid-hash embedding.
 - The scalar-hash backend remains available as a compatibility baseline.
@@ -64,5 +69,6 @@ baseline using sampled query-family records.
 - If the current backend is still scalar-hash, the runtime is in compatibility mode.
 - If optional backends show as unavailable, the environment is missing their
   Python modules and the runtime should continue on the built-in backend.
-- If memory seeding looks noisy, inspect the query-family records before changing the caller.
+- If memory seeding looks noisy, inspect campaign, status, provenance, and
+  `ExecutionContext` before changing the caller.
 - If a backend swap changes response shape, the spec has been violated.

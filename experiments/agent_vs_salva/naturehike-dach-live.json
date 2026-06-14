@@ -1,0 +1,317 @@
+{
+  "experiment_id": "naturehike-dach-agent-vs-salva-2026-06-08",
+  "target": {
+    "brand": "Naturehike",
+    "objective": "Find overseas sales channels in German-speaking Europe",
+    "countries": ["Germany", "Austria", "Switzerland"],
+    "channel_types": [
+      "distributor",
+      "sales_agent",
+      "retail_alliance",
+      "specialist_retailer",
+      "retail_ecosystem"
+    ]
+  },
+  "design": {
+    "same_task": true,
+    "independent_collection": true,
+    "budget_parity": false,
+    "raw_result_capture": false,
+    "elapsed_time_comparable": false,
+    "reference_set_method": "pooled_verified_union",
+    "agent_round_semantics": "incremental",
+    "salva_round_semantics": "independent max-round snapshots",
+    "salva_memory_read_scope": "none",
+    "salva_persistence": "none",
+    "annotation_rule": "Relevant only when the organization can distribute, represent, aggregate, or retail outdoor products in DACH."
+  },
+  "reference_entities": [
+    "Elementum Distribution",
+    "Kundert Vario",
+    "Vision-O",
+    "Sport Handelsagentur Weindel",
+    "ICON Outdoor Distribution",
+    "SPORT 2000 Deutschland",
+    "SPORT 2000 Oesterreich",
+    "SPORT 2000 Schweiz",
+    "ASMAS",
+    "INTERSPORT Deutschland",
+    "OUTTRA",
+    "Overland Outfitters",
+    "Galaxus Schweiz",
+    "Meister Messer",
+    "Interdiscount Schweiz",
+    "Reimo",
+    "Bergfreunde"
+  ],
+  "observations": [
+    {
+      "condition": "agent_only",
+      "round": 1,
+      "result_mode": "incremental",
+      "elapsed_seconds": 0,
+      "request_count": 4,
+      "candidates": [
+        {
+          "name": "Elementum Distribution",
+          "url": "https://elementum-distribution.com/",
+          "country": "Austria",
+          "channel_type": "distributor",
+          "relevant": true,
+          "verified": true,
+          "evidence": ["https://elementum-distribution.com/"],
+          "sources": ["https://elementum-distribution.com/"]
+        },
+        {
+          "name": "Kundert Vario",
+          "url": "https://kundertvario.ch/",
+          "country": "Switzerland",
+          "channel_type": "distributor",
+          "relevant": true,
+          "verified": true,
+          "evidence": ["https://kundertvario.ch/"],
+          "sources": ["https://kundertvario.ch/"]
+        },
+        {
+          "name": "Vision-O",
+          "url": "https://vision-o.ch/",
+          "country": "Switzerland",
+          "channel_type": "distributor",
+          "relevant": true,
+          "verified": true,
+          "evidence": ["https://vision-o.ch/"],
+          "sources": ["https://vision-o.ch/"]
+        },
+        {
+          "name": "Sport Handelsagentur Weindel",
+          "url": "https://sport-handelsagentur.de/",
+          "country": "Germany",
+          "channel_type": "sales_agent",
+          "relevant": true,
+          "verified": true,
+          "evidence": ["https://sport-handelsagentur.de/"],
+          "sources": ["https://sport-handelsagentur.de/"]
+        },
+        {
+          "name": "ICON Outdoor Distribution",
+          "url": "https://www.icon-outdoor.ch/",
+          "country": "Switzerland",
+          "channel_type": "distributor",
+          "relevant": true,
+          "verified": true,
+          "evidence": ["https://www.icon-outdoor.ch/"],
+          "sources": ["https://www.icon-outdoor.ch/"]
+        },
+        {
+          "name": "German Camping Club",
+          "url": "https://www.camping-club.de/",
+          "country": "Germany",
+          "channel_type": "association",
+          "relevant": false,
+          "verified": true,
+          "evidence": ["https://www.camping-club.de/"],
+          "sources": ["https://www.camping-club.de/"]
+        }
+      ]
+    },
+    {
+      "condition": "agent_only",
+      "round": 2,
+      "result_mode": "incremental",
+      "elapsed_seconds": 0,
+      "request_count": 4,
+      "candidates": [
+        {
+          "name": "SPORT 2000 Deutschland",
+          "url": "https://www.anwr-group.com/de/presse-medien/pressemitteilungen/sport-2000-outdoor/",
+          "country": "Germany",
+          "channel_type": "retail_alliance",
+          "relevant": true,
+          "verified": true,
+          "evidence": [
+            "https://www.anwr-group.com/de/presse-medien/pressemitteilungen/sport-2000-outdoor/",
+            "https://www.sport2000.de/"
+          ],
+          "sources": ["https://www.anwr-group.com/", "https://www.sport2000.de/"]
+        },
+        {
+          "name": "SPORT 2000 Oesterreich",
+          "url": "https://www.sport2000rent.com/en/unternehmen",
+          "country": "Austria",
+          "channel_type": "retail_alliance",
+          "relevant": true,
+          "verified": true,
+          "evidence": ["https://www.sport2000rent.com/en/unternehmen"],
+          "sources": ["https://www.sport2000rent.com/"]
+        },
+        {
+          "name": "SPORT 2000 Schweiz",
+          "url": "https://www.sport2000.ch/filialen",
+          "country": "Switzerland",
+          "channel_type": "retail_alliance",
+          "relevant": true,
+          "verified": true,
+          "evidence": ["https://www.sport2000.ch/filialen"],
+          "sources": ["https://www.sport2000.ch/"]
+        },
+        {
+          "name": "ASMAS",
+          "url": "https://www.asmas.ch/verband/ueber-uns",
+          "country": "Switzerland",
+          "channel_type": "retail_alliance",
+          "relevant": true,
+          "verified": true,
+          "evidence": ["https://www.asmas.ch/verband/ueber-uns"],
+          "sources": ["https://www.asmas.ch/"]
+        },
+        {
+          "name": "INTERSPORT Deutschland",
+          "url": "https://www.intersport.de/d/stores",
+          "country": "Germany",
+          "channel_type": "retail_alliance",
+          "relevant": true,
+          "verified": true,
+          "evidence": ["https://www.intersport.de/d/stores"],
+          "sources": ["https://www.intersport.de/"]
+        },
+        {
+          "name": "OUTTRA",
+          "url": "https://www.outtra.com/",
+          "country": "Germany",
+          "channel_type": "retail_ecosystem",
+          "relevant": true,
+          "verified": true,
+          "evidence": ["https://www.outtra.com/"],
+          "sources": ["https://www.outtra.com/"]
+        },
+        {
+          "name": "European Outdoor Group",
+          "url": "https://www.europeanoutdoorgroup.com/",
+          "country": "Germany",
+          "channel_type": "industry_association",
+          "relevant": false,
+          "verified": true,
+          "evidence": ["https://www.europeanoutdoorgroup.com/"],
+          "sources": ["https://www.europeanoutdoorgroup.com/"]
+        }
+      ]
+    },
+    {
+      "condition": "agent_only",
+      "round": 3,
+      "result_mode": "incremental",
+      "elapsed_seconds": 0,
+      "request_count": 4,
+      "candidates": [
+        {
+          "name": "Overland Outfitters",
+          "url": "https://www.overlandoutfitters.ch/products/naturehike-cloud-up-2x",
+          "country": "Switzerland",
+          "channel_type": "specialist_retailer",
+          "relevant": true,
+          "verified": true,
+          "evidence": ["https://www.overlandoutfitters.ch/products/naturehike-cloud-up-2x"],
+          "sources": ["https://www.overlandoutfitters.ch/"]
+        },
+        {
+          "name": "Galaxus Schweiz",
+          "url": "https://www.galaxus.ch/en/search?q=Naturehike",
+          "country": "Switzerland",
+          "channel_type": "specialist_retailer",
+          "relevant": true,
+          "verified": true,
+          "evidence": ["https://www.galaxus.ch/en/search?q=Naturehike"],
+          "sources": ["https://www.galaxus.ch/"]
+        },
+        {
+          "name": "Meister Messer",
+          "url": "https://www.meister-messer.ch/naturehike/",
+          "country": "Switzerland",
+          "channel_type": "specialist_retailer",
+          "relevant": true,
+          "verified": true,
+          "evidence": ["https://www.meister-messer.ch/naturehike/"],
+          "sources": ["https://www.meister-messer.ch/"]
+        },
+        {
+          "name": "Interdiscount Schweiz",
+          "url": "https://www.interdiscount.ch/de/brand/naturehike",
+          "country": "Switzerland",
+          "channel_type": "specialist_retailer",
+          "relevant": true,
+          "verified": true,
+          "evidence": ["https://www.interdiscount.ch/de/brand/naturehike"],
+          "sources": ["https://www.interdiscount.ch/"]
+        },
+        {
+          "name": "Naturehike Deutschland Direct Store",
+          "url": "https://naturehike.de/",
+          "country": "Germany",
+          "channel_type": "direct_to_consumer",
+          "relevant": false,
+          "verified": true,
+          "evidence": ["https://naturehike.de/"],
+          "sources": ["https://naturehike.de/"]
+        }
+      ]
+    },
+    {
+      "condition": "salva",
+      "round": 1,
+      "result_mode": "snapshot",
+      "elapsed_seconds": 4.397198,
+      "request_count": 3,
+      "candidates": [
+        {
+          "entity_id": "reimo",
+          "name": "Reimo",
+          "url": "https://www.reimo.com/en/camping-shop",
+          "country": "Germany",
+          "channel_type": "specialist_retailer",
+          "relevant": true,
+          "verified": true,
+          "evidence": ["https://www.reimo.com/en/camping-shop"],
+          "sources": ["https://www.reimo.com/en/camping-shop"]
+        },
+        {
+          "entity_id": "bergfreunde",
+          "name": "Bergfreunde",
+          "url": "https://www.bergfreunde.eu/camping",
+          "country": "Germany",
+          "channel_type": "specialist_retailer",
+          "relevant": true,
+          "verified": true,
+          "evidence": ["https://www.bergfreunde.eu/camping"],
+          "sources": ["https://www.bergfreunde.eu/camping"]
+        },
+        {
+          "entity_id": "bergfreunde",
+          "name": "Bergfreunde",
+          "url": "https://www.bergfreunde.de/camping",
+          "country": "Germany",
+          "channel_type": "specialist_retailer",
+          "relevant": true,
+          "verified": true,
+          "evidence": ["https://www.bergfreunde.de/camping"],
+          "sources": ["https://www.bergfreunde.de/camping"]
+        }
+      ]
+    },
+    {
+      "condition": "salva",
+      "round": 2,
+      "result_mode": "snapshot",
+      "elapsed_seconds": 5.504728,
+      "request_count": 6,
+      "candidates": []
+    },
+    {
+      "condition": "salva",
+      "round": 3,
+      "result_mode": "snapshot",
+      "elapsed_seconds": 5.109549,
+      "request_count": 6,
+      "candidates": []
+    }
+  ]
+}

@@ -11,7 +11,7 @@ def test_run_discovery_attaches_feedback(monkeypatch) -> None:
     monkeypatch.setattr(
         service,
         "build_request_feedback",
-        lambda run_id, payload: {
+        lambda run_id, payload, path=None: {
             "mate": {"run_id": run_id, "estimated_tokens_saved": 0},
             "pilot": {"run_id": run_id, "recommended_retrieval_mode": "resilient"},
         },

@@ -5,17 +5,24 @@ from typing import Any, cast
 from salva_core.routes import resolve_route_entry
 from salva_core.schemas import (
     DiscoveryRequest,
+    TopologyClass,
     TopologyProbeErrorSurface,
     TopologyProbeRequest,
     TopologyProbeResponse,
     TopologyProbeResult,
     TopologyRoutePlan,
-    TopologyClass,
 )
 
 
-def probe_topology(request: DiscoveryRequest, caller_preset: str | None = None, probe_budget: int = 4) -> TopologyProbeResult:
-    topology, confidence, notes = _classify_topology(request, caller_preset=caller_preset)
+def probe_topology(
+    request: DiscoveryRequest,
+    caller_preset: str | None = None,
+    probe_budget: int = 4,
+    routing_boosts: dict[str, float] | None = None,
+) -> TopologyProbeResult:
+    topology, confidence, notes = _classify_topology(
+        request, caller_preset=caller_preset, routing_boosts=routing_boosts
+    )
     probe_queries = _build_probe_queries(request, topology=topology, caller_preset=caller_preset, probe_budget=probe_budget)
     error_surface = _build_error_surface(request, topology=topology, probe_queries=probe_queries)
     return TopologyProbeResult(
@@ -32,8 +39,12 @@ def plan_route(
     caller_preset: str | None = None,
     probe_budget: int = 4,
     probe: TopologyProbeResult | None = None,
+    routing_boosts: dict[str, float] | None = None,
 ) -> TopologyRoutePlan:
-    probe_result = probe or probe_topology(request, caller_preset=caller_preset, probe_budget=probe_budget)
+    probe_result = probe or probe_topology(
+        request, caller_preset=caller_preset, probe_budget=probe_budget,
+        routing_boosts=routing_boosts,
+    )
     route_name = _choose_route_name(request, probe_result.topology)
     route_entry = resolve_route_entry(route_name)
     source_pack = _build_source_pack(request, probe_result.topology)
@@ -81,6 +92,7 @@ def build_topology_probe_response(
 def _classify_topology(
     request: DiscoveryRequest,
     caller_preset: str | None = None,
+    routing_boosts: dict[str, float] | None = None,
 ) -> tuple[TopologyClass, float, list[str]]:
     objective = request.objective
     intent = request.intent
@@ -117,6 +129,14 @@ def _classify_topology(
         notes.append("source_hints_present")
     if broad_signals:
         notes.append("broadness_signals_present")
+
+    # Routing memory: known-good sources from previous runs increase confidence
+    # in focused search; each positive provider contributes up to +2 structured_signals.
+    if routing_boosts:
+        positive = sum(1 for b in routing_boosts.values() if b > 0.05)
+        if positive:
+            notes.append(f"routing_memory_active")
+            structured_signals += min(2, positive)
 
     if structured_signals >= 3 and broad_signals >= 2:
         return cast(TopologyClass, "mixed"), _confidence(structured_signals + broad_signals), [*notes, "structured_and_broad_signals"]

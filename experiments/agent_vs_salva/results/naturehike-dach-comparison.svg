@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="85" y="35" font-family="sans-serif" font-size="22" font-weight="700">naturehike-dach-agent-vs-salva-2026-06-08</text>
+<line x1="85" y1="600.0" x2="1250" y2="600.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="73" y="604.0" text-anchor="end" font-family="sans-serif" font-size="12" fill="#4b5563">0%</text>
+<line x1="85" y1="494.0" x2="1250" y2="494.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="73" y="498.0" text-anchor="end" font-family="sans-serif" font-size="12" fill="#4b5563">20%</text>
+<line x1="85" y1="388.0" x2="1250" y2="388.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="73" y="392.0" text-anchor="end" font-family="sans-serif" font-size="12" fill="#4b5563">40%</text>
+<line x1="85" y1="282.0" x2="1250" y2="282.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="73" y="286.0" text-anchor="end" font-family="sans-serif" font-size="12" fill="#4b5563">60%</text>
+<line x1="85" y1="176.0" x2="1250" y2="176.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="73" y="180.0" text-anchor="end" font-family="sans-serif" font-size="12" fill="#4b5563">80%</text>
+<line x1="85" y1="70.0" x2="1250" y2="70.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="73" y="74.0" text-anchor="end" font-family="sans-serif" font-size="12" fill="#4b5563">100%</text>
+<text x="182.1" y="628" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#111827">precision</text>
+<rect x="99.0" y="158.4" width="24.7" height="441.6" fill="#2563eb"><title>agent_only R1: precision 83.3%</title></rect>
+<rect x="126.7" y="151.5" width="24.7" height="448.5" fill="#7c3aed"><title>agent_only R2: precision 84.6%</title></rect>
+<rect x="154.4" y="158.4" width="24.7" height="441.6" fill="#059669"><title>agent_only R3: precision 83.3%</title></rect>
+<rect x="182.1" y="70.0" width="24.7" height="530.0" fill="#d97706"><title>salva R1: precision 100.0%</title></rect>
+<rect x="209.8" y="600.0" width="24.7" height="0.0" fill="#dc2626"><title>salva R2: precision 0.0%</title></rect>
+<rect x="237.5" y="600.0" width="24.7" height="0.0" fill="#0891b2"><title>salva R3: precision 0.0%</title></rect>
+<text x="376.2" y="628" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#111827">pooled recall</text>
+<rect x="293.2" y="444.1" width="24.7" height="155.9" fill="#2563eb"><title>agent_only R1: pooled recall 29.4%</title></rect>
+<rect x="320.9" y="257.0" width="24.7" height="343.0" fill="#7c3aed"><title>agent_only R2: pooled recall 64.7%</title></rect>
+<rect x="348.6" y="132.3" width="24.7" height="467.7" fill="#059669"><title>agent_only R3: pooled recall 88.2%</title></rect>
+<rect x="376.2" y="537.7" width="24.7" height="62.3" fill="#d97706"><title>salva R1: pooled recall 11.8%</title></rect>
+<rect x="403.9" y="600.0" width="24.7" height="0.0" fill="#dc2626"><title>salva R2: pooled recall 0.0%</title></rect>
+<rect x="431.6" y="600.0" width="24.7" height="0.0" fill="#0891b2"><title>salva R3: pooled recall 0.0%</title></rect>
+<text x="570.4" y="628" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#111827">evidence completeness</text>
+<rect x="487.3" y="335.0" width="24.7" height="265.0" fill="#2563eb"><title>agent_only R1: evidence completeness 50.0%</title></rect>
+<rect x="515.0" y="310.9" width="24.7" height="289.1" fill="#7c3aed"><title>agent_only R2: evidence completeness 54.5%</title></rect>
+<rect x="542.7" y="317.4" width="24.7" height="282.6" fill="#059669"><title>agent_only R3: evidence completeness 53.3%</title></rect>
+<rect x="570.4" y="202.5" width="24.7" height="397.5" fill="#d97706"><title>salva R1: evidence completeness 75.0%</title></rect>
+<rect x="598.1" y="600.0" width="24.7" height="0.0" fill="#dc2626"><title>salva R2: evidence completeness 0.0%</title></rect>
+<rect x="625.8" y="600.0" width="24.7" height="0.0" fill="#0891b2"><title>salva R3: evidence completeness 0.0%</title></rect>
+<text x="764.6" y="628" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#111827">country coverage</text>
+<rect x="681.5" y="70.0" width="24.7" height="530.0" fill="#2563eb"><title>agent_only R1: country coverage 100.0%</title></rect>
+<rect x="709.2" y="70.0" width="24.7" height="530.0" fill="#7c3aed"><title>agent_only R2: country coverage 100.0%</title></rect>
+<rect x="736.9" y="70.0" width="24.7" height="530.0" fill="#059669"><title>agent_only R3: country coverage 100.0%</title></rect>
+<rect x="764.6" y="423.4" width="24.7" height="176.6" fill="#d97706"><title>salva R1: country coverage 33.3%</title></rect>
+<rect x="792.3" y="600.0" width="24.7" height="0.0" fill="#dc2626"><title>salva R2: country coverage 0.0%</title></rect>
+<rect x="820.0" y="600.0" width="24.7" height="0.0" fill="#0891b2"><title>salva R3: country coverage 0.0%</title></rect>
+<text x="958.8" y="628" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#111827">channel coverage</text>
+<rect x="875.7" y="388.0" width="24.7" height="212.0" fill="#2563eb"><title>agent_only R1: channel coverage 40.0%</title></rect>
+<rect x="903.4" y="176.0" width="24.7" height="424.0" fill="#7c3aed"><title>agent_only R2: channel coverage 80.0%</title></rect>
+<rect x="931.1" y="70.0" width="24.7" height="530.0" fill="#059669"><title>agent_only R3: channel coverage 100.0%</title></rect>
+<rect x="958.8" y="494.0" width="24.7" height="106.0" fill="#d97706"><title>salva R1: channel coverage 20.0%</title></rect>
+<rect x="986.4" y="600.0" width="24.7" height="0.0" fill="#dc2626"><title>salva R2: channel coverage 0.0%</title></rect>
+<rect x="1014.1" y="600.0" width="24.7" height="0.0" fill="#0891b2"><title>salva R3: channel coverage 0.0%</title></rect>
+<text x="1152.9" y="628" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#111827">contamination safety</text>
+<rect x="1069.8" y="70.0" width="24.7" height="530.0" fill="#2563eb"><title>agent_only R1: contamination safety 100.0%</title></rect>
+<rect x="1097.5" y="70.0" width="24.7" height="530.0" fill="#7c3aed"><title>agent_only R2: contamination safety 100.0%</title></rect>
+<rect x="1125.2" y="70.0" width="24.7" height="530.0" fill="#059669"><title>agent_only R3: contamination safety 100.0%</title></rect>
+<rect x="1152.9" y="70.0" width="24.7" height="530.0" fill="#d97706"><title>salva R1: contamination safety 100.0%</title></rect>
+<rect x="1180.6" y="70.0" width="24.7" height="530.0" fill="#dc2626"><title>salva R2: contamination safety 100.0%</title></rect>
+<rect x="1208.3" y="70.0" width="24.7" height="530.0" fill="#0891b2"><title>salva R3: contamination safety 100.0%</title></rect>
+<rect x="85" y="657" width="12" height="12" fill="#2563eb"/>
+<text x="103" y="668" font-family="sans-serif" font-size="12" fill="#111827">agent_only R1</text>
+<rect x="370" y="657" width="12" height="12" fill="#7c3aed"/>
+<text x="388" y="668" font-family="sans-serif" font-size="12" fill="#111827">agent_only R2</text>
+<rect x="655" y="657" width="12" height="12" fill="#059669"/>
+<text x="673" y="668" font-family="sans-serif" font-size="12" fill="#111827">agent_only R3</text>
+<rect x="940" y="657" width="12" height="12" fill="#d97706"/>
+<text x="958" y="668" font-family="sans-serif" font-size="12" fill="#111827">salva R1</text>
+<rect x="85" y="681" width="12" height="12" fill="#dc2626"/>
+<text x="103" y="692" font-family="sans-serif" font-size="12" fill="#111827">salva R2</text>
+<rect x="370" y="681" width="12" height="12" fill="#0891b2"/>
+<text x="388" y="692" font-family="sans-serif" font-size="12" fill="#111827">salva R3</text>
+</svg>

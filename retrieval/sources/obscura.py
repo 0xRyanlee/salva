@@ -166,15 +166,15 @@ class ObscuraBrowserRetriever:
         n: int,
     ) -> list[dict[str, Any]]:
         """
-        obscura scrape url1 url2 ... --concurrency N --dump text --format json --quiet
-        Outputs one JSON object per URL to stdout.
+        obscura scrape url1 url2 ... --format json --eval "document.body.innerText"
+        Outputs a single JSON object: {"results": [{"url":..., "title":..., "eval":..., "time_ms":...}]}
         """
         cmd = self._build_cmd() + [
             "scrape",
             *urls[:n],
-            "--concurrency", str(min(_BATCH_CONCURRENCY, len(urls))),
-            "--dump", "text",
             "--format", "json",
+            "--eval", "document.body.innerText",
+            "--timeout", str(int(self.policy.request_timeout * 1000)),
             "--quiet",
         ]
         try:
@@ -187,18 +187,21 @@ class ObscuraBrowserRetriever:
             if proc.returncode != 0:
                 logger.debug("obscura scrape non-zero exit %d: %s", proc.returncode, proc.stderr[:200])
 
+            raw = proc.stdout.strip()
+            if not raw:
+                return []
+            try:
+                parsed = json.loads(raw)
+            except json.JSONDecodeError:
+                logger.debug("obscura: could not parse JSON output")
+                return []
+
+            results_list = parsed.get("results", [])
             url_to_search = {r["url"]: r for r in search_results}
             items: list[dict[str, Any]] = []
-            for line in proc.stdout.splitlines():
-                line = line.strip()
-                if not line:
-                    continue
-                try:
-                    obj = json.loads(line)
-                except json.JSONDecodeError:
-                    continue
+            for obj in results_list:
                 url = obj.get("url", "")
-                text = obj.get("text") or obj.get("content") or ""
+                text = obj.get("eval") or ""
                 base = url_to_search.get(url, {})
                 items.append({
                     "title": obj.get("title") or base.get("title", ""),

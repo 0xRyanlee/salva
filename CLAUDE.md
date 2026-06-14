@@ -58,8 +58,10 @@ Do not expand the LLM's role inside the core pipeline without discussion.
 | Retrieval | `retrieval/` | Provider adapters only. Each source is isolated. |
 | Processing | `processing/` | Pure functions. No I/O. |
 | Enrichment | `enrichment/` | Bounded prompts only. No free-form LLM calls. |
-| Persistence | `salva_core/persistence.py` | SQLite store. Will be split — see TODO Phase R1. |
-| Schema | `salva_core/schemas.py` | Canonical types. `schema/` is a legacy bridge to be removed. |
+| Persistence | `salva_core/persistence/` | SQLite store — split into `db.py`, `runs.py`, `memory.py`, `hold.py`, `jobs.py`, `evidence.py`, `telemetry.py`, `usage.py`. |
+| Hold (n-ary) | `salva_core/persistence/hold.py` | Hyperedge incidences, canonical entities + aliases, routing memory. Do not add business logic here. |
+| Relation Ontology | `salva_core/relation_ontology.py` | FtM-aligned relation types as data. Extend the `_RELATION_MAP` dict; never hardcode relation strings elsewhere. |
+| Schema | `salva_core/schemas.py` | Canonical types. `schema/` directory removed. |
 
 ## Key Design Decisions (Do Not Reverse Without Discussion)
 

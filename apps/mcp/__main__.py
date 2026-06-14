@@ -24,8 +24,7 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    from apps.mcp.server import mcp
-    from apps.mcp.server import validate_auth_environment
+    from apps.mcp.server import mcp, validate_auth_environment
 
     if not getattr(mcp, "available", True):
         print(

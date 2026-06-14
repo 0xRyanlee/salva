@@ -8,13 +8,15 @@ Handles:
 - datetime parsing (for event-domain results)
 """
 from __future__ import annotations
-import re
+
 import logging
+import re
 from datetime import UTC, datetime
 from urllib.parse import urlparse
 
 from core.types import UnifiedResult
 from processing.pipeline import ProcessingPipeline
+from processing.scrubber import scrub_text
 
 logger = logging.getLogger("salva.processing.extractor")
 
@@ -60,6 +62,7 @@ class BaseExtractor:
             return None
 
         domain = urlparse(url).netloc
+        snippet = scrub_text(snippet)
         text = f"{title} {snippet}"
 
         emails = _EMAIL_RE.findall(text)

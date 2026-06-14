@@ -14,7 +14,6 @@ from dataclasses import dataclass
 from typing import Any
 from urllib.parse import urlparse, urlunparse
 
-
 _WHITESPACE_RE = re.compile(r"\s+")
 _EVENT_HINTS = ("event", "meetup", "workshop", "expo", "conference", "webinar", "seminar", "活動", "講座")
 _COMPANY_HINTS = ("company", "about", "team", "investor", "careers", "press", "brand")
@@ -92,7 +91,7 @@ class ProcessingPipeline:
         url = self._normalize_url(str(raw.get("url", "") or ""))
         title = self._normalize_text(str(raw.get("title", "") or ""), max_len=120)
         domain = self._domain_from_url(url)
-        return hashlib.sha1(f"{domain}|{url}|{title}".encode("utf-8")).hexdigest()
+        return hashlib.sha1(f"{domain}|{url}|{title}".encode()).hexdigest()
 
     def process(self, raw: dict[str, Any], query: str, strategy: str) -> ProcessingResult:
         accepted, reason = self.prefilter(raw, query, strategy)

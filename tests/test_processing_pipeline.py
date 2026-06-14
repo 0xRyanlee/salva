@@ -1,7 +1,7 @@
+from core.types import UnifiedResult
 from processing.dedup import MemoryDeduplicator
 from processing.extractor import BaseExtractor
 from processing.pipeline import ProcessingPipeline
-from core.types import UnifiedResult
 
 
 def test_processing_pipeline_normalizes_and_classifies_event_results() -> None:

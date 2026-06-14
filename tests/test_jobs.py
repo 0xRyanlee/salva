@@ -2,10 +2,16 @@ import asyncio
 
 import pytest
 
-from apps.api.main import create_discovery_job, job_detail, job_events
-from salva_core.persistence import create_job, get_job, list_jobs, list_stream_events, update_job_status
-from salva_core.schemas import DiscoveryIntent, DiscoveryRequest, JobCreateRequest
 import salva_core.worker as worker
+from apps.api.main import create_discovery_job, job_detail, job_events
+from salva_core.persistence import (
+    create_job,
+    get_job,
+    list_jobs,
+    list_stream_events,
+    update_job_status,
+)
+from salva_core.schemas import DiscoveryIntent, DiscoveryRequest, JobCreateRequest
 from salva_core.worker import run_next_job
 
 
@@ -132,8 +138,14 @@ def _isolate_job_runtime(db_path: str) -> None:
     import salva_core.worker as worker
     from salva_core.persistence import (
         create_job as persistence_create_job,
+    )
+    from salva_core.persistence import (
         get_job as persistence_get_job,
+    )
+    from salva_core.persistence import (
         list_jobs as persistence_list_jobs,
+    )
+    from salva_core.persistence import (
         list_stream_events as persistence_list_stream_events,
     )
     from salva_core.worker import run_job as worker_run_job

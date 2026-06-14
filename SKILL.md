@@ -40,8 +40,9 @@ Use it when you need structured retrieval, route selection, evidence, and persis
 1. Declare objective and intent.
 2. Resolve route and experience profile.
 3. Execute retrieval with provider fallback.
-4. Normalize, score, and persist output.
-5. Reuse query-family memory on later runs.
+4. Declare `ExecutionContext` and run retrieval.
+5. Normalize, score, and persist an audit record unless persistence is disabled.
+6. Review quarantined query-family memory before later campaign-scoped reuse.
 
 ## Retrieval Sub-Tool
 
@@ -51,6 +52,7 @@ It provides provider-level search, not the full pipeline intelligence layer.
 See:
 - [docs/spec/retrieval-contract.md](docs/spec/retrieval-contract.md)
 - [docs/spec/provider-contract.md](docs/spec/provider-contract.md)
+- [docs/spec/execution-context.md](docs/spec/execution-context.md)
 - [docs/spec/route-catalog.md](docs/spec/route-catalog.md)
 
 ## Debug Start Point

@@ -11,9 +11,11 @@ Implementing an adapter:
     3. Optionally override `enrich_fields(result)` to customize OMLX input
 """
 from __future__ import annotations
+
 from abc import ABC, abstractmethod
-from core.types import UnifiedResult
+
 from core.controller import RunSummary
+from core.types import UnifiedResult
 
 
 class BaseAdapter(ABC):

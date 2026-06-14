@@ -1,5 +1,6 @@
 """Canonical dataclass types for Salva's retrieval pipeline."""
 from __future__ import annotations
+
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from typing import Any
@@ -21,6 +22,7 @@ class Intent:
     constraints: dict[str, Any] = field(default_factory=dict)
     max_rounds: int = 3
     results_per_round: int = 30
+    seed_urls: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -104,10 +106,10 @@ class UnifiedResult:
 
     starts_at: datetime | None = None
     ends_at: datetime | None = None
-    timezone: str = "Asia/Taipei"
+    timezone: str | None = None
 
-    price_amount: float = 0.0
-    currency: str = "TWD"
+    price_amount: float | None = None
+    currency: str | None = None
     capacity: int | None = None
 
     cover_image_url: str | None = None

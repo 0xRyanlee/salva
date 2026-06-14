@@ -2,7 +2,13 @@ from fastapi.testclient import TestClient
 
 from apps.api import main
 from salva_core.persistence import list_hyperedges, list_relations, persist_discovery_run
-from salva_core.schemas import CanonicalEntity, CanonicalRelation, DiscoveryIntent, DiscoveryRequest, EvidenceItem
+from salva_core.schemas import (
+    CanonicalEntity,
+    CanonicalRelation,
+    DiscoveryIntent,
+    DiscoveryRequest,
+    EvidenceItem,
+)
 
 
 def test_bay_manifest_exposes_hold_and_capabilities() -> None:

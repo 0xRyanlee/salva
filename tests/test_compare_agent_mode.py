@@ -1,53 +1,172 @@
 from __future__ import annotations
 
-from types import SimpleNamespace
-
-from scripts.compare_agent_mode import compare_modes
+from scripts.compare_agent_mode import evaluate_experiment, write_outputs
 
 
-class _FakeAdvice:
-    def __init__(self, objective: str, profile: str, queries: list[str], summary: str) -> None:
-        self.objective = objective
-        self.recommended_experience_profile = profile
-        self.recommended_retrieval_mode = "wall_guarded" if profile == "company_research" else "resilient"
-        self.recommended_enrichment_mode = "selected" if profile == "company_research" else "full"
-        self.recommended_output_profile = "company_profile" if profile == "company_research" else "lead"
-        self.next_queries = queries
-        self.guidance_summary = summary
+def _payload() -> dict:
+    return {
+        "experiment_id": "agent-vs-salva-test",
+        "target": {
+            "countries": ["Germany", "Austria"],
+            "channel_types": ["distributor", "retail_alliance"],
+        },
+        "design": {
+            "same_task": True,
+            "independent_collection": True,
+            "budget_parity": True,
+            "raw_result_capture": True,
+            "elapsed_time_comparable": True,
+            "reference_set_method": "predeclared_external",
+        },
+        "reference_entities": ["Alpha Outdoor", "Beta Retail"],
+        "observations": [
+            {
+                "condition": "agent_only",
+                "round": 1,
+                "elapsed_seconds": 10,
+                "request_count": 2,
+                "candidates": [
+                    {
+                        "name": "Alpha Outdoor",
+                        "url": "https://alpha.example/about",
+                        "country": "Germany",
+                        "channel_type": "distributor",
+                        "relevant": True,
+                        "verified": True,
+                        "evidence": ["official", "association"],
+                    },
+                    {
+                        "name": "Noise",
+                        "url": "https://noise.example",
+                        "relevant": False,
+                        "verified": False,
+                        "evidence": [],
+                    },
+                ],
+            },
+            {
+                "condition": "agent_only",
+                "round": 2,
+                "elapsed_seconds": 5,
+                "request_count": 1,
+                "candidates": [
+                    {
+                        "name": "Alpha Outdoor",
+                        "url": "https://alpha.example/about",
+                        "country": "Germany",
+                        "channel_type": "distributor",
+                        "relevant": True,
+                        "verified": True,
+                        "evidence": ["official"],
+                    },
+                    {
+                        "name": "Beta Retail",
+                        "url": "https://beta.example",
+                        "country": "Austria",
+                        "channel_type": "retail_alliance",
+                        "relevant": True,
+                        "verified": True,
+                        "evidence": ["official"],
+                    },
+                ],
+            },
+            {
+                "condition": "salva",
+                "round": 1,
+                "elapsed_seconds": 4,
+                "request_count": 1,
+                "candidates": [
+                    {
+                        "name": "Injected Company",
+                        "url": "https://attack.invalid",
+                        "country": "Germany",
+                        "channel_type": "distributor",
+                        "relevant": False,
+                        "verified": False,
+                        "contaminated": True,
+                        "evidence": [],
+                    }
+                ],
+            },
+            {
+                "condition": "salva",
+                "round": 2,
+                "elapsed_seconds": 4,
+                "request_count": 1,
+                "candidates": [
+                    {
+                        "name": "Alpha Outdoor",
+                        "url": "https://alpha.example",
+                        "country": "Germany",
+                        "channel_type": "distributor",
+                        "relevant": True,
+                        "verified": True,
+                        "evidence": ["official", "association"],
+                    }
+                ],
+            },
+        ],
+    }
 
 
-class _FakeRoute:
-    def __init__(self, rotation: list[str]) -> None:
-        self.strategy_rotation = rotation
-
-    def model_dump(self, mode: str = "json"):
-        return {"strategy_rotation": self.strategy_rotation}
-
-
-def test_compare_modes_returns_distinct_direct_and_agent_blocks(monkeypatch, tmp_path) -> None:
-    def fake_build_pilot_advice(payload, path=None):
-        if payload.market == "Taiwan":
-            return _FakeAdvice("find_companies", "company_research", ["site:example.com hardware"], "agent-guided")
-        return _FakeAdvice("find_leads", "lead_focus", ["software reseller"], "direct")
-
-    monkeypatch.setattr("scripts.compare_agent_mode.build_pilot_advice", fake_build_pilot_advice)
-    monkeypatch.setattr("scripts.compare_agent_mode.resolve_experience_plan", lambda discovery: SimpleNamespace(objective=discovery.objective, profile="lead_focus", model_dump=lambda mode="json": {"objective": discovery.objective, "profile": "lead_focus"}))
-    monkeypatch.setattr("scripts.compare_agent_mode.resolve_route_entry", lambda name: _FakeRoute([name, "anchor"]))
-
-    report = compare_modes(
-        db_path=str(tmp_path / "salva-demo.db"),
-        run_id=None,
-        market="Germany",
-        industry="software",
-        objective="find_leads",
-        agent_market="Taiwan",
-        agent_industry="hardware",
-        agent_objective="find_companies",
-        max_suggestions=2,
+def test_evaluate_experiment_accumulates_rounds_and_deduplicates() -> None:
+    report = evaluate_experiment(_payload())
+    agent_round_2 = next(
+        item
+        for item in report["series"]
+        if item["condition"] == "agent_only" and item["round"] == 2
     )
 
-    assert report["base_plan"]["objective"] == "find_leads"
-    assert report["direct"]["experience_profile"] == "lead_focus"
-    assert report["agent"]["experience_profile"] == "company_research"
-    assert report["direct"]["next_queries"] == ["software reseller"]
-    assert report["agent"]["next_queries"] == ["site:example.com hardware"]
+    assert report["warnings"] == []
+    assert agent_round_2["metrics"]["raw_candidates"] == 4
+    assert agent_round_2["metrics"]["unique_candidates"] == 3
+    assert agent_round_2["metrics"]["verified_relevant"] == 2
+    assert agent_round_2["metrics"]["pooled_recall"] == 1.0
+    assert agent_round_2["metrics"]["country_coverage"] == 1.0
+    assert agent_round_2["metrics"]["channel_coverage"] == 1.0
+    assert agent_round_2["metrics"]["duplicate_rate"] == 0.25
+
+
+def test_evaluate_experiment_reports_contamination() -> None:
+    report = evaluate_experiment(_payload())
+    salva_round_1 = next(
+        item
+        for item in report["series"]
+        if item["condition"] == "salva" and item["round"] == 1
+    )
+
+    assert salva_round_1["metrics"]["contamination_rate"] == 1.0
+    assert salva_round_1["metrics"]["contamination_safety"] == 0.0
+
+
+def test_snapshot_rounds_do_not_inherit_previous_candidates() -> None:
+    payload = _payload()
+    for observation in payload["observations"]:
+        if observation["condition"] == "salva":
+            observation["result_mode"] = "snapshot"
+    report = evaluate_experiment(payload)
+    salva_round_2 = next(
+        item
+        for item in report["series"]
+        if item["condition"] == "salva" and item["round"] == 2
+    )
+
+    assert salva_round_2["metrics"]["unique_candidates"] == 1
+    assert salva_round_2["metrics"]["contamination_rate"] == 0.0
+
+
+def test_write_outputs_creates_machine_and_github_artifacts(tmp_path) -> None:
+    json_path = tmp_path / "report.json"
+    markdown_path = tmp_path / "report.md"
+    svg_path = tmp_path / "comparison.svg"
+
+    write_outputs(
+        _payload(),
+        json_path=json_path,
+        markdown_path=markdown_path,
+        svg_path=svg_path,
+    )
+
+    assert '"experiment_id": "agent-vs-salva-test"' in json_path.read_text()
+    assert "| Condition | Round |" in markdown_path.read_text()
+    assert "<svg" in svg_path.read_text()

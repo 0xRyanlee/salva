@@ -50,6 +50,7 @@ def _discovery_payload(
     transform: Mapping[str, Any] | None = None,
     retrieval: Mapping[str, Any] | None = None,
     enrichment: Mapping[str, Any] | None = None,
+    execution: Mapping[str, Any] | None = None,
     extra_keywords: Sequence[str] | None = None,
     negative_keywords: Sequence[str] | None = None,
     constraints: Mapping[str, Any] | None = None,
@@ -78,6 +79,8 @@ def _discovery_payload(
         payload["retrieval"] = dict(retrieval)
     if enrichment is not None:
         payload["enrichment"] = dict(enrichment)
+    if execution is not None:
+        payload["execution"] = dict(execution)
     return payload
 
 
@@ -123,7 +126,7 @@ class SalvaClient(_BaseClient):
         if self._owns_client:
             self._client.close()
 
-    def __enter__(self) -> "SalvaClient":
+    def __enter__(self) -> SalvaClient:
         return self
 
     def __exit__(self, *exc_info: object) -> None:
@@ -159,6 +162,7 @@ class SalvaClient(_BaseClient):
         transform: Mapping[str, Any] | None = None,
         retrieval: Mapping[str, Any] | None = None,
         enrichment: Mapping[str, Any] | None = None,
+        execution: Mapping[str, Any] | None = None,
     ) -> dict[str, Any]:
         return self._request_json(
             "POST",
@@ -179,6 +183,7 @@ class SalvaClient(_BaseClient):
                 transform=transform,
                 retrieval=retrieval,
                 enrichment=enrichment,
+                execution=execution,
             ),
         )
 
@@ -200,6 +205,7 @@ class SalvaClient(_BaseClient):
         transform: Mapping[str, Any] | None = None,
         retrieval: Mapping[str, Any] | None = None,
         enrichment: Mapping[str, Any] | None = None,
+        execution: Mapping[str, Any] | None = None,
         wait_for_completion: bool = True,
     ) -> dict[str, Any]:
         payload = {
@@ -219,6 +225,7 @@ class SalvaClient(_BaseClient):
                 transform=transform,
                 retrieval=retrieval,
                 enrichment=enrichment,
+                execution=execution,
             ),
             "wait_for_completion": wait_for_completion,
         }
@@ -295,7 +302,7 @@ class AsyncSalvaClient(_BaseClient):
         if self._owns_client:
             await self._client.aclose()
 
-    async def __aenter__(self) -> "AsyncSalvaClient":
+    async def __aenter__(self) -> AsyncSalvaClient:
         return self
 
     async def __aexit__(self, *exc_info: object) -> None:
@@ -331,6 +338,7 @@ class AsyncSalvaClient(_BaseClient):
         transform: Mapping[str, Any] | None = None,
         retrieval: Mapping[str, Any] | None = None,
         enrichment: Mapping[str, Any] | None = None,
+        execution: Mapping[str, Any] | None = None,
     ) -> dict[str, Any]:
         return await self._request_json(
             "POST",
@@ -351,6 +359,7 @@ class AsyncSalvaClient(_BaseClient):
                 transform=transform,
                 retrieval=retrieval,
                 enrichment=enrichment,
+                execution=execution,
             ),
         )
 
@@ -372,6 +381,7 @@ class AsyncSalvaClient(_BaseClient):
         transform: Mapping[str, Any] | None = None,
         retrieval: Mapping[str, Any] | None = None,
         enrichment: Mapping[str, Any] | None = None,
+        execution: Mapping[str, Any] | None = None,
         wait_for_completion: bool = True,
     ) -> dict[str, Any]:
         payload = {
@@ -391,6 +401,7 @@ class AsyncSalvaClient(_BaseClient):
                 transform=transform,
                 retrieval=retrieval,
                 enrichment=enrichment,
+                execution=execution,
             ),
             "wait_for_completion": wait_for_completion,
         }

@@ -3,7 +3,6 @@ from core.domain_vocab import DomainVocab, get_vocab, list_domains, register_dom
 from core.keyword_graph import KeywordGraph
 from core.types import Intent
 
-
 # ---------------------------------------------------------------------------
 # Registry basics
 # ---------------------------------------------------------------------------
