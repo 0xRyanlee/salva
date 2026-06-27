@@ -143,11 +143,6 @@ class TestScorerConfigContextPreservation:
     They are intentionally marked xfail to document the known defect.
     """
 
-    @pytest.mark.xfail(
-        reason="Known bug: _apply_context omits qualify_threshold= in ScorerConfig(...), "
-               "resetting bd_leads 0.35 → 0.40. Fix: add qualify_threshold=cfg.qualify_threshold.",
-        strict=True,
-    )
     def test_apply_context_preserves_bd_leads_threshold(self):
         from processing.scorer import DOMAIN_CONFIGS, QualificationScorer
         bd_cfg = DOMAIN_CONFIGS["bd_leads"]
@@ -160,10 +155,6 @@ class TestScorerConfigContextPreservation:
             "Callers reading adjusted.qualify_threshold will gate too strictly."
         )
 
-    @pytest.mark.xfail(
-        reason="Known bug: _apply_context omits qualify_threshold=, resetting taiwan_hardware 0.35 → 0.40.",
-        strict=True,
-    )
     def test_apply_context_preserves_taiwan_hardware_threshold(self):
         from processing.scorer import DOMAIN_CONFIGS, QualificationScorer
         tw_cfg = DOMAIN_CONFIGS.get("taiwan_hardware")

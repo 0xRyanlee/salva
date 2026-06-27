@@ -217,6 +217,7 @@ class QualificationScorer:
             w_region=cfg.w_region,
             w_source=cfg.w_source,
             w_recency=cfg.w_recency,
+            qualify_threshold=cfg.qualify_threshold,
         )
 
         # Note-based presets apply only when using the default ScorerConfig weights.
