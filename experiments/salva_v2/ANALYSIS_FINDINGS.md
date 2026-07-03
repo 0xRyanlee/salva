@@ -10,6 +10,16 @@
 - [`cost_efficiency.svg`](charts/cost_efficiency.svg) — recall vs `requests_used` scatter (the cost-efficiency view called for so a signal like E21c's "19 requests, zero true positives" can't be masked by a P/R/F1 number alone).
 - [`retrieval_health_distribution.svg`](charts/retrieval_health_distribution.svg) — Arm B's `retrieval_health` was `ok` in all 18/18 runs; shown as a single clean bar rather than a misleading 3-slice pie with two empty slices.
 
+**2026-07-03 follow-up (post scorer fix):** the "Salva's own scoring layer
+returns zero usable entities in 61% of runs" finding below led to two fixes
+(`salva-p35-scorer-partnerships-domain`, `salva-p35-scorer-threshold-wiring`).
+Arm B was re-run afterward on the same 18 tasks to test whether that
+converted any of the ties below into real wins. **Short answer: no** — see
+[`RESCORE_COMPARISON.md`](RESCORE_COMPARISON.md) for the full comparison and
+the deeper vocabulary/trusted-source calibration gap it surfaced. The
+findings below are preserved exactly as originally written — nothing in this
+section has been altered to match the rescore.
+
 ## Headline verdict
 
 **Recall/correctness: 17 ties, 1 Arm B win, 0 Arm A wins.** On pure

@@ -1,0 +1,16 @@
+{
+  "task_id": "single-06-gleif",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "GLEIF (Global Legal Entity Identifier Foundation)",
+      "url": "https://www.gleif.org",
+      "claim": "Official website of GLEIF, confirmed via WebSearch (homepage at https://www.gleif.org/en). Not sourced from Salva -- Salva returned zero qualified entities for this query."
+    }
+  ],
+  "requests_used": 1,
+  "retrieval_health": "ok",
+  "qualified_count": 0,
+  "used_salva": false,
+  "notes": "Salva run_discovery reported retrieval_health='ok' but qualified_count=0 -- zero entities passed qualification, so no candidate list was returned by Salva even after the scoring-layer bug fix. Answer sourced entirely via 1 WebSearch query (GLEIF Global Legal Entity Identifier Foundation official website), which resolved unambiguously to gleif.org."
+}

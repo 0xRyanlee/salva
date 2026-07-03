@@ -1,0 +1,26 @@
+{
+  "task_id": "crosslang-05-chunghwa-telecom",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "中華電信 (Chunghwa Telecom Co., Ltd.)",
+      "url": "https://www.cht.com.tw",
+      "claim": "Official corporate site of Chunghwa Telecom, Taiwan's largest integrated telecom operator (5G mobile, HiNet broadband/fixed line, MOD IPTV). Official English name: Chunghwa Telecom Co., Ltd. (NYSE/TWSE: CHT)."
+    },
+    {
+      "name": "中華電信我的服務中心 (Chunghwa Telecom customer self-service portal)",
+      "url": "https://123.cht.com.tw",
+      "claim": "Customer self-service portal subdomain of Chunghwa Telecom's official site."
+    },
+    {
+      "name": "HiNet 網頁郵件服務",
+      "url": "https://webmail.hinet.net",
+      "claim": "Webmail service under HiNet, Chunghwa Telecom's ISP brand."
+    }
+  ],
+  "requests_used": 1,
+  "retrieval_health": "ok",
+  "qualified_count": 7,
+  "used_salva": true,
+  "notes": "Post-fix Arm B rerun. Salva returned 7 qualified entities (up from prior run's reported zero-entity failure), correctly clustering around the real company Chunghwa Telecom (中華電信), Taiwan's dominant telecom operator. Official English name confirmed as 'Chunghwa Telecom Co., Ltd.' (listed as NYSE: CHT). Top entities are the official corporate site (cht.com.tw), its customer portal (123.cht.com.tw), and HiNet webmail (webmail.hinet.net), all legitimate Chunghwa Telecom properties. Remaining entities were lower-value tangential pages (third-party plan comparison site, a bill-payment portal, a recruitment/exam-prep site) not included in reported_entities. No WebSearch needed; company identity was unambiguous and well-established. Confidence scores were moderate (0.40-0.45), consistent with generic/informational page types rather than high-specificity company-profile pages."
+}

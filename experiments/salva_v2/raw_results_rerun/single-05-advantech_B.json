@@ -1,0 +1,16 @@
+{
+  "task_id": "single-05-advantech",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Advantech Co., Ltd. (研華股份有限公司)",
+      "url": "https://www.advantech.com/en-us",
+      "claim": "Official global corporate website for Advantech, Taiwan's leading industrial computer (IPC) / IIoT hardware manufacturer, confirmed via WebSearch (not surfaced by Salva)."
+    }
+  ],
+  "requests_used": 1,
+  "retrieval_health": "ok",
+  "qualified_count": 0,
+  "used_salva": true,
+  "notes": "Salva run_discovery post scoring-layer-fix rerun: retrieval_health reported 'ok' but qualified_count was still 0 (0 entities returned by Salva) — the fix did not resolve the QualificationScorer zero-entity issue for this task. Fell back to 1 WebSearch query ('Advantech 研華科技 official website') which returned the correct official site https://www.advantech.com/en-us plus regional sites (iotmart.advantech.com.tw, aics.advantech.com) and Wikipedia confirmation. No change from prior Arm B behavior despite the bug fix."
+}

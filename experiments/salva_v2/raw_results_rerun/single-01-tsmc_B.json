@@ -1,0 +1,26 @@
+{
+  "task_id": "single-01-tsmc",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Taiwan Semiconductor Manufacturing Company Limited - TSMC",
+      "url": "https://www.tsmc.com/english",
+      "claim": "Official TSMC corporate website (English homepage)."
+    },
+    {
+      "name": "Company Info - Taiwan Semiconductor Manufacturing Company Limited - TSMC",
+      "url": "https://www.tsmc.com/english/aboutTSMC/company_profile",
+      "claim": "TSMC official company profile / about page, likely source for contact information."
+    },
+    {
+      "name": "Taiwan Semiconductor Manufacturing Company Limited (TSM)",
+      "url": "https://finance.yahoo.com/quote/TSM",
+      "claim": "Yahoo Finance listing page for TSMC (ticker TSM), not an official contact source."
+    }
+  ],
+  "requests_used": 1,
+  "retrieval_health": "ok",
+  "qualified_count": 3,
+  "used_salva": true,
+  "notes": "Post-fix rerun of Arm B. retrieval_health=ok and qualified_count=3 with non-zero entities returned, in contrast to the pre-fix bug where QualificationScorer reportedly returned zero entities ~61% of the time. Salva correctly surfaced TSMC's official English homepage and company profile page. No WebSearch queries were needed since the two tsmc.com URLs directly satisfy the official-website request; the Yahoo Finance result is tangential (financial listing, not a direct contact page) but not incorrect. No explicit phone/email contact entity was surfaced by Salva itself -- the company_profile page is the closest proxy for contact info."
+}

@@ -1,0 +1,61 @@
+{
+  "task_id": "multihop-04-mediatek-brands",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Oppo",
+      "url": "https://www.businessworld.in/article/mediatek-dimensity-9500-oppo-vivo-apple-a19-m5-intel-577804",
+      "claim": "Oppo Find X9 / Find X9 Pro uses the MediaTek Dimensity 9500 flagship chipset."
+    },
+    {
+      "name": "Vivo",
+      "url": "https://www.mediatek.com/tek-talk-blogs/vivo-x300-series-powered-by-mediatek-dimensity-9500",
+      "claim": "Vivo X300 series is powered by MediaTek Dimensity 9500 (confirmed on MediaTek's own blog)."
+    },
+    {
+      "name": "Xiaomi",
+      "url": "https://www.businessworld.in/article/mediatek-dimensity-9500-oppo-vivo-apple-a19-m5-intel-577804",
+      "claim": "Xiaomi is cited among MediaTek's most substantial Chinese smartphone-maker partners for Dimensity flagship chips."
+    },
+    {
+      "name": "Samsung",
+      "url": "https://www.businessworld.in/article/mediatek-dimensity-9500-oppo-vivo-apple-a19-m5-intel-577804",
+      "claim": "Samsung is listed among MediaTek's flagship chipset customers (Samsung uses Dimensity chips in select Galaxy A/F series devices in addition to its own Exynos)."
+    },
+    {
+      "name": "Honor",
+      "url": "https://www.mediatek.com/dimensity-9500",
+      "claim": "Honor uses the Dimensity 9500 in its Magic8 Pro Air handset."
+    },
+    {
+      "name": "Motorola",
+      "url": "https://9to5google.com/2026/04/28/mediatek-dimensity-7450/",
+      "claim": "Motorola is expected to use the MediaTek Dimensity 7450X in the 2026 update to the base Razr foldable."
+    },
+    {
+      "name": "Redmi",
+      "url": "https://www.mobolist.net/en/blog/snapdragon-vs-mediatek-vs-apple-ultimate-smartphone-processor-guide-2026",
+      "claim": "Redmi is listed among smartphone brands commonly using MediaTek Dimensity processors."
+    },
+    {
+      "name": "iQOO",
+      "url": "https://www.mobolist.net/en/blog/snapdragon-vs-mediatek-vs-apple-ultimate-smartphone-processor-guide-2026",
+      "claim": "iQOO is listed among smartphone brands commonly using MediaTek Dimensity processors."
+    },
+    {
+      "name": "Tecno",
+      "url": "https://www.mobolist.net/en/blog/snapdragon-vs-mediatek-vs-apple-ultimate-smartphone-processor-guide-2026",
+      "claim": "Tecno is listed among smartphone brands commonly using MediaTek Dimensity processors."
+    },
+    {
+      "name": "Infinix",
+      "url": "https://www.mobolist.net/en/blog/snapdragon-vs-mediatek-vs-apple-ultimate-smartphone-processor-guide-2026",
+      "claim": "Infinix is listed among smartphone brands commonly using MediaTek Dimensity processors."
+    }
+  ],
+  "requests_used": 4,
+  "retrieval_health": "ok",
+  "qualified_count": 0,
+  "used_salva": true,
+  "notes": "Re-ran Salva find_partnership_signals objective post scoring-layer bug fix; result unchanged from prior arm: qualified_count still 0 (raw_count 5, all raw candidates rejected as low_signal/untrusted_source). Notably noise_domains flagged en.wikipedia.org, www.intel.com, www.amd.com, www.mediatek.com, www.hp.com as untrusted despite being highly relevant official/reference sources -- consistent with the known QualificationScorer over-rejection issue (see project memory: 'QualificationScorer 61% 測試回傳零實體是最高槓桿修復點'). The fix targeting find_partnership_signals did not resolve this case. Fell back to WebSearch (2 queries) to answer the question directly; findings synthesized from MediaTek's own blog plus independent tech press, cross-checked for consistency."
+}

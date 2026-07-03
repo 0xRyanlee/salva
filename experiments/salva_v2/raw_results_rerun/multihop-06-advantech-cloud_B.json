@@ -1,0 +1,26 @@
+{
+  "task_id": "multihop-06-advantech-cloud",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Microsoft Azure",
+      "url": "https://www.advantech.com/en-us/resources/news/advantech%E2%80%99s-uno-iot-edge-gateways-now-certified-to-run-on-microsoft-azure-iot-platform",
+      "claim": "Advantech's UNO IoT edge gateways (UNO-137, UNO-148, UNO-2271G V2, UNO-2372G, UNO-410, UNO-430) are certified on the Microsoft Azure IoT platform; WISE-PaaS/IoTSuite is listed on Azure Marketplace; Microsoft partners with Advantech (alongside PTC and Softing) to integrate industrial data via Azure IoT Operations; Azure is described as Advantech's main IaaS/PaaS partner, pre-integrated with WISE-PaaS."
+    },
+    {
+      "name": "Amazon Web Services (AWS)",
+      "url": "https://www.iotm2mcouncil.org/iot-library/news/iot-newsdesk/microsoft-and-aws-approve-advantech-gateways/",
+      "claim": "Advantech's UNO IoT edge gateways have qualified for AWS IoT Greengrass; Advantech offers AWS IoT Greengrass-certified hardware and Edge Service Packages targeting AWS as a cloud destination; WISE-PaaS supports AWS as one of its public cloud backends."
+    },
+    {
+      "name": "Alibaba Cloud",
+      "url": "https://www.advantechmagazine.com/articles/advantech-wise-paas-iot-cloud-platform-helps-users-accelerate-the-development-of-innovative-aiot-applications",
+      "claim": "Advantech's WISE-PaaS/WISE-DeviceOn IIoT cloud platform documentation states the PaaS service layer supports public cloud networks including Alibaba Cloud in addition to Azure and AWS, as part of its multi-cloud strategy."
+    }
+  ],
+  "requests_used": 3,
+  "retrieval_health": "ok",
+  "qualified_count": 0,
+  "used_salva": true,
+  "notes": "Post-fix Arm B rerun: Salva's find_partnership_signals objective still returned qualified_count=0 despite retrieval_health='ok' -- the scoring-layer bug fix did not resolve the zero-qualified-entities issue for this task. Fell back to WebSearch (3 queries, within allowed cap) to answer the question directly. All three cloud partnerships (Azure, AWS, Alibaba Cloud) are corroborated by multiple independent Advantech/Microsoft-sourced documents; Azure has the deepest documented integration (device certification catalogue, Azure Marketplace listing, joint Azure IoT Operations partnership announcement), AWS integration is via IoT Greengrass certification, and Alibaba Cloud is mentioned as a supported public cloud backend for WISE-PaaS but with less partnership-specific detail than Azure/AWS."
+}

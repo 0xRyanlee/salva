@@ -1,0 +1,26 @@
+{
+  "task_id": "crosslang-04-foxconn",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "鴻海科技集團 (Hon Hai Technology Group / Hon Hai Precision Industry Co., Ltd., commonly known as Foxconn)",
+      "url": "https://www.honhai.com/zh-tw",
+      "claim": "鴻海 is the common short name for 鴻海精密工業股份有限公司, whose official English name is Hon Hai Precision Industry Co., Ltd. (branded internationally as Foxconn Technology Group), the world's largest electronics manufacturing services (EMS) company, headquartered in New Taipei City, Taiwan."
+    },
+    {
+      "name": "鴻海 (2317.TW) - Yahoo股市 stock quote page",
+      "url": "https://tw.stock.yahoo.com/quote/2317.TW",
+      "claim": "Confirms 鴻海 trades under Taiwan stock ticker 2317.TW, consistent with Hon Hai / Foxconn identity."
+    },
+    {
+      "name": "首頁 - 鴻海科技集團 (honhai.com.tw)",
+      "url": "https://www.honhai.com.tw",
+      "claim": "Secondary official corporate domain for 鴻海科技集團, corroborating the honhai.com identity."
+    }
+  ],
+  "requests_used": 0,
+  "retrieval_health": "ok",
+  "qualified_count": 4,
+  "used_salva": true,
+  "notes": "Salva run post scoring-layer fix returned retrieval_health=ok and qualified_count=4. Top results unambiguously identify 鴻海 as Hon Hai Precision Industry Co., Ltd. (globally branded as Foxconn Technology Group) via two official honhai.com/honhai.com.tw domains and the Yahoo stock quote (ticker 2317.TW). Fourth qualified entity was a TVBS news article about 鴻海's stock price movement, not a distinct company, so it was omitted from reported_entities. No WebSearch needed -- entity resolution was unambiguous from Salva's own output."
+}

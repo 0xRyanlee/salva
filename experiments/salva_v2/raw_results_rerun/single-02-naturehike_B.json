@@ -1,0 +1,36 @@
+{
+  "task_id": "single-02-naturehike",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Naturehike (official site)",
+      "url": "https://www.naturehike.com/",
+      "claim": "Naturehike official global storefront/homepage."
+    },
+    {
+      "name": "Naturehike Wholesale page",
+      "url": "https://www.naturehike.com/pages/wholesale",
+      "claim": "Official wholesale/bulk purchase inquiry page."
+    },
+    {
+      "name": "Naturehike Contact Us page",
+      "url": "https://www.naturehike.com/pages/contact-us",
+      "claim": "Official contact page listing support channels."
+    },
+    {
+      "name": "Naturehike wholesale contact (US bulk purchases)",
+      "url": "https://www.naturehike.com/pages/wholesale",
+      "claim": "US bulk purchase inquiries: support@naturehike.com"
+    },
+    {
+      "name": "Naturehike wholesale contact (other regions)",
+      "url": "https://www.naturehike.com/pages/wholesale",
+      "claim": "Other-region bulk purchase inquiries: helen@naturehike.com, phone 86-15990241150 (Miss Helen); company address No. 55, Chuangfu Road, Xiaogang Street, Beilun District, Ningbo City, Zhejiang Province."
+    }
+  ],
+  "requests_used": 1,
+  "retrieval_health": "ok",
+  "qualified_count": 0,
+  "used_salva": true,
+  "notes": "Salva run_discovery reported retrieval_health='ok' but qualified_count=0 and returned zero entities (the entities[:10] print loop produced no output) even after the scoring-layer bug fix -- same zero-entity failure as before the fix. All findings below came from 1 WebSearch query ('Naturehike official website wholesale contact'), not from Salva. QualificationScorer zero-entity issue appears unresolved for this task."
+}

@@ -1,0 +1,31 @@
+{
+  "task_id": "crosslang-03-acer",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Acer 宏碁电脑（上海）有限公司",
+      "url": "https://www.acer.com.cn/index.html",
+      "claim": "Official Acer subsidiary site for China market, selling laptops, desktops, monitors, and projectors."
+    },
+    {
+      "name": "宏碁_百度百科",
+      "url": "https://baike.baidu.com/item/%E5%AE%8F%E7%A2%81/456426",
+      "claim": "Baidu Baike encyclopedia entry confirming 宏碁 (Acer) as a Taiwan-based multinational computer hardware/electronics company, founded 1976 by Stan Shih."
+    },
+    {
+      "name": "宏碁集团_百度百科",
+      "url": "https://baike.baidu.com/item/%E5%AE%8F%E7%A2%81%E9%9B%86%E5%9B%A2/6660468",
+      "claim": "Baidu Baike entry for Acer Group (宏碁集团), the corporate group encompassing Acer Inc. and its subsidiaries."
+    },
+    {
+      "name": "宏碁官方旗舰店 - 京东",
+      "url": "https://mall.jd.com/index-13691945.html",
+      "claim": "Acer's official flagship store on JD.com (Chinese e-commerce platform), further corroborating the brand identity."
+    }
+  ],
+  "requests_used": 1,
+  "retrieval_health": "ok",
+  "qualified_count": 4,
+  "used_salva": true,
+  "notes": "宏碁 unambiguously identifies Acer Inc. (Taiwan-based multinational hardware/electronics company, official English name 'Acer Incorporated', commonly 'Acer'). All 4 qualified entities returned by Salva (confidence 0.4006 each) converge on this identification -- official Acer China subsidiary site, two Baidu Baike encyclopedia entries, and Acer's official JD.com flagship store. Result is unambiguous and consistent; no WebSearch needed to disambiguate. No stderr errors observed beyond the expected 'OMLX call failed' fallback warning (filtered)."
+}

@@ -1,0 +1,21 @@
+{
+  "task_id": "crosslang-01-tsmc",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "台灣積體電路製造股份有限公司 (Taiwan Semiconductor Manufacturing Company, Limited / TSMC)",
+      "url": "https://zh.wikipedia.org/zh-tw/%E5%8F%B0%E7%81%A3%E7%A9%8D%E9%AB%94%E9%9B%BB%E8%B7%AF%E8%A3%BD%E9%80%A0",
+      "claim": "台積電 (2330.TW) is the common abbreviation for 台灣積體電路製造股份有限公司, whose official English name is Taiwan Semiconductor Manufacturing Company, Limited (TSMC), the world's largest dedicated semiconductor foundry, headquartered in Hsinchu, Taiwan."
+    },
+    {
+      "name": "台積電 (2330.TW) - Yahoo股市 stock quote page",
+      "url": "https://tw.stock.yahoo.com/quote/2330.TW",
+      "claim": "Confirms 台積電 trades under Taiwan stock ticker 2330.TW, consistent with TSMC identity."
+    }
+  ],
+  "requests_used": 0,
+  "retrieval_health": "ok",
+  "qualified_count": 5,
+  "used_salva": true,
+  "notes": "Salva run post scoring-layer fix returned retrieval_health=ok and qualified_count=5 (up from Arm A's context of QualificationScorer returning zero qualified entities per prior audit). Top results correctly and unambiguously identify 台積電 as Taiwan Semiconductor Manufacturing Company, Limited (TSMC) via the zh-Wikipedia canonical entry and Yahoo stock quote (ticker 2330.TW). No WebSearch needed -- entity resolution was unambiguous from Salva's own output. Other qualified entities were financial/news articles about TSMC (earnings, employee bonuses) rather than distinct companies, so only the two most identity-relevant sources are reported here."
+}

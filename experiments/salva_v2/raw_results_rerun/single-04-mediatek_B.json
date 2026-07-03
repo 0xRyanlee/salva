@@ -1,0 +1,31 @@
+{
+  "task_id": "single-04-mediatek",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "MediaTek Inc. (聯發科技)",
+      "url": "https://www.mediatek.com/",
+      "claim": "Official corporate homepage."
+    },
+    {
+      "name": "MediaTek Investor Relations",
+      "url": "https://www.mediatek.com/investor-relations",
+      "claim": "Investor relations landing page (financial information, IR events, shareholder services, investor FAQ)."
+    },
+    {
+      "name": "MediaTek Investor Relations Contact",
+      "url": "https://www.mediatek.com/investor-relations",
+      "claim": "IR contact: 5F, 83, Sec. 1, Chung-Ching S. Rd., Taipei, Taiwan 100. Tel: +886-2-6636-5566, Fax: +886-2-2653-9180."
+    },
+    {
+      "name": "MediaTek Contact Us",
+      "url": "https://corp.mediatek.com/about/contact-us",
+      "claim": "Corporate contact-us page listing general and departmental contacts."
+    }
+  ],
+  "requests_used": 1,
+  "retrieval_health": "ok",
+  "qualified_count": 0,
+  "used_salva": true,
+  "notes": "Post-scoring-fix Salva rerun (Arm B) still returned qualified_count=0 and printed zero entities despite retrieval_health=ok -- same failure mode as the pre-fix run (QualificationScorer still returning zero qualified entities for a well-known, unambiguous target). All 4 reported entities above came from a single supplementary WebSearch query, not from Salva. The scoring-layer bug fix did not visibly change this task's outcome."
+}

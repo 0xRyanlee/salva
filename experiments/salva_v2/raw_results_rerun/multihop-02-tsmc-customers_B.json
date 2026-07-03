@@ -1,0 +1,56 @@
+{
+  "task_id": "multihop-02-tsmc-customers",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Apple",
+      "url": "https://www.cnbc.com/2026/01/26/nvidia-set-to-supplant-apple-as-tsmcs-largest-customer.html",
+      "claim": "TSMC's largest customer for years, ~22-25% of TSMC revenue; uses TSMC's most advanced nodes for A-series and M-series chips."
+    },
+    {
+      "name": "Nvidia",
+      "url": "https://www.cnbc.com/2026/01/26/nvidia-set-to-supplant-apple-as-tsmcs-largest-customer.html",
+      "claim": "Set to supplant Apple as TSMC's top customer in 2026, driven by AI GPU demand (~11% of revenue per earlier estimates, rising)."
+    },
+    {
+      "name": "AMD",
+      "url": "https://www.tweaktown.com/news/97457/tsmcs-top-3-customers-in-2023-apple-with-25-nvidia-11-and-amd-7/index.html",
+      "claim": "Top-3 TSMC customer (~7% of revenue); fabless GPU/CPU maker relying on TSMC's advanced nodes."
+    },
+    {
+      "name": "Qualcomm",
+      "url": "https://finance.biggo.com/news/2cRV25sBQSGUzTlwXvZE",
+      "claim": "One of TSMC's six major clients (~8% of revenue) named among top customers seeking Samsung/Intel as capacity backup."
+    },
+    {
+      "name": "MediaTek",
+      "url": "https://www.techpowerup.com/341044/tsmcs-first-2-nm-node-customers-are-apple-amd-nvidia-and-mediatek-intel-missing",
+      "claim": "Major TSMC customer (~9-10% of revenue) and one of the first customers confirmed for TSMC's 2nm node."
+    },
+    {
+      "name": "Broadcom",
+      "url": "https://finance.biggo.com/news/2cRV25sBQSGUzTlwXvZE",
+      "claim": "One of TSMC's six major clients (~11-15% of revenue estimate for 2026), largely for custom AI ASICs."
+    },
+    {
+      "name": "Intel",
+      "url": "https://www.techpowerup.com/341044/tsmcs-first-2-nm-node-customers-are-apple-amd-nvidia-and-mediatek-intel-missing",
+      "claim": "Increasingly outsources some chip production to TSMC (~7% of TSMC revenue estimated for 2026) while also being a foundry competitor."
+    },
+    {
+      "name": "ARM",
+      "url": "https://en.wikipedia.org/wiki/TSMC",
+      "claim": "Listed by Wikipedia among fabless semiconductor companies that are customers of TSMC."
+    },
+    {
+      "name": "Marvell",
+      "url": "https://en.wikipedia.org/wiki/TSMC",
+      "claim": "Listed by Wikipedia among fabless semiconductor companies that are customers of TSMC."
+    }
+  ],
+  "requests_used": 2,
+  "retrieval_health": "ok",
+  "qualified_count": 0,
+  "used_salva": true,
+  "notes": "Salva run post-fix still returned qualified_count=0 despite retrieval_health='ok' and no OMLX errors surfaced beyond the expected fallback warning -- the scoring-layer fix for find_partnership_signals did not surface any qualified entities in this rerun, so entities list was empty and provided no candidates. Supplemented entirely via 2 WebSearch queries (CNBC/BigGo/TechPowerUp/Wikipedia/TweakTown) to compile the well-documented major customer list: Apple, Nvidia, AMD, Qualcomm, MediaTek, Broadcom, Intel (as outsourcing customer), ARM, Marvell."
+}

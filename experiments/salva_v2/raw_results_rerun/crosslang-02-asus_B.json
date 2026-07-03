@@ -1,0 +1,31 @@
+{
+  "task_id": "crosslang-02-asus",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "ASUS 台灣",
+      "url": "https://www.asus.com/tw",
+      "claim": "ASUS official Taiwan regional homepage (ASUSTeK Computer Inc.)."
+    },
+    {
+      "name": "ASUS 台灣",
+      "url": "https://www.asus.com/tw/tw/tw/tw",
+      "claim": "Duplicate/deeper-path variant of the ASUS official Taiwan homepage."
+    },
+    {
+      "name": "ASUS華碩 - PChome 24h購物",
+      "url": "https://24h.pchome.com.tw/region/DHAF",
+      "claim": "PChome 24h e-commerce storefront listing ASUS products, not an official ASUS-owned page."
+    },
+    {
+      "name": "ASUS華碩官方旗艦店 - 蝦皮購物",
+      "url": "https://shopee.tw/asus_official_store",
+      "claim": "Shopee official flagship store for ASUS, third-party marketplace-hosted but ASUS-branded."
+    }
+  ],
+  "requests_used": 1,
+  "retrieval_health": "ok",
+  "qualified_count": 4,
+  "used_salva": true,
+  "notes": "Post-fix rerun of Arm B. retrieval_health=ok and qualified_count=4 with non-zero entities returned, consistent with the fix resolving the prior QualificationScorer zero-entity bug. 華棚 (Hua Shuo) unambiguously refers to ASUS (ASUSTeK Computer Inc.), the Taiwan-based multinational computer hardware/electronics company headquartered in Taipei, publicly listed on the Taiwan Stock Exchange (TWSE: 2357). Official English name: ASUSTeK Computer Inc., commonly branded as ASUS. Salva correctly surfaced the official asus.com/tw domain (two URL path variants, effectively duplicates) plus two third-party marketplace listings (PChome, Shopee) that reference the ASUS brand but are not ASUS-owned properties. No WebSearch queries were needed -- the ASUS identification is unambiguous and directly confirmed by the official asus.com/tw source URLs returned by Salva."
+}

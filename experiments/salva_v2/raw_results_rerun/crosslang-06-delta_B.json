@@ -1,0 +1,16 @@
+{
+  "task_id": "crosslang-06-delta",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Delta Electronics, Inc.",
+      "url": "https://www.deltaww.com/zh-TW/index",
+      "claim": "台達電子 refers to Delta Electronics, Inc. (台達電子工業股份有限公司), a Taiwanese power electronics / industrial automation manufacturer headquartered in Neihu, Taipei; official English name confirmed via Wikipedia, official site deltaww.com, and EMIS company profile. This came from WebSearch fallback, not from Salva."
+    }
+  ],
+  "requests_used": 1,
+  "retrieval_health": "ok",
+  "qualified_count": 0,
+  "used_salva": true,
+  "notes": "Post-fix rerun of Arm B still produced qualified_count=0 (raw_count=9, all 9 candidates filtered out, noise_rate=1.0, avg_score=0.1228 per meta.feedback.mate.details.audit_metrics). Salva's own feedback.mate flagged notes=['no_qualified_candidates','high_noise_rate'] and confidence 0.72. entities/relations lists both empty (len 0), so Salva returned zero usable entities -- the QualificationScorer zero-entity issue noted in prior Salva memory appears unresolved by this fix, or this specific cross-language ('台達電子' as extra_keyword rather than translated query) case still trips the same failure mode. Ground truth for the answer was obtained entirely via WebSearch fallback (1 query), not via Salva's discovery pipeline."
+}

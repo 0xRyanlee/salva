@@ -1,0 +1,41 @@
+{
+  "task_id": "multihop-03-naturehike-dach",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "naturehike-shop.com (DE)",
+      "url": "https://naturehike-shop.com/de/",
+      "claim": "Naturehike-branded German-language storefront selling direct at 'factory prices'; unclear if this is an official Naturehike-operated site or a third-party reseller using the brand name -- ownership not verifiable from search snippet alone."
+    },
+    {
+      "name": "naturehike.de",
+      "url": "https://www.naturehike.de/",
+      "claim": "German-market site for Naturehike products; likely an official/localized storefront rather than an independent distributor -- relationship to Naturehike HQ not confirmed."
+    },
+    {
+      "name": "ARTS-Outdoors",
+      "url": "https://www.arts-outdoors.de/naturehike",
+      "claim": "German outdoor retailer with a dedicated Naturehike product shop-in-shop, indicating it stocks/resells Naturehike gear -- no evidence found of a formal 'authorized distributor' designation."
+    },
+    {
+      "name": "Naturehike Germany Store (eBay.de)",
+      "url": "https://www.ebay.de/str/naturehikegermanystore",
+      "claim": "eBay.de marketplace storefront branded 'Naturehike Germany Store' with ~3,950 items sold and 100% positive rating -- appears to be a Naturehike-affiliated or licensed reseller account, not a traditional B2B distributor."
+    },
+    {
+      "name": "Amazon.de (Naturehike brand store)",
+      "url": "https://www.amazon.de/stores/Naturehike/page/DC7332B8-2F5C-423E-8BEB-A50111EB2904",
+      "claim": "Naturehike maintains an official brand storefront on Amazon Germany -- a direct-to-consumer marketplace channel, not a named third-party distributor."
+    },
+    {
+      "name": "Galaxus.ch",
+      "url": "https://www.galaxus.ch/en/brand/naturehike-62214",
+      "claim": "Swiss online retailer (Digitec Galaxus) carrying Naturehike products under a brand page -- appears to be a marketplace reseller for the Swiss market, not a confirmed distributor partnership."
+    }
+  ],
+  "requests_used": 3,
+  "retrieval_health": "ok",
+  "qualified_count": 1,
+  "used_salva": true,
+  "notes": "After the scoring-layer bug fix for find_partnership_signals, Salva Arm B still returned only qualified_count=1, and that single qualified entity (a Medisca DACH sales-role job posting, confidence 0.38) is irrelevant to Naturehike -- the fix did not surface any Naturehike-specific partnership signal; recall on this niche topic remains effectively zero from Salva alone. All reported entities above come from supplementary WebSearch (3 queries), not Salva. Public information on Naturehike's DACH distribution is genuinely thin: no press releases, wholesale-partner announcements, or named 'official distributor' could be found for Germany, Austria, or Switzerland. What surfaced instead is a mix of (a) Naturehike's own branded storefronts (naturehike.de, naturehike-shop.com/de, Amazon.de, eBay.de store) and (b) generic multi-brand e-commerce retailers/marketplaces (ARTS-Outdoors, Galaxus.ch, Ubuy, DesertCart) that list Naturehike products alongside many other brands, which does not establish a formal distributor or partnership relationship. Austria-specific retail presence was not found at all in these three searches. This should be reported to the user as thin/inconclusive public evidence rather than a confirmed distributor list."
+}

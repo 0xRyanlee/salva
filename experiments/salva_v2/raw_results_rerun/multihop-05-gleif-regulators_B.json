@@ -1,0 +1,56 @@
+{
+  "task_id": "multihop-05-gleif-regulators",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Financial Stability Board (FSB)",
+      "url": "https://www.fsb.org/work-of-the-fsb/market-and-institutional-resilience/post-2008-financial-crisis-reforms/legalentityidentifier/",
+      "claim": "FSB set out the 2012 High Level Principles and recommendations (endorsed by the G20) that led to the creation of the Global LEI System, and GLEIF was established in 2014 at the FSB's direction; FSB has continued to advocate for wider LEI adoption in global payments."
+    },
+    {
+      "name": "G20",
+      "url": "https://www.gleif.org/en/about-lei/introducing-the-legal-entity-identifier-lei",
+      "claim": "The G20 endorsed the FSB's recommendations for a global LEI system at the Los Cabos Summit in June 2012, providing the political mandate behind GLEIF's creation."
+    },
+    {
+      "name": "Regulatory Oversight Committee (ROC / LEI ROC)",
+      "url": "https://www.gleif.org/en/about/governance/regulatory-oversight-committee-roc",
+      "claim": "The ROC is the formal oversight body of the Global LEI System, comprising a ROC Plenary of 65+ financial market regulators and public authorities from 50+ jurisdictions; it backs and oversees GLEIF's operations."
+    },
+    {
+      "name": "European Securities and Markets Authority (ESMA)",
+      "url": "https://www.esma.europa.eu/press-news/esma-news/esma-issues-statement-lei-implementation-under-mifid-ii",
+      "claim": "ESMA mandates LEI use for all legal entities subject to MiFID II/MiFIR transaction reporting requirements in the EU."
+    },
+    {
+      "name": "UK Financial Conduct Authority (FCA)",
+      "url": "https://www.fca.org.uk/markets/regulation-markets-financial-instruments/uk-mifir-legal-entity-identifiers",
+      "claim": "The FCA requires LEIs for entities subject to UK MiFIR transaction reporting obligations."
+    },
+    {
+      "name": "U.S. Commodity Futures Trading Commission (CFTC)",
+      "url": "https://www.lei-worldwide.com/lei-mifid-ii.html",
+      "claim": "The CFTC is cited among regulators that require entities to obtain an LEI for derivatives/swap reporting in the US."
+    },
+    {
+      "name": "U.S. Securities and Exchange Commission (SEC)",
+      "url": "https://www.lei-worldwide.com/lei-mifid-ii.html",
+      "claim": "The SEC is cited among US regulators requiring LEI use for certain reporting regimes."
+    },
+    {
+      "name": "Reserve Bank of India (RBI)",
+      "url": "https://www.lei-worldwide.com/lei-mifid-ii.html",
+      "claim": "The RBI requires LEI registration for large corporate borrowers and participants in certain financial markets in India."
+    },
+    {
+      "name": "CPMI-IOSCO (Committee on Payments and Market Infrastructures / International Organization of Securities Commissions)",
+      "url": "https://www.lei-worldwide.com/lei-mifid-ii.html",
+      "claim": "CPMI-IOSCO global standard-setting bodies have called for use of the LEI within the Unique Transaction Identifier (UTI) and Unique Product Identifier (UPI) frameworks for OTC derivatives reporting."
+    }
+  ],
+  "requests_used": 3,
+  "retrieval_health": "ok",
+  "qualified_count": 2,
+  "used_salva": true,
+  "notes": "Post-fix Arm B rerun: Salva's find_partnership_signals objective returned retrieval_health=ok but qualified_count=2, and both qualified entities were GLEIF's own pages (Search page, About page) rather than any external regulator/standards-body entities -- the scoring-layer fix did not resolve the underlying issue of the objective failing to surface partner/regulator entities for this query shape. All 9 organizations listed above were sourced via the 3 permitted WebSearch queries, not from Salva's entity output. Well-documented relationships: FSB (founded/directs GLEIF), G20 (political mandate), ROC (formal oversight body, 65+ regulators from 50+ jurisdictions), plus multiple regulators that mandate LEI use in reporting regimes (ESMA/MiFID II, UK FCA/MiFIR, CFTC, SEC, RBI, CPMI-IOSCO for UTI/UPI)."
+}

@@ -1,0 +1,16 @@
+{
+  "task_id": "single-03-cncf",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Cloud Native Computing Foundation (CNCF)",
+      "url": "https://www.cncf.io/",
+      "claim": "Official website of the Cloud Native Computing Foundation, confirmed via WebSearch (title: 'Cloud Native Computing Foundation', cncf.io); CNCF is a Linux Foundation subsidiary founded in 2015."
+    }
+  ],
+  "requests_used": 1,
+  "retrieval_health": "ok",
+  "qualified_count": 0,
+  "used_salva": false,
+  "notes": "Salva run_discovery returned retrieval_health='ok' but qualified_count=0 and zero entities in the printed list -- post scoring-layer-fix rerun still fails to surface any qualified entity for this query (industry framing 'cloud native / open source software foundation' likely doesn't match Salva's company-oriented QualificationScorer, since CNCF is a nonprofit foundation, not a company, despite objective='find_companies'). Answer sourced entirely from a single WebSearch query instead."
+}
