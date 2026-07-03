@@ -62,6 +62,7 @@ RetrievalProviderKind = Literal[
     "sitemap",
     "rss",
     "searxng_pool",
+    "wikidata",
 ]
 
 ProviderFamily = Literal[

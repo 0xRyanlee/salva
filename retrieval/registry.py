@@ -13,6 +13,7 @@ from retrieval.sources.searxng_pool import PublicSearXNGPool
 from retrieval.sources.site_html import SiteHTMLRetriever
 from retrieval.sources.sitemap import SitemapRetriever
 from retrieval.sources.whoogle import WhoogleRetriever
+from retrieval.sources.wikidata import WikidataRetriever, _wikidata_enabled
 from salva_core.schemas import (
     ProviderDescriptor,
     RetrievalPolicy,
@@ -44,6 +45,8 @@ def available_provider_kinds() -> set[str]:
     kinds.add("searxng_pool")  # always available; public instances may be in cooldown
     kinds.add("sitemap")       # source-direct; use via policy.providers with site_domains
     kinds.add("rss")           # source-direct; use via policy.providers with site_domains
+    if _wikidata_enabled():
+        kinds.add("wikidata")  # optional; not in the default chain, opt in via policy.providers
     return kinds
 
 
@@ -153,6 +156,19 @@ def list_provider_descriptors() -> list[ProviderDescriptor]:
             supports_site_domains=True,
             enabled_by_default=False,
         ),
+        ProviderDescriptor(
+            kind="wikidata",
+            name="Wikidata",
+            description=(
+                "Structured multilingual entity search via Wikidata's wbsearchentities API. "
+                "Free, no API key. Resolves a query in any script to a stable QID with a "
+                "canonical English label -- stronger cross-language entity alignment signal "
+                "than embedding similarity alone. Opt-in only: not yet in the default chain."
+            ),
+            supports_custom_endpoint=False,
+            enabled_by_default=False,
+            env_vars=["WIKIDATA_ENABLED"],
+        ),
     ]
 
 
@@ -226,6 +242,8 @@ def _build_provider(
         provider = SitemapRetriever(policy=merged_policy)
     elif config.kind == "rss":
         provider = RSSRetriever(policy=merged_policy)
+    elif config.kind == "wikidata":
+        provider = WikidataRetriever(policy=merged_policy)
     else:  # pragma: no cover - guard for future extension
         return None
 
