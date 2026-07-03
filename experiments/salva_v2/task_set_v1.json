@@ -1,0 +1,426 @@
+{
+  "version": "v1",
+  "created": "2026-07-03",
+  "description": "Fixed, reusable 18-task business discovery benchmark set, replacing the N=1/N=2 methodology weakness of E10/E21/E21c. Every ground_truth_entities entry was verified via live WebSearch against a real, cited source URL -- not LLM-generated without verification (see TASK_SET_README.md for the verification method and per-task confidence notes).",
+  "tasks": [
+    {
+      "task_id": "single-01-tsmc",
+      "difficulty_tier": "single_entity",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "semiconductor manufacturing",
+        "product": null,
+        "role": null,
+        "extra_keywords": ["TSMC", "台積電", "official website", "contact"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "Taiwan Semiconductor Manufacturing Company",
+          "official_website": "https://www.tsmc.com",
+          "contact": "https://www.tsmc.com/english/contact-us ; investor relations: invest@tsmc.com",
+          "source_urls": ["https://www.tsmc.com/english/contact-us", "https://investor.tsmc.com/english/shareholder-services/contacts"],
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "task_id": "single-02-naturehike",
+      "difficulty_tier": "single_entity",
+      "objective": "find_companies",
+      "intent": {
+        "market": "China",
+        "industry": "outdoor and camping gear",
+        "product": "camping equipment",
+        "role": null,
+        "extra_keywords": ["Naturehike", "official website", "wholesale contact"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "Naturehike",
+          "official_website": "https://www.naturehike.com/",
+          "contact": "https://www.naturehike.com/pages/contact-us ; support@naturehike.com",
+          "source_urls": ["https://www.naturehike.com/", "https://www.naturehike.com/pages/contact-us"],
+          "confidence": "high",
+          "notes": "Headquarters location not stated on official About page -- not part of the verified ground truth."
+        }
+      ]
+    },
+    {
+      "task_id": "single-03-cncf",
+      "difficulty_tier": "single_entity",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Global",
+        "industry": "cloud native / open source software foundation",
+        "product": null,
+        "role": null,
+        "extra_keywords": ["CNCF", "Cloud Native Computing Foundation", "official website"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "Cloud Native Computing Foundation",
+          "official_website": "https://www.cncf.io/",
+          "contact": "https://www.cncf.io/about/contact/",
+          "source_urls": ["https://www.cncf.io/", "https://www.cncf.io/about/contact/", "https://www.cncf.io/about/who-we-are/"],
+          "confidence": "high",
+          "notes": "CNCF is a subsidiary of the Linux Foundation; founding year (2015) is medium-confidence, sourced from Wikipedia not the official site directly."
+        }
+      ]
+    },
+    {
+      "task_id": "single-04-mediatek",
+      "difficulty_tier": "single_entity",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "fabless semiconductor / chip design",
+        "product": null,
+        "role": null,
+        "extra_keywords": ["MediaTek", "聯發科", "official website", "investor relations contact"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "MediaTek Inc.",
+          "official_website": "https://www.mediatek.com/",
+          "contact": "https://www.mediatek.com/company/contact-us",
+          "source_urls": ["https://www.mediatek.com/", "https://www.mediatek.com/company/contact-us", "https://www.mediatek.com/investor-relations"],
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "task_id": "single-05-advantech",
+      "difficulty_tier": "single_entity",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "industrial computing / IIoT hardware",
+        "product": null,
+        "role": null,
+        "extra_keywords": ["Advantech", "研華科技", "official website"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "Advantech Co., Ltd.",
+          "official_website": "https://www.advantech.com/en-us",
+          "contact": "https://www.advantech.com/en-us/contact",
+          "source_urls": ["https://www.advantech.com/en-us", "https://www.advantech.com/en-us/about/", "https://www.advantech.com/en-us/contact"],
+          "confidence": "high",
+          "notes": "Founded 1983 (verified via official site footer copyright notice). No general inquiry email confirmed on official page -- only phone/contact form."
+        }
+      ]
+    },
+    {
+      "task_id": "single-06-gleif",
+      "difficulty_tier": "single_entity",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Global",
+        "industry": "financial standards / legal entity identification",
+        "product": null,
+        "role": null,
+        "extra_keywords": ["GLEIF", "Global Legal Entity Identifier Foundation", "official website"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "Global Legal Entity Identifier Foundation (GLEIF)",
+          "official_website": "https://www.gleif.org/en",
+          "contact": "https://www.gleif.org/en/contact/contact-information ; info@gleif.org",
+          "source_urls": ["https://www.gleif.org/en", "https://www.gleif.org/en/contact/contact-information"],
+          "confidence": "high",
+          "notes": "Headquartered in Basel, Switzerland. Established June 2014 by the Financial Stability Board (exact date medium-confidence, sourced from a third-party LEI industry knowledge base)."
+        }
+      ]
+    },
+    {
+      "task_id": "crosslang-01-tsmc",
+      "difficulty_tier": "cross_language",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "semiconductor",
+        "product": null,
+        "role": null,
+        "extra_keywords": ["台積電"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "Taiwan Semiconductor Manufacturing Company Limited",
+          "chinese_name": "台積電",
+          "official_website": "https://investor.tsmc.com/english",
+          "source_urls": ["https://investor.tsmc.com/english", "https://www.tsmc.com/english"],
+          "confidence": "high",
+          "notes": "TWSE:2330 / NYSE:TSM"
+        }
+      ]
+    },
+    {
+      "task_id": "crosslang-02-asus",
+      "difficulty_tier": "cross_language",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "consumer electronics / computer hardware",
+        "product": null,
+        "role": null,
+        "extra_keywords": ["華碩"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "ASUSTeK Computer Inc.",
+          "chinese_name": "華碩",
+          "official_website": "https://investor.asus.com/english/",
+          "source_urls": ["https://investor.asus.com/english/about_us/company_profile/", "https://investor.asus.com/english/"],
+          "confidence": "high",
+          "notes": "TWSE:2357. \"ASUS\" is the consumer brand name; \"ASUSTeK Computer Inc.\" is the registered legal/investor-relations name."
+        }
+      ]
+    },
+    {
+      "task_id": "crosslang-03-acer",
+      "difficulty_tier": "cross_language",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "consumer electronics / computer hardware",
+        "product": null,
+        "role": null,
+        "extra_keywords": ["宏碁"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "Acer Incorporated",
+          "chinese_name": "宏碁",
+          "official_website": "https://www.acer.com/corporate/en/investor-relations",
+          "source_urls": ["https://www.acer.com/corporate/en/investor-relations"],
+          "confidence": "high",
+          "notes": "TWSE:2353. Official IR pages use \"Acer Incorporated\"; \"Acer Inc.\" is a common shorthand for the same entity, not a different company."
+        }
+      ]
+    },
+    {
+      "task_id": "crosslang-04-foxconn",
+      "difficulty_tier": "cross_language",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "electronics manufacturing services",
+        "product": null,
+        "role": null,
+        "extra_keywords": ["鴻海"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "Hon Hai Precision Industry Co., Ltd. (Foxconn)",
+          "chinese_name": "鴻海",
+          "official_website": "https://www.foxconn.com/en-us",
+          "source_urls": ["https://www.foxconn.com/en-us", "https://www.honhai.com/en-us/about/group-profile"],
+          "confidence": "high",
+          "notes": "TWSE:2317. \"Foxconn\" is a trading/brand name (Foxconn Technology Group internationally, Hon Hai Technology Group in Taiwan) for the same legal entity, not a separate company."
+        }
+      ]
+    },
+    {
+      "task_id": "crosslang-05-chunghwa-telecom",
+      "difficulty_tier": "cross_language",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "telecommunications",
+        "product": null,
+        "role": null,
+        "extra_keywords": ["中華電信"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "Chunghwa Telecom Co., Ltd.",
+          "chinese_name": "中華電信",
+          "official_website": "https://www.cht.com.tw/en/home/cht",
+          "source_urls": ["https://www.cht.com.tw/en/home/cht", "https://en.wikipedia.org/wiki/Chunghwa_Telecom"],
+          "confidence": "high",
+          "notes": "TWSE:2412, NYSE ADS: CHT. Trap for negative-keyword testing: do NOT confuse with mainland China Telecom (中国电信), a distinct unrelated entity with a similar-sounding name."
+        }
+      ]
+    },
+    {
+      "task_id": "crosslang-06-delta",
+      "difficulty_tier": "cross_language",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "power electronics",
+        "product": null,
+        "role": null,
+        "extra_keywords": ["台達電子"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "Delta Electronics, Inc.",
+          "chinese_name": "台達電子",
+          "official_website": "https://www.deltaww.com/en-US",
+          "source_urls": ["https://www.deltaww.com/en-US/investors"],
+          "confidence": "high",
+          "notes": "TWSE:2308. Trap: do not conflate with the separately SET-listed subsidiary \"Delta Electronics (Thailand) PCL,\" a related but distinct legal entity."
+        }
+      ]
+    },
+    {
+      "task_id": "multihop-01-cncf-founders",
+      "difficulty_tier": "multi_hop",
+      "objective": "find_partnership_signals",
+      "intent": {
+        "market": "Global",
+        "industry": "cloud native / open source",
+        "product": null,
+        "role": null,
+        "extra_keywords": ["CNCF founding members", "Cloud Native Computing Foundation", "2015"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {"name": "Google", "relationship": "Founding/platinum member at 2015 launch", "source_url": "https://www.cncf.io/announcements/2015/12/17/cloud-native-computing-foundation-announces-new-members-begins-accepting-technical-contributions/"},
+        {"name": "Cisco", "relationship": "Founding/platinum member at 2015 launch", "source_url": "https://www.cncf.io/announcements/2015/12/17/cloud-native-computing-foundation-announces-new-members-begins-accepting-technical-contributions/"},
+        {"name": "IBM", "relationship": "Founding/platinum member at 2015 launch", "source_url": "https://www.cncf.io/announcements/2015/12/17/cloud-native-computing-foundation-announces-new-members-begins-accepting-technical-contributions/"},
+        {"name": "Red Hat", "relationship": "Founding/platinum member at 2015 launch", "source_url": "https://www.cncf.io/announcements/2015/12/17/cloud-native-computing-foundation-announces-new-members-begins-accepting-technical-contributions/"},
+        {"name": "Docker", "relationship": "Founding member at 2015 launch", "source_url": "https://www.cncf.io/announcements/2015/12/17/cloud-native-computing-foundation-announces-new-members-begins-accepting-technical-contributions/"},
+        {"name": "Huawei", "relationship": "Founding/platinum member at 2015 launch", "source_url": "https://www.cncf.io/announcements/2015/12/17/cloud-native-computing-foundation-announces-new-members-begins-accepting-technical-contributions/"}
+      ],
+      "confidence": "high",
+      "notes": "Same topic E21c tested and got P=R=F1=0.000 on -- included deliberately for before/after comparability. Broader founding roster (CoreOS, Mesosphere, Intel, Joyent, Twitter, VMware, AT&T, NetApp, Fujitsu) also exists if more matches are found."
+    },
+    {
+      "task_id": "multihop-02-tsmc-customers",
+      "difficulty_tier": "multi_hop",
+      "objective": "find_partnership_signals",
+      "intent": {
+        "market": "Global",
+        "industry": "semiconductor",
+        "product": null,
+        "role": "foundry customer",
+        "extra_keywords": ["TSMC customers", "wafer foundry", "advanced node"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {"name": "Apple", "relationship": "Largest customer by revenue share; reserves most advanced nodes", "source_url": "https://www.techpowerup.com/341044/tsmcs-first-2-nm-node-customers-are-apple-amd-nvidia-and-mediatek-intel-missing"},
+        {"name": "Nvidia", "relationship": "Major AI GPU customer, reportedly overtaking Apple as largest customer in 2025-2026", "source_url": "https://www.cnbc.com/2026/01/26/nvidia-set-to-supplant-apple-as-tsmcs-largest-customer.html"},
+        {"name": "AMD", "relationship": "Advanced-node CPU/GPU customer, early 2nm allocation", "source_url": "https://www.techpowerup.com/341044/tsmcs-first-2-nm-node-customers-are-apple-amd-nvidia-and-mediatek-intel-missing"},
+        {"name": "MediaTek", "relationship": "Flagship mobile SoC customer, early 2nm allocation", "source_url": "https://www.techpowerup.com/341044/tsmcs-first-2-nm-node-customers-are-apple-amd-nvidia-and-mediatek-intel-missing"},
+        {"name": "Qualcomm", "relationship": "Major customer reserving advanced-node capacity (~8% of estimated 2026 revenue per analysts)", "source_url": "https://www.digitimes.com/news/a20251015PD208/tsmc-apple-nvidia-semiconductor-industry-2025.html"}
+      ],
+      "confidence": "high",
+      "notes": "TSMC does not publish a customer-revenue table directly; customer identities confirmed via reputable tech press reporting on TSMC statements/node bookings. Precise revenue percentages are analyst estimates, not TSMC-disclosed -- do not require an agent under test to reproduce exact percentages, only customer identity."
+    },
+    {
+      "task_id": "multihop-03-naturehike-dach",
+      "difficulty_tier": "multi_hop",
+      "objective": "find_partnership_signals",
+      "intent": {
+        "market": "Germany, Austria, Switzerland (DACH)",
+        "industry": "outdoor and camping gear retail",
+        "product": null,
+        "role": "distributor",
+        "extra_keywords": ["Naturehike distributor", "DACH", "reseller"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {"name": "Naturehike.de (operated by Walthaus Outdoor)", "relationship": "Appears to be the branded German-market storefront/distributor", "source_url": "https://www.naturehike.de/"},
+        {"name": "ARTS-Outdoors", "relationship": "German online retailer with a dedicated Naturehike shop-in-shop", "source_url": "https://www.arts-outdoors.de/naturehike"},
+        {"name": "Amazon.de Naturehike storefront", "relationship": "Official-looking Naturehike brand store on Amazon Germany", "source_url": "https://www.amazon.de/stores/Naturehike/page/DC7332B8-2F5C-423E-8BEB-A50111EB2904"}
+      ],
+      "confidence": "low",
+      "notes": "DELIBERATELY LOW-CONFIDENCE / THIN-EVIDENCE TASK. No official Naturehike press release, company announcement, or \"find a retailer\" page naming exclusive/authorized DACH distributors was found -- only retailer/marketplace listings. No distinct Austrian retailer found at all; Swiss retailers (Galaxus.ch, Outdoor Station, Camperreich) stock products but show no evidence of formal distributor status, so they are NOT included in ground truth. This task is included on purpose: it tests whether an agent under test also honestly reports thin/uncertain findings rather than hallucinating a confident-looking distributor list. This is the same real-world theme as E10/E21's Naturehike DACH dogfood task -- included for direct comparability, not coincidence."
+    },
+    {
+      "task_id": "multihop-04-mediatek-brands",
+      "difficulty_tier": "multi_hop",
+      "objective": "find_partnership_signals",
+      "intent": {
+        "market": "Global",
+        "industry": "smartphone / mobile devices",
+        "product": "chipset",
+        "role": null,
+        "extra_keywords": ["MediaTek Dimensity", "smartphone brand", "chipset partnership"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {"name": "Xiaomi", "relationship": "Documented Dimensity chipset adoption; joint MediaTek-Xiaomi lab", "source_url": "https://beebom.com/vivo-oppo-xiaomi-flagship-phones-dimensity-9000-powered-confirms-mediatek/"},
+        {"name": "Oppo", "relationship": "Confirmed Dimensity 9000/flagship adoption, Dimensity AI Pioneer Program", "source_url": "https://beebom.com/vivo-oppo-xiaomi-flagship-phones-dimensity-9000-powered-confirms-mediatek/"},
+        {"name": "Vivo", "relationship": "Confirmed Dimensity chipset adoption across multiple generations", "source_url": "https://beebom.com/vivo-oppo-xiaomi-flagship-phones-dimensity-9000-powered-confirms-mediatek/"},
+        {"name": "Honor", "relationship": "Confirmed Dimensity 9000 adoption / AI Pioneer Program member", "source_url": "https://beebom.com/vivo-oppo-xiaomi-flagship-phones-dimensity-9000-powered-confirms-mediatek/"},
+        {"name": "Samsung", "relationship": "Dimensity chipsets in Galaxy A-series/Tab S11/S12; Samsung validated LPDDR5X for MediaTek's flagship platform", "source_url": "https://news.samsung.com/global/samsung-completes-validation-of-industrys-fastest-lpddr5x-for-use-with-mediateks-flagship-mobile-platform"}
+      ],
+      "confidence": "high"
+    },
+    {
+      "task_id": "multihop-05-gleif-regulators",
+      "difficulty_tier": "multi_hop",
+      "objective": "find_partnership_signals",
+      "intent": {
+        "market": "Global",
+        "industry": "financial regulation / standards",
+        "product": null,
+        "role": "regulatory body",
+        "extra_keywords": ["GLEIF", "LEI", "regulatory oversight", "financial regulator"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {"name": "Financial Stability Board (FSB)", "relationship": "Directed by G20 in 2011 to develop the global LEI system; originator of the LEI initiative", "source_url": "https://www.gleif.org/en/about/governance/regulatory-oversight-committee-roc"},
+        {"name": "LEI Regulatory Oversight Committee (LEI ROC)", "relationship": "Formal oversight body of 70+ public authorities/regulators from 50+ jurisdictions overseeing GLEIF; signed MoU with GLEIF Oct 2015", "source_url": "https://www.leiroc.org/"},
+        {"name": "ISO (International Organization for Standardization)", "relationship": "Publishes ISO 17442-1, the technical standard defining LEI code structure that GLEIF implements", "source_url": "https://www.gleif.org/en/about/gleif-management-of-the-global-lei-system"},
+        {"name": "U.S. Office of Financial Research (OFR)", "relationship": "U.S. Treasury body maintaining an official public LEI lookup tool integrating GLEIF's Global LEI System data", "source_url": "https://www.financialresearch.gov/data/legal-entity-identifier/find-lei/"}
+      ],
+      "confidence": "high",
+      "notes": "Same domain as E23 (entity resolution via GLEIF+Wikidata) -- included for thematic continuity with prior experiments."
+    },
+    {
+      "task_id": "multihop-06-advantech-cloud",
+      "difficulty_tier": "multi_hop",
+      "objective": "find_partnership_signals",
+      "intent": {
+        "market": "Global",
+        "industry": "industrial IoT",
+        "product": "cloud platform",
+        "role": null,
+        "extra_keywords": ["Advantech", "IIoT", "cloud partnership", "Azure", "AWS"],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {"name": "Microsoft Azure", "relationship": "Microsoft CSP partner; UNO edge gateways certified in Azure IoT device catalogue; joint work on Azure IoT Operations", "source_url": "https://www.advantech.com/en-us/resources/news/advantech%E2%80%99s-uno-iot-edge-gateways-now-certified-to-run-on-microsoft-azure-iot-platform"},
+        {"name": "Amazon Web Services (AWS)", "relationship": "Edge gateways qualified for AWS IoT Greengrass; Edge Service Packages bundle Azure IoT Edge + AWS IoT Greengrass support", "source_url": "https://www.iotm2mcouncil.org/iot-library/news/iot-newsdesk/microsoft-and-aws-approve-advantech-gateways/"},
+        {"name": "Alibaba Cloud", "relationship": "WISE-PaaS/EnSaaS cross-cloud management explicitly supports Alibaba Cloud alongside Azure/AWS", "source_url": "https://www.advantechmagazine.com/articles/advantech-wise-paas-iot-cloud-platform-helps-users-accelerate-the-development-of-innovative-aiot-applications"}
+      ],
+      "confidence": "high",
+      "notes": "Google Cloud was specifically searched for but no documented partnership was found -- intentionally omitted rather than padded in."
+    }
+  ]
+}
