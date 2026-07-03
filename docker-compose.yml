@@ -19,11 +19,18 @@ services:
       SALVA_SQLITE_PATH: /app/data/salva.db
 
       # Vector backend configuration (Performance optimizations v2)
+      # SALVA_SEMANTIC_VECTOR_BACKEND options: hybrid_hash (default, dependency-free
+      # hash baseline) | jina_omlx (real embeddings via local omlx, falls back to
+      # hybrid_hash if unreachable) | sqlite_vec (real ANN search via the sqlite-vec
+      # extension; embeds via jina_omlx/hybrid_hash same as above -- its value-add is
+      # indexed nearest-neighbor search, see salva_core/vector_backends.py) |
+      # scalar_hash (compatibility baseline).
       SALVA_SEMANTIC_VECTOR_BACKEND: ${SALVA_SEMANTIC_VECTOR_BACKEND:-hybrid_hash}
       SALVA_SEMANTIC_VECTOR_DIMENSIONS: ${SALVA_SEMANTIC_VECTOR_DIMENSIONS:-96}
       SALVA_USE_ANN_SEARCH: ${SALVA_USE_ANN_SEARCH:-false}
       SALVA_EMBEDDING_CACHE_SIZE: ${SALVA_EMBEDDING_CACHE_SIZE:-1000}
       SALVA_EMBEDDING_MODEL: ${SALVA_EMBEDDING_MODEL:-all-MiniLM-L6-v2}
+      # Used by the sqlite_vec backend when selected above.
       SALVA_VEC_DB_PATH: /app/data/vec_index.db
 
       # Obscura headless browser (pre-installed in image)

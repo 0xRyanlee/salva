@@ -4,6 +4,8 @@ from __future__ import annotations
 import math
 import os
 import re
+import sqlite3
+import struct
 import threading
 from dataclasses import dataclass, field
 from hashlib import sha256
@@ -167,9 +169,94 @@ class JinaOmlxVectorBackend:
         return dot / (nl * nr) if nl > 0 and nr > 0 else 0.0
 
 
+def _to_blob(vector: list[float]) -> bytes:
+    return struct.pack(f"{len(vector)}f", *vector)
+
+
+def _fit_dimensions(vector: list[float], dimensions: int) -> list[float]:
+    """Zero-pad or truncate to a fixed width for sqlite-vec's fixed-schema table.
+
+    JinaOmlxVectorBackend declares dimensions=1024 but its own internal fallback
+    (HybridHashVectorBackend(dimensions=96)) returns 96-d vectors when omlx is
+    unreachable -- that mismatch already exists upstream; this only makes sure
+    whatever comes back fits the vec0 table schema without erroring.
+    """
+    if len(vector) == dimensions:
+        return vector
+    if len(vector) > dimensions:
+        return vector[:dimensions]
+    return vector + [0.0] * (dimensions - len(vector))
+
+
+@dataclass(slots=True)
+class SqliteVecBackend:
+    """Real ANN search backed by the sqlite-vec SQLite extension.
+
+    sqlite-vec provides vector storage + indexed nearest-neighbor SEARCH, not
+    text embedding -- embed() here delegates to JinaOmlxVectorBackend (which
+    already falls back to HybridHashVectorBackend when omlx is unreachable).
+    The capability this backend actually adds that nothing else in this module
+    has: search_nearest() finds the K nearest among N *stored* vectors via a
+    real vector index, instead of only comparing two already-known vectors via
+    score(). That "find nearest among many, indexed" capability is what "true
+    ANN" means in DEVELOPMENT_PROGRESS.md's Known Gaps #5 -- score()-only
+    backends have no way to do this beyond an O(N) Python loop.
+
+    Free, local, no API key: the extension ships as a pip-installable .so/.dylib,
+    no server, no paid vector DB.
+    """
+
+    db_path: str = field(default_factory=lambda: os.environ.get("SALVA_VEC_DB_PATH", ":memory:"))
+    dimensions: int = 1024
+    name: str = "sqlite_vec"
+    kind: str = "sqlite_vec"
+    _embedder: JinaOmlxVectorBackend = field(init=False, repr=False)
+    _conn: sqlite3.Connection = field(init=False, repr=False)
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "_embedder", JinaOmlxVectorBackend())
+        conn = sqlite3.connect(self.db_path, check_same_thread=False)
+        conn.enable_load_extension(True)
+        import sqlite_vec as _sqlite_vec_ext
+        _sqlite_vec_ext.load(conn)
+        conn.enable_load_extension(False)
+        conn.execute(
+            "CREATE VIRTUAL TABLE IF NOT EXISTS vec_items "
+            f"USING vec0(embedding float[{self.dimensions}])"
+        )
+        conn.commit()
+        object.__setattr__(self, "_conn", conn)
+
+    def embed(self, text: str) -> list[float]:
+        return _fit_dimensions(self._embedder.embed(text), self.dimensions)
+
+    def score(self, left: list[float], right: list[float]) -> float:
+        return self._embedder.score(left, right)
+
+    def index(self, rowid: int, vector: list[float]) -> None:
+        """Store a vector under rowid for later search_nearest() lookups."""
+        fitted = _fit_dimensions(vector, self.dimensions)
+        self._conn.execute(
+            "INSERT OR REPLACE INTO vec_items(rowid, embedding) VALUES (?, ?)",
+            (rowid, _to_blob(fitted)),
+        )
+        self._conn.commit()
+
+    def search_nearest(self, query_vector: list[float], k: int = 5) -> list[tuple[int, float]]:
+        """Return up to k (rowid, distance) pairs nearest to query_vector, ascending distance."""
+        fitted = _fit_dimensions(query_vector, self.dimensions)
+        rows = self._conn.execute(
+            "SELECT rowid, distance FROM vec_items "
+            "WHERE embedding MATCH ? AND k = ? ORDER BY distance",
+            (_to_blob(fitted), k),
+        ).fetchall()
+        return [(int(rowid), float(distance)) for rowid, distance in rows]
+
+
 _scalar_hash_instances: dict[int, ScalarHashVectorBackend] = {}
 _hybrid_hash_instances: dict[int, HybridHashVectorBackend] = {}
 _jina_omlx_instance: JinaOmlxVectorBackend | None = None
+_sqlite_vec_instance: SqliteVecBackend | None = None
 _instance_lock = threading.Lock()
 
 
@@ -177,7 +264,7 @@ def resolve_semantic_vector_backend() -> SemanticVectorBackend:
     backend = os.environ.get("SALVA_SEMANTIC_VECTOR_BACKEND", "hybrid_hash").strip() or "hybrid_hash"
     dimensions = _read_dimensions()
 
-    global _scalar_hash_instances, _hybrid_hash_instances, _jina_omlx_instance
+    global _scalar_hash_instances, _hybrid_hash_instances, _jina_omlx_instance, _sqlite_vec_instance
 
     if backend == "jina_omlx":
         if _jina_omlx_instance is None:
@@ -185,6 +272,13 @@ def resolve_semantic_vector_backend() -> SemanticVectorBackend:
                 if _jina_omlx_instance is None:
                     _jina_omlx_instance = JinaOmlxVectorBackend()
         return _jina_omlx_instance
+
+    if backend == "sqlite_vec":
+        if _sqlite_vec_instance is None:
+            with _instance_lock:
+                if _sqlite_vec_instance is None:
+                    _sqlite_vec_instance = SqliteVecBackend()
+        return _sqlite_vec_instance
 
     if backend == "scalar_hash":
         if dimensions not in _scalar_hash_instances:

@@ -34,6 +34,9 @@ retrieval = [
   "curl-cffi>=0.15.0",
   "diskcache>=5.6.0",
 ]
+vector = [
+  "sqlite-vec>=0.1.0",
+]
 mcp = [
   "mcp>=1.0.0",
 ]
@@ -43,6 +46,7 @@ cli = [
 ]
 dev = [
   "salva-runtime[retrieval]",
+  "salva-runtime[vector]",
   "httpx>=0.27.0",
   "pytest>=8.3.0",
   "pytest-cov>=7.0.0",
