@@ -1,5 +1,17 @@
 # Salva Runtime — Development Progress Report
 
+## Update: `dev` extra was missing `retrieval` extra — root cause for silently degraded provider chain (2026-07-03)
+
+`pyproject.toml`'s `dev` optional-dependencies group never included the `retrieval` group (`ddgs`, `curl-cffi`, `diskcache`). Anyone following this README's own documented setup (`pip install -e ".[dev]"`) got a venv **without** `ddgs` (the bot-detection-resistant search provider) and **without** `diskcache` (the backing store for `SERPCache`/`URLContentCache`) — not a one-off local oversight, but a structural gap that would recur on every fresh clone/CI run using the documented install command.
+
+Fixed by making `dev` self-reference `salva-runtime[retrieval]` in `pyproject.toml`. Before → after (`pytest -q --ignore=tests/test_integration_real_calls.py`): **21 failed, 433 passed → 5 failed, 449 passed**. The 16 newly-passing tests: 8 in `tests/test_ddgs_retriever.py` (as expected — missing `ddgs`) plus, as a bonus discovery, 8 more in `tests/test_serp_cache.py` + `tests/test_routed_retriever_health_cache.py` that had been misdiagnosed as "Redis not configured" — they actually depend on `diskcache` (a local, free, no-server-required cache library), also gated behind the same missing `retrieval` extra, not Redis at all.
+
+Whether `ddgs` was present or absent during the earlier E10/E21/E21c live benchmark runs could not be confirmed retroactively — no environment snapshot from those runs was captured, so this is flagged as a plausible contributing factor to those failures, not a confirmed one.
+
+Remaining 5 failures (`tests/test_topology_probe.py` ×2, `tests/test_planner.py` ×2, `tests/test_mode_resolver.py` ×1) are the separate, already-diagnosed `_apply_live_probe` hard-degrade bug — out of scope for this fix, tracked separately.
+
+---
+
 ## Update: Execution Isolation and E10 Dogfood (2026-06-08)
 
 > Final verification: 2026-06-09  
