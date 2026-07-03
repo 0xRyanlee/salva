@@ -207,7 +207,7 @@ cp .env.example .env  # 或直接編輯 .env
 # 必填：
 # OMLX_BASE_URL=http://localhost:8140   (本地 omlx，Jina embedding + LLM)
 # SALVA_SQLITE_PATH=./data/salva.db
-# SEARXNG_ENABLED=false                 (若無本地 SearXNG)
+# SEARXNG_ENABLED=false                 (若無本地 SearXNG；要自架見 docs/local-dev-setup.md)
 
 # 3. 啟動 API
 python3 -m uvicorn apps.api.main:app --port 8000
