@@ -268,6 +268,20 @@ class MemoryPolicy(BaseModel):
     min_success_score: float = Field(default=0.3, ge=0.0, le=1.0)
 
 
+class StabilityPolicy(BaseModel):
+    """Opt-in domain-level stability gating for semantic memory scoring.
+
+    See salva_core/stability.py for the drift/volatility computation and
+    processing/scorer.py::ScorerConfig.w_stability for how it feeds into the
+    composite score. Disabled by default -- enabling it has zero effect on
+    scoring until a caller explicitly sets enabled=True.
+    """
+
+    enabled: bool = False
+    min_history: int = Field(default=3, ge=1)
+    penalty_strength: float = Field(default=0.15, ge=0.0, le=1.0)
+
+
 class CachePolicy(BaseModel):
     mode: CacheMode = "ephemeral"
     ttl_hours: int = Field(default=24, ge=1, le=24 * 365)

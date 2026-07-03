@@ -52,6 +52,12 @@ class ScorerConfig:
     w_source: float = 0.10
     w_recency: float = 0.10
 
+    # Optional stability-gating term (see salva_core/schemas.py::StabilityPolicy).
+    # Default 0.0 -- inert until a caller opts in and passes penalty_strength
+    # through. Not part of the "must sum to 1.0" default weights above; when
+    # non-zero it participates in _apply_context()'s renormalization.
+    w_stability: float = 0.0
+
     # Per-domain qualify threshold; read by QualificationScorer.domain_threshold()
     qualify_threshold: float = 0.40
 
@@ -217,6 +223,7 @@ class QualificationScorer:
             w_region=cfg.w_region,
             w_source=cfg.w_source,
             w_recency=cfg.w_recency,
+            w_stability=cfg.w_stability,
             qualify_threshold=cfg.qualify_threshold,
         )
 
@@ -268,6 +275,7 @@ class QualificationScorer:
             + adjusted.w_region
             + adjusted.w_source
             + adjusted.w_recency
+            + adjusted.w_stability
         )
         if total > 0:
             adjusted.w_content /= total
@@ -276,6 +284,7 @@ class QualificationScorer:
             adjusted.w_region /= total
             adjusted.w_source /= total
             adjusted.w_recency /= total
+            adjusted.w_stability /= total
         return adjusted
 
     # ------------------------------------------------------------------
