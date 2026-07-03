@@ -4,6 +4,12 @@
 **Status:** Analysis of `experiments/salva_v2/raw_results/` (36 runs, all 18 tasks in
 `task_set_v1.json`), executed per `EXPERIMENT_PROTOCOL.md`.
 
+**Charts** (`experiments/salva_v2/charts/`, same hand-rolled-SVG convention as
+`experiments/agent_vs_salva/results/naturehike-dach-comparison.svg`):
+- [`recall_per_task.svg`](charts/recall_per_task.svg) — per-task recall, Arm A vs Arm B grouped bars (visualizes the 17-tie pattern directly).
+- [`cost_efficiency.svg`](charts/cost_efficiency.svg) — recall vs `requests_used` scatter (the cost-efficiency view called for so a signal like E21c's "19 requests, zero true positives" can't be masked by a P/R/F1 number alone).
+- [`retrieval_health_distribution.svg`](charts/retrieval_health_distribution.svg) — Arm B's `retrieval_health` was `ok` in all 18/18 runs; shown as a single clean bar rather than a misleading 3-slice pie with two empty slices.
+
 ## Headline verdict
 
 **Recall/correctness: 17 ties, 1 Arm B win, 0 Arm A wins.** On pure

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="90" y="35" font-family="sans-serif" font-size="20" font-weight="700">salva_v2 task_set_v1 -- recall per task, Arm A (bare Haiku) vs Arm B (+Salva)</text>
+<line x1="90" y1="630.0" x2="1240" y2="630.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="80" y="634.0" text-anchor="end" font-family="sans-serif" font-size="11" fill="#4b5563">0%</text>
+<line x1="90" y1="516.0" x2="1240" y2="516.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="80" y="520.0" text-anchor="end" font-family="sans-serif" font-size="11" fill="#4b5563">20%</text>
+<line x1="90" y1="402.0" x2="1240" y2="402.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="80" y="406.0" text-anchor="end" font-family="sans-serif" font-size="11" fill="#4b5563">40%</text>
+<line x1="90" y1="288.0" x2="1240" y2="288.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="80" y="292.0" text-anchor="end" font-family="sans-serif" font-size="11" fill="#4b5563">60%</text>
+<line x1="90" y1="174.0" x2="1240" y2="174.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="80" y="178.0" text-anchor="end" font-family="sans-serif" font-size="11" fill="#4b5563">80%</text>
+<line x1="90" y1="60.0" x2="1240" y2="60.0" stroke="#e5e7eb" stroke-width="1"/>
+<text x="80" y="64.0" text-anchor="end" font-family="sans-serif" font-size="11" fill="#4b5563">100%</text>
+<rect x="99.6" y="60.0" width="20.4" height="570.0" fill="#2563eb"><title>single-01-tsmc Arm A: recall 100.0%</title></rect>
+<rect x="124.0" y="60.0" width="20.4" height="570.0" fill="#d97706"><title>single-01-tsmc Arm B: recall 100.0%</title></rect>
+<text x="121.9" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 121.9 644)">s-01-tsmc</text>
+<rect x="163.5" y="60.0" width="20.4" height="570.0" fill="#2563eb"><title>single-02-naturehike Arm A: recall 100.0%</title></rect>
+<rect x="187.9" y="60.0" width="20.4" height="570.0" fill="#d97706"><title>single-02-naturehike Arm B: recall 100.0%</title></rect>
+<text x="185.8" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 185.8 644)">s-02-naturehike</text>
+<rect x="227.4" y="60.0" width="20.4" height="570.0" fill="#2563eb"><title>single-03-cncf Arm A: recall 100.0%</title></rect>
+<rect x="251.8" y="60.0" width="20.4" height="570.0" fill="#d97706"><title>single-03-cncf Arm B: recall 100.0%</title></rect>
+<text x="249.7" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 249.7 644)">s-03-cncf</text>
+<rect x="291.2" y="60.0" width="20.4" height="570.0" fill="#2563eb"><title>single-04-mediatek Arm A: recall 100.0%</title></rect>
+<rect x="315.7" y="60.0" width="20.4" height="570.0" fill="#d97706"><title>single-04-mediatek Arm B: recall 100.0%</title></rect>
+<text x="313.6" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 313.6 644)">s-04-mediatek</text>
+<rect x="355.1" y="60.0" width="20.4" height="570.0" fill="#2563eb"><title>single-05-advantech Arm A: recall 100.0%</title></rect>
+<rect x="379.6" y="60.0" width="20.4" height="570.0" fill="#d97706"><title>single-05-advantech Arm B: recall 100.0%</title></rect>
+<text x="377.5" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 377.5 644)">s-05-advantech</text>
+<rect x="419.0" y="60.0" width="20.4" height="570.0" fill="#2563eb"><title>single-06-gleif Arm A: recall 100.0%</title></rect>
+<rect x="443.5" y="60.0" width="20.4" height="570.0" fill="#d97706"><title>single-06-gleif Arm B: recall 100.0%</title></rect>
+<text x="441.4" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 441.4 644)">s-06-gleif</text>
+<rect x="482.9" y="60.0" width="20.4" height="570.0" fill="#2563eb"><title>crosslang-01-tsmc Arm A: recall 100.0%</title></rect>
+<rect x="507.4" y="60.0" width="20.4" height="570.0" fill="#d97706"><title>crosslang-01-tsmc Arm B: recall 100.0%</title></rect>
+<text x="505.3" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 505.3 644)">cl-01-tsmc</text>
+<rect x="546.8" y="60.0" width="20.4" height="570.0" fill="#2563eb"><title>crosslang-02-asus Arm A: recall 100.0%</title></rect>
+<rect x="571.2" y="60.0" width="20.4" height="570.0" fill="#d97706"><title>crosslang-02-asus Arm B: recall 100.0%</title></rect>
+<text x="569.2" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 569.2 644)">cl-02-asus</text>
+<rect x="610.7" y="60.0" width="20.4" height="570.0" fill="#2563eb"><title>crosslang-03-acer Arm A: recall 100.0%</title></rect>
+<rect x="635.1" y="60.0" width="20.4" height="570.0" fill="#d97706"><title>crosslang-03-acer Arm B: recall 100.0%</title></rect>
+<text x="633.1" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 633.1 644)">cl-03-acer</text>
+<rect x="674.6" y="60.0" width="20.4" height="570.0" fill="#2563eb"><title>crosslang-04-foxconn Arm A: recall 100.0%</title></rect>
+<rect x="699.0" y="60.0" width="20.4" height="570.0" fill="#d97706"><title>crosslang-04-foxconn Arm B: recall 100.0%</title></rect>
+<text x="696.9" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 696.9 644)">cl-04-foxconn</text>
+<rect x="738.5" y="60.0" width="20.4" height="570.0" fill="#2563eb"><title>crosslang-05-chunghwa-telecom Arm A: recall 100.0%</title></rect>
+<rect x="762.9" y="60.0" width="20.4" height="570.0" fill="#d97706"><title>crosslang-05-chunghwa-telecom Arm B: recall 100.0%</title></rect>
+<text x="760.8" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 760.8 644)">cl-05-chunghwa-telecom</text>
+<rect x="802.4" y="60.0" width="20.4" height="570.0" fill="#2563eb"><title>crosslang-06-delta Arm A: recall 100.0%</title></rect>
+<rect x="826.8" y="60.0" width="20.4" height="570.0" fill="#d97706"><title>crosslang-06-delta Arm B: recall 100.0%</title></rect>
+<text x="824.7" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 824.7 644)">cl-06-delta</text>
+<rect x="866.2" y="60.0" width="20.4" height="570.0" fill="#2563eb"><title>multihop-01-cncf-founders Arm A: recall 100.0%</title></rect>
+<rect x="890.7" y="60.0" width="20.4" height="570.0" fill="#d97706"><title>multihop-01-cncf-founders Arm B: recall 100.0%</title></rect>
+<text x="888.6" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 888.6 644)">mh-01-cncf-founders</text>
+<rect x="930.1" y="60.0" width="20.4" height="570.0" fill="#2563eb"><title>multihop-02-tsmc-customers Arm A: recall 100.0%</title></rect>
+<rect x="954.6" y="60.0" width="20.4" height="570.0" fill="#d97706"><title>multihop-02-tsmc-customers Arm B: recall 100.0%</title></rect>
+<text x="952.5" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 952.5 644)">mh-02-tsmc-customers</text>
+<rect x="994.0" y="249.8" width="20.4" height="380.2" fill="#2563eb"><title>multihop-03-naturehike-dach Arm A: recall 66.7%</title></rect>
+<rect x="1018.5" y="60.0" width="20.4" height="570.0" fill="#d97706"><title>multihop-03-naturehike-dach Arm B: recall 100.0%</title></rect>
+<text x="1016.4" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 1016.4 644)">mh-03-naturehike-dach</text>
+<rect x="1057.9" y="60.0" width="20.4" height="570.0" fill="#2563eb"><title>multihop-04-mediatek-brands Arm A: recall 100.0%</title></rect>
+<rect x="1082.4" y="60.0" width="20.4" height="570.0" fill="#d97706"><title>multihop-04-mediatek-brands Arm B: recall 100.0%</title></rect>
+<text x="1080.3" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 1080.3 644)">mh-04-mediatek-brands</text>
+<rect x="1121.8" y="345.0" width="20.4" height="285.0" fill="#2563eb"><title>multihop-05-gleif-regulators Arm A: recall 50.0%</title></rect>
+<rect x="1146.2" y="345.0" width="20.4" height="285.0" fill="#d97706"><title>multihop-05-gleif-regulators Arm B: recall 50.0%</title></rect>
+<text x="1144.2" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 1144.2 644)">mh-05-gleif-regulators</text>
+<rect x="1185.7" y="60.0" width="20.4" height="570.0" fill="#2563eb"><title>multihop-06-advantech-cloud Arm A: recall 100.0%</title></rect>
+<rect x="1210.1" y="60.0" width="20.4" height="570.0" fill="#d97706"><title>multihop-06-advantech-cloud Arm B: recall 100.0%</title></rect>
+<text x="1208.1" y="644" text-anchor="end" font-family="sans-serif" font-size="9.5" fill="#111827" transform="rotate(-55 1208.1 644)">mh-06-advantech-cloud</text>
+<rect x="960" y="30" width="12" height="12" fill="#2563eb"/><text x="976" y="40" font-family="sans-serif" font-size="12" fill="#111827">Arm A (bare Haiku)</text><rect x="1110" y="30" width="12" height="12" fill="#d97706"/><text x="1126" y="40" font-family="sans-serif" font-size="12" fill="#111827">Arm B (+Salva)</text></svg>
