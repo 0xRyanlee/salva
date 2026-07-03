@@ -1,0 +1,292 @@
+{
+  "version": "v1",
+  "created": "2026-07-03",
+  "description": "4 domains x 3 sequential, thematically-evolving queries (12 tasks total), designed specifically to test query-family memory compounding (VP9) -- unlike task_set_v1.json, whose 18 tasks are each one-shot and structurally cannot exercise memory. Each domain's 3 queries simulate a real user progressively researching the same company: (1) basic identity/contact, (2) competitive landscape, (3) partnership/relationship signals -- all accumulating query-family memory in the same domain. Ground truth for query 1 and 3 in the TSMC/MediaTek/CNCF/Advantech domains is reused from task_set_v1.json's already-verified research (same entities, same session) rather than re-derived from scratch; query 2's ground truth (competitors) was freshly researched via WebSearch for this task set and is cited below.",
+  "domains": [
+    {
+      "domain_id": "tsmc",
+      "sequence": [
+        {
+          "task_id": "mem-tsmc-01-identity",
+          "seq": 1,
+          "objective": "find_companies",
+          "intent": {
+            "market": "Taiwan",
+            "industry": "semiconductor manufacturing",
+            "product": null,
+            "role": null,
+            "extra_keywords": ["TSMC", "台積電", "official website", "contact"],
+            "negative_keywords": [],
+            "constraints": {}
+          },
+          "ground_truth_entities": [
+            {
+              "name": "Taiwan Semiconductor Manufacturing Company Limited",
+              "official_website": "https://www.tsmc.com",
+              "source_urls": ["https://www.tsmc.com/english/contact-us"],
+              "confidence": "high",
+              "note": "Reused from task_set_v1.json single-01-tsmc (same session, already verified)."
+            }
+          ]
+        },
+        {
+          "task_id": "mem-tsmc-02-competitors",
+          "seq": 2,
+          "objective": "find_market_activity",
+          "intent": {
+            "market": "Global",
+            "industry": "semiconductor foundry",
+            "product": null,
+            "role": "competitor",
+            "extra_keywords": ["TSMC competitors", "semiconductor foundry", "Samsung", "Intel"],
+            "negative_keywords": [],
+            "constraints": {}
+          },
+          "ground_truth_entities": [
+            {"name": "Samsung Foundry", "relationship": "#2 foundry by market share (~7.2% in 2025), 3nm process rollout", "source_url": "https://averroes.ai/blog/top-10-semiconductor-foundries"},
+            {"name": "Intel Foundry", "relationship": "Sovereign-manufacturing-focused competitor, not yet in top-10 foundry ranking by revenue", "source_url": "https://semiwiki.com/semiconductor-manufacturers/tsmc/366523-tsmc-vs-intel-foundry-vs-samsung-foundry-2026/"},
+            {"name": "SMIC (Semiconductor Manufacturing International Corporation)", "relationship": "#3 foundry by market share (~5.32% in 2025)", "source_url": "https://averroes.ai/blog/top-10-semiconductor-foundries"},
+            {"name": "UMC (United Microelectronics Corporation)", "relationship": "#4 foundry by market share (~4.35% in 2025), mature-node specialist", "source_url": "https://averroes.ai/blog/top-10-semiconductor-foundries"},
+            {"name": "GlobalFoundries", "relationship": "#5 foundry by market share (~3.87% in 2025), mature-node and specialty market", "source_url": "https://averroes.ai/blog/top-10-semiconductor-foundries"}
+          ],
+          "confidence": "high",
+          "notes": "TSMC itself holds ~70% of Q3 2025 foundry revenue, ~10x more than the next competitor -- included for context, not as a competitor entry."
+        },
+        {
+          "task_id": "mem-tsmc-03-partnerships",
+          "seq": 3,
+          "objective": "find_partnership_signals",
+          "intent": {
+            "market": "Global",
+            "industry": "semiconductor",
+            "product": null,
+            "role": "foundry customer",
+            "extra_keywords": ["TSMC customers", "wafer foundry", "advanced node"],
+            "negative_keywords": [],
+            "constraints": {}
+          },
+          "ground_truth_entities": [
+            {"name": "Apple", "relationship": "Largest customer by revenue share", "source_url": "https://www.techpowerup.com/341044/tsmcs-first-2-nm-node-customers-are-apple-amd-nvidia-and-mediatek-intel-missing"},
+            {"name": "Nvidia", "relationship": "Major AI GPU customer, reportedly overtaking Apple as largest customer 2025-2026", "source_url": "https://www.cnbc.com/2026/01/26/nvidia-set-to-supplant-apple-as-tsmcs-largest-customer.html"},
+            {"name": "AMD", "relationship": "Advanced-node CPU/GPU customer", "source_url": "https://www.techpowerup.com/341044/tsmcs-first-2-nm-node-customers-are-apple-amd-nvidia-and-mediatek-intel-missing"},
+            {"name": "MediaTek", "relationship": "Flagship mobile SoC customer", "source_url": "https://www.techpowerup.com/341044/tsmcs-first-2-nm-node-customers-are-apple-amd-nvidia-and-mediatek-intel-missing"}
+          ],
+          "confidence": "high",
+          "notes": "Reused from task_set_v1.json multihop-02-tsmc-customers (same session, already verified)."
+        }
+      ]
+    },
+    {
+      "domain_id": "mediatek",
+      "sequence": [
+        {
+          "task_id": "mem-mediatek-01-identity",
+          "seq": 1,
+          "objective": "find_companies",
+          "intent": {
+            "market": "Taiwan",
+            "industry": "fabless semiconductor / chip design",
+            "product": null,
+            "role": null,
+            "extra_keywords": ["MediaTek", "聯發科", "official website", "investor relations contact"],
+            "negative_keywords": [],
+            "constraints": {}
+          },
+          "ground_truth_entities": [
+            {
+              "name": "MediaTek Inc.",
+              "official_website": "https://www.mediatek.com/",
+              "source_urls": ["https://www.mediatek.com/company/contact-us"],
+              "confidence": "high",
+              "note": "Reused from task_set_v1.json single-04-mediatek (same session, already verified)."
+            }
+          ]
+        },
+        {
+          "task_id": "mem-mediatek-02-competitors",
+          "seq": 2,
+          "objective": "find_market_activity",
+          "intent": {
+            "market": "Global",
+            "industry": "mobile chipset / SoC",
+            "product": null,
+            "role": "competitor",
+            "extra_keywords": ["MediaTek competitors", "Qualcomm", "Unisoc"],
+            "negative_keywords": [],
+            "constraints": {}
+          },
+          "ground_truth_entities": [
+            {"name": "Qualcomm", "relationship": "Primary premium-SoC competitor; MediaTek 32% vs Qualcomm 23% smartphone chipset share, Q1 2026", "source_url": "https://www.lightreading.com/smartphones-devices/mediatek-and-qualcomm-s-rivalry-heats-up-in-5g-smartphone-market-omdia"},
+            {"name": "Unisoc", "relationship": "Low-end/entry-5G competitor pressuring MediaTek's volume in Africa and South Asia", "source_url": "https://www.companieshistory.com/qualcomm-competitors"},
+            {"name": "Apple (A-series/M-series silicon)", "relationship": "Exclusive to Apple devices, sets performance benchmark but not a direct chipset-market rival (no external sales)", "source_url": "https://sumble.com/tech/mediatek"}
+          ],
+          "confidence": "high",
+          "notes": "Both MediaTek and Qualcomm targeting 2nm flagship launches (Dimensity 9600 / Snapdragon 8 Elite Gen 6) in H2 2026 per the same source."
+        },
+        {
+          "task_id": "mem-mediatek-03-partnerships",
+          "seq": 3,
+          "objective": "find_partnership_signals",
+          "intent": {
+            "market": "Global",
+            "industry": "smartphone / mobile devices",
+            "product": "chipset",
+            "role": null,
+            "extra_keywords": ["MediaTek Dimensity", "smartphone brand", "chipset partnership"],
+            "negative_keywords": [],
+            "constraints": {}
+          },
+          "ground_truth_entities": [
+            {"name": "Xiaomi", "relationship": "Documented Dimensity chipset adoption", "source_url": "https://beebom.com/vivo-oppo-xiaomi-flagship-phones-dimensity-9000-powered-confirms-mediatek/"},
+            {"name": "Oppo", "relationship": "Confirmed Dimensity flagship adoption", "source_url": "https://beebom.com/vivo-oppo-xiaomi-flagship-phones-dimensity-9000-powered-confirms-mediatek/"},
+            {"name": "Vivo", "relationship": "Confirmed Dimensity chipset adoption", "source_url": "https://beebom.com/vivo-oppo-xiaomi-flagship-phones-dimensity-9000-powered-confirms-mediatek/"},
+            {"name": "Samsung", "relationship": "Dimensity chipsets in Galaxy A-series/Tab S; Samsung validated LPDDR5X for MediaTek's flagship platform", "source_url": "https://news.samsung.com/global/samsung-completes-validation-of-industrys-fastest-lpddr5x-for-use-with-mediateks-flagship-mobile-platform"}
+          ],
+          "confidence": "high",
+          "notes": "Reused from task_set_v1.json multihop-04-mediatek-brands (same session, already verified)."
+        }
+      ]
+    },
+    {
+      "domain_id": "cncf",
+      "sequence": [
+        {
+          "task_id": "mem-cncf-01-identity",
+          "seq": 1,
+          "objective": "find_companies",
+          "intent": {
+            "market": "Global",
+            "industry": "cloud native / open source software foundation",
+            "product": null,
+            "role": null,
+            "extra_keywords": ["CNCF", "Cloud Native Computing Foundation", "official website"],
+            "negative_keywords": [],
+            "constraints": {}
+          },
+          "ground_truth_entities": [
+            {
+              "name": "Cloud Native Computing Foundation",
+              "official_website": "https://www.cncf.io/",
+              "source_urls": ["https://www.cncf.io/about/contact/"],
+              "confidence": "high",
+              "note": "Reused from task_set_v1.json single-03-cncf (same session, already verified)."
+            }
+          ]
+        },
+        {
+          "task_id": "mem-cncf-02-parent-org",
+          "seq": 2,
+          "objective": "find_market_activity",
+          "intent": {
+            "market": "Global",
+            "industry": "cloud native / open source",
+            "product": null,
+            "role": "parent organization",
+            "extra_keywords": ["CNCF parent organization", "Linux Foundation", "relationship"],
+            "negative_keywords": [],
+            "constraints": {}
+          },
+          "ground_truth_entities": [
+            {"name": "The Linux Foundation", "relationship": "CNCF is a SUBSIDIARY of the Linux Foundation, not a competing/peer foundation -- this is deliberately a different relationship shape than mem-tsmc-02/mem-mediatek-02's 'competitors' framing", "source_url": "https://en.wikipedia.org/wiki/Cloud_Native_Computing_Foundation"}
+          ],
+          "confidence": "high",
+          "notes": "DELIBERATE DESIGN CHOICE: this query intentionally does NOT ask for 'competitors' like the TSMC/MediaTek domains, because CNCF genuinely has no direct competing-foundation relationship -- it's organizationally part of the Linux Foundation. Framed as 'parent organization' instead, both to get a real, verifiable answer and to test whether an agent (or Salva) honestly reports a parent/subsidiary relationship rather than forcing a 'competitors' answer where none exists, or fabricating rival foundations. A confidently-wrong 'CNCF competes with OpenStack Foundation' answer would be a red flag, not a correct one."
+        },
+        {
+          "task_id": "mem-cncf-03-founders",
+          "seq": 3,
+          "objective": "find_partnership_signals",
+          "intent": {
+            "market": "Global",
+            "industry": "cloud native / open source",
+            "product": null,
+            "role": null,
+            "extra_keywords": ["CNCF founding members", "Cloud Native Computing Foundation", "2015"],
+            "negative_keywords": [],
+            "constraints": {}
+          },
+          "ground_truth_entities": [
+            {"name": "Google", "relationship": "Founding member at 2015 launch", "source_url": "https://www.cncf.io/announcements/2015/12/17/cloud-native-computing-foundation-announces-new-members-begins-accepting-technical-contributions/"},
+            {"name": "Cisco", "relationship": "Founding member at 2015 launch", "source_url": "https://www.cncf.io/announcements/2015/12/17/cloud-native-computing-foundation-announces-new-members-begins-accepting-technical-contributions/"},
+            {"name": "IBM", "relationship": "Founding member at 2015 launch", "source_url": "https://www.cncf.io/announcements/2015/12/17/cloud-native-computing-foundation-announces-new-members-begins-accepting-technical-contributions/"},
+            {"name": "Red Hat", "relationship": "Founding member at 2015 launch", "source_url": "https://www.cncf.io/announcements/2015/12/17/cloud-native-computing-foundation-announces-new-members-begins-accepting-technical-contributions/"},
+            {"name": "Docker", "relationship": "Founding member at 2015 launch", "source_url": "https://www.cncf.io/announcements/2015/12/17/cloud-native-computing-foundation-announces-new-members-begins-accepting-technical-contributions/"},
+            {"name": "Huawei", "relationship": "Founding member at 2015 launch", "source_url": "https://www.cncf.io/announcements/2015/12/17/cloud-native-computing-foundation-announces-new-members-begins-accepting-technical-contributions/"}
+          ],
+          "confidence": "high",
+          "notes": "Reused from task_set_v1.json multihop-01-cncf-founders (same session, already verified)."
+        }
+      ]
+    },
+    {
+      "domain_id": "advantech",
+      "sequence": [
+        {
+          "task_id": "mem-advantech-01-identity",
+          "seq": 1,
+          "objective": "find_companies",
+          "intent": {
+            "market": "Taiwan",
+            "industry": "industrial computing / IIoT hardware",
+            "product": null,
+            "role": null,
+            "extra_keywords": ["Advantech", "研華科技", "official website"],
+            "negative_keywords": [],
+            "constraints": {}
+          },
+          "ground_truth_entities": [
+            {
+              "name": "Advantech Co., Ltd.",
+              "official_website": "https://www.advantech.com/en-us",
+              "source_urls": ["https://www.advantech.com/en-us/contact"],
+              "confidence": "high",
+              "note": "Reused from task_set_v1.json single-05-advantech (same session, already verified)."
+            }
+          ]
+        },
+        {
+          "task_id": "mem-advantech-02-competitors",
+          "seq": 2,
+          "objective": "find_market_activity",
+          "intent": {
+            "market": "Global",
+            "industry": "industrial computing / IIoT hardware",
+            "product": null,
+            "role": "competitor",
+            "extra_keywords": ["Advantech competitors", "industrial computing", "Kontron", "ADLINK"],
+            "negative_keywords": [],
+            "constraints": {}
+          },
+          "ground_truth_entities": [
+            {"name": "Kontron", "relationship": "Primary rival, high-performance 4U platforms for energy/medical/defense, HQ Ismaning Bavaria", "source_url": "https://www.distillintelligence.com/competitors/kontron"},
+            {"name": "ADLINK Technology", "relationship": "Taiwan-based competitor, embedded computing and automation for retail/automotive", "source_url": "https://www.owler.com/company/adlinktech/competitors"},
+            {"name": "AAEON", "relationship": "Competitor, industrial computers/panel PCs/embedded boards/single board computers", "source_url": "https://www.owler.com/company/aaeon"}
+          ],
+          "confidence": "high",
+          "notes": "Advantech itself holds ~41% of the global Industrial PC market per the same research pass, well ahead of these competitors -- included for context, not as a competitor entry. Siemens and Beckhoff Automation mentioned as other regional players but with less direct source corroboration than the top 3 -- excluded from ground truth to avoid padding."
+        },
+        {
+          "task_id": "mem-advantech-03-partnerships",
+          "seq": 3,
+          "objective": "find_partnership_signals",
+          "intent": {
+            "market": "Global",
+            "industry": "industrial IoT",
+            "product": "cloud platform",
+            "role": null,
+            "extra_keywords": ["Advantech", "IIoT", "cloud partnership", "Azure", "AWS"],
+            "negative_keywords": [],
+            "constraints": {}
+          },
+          "ground_truth_entities": [
+            {"name": "Microsoft Azure", "relationship": "Microsoft CSP partner; UNO edge gateways certified in Azure IoT device catalogue", "source_url": "https://www.advantech.com/en-us/resources/news/advantech%E2%80%99s-uno-iot-edge-gateways-now-certified-to-run-on-microsoft-azure-iot-platform"},
+            {"name": "Amazon Web Services (AWS)", "relationship": "Edge gateways qualified for AWS IoT Greengrass", "source_url": "https://www.iotm2mcouncil.org/iot-library/news/iot-newsdesk/microsoft-and-aws-approve-advantech-gateways/"},
+            {"name": "Alibaba Cloud", "relationship": "Supported public cloud in WISE-PaaS/EnSaaS", "source_url": "https://www.advantechmagazine.com/articles/advantech-wise-paas-iot-cloud-platform-helps-users-accelerate-the-development-of-innovative-aiot-applications"}
+          ],
+          "confidence": "high",
+          "notes": "Reused from task_set_v1.json multihop-06-advantech-cloud (same session, already verified)."
+        }
+      ]
+    }
+  ]
+}

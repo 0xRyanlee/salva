@@ -1,0 +1,9 @@
+{
+  "domain_id": "cncf",
+  "condition": "memory_off",
+  "rounds": [
+    {"seq": 1, "task_id": "mem-cncf-01-identity", "qualified_count": 0, "retrieval_health": "ok", "reported_entities": []},
+    {"seq": 2, "task_id": "mem-cncf-02-parent-org", "qualified_count": 0, "retrieval_health": "ok", "reported_entities": []},
+    {"seq": 3, "task_id": "mem-cncf-03-founders", "qualified_count": 0, "retrieval_health": "ok", "reported_entities": []}
+  ]
+}

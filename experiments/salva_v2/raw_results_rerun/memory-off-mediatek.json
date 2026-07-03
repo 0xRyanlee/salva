@@ -1,0 +1,9 @@
+{
+  "domain_id": "mediatek",
+  "condition": "memory_off",
+  "rounds": [
+    {"seq": 1, "task_id": "mem-mediatek-01-identity", "qualified_count": 0, "retrieval_health": "ok", "reported_entities": []},
+    {"seq": 2, "task_id": "mem-mediatek-02-competitors", "qualified_count": 0, "retrieval_health": "ok", "reported_entities": []},
+    {"seq": 3, "task_id": "mem-mediatek-03-partnerships", "qualified_count": 0, "retrieval_health": "ok", "reported_entities": []}
+  ]
+}

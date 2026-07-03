@@ -1,0 +1,43 @@
+{
+  "domain_id": "tsmc",
+  "condition": "memory_on",
+  "rounds": [
+    {
+      "seq": 1,
+      "task_id": "mem-tsmc-01-identity",
+      "qualified_count": 3,
+      "retrieval_health": "ok",
+      "reported_entities": [
+        {
+          "name": "Taiwan Semiconductor Manufacturing Company Limited - TSMC",
+          "url": "https://www.tsmc.com/english",
+          "confidence": "0.4136"
+        },
+        {
+          "name": "Company Info - Taiwan Semiconductor Manufacturing Company Limited - TSMC",
+          "url": "https://www.tsmc.com/english/aboutTSMC/company_profile",
+          "confidence": "0.4136"
+        },
+        {
+          "name": "Taiwan Semiconductor Manufacturing Company Limited (TSM)",
+          "url": "https://finance.yahoo.com/quote/TSM",
+          "confidence": "0.4136"
+        }
+      ]
+    },
+    {
+      "seq": 2,
+      "task_id": "mem-tsmc-02-competitors",
+      "qualified_count": 0,
+      "retrieval_health": "ok",
+      "reported_entities": []
+    },
+    {
+      "seq": 3,
+      "task_id": "mem-tsmc-03-partnerships",
+      "qualified_count": 0,
+      "retrieval_health": "ok",
+      "reported_entities": []
+    }
+  ]
+}
