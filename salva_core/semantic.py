@@ -21,6 +21,7 @@ class SemanticQueryFamilyHit(BaseModel):
     vector_id: str
     query_family: QueryFamilyMemoryRecord
     matched_text: str | None = None
+    backend_used: str = "hybrid_hash"
 
 
 class SemanticQueryFamilySearchResponse(BaseModel):

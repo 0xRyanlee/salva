@@ -592,13 +592,14 @@ async def semantic_query_families(
         **filters,
     )
     items = []
-    for memory, score, vector_id in matches:
+    for memory, score, vector_id, backend_used in matches:
         items.append(
             {
                 "score": score,
                 "vector_id": vector_id,
                 "query_family": memory,
                 "matched_text": memory.query,
+                "backend_used": backend_used,
             }
         )
     return SemanticQueryFamilySearchResponse(

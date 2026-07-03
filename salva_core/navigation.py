@@ -455,8 +455,9 @@ def _build_semantic_matches(discovery: DiscoveryRequest, limit: int, path: str |
             "query_family": memory.model_dump(mode="json"),
             "memory": memory.model_dump(mode="json"),
             "matched_text": memory.query,
+            "backend_used": backend_used,
         }
-        for memory, score, vector_id in matches
+        for memory, score, vector_id, backend_used in matches
     ]
 
 

@@ -1,7 +1,11 @@
 from fastapi.testclient import TestClient
 
 from apps.api import main
-from salva_core.persistence import persist_discovery_run, read_top_query_families_for_seeding
+from salva_core.persistence import (
+    persist_discovery_run,
+    read_top_query_families_for_seeding,
+    search_query_family_memory,
+)
 from salva_core.schemas import DiscoveryIntent, DiscoveryRequest, TelemetryRecord
 from salva_core.semantic import SemanticBackendBenchmarkRequest, build_semantic_backend_benchmark
 
@@ -57,6 +61,59 @@ def test_semantic_query_families_api_roundtrip(tmp_path) -> None:
     assert body["total"] == 1
     assert body["items"][0]["query_family"]["query"] == "software reseller germany"
     assert body["items"][0]["score"] > 0.5
+    assert body["items"][0]["backend_used"] == "hybrid_hash"
+
+
+def _seed_one_query_family(db_path: str) -> None:
+    persist_discovery_run(
+        request=DiscoveryRequest(
+            objective="find_leads",
+            intent=DiscoveryIntent(market="Germany", industry="software", product="crm", role="reseller"),
+        ),
+        entities=[],
+        relations=[],
+        telemetry=[
+            TelemetryRecord(
+                query="software reseller germany",
+                round_num=1,
+                strategy="dive",
+                results_total=10,
+                results_qualified=3,
+                avg_score=0.7,
+                metadata={
+                    "round_strategy": "dive",
+                    "content_weights": {"title": 0.45, "platform": 0.1},
+                    "source_hints": ["example.com"],
+                    "notes": ["precision_first"],
+                    "source_nodes": ["software", "reseller"],
+                },
+            )
+        ],
+        meta={"qualified_count": 3, "raw_count": 10, "provider_kinds": []},
+        source_attempts=[],
+        path=db_path,
+    )
+
+
+def test_search_query_family_memory_labels_hash_fallback_backend(tmp_path, monkeypatch) -> None:
+    """Card acceptance: force omlx unreachable (the ambient default here --
+    SALVA_SEMANTIC_VECTOR_BACKEND unset means resolve_semantic_vector_backend()
+    never even tries jina_omlx), assert backend_used == "hybrid_hash" so
+    downstream consumers can't mistake this for a real semantic score."""
+    monkeypatch.delenv("SALVA_SEMANTIC_VECTOR_BACKEND", raising=False)
+    db_path = str(tmp_path / "salva_test.db")
+    _seed_one_query_family(db_path)
+
+    matches, total = search_query_family_memory(
+        query="software reseller germany",
+        objective="find_leads",
+        path=db_path,
+    )
+
+    assert total == 1
+    _record, score, _vector_id, backend_used = matches[0]
+    assert backend_used == "hybrid_hash"
+    assert score > 0.5
 
 
 def test_retrieval_batches_api_alias(tmp_path) -> None:

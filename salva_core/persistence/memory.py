@@ -111,7 +111,16 @@ def search_query_family_memory(
     limit: int = 10,
     offset: int = 0,
     path: str | None = DEFAULT_DB_PATH,
-) -> tuple[list[tuple[QueryFamilyMemoryRecord, float, str]], int]:
+) -> tuple[list[tuple[QueryFamilyMemoryRecord, float, str, str]], int]:
+    """Returns (rows, total) where each row is (record, score, vector_id, backend_used).
+
+    backend_used names whichever backend's score actually won for that row --
+    the primary semantic backend (resolve_semantic_vector_backend(), e.g.
+    "hybrid_hash"/"jina_omlx"/"sqlite_vec") or the ScalarHashVectorBackend
+    compatibility fallback ("scalar_hash") when its score was higher. Both are
+    non-semantic hash backends when omlx is unreachable -- callers should not
+    treat a returned score as a trustworthy semantic similarity without
+    checking this label."""
     if path is None:
         path = DEFAULT_DB_PATH
 
@@ -154,18 +163,22 @@ def search_query_family_memory(
             params,
         ).fetchall()
 
-    scored: list[tuple[QueryFamilyMemoryRecord, float, str]] = []
+    scored: list[tuple[QueryFamilyMemoryRecord, float, str, str]] = []
     for row in rows:
         embedding = [float(value) for value in json.loads(row[23])]
         score = backend.score(query_embedding, embedding)
+        backend_used = backend.name
         if compatibility_query_embedding and row[25] == len(compatibility_query_embedding):
             compatibility_score = compatibility_backend.score(compatibility_query_embedding, embedding)
-            score = max(score, compatibility_score)
+            if compatibility_score > score:
+                score = compatibility_score
+                backend_used = compatibility_backend.name
         scored.append(
             (
                 _record_from_row(row[:23]),
                 round(score, 4),
                 row[24],
+                backend_used,
             )
         )
 
