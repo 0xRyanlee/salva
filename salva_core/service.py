@@ -164,7 +164,7 @@ def execute_discovery(
         extractor=extractor,
         deduplicator=deduplicator,
         scorer=scorer,
-        qualify_threshold=payload.qualify_threshold,
+        qualify_threshold=_resolve_qualify_threshold(payload, intent.domain),
         results_per_query=min(10, max(1, payload.max_results)),
         keyword_graph=graph,
         experience_profile=experience_plan.profile,
@@ -214,6 +214,15 @@ def execute_discovery(
     if payload.tenant_id is not None:
         meta["tenant_id"] = payload.tenant_id
     return entities, relations, telemetry, meta, source_attempts
+
+
+def _resolve_qualify_threshold(payload: DiscoveryRequest, domain: str) -> float:
+    """None (not explicitly set by the caller) -> domain-calibrated default.
+    An explicit float -- including one that happens to equal 0.4 -- always wins.
+    """
+    if payload.qualify_threshold is not None:
+        return payload.qualify_threshold
+    return QualificationScorer.domain_threshold(domain)
 
 
 def _build_scorer(payload: DiscoveryRequest, domain: str) -> QualificationScorer:

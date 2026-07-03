@@ -538,7 +538,18 @@ class DiscoveryRequest(BaseModel):
         ),
     )
     max_results: int = Field(default=50, ge=1, le=500)
-    qualify_threshold: float = Field(default=0.4, ge=0.0, le=1.0)
+    qualify_threshold: float | None = Field(
+        default=None,
+        ge=0.0,
+        le=1.0,
+        description=(
+            "Explicit override for the qualification gate. None (default) means "
+            "use the domain-calibrated threshold from "
+            "QualificationScorer.domain_threshold(intent.domain) -- e.g. 0.35 for "
+            "bd_leads/taiwan_hardware/partnerships, 0.40 elsewhere. Set explicitly "
+            "to force a specific threshold regardless of domain."
+        ),
+    )
 
 
 class TopologyProbeRequest(BaseModel):
