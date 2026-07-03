@@ -113,6 +113,24 @@ DOMAIN_CONFIGS: dict[str, ScorerConfig] = {
             "bloomberg.com", "reuters.com", "techcrunch.com", "forbes.com",
         }),
     ),
+    "partnerships": ScorerConfig(
+        high_signals=[
+            "partnership", "strategic alliance", "memorandum of understanding",
+            "MOU", "joint venture", "signed agreement", "collaboration agreement",
+        ],
+        med_signals=[
+            "collaboration", "integration partner", "ecosystem partner",
+            "technology partner", "go-to-market", "co-marketing", "alliance",
+        ],
+        negative_signals=["blog", "reddit", "forum", "review", "personal"],
+        trusted_sources=frozenset({
+            "linkedin.com", "businesswire.com", "prnewswire.com",
+            "crunchbase.com", "techcrunch.com", "venturebeat.com",
+        }),
+        # Partnership signals are harder to surface explicitly in snippets
+        # than basic company facts -- lower bar, matches bd_leads/taiwan_hardware.
+        qualify_threshold=0.35,
+    ),
     # Taiwan hardware manufacturers / Computex exhibitors
     "taiwan_hardware": ScorerConfig(
         high_signals=[

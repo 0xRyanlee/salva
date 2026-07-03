@@ -366,3 +366,68 @@ class TestDomainVocabEnrichment:
         vocab = get_vocab("taiwan_hardware")
         exhibitor_synonyms = vocab.synonym_groups.get("exhibitor", [])
         assert "OEM" in exhibitor_synonyms or "manufacturer" in exhibitor_synonyms
+
+
+# ---------------------------------------------------------------------------
+# Partnerships domain config (salva-p35-scorer-partnerships-domain)
+#
+# find_partnership_signals requests map to domain="partnerships"
+# (salva_core/service.py::OBJECTIVE_TO_DOMAIN), but DOMAIN_CONFIGS had no
+# "partnerships" entry -- scoring silently fell back to a bare ScorerConfig()
+# with empty signal lists, so _signal_strength() was always 0 and every
+# partnership-flavored result scored well below the 0.40 default threshold.
+# Confirmed root cause of Phase 3's 0/6 qualified_count on
+# find_partnership_signals tasks (experiments/salva_v2/ANALYSIS_FINDINGS.md).
+# ---------------------------------------------------------------------------
+
+class TestPartnershipsScorerConfig:
+    def _make_result(self, title: str, snippet: str) -> UnifiedResult:
+        return UnifiedResult(
+            source_name="test",
+            source_url="https://businesswire.com/partnership-announcement",
+            title=title,
+            description=snippet,
+        )
+
+    def _intent(self) -> Intent:
+        return Intent(
+            domain="partnerships",
+            primary_terms=["CNCF", "founding members"],
+        )
+
+    def test_partnerships_domain_config_exists(self):
+        assert "partnerships" in DOMAIN_CONFIGS
+
+    def test_domain_threshold_partnerships_is_lower(self):
+        assert QualificationScorer.domain_threshold("partnerships") < 0.40
+
+    def test_partnership_signal_terms_are_populated(self):
+        cfg = DOMAIN_CONFIGS["partnerships"]
+        assert cfg.high_signals, "partnerships high_signals must not be empty"
+        assert cfg.med_signals, "partnerships med_signals must not be empty"
+
+    def test_partnership_announcement_scores_nonzero_signal(self):
+        """A real partnership announcement must produce nonzero signal_strength,
+        not silently fall back to the generic ScorerConfig()'s empty lists."""
+        result = self._make_result(
+            "Acme Corp and Globex announce strategic alliance",
+            "The companies signed a memorandum of understanding to form a "
+            "joint venture, establishing Acme as an ecosystem partner.",
+        )
+        cfg = DOMAIN_CONFIGS["partnerships"]
+        text = f"{result.title} {result.description}".lower()
+        signal = QualificationScorer._signal_strength(text, cfg)
+        assert signal > 0.0, "partnership-flavored text must score nonzero signal_strength"
+
+    def test_partnership_announcement_qualifies(self):
+        result = self._make_result(
+            "TechCo and DataCorp sign strategic partnership agreement",
+            "The two companies announced a strategic alliance and signed a "
+            "memorandum of understanding to co-develop AI infrastructure "
+            "as technology partners.",
+        )
+        score = QualificationScorer().score(result, self._intent())
+        threshold = QualificationScorer.domain_threshold("partnerships")
+        assert score >= threshold, (
+            f"Partnership announcement scored {score}, below threshold {threshold}"
+        )
