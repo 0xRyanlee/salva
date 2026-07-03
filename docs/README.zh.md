@@ -35,5 +35,6 @@
 ## 其他
 
 - [ARCHIVED_已完成任務.md](ARCHIVED_已完成任務.md) - 已完成任務歸檔
-- [PENDING_待完成事項.md](PENDING_待完成事項.md) - 待完成事項
 - [archive/](archive/) - 歷史文件歸檔
+
+目前真實的缺口清單請看 `DEVELOPMENT_PROGRESS.md`「Known Gaps / Next Steps」段落（`PENDING_待完成事項.md` 已於 2026-07-03 刪除，因內容早於整批 Phase 1-4 修復與實驗，與現況嚴重不符，保留只會誤導）。

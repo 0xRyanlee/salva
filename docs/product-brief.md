@@ -13,6 +13,53 @@ This document is an introduction, not a PRD and not a canonical contract. For st
 - Uses query-family memory so later runs get better
 - Turns runs into a walkable hypergraph of entity, relation, evidence, and source data
 
+## ⚠️ Owner decision needed: positioning claims vs Phase 3 measured data
+
+The "Why It Beats Direct Search" and "Comparison Matrix" sections below were
+written before the 2026-07-03 Phase 3 controlled experiment (18 fixed tasks,
+`experiments/salva_v2/ANALYSIS_FINDINGS.md`). Phase 3's core findings:
+
+- **Raw find-the-right-answer ability**: Arm A (bare Claude Code + Haiku) vs
+  Arm B (+Salva) across all 18 tasks was **17 ties, 1 Arm B win, 0 Arm A
+  wins** — not because Salva is more accurate, but because the agent was
+  allowed to fall back to bare search whenever Salva underperformed, which
+  is realistic production behavior, not a flattering test design.
+- **Salva's own qualification/scoring layer returned zero usable entities
+  in 61% (11/18) of test runs**, despite `retrieval_health` being `ok` in
+  100% of runs — the bottleneck is `QualificationScorer`'s scoring logic,
+  not retrieval or provider health.
+- The "3 local comparison samples" cited in the "Effect Comparison" section
+  below are from an earlier, much smaller, separate test (no verified
+  ground truth) — not the Phase 3 dataset, and should not be read as
+  corroborating it.
+
+The practical tension this creates: this document currently positions Salva
+as a strictly more-effective replacement for direct search, but Phase 3's
+actual evidence supports something closer to "ties a bare agent on raw
+answer-finding, with a real efficiency edge on some scenarios (Chinese-
+keyword entity queries)" rather than blanket superiority. Options below are
+left for the owner to decide — this pass does not rewrite the positioning
+language on its own:
+
+- **Option 1 — Keep the current positioning** (replaces/beats direct
+  search): not supported by current Phase 3 data unless a larger follow-up
+  experiment, or a fix to `QualificationScorer`'s filtering plus a re-test,
+  produces stronger evidence.
+- **Option 2 — Reposition as a "structuring/compounding layer"** (a value-
+  add on top of direct search, not a replacement): better supported by
+  Phase 3 — the route/pilot/audit/hypergraph/memory claims were not tested
+  by Phase 3 at all (and not refuted either), and Arm B does have a real,
+  modest efficiency win (14% fewer total requests). Under this framing,
+  "Why It Beats Direct Search" would need to be rewritten around what
+  structure Salva adds, not implied superiority at finding answers.
+- **Option 3 — Narrow the effectiveness claims**: claim only what Phase 3
+  data clearly supports (Chinese-keyword company lookups, cost efficiency),
+  and honestly label other scenarios (single English-entity lookups,
+  multi-hop relationship queries) as "ties bare search, pending a
+  scoring-layer fix and re-test."
+
+Full data: `experiments/salva_v2/ANALYSIS_FINDINGS.md` (includes 3 charts).
+
 ## Spotlight Features
 
 - **Smart routing**: not every query follows the same path. Salva chooses between `quick_scan`, `lead_focus`, `company_research`, `deep_investigation`, and `platform_integrator`.
@@ -171,6 +218,11 @@ Use this pattern:
 That feels more like a research workstation than a simple search box.
 
 ## Effect Comparison
+
+> ⚠️ The "3 local comparison samples" below are from a smaller, earlier
+> test, not the 2026-07-03 Phase 3 18-task controlled experiment -- see the
+> "Owner decision needed" section at the top of this document and
+> `experiments/salva_v2/ANALYSIS_FINDINGS.md`.
 
 The comparisons below come from a local demo script that contrasts direct advice and agent-guided advice.
 
