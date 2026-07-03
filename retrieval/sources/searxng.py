@@ -104,6 +104,16 @@ class SearXNGRetriever:
 
         return []
 
+    @property
+    def probe_inconclusive(self) -> bool:
+        """True when no instance was actually queried successfully — every attempt
+        errored (connection/timeout/parse failure) or every candidate was skipped via
+        cooldown, so `last_attempts` is empty. This is distinct from a provider that
+        responded but genuinely found zero results (those attempts have `error=None`).
+        Callers should treat this as "couldn't check" rather than "confirmed empty".
+        """
+        return not self.last_attempts or all(a.error for a in self.last_attempts)
+
     def _candidate_instances(self) -> list[str]:
         instances: list[str] = []
         if self.policy.local_first and self.base_url:

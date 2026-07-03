@@ -85,6 +85,13 @@ def run_live_probe(query: str, timeout: float = 3.0) -> LiveProbeSignal | None:
         retriever = SearXNGRetriever(policy=policy)
         results = retriever.search(query, n=5)
 
+        if retriever.probe_inconclusive:
+            # Every instance either errored or was skipped (cooldown) — this is a
+            # connection-layer failure, not a provider that responded with zero
+            # results. Signal it as an error so callers preserve the original
+            # static classification instead of hard-degrading confidently.
+            has_error = True
+
         result_count = len(results)
         raw_scores = [
             float(r["score"]) for r in results

@@ -103,6 +103,59 @@ class TestProbeError:
         assert plan.confidence > 0.35, f"probe error must not degrade confidence, got {plan.confidence}"
 
 
+class TestProbeConnectionFailure:
+    """Regression test for the has_error / result_count==0 conflation bug.
+
+    Exercises the real chain: SearXNGRetriever.search() -> run_live_probe() ->
+    _apply_live_probe() -> plan_route(), with the HTTP layer mocked to fail on
+    every attempt (not a fake LiveProbeSignal injected via the cache like the
+    other test classes above). Before the fix, this scenario produced
+    has_error=False + result_count=0, which _apply_live_probe hard-degraded to
+    topology="unstructured" — indistinguishable from a provider that genuinely
+    found nothing.
+    """
+
+    def test_all_instances_erroring_preserves_topology_via_real_probe_chain(self, monkeypatch):
+        req = _make_request()
+
+        # Baseline: probe disabled entirely -> pure static classification, no
+        # live-probe interference at all (same pattern as TestProbeDisabled above).
+        monkeypatch.setenv("SEARXNG_ENABLED", "false")
+        plan_no_probe = plan_route(req)
+        assert not any("live_probe" in n for n in plan_no_probe.notes), plan_no_probe.notes
+
+        # Now enable probing, but make every HTTP attempt fail at the transport
+        # layer (connection refused) -- exercises the real SearXNGRetriever.search()
+        # -> run_live_probe() chain, not a fake injected LiveProbeSignal.
+        monkeypatch.setenv("SEARXNG_ENABLED", "true")
+        invalidate_probe_cache()
+
+        def failing_http_get(*args, **kwargs):
+            raise ConnectionError("connection refused")
+
+        with patch("retrieval.sources.searxng.http_get", side_effect=failing_http_get):
+            from salva_core.live_probe import run_live_probe
+
+            signal = run_live_probe("test query", timeout=3.0)
+
+        assert signal is not None
+        assert signal.has_error is True, (
+            "all-instances-failed must set has_error, not result_count=0"
+        )
+
+        _set_probe_cache(signal)
+        plan = plan_route(req)
+
+        assert any("live_probe_error" in n for n in plan.notes), plan.notes
+        assert plan.topology == plan_no_probe.topology, (
+            f"connection failure must not change topology: "
+            f"expected {plan_no_probe.topology}, got {plan.topology}"
+        )
+        assert plan.confidence == plan_no_probe.confidence, (
+            "connection failure must not touch confidence either"
+        )
+
+
 class TestCacheHit:
     def test_cache_hit_reuses_signal(self, monkeypatch):
         call_count = 0
