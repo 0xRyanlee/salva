@@ -22,7 +22,7 @@ from collections import Counter
 from collections.abc import Mapping
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
-from typing import Protocol, cast
+from typing import Any, Protocol, cast
 
 from core.keyword_graph import KeywordGraph
 from core.types import Intent, QueryFamily, SearchTelemetry, UnifiedResult
@@ -120,6 +120,7 @@ class SalvaController:
         results_per_query: int = 10,
         keyword_graph: KeywordGraph | None = None,
         experience_profile: str = "",
+        scoring_context: dict[str, Any] | None = None,
     ):
         self.intent = intent
         self.retrievers = retrievers
@@ -129,6 +130,11 @@ class SalvaController:
         self.qualify_threshold = qualify_threshold
         self.convergence_threshold = convergence_threshold
         self.results_per_query = results_per_query
+        # Extra key/value pairs merged into every round's telemetry.metadata,
+        # which is the context dict passed to scorer.score(). Computed once
+        # by the caller (e.g. stability signals -- one domain-level lookup
+        # per discover() call, not per round/candidate) rather than per query.
+        self.scoring_context: dict[str, Any] = dict(scoring_context or {})
         self.graph = keyword_graph or KeywordGraph(intent)
         route_hints = PROFILE_ROUTE_HINTS.get(experience_profile, {})
         self._strategy_rotation: list[str] = (
@@ -282,6 +288,7 @@ class SalvaController:
                     "source_hints": list(query_family.source_hints),
                     "notes": list(query_family.notes),
                     "source_nodes": list(query_family.source_nodes),
+                    **self.scoring_context,
                 },
             )
 

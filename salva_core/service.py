@@ -156,6 +156,8 @@ def execute_discovery(
     # A3: seed from cross-run memory before first search round
     memory_seeds = _seed_graph_from_memory(graph, intent.domain, payload)
 
+    scoring_context = _build_stability_scoring_context(payload, intent.domain)
+
     controller = SalvaController(
         intent=intent,
         retrievers=retrievers,
@@ -166,6 +168,7 @@ def execute_discovery(
         results_per_query=min(10, max(1, payload.max_results)),
         keyword_graph=graph,
         experience_profile=experience_plan.profile,
+        scoring_context=scoring_context,
     )
     results, summary = controller.run()
 
@@ -235,6 +238,39 @@ def _build_scorer(payload: DiscoveryRequest, domain: str) -> QualificationScorer
         w_source=base.w_source,
         w_recency=base.w_recency,
     ))
+
+
+def _build_stability_scoring_context(payload: DiscoveryRequest, domain: str) -> dict[str, Any]:
+    """Opt-in stability gating: {} unless payload.stability.enabled is True.
+
+    payload.stability doesn't exist on DiscoveryRequest yet -- getattr()
+    returns None until a follow-up card adds that field and exposes it via
+    MCP/REST, at which point this starts actually running. Until then this
+    function always returns {}, matching every other caller's existing
+    behavior exactly (empty scoring_context merges into telemetry.metadata
+    as a no-op).
+
+    Computed once per discover() call here, not per round/candidate --
+    compute_stability_signals() does one domain-level DB read.
+    """
+    stability_policy = getattr(payload, "stability", None)
+    if stability_policy is None or not getattr(stability_policy, "enabled", False):
+        return {}
+
+    from salva_core.stability import compute_stability_signals
+
+    db_path = get_db_path_for_project(payload.execution.project_id)
+    signals = compute_stability_signals(
+        domain, min_history=stability_policy.min_history, path=db_path
+    )
+    if signals is None:
+        return {}
+
+    stability_score = max(0.0, 1.0 - min(1.0, signals["drift"] + signals["volatility"]))
+    return {
+        "w_stability": stability_policy.penalty_strength,
+        "stability_score": stability_score,
+    }
 
 
 def _seed_graph_from_memory(

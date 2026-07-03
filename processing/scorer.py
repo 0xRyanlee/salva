@@ -193,6 +193,15 @@ class QualificationScorer:
             + cfg.w_recency  * recency_score
         )
 
+        # Opt-in stability gating (see StabilityPolicy / w_stability docstring
+        # above). cfg.w_stability is 0.0 unless a caller explicitly enabled it
+        # via context["w_stability"] in _apply_context(), so this is a no-op
+        # for every existing caller.
+        if cfg.w_stability > 0 and isinstance(context, dict):
+            stability_score = context.get("stability_score")
+            if stability_score is not None:
+                composite += cfg.w_stability * float(stability_score)
+
         # Tag reject reasons for telemetry
         if contact_score == 0:
             result.reject_reasons.append("no_contact")
@@ -267,6 +276,13 @@ class QualificationScorer:
             adjusted.w_recency = min(0.25, adjusted.w_recency + platform_weight * 0.04)
             adjusted.w_content = min(0.40, adjusted.w_content + title_weight * 0.04)
             adjusted.w_signal = min(0.30, adjusted.w_signal + document_weight * 0.03)
+
+        # Opt-in stability gating: only a caller that explicitly sets
+        # context["w_stability"] (see StabilityPolicy.penalty_strength) can
+        # move this off its 0.0 default. Absent that, behavior is identical
+        # to before this feature existed.
+        if isinstance(context, dict) and context.get("w_stability") is not None:
+            adjusted.w_stability = float(context["w_stability"])
 
         total = (
             adjusted.w_content
