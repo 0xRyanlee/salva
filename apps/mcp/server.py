@@ -54,6 +54,7 @@ from salva_core.schemas import (
     ExecutionContext,
     MemoryPolicy,
     PilotRequest,
+    StabilityPolicy,
     TopologyProbeRequest,
 )
 from salva_core.service import run_discovery
@@ -92,6 +93,7 @@ def salva_discover(
     memory_read_scope: str = "none",
     memory_write_mode: str = "quarantine",
     persistence: str = "audit",
+    enable_stability_gating: bool = False,
 ) -> str:
     """
     Run a synchronous discovery search and return scored entities.
@@ -114,6 +116,11 @@ def salva_discover(
         domain_hints_json: Optional JSON to inject custom vocabulary. Example:
                            {"signal_terms": ["compliance", "e-signature"],
                             "source_hints": ["law360.com"]}
+        enable_stability_gating: Opt-in experimental scoring adjustment based on
+                                  domain-level historical stability (drift +
+                                  volatility of past query-family memory).
+                                  Disabled by default; needs prior history for
+                                  this domain to have any effect.
     """
     domain_hints = _parse_domain_hints(domain_hints_json)
     extra_kw = [k.strip() for k in extra_keywords.split(",") if k.strip()]
@@ -123,6 +130,7 @@ def salva_discover(
         objective=objective,
         output_profile=output_profile,
         max_results=max(1, min(20, max_results)),
+        stability=StabilityPolicy(enabled=enable_stability_gating),
         execution=ExecutionContext(
             project_id=project_id or None,
             campaign_id=campaign_id or None,

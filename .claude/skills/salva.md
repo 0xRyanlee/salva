@@ -72,7 +72,15 @@ or discover entities in a domain.
 - `entities[]` — scored entities. Check `relevance_score` (0–1) and `qualified: true`.
 - `run_id` — use for audit, result fetch, and pilot requests.
 - `meta.memory_seeds_used` — how many content terms were injected from prior runs (compounding signal).
+- `meta.retrieval_health` — `"ok"` / `"degraded"` / `"probe_failed"`; treat `"probe_failed"` results as unconfirmed, not just low-confidence.
 - Evidence chains in `salva_audit` show the source, jurisdiction, and legal availability.
+
+## Optional: stability gating
+
+`salva_discover(..., enable_stability_gating=True)` opts into an experimental scoring
+adjustment based on how stable this domain's historical query-family memory has been
+(drift + volatility). **Disabled by default**, and needs prior history for the domain
+to have any effect at all — safe to leave off for first-time or unfamiliar domains.
 
 ## Beachhead: listed company equity intelligence
 

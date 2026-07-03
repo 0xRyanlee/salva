@@ -146,6 +146,32 @@ class TestSalvaDiscover:
         with pytest.raises(ValidationError):
             server.salva_discover(market="US", industry="AI", objective="not_a_real_objective")
 
+    def test_enable_stability_gating_flag_sets_policy_on_request(self):
+        captured = {}
+
+        def fake_run_discovery(request):
+            captured["request"] = request
+            return ([], [], [], {"run_id": "run-1"})
+
+        with patch.object(server, "run_discovery", side_effect=fake_run_discovery):
+            server.salva_discover(market="US", industry="AI", enable_stability_gating=True)
+
+        assert captured["request"].stability is not None
+        assert captured["request"].stability.enabled is True
+
+    def test_stability_gating_defaults_to_disabled(self):
+        captured = {}
+
+        def fake_run_discovery(request):
+            captured["request"] = request
+            return ([], [], [], {"run_id": "run-1"})
+
+        with patch.object(server, "run_discovery", side_effect=fake_run_discovery):
+            server.salva_discover(market="US", industry="AI")
+
+        assert captured["request"].stability is not None
+        assert captured["request"].stability.enabled is False
+
 
 class TestSalvaJobCreate:
     def test_returns_job_id_with_mocked_create_job(self):

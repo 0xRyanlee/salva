@@ -268,6 +268,9 @@ class MemoryPolicy(BaseModel):
     min_success_score: float = Field(default=0.3, ge=0.0, le=1.0)
 
 
+_DEFAULT_STABILITY_METHODS: tuple[Literal["drift", "volatility"], ...] = ("drift", "volatility")
+
+
 class StabilityPolicy(BaseModel):
     """Opt-in domain-level stability gating for semantic memory scoring.
 
@@ -280,6 +283,16 @@ class StabilityPolicy(BaseModel):
     enabled: bool = False
     min_history: int = Field(default=3, ge=1)
     penalty_strength: float = Field(default=0.15, ge=0.0, le=1.0)
+    methods: list[Literal["drift", "volatility"]] = Field(
+        default_factory=lambda: list(_DEFAULT_STABILITY_METHODS),
+        description=(
+            "Reserved for future per-method selection. compute_stability_signals() "
+            "currently always computes both together -- this field is not yet read "
+            "anywhere; splitting drift/volatility into independently selectable "
+            "signals is a separate follow-up, not implemented by this field's mere "
+            "presence."
+        ),
+    )
 
 
 class CachePolicy(BaseModel):
@@ -517,6 +530,13 @@ class DiscoveryRequest(BaseModel):
     retrieval: RetrievalPolicy = Field(default_factory=RetrievalPolicy)
     enrichment: EnrichmentPolicy = Field(default_factory=EnrichmentPolicy)
     execution: ExecutionContext = Field(default_factory=ExecutionContext)
+    stability: StabilityPolicy | None = Field(
+        default=None,
+        description=(
+            "Opt-in stability gating (see StabilityPolicy). None/absent behaves "
+            "identically to StabilityPolicy(enabled=False) -- disabled by default."
+        ),
+    )
     max_results: int = Field(default=50, ge=1, le=500)
     qualify_threshold: float = Field(default=0.4, ge=0.0, le=1.0)
 
