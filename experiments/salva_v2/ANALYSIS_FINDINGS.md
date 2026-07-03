@@ -111,6 +111,15 @@ across every task shape except the pattern above:
   unrelated candidates and Salva's own telemetry flagged
   `high_noise_rate`/`needs_clarification` — the one case where Salva
   actively produced garbage rather than just nothing.
+  **2026-07-03 correction** (`salva-p35-noise-filter-audit`, see
+  [`NOISE_FILTER_AUDIT.md`](NOISE_FILTER_AUDIT.md)): re-investigated and
+  found this phrasing overstates it — `qualified_count` was 0 here too
+  (same as the other zero-contribution cases), the noisy candidates were
+  correctly rejected by the scorer (`low_signal`) and never reached the
+  final answer. `high_noise_rate` is Salva honestly flagging low
+  confidence, not evidence noise leaked through. Left the original wording
+  above unedited per this session's convention of not silently rewriting
+  prior findings.
 
 **Business outcome framing** (per the protocol's qualitative metric, not
 just P/R/F1): in every one of the 11 zero-contribution cases, the AGENT
