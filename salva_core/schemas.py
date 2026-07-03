@@ -93,6 +93,8 @@ ClarificationMode = Literal[
     "llm",
 ]
 
+RetrievalHealth = Literal["ok", "degraded", "probe_failed"]
+
 TopologyClass = Literal[
     "vertical",
     "broad",
@@ -528,6 +530,19 @@ class TopologyProbeResult(BaseModel):
     probe_queries: list[str] = Field(default_factory=list)
     notes: list[str] = Field(default_factory=list)
     error_surface: list[TopologyProbeErrorSurface] = Field(default_factory=list)
+    retrieval_health: RetrievalHealth = Field(
+        default="ok",
+        description=(
+            "'ok': live probe succeeded with a healthy result, or was not attempted "
+            "(disabled, or caller_preset already implies known topology). "
+            "'degraded': probe reached a provider but the result was weak or empty; "
+            "confidence was lowered and/or topology hard-degraded to 'unstructured'. "
+            "'probe_failed': every probe attempt errored at the connection layer -- "
+            "topology/confidence reflect the static classifier only, not a confirmed "
+            "live result. Callers should not treat probe_failed the same as a "
+            "confidently-checked low score."
+        ),
+    )
 
 
 class TopologyRoutePlan(BaseModel):
@@ -543,6 +558,7 @@ class TopologyRoutePlan(BaseModel):
     notes: list[str] = Field(default_factory=list)
     error_surface: list[TopologyProbeErrorSurface] = Field(default_factory=list)
     route_entry: RouteCatalogEntry | None = None
+    retrieval_health: RetrievalHealth = "ok"
 
 
 class TopologyProbeResponse(BaseModel):

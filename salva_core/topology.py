@@ -5,6 +5,7 @@ from typing import Any, cast
 from salva_core.routes import resolve_route_entry
 from salva_core.schemas import (
     DiscoveryRequest,
+    RetrievalHealth,
     TopologyClass,
     TopologyProbeErrorSurface,
     TopologyProbeRequest,
@@ -28,10 +29,11 @@ def probe_topology(
     )
     probe_queries = _build_probe_queries(request, topology=topology, caller_preset=caller_preset, probe_budget=probe_budget)
 
+    retrieval_health: RetrievalHealth = "ok"
     # L0-B: Adjust topology/confidence from live environment probe.
     # Skipped for caller_preset requests (preset implies caller already knows their topology).
     if probe_queries and not caller_preset:
-        topology, confidence, notes = _apply_live_probe(
+        topology, confidence, notes, retrieval_health = _apply_live_probe(
             topology, confidence, notes, probe_queries[0]
         )
 
@@ -42,6 +44,7 @@ def probe_topology(
         probe_queries=probe_queries,
         notes=notes,
         error_surface=error_surface,
+        retrieval_health=retrieval_health,
     )
 
 
@@ -80,6 +83,7 @@ def plan_route(
         notes=notes,
         error_surface=_build_error_surface(request, topology=probe_result.topology, probe_queries=probe_result.probe_queries),
         route_entry=route_entry,
+        retrieval_health=probe_result.retrieval_health,
     )
 
 
@@ -328,7 +332,7 @@ def _apply_live_probe(
     confidence: float,
     notes: list[str],
     probe_query: str,
-) -> tuple[TopologyClass, float, list[str]]:
+) -> tuple[TopologyClass, float, list[str], RetrievalHealth]:
     """Adjust topology/confidence using a live SearXNG probe (cached per TTL).
 
     Degrades gracefully: any import error or disabled SearXNG returns inputs unchanged.
@@ -338,13 +342,13 @@ def _apply_live_probe(
         from salva_core.live_probe import get_or_run_probe
         signal = get_or_run_probe(probe_query, timeout=3.0)
     except Exception:
-        return topology, confidence, notes
+        return topology, confidence, notes, "ok"
 
     if signal is None:
-        return topology, confidence, notes
+        return topology, confidence, notes, "ok"
 
     if signal.has_error:
-        return topology, confidence, [*notes, "live_probe_error"]
+        return topology, confidence, [*notes, "live_probe_error"], "probe_failed"
 
     # Write probe result back to routing_memory (authority_boost + latency).
     # Import the module (not the function) so monkeypatching in tests works correctly.
@@ -360,10 +364,11 @@ def _apply_live_probe(
             cast(TopologyClass, "unstructured"),
             0.35,
             [*notes, "live_probe_empty"],
+            "degraded",
         )
 
     if signal.result_count < 3:
         # Weak coverage — lower confidence but keep topology.
-        return topology, round(confidence * 0.75, 2), [*notes, "live_probe_degraded"]
+        return topology, round(confidence * 0.75, 2), [*notes, "live_probe_degraded"], "degraded"
 
-    return topology, confidence, [*notes, f"live_probe_ok(n={signal.result_count})"]
+    return topology, confidence, [*notes, f"live_probe_ok(n={signal.result_count})"], "ok"

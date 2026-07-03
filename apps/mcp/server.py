@@ -158,6 +158,7 @@ def salva_discover(
             "rounds": meta.get("rounds", 0),
             "domain": meta.get("domain"),
             "memory_seeds_used": meta.get("memory_seeds_used", 0),
+            "retrieval_health": meta.get("retrieval_health", "ok"),
             "execution": meta.get("execution", {}),
             "entities": [_compact_entity(e.model_dump(mode="json")) for e in entities],
             "feedback": {

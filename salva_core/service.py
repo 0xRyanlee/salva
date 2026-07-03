@@ -196,6 +196,7 @@ def execute_discovery(
         "experience_mode_switches": experience_plan.mode_switches,
         "topology":               topology_plan.topology,
         "topology_confidence":    topology_plan.confidence,
+        "retrieval_health":       topology_plan.retrieval_health,
         "recommended_route":      topology_plan.recommended_route,
         "source_pack":            topology_plan.source_pack,
         "strategy_bias":          topology_plan.strategy_bias,
