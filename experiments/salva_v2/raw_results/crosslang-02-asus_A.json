@@ -1,0 +1,13 @@
+{
+  "task_id": "crosslang-02-asus",
+  "arm": "A",
+  "reported_entities": [
+    {
+      "name": "ASUS (ASUSTeK Computer Inc.)",
+      "url": "https://en.wikipedia.org/wiki/Asus",
+      "claim": "華碩 refers to the Taiwanese multinational computer hardware and electronics company ASUS. Its full official registered English name is ASUSTeK Computer Inc. (華碩電腦股份有限公司), founded in 1989 and headquartered in Taipei, Taiwan. The brand name ASUS derives from the last four letters of 'Pegasus' from Greek mythology."
+    }
+  ],
+  "requests_used": 1,
+  "notes": "Single WebSearch query ('華碩 official English name company') was sufficient to resolve the cross-language identification. Results consistently confirmed 華碩 = ASUS / ASUSTeK Computer Inc. across Wikipedia (EN/ZH), Wikidata, and the company's own site (asus.com). No ambiguity found; well under the 5-query budget."
+}

@@ -1,0 +1,23 @@
+{
+  "task_id": "single-02-naturehike",
+  "arm": "A",
+  "reported_entities": [
+    {
+      "name": "Naturehike (official website)",
+      "url": "https://www.naturehike.com/",
+      "claim": "Primary official Naturehike website (founded 2010), sells full product catalog of camping/hiking gear."
+    },
+    {
+      "name": "Naturehike Contact Us page",
+      "url": "https://www.naturehike.com/pages/contact-us",
+      "claim": "General customer service email support@naturehike.com; office hours 8:30am-5:30pm GMT+8 Mon-Fri; contact form available."
+    },
+    {
+      "name": "Naturehike Wholesale page",
+      "url": "https://www.naturehike.com/pages/wholesale",
+      "claim": "Dedicated wholesale/bulk purchase contact page. US bulk inquiries: support@naturehike.com. International/China HQ wholesale contact: Miss Helen, helen@naturehike.com, phone 86-15990241150, address No. 55 Chuangfu Road, Xiaogang Street, Beilun District, Ningbo City, Zhejiang Province, hours Mon-Fri 5:30PM-2:30AM PST. Also lists regional official distributors (e.g. Australia: Naturexplore Outdoors; Argentina: Naka Outdoors; Poland: Skalnik; Malaysia: Sirius Outdoor/CampGuru; plus Brazil, Indonesia, Philippines, Mongolia)."
+    }
+  ],
+  "requests_used": 4,
+  "notes": "Search went smoothly; found official site plus a dedicated wholesale contact page on the first few queries, with clear overseas (Helen, helen@naturehike.com) and US (support@naturehike.com) wholesale contacts."
+}

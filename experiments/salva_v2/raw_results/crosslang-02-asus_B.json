@@ -1,0 +1,25 @@
+{
+  "task_id": "crosslang-02-asus",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "ASUS (華碩電腦股份有限公司 / ASUSTeK Computer Inc.)",
+      "url": "https://www.asus.com/tw",
+      "claim": "Official Taiwan site for ASUS, the Taiwanese multinational computer hardware and consumer electronics company. Official English name: ASUSTeK Computer Inc. (commonly referred to as ASUS)."
+    },
+    {
+      "name": "ASUS華碩官方旗艦店 (Shopee)",
+      "url": "https://shopee.tw/asus_official_store",
+      "claim": "Official ASUS storefront on Shopee Taiwan, corroborating the ASUS/華碩 identity mapping."
+    },
+    {
+      "name": "ASUS華碩 (PChome 24h)",
+      "url": "https://24h.pchome.com.tw/region/DHAF",
+      "claim": "ASUS product category page on PChome 24h, further corroborating 華碩 = ASUS."
+    }
+  ],
+  "requests_used": 1,
+  "retrieval_health": "ok",
+  "used_salva": true,
+  "notes": "Single Salva run (find_companies, market=Taiwan, industry=consumer electronics/computer hardware, extra_keywords=['華碩']) returned 4 qualified entities, all resolving unambiguously to ASUS: official asus.com/tw pages (top confidence 0.4006) plus retail marketplace listings explicitly labeled 'ASUS華碩' on PChome and 'ASUS華碩官方旗艦店' on Shopee. No WebSearch needed — Salva's cross-lingual resolution (華碩 -> ASUS) was unambiguous and consistent across all returned sources. OMLX embedding service was unavailable (connection refused, expected fallback) but retrieval_health still reported 'ok' via fallback path."
+}

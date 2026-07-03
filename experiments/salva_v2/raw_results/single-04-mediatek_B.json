@@ -1,0 +1,35 @@
+{
+  "task_id": "single-04-mediatek",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "MediaTek Inc. (聯發科技股份有限公司) — Official Website",
+      "url": "https://www.mediatek.com/",
+      "claim": "Official corporate homepage for MediaTek Inc."
+    },
+    {
+      "name": "MediaTek Investor Relations",
+      "url": "https://www.mediatek.com/investor-relations",
+      "claim": "Official Investor Relations landing page, part of mediatek.com."
+    },
+    {
+      "name": "MediaTek Investor Relations FAQ",
+      "url": "https://www.mediatek.com/investor-relations/investor-relations-faq",
+      "claim": "IR FAQ page listing stock ticker, dividend, and reporting info."
+    },
+    {
+      "name": "MediaTek Investor Relations Contact",
+      "url": "ir@mediatek.com",
+      "claim": "Investor & Analyst Relations Division contact email: ir@mediatek.com; Tel: +886 (0)3-567-0766; Contact person: Ms. Jessie Wang (Deputy Director, Investor & Analyst Relations Division), Acting Spokesperson. Company Spokesman: David Ku (CFO). Registered address for IR correspondence: 5F, No.1, Dusing Rd. 1, Hsinchu Science Park, Hsinchu, Taiwan (per annual report); alternate HQ address found: 5F, 83, Sec. 1, Chung-Ching S. Rd., Taipei, Taiwan 100, Tel: +886-2-6636-5566, Fax: +886-2-2653-9180."
+    },
+    {
+      "name": "MediaTek Contact Us (General/Corporate)",
+      "url": "https://corp.mediatek.com/about/contact-us",
+      "claim": "General corporate contact page with global office listings."
+    }
+  ],
+  "requests_used": 2,
+  "retrieval_health": "ok",
+  "used_salva": true,
+  "notes": "Salva discovery run (objective=find_companies, market=Taiwan, industry=fabless semiconductor/chip design) completed with retrieval_health=ok but qualified_count=0 — no entities returned for MediaTek specifically, so fell back to WebSearch. Two WebSearch queries used (within 3-query budget). Found conflicting HQ addresses across sources (Taipei address from one page vs Hsinchu Science Park from annual report/other pages) — MediaTek HQ is confirmed to be in Hsinchu, Taiwan; the Taipei address may be a registered/older filing address. IR email ir@mediatek.com and phone +886-3-567-0766 corroborated by search snippet from corp.mediatek.com IR news pages and annual report PDF."
+}

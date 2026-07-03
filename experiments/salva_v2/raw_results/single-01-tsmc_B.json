@@ -1,0 +1,45 @@
+{
+  "task_id": "single-01-tsmc",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "TSMC (Taiwan Semiconductor Manufacturing Company Limited / 台積電)",
+      "url": "https://www.tsmc.com/english",
+      "claim": "Official corporate website (English)."
+    },
+    {
+      "name": "TSMC Company Profile",
+      "url": "https://www.tsmc.com/english/aboutTSMC/company_profile",
+      "claim": "Company profile page on official TSMC site."
+    },
+    {
+      "name": "TSMC Contact Us page",
+      "url": "https://www.tsmc.com/english/contact-us",
+      "claim": "Official general contact page."
+    },
+    {
+      "name": "TSMC Business Contacts",
+      "url": "https://www.tsmc.com/english/aboutTSMC/business_contacts",
+      "claim": "Official business/sales contacts directory."
+    },
+    {
+      "name": "TSMC Investor Relations",
+      "url": "https://investor.tsmc.com/english",
+      "claim": "Official investor relations site."
+    },
+    {
+      "name": "TSMC Investor Relations - Contacts",
+      "url": "https://investor.tsmc.com/english/shareholder-services/contacts",
+      "claim": "Official shareholder/IR contact page listing IR email invest@tsmc.com and phone 886-2-66365566."
+    },
+    {
+      "name": "TSMC Corporate Headquarters",
+      "url": "https://www.tsmc.com/english/contact-us",
+      "claim": "Headquarters address: 8, Li-Hsin Rd. 6, Hsinchu Science Park, Hsinchu 300-096, Taiwan, R.O.C.; general phone 886-3-5636688 (per TSMC annual report contact pages)."
+    }
+  ],
+  "requests_used": 2,
+  "retrieval_health": "ok",
+  "used_salva": true,
+  "notes": "Salva returned 3 qualified entities (official site, company profile page, and a Yahoo Finance quote page as a tangential match) with confidence ~0.41 each -- useful for confirming the official domain but shallow on contact details. Supplemented with one WebSearch query to get headquarters address, general phone, and IR contact email/phone, which Salva did not surface."
+}

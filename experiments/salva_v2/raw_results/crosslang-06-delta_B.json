@@ -1,0 +1,20 @@
+{
+  "task_id": "crosslang-06-delta",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Delta Electronics, Inc.",
+      "url": "https://finance.yahoo.com/quote/2308.TW/",
+      "claim": "台達電子 refers to Delta Electronics, Inc., the Taiwan parent company, headquartered in Neihu, Taipei, founded 1971, listed on the Taiwan Stock Exchange under ticker 2308.TW. This is the correct resolution of the query term."
+    },
+    {
+      "name": "Delta Electronics (Thailand) PCL",
+      "url": "https://www.deltathailand.com/en/corporate",
+      "claim": "Separately-listed Thailand subsidiary (SET: DELTA / DELTA.BK), established 1988. Delta Electronics, Inc. (Taiwan) increased its stake via subsidiaries from 20.93% to 63.78% on 2019-04-01, making Delta Electronics (Thailand) PCL a majority-owned but independently listed subsidiary. This entity must NOT be confused with the Taiwan parent when resolving 台達電子."
+    }
+  ],
+  "requests_used": 2,
+  "retrieval_health": "ok",
+  "used_salva": true,
+  "notes": "Salva discovery tool (run_discovery, objective=find_companies, market=Taiwan, industry=power electronics, extra_keywords=['台達電子'] then also ['台達電子','Delta Electronics']) returned qualified_count: 0 both times (raw_count 9, noise_rate 1.0, avg_score 0.0983) -- it failed to resolve the Chinese query term to a qualified entity and instead surfaced unrelated memory-seed suggestions (Beam Tech Electronics, Compal, Cincon, C-Media, BXB). Salva's own feedback/pilot block flagged needs_clarification=true and high_noise_rate, effectively declining to answer. Ground truth was established via 2 WebSearch queries confirming: (1) 台達電子 = Delta Electronics, Inc., Taiwan parent, TWSE 2308; (2) Delta Electronics (Thailand) PCL is a distinct, separately-listed subsidiary (SET: DELTA) majority-owned by the Taiwan parent since 2019, not the same legal entity as 台達電子 itself."
+}

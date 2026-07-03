@@ -1,0 +1,123 @@
+{
+  "task_id": "multihop-01-cncf-founders",
+  "arm": "A",
+  "reported_entities": [
+    {
+      "name": "AT&T",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement."
+    },
+    {
+      "name": "Box",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement."
+    },
+    {
+      "name": "Cisco",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement; also confirmed on Wikipedia."
+    },
+    {
+      "name": "Cloud Foundry Foundation",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement."
+    },
+    {
+      "name": "CoreOS",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement; also confirmed on Wikipedia."
+    },
+    {
+      "name": "Cycle Computing",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement."
+    },
+    {
+      "name": "Docker",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement; also confirmed on Wikipedia."
+    },
+    {
+      "name": "eBay",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement."
+    },
+    {
+      "name": "Goldman Sachs",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement."
+    },
+    {
+      "name": "Google",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement (contributed Kubernetes as seed technology); also confirmed on Wikipedia."
+    },
+    {
+      "name": "Huawei",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement; also confirmed on Wikipedia."
+    },
+    {
+      "name": "IBM",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement; also confirmed on Wikipedia."
+    },
+    {
+      "name": "Intel",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement; also confirmed on Wikipedia."
+    },
+    {
+      "name": "Joyent",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement."
+    },
+    {
+      "name": "Kismatic",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement."
+    },
+    {
+      "name": "Mesosphere",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement; also confirmed on Wikipedia."
+    },
+    {
+      "name": "Red Hat",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement; also confirmed on Wikipedia."
+    },
+    {
+      "name": "Switch SUPERNAP",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement."
+    },
+    {
+      "name": "Twitter",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement; also confirmed on Wikipedia."
+    },
+    {
+      "name": "Univa",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement; also confirmed on Wikipedia."
+    },
+    {
+      "name": "VMware",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement; also confirmed on Wikipedia."
+    },
+    {
+      "name": "Weaveworks",
+      "url": "https://www.cncf.io/announcements/2015/06/21/new-cloud-native-computing-foundation-to-drive-alignment-among-container-technologies/",
+      "claim": "Listed as a founding member of CNCF in the June 21, 2015 official announcement."
+    },
+    {
+      "name": "RX-M",
+      "url": "https://en.wikipedia.org/wiki/Cloud_Native_Computing_Foundation",
+      "claim": "Named as a founding member of CNCF on Wikipedia's CNCF article, though not present in the June 2015 official press release fetched directly (may have joined during the founding-member window shortly after)."
+    }
+  ],
+  "requests_used": 3,
+  "notes": "Primary source: CNCF's own June 21, 2015 announcement 'New Cloud Native Computing Foundation to drive alignment among container technologies' (fetched directly), which named ~22 founding member organizations, including Google (which contributed Kubernetes as seed tech), plus infrastructure/tech vendors (Cisco, IBM, Intel, Huawei, Docker, CoreOS, Red Hat, VMware, Mesosphere, Twitter, etc.) and end-user/enterprise members (AT&T, Box, eBay, Goldman Sachs). Cross-checked against Wikipedia's CNCF article, which lists a shorter/overlapping subset (13 names) plus RX-M, not present in the fetched press release text -- included with a caveat. Note: a separate December 2015 CNCF announcement described a much longer list of ~45 'founding and early member' organizations (e.g. Apcera, Apprenda, Fujitsu, NEC, NetApp, NGINX, Rancher Labs, Sysdig, Weaveworks, etc.) -- that list represents members as of Dec 2015 rather than the original June 2015 founding announcement, so it was not used as the primary list here, though several names overlap. Used 3 of 5 allotted requests (1 WebSearch + 2 parallel WebFetch calls)."
+}

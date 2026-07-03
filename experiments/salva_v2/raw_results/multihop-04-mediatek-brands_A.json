@@ -1,0 +1,88 @@
+{
+  "task_id": "multihop-04-mediatek-brands",
+  "arm": "A",
+  "reported_entities": [
+    {
+      "name": "Samsung",
+      "url": "https://tech.news.am/eng/news/6838/qualcomm-mediatek-apple-and-samsung-how-do-the-top-smartphone-processors-of-2026-differ.html",
+      "claim": "Samsung Electronics uses MediaTek Dimensity processors in some smartphone models."
+    },
+    {
+      "name": "Xiaomi",
+      "url": "https://www.talkandroid.com/372180-mediatek-dimensity-9000-vivo-oppo-xiaomi-redmi/",
+      "claim": "Xiaomi has shipped flagship phones (e.g. Redmi K50, Xiaomi 17 Ultra with Dimensity 9500) using MediaTek Dimensity chipsets."
+    },
+    {
+      "name": "Redmi",
+      "url": "https://www.notebookcheck.net/MediaTek-launches-the-Dimensity-9000-debuting-on-the-Redmi-K50-OPPO-Find-X-and-a-Vivo-premium-phone.585864.0.html",
+      "claim": "Redmi (Xiaomi sub-brand) K50 debuted with the MediaTek Dimensity 9000 chipset; Redmi K series occasionally uses Dimensity chips."
+    },
+    {
+      "name": "Poco",
+      "url": "https://gadgets.beebom.com/mobile-list/mediatek-dimensity-phones",
+      "claim": "POCO Mobiles (Xiaomi sub-brand) has models available in India powered by MediaTek Dimensity chipsets."
+    },
+    {
+      "name": "Oppo",
+      "url": "https://www.digitaltrends.com/mobile/mediatek-dimensity-9000-oppo-honor-redmi-vivo-news/",
+      "claim": "Oppo (Find X series, Find X8 Ultra) has used MediaTek Dimensity flagship chipsets including the Dimensity 9000 and 9500."
+    },
+    {
+      "name": "Vivo",
+      "url": "https://www.talkandroid.com/372180-mediatek-dimensity-9000-vivo-oppo-xiaomi-redmi/",
+      "claim": "Vivo has released premium phones (e.g. X200 Pro) using MediaTek Dimensity 9000/9500 series chipsets."
+    },
+    {
+      "name": "iQOO",
+      "url": "https://www.91mobiles.com/hub/new-iqoo-phone-dimensity-9500-8000mah-battery-tipped/",
+      "claim": "iQOO (Vivo sub-brand) is reported to be preparing a flagship smartphone using the MediaTek Dimensity 9500 chipset."
+    },
+    {
+      "name": "Realme",
+      "url": "https://www.mediatek.com/press-room/mediatek-unveils-dimensity-9500s-and-dimensity-8500-to-propel-performance-gaming-and-efficiency-in-flagship-and-premium-smartphones",
+      "claim": "Realme's GT 8 Pro flagship uses the MediaTek Dimensity 9500 chipset."
+    },
+    {
+      "name": "Honor",
+      "url": "https://www.mediatek.com/press-room/mediatek-unveils-dimensity-9500s-and-dimensity-8500-to-propel-performance-gaming-and-efficiency-in-flagship-and-premium-smartphones",
+      "claim": "Honor's Magic 8 Pro flagship uses the MediaTek Dimensity 9500 chipset; Honor also confirmed earlier Dimensity 9000 flagships."
+    },
+    {
+      "name": "Motorola",
+      "url": "https://9to5google.com/2026/04/28/mediatek-dimensity-7450/",
+      "claim": "Motorola's Razr line (including the base Razr) uses MediaTek Dimensity chipsets such as the Dimensity 7450X."
+    },
+    {
+      "name": "Nothing",
+      "url": "https://www.mediatek.com/tek-talk-blogs/nothing-phone-2a-powered-by-mediatek-dimensity-7200-pro",
+      "claim": "Nothing Phone (2a) is powered by the MediaTek Dimensity 7200 Pro; later Nothing models used Dimensity 7300 Pro / 7350 Pro."
+    },
+    {
+      "name": "Asus",
+      "url": "https://gadgets.beebom.com/mobile-list/mediatek-dimensity-phones",
+      "claim": "ASUS Mobiles has smartphone models available in India powered by MediaTek Dimensity chipsets."
+    },
+    {
+      "name": "Tecno",
+      "url": "https://tech.news.am/eng/news/6838/qualcomm-mediatek-apple-and-samsung-how-do-the-top-smartphone-processors-of-2026-differ.html",
+      "claim": "Tecno Mobile uses MediaTek processors, including Dimensity chips, in its device lineup."
+    },
+    {
+      "name": "Infinix",
+      "url": "https://tech.news.am/eng/news/6838/qualcomm-mediatek-apple-and-samsung-how-do-the-top-smartphone-processors-of-2026-differ.html",
+      "claim": "Infinix Mobile uses MediaTek processors, including Dimensity chips, in its device lineup."
+    },
+    {
+      "name": "Itel",
+      "url": "https://tech.news.am/eng/news/6838/qualcomm-mediatek-apple-and-samsung-how-do-the-top-smartphone-processors-of-2026-differ.html",
+      "claim": "Itel Mobile uses MediaTek processors, including Dimensity chips, in its device lineup."
+    },
+    {
+      "name": "Red Magic (Nubia)",
+      "url": "https://www.mediatek.com/press-room/mediatek-unveils-dimensity-9500s-and-dimensity-8500-to-propel-performance-gaming-and-efficiency-in-flagship-and-premium-smartphones",
+      "claim": "Red Magic 11 Pro (Nubia's gaming phone sub-brand) uses the MediaTek Dimensity 9500 chipset."
+    }
+  ],
+  "requests_used": 3,
+  "notes": "Web-search-only research (WebSearch tool, 3 queries used of 5 budget; no WebFetch or Bash used). Brands compiled from MediaTek press materials and tech news aggregating Dimensity-powered device announcements. Confidence varies: Samsung, Xiaomi/Redmi/Poco, Oppo, Vivo/iQOO, Realme, Honor, Motorola, Nothing, and Red Magic/Nubia are well-documented with specific model+chipset pairings. Tecno, Infinix, Itel, and Asus are supported by more general secondary-source claims (MediaTek partner lists / regional device listings) rather than a specific confirmed flagship model+chipset citation found within the query budget."
+}

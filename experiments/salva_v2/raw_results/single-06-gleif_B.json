@@ -1,0 +1,15 @@
+{
+  "task_id": "single-06-gleif",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Global Legal Entity Identifier Foundation (GLEIF)",
+      "url": "https://www.gleif.org",
+      "claim": "GLEIF's official website; homepage at https://www.gleif.org/en. GLEIF is a supra-national, not-for-profit organization established in 2014 by the Financial Stability Board (FSB) to manage the Global LEI System, overseen by the Regulatory Oversight Committee (ROC)."
+    }
+  ],
+  "requests_used": 2,
+  "retrieval_health": "ok",
+  "used_salva": true,
+  "notes": "Salva discovery run (objective=find_companies, industry='financial standards / legal entity identification', keywords include GLEIF) returned retrieval_health=ok but qualified_count=0 -- no entities passed qualification, so Salva did not surface a usable result for this lookup. Fell back to 1 WebSearch query ('GLEIF Global Legal Entity Identifier Foundation official website'), which returned https://www.gleif.org as the top result, corroborated by multiple secondary sources (identity.org, LinkedIn, legalidentifier.com) all pointing to gleif.org as canonical."
+}

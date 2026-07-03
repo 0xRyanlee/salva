@@ -1,0 +1,13 @@
+{
+  "task_id": "crosslang-01-tsmc",
+  "arm": "A",
+  "reported_entities": [
+    {
+      "name": "Taiwan Semiconductor Manufacturing Company Limited (TSMC)",
+      "url": "https://www.tsmc.com/english",
+      "claim": "台積電 refers to Taiwan Semiconductor Manufacturing Company Limited, the Taiwan-based semiconductor foundry founded in 1987; its official English name is 'Taiwan Semiconductor Manufacturing Company Limited', commonly abbreviated as TSMC. Confirmed via company's official English site (tsmc.com/english) and English Wikipedia (en.wikipedia.org/wiki/TSMC)."
+    }
+  ],
+  "requests_used": 1,
+  "notes": "Single WebSearch query '台積電 official English name company' returned consistent results across tsmc.com/english, Wikidata, and English Wikipedia confirming the same entity and official name. No ambiguity found; did not need additional queries."
+}

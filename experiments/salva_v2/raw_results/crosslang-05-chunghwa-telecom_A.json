@@ -1,0 +1,18 @@
+{
+  "task_id": "crosslang-05-chunghwa-telecom",
+  "arm": "A",
+  "reported_entities": [
+    {
+      "name": "Chunghwa Telecom Co., Ltd.",
+      "url": "https://en.wikipedia.org/wiki/Chunghwa_Telecom",
+      "claim": "中華電信 is Chunghwa Telecom Co., Ltd., Taiwan's largest integrated telecommunications service provider (PSTN, mobile, broadband), headquartered in Zhongzheng District, Taipei, Taiwan. Listed on Taiwan Stock Exchange (2412) and NYSE (ticker CHT)."
+    },
+    {
+      "name": "China Telecom (distinct mainland China entity - explicitly NOT the answer)",
+      "url": "https://en.wikipedia.org/wiki/Chunghwa_Telecom",
+      "claim": "Wikipedia's Chunghwa Telecom article carries an explicit disambiguation note: 'Not to be confused with China Telecom.' China Telecom is a separate, unrelated mainland PRC state-owned carrier; 中華電信 (Chunghwa Telecom) operates exclusively in Taiwan and should not be conflated with it."
+    }
+  ],
+  "requests_used": 2,
+  "notes": "Cross-language resolution confirmed cleanly via 2 queries (1 WebSearch + 1 WebFetch of Wikipedia). 中華電信 unambiguously resolves to Chunghwa Telecom Co., Ltd. (Taiwan), not China Telecom (mainland China, a different company with a similar-sounding English name). Additional corroborating sources surfaced in search results: GlobalData company profile, Dun & Bradstreet profile, Yahoo Finance (CHT), Wikidata (Q717531), Chunghwa Telecom Global official site (chtglobal.com)."
+}

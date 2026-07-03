@@ -1,0 +1,30 @@
+{
+  "task_id": "single-02-naturehike",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Naturehike (official website)",
+      "url": "https://www.naturehike.com/",
+      "claim": "Primary official Naturehike website (founded 2010), full product catalog, ships to most locations."
+    },
+    {
+      "name": "Naturehike Wholesale Page",
+      "url": "https://www.naturehike.com/pages/wholesale",
+      "claim": "Official wholesale/B2B page listing bulk-purchase contacts: US bulk inquiries support@naturehike.com; China HQ international wholesale contact Miss Helen, helen@naturehike.com, tel 86-15990241150; plus regional distributor contacts (e.g. Australia - Naturexplore Outdoors, info@naturexplore.com.au, +61 416650328; Malaysia - Sirius Outdoor Sdn Bhd, enquiry@campguru.com.my; Kuwait - Seventh Dimension General Trading, sales@7d.com.kw)."
+    },
+    {
+      "name": "Ningbo Naturehike Import and Export Co., Ltd",
+      "url": "https://naturehike.en.alibaba.com/",
+      "claim": "Manufacturer/parent company entity behind Naturehike brand, based at No. 55 Chuangfu Road, Xiaogang Street, Beilun District, Ningbo City, Zhejiang Province, China; also has Alibaba wholesale storefront."
+    },
+    {
+      "name": "Naturehike Contact Us page",
+      "url": "https://www.naturehike.com/pages/contact-us",
+      "claim": "General customer/contact page (non-wholesale specific) on the official site."
+    }
+  ],
+  "requests_used": 4,
+  "retrieval_health": "ok",
+  "used_salva": true,
+  "notes": "Salva returned qualified_count 0 (no usable entities) for this query, so it added no value here. WebSearch (2 queries) plus one WebFetch on the official wholesale page fully answered the question directly from Naturehike's own site, including named contact (Miss Helen) and regional distributor emails/phones."
+}

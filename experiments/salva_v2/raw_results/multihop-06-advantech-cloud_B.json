@@ -1,0 +1,30 @@
+{
+  "task_id": "multihop-06-advantech-cloud",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Microsoft Azure",
+      "url": "https://www.advantech.com/en-us/resources/industry-focus/high-performance-compute--azure-iot-edge-advance-the-iiot",
+      "claim": "Advantech is a Microsoft Global Cloud Solution Provider and Gold Cloud Platform Partner; Azure is described as Advantech's main IaaS/PaaS partner. Products include WISE-DeviceOn integration with Azure and Azure IoT Edge hardware packages. Also confirmed by Microsoft's connectivity partner ecosystem announcement at Hannover Messe (with Softing and PTC Kepware) at https://techcommunity.microsoft.com/blog/iotblog/partners-accelerating-industrial-transformation-with-azure-iot-operations/4284126 and WISE-PaaS/IoTSuite listed on Azure Marketplace at https://azuremarketplace.microsoft.com/en-us/marketplace/apps/advantech.wise-pass_iotsuite_on_windows?tab=overview"
+    },
+    {
+      "name": "Amazon Web Services (AWS)",
+      "url": "https://www.advantech.com/en/resources/news/advantech-aws-to-offer-combined-benefits-of-leading-edge-iiot-technologies",
+      "claim": "Advantech and AWS collaborate to offer combined benefits of leading-edge IIoT technologies; pre-integration of Advantech's WISE-EdgeLink technology with the AWS IoT Greengrass service to connect OT devices in manufacturing facilities and accelerate PoC/PoV projects."
+    },
+    {
+      "name": "Alibaba Cloud",
+      "url": "https://www.advantech.com/en-eu/resources/industry-focus/advantech-wise-deviceon-and-microsoft-azure-improve-enterprise-iot-",
+      "claim": "Advantech's WISE-DeviceOn and EnSaaS cross-cloud management integrate with Alibaba Cloud alongside Azure and AWS, supporting cross-cloud management and target market localization (notably for China market)."
+    },
+    {
+      "name": "Google Cloud Platform (GCP)",
+      "url": "https://advantechfiles.blob.core.windows.net/cms/19a4a6e0-54f0-45fd-8a0f-d86e5a465f41/Whitepaper%20%20PDF%20File/WISE-PaaS_IIoT_Cloud_Platform(EN)-V140.pdf",
+      "claim": "Advantech's WISE-PaaS IIoT Cloud Platform documentation states the platform supports multiple cloud infrastructures including Amazon Web Services, Azure, Google Cloud Platform, and OpenStack (private cloud)."
+    }
+  ],
+  "requests_used": 2,
+  "retrieval_health": "ok",
+  "used_salva": true,
+  "notes": "Salva discovery run (objective=find_partnership_signals, industry='industrial IoT', keywords incl. Advantech/IIoT/cloud partnership/Azure/AWS) returned retrieval_health=ok but qualified_count=0 -- no entities passed qualification, so Salva alone yielded no usable results for this task. Findings above are from 2 WebSearch queries confirming Advantech's documented IIoT cloud partnerships. Microsoft Azure and AWS are the two partnerships with explicit dedicated press releases / partner-program status (Gold Cloud Platform Partner for Azure; named AWS collaboration on WISE-EdgeLink + AWS IoT Greengrass). Alibaba Cloud and Google Cloud Platform appear as supported/integrated cloud targets in Advantech's own product documentation (WISE-DeviceOn, EnSaaS, WISE-PaaS whitepaper) but with less explicit 'partnership' press coverage than Azure/AWS -- flagged as lower confidence than the top two."
+}

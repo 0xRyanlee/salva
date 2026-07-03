@@ -1,0 +1,95 @@
+{
+  "task_id": "multihop-04-mediatek-brands",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Xiaomi",
+      "url": "https://www.91mobiles.com/list-of-phones/mediatek-dimensity-5g-series-phones",
+      "claim": "Xiaomi confirmed to use MediaTek Dimensity chipsets across various product lines, including flagship models."
+    },
+    {
+      "name": "Redmi",
+      "url": "https://gadgets.beebom.com/mobile-list/mediatek-dimensity-phones",
+      "claim": "Redmi (Xiaomi sub-brand) ships Dimensity-powered devices, e.g. Redmi Note 13 Pro+ using MediaTek Dimensity 7200-Ultra."
+    },
+    {
+      "name": "POCO",
+      "url": "https://gadgets.beebom.com/mobile-list/mediatek-dimensity-phones",
+      "claim": "POCO (Xiaomi sub-brand) has released MediaTek Dimensity devices, e.g. Poco X6 Pro using Dimensity 8300-Ultra."
+    },
+    {
+      "name": "Vivo",
+      "url": "https://www.91mobiles.com/list-of-phones/mediatek-dimensity-5g-series-phones",
+      "claim": "Vivo confirmed to use MediaTek Dimensity chipset, particularly for flagship models."
+    },
+    {
+      "name": "iQOO",
+      "url": "https://www.smartprix.com/mobiles/mediatek-cpu_mfr",
+      "claim": "iQOO (Vivo sub-brand) offers phones with MediaTek Dimensity chipsets onboard."
+    },
+    {
+      "name": "Oppo",
+      "url": "https://www.91mobiles.com/list-of-phones/mediatek-dimensity-5g-series-phones",
+      "claim": "Oppo confirmed to use MediaTek Dimensity chipset, particularly for flagship models; also noted as a global brand choosing Dimensity chips."
+    },
+    {
+      "name": "Realme",
+      "url": "https://i.mediatek.com/mediatek-5g",
+      "claim": "Realme listed among global brands for which MediaTek Dimensity chips are the choice."
+    },
+    {
+      "name": "OnePlus",
+      "url": "https://techarc.net/in-just-5-years-mediatek-has-convinced-smartphone-oems-to-use-dimensity-for-the-flagships/",
+      "claim": "OnePlus confirmed to use Dimensity chipset for flagship models; OnePlus Nord 2 (2021) used Dimensity 1200, marking MediaTek's entry into the brand."
+    },
+    {
+      "name": "Samsung",
+      "url": "https://i.mediatek.com/mediatek-5g",
+      "claim": "Samsung listed among global brands for which MediaTek Dimensity chips are the choice, for some models sold in certain regions."
+    },
+    {
+      "name": "Motorola",
+      "url": "https://gadgets.beebom.com/mobile-list/mediatek-dimensity-phones",
+      "claim": "Motorola among brands confirmed using MediaTek Dimensity processors."
+    },
+    {
+      "name": "Nokia",
+      "url": "https://i.mediatek.com/mediatek-5g",
+      "claim": "Nokia listed among global brands for which MediaTek Dimensity chips are the choice."
+    },
+    {
+      "name": "Huawei",
+      "url": "https://www.91mobiles.com/list-of-phones/mediatek-dimensity-5g-series-phones",
+      "claim": "Huawei confirmed to use the Dimensity chipset, particularly for flagship models."
+    },
+    {
+      "name": "LG",
+      "url": "https://i.mediatek.com/mediatek-5g",
+      "claim": "LG listed among global brands for which MediaTek Dimensity chips are the choice."
+    },
+    {
+      "name": "Honor",
+      "url": "https://gadgets.beebom.com/mobile-list/mediatek-dimensity-phones",
+      "claim": "Honor has released phones with MediaTek Dimensity processors."
+    },
+    {
+      "name": "Tecno",
+      "url": "https://www.wonderfulpcb.com/blog/common-smartphone-chips-used-by-mainstream-manufacturers/",
+      "claim": "Tecno uses MediaTek processors in upper-midrange and performance-focused devices, including Dimensity models."
+    },
+    {
+      "name": "Infinix",
+      "url": "https://gadgets.beebom.com/mobile-list/mediatek-dimensity-phones",
+      "claim": "Infinix has released phones with MediaTek Dimensity processors."
+    },
+    {
+      "name": "Asus",
+      "url": "https://gadgets.beebom.com/mobile-list/mediatek-dimensity-phones",
+      "claim": "Asus has released phones with MediaTek Dimensity processors."
+    }
+  ],
+  "requests_used": 3,
+  "retrieval_health": "ok",
+  "used_salva": true,
+  "notes": "Salva discovery run (objective=find_partnership_signals, industry=smartphone/mobile devices, product=chipset, keywords incl. 'MediaTek Dimensity') completed with retrieval_health=ok but qualified_count=0 — all 5 raw candidates across 2 rounds were filtered out as low_signal/untrusted_source (noise domains: en.wikipedia.org, www.intel.com, www.amd.com, www.mediatek.com, www.hp.com); no entities survived qualification. Fell back to 2 WebSearch queries to identify brands. Findings aggregate across multiple secondary sources (91mobiles, Beebom, MediaTek's own i.mediatek.com/mediatek-5g page, Techarc, WonderfulPCB) rather than a single authoritative MediaTek partner list page; MediaTek does not appear to publish one consolidated official partner roster. Note some entries are sub-brands of a parent (Redmi/POCO under Xiaomi; iQOO under Vivo) — listed separately since sources treat them as distinct device brands."
+}

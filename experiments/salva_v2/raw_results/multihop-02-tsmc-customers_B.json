@@ -1,0 +1,65 @@
+{
+  "task_id": "multihop-02-tsmc-customers",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Apple",
+      "url": "https://x.com/rohanpaul_ai/status/2001293647543935322",
+      "claim": "TSMC's largest named customer; Morgan Stanley projects Apple at ~16-25% of TSMC 2026 revenue mix; long-term capacity reservations at leading nodes."
+    },
+    {
+      "name": "Nvidia",
+      "url": "https://x.com/rohanpaul_ai/status/2001293647543935322",
+      "claim": "Projected single biggest named customer at ~20% of TSMC 2026 revenue (Morgan Stanley); one of the first N2 (2nm) customers."
+    },
+    {
+      "name": "Broadcom",
+      "url": "https://x.com/rohanpaul_ai/status/2001293647543935322",
+      "claim": "~11-15% of TSMC 2026 revenue mix; rapidly emerging, could overtake Nvidia as TSMC's second-largest client; pursuing custom AI ASICs fabbed at TSMC."
+    },
+    {
+      "name": "Advanced Micro Devices (AMD)",
+      "url": "https://x.com/rohanpaul_ai/status/2001293647543935322",
+      "claim": "~7-8% of TSMC 2026 revenue mix; among first N2 (2nm) customers; AMD's Venice processor (2026 launch) built on TSMC 2nm."
+    },
+    {
+      "name": "MediaTek",
+      "url": "https://www.techpowerup.com/341044/tsmcs-first-2-nm-node-customers-are-apple-amd-nvidia-and-mediatek-intel-missing",
+      "claim": "~9-10% of TSMC 2026 revenue mix; among first N2 (2nm) node customers."
+    },
+    {
+      "name": "Qualcomm",
+      "url": "https://www.smbom.com/news/45740",
+      "claim": "~8% of TSMC 2026 revenue mix; among initial N2 (2nm) customers alongside Nvidia, Apple, AMD."
+    },
+    {
+      "name": "Intel",
+      "url": "https://www.smbom.com/news/45740",
+      "claim": "~7% of TSMC 2026 revenue mix per analyst estimates; despite being a foundry rival, Intel outsources some products to TSMC."
+    },
+    {
+      "name": "Marvell Technology",
+      "url": "https://www.trendforce.com/news/2025/09/22/news-tsmc-2nm-customer-surge-15-clients-reportedly-secured-10-in-hpc/",
+      "claim": "Introduced first 2nm silicon IP for next-gen AI/cloud infrastructure on TSMC's N2 node; part of TSMC's ~15 confirmed N2 clients."
+    },
+    {
+      "name": "Amazon (AWS)",
+      "url": "https://www.tomshardware.com/tech-industry/semiconductors/custom-ai-asics-examined-from-broadcom-to-mtia",
+      "claim": "AWS custom AI/ASIC chips (e.g., Trainium/Graviton family) fabbed at TSMC; expected to take significant share of TSMC N2 production for next-gen ASIC architectures."
+    },
+    {
+      "name": "Google",
+      "url": "https://www.tomshardware.com/tech-industry/semiconductors/custom-ai-asics-examined-from-broadcom-to-mtia",
+      "claim": "Google's TPU line (e.g., 6th-gen Trillium) manufactured on TSMC processes; pursuing custom AI chips on TSMC's advanced nodes including N2."
+    },
+    {
+      "name": "Microsoft",
+      "url": "https://www.trendforce.com/news/2025/09/22/news-tsmc-2nm-customer-surge-15-clients-reportedly-secured-10-in-hpc/",
+      "claim": "Listed among hyperscalers (alongside Amazon, Google) as initial TSMC 2nm (N2) customers for custom silicon."
+    }
+  ],
+  "requests_used": 2,
+  "retrieval_health": "ok",
+  "used_salva": true,
+  "notes": "Salva discovery run completed with retrieval_health=ok but qualified_count=0 (no entities passed qualification filters for this objective/intent combo), so no Salva-sourced entities were available to report. Supplemented entirely via 2 WebSearch queries covering TSMC's disclosed revenue-mix customer breakdown (Apple/Nvidia/Broadcom/MediaTek/Qualcomm/AMD/Intel) and its N2 (2nm) node customer list (adds Marvell, Amazon/AWS, Google, Microsoft as hyperscaler/ASIC customers). All entries are well-documented via analyst estimates (Morgan Stanley via SEC filings context), TrendForce, and Tom's Hardware reporting."
+}

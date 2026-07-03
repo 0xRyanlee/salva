@@ -1,0 +1,28 @@
+{
+  "task_id": "single-04-mediatek",
+  "arm": "A",
+  "reported_entities": [
+    {
+      "name": "MediaTek Inc. (聯發科技) - Official Website",
+      "url": "https://www.mediatek.com/",
+      "claim": "MediaTek's official corporate homepage."
+    },
+    {
+      "name": "MediaTek Investor Relations page",
+      "url": "https://www.mediatek.com/investor-relations",
+      "claim": "MediaTek's official investor relations section, providing financial reports, IR events, and shareholder services."
+    },
+    {
+      "name": "MediaTek Investor Relations Contact - Jessie Wang, Manager (Deputy Spokesman for IR)",
+      "url": "https://irplatform.tdcc.com.tw/ir/en/contact/detail/A6A2DD3D-1ED5-4A4C-AE8C-95401FA78686",
+      "claim": "Named IR contact: Jessie Wang, Manager/Deputy Spokesman. Email: ir@mediatek.com. Phone: 03-5670766. Headquarters: No.1, Dusing 1st Rd., Hsinchu Science Park, Hsinchu City 300, Taiwan, R.O.C."
+    },
+    {
+      "name": "MediaTek Transfer Agent - CTBC Bank Corporate Trust Operation and Service Department",
+      "url": "https://ecorp.ctbcbank.com/cts/en/index.jsp",
+      "claim": "Shareholder services/transfer agent contact. Address: 5F, 83, Sec. 1, Chung-Ching S. Rd., Taipei, Taiwan 100, R.O.C. Tel: +886-2-6636-5566. Fax: +886-2-2653-9180."
+    }
+  ],
+  "requests_used": 5,
+  "notes": "Official site confirmed at mediatek.com. IR-specific contact (email ir@mediatek.com, named contact Jessie Wang, phone 03-5670766) sourced from third-party TDCC IR Platform aggregator, not directly visible on mediatek.com/investor-relations page itself (that page lists transfer agent contact instead, no named IR person or direct email). Used 3 WebSearch + 2 WebFetch calls, within 5-query budget."
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "crosslang-06-delta",
+  "arm": "A",
+  "reported_entities": [
+    {
+      "name": "Delta Electronics, Inc.",
+      "url": "https://en.wikipedia.org/wiki/Delta_Electronics",
+      "claim": "台達電子 refers to Delta Electronics, Inc., the Taiwan parent company headquartered in Taipei, founded 1971, listed on the Taiwan Stock Exchange (TWSE: 2308). This is the primary/official English name for the queried Chinese term."
+    },
+    {
+      "name": "Delta Electronics (Thailand) Public Company Limited",
+      "url": "https://www.deltathailand.com/en/",
+      "claim": "A separately-listed subsidiary of the Taiwan parent, publicly traded on the Stock Exchange of Thailand (SET: DELTA / Bloomberg DELTA:TB). Distinct legal entity from the Taiwan parent company (Delta Electronics, Inc.) and should not be conflated with it when resolving 台達電子."
+    }
+  ],
+  "requests_used": 2,
+  "notes": "台達電子 (or 台達電) unambiguously resolves to Delta Electronics, Inc., the Taiwan-headquartered parent company (TWSE: 2308), official Chinese registered name 台達電子工業股份有限公司. Delta Electronics (Thailand) PCL is a separate, independently SET-listed subsidiary entity and is NOT the correct referent for a bare '台達電子' query -- it would only be the intended target if the query specifically mentioned Thailand or a Thai stock ticker. Confirmed via 2 WebSearch queries; did not need WebFetch as search snippets were sufficient and consistent across Wikipedia, official deltaww.com, and Thai SET/Bloomberg sources."
+}

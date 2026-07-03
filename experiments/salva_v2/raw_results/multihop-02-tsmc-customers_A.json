@@ -1,0 +1,78 @@
+{
+  "task_id": "multihop-02-tsmc-customers",
+  "arm": "A",
+  "reported_entities": [
+    {
+      "name": "Apple",
+      "url": "https://www.smbom.com/news/45740",
+      "claim": "Apple is TSMC's largest customer, projected at 22-25% of 2026 revenue share; historically ~23% of TSMC revenue; over 50% of early 2nm allocation for 2026-2027."
+    },
+    {
+      "name": "NVIDIA",
+      "url": "https://app.dealroom.co/news/note/nvidia-overtakes-apple-at-the-top-of-tsmc-s-customer-list",
+      "claim": "NVIDIA is a top TSMC customer (~11% of 2026 projected revenue share); H100 built on TSMC's N4 node; reserved 2nm capacity; has at times overtaken Apple as top customer by revenue."
+    },
+    {
+      "name": "Broadcom",
+      "url": "https://exploresemis.substack.com/p/tsmcs-top-10203040-customers-who",
+      "claim": "Broadcom sources 75% of its wafers from TSMC for wireless, networking, broadband and storage products; projected 11-15% of TSMC's 2026 revenue and could become TSMC's second-largest client."
+    },
+    {
+      "name": "MediaTek",
+      "url": "https://www.techpowerup.com/341044/tsmcs-first-2-nm-node-customers-are-apple-amd-nvidia-and-mediatek-intel-missing",
+      "claim": "MediaTek is among the first customers for TSMC's 2nm node; projected 9-10% of TSMC's 2026 revenue share."
+    },
+    {
+      "name": "Qualcomm",
+      "url": "https://exploresemis.substack.com/p/tsmcs-top-10203040-customers-who",
+      "claim": "Qualcomm became one of TSMC's largest customers, driven by N6/N5/N4-based chips and automotive/IoT exposure; projected ~8% of TSMC's 2026 revenue; reserved 2nm capacity."
+    },
+    {
+      "name": "AMD",
+      "url": "https://www.techpowerup.com/341044/tsmcs-first-2-nm-node-customers-are-apple-amd-nvidia-and-mediatek-intel-missing",
+      "claim": "AMD is among the first customers for TSMC's 2nm node; projected ~7% of TSMC's 2026 revenue share; reserved 2nm capacity."
+    },
+    {
+      "name": "Intel",
+      "url": "https://exploresemis.substack.com/p/tsmcs-top-10203040-customers-who",
+      "claim": "Intel is listed among TSMC's top-10 customers by revenue, outsourcing some chip production to TSMC; projected ~7% of TSMC's 2026 revenue share (though absent from initial 2nm customer list)."
+    },
+    {
+      "name": "Marvell",
+      "url": "https://exploresemis.substack.com/p/tsmcs-top-10203040-customers-who",
+      "claim": "Marvell is listed among TSMC's top-10 customers by revenue."
+    },
+    {
+      "name": "NXP Semiconductors",
+      "url": "https://exploresemis.substack.com/p/tsmcs-top-10203040-customers-who",
+      "claim": "NXP is listed among TSMC's top-10 customers by revenue."
+    },
+    {
+      "name": "Unisoc",
+      "url": "https://exploresemis.substack.com/p/tsmcs-top-10203040-customers-who",
+      "claim": "Unisoc is listed among TSMC's top-10 customers by revenue."
+    },
+    {
+      "name": "Google",
+      "url": "https://www.tomshardware.com/tech-industry/semiconductors/google-switches-from-samsung-to-tsmc-pixel-10-and-g5-use-tsmcs-n3p-process",
+      "claim": "Google's Tensor G5 chip (Pixel 10) is manufactured by TSMC on N3P process, marking Google's switch from Samsung to TSMC as its fully custom SoC fab partner."
+    },
+    {
+      "name": "Amazon (AWS)",
+      "url": "https://english.cw.com.tw/article/article.action?id=4491",
+      "claim": "Amazon's AWS Trainium AI chips are produced using TSMC's 3nm process and CoWoS advanced packaging; AWS CoWoS wafer usage expected to rise from 5,000 (2025) to 70,000 wafers in 2026."
+    },
+    {
+      "name": "Tesla",
+      "url": "https://www.klover.ai/tsmc-ai-fabricating-dominance-chip-manufacturing-leadership-ai-era/",
+      "claim": "Tesla is using TSMC's N3P process variant for its next-generation HW5 Full-Self-Driving (FSD) chip."
+    },
+    {
+      "name": "Sony",
+      "url": "https://www.klover.ai/tsmc-ai-fabricating-dominance-chip-manufacturing-leadership-ai-era/",
+      "claim": "Sony is a TSMC customer/partner, notably co-investing in TSMC's Kumamoto, Japan fab (JASM joint venture) alongside Denso."
+    }
+  ],
+  "requests_used": 3,
+  "notes": "Used 3 WebSearch queries (within 5-query budget) via bare web search, no Bash. Companies compiled from multiple corroborating sources: TSMC's disclosed top-10 customer list (Apple, Qualcomm, AMD, Broadcom, NVIDIA, MediaTek, Intel, Marvell, NXP, Unisoc) plus well-documented named customers for specific process nodes/products (Google Tensor G5 on N3P, Amazon AWS Trainium on N3/CoWoS, Tesla HW5 on N3P, Sony via JASM Kumamoto JV). Apple, NVIDIA, Broadcom, MediaTek, Qualcomm, AMD, and Intel are the most heavily documented by revenue share; Google/Amazon/Tesla/Sony are documented via specific chip/fab partnership reporting rather than revenue-share breakdowns."
+}

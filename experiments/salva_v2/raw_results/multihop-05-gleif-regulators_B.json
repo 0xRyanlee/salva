@@ -1,0 +1,170 @@
+{
+  "task_id": "multihop-05-gleif-regulators",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Financial Stability Board (FSB)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "FSB was the primary driver of the LEI initiative following the 2008 financial crisis and recommended creation of the Global LEI System to the G20; GLEIF was established to carry out the FSB/G20 mandate."
+    },
+    {
+      "name": "G20",
+      "url": "https://www.gleif.org/en/about/this-is-gleif",
+      "claim": "The G20 endorsed the FSB's recommendation to create a global LEI system, giving the initiative its top-level political mandate."
+    },
+    {
+      "name": "Regulatory Oversight Committee (LEI ROC)",
+      "url": "https://www.leiroc.org/",
+      "claim": "A group of 65+ financial markets regulators and public authorities from 50+ countries, established January 2013, that coordinates and oversees the Global LEI System (GLEIS); formalized its relationship with GLEIF via a 2015 Memorandum of Understanding covering governance principles of the Global LEI System."
+    },
+    {
+      "name": "International Organization for Standardization (ISO)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "The LEI code format and issuance must conform to ISO Standard 17442, making ISO the standards body underpinning the LEI's technical specification."
+    },
+    {
+      "name": "International Organization of Securities Commissions (IOSCO)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "IOSCO has issued recommendations (e.g., for voluntary carbon markets) referencing LEI use for entity identification."
+    },
+    {
+      "name": "Basel Committee on Banking Supervision (BCBS)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "BCBS references LEI in sound risk management guidelines for banks."
+    },
+    {
+      "name": "Bank for International Settlements (BIS)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "BIS incorporates LEI into its cross-border payments roadmap."
+    },
+    {
+      "name": "Committee on Payments and Market Infrastructures (CPMI)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "CPMI references LEI in correspondent banking standards."
+    },
+    {
+      "name": "European Securities and Markets Authority (ESMA)",
+      "url": "https://www.esma.europa.eu/sites/default/files/library/esma74-362-388_lei_statement_sftr.pdf",
+      "claim": "ESMA mandates LEI for identification of legal entities in EU derivative contract reporting (EMIR/MiFIR) and securities financing transaction reporting (SFTR); has issued multiple statements on LEI implementation requirements."
+    },
+    {
+      "name": "European Banking Authority (EBA)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "EBA references LEI in supervisory standards and AML/CFT framework."
+    },
+    {
+      "name": "European Central Bank (ECB)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "ECB references LEI in monetary policy operations and payment systems oversight."
+    },
+    {
+      "name": "European Systemic Risk Board (ESRB)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "ESRB recommends LEI use for systemic risk monitoring."
+    },
+    {
+      "name": "U.S. Securities and Exchange Commission (SEC)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "SEC requires LEIs under multiple rules (17 CFR Parts 229, 230, 232, 239, 240, 249, 270, 274, 275) for various reporting and filing requirements."
+    },
+    {
+      "name": "Commodity Futures Trading Commission (CFTC)",
+      "url": "https://rapidlei.com/lei-regulations/cftc/",
+      "claim": "CFTC codified LEI requirement in 17 CFR Part 45 (Swap Data Recordkeeping and Reporting Requirements) implementing Dodd-Frank; counterparties to swaps must obtain an LEI before reporting swap data."
+    },
+    {
+      "name": "Consumer Financial Protection Bureau (CFPB)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "CFPB references LEI for a nonbank entity registry and certain lending rules."
+    },
+    {
+      "name": "Federal Reserve",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "Federal Reserve references LEI in organizational structure and foreign banking organization reports."
+    },
+    {
+      "name": "Bank of England",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "Bank of England mandates LEI as part of ISO 20022 payment data requirements."
+    },
+    {
+      "name": "Financial Conduct Authority (FCA, UK)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "FCA is listed among UK regulators with LEI-related reporting requirements."
+    },
+    {
+      "name": "Prudential Regulation Authority (PRA, UK)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "PRA is listed among UK regulators with LEI-related reporting requirements."
+    },
+    {
+      "name": "People's Bank of China (PBOC)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "PBOC references LEI in credit rating and cross-border payment systems."
+    },
+    {
+      "name": "Reserve Bank of India (RBI)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "RBI requires LEI for large borrower reporting and foreign portfolio investor (FPI) identification."
+    },
+    {
+      "name": "Securities and Exchange Board of India (SEBI)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "SEBI requires LEI for issuers of listed securities."
+    },
+    {
+      "name": "Hong Kong Monetary Authority (HKMA)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "HKMA requires LEI for OTC derivative transaction reporting."
+    },
+    {
+      "name": "Bank of Thailand",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "Bank of Thailand requires LEI as part of its bond investor registration scheme."
+    },
+    {
+      "name": "Central Securities Depository of Turkey",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "Requires LEI for ISIN-to-LEI linkage in the Turkish market."
+    },
+    {
+      "name": "Ontario Securities Commission (Canada)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "Requires LEI for derivatives/securities reporting entities in Ontario."
+    },
+    {
+      "name": "British Columbia Securities Commission (Canada)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "Requires LEI for derivatives/securities reporting entities in British Columbia."
+    },
+    {
+      "name": "Australian Securities and Investments Commission (ASIC)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "Requires LEI for derivatives transaction reporting in Australia."
+    },
+    {
+      "name": "Australian Prudential Regulation Authority (APRA)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "References LEI in prudential reporting requirements."
+    },
+    {
+      "name": "South African Financial Sector Conduct Authority (FSCA)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "Requires LEI in South African financial sector conduct regulation."
+    },
+    {
+      "name": "Financial Services Agency of Japan (FSA)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "Requires LEI for OTC derivatives reporting in Japan."
+    },
+    {
+      "name": "Financial Regulatory Innovation Committee (South Korea)",
+      "url": "https://www.gleif.org/en/lei-solutions/regulatory-use-of-the-lei",
+      "claim": "Requires LEI for foreign investor registration in South Korea."
+    }
+  ],
+  "requests_used": 5,
+  "retrieval_health": "ok",
+  "used_salva": true,
+  "notes": "Salva discovery run returned only 2 low-confidence entities (both GLEIF's own site pages, confidence ~0.41), effectively no useful signal on third-party regulator relationships -- expected given OMLX embedding fallback failure and the tool's general partnership-signal focus rather than regulatory-citation focus. Supplemented with 2 WebSearch queries (LEI ROC membership; SEC/CFTC/ESMA mandates) and 2 WebFetch calls against gleif.org's 'regulatory-use-of-the-lei' page and the ROC governance page, which is why WebFetch appears alongside the permitted 3 WebSearch queries. The ROC (leiroc.org) is GLEIF's most direct/formal regulatory counterpart via a 2015 MOU; FSB and G20 are the originating political mandate; ISO 17442 is the underlying technical standard; the remaining orgs (SEC, CFTC, ESMA, EBA, ECB, ESRB, BCBS, BIS, CPMI, IOSCO, and numerous national regulators) have documented LEI mandates/citations per GLEIF's own regulatory-use page but were not independently cross-verified beyond that single source plus targeted confirmation for SEC/CFTC/ESMA."
+}

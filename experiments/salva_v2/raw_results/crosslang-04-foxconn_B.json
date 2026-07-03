@@ -1,0 +1,15 @@
+{
+  "task_id": "crosslang-04-foxconn",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Hon Hai Precision Industry Co., Ltd. (Hon Hai Technology Group; internationally known as Foxconn Technology Group / Foxconn)",
+      "url": "https://www.honhai.com/zh-tw",
+      "claim": "鴻海 resolves to Hon Hai Precision Industry Co., Ltd., the Taiwanese electronics manufacturing services (EMS) conglomerate headquartered in New Taipei City, publicly traded on TWSE as 2317.TW. Its official English trading/brand name used globally is Foxconn (Foxconn Technology Group)."
+    }
+  ],
+  "requests_used": 1,
+  "retrieval_health": "ok",
+  "used_salva": true,
+  "notes": "Salva discovery run (objective=find_companies, market=Taiwan, industry=electronics manufacturing services, extra_keywords=['鴻海']) returned qualified_count=4, retrieval_health=ok, confidence=0.4006 for all entities. Top-ranked entity was the official Hon Hai Technology Group homepage (honhai.com/zh-tw and honhai.com.tw), plus a Yahoo Taiwan stock quote for ticker 2317.TW (鴻海) and a TVBS news article about the stock. All results consistently point to the same real-world company: Hon Hai Precision Industry Co., Ltd., globally branded as Foxconn. No WebSearch queries were needed given the clear, consistent Salva output and well-established public knowledge of this company. OMLX embedding calls failed with connection-refused (expected local-service fallback warning per task instructions) but did not block retrieval."
+}

@@ -1,0 +1,60 @@
+{
+  "task_id": "multihop-03-naturehike-dach",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "naturehike.de",
+      "url": "https://www.naturehike.de/",
+      "claim": "German-language Naturehike webshop; ships packages from the Netherlands. Not confirmed via press release whether this is Naturehike's own DTC storefront or a licensed distributor's site -- no 'authorized distributor' statement found."
+    },
+    {
+      "name": "naturehike-shop.com/de",
+      "url": "https://naturehike-shop.com/de/",
+      "claim": "Another German-language Naturehike storefront ('Hochwertige Outdoor-Ausrüstung zu Fabrikpreisen'). Appears to be a direct/factory-outlet style site rather than a documented independent distributor; no corporate partnership announcement found."
+    },
+    {
+      "name": "ARTS-Outdoors",
+      "url": "https://www.arts-outdoors.de/naturehike",
+      "claim": "German multi-brand outdoor retailer carrying a Naturehike product range (camping accessories, trekking equipment). Retail listing only -- no evidence of an exclusive or official distributor designation."
+    },
+    {
+      "name": "Amazon.de Naturehike storefront",
+      "url": "https://www.amazon.de/stores/Naturehike/page/DC7332B8-2F5C-423E-8BEB-A50111EB2904",
+      "claim": "Naturehike-branded storefront on Amazon Germany. Marketplace presence, not a named distributor company."
+    },
+    {
+      "name": "Naturehike Germany Store (eBay.de)",
+      "url": "https://www.ebay.de/str/naturehikegermanystore",
+      "claim": "eBay Germany shop selling Naturehike products (100% positive feedback, ~3,950 items sold). Marketplace seller account, identity/legal entity behind it not disclosed."
+    },
+    {
+      "name": "Overland Outfitters (Kemptthal, Switzerland)",
+      "url": "https://www.overlandoutfitters.ch/marken-shop/naturehike",
+      "claim": "Swiss retailer with a dedicated physical/online 'Naturehike shop' section, suggesting a closer brand-shop retail relationship, but no confirmed exclusive-distributor status found."
+    },
+    {
+      "name": "weshop.ch / reiseartikel-shop.ch",
+      "url": "https://www.reiseartikel-shop.ch/naturehike/",
+      "claim": "Describes itself as a primary Swiss address for Naturehike camping equipment. Retail claim only, unverified as an official distributor."
+    },
+    {
+      "name": "Camperreich",
+      "url": "https://www.camperreich.ch/en/collections/naturehike-all",
+      "claim": "Swiss outdoor/camping retailer carrying a Naturehike product collection. Ordinary retail listing."
+    },
+    {
+      "name": "Galaxus.ch",
+      "url": "https://www.galaxus.ch/en/brand/naturehike-62214",
+      "claim": "Major Swiss e-commerce marketplace (Digitec Galaxus) lists Naturehike as a brand page. Marketplace listing, not a distributor relationship."
+    },
+    {
+      "name": "Kaufland.at",
+      "url": "https://www.kaufland.at/m/naturehike/~1362604/",
+      "claim": "Austrian marketplace (Kaufland.at) lists Naturehike products. Marketplace listing only; no distributor entity identified."
+    }
+  ],
+  "requests_used": 3,
+  "retrieval_health": "ok",
+  "used_salva": true,
+  "notes": "Salva discovery run (objective=find_partnership_signals, role=distributor, market=DACH) returned retrieval_health='ok' but qualified_count=0 -- it found no entities meeting its qualification bar for a distributor/partnership relationship. Supplemented with 3 WebSearch queries (Germany, Europe/Amazon, Switzerland+Austria). Overall finding: public information on Naturehike's DACH distribution is thin. No press releases, LinkedIn announcements, or 'authorized distributor' statements were found naming a specific company as Naturehike's official DACH distributor. What exists instead is a mix of (a) Naturehike-branded direct-to-consumer webshops (naturehike.de, naturehike-shop.com) whose legal relationship to Naturehike China is undisclosed, and (b) ordinary multi-brand retailers/marketplaces (Amazon.de, eBay.de, ARTS-Outdoors, Overland Outfitters, weshop.ch, Camperreich, Galaxus.ch, Kaufland.at) that simply stock and resell Naturehike products, likely via general wholesale/AliExpress-style ordering rather than a formal regional distribution agreement. This should be reported as thin/uncertain evidence, not a confirmed distributor list."
+}

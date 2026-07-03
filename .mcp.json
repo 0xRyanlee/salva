@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "salva": {
+      "command": "/Volumes/Astoria/Projects/salva/.venv/bin/python",
+      "args": ["-m", "apps.mcp"]
+    }
+  }
+}

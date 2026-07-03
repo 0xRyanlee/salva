@@ -1,0 +1,63 @@
+{
+  "task_id": "single-01-tsmc",
+  "arm": "A",
+  "reported_entities": [
+    {
+      "name": "TSMC (Taiwan Semiconductor Manufacturing Company Limited) 台積電 - Official Website",
+      "url": "https://www.tsmc.com/english",
+      "claim": "Official corporate website of TSMC, the world's dedicated semiconductor foundry founded in 1987."
+    },
+    {
+      "name": "TSMC Corporate Headquarters",
+      "url": "https://www.tsmc.com/english/aboutTSMC/business_contacts",
+      "claim": "Headquarters address: 8, Li-Hsin Rd. 6, Hsinchu Science Park, Hsinchu 300-096, Taiwan, R.O.C. Phone: 886-3-5636688. Fax: 886-3-5637000."
+    },
+    {
+      "name": "TSMC Asia Pacific Business Office",
+      "url": "https://www.tsmc.com/english/aboutTSMC/business_contacts",
+      "claim": "Address: 25, Li-Hsin Rd., Hsinchu Science Park, Hsin-Chu 300-78, Taiwan, R.O.C. Phone: 886-3-5636688, Fax: 886-3-5662051, Email: sales_asia@tsmc.com."
+    },
+    {
+      "name": "TSMC North America Office",
+      "url": "https://www.tsmc.com/english/aboutTSMC/business_contacts",
+      "claim": "Address: 2851 Junction Avenue, San Jose, CA 95134, U.S.A. Phone: +1-408-382-8000, Fax: +1-408-382-8008."
+    },
+    {
+      "name": "TSMC Europe Office",
+      "url": "https://www.tsmc.com/english/aboutTSMC/business_contacts",
+      "claim": "Address: World Trade Center, Zuidplein 60, 1077 XV, Amsterdam, The Netherlands. Phone: 31-20-3059900, Email: g_emea@tsmc.com."
+    },
+    {
+      "name": "TSMC Japan Office",
+      "url": "https://www.tsmc.com/english/aboutTSMC/business_contacts",
+      "claim": "Address: 21F, Queen's Tower C, 2-3-5, Minatomirai, Nishi-ku, Yokohama, Japan 220-6221. Email: Info_BD@tsmc.com."
+    },
+    {
+      "name": "TSMC China (Shanghai) Office",
+      "url": "https://www.tsmc.com/english/aboutTSMC/business_contacts",
+      "claim": "Address: 4000 Wen Xiang Road, Songjiang, Shanghai, China, Postcode 201616. Phone: 86-21-57768000 Ext: 2236, Fax: 86-21-57762525."
+    },
+    {
+      "name": "TSMC Korea Office",
+      "url": "https://www.tsmc.com/english/aboutTSMC/business_contacts",
+      "claim": "Address: Rm. 2104-2105 West, Hanshin Inter Valley 24 Building, 322 Teheran-ro, Gangnam-Gu, Seoul 06211, Rep. of Korea. Phone: 82-2-21831688."
+    },
+    {
+      "name": "TSMC Canada Office",
+      "url": "https://www.tsmc.com/english/aboutTSMC/business_contacts",
+      "claim": "Address: 1000 Innovation Drive, Suite 400, Ottawa, ON K2K 3E7, Canada. Phone: 1-613-5761990."
+    },
+    {
+      "name": "TSMC ESG / Sustainability site",
+      "url": "https://esg.tsmc.com/zh-Hant",
+      "claim": "Official Traditional Chinese sustainability/ESG microsite under the TSMC domain."
+    },
+    {
+      "name": "TSMC Press Release Center",
+      "url": "https://pr.tsmc.com/english/latest-news",
+      "claim": "Official press/news subdomain of TSMC for latest news releases."
+    }
+  ],
+  "requests_used": 2,
+  "notes": "One WebSearch confirmed the official tsmc.com domain and located the business_contacts page; one WebFetch on that page pulled full HQ and regional office contact details (phone/fax/email/address) for HQ plus APAC, North America, Europe, Japan, China, Korea, and Canada offices."
+}

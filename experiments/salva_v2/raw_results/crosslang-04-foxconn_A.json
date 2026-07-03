@@ -1,0 +1,18 @@
+{
+  "task_id": "crosslang-04-foxconn",
+  "arm": "A",
+  "reported_entities": [
+    {
+      "name": "Hon Hai Precision Industry Co., Ltd. (Foxconn Technology Group)",
+      "url": "https://en.wikipedia.org/wiki/Foxconn",
+      "claim": "鴻海 refers to the Taiwanese multinational electronics manufacturer whose full legal name is Hon Hai Precision Industry Co., Ltd.; it operates internationally under the trade name Foxconn (Foxconn Technology Group), and domestically in Taiwan as 鴻海科技集團 / Hon Hai Technology Group. It is the world's largest contract electronics manufacturer, known for assembling Apple products."
+    },
+    {
+      "name": "Foxconn official corporate site",
+      "url": "https://www.foxconn.com/",
+      "claim": "Official corporate homepage confirms the English branding 'Hon Hai Technology Group' with the Foxconn trade name."
+    }
+  ],
+  "requests_used": 1,
+  "notes": "Single WebSearch query ('鴻海 official English name Foxconn') was sufficient to resolve the cross-language identification with high confidence. Results consistently show 鴻海 (Chinese) = Hon Hai (legal/formal transliteration) = Foxconn (international trade name / brand). Full legal name: Hon Hai Precision Industry Co., Ltd.; group name in Taiwan: 鴻海科技集團 / Hon Hai Technology Group; overseas trade name: Foxconn / Foxconn Technology Group. No conflicting or ambiguous candidate entities appeared in results."
+}

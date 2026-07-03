@@ -1,0 +1,15 @@
+{
+  "task_id": "single-03-cncf",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Cloud Native Computing Foundation (CNCF)",
+      "url": "https://www.cncf.io/",
+      "claim": "Official website of the Cloud Native Computing Foundation, a Linux Foundation subsidiary founded in 2015 that hosts Kubernetes, Envoy, Prometheus, and other cloud native open source projects."
+    }
+  ],
+  "requests_used": 1,
+  "retrieval_health": "ok",
+  "used_salva": true,
+  "notes": "Salva discovery run completed with retrieval_health=ok but qualified_count=0 (no entities returned; CNCF is a foundation, not a company, so Salva's find_companies objective likely filtered it out). Fell back to WebSearch (1 query: 'CNCF Cloud Native Computing Foundation official website'), which confirmed https://www.cncf.io/ as the official site, corroborated by Wikipedia and GitHub org listing."
+}

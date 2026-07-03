@@ -1,0 +1,15 @@
+{
+  "task_id": "crosslang-01-tsmc",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Taiwan Semiconductor Manufacturing Company Limited (TSMC) / 台灣積體電路製造股份有限公司",
+      "url": "https://www.tsmc.com/english",
+      "claim": "台積電 is the common Chinese abbreviation for 台灣積體電路製造股份有限公司, whose official English name is 'Taiwan Semiconductor Manufacturing Company Limited', commonly abbreviated TSMC. It is a Taiwan-based semiconductor foundry (contract chip manufacturer), the world's largest, listed as 2330.TW on the Taiwan Stock Exchange."
+    }
+  ],
+  "requests_used": 2,
+  "retrieval_health": "ok",
+  "used_salva": true,
+  "notes": "Salva discovery run (objective=find_companies, market=Taiwan, industry=semiconductor, extra_keywords=['台積電']) returned 5 qualified entities, all pointing to the same real-world entity: Yahoo TW stock quote for 2330.TW, Chinese Wikipedia page titled '台灣積體電路製造' (Taiwan Semiconductor Manufacturing), and Taiwanese news articles about 台積電's earnings/stock target/employee bonuses. Confidence scores were low-to-moderate (0.40-0.42), reflecting Salva's retrieval scoring rather than any ambiguity in entity identity -- all 5 results unambiguously resolve to the same company. Cross-referenced with 1 WebSearch query confirming TSMC's official English name via tsmc.com and Wikipedia (EN). No ambiguity found between Chinese query term and English company identity."
+}

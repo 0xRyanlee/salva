@@ -1,0 +1,30 @@
+{
+  "task_id": "crosslang-05-chunghwa-telecom",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Chunghwa Telecom Co., Ltd. (中華電信)",
+      "url": "https://www.cht.com.tw",
+      "claim": "Primary corporate site; largest integrated telecom operator in Taiwan (NYSE: CHT, TWSE: 2412), offering 5G mobile, HiNet fiber broadband, MOD IPTV. Confirmed as the entity behind the query term via Salva discovery (qualified_count=7, retrieval_health=ok, confidence 0.40-0.45) and cross-checked via Wikipedia/Wikidata."
+    },
+    {
+      "name": "Chunghwa Telecom - 123 我的服務中心 (customer portal)",
+      "url": "https://123.cht.com.tw",
+      "claim": "Chunghwa Telecom's official customer self-service portal subdomain."
+    },
+    {
+      "name": "HiNet (Chunghwa Telecom's ISP brand)",
+      "url": "https://webmail.hinet.net",
+      "claim": "HiNet is Chunghwa Telecom's broadband/webmail brand, returned as a related property."
+    },
+    {
+      "name": "Chunghwa Telecom Laboratories",
+      "url": "https://www.chttl.com.tw/en/",
+      "claim": "Chunghwa Telecom's R&D subsidiary (CHTTL), found via WebSearch, confirming corporate group structure."
+    }
+  ],
+  "requests_used": 2,
+  "retrieval_health": "ok",
+  "used_salva": true,
+  "notes": "Salva discovery (market=Taiwan, industry=telecommunications, extra_keywords=['中華電信']) returned 7 qualified entities, all genuinely Chunghwa Telecom properties (cht.com.tw, hinet.net domains) plus a couple of low-relevance third-party review/job-posting pages -- no contamination from unrelated companies. WebSearch (1 query) confirmed official English name 'Chunghwa Telecom Co., Ltd.' and explicitly distinguished it from mainland China's China Telecom Corporation Limited (中国电信, chinatelecom.com.cn), a separate PRC state-owned carrier with a similar-sounding but different Chinese name. No cross-language confusion occurred in Salva's results themselves; disambiguation was done via prior knowledge + WebSearch verification since Salva does not natively flag the mainland namesake risk."
+}

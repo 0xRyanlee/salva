@@ -1,0 +1,15 @@
+{
+  "task_id": "single-05-advantech",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Advantech Co., Ltd. (研華股份有限公司)",
+      "url": "https://www.advantech.com/en-us",
+      "claim": "Official global website of Advantech, Taiwanese IoT/industrial computing hardware manufacturer (TWSE: 2395), HQ in Neihu District, Taipei."
+    }
+  ],
+  "requests_used": 1,
+  "retrieval_health": "ok",
+  "used_salva": true,
+  "notes": "Salva run_discovery returned retrieval_health=ok but qualified_count=0 (no entities passed qualification threshold for this objective/intent combo). Fell back to 1 WebSearch query ('Advantech 研華科技 official website') which confirmed the official domain www.advantech.com/en-us, plus noted a Taiwan-specific IoTMart subdomain (iotmart.advantech.com.tw) and the Wikipedia zh-TW entry as corroboration."
+}

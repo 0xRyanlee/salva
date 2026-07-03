@@ -1,0 +1,78 @@
+{
+  "task_id": "multihop-05-gleif-regulators",
+  "arm": "A",
+  "reported_entities": [
+    {
+      "name": "LEI Regulatory Oversight Committee (LEI ROC)",
+      "url": "https://www.gleif.org/en/about/governance/lei-regulatory-oversight-committee-lei-roc",
+      "claim": "Group of 65+ financial markets regulators and public authorities from 50+ jurisdictions, established Jan 2013, that oversees GLEIF; concluded a formal Memorandum of Understanding with GLEIF in October 2015 defining division of responsibilities for the Global LEI System. Two or more ROC members sit as non-voting observers on the GLEIF Board."
+    },
+    {
+      "name": "Financial Stability Board (FSB)",
+      "url": "https://www.gleif.org/en/about/governance/financial-stability-board-fsb",
+      "claim": "Founder of GLEIF; appointed the first GLEIF Board of Directors; its LEI recommendations were endorsed by the G20 at the Los Cabos Summit in June 2012; publishes periodic peer review progress reports on LEI implementation and continues to nominate GLEIF Board members."
+    },
+    {
+      "name": "G20",
+      "url": "https://www.fsb.org/work-of-the-fsb/market-and-institutional-resilience/post-2008-financial-crisis-reforms/legalentityidentifier/",
+      "claim": "Endorsed the FSB's recommendations to establish a global LEI system at the Los Cabos Summit in June 2012, providing the political mandate that led to GLEIF's creation."
+    },
+    {
+      "name": "Basel Committee on Banking Supervision (BCBS)",
+      "url": "https://www.fsb.org/uploads/P211024-2.pdf",
+      "claim": "Named by the FSB as one of the standard-setting bodies asked to review and embed/enhance references to the LEI in its regulatory work (banking supervision standards)."
+    },
+    {
+      "name": "Committee on Payments and Market Infrastructures (CPMI)",
+      "url": "https://www.leiroc.org/leiroc_gls/index.htm",
+      "claim": "Standards body identified by the FSB to consider embedding LEI references in its work; collaborated with the LEI ROC on technical guidance for derivatives data elements."
+    },
+    {
+      "name": "International Association of Insurance Supervisors (IAIS)",
+      "url": "https://www.fsb.org/uploads/P211024-2.pdf",
+      "claim": "Named by the FSB as a standard-setting body asked to review and consider embedding/enhancing references to the LEI in insurance supervisory work."
+    },
+    {
+      "name": "International Organization of Securities Commissions (IOSCO)",
+      "url": "https://www.leiroc.org/leiroc_gls/index.htm",
+      "claim": "Named by the FSB as a standard-setting body to embed LEI references in securities regulation; co-developed harmonization standards with the LEI ROC for the Global LEI System."
+    },
+    {
+      "name": "Financial Action Task Force (FATF)",
+      "url": "https://www.gleif.org/lei-solutions/regulatory-use-of-the-lei/consultation-responses/2024-05-03-gleif-response-fatf-r16_v1.0.pdf",
+      "claim": "GLEIF submits formal consultation responses to FATF on Recommendations 16 (payment transparency, originator/beneficiary identification via LEI) and 24 (beneficial ownership, using GLEIF Level 2 parent-subsidiary data)."
+    },
+    {
+      "name": "International Monetary Fund (IMF)",
+      "url": "https://www.fsb.org/uploads/P211024-2.pdf",
+      "claim": "Identified in FSB/ROC reporting as an international organization that should consider how the LEI may be used as a standardized identifier (e.g., for sanctions lists, legal entity customer identification)."
+    },
+    {
+      "name": "Organisation for Economic Co-operation and Development (OECD)",
+      "url": "https://www.fsb.org/uploads/P211024-2.pdf",
+      "claim": "Identified alongside the IMF and World Bank as an international organization expected to consider LEI adoption for legal entity/beneficiary identification."
+    },
+    {
+      "name": "World Bank",
+      "url": "https://www.fsb.org/uploads/P211024-2.pdf",
+      "claim": "Identified as an international organization that should consider how the LEI may be used as a standardized identifier for legal entities."
+    },
+    {
+      "name": "SWIFT",
+      "url": "https://www.gleif.org/en/newsroom/gleif-podcasts/bridging-global-payments-fatf-16-bic-and-lei-a-unified-vision-for-transparency",
+      "claim": "Since 2018, GLEIF and SWIFT have jointly published open-source relationship files mapping Business Identifier Codes (BICs) to LEIs, an ongoing documented data-sharing partnership."
+    },
+    {
+      "name": "International Organization for Standardization (ISO)",
+      "url": "https://rapidlei.com/lei-regulations/regulation-spotlight-iso-20022/",
+      "claim": "The LEI itself is defined by ISO standard 17442; separately, ISO 20022 (used by SWIFT, TARGET2, Fedwire, CHAPS) designates the LEI as the preferred identifier in the OrganisationIdentification element for payment message senders, receivers, and intermediaries."
+    },
+    {
+      "name": "Derivatives Standards Board (DSB)",
+      "url": "https://www.leiroc.org/leiroc_gls/index.htm",
+      "claim": "Established a Memorandum of Understanding with the LEI ROC in 2021 covering derivatives identifier standards that interact with LEI data."
+    }
+  ],
+  "requests_used": 5,
+  "notes": "Bare web-search arm, no Bash. Two categories of evidence emerged: (1) direct governance/oversight relationships -- LEI ROC (formal MOU with GLEIF since Oct 2015, 65+ regulator members across 50+ jurisdictions) and FSB (GLEIF's founder, appoints board members, endorsed by G20); (2) standard-setting/international bodies that FSB/ROC documentation names as expected to embed or reference LEI in their own frameworks (BCBS, CPMI, IAIS, IOSCO, FATF, IMF, OECD, World Bank), plus operational/data partners with documented agreements (SWIFT BIC-LEI mapping since 2018, ISO which defines the LEI standard itself as ISO 17442 and references it in ISO 20022, and the Derivatives Standards Board's 2021 MOU with the ROC). Could not retrieve the full itemized ROC Plenary member roster (individual national regulators like SEC, ESMA, FCA, Bank of England) within the 5-query budget -- the leiroc.org page pointed to a separate 'Members and Observers' subpage not fetched due to budget exhaustion. ESMA/FCA appeared in search results only via an unrelated benchmark-administrators MOU, not a confirmed direct GLEIF relationship, so excluded from reported_entities to avoid a false claim."
+}

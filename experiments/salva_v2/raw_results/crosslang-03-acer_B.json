@@ -1,0 +1,30 @@
+{
+  "task_id": "crosslang-03-acer",
+  "arm": "B",
+  "reported_entities": [
+    {
+      "name": "Acer Inc. (宏碁股份有限公司)",
+      "url": "https://www.acer.com.cn/index.html",
+      "claim": "宏碁 refers to Acer, the Taiwanese multinational computer hardware and electronics corporation; official English name is Acer Inc."
+    },
+    {
+      "name": "宏碁 / Acer",
+      "url": "https://baike.baidu.com/item/%E5%AE%8F%E7%A2%81/456426",
+      "claim": "Baidu Baike entry confirms 宏碁 is the Chinese name for Acer, founded 1976 in Taiwan by Stan Shih."
+    },
+    {
+      "name": "宏碁集团 / Acer Group",
+      "url": "https://baike.baidu.com/item/%E5%AE%8F%E7%A2%81%E9%9B%86%E5%9B%A2/6660468",
+      "claim": "Confirms Acer Group as the corporate entity behind 宏碁, corroborating identification."
+    },
+    {
+      "name": "宏碁官方旗舰店 (Acer Official Store)",
+      "url": "https://mall.jd.com/index-13691945.html",
+      "claim": "Official Acer flagship store on JD.com, further corroborating brand identity resolution."
+    }
+  ],
+  "requests_used": 1,
+  "retrieval_health": "ok",
+  "used_salva": true,
+  "notes": "Ran Salva discovery with extra_keywords=['宏碁'], market=Taiwan, industry=consumer electronics/computer hardware. qualified_count=4, all entities consistently resolved to Acer (confidence ~0.40 each, OMLX embedding fallback warnings ignored per instructions). No WebSearch queries needed — Salva results plus well-established public knowledge (Acer Inc., founded 1976 in Taiwan by Stan Shih, HQ in Xizhi, New Taipei City) were sufficient and mutually corroborating."
+}
