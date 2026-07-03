@@ -1,5 +1,7 @@
 # Salva Runtime - 待完成事項
 
+> ⚠️ 本文件內容已過期（2026-05-09），早於整批 experiments/hg_penetration/、experiments/computex_2026/ 實驗與 E10/E21/E21c 的 live benchmark 結果，內容已與現況不符。請改看 `DEVELOPMENT_PROGRESS.md`「Known Gaps / Next Steps」段落取得目前真實缺口清單。
+
 > 更新日期：2026年5月9日
 > 狀態：無待完成事項
 
