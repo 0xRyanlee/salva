@@ -69,7 +69,7 @@ layered on an existing knob, not new product code.
 4. No further Salva involvement after step 1 — steps 2-3 are pure
    prompt/LLM work, run once per task (not per round).
 
-## Rerank prompt template
+## Rerank prompt template — v1 (superseded, see v2 below)
 
 ```
 You are filtering and ranking raw search candidates for a business
@@ -91,6 +91,52 @@ each with a one-sentence claim justifying why it answers the question.
 If none of the candidates are relevant, say so honestly rather than
 forcing a match.
 ```
+
+## Rerank prompt template — v2 (fixes the precision gap v1 exposed)
+
+`BASELINE_VS_VARIANTS_FINDINGS.md`'s comparison round found v1's one real
+failure (`multihop-01`, see below) came from finalizing an answer straight
+off a secondary-source summary (Wikipedia) without cross-checking it
+against a primary source — not from insufficient search permission (v1
+already allowed supplemental search; the agent simply judged the secondary
+source "sufficient"). v2 adds one explicit instruction closing that gap:
+
+```
+[... same question/intent/candidates block as v1 ...]
+
+Task: identify which of these candidates are genuinely relevant/useful.
+Discard irrelevant/noise candidates.
+
+IMPORTANT verification requirement: for factual claims like "who were the
+founding members" of an organization, secondary/summary sources (Wikipedia,
+blog aggregators) are known to sometimes repeat inaccurate or outdated
+lists that don't match the organization's own original announcement.
+Before finalizing your answer, you MUST cross-verify any such list against
+the organization's OWN original announcement/primary source (search for
+it directly) -- do not finalize an answer sourced only from a secondary
+summary without this verification step, even if the secondary source
+seems to answer the question.
+
+Output your final answer as {"name", "url", "claim"} entries. Explicitly
+state whether you performed the primary-source cross-verification and
+what it changed, if anything.
+```
+
+**Validated on the exact case v1 failed** (2026-07-04, `multihop-01-cncf-
+founders`, same 21-candidate raw pool as v1's validation run): the v2
+prompt fetched CNCF's own June 21, 2015 press release and correctly
+reported the full 22-member founding roster, explicitly identifying and
+excluding RX-M (the same December-2015 joiner v1 wrongly included) and
+naming all 10 members Wikipedia's summary had omitted (AT&T, Box, Cloud
+Foundry Foundation, Cycle Computing, eBay, Goldman Sachs, Joyent, Kismatic,
+Switch SUPERNAP, Weaveworks). This now matches the bare-agent baseline's
+answer quality exactly, while still starting from Salva's own raw
+retrieval pool rather than searching independently from scratch --
+closing the one concrete gap `BASELINE_VS_VARIANTS_FINDINGS.md` identified,
+with a single, targeted prompt change rather than new retrieval
+infrastructure. **v2 is now the recommended prompt for this pipeline going
+forward** -- v1 is kept above for the historical record of what the
+comparison round actually tested, not because it's still preferred.
 
 ## Validation run (1 task) — real result, not the outcome expected going in
 

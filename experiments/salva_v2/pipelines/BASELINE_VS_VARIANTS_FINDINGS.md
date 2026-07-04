@@ -1,6 +1,16 @@
 # Baseline vs current Salva pipeline vs accumulate+LLM-rerank — first comparative round
 
 **Date:** 2026-07-04
+
+**2026-07-04 follow-up:** the one concrete gap this round found
+(`multihop-01`'s extraneous wrong entity) was closed the same day with a
+targeted prompt refinement — see `accumulate_llm_rerank.md`'s "v2" prompt
+template, which adds an explicit primary-source cross-verification
+instruction. Re-tested on the exact failing case: v2 now matches the
+baseline's answer quality exactly. Numbers below are preserved as
+originally measured (v1 prompt) — not updated to reflect v2 — since this
+file documents what this specific comparison round actually tested.
+
 **Scope:** all 6 `find_partnership_signals` (multihop) tasks in `task_set_v1.json`
 — the tier where Salva's current pipeline fails hardest (0/6 qualified
 contribution, per `RESCORE_COMPARISON.md`, unchanged even after the scorer
