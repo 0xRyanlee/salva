@@ -210,7 +210,7 @@ curl http://localhost:8000/health
 | 文件 | 用途 |
 |------|------|
 | [CLAUDE.md](CLAUDE.md) | 開發者必讀：設計原則與架構 |
-| [TODO.md](TODO.md) | 開發任務清單 |
+| [docs/archive/TODO.md](docs/archive/TODO.md) | 開發任務清單（已封存，72/72 完成） |
 | [docs/spec/](docs/spec/) | 行為契約 (正式規範) |
 | [docs/README.md](docs/README.md) | 文檔索引 |
 | [docs/Salva_Runtime_使用者體驗與成熟度審計.md](docs/Salva_Runtime_使用者體驗與成熟度審計.md) | UX 審計 |

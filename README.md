@@ -325,7 +325,7 @@ truth。這也不是等預算 benchmark：Agent raw SERP 未完整保存、耗�
 |------|------|
 | [CLAUDE.md](CLAUDE.md) | 開發者必讀：設計原則與架構邊界 |
 | [DEVELOPMENT_PROGRESS.md](DEVELOPMENT_PROGRESS.md) | 本次開發進度報告 |
-| [TODO.md](TODO.md) | 開發任務清單 |
+| [docs/archive/TODO.md](docs/archive/TODO.md) | 開發任務清單（已封存，72/72 完成） |
 | [docs/spec/](docs/spec/) | 行為契約（正式規範） |
 | [docs/reports/execution-isolation-update-2026-06-08.md](docs/reports/execution-isolation-update-2026-06-08.md) | 隔離架構、風險與對抗審計 |
 | [docs/dogfood/naturehike-dach-2026-06-08.md](docs/dogfood/naturehike-dach-2026-06-08.md) | Naturehike DACH 渠道與 dogfood 結果 |

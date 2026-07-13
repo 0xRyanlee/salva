@@ -11,4 +11,4 @@ Key choices:
 - layered storage and backup
 - user-experience profile resolver for task-oriented presets
 
-Use the root `README.md` for the product-level architecture and `TODO.md` for phased execution.
+Use the root `README.md` for the product-level architecture and `DEVELOPMENT_PROGRESS.md` for phased execution (`TODO.md` archived, 72/72 complete — see `docs/archive/TODO.md`).

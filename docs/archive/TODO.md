@@ -1,5 +1,7 @@
 # Salva Runtime 開發任務清單
 
+> 已封存（2026-07-13）：72/72 任務已全數完成，現況追蹤請見 `DEVELOPMENT_PROGRESS.md`。
+
 > 完整的開發方向與設計原則請見 `CLAUDE.md`。
 > 核心定位：Event-triggered, API-first, Agent-native Discovery Intelligence Runtime。
 > 服務對象：任何方向的探索意圖，不假設特定行業或場景。
