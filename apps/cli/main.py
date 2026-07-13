@@ -642,6 +642,31 @@ def _build_dot(run_id: str, entities: list, relations: list) -> str:
 
 
 # ---------------------------------------------------------------------------
+# salva feedback
+# ---------------------------------------------------------------------------
+
+@app.command()
+def feedback(
+    message: str,
+    type: str = typer.Option("feedback", "--type", help="feedback | bug"),
+    as_json: bool = typer.Option(False, "--json"),
+) -> None:
+    """Send feedback or a bug report to the Hyphen team."""
+    from salva_core.feedback import default_env, send_feedback
+
+    try:
+        result = send_feedback("salva", message, env=default_env(), type=type)
+    except Exception as e:
+        typer.echo(f"Error: {e}", err=True)
+        raise typer.Exit(1)
+
+    if as_json:
+        typer.echo(json.dumps(result))
+    else:
+        typer.echo(f"Thanks — filed as {result.get('id', 'sent')}")
+
+
+# ---------------------------------------------------------------------------
 # salva topology
 # ---------------------------------------------------------------------------
 
