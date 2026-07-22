@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-04-foxconn",
+  "strategy": "anchor",
+  "query": "鴻海",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:28:49.675973+00:00",
+  "results": [
+    {
+      "title": "鴻海科技集團 - 維基百科，自由的百科全書",
+      "url": "https://zh.wikipedia.org/zh-tw/鴻海科技集團",
+      "snippet": "鴻海科技集團 （英語： Foxconn Technology Group）是源自 臺灣 的 跨國企業 集團，1974年創辦，以 富士康 （Foxconn）做為商標名稱。其專注於 電子產品的代工服務 （EMS），研發生產精密電氣元件、機殼、 準系統 、系統組裝、光通訊元件、液晶顯示件等3C產品上、下游產品及服務。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "鴻海精密工業 - Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/鴻海精密工業",
+      "snippet": "鴻海精密工業 （ホンハイせいみつこうぎょう、 中国語: 鴻海精密工業股份有限公司 、 英語: Hon Hai Precision Industry Co., Ltd. 、 TWSE: 2317 、通称: フォックスコン）は、 台湾 の EMS （電子機器受託生産）企業である。 フォックスコングループ （鴻海科技集団）の中核企業であり、そのグループ名でも ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "首頁 - 鴻海科技集團 - Foxconn",
+      "url": "https://www.foxconn.com/zh-tw",
+      "snippet": "236新北市土城區自由街2號 +886-2-2268-3466 關於鴻海 願景宗旨與核心價值 集團概述 集團大事紀 全球版圖 集團行為準則暨責任標準 服務與產品 焦點動態 產業與技術佈局 研發與技術 鴻海研究院 MIH EV 研發院 新聞中心 新聞集錦 活動新知 公司活動 廠區巡禮 影音中心",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "關於鴻海 - 鴻海科技集團 - Hon Hai",
+      "url": "https://www.honhai.com/zh-tw/about/group-profile",
+      "snippet": "鴻海精密工業股份有限公司（臺灣證券交易所代碼：2317）於1974年肇基於臺灣，以模具為根基，逐漸發展為高科技服務企業。在電子代工服務領域（EMS）排名全球第一，市占率超過四成，範圍涵蓋消費性電子產品、雲端網路產品、電腦終端產品、元件及其他等四大產品領域。全球員工總人數季節性 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "鴻海 (2317.TW) 基本資料 - Yahoo股市",
+      "url": "https://tw.stock.yahoo.com/quote/2317.TW/profile",
+      "snippet": "鴻海(2317.TW)，Yahoo股市 Yahoo奇摩股市提供公司基本資料、統一編號、股務相關基本資料、實收資本額、普通股數、特別股、變更、與重要行事曆如董事會、股東常會、除權日、除息日等資訊。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "深入解析鴻海集團旗下有哪些公司？完整企業版圖與業務大解密",
+      "url": "https://uptogo.com.tw/商業/公司財務/鴻海集團旗下有哪些公司？/",
+      "snippet": "導言：探索兆元帝國的企業版圖 成立於1974年的鴻海科技集團（Foxconn Technology Group），由創辦人郭台銘從新台幣10萬元起家，最初僅是一家生產黑白電視機旋鈕的小型塑膠企業。經過數十年的擴張與併購，如今在現任董事長劉揚偉的帶領下，鴻海已發展成為全球最大的電子製造服務（EMS）供應商，並 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "全球版圖 - 鴻海科技集團 - Hon Hai",
+      "url": "https://www.honhai.com/zh-tw/about/worldwide",
+      "snippet": "鴻海持續提升研發設計和工程技術服務能力，逐步建立起以亞洲為中心，延伸發展至世界各地的國際化版圖，在發展歷程中逐步確立「兩地研發、三區設計製造、全球組裝交貨」的發展戰略。「兩地研發」是指以大中華區與美國為兩大重要戰略支點；「三區設計製造」的佈局重點，是以中國大陸為 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Home - Hon Hai Technology Group - Foxconn",
+      "url": "https://www.foxconn.com/en-us",
+      "snippet": "As the leader of technology services, Hon Hai Technology Group has actively invested in the three emerging industries of \"electric vehicles, digital health, and robots\" in recent years, as well as \"artificial intelligence, semiconductor, and new generation communication technology\". Combined with the Group's important long -term development strategy, it provides a complete solution for global ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "鴻海 (2317.TW) 財務報表 - 營收表 - Yahoo股市",
+      "url": "https://tw.stock.yahoo.com/quote/2317.TW/revenue",
+      "snippet": "鴻海 (2317.TW)，Yahoo股市 Yahoo奇摩股市提供個股營收資訊，包括月營收、去年同月營收、月增率、去年同月增減、累計營收、季營收、年營收等財報更新。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "鴻海 (2317) 今日股價與討論 - 股市爆料同學會",
+      "url": "https://www.cmoney.tw/forum/stock/2317",
+      "snippet": "本日鴻海股價走勢討論聚焦230-240元區間與外資動向。多位同學以「7/20 收盤分析」作為分水嶺，認為股價上揚機會與風險並存，建議以分批買入與停損控風險。也有同學提醒波動風險，整體情緒偏中性偏觀望。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

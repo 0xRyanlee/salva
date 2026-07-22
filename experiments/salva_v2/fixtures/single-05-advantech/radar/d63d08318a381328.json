@@ -1,0 +1,79 @@
+{
+  "task_id": "single-05-advantech",
+  "strategy": "radar",
+  "query": "Advantech founded TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:26:45.379245+00:00",
+  "results": [
+    {
+      "title": "History & Milestones - Advantech",
+      "url": "https://www.advantech.com/en-us/about/historyandmilestones",
+      "snippet": "Advantech is a leading brand in IoT intelligent systems, Industry 4.0, machine automation, embedding computing, embedded systems, transportation, environment monitoring, power automation, retail, logistics, fleet management, healthcare IT, medical solutions, servers, industrial and network computing, video broadcasting, IP Video, 4K/8K, and customization services. To promote IoT, big data, and ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Co-Creating the Future of the IoT World",
+      "url": "https://www.advantech.com/en-us",
+      "snippet": "Advantech is a leading brand in IoT intelligent systems, Industry 4.0, machine automation, embedding computing, embedded systems, transportation, environment monitoring, power automation, retail, logistics, fleet management, healthcare IT, medical solutions, servers, industrial and network computing, video broadcasting, IP Video, 4K/8K, and customization services. To promote IoT, big data, and ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech - OpenFoundry",
+      "url": "https://web-archive-2025.openfoundry.org/en/resourcecatalog/Embedded/Taiwan-Companies/advantech.html",
+      "snippet": "Founded in 1983, Advantech is a leader in providing trusted innovative embedded & automation products and solutions. Advantech offers comprehensive system integration, hardware, software, customer-centric design services, and global logistics support; all backed by industry-leading front and back office e-business solutions.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Corporation Ltd - EverybodyWiki Bios & Wiki",
+      "url": "https://en.everybodywiki.com/Advantech_Corporation",
+      "snippet": "Advantech Corporation is a Taiwan-based multinational corporation which specializes in embedded modules & systems manufacturing, industrial automation solutions, network & telecom, and digital solutions to healthcare, logistics and retail sectors. The company offers comprehensive system integration, hardware, software, customer-centric design services, and global logistics support.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech_研華股份有限公司 ｜徵才中－104人力銀行",
+      "url": "https://www.104.com.tw/company/2d9ntmw",
+      "snippet": "關於研華研華為全球物聯網智能系統與嵌入式平台領導廠商，並以「智能地球的推手」作為企業品牌願景。 為迎接...。 公司位於台北市內湖區。 產業：電腦系統整合服務業。 應徵Advantech_研華股份有限公司工作，請上104人力銀行投遞履歷。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Co., Ltd. (2395.TW) Stock Price, News, Quote & History ...",
+      "url": "https://finance.yahoo.com/quote/2395.TW/",
+      "snippet": "Find the latest Advantech Co., Ltd. (2395.TW) stock quote, history, news and other vital information to help you with your stock trading and investing.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Co., Ltd. (2395.TW) - Yahoo Finance",
+      "url": "https://finance.yahoo.com/quote/2395.TW/profile/",
+      "snippet": "See the company profile for Advantech Co., Ltd. (2395.TW) including business summary, industry/sector information, number of employees, business summary, corporate governance, key executives and ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Co., Ltd. - EverybodyWiki Bios & Wiki",
+      "url": "https://en.everybodywiki.com/Advantech",
+      "snippet": "Advantech is a Taiwan-based manufacturer of computer hardware, specializing in motherboards and industrial computers. The company went public in 1999, listing its shares on the Taiwan Stock Exchange.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Co., Ltd.（Provider of electronic platform ... - 百度百科",
+      "url": "https://baike.baidu.com/en/item/Advantech+Co.,+Ltd./28324",
+      "snippet": "Advantech Co., Ltd. is a foreign-invested enterprise founded in 1983, headquartered in Kunshan City, Jiangsu Province. It was listed on the Taipei Exchange in 1999. As a global provider of Internet of Things (IoT) solutions and embedded industrial computers, its business covers areas such as Industrial Automation, Smart Healthcare, and Intelligent Transportation. The company has nearly 7,000 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Co., Ltd.",
+      "url": "https://www.findcompany.com.tw/index.php/en/ADVANTECH+CO.,+LTD.",
+      "snippet": "No. 1, Aly. 20, Ln. 26, Ruiguang Rd., Neihu Dist., Taipei City 114519, Taiwan (R.O.C.)",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "task_id": "single-03-cncf",
+  "entities": [
+    {
+      "title": "CNCF Cloud Native Mauritius",
+      "source_urls": [
+        "https://community.cncf.io/cloud-native-mauritius"
+      ],
+      "score": 0.3101,
+      "confidence": 0.3101
+    },
+    {
+      "title": "Global Privacy Policy",
+      "source_urls": [
+        "https://www.cncf.org/wp-content/uploads/download-manager-files/CNCF-Global-Privacy-Policy-2024.pdf"
+      ],
+      "score": 0.2911,
+      "confidence": 0.2911
+    },
+    {
+      "title": "CNCF Sustainability Week 2024 - London Meetup: Call for Speakers",
+      "source_urls": [
+        "https://sessionize.com/cncf-sustainability-week-2024-london"
+      ],
+      "score": 0.3742,
+      "confidence": 0.3742
+    },
+    {
+      "title": "Łukasz Adamski — Strategic Engineering Leadership",
+      "source_urls": [
+        "https://lukaszadamski.com"
+      ],
+      "score": 0.3534,
+      "confidence": 0.3534
+    },
+    {
+      "title": "containerd – An industry-standard container runtime with an emphasis...",
+      "source_urls": [
+        "https://containerd.io"
+      ],
+      "score": 0.2898,
+      "confidence": 0.2898
+    },
+    {
+      "title": "Welcome | OAuth2 Proxy",
+      "source_urls": [
+        "https://oauth2-proxy.github.io/oauth2-proxy"
+      ],
+      "score": 0.2512,
+      "confidence": 0.2512
+    },
+    {
+      "title": "Finance & Policies - Christina Noble Children's Foundation",
+      "source_urls": [
+        "https://www.cncf.org/finance-policies"
+      ],
+      "score": 0.177,
+      "confidence": 0.177
+    },
+    {
+      "title": "Announcements | Jimmy Song",
+      "source_urls": [
+        "https://jimmysong.io/notice"
+      ],
+      "score": 0.3556,
+      "confidence": 0.3556
+    },
+    {
+      "title": "Edit PDF - Edit PDF files online",
+      "source_urls": [
+        "https://www.pdf2go.com/edit-pdf"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "${\\mathsf{KubeS...",
+      "source_urls": [
+        "https://tianweiz07.github.io/Papers/26-tdsc-2.pdf"
+      ],
+      "score": 0.1517,
+      "confidence": 0.1517
+    },
+    {
+      "title": "OpenFeature",
+      "source_urls": [
+        "https://openfeature.dev"
+      ],
+      "score": 0.1557,
+      "confidence": 0.1557
+    },
+    {
+      "title": "OpenTelemetry",
+      "source_urls": [
+        "https://opentelemetry.io"
+      ],
+      "score": 0.1607,
+      "confidence": 0.1607
+    },
+    {
+      "title": "Medium",
+      "source_urls": [
+        "https://devopsworld.medium.com/how-to-certify-in-kubernetes-1a999dc36d21"
+      ],
+      "score": 0.0971,
+      "confidence": 0.0971
+    },
+    {
+      "title": "The fastest path to state-of-the-art LLM inference on any... | llm-d",
+      "source_urls": [
+        "https://llm-d.ai/docs/dev"
+      ],
+      "score": 0.2277,
+      "confidence": 0.2277
+    },
+    {
+      "title": "Crunchbase",
+      "source_urls": [
+        "https://www.crunchbase.com"
+      ],
+      "score": 0.4017,
+      "confidence": 0.4017
+    },
+    {
+      "title": "Kubermatic - News & Analysis",
+      "source_urls": [
+        "https://www.crunchbase.com/organization/kubermatic/news_and_analysis"
+      ],
+      "score": 0.3606,
+      "confidence": 0.3606
+    },
+    {
+      "title": "They are right. Not everyone needs Kubernetes. But 130K+ open jobs...",
+      "source_urls": [
+        "https://www.linkedin.com/posts/kareen-a-8012b1149_they-are-right-not-everyone-needs-kubernetes-activity-7434190801577897984-gdGZ"
+      ],
+      "score": 0.3593,
+      "confidence": 0.3593
+    }
+  ],
+  "meta": {
+    "qualified_count": 17,
+    "raw_count": 17,
+    "rounds": 3,
+    "domain": "companies"
+  }
+}

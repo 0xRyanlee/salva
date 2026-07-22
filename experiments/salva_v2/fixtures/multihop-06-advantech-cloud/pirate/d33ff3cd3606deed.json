@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-06-advantech-cloud",
+  "strategy": "pirate",
+  "query": "filetype:pdf \"cloud platform\"",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:32:43.894309+00:00",
+  "results": [
+    {
+      "title": "SAP BTP - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/SAP_BTP",
+      "snippet": "SAP Business Technology Platform (SAP BTP) is a platform as a service developed by SAP SE that offers a suite of services including database and data management, AI, analytics, application development, automation and integration all running on one unified platform.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "A Comparative Study of Cloud Computing Platforms",
+      "url": "https://pdfs.semanticscholar.org/792f/bf4742f93c195e549b889a266043640599b1.pdf",
+      "snippet": "This article offers a comparison and analysis of three of the most widely used cloud computing platforms: Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Platform Introduction to Google Cloud - storage.googleapis.com",
+      "url": "https://storage.googleapis.com/cloud-training/bdml/v2.1/pdf/Module+1_+Introduction+to+Google+Cloud+Platform_.pdf",
+      "snippet": "In this module, we’ll examine the infrastructure behind Google Cloud Platform -- or GCP -- which was originally built to power Google’s own applications and is now available to you.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Workday Cloud Platform | Your Platform for a Changing World",
+      "url": "https://www.workday.com/content/dam/web/en-us/documents/datasheets/ds-pm-workday-cloud-platform-overview-enus.pdf",
+      "snippet": "Workday Cloud Platform applies the value of the Workday user experience, security, and data to the creation of extended experiences and new apps. Workday Cloud Platform addresses these business and IT challenges. It allows organizations to extend Workday applications with speed and confidence.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Wind River Cloud Platform",
+      "url": "https://www.windriver.com/sites/default/files/2025-09/2025_WindRiver_DataSheet_CloudPlatform_v04.pdf",
+      "snippet": "rm provides a better way. Proven in some of the world’s largest and most mission-critical cloud deployments, it’s a commercially supported enterprise-grade solution, based on open source technologies, that enables enterprise IT organizations and telecommunications operators to deploy and manage virtualized an.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Platforms - IIT Ropar",
+      "url": "https://cse.iitrpr.ac.in/sodhi/CloudPlatforms-TypesAndProperties.pdf",
+      "snippet": "How to allow in-house and cloud nodes to discover each other? How to ensure bi-directional communications?",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Wind River Cloud Platform",
+      "url": "https://www.windriver.com/sites/default/files/2026-06/Wind+River+Cloud+Platform+Datasheet.pdf",
+      "snippet": "Wind River® Cloud Platform provides a better way. Proved in some of the world’s largest and most mission-critical cloud deployments, it’s a commercially supported enterprise-grade solution based on open source technologies that enables enterprise IT organizations and telecommunications operators to deploy and manage virtualized and containerized workloads. It provides ultra-low latency ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Microsoft Cloud Platform System Standard",
+      "url": "https://download.microsoft.com/download/6/4/5/645A7BEA-4602-46C0-A1E6-818572D08D5C/Cloud_Platform_System_Standard_Datasheet_EN_US.pdf",
+      "snippet": "Microsoft Cloud Platform System Standard n-premises cloud capacity to your users. CPS Standard is a fully integrated and pre-configured system delivering a high performance hard",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GitHub - razeone/cp100: Add PDF lectures · GitHub",
+      "url": "https://github.com/razeone/cp100",
+      "snippet": "Add PDF lectures. Contribute to razeone/cp100 development by creating an account on GitHub.CP100 is the first Google course training for the certification on Google Cloud Engine tools. This repo contiaons only the slides of the course.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Introduction to Google Cloud Platform | PDF",
+      "url": "https://www.slideshare.net/slideshow/introduction-to-google-cloud-platform-196030737/196030737",
+      "snippet": "The document provides an overview of Google Cloud Platform (GCP) offerings, detailing various products and services across Compute, Storage, Networking, Machine Learning, and Security.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

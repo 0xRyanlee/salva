@@ -1,0 +1,79 @@
+{
+  "task_id": "single-01-tsmc",
+  "strategy": "anchor",
+  "query": "TSMC filetype:pdf",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:24:55.720247+00:00",
+  "results": [
+    {
+      "title": "PDF (PRD) 2025_20F Report - Document template - investor.tsmc.com",
+      "url": "https://investor.tsmc.com/sites/ir/sec-filings/2025_20F+Report.pdf",
+      "snippet": "In November 2024, TSMC Arizona Corporation (\"TSMC Arizona\") entered into agreements with the U.S. Department of Commerce for the receipt of certain incentives pursuant to the U.S. CHIPS Act, which includes up to US$6.6 billion in total direct funding and up to US$5 billion of proposed loans. Please see \"Item 4.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF TSMC Annual Report 2024",
+      "url": "https://investor.tsmc.com/sites/ir/annual-report/2024/2024+Annual+Report_E.pdf",
+      "snippet": "TSMC's Vision Our vision is to be the most advanced and largest technology and foundry services provider to fabless companies and IDMs, and in partnership with them, to forge a powerful competitive force in the semicon-ductor industry. To realize our vision, we must have a trinity of strengths:",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF TSMC 2024 Climate and Nature Report",
+      "url": "https://esg.tsmc.com/file/public/2024-TSMC-Climate-and-Nature-Report-e.pdf",
+      "snippet": "TSMC \" Energy continues Conservation to deepen and Carbon its climate Reduction\", change response which involves strategies, expanding focusing low-carbon on four key areas of action— increasing the use of renewable energy, technologies, Disaster Adaptation\" promoting restoring which diverse includes and implementing various energy-saving ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF TSMC June 2026 Revenue Report",
+      "url": "https://pr.tsmc.com/system/files/newspdf/attachment/b60a12d402d9a770029cb7db003de6016cd12c64/June+2026+(E)_final_wmn.pdf",
+      "snippet": "TSMC June 2026 Revenue Report HSINCHU, Taiwan, R.O.C. - July 13, 2026 - TSMC (TWSE: 2330, NYSE: TSM) today announced its net revenue for June 2026: On a consolidated basis, revenue for June 2026 was approximately NT$442.68 billion, an increase of 6.2 percent from May 2026 and an increase of 67.9 percent from June 2025. Revenue for January through June 2026 totaled NT$2,404.48 billion, an ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF TSMC Packaging Technologies for Chiplets and 3D - Hot Chips",
+      "url": "https://www.hc33.hotchips.org/assets/program/tutorials/2021+HotChips+TSMC+Packaging+Technologies+for+Chiplets+and+3D_0819+publish_public.pdf",
+      "snippet": "TSMC 3DFabricTM technology platform continues packaging envelop scale-up, and 3D stacking interconnect density scale-down to drive energy efficient performance.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF TSMC - Report",
+      "url": "https://cdn.prod.website-files.com/66765f7b7d993bf36900cab8/667799e463afbe994772ca50_TSMC+-+Report.pdf",
+      "snippet": "Company Overview Founded in 1987, Taiwan Semiconductor Manufacturing Company (TSMC) stands as the largest pure-play semiconductor foundry globally, commanding a commanding 60% market share. Based in Taiwan, with plans for expansion into the United States, TSMC boasts a prestigious clientele including technological giants like Apple, Nvidia, and AMD. Renowned for its high-quality and ever ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF Tsmc (2330.tw/2330 Tt) - Kgi",
+      "url": "https://www.kgi.com.hk/en/-/media/files/kgishk/research-reports/tw-reports/2024/01/tsmc_2330-tt_23082024.pdf",
+      "snippet": "Upside at TSMC = downside at non-TSMC CoWoS supply chain. ASE (3711 TT, NT$152.5, NR) is a major oS partner for TSMC's CoWoS production, but the market believes it might add 10kwpm of CoW capacity in 2H25.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF TSMC 2024 Sustainability Impact Valuation Report",
+      "url": "https://esg.tsmc.com/file/public/2024-TSMC-Sustainability-Impact-Valuation-Report-e.pdf",
+      "snippet": "As a responsible global corporate citizen, TSMC is dedicated to reducing the negative impacts of its operations. The Company is improving energy and water efficiency, accelerating renewable energy adoption, setting water-positive targets, and partnering with suppliers to reduce carbon emissions—steadily progressing toward its 2050 net-zero commitment. At the same time, the Company actively ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF TSMC",
+      "url": "https://worldlypartners.com/wp-content/uploads/2025/01/TSMC.pdf",
+      "snippet": "Mental Model Summary Derived from TSMC 1. The global semiconductor market and its end-user markets have seen healthy growth over decades. From 1993, the year before TSMC's IPO, to 2023, the global semiconductor market grew from $77 billion to $527 billion, reflecting a CAGR of over 6%.1 Since TSMC was founded in 1987, the world's semiconductor market has grown from $26 billion to $527 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF 按一下這裡並鍵入主標題 - pr.tsmc.com",
+      "url": "https://pr.tsmc.com/system/files/newspdf/attachment/167c59998c7117f14c13647c8e46a6b20a43316c/2025+Tech+Symposium+(E)_Final_wmn.pdf",
+      "snippet": "SANTA CLARA, CA, Apr. 23, 2025 - TSMC (TWSE: 2330, NYSE: TSM) today unveiled its next cutting-edge logic process technology, A14, at the Company's North America Technology Symposium. Representing a significant advancement from TSMC's industry-leading N2 process, A14 is designed to drive AI transformation forward by delivering faster computing and greater power efficiency. It is also ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

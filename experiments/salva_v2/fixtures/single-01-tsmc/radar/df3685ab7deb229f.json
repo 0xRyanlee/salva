@@ -1,0 +1,79 @@
+{
+  "task_id": "single-01-tsmc",
+  "strategy": "radar",
+  "query": "TSMC founded TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:24:55.553516+00:00",
+  "results": [
+    {
+      "title": "Question Type Single-Select Who founded TSMC | StudyX",
+      "url": "https://studyx.ai/questions/4lh1s5x/question-type-single-select-who-founded-tsmc-ren-zhengfei-morris-chang-lee-byung-chull",
+      "snippet": "Morris Chang founded TSMC (Taiwan Semiconductor Manufacturing Company) in 1987. He is widely recognized as the pioneer of the dedicated independent semiconductor foundry...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC's Arizona fab profit margin lags behind Taiwan's | Jessie Zhu...",
+      "url": "https://www.linkedin.com/posts/jessie-zhu-bab1855b_a-blogger-citing-data-from-an-industry-analysis-activity-7413619864906608640-YKRX",
+      "snippet": "Headquartered in Hsin-chu, Taiwan, TSMC was founded in 1987 by Morris Chang, who is widely regarded for pioneering the semiconductor foundry business model.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Morris Chang founded TSMC — the world's most important company.",
+      "url": "https://www.abc.net.au/news/2023-08-19/tsmc-the-most-important-company-in-the-world/102728172",
+      "snippet": "The TSMC factories in Taiwan are incredibly sterile and efficient. (Reuters: Ann Wang). Forty years on from when it was first founded, TSMC is now making the smallest chips in the world.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSM Hisse Senedi Fiyatı — TSMC Grafiği — TradingView",
+      "url": "https://tr.tradingview.com/symbols/NYSE-TSM/",
+      "snippet": "Taiwan Semiconductor Manufacturing Company Ltd.Taiwan Semiconductor Manufacturing Company (TSMC), küresel döküm pazarının %67,6'sını kontrol ederken, tüm teknoloji...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Morris Chang Quiz - LetsQuiz",
+      "url": "https://letsquiz.com/quiz/morris-chang-knowledge-showdown-questions-to-prove-your-worth",
+      "snippet": "Taiwan Semiconductor Manufacturing Company (TSMC), founded by Morris Chang, is headquartered in Hsinchu, Taiwan. TSMC has played a crucial role in the development of...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing Company Limited",
+      "url": "https://www.tsmc.com/",
+      "snippet": "TSMC has been the world's dedicated semiconductor foundry since 1987...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing Just... | The Motley Fool",
+      "url": "https://www.fool.com/investing/2026/07/19/taiwan-semiconductor-manufacturing-just-showed-the/",
+      "snippet": "Taiwan Semiconductor Manufacturing Just Showed the Artificial Intelligence (AI) Build-Out Is Alive and Well With This Jaw-Dropping Announcement. TSMC is at the heart of the data center...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Go tech, old man: The startup world doesn’t belong to... - Haaretz.com",
+      "url": "https://www.haaretz.com/israel-news/business/2018-07-26/ty-article/go-tech-old-man-the-startup-world-doesnt-belong-to-the-young-alone/0000017f-dc62-db22-a17f-fcf3fb960000",
+      "snippet": "The company he founded eventually folded but the startup he works for now, Beyond Verbal, is founded on models he developed. “One of the things that happens as you get older is...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "The One Semiconductor Stock That Analysts Say You... - Radio Tandil",
+      "url": "https://www.radiotandil.com/opiniones/4357/the-one-semiconductor-stock-that-analysts-say-you-should-buy-with-1000-right-now/",
+      "snippet": "Taiwan Semiconductor Manufacturing Company (TSMC). Founded. 1987. Headquarters. Hsinchu, Taiwan. Founder. Morris Chang.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing Company... - Yahoo Finance",
+      "url": "https://finance.yahoo.com/quote/TSM/",
+      "snippet": "Find the latest Taiwan Semiconductor Manufacturing Company Limited (TSM) stock quote, history, news and other vital information to help you with your stock trading and investing.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

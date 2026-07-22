@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-01-cncf-founders",
+  "strategy": "anchor",
+  "query": "Cloud Native Computing Foundation Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:29:47.276970+00:00",
+  "results": [
+    {
+      "title": "KubeCon + CloudNativeCon, OpenInfra Summit and PyTorch...",
+      "url": "https://www.linuxfoundation.org/press/kubecon-cloudnativecon-openinfra-summit-and-pytorch-conference-unite-in-china-to-scale-ai",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure, including Kubernetes, Prometheus, and Envoy.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF Welcomes 21 New Silver Members As Global Demand Surges...",
+      "url": "https://lifestyle.ribbon.co/story/566561/cncf-welcomes-21-new-silver-members-as-global-demand-surges-for-observability-ai-and-secure-cloud-native-infrastructure/",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure, including Kubernetes, Prometheus, and Envoy. CNCF brings together the industry’s top developers, end users...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ThnkBIG Joins Cloud Native Computing Foundation in Aligning the...",
+      "url": "https://aithority.com/technology/thnkbig-joins-cloud-native-computing-foundation-in-aligning-the-tech-industry-with-the-fast-growing-future-of-cloud/",
+      "snippet": "ThnkBIG, a global cloud technology solutions and services firm, is pleased to announce its acceptance into the Cloud Native Computing Foundation, a Linux Foundation project that was founded in 2015 to help advance container technology and align the tech industry around...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Andela, CNCF empower 20,000 Africans with cloud-native skills",
+      "url": "https://www.linkedin.com/posts/techpression_andela-cncf-empower-20000-africans-with-activity-7264612250794004480-F-q2",
+      "snippet": "...lnkd.in/eYhUiTZ6 In a groundbreaking move to address the global cloud computing skills shortage, Andela, a leading global tech talent marketplace, has partnered with the Cloud Native Computing Foundation (CNCF) to train #20,000 #African developers in cloud-native technologies.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ZenHub Joins the Cloud Native Computing Foundation",
+      "url": "https://martechseries.com/sales-marketing/marketing-clouds/zenhub-joins-the-cloud-native-computing-foundation/",
+      "snippet": "Globe Newswire. March 22, 2022. ZenHub-Joins-the-Cloud-Native-Computing-Foundation.Global productivity management leader joins leading OSS cloud foundation.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "The World's Most Distributed Cloud Computing Platform | Akamai",
+      "url": "https://www.linode.com/",
+      "snippet": "Build and deliver low-latency, edge native applications on Akamai Connected Cloud.Scale across the globe. Control where data is managed and scale to meet demand in key global customer markets.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) and Andela partner to...",
+      "url": "https://www.opportunitiesforafricans.com/cloud-native-computing-foundation-cncf-and-andela-partner-to-train-20000-african-tech-professionals/",
+      "snippet": "Program Details. Training participants will take six to nine months to achieve the KCNA and CKAD certifications and will be selected from Andela’s talent marketplace, which includes 150,000 technology professionals globally with a large percentage from Africa.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Demand Forecast and Cloud Native Computing - ISmile Technologies",
+      "url": "https://ismiletechnologies.com/en_us/machine-learning/demand-forecast-and-cloud-native-computing/",
+      "snippet": "Cloud Native Computing Foundation is one of the essential roles in software development and big data world.To be specific, the Cloud Native Computing Foundation hosts critical components of the global technology infrastructure.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "South Valley Journal | Educating | Entertaining | Informing",
+      "url": "https://pr.rivertonjournal.com/article/Over-30-New-Members-Join-the-Cloud-Native-Computing-Foundation?storyId=64aece9be91cfe1d94ffd07f",
+      "snippet": "About Cloud Native Computing Foundation Cloud native computing empowers organizations to build and run scalable applications with an open source software stack in public, private, and hybrid clouds.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Kubernetes",
+      "url": "https://kubernetes.io/",
+      "snippet": "Kubernetes is open source giving you the freedom to take advantage of on-premises, hybrid, or public cloud infrastructure, letting you effortlessly move workloads to where it matters to you. To download Kubernetes, visit the download section. The Absolute Beginner's Guide To Cloud Native.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

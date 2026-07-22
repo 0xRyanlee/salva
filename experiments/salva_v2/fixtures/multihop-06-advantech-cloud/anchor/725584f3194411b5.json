@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-06-advantech-cloud",
+  "strategy": "anchor",
+  "query": "cloud platform partnership",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:32:25.450280+00:00",
+  "results": [
+    {
+      "title": "Partner Home | Google Cloud",
+      "url": "https://partners.cloud.google.com/",
+      "snippet": "The Google Cloud Partner Network recognizes your impact at every stage of the customer journey through a framework designed to focus on your real-world results. By integrating AI into the core of the program, Google Cloud has automated routine administrative tasks, allowing you to spend less time on paperwork and more time delivering innovation to your customers. Whether you're a specialized ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Google Cloud Partner Network",
+      "url": "https://cloud.google.com/partners",
+      "snippet": "Learn how Google Cloud's thousands of vetted and experienced partners and partner-built tools can help support your cloud journey.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Welcome to the Microsoft Cloud Partner Program",
+      "url": "https://partner.microsoft.com/blog/article/welcome-to-the-microsoft-cloud-partner-program/",
+      "snippet": "Innovate on the most comprehensive, end-to-end cloud platform: Whether you want to develop or extend on the Microsoft Cloud, provide customers with best-in-class solutions and services, or sell cutting-edge devices, the Cloud Partner Program is how we support your goals.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Unlock ROI with Platform Partnerships | Vertisystem",
+      "url": "https://vertisystem.com/blog/platform-partnerships-define-the-next-era-of-digital-transformation/",
+      "snippet": "Discover how Vertisystem helps enterprises unlock ROI from AWS, Azure, Salesforce & Google Cloud partnerships for next-gen digital transformation.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Partnerships FAQs | Deimos Cloud Partner Expertise",
+      "url": "https://www.deimos.io/blog-posts/cloud-partnerships-faqs",
+      "snippet": "Get answers to the most common cloud partnership FAQs. Learn how Deimos helps you succeed with Google Cloud, AWS, Azure & more.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Accenture Edge | Ecosystem and Platform Partners",
+      "url": "https://www.accenture.com/us-en/edge/ecosystem-partners",
+      "snippet": "Anyone can claim a partnership, but Accenture Edge holds the highest-tier certifications across every major platform. Which means when your SAP platform needs to talk to Salesforce, or your AWS environment needs to connect to Oracle, you have one team that knows the full picture. Whether you're selecting a platform for the first time, mid-implementation or looking to get more from what you ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "IBM and Google Cloud partnership",
+      "url": "https://www.ibm.com/google/",
+      "snippet": "The IBM-Google partnership is a strategic collaboration focused on accelerating enterprise hybrid cloud adoption, AI-driven transformation, and modernization of critical workloads.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud partners - Databricks",
+      "url": "https://www.databricks.com/partners/cloud-partners",
+      "snippet": "Built for Multi-Cloud Environments Databricks is designed to work seamlessly across AWS, Microsoft Azure, and Google Cloud, giving your teams the flexibility to build and scale where it makes sense for your business, without being locked into a single provider.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Find a Microsoft partner",
+      "url": "https://partner.microsoft.com/en-us/partnership/find-a-partner",
+      "snippet": "Discover how Microsoft partners deliver the technical expertise, services, and solutions you need to grow your business.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Become an AWS Partner | AWS Partner Network",
+      "url": "https://aws.amazon.com/partners/",
+      "snippet": "The AWS Partner Network (APN) is a global community of partners that leverages programs, expertise, and resources to build, market, and sell customer offerings.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

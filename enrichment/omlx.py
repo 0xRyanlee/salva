@@ -9,6 +9,7 @@ import json
 import logging
 import re
 import time
+from dataclasses import dataclass
 from typing import Literal, cast
 
 from salva_core.llm import DEFAULT_OMLX_TIMEOUT, build_bounded_prompt, complete_with_omlx
@@ -17,6 +18,14 @@ from salva_core.schemas import DiscoveryRequest
 logger = logging.getLogger("salva.enrichment.omlx")
 
 LLMTask = Literal["expansion", "extraction", "summarization", "output_shaping"]
+
+
+@dataclass
+class EnrichmentOutcome:
+    data: dict | None
+    error: str | None = None
+    attempts: int = 0
+    max_retries: int = 0
 
 
 _SYSTEM_PROMPTS: dict[str, str] = {
@@ -50,13 +59,19 @@ _OBJECTIVE_PROMPT_HINTS: dict[str, str] = {
 
 
 def enrich(domain: str, fields: dict, model: str | None = None, request: DiscoveryRequest | None = None) -> dict | None:
+    return enrich_with_diagnostics(domain, fields, model, request).data
+
+
+def enrich_with_diagnostics(
+    domain: str, fields: dict, model: str | None = None, request: DiscoveryRequest | None = None
+) -> EnrichmentOutcome:
     system, user_template, task = _select_prompt_bundle(domain, request)
     user = user_template.format_map({k: (v or "") for k, v in fields.items()})
 
     # Get timeout and retry config from request
     timeout = DEFAULT_OMLX_TIMEOUT
     max_retries = 0
-    
+
     if request and request.enrichment:
         timeout = request.enrichment.omlx_timeout or DEFAULT_OMLX_TIMEOUT
         max_retries = request.enrichment.omlx_max_retries or 0
@@ -69,26 +84,32 @@ def enrich(domain: str, fields: dict, model: str | None = None, request: Discove
         max_tokens=420,
         temperature=0.2,
     )
-    
+
     # Retry loop with exponential backoff
     last_error = None
+    attempts = 0
     for attempt in range(max(1, max_retries + 1)):
+        attempts = attempt + 1
         try:
             result = complete_with_omlx(bundle, timeout=timeout)
             if result.available and result.content:
-                return _parse_json(result.content)
+                return EnrichmentOutcome(
+                    data=_parse_json(result.content), attempts=attempts, max_retries=max_retries
+                )
             last_error = result.message or "no content"
         except Exception as e:
             last_error = str(e)
-        
+
         if attempt < max_retries:
             # Exponential backoff: 1s, 2s, 4s...
             sleep_time = 2 ** attempt
             logger.warning(f"OMLX call failed (attempt {attempt + 1}/{max_retries + 1}), retrying in {sleep_time}s: {last_error}")
             time.sleep(sleep_time)
-    
+
     logger.warning(f"OMLX call failed after {max_retries + 1} attempts: {last_error}")
-    return None
+    return EnrichmentOutcome(
+        data=None, error=last_error, attempts=attempts, max_retries=max_retries
+    )
 
 
 def enrich_batch(

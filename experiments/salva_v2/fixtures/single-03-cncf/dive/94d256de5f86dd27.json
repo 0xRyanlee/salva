@@ -1,0 +1,79 @@
+{
+  "task_id": "single-03-cncf",
+  "strategy": "dive",
+  "query": "\"Cloud Native Computing Foundation\" Global -blog -museum -review -job -news -report",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:25:38.109847+00:00",
+  "results": [
+    {
+      "title": "Cloud native X.509 certificate management for Kubernetes and...",
+      "url": "https://cert-manager.io/",
+      "snippet": "It will obtain certificates from a variety of Issuers, both popular public Issuers as well as private Issuers, and ensure the certificates are valid and up-to-date, and will attempt to renew certificates at a configured time before expiry. cloud native computing foundation logo.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "About | Cloud Native Kampala",
+      "url": "https://cloudnative.open.ug/about",
+      "snippet": "Cloud Native Kampala is an official CNCF Community Group. We are connected to the larger Cloud Native Computing Foundation (CNCF) ecosystem — giving members access to global projects, learning resources, and contribution opportunities.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "KubeCon: 6 ways cloud native technologies are powering AI",
+      "url": "https://www.fierce-network.com/ai/six-ways-cloud-native-technologies-are-powering-ai",
+      "snippet": "Kubecon cloud native Cloud Native Computing Foundation Kubernetes. Priyanka Sharma, Executive Director, CNCF, Linux Foundation. Open interfaces and standards in cloud-native technologies provide a vast ecosystem of tools and runtimes.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) - Arch Town",
+      "url": "https://archtown.org/cloud_native_computing_foundation_cncf",
+      "snippet": "@cloud_native_computing_foundation_cncf.The home of Kubernetes, Prometheus, Envoy and the cloud-native ecosystem.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud native explained. An interview with Cheryl Hung, VP Ecosystem...",
+      "url": "https://www.computing.co.uk/interview/4022550/cloud-native-explained-interview-cheryl-hung-vp-ecosystem-cncf",
+      "snippet": "Cheryl Hung is VP Ecosystem at the Cloud Native Computing Foundation (CNCF) arriving at this role from Google, where she says cloud native practices have been the norm for a decade, via a stint a with storage platform StorageOS.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud native & container day 2025",
+      "url": "https://www.conoa.se/cloud-native-container-day/",
+      "snippet": "Cloud Native & Container Day 2024 recap. A huge thank you to everyone who made this event possible – our attendees, and the entire Conoa, Proact IT Sweden, and Creative Meetings team who worked tirelessly behind the scenes.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Modern Observability with OpenTelemetry - YouTube",
+      "url": "https://www.youtube.com/watch?v=_OXYCzwFd1Y",
+      "snippet": "K.P. Simha, C. LeCNCF [Cloud Native Computing Foundation]1.7K views • 1 year agoLivePlaylist ()Mix (50+). 46:29. Why distributed tracing will replace (most) loggingLightstep is now ServiceNow Cloud Observability 4.9K views • 5 years agoLivePlaylist ()Mix (50+).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Welcome | OAuth2 Proxy",
+      "url": "https://oauth2-proxy.github.io/oauth2-proxy/",
+      "snippet": "Cloud Native Computing Foundation. OAuth2 Proxy is a Cloud Native Computing Foundation Sandbox project. CNCF. The Linux Foundation® (TLF) has registered trademarks and uses trademarks.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "The OpenMetrics project — Creating a standard for exposing metrics...",
+      "url": "https://openmetrics.io/",
+      "snippet": "It specifies the de-facto standard for transmitting cloud-native metrics at scale, with support for both text representation and Protocol Buffers. You can track the project’s progress on the OpenMetrics mailing list. OpenMetrics is a Cloud Native Computing Foundation sandbox project.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF Jalandhar _ Info Session _ Slide Deck Template.pptx",
+      "url": "https://www.slideshare.net/slideshow/cncf-jalandhar-info-session-slide-deck-templatepptx/262991965",
+      "snippet": "The document outlines the Cloud Native Computing Foundation (CNCF) and its role in the global technology infrastructure since its founding in 2015. It emphasizes the importance of a code of conduct that promotes empathy, respect, and inclusivity within the community.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

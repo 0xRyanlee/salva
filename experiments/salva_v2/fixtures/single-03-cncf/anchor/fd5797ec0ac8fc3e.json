@@ -1,0 +1,79 @@
+{
+  "task_id": "single-03-cncf",
+  "strategy": "anchor",
+  "query": "CNCF Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:25:39.900660+00:00",
+  "results": [
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) | LinkedIn",
+      "url": "https://www.linkedin.com/company/cloud-native-computing-foundation/?_hsenc=p2ANqtz-_6omNa8rYl7nEzK95PrSxJSO07feNZekuwRDowwwkK_w1cNgCYdaLjVitWQq4z87XyJvXx",
+      "snippet": "CNCF is part of The Linux Foundation.Official CNCGs (chapter organizers) can host a #cTENcf party — a CNCF global birthday celebration marking 10 years of cloud native.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Golden Kubestronauts Directory | Global List of CNCF-certified Golden...",
+      "url": "https://goldenkubestronauts.arindamgb.com/",
+      "snippet": "Golden Kubestronauts is a global directory and global list for people researching CNCF-certified talent. It helps visitors explore golden kubestronauts by country and understand the full...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF CNF Certification For Telco Market Research Report 2033",
+      "url": "https://dataintelo.com/report/cncf-cnf-certification-for-telco-market",
+      "snippet": "According to our latest research, the global CNCF CNF Certification for Telco market size reached USD 1.19 billion in 2024, with a robust growth trajectory driven by the rapid adoption of...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "[Tracking Event] CNCF Global Week of Cloud Native Sustainability...",
+      "url": "https://github.com/cncf/tag-env-sustainability/issues/95",
+      "snippet": "Next steps(September, October) Event week organizers work on announcements(October) CNCF Global Week of Cloud Native Sustainability",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Hitachi Employee Receives the \"Chop Wood Carry...\" : Hitachi Global",
+      "url": "https://www.hitachi.com/en/press/articles/2025/11/1114/",
+      "snippet": "He was also highly recognized for his efforts in bringing the CNCF global event \"KubeCon + CloudNativeCon Japan 2025\" to Japan for the first time, together with CNCJ members...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF Contributors Are Global | Code Engineered",
+      "url": "https://codeengineered.com/blog/2023/cncf-global-contributors/",
+      "snippet": "A look at the CNCF and Kubernetes global distributions of contributors and committers.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Finance & Policies - Christina Noble Children's Foundation",
+      "url": "https://www.cncf.org/finance-policies/",
+      "snippet": "The Christina Noble Children’s Foundation (CNCF) is dedicated to serving the physical, medical, educational and emotional needs of vulnerable children.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation",
+      "url": "https://cloudnativemauritius.com/cncf",
+      "snippet": "CNCF global chapters play a critical role in democratizing access to cloud-native knowledge and fostering collaboration across geographical boundaries. They host a variety of events...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Announcements | Jimmy Song",
+      "url": "https://jimmysong.io/notice/",
+      "snippet": "Cloud Native Community China, part of the CNCF global community network, is now live. 11 JANUNARY 2026.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Łukasz Adamski — Strategic Engineering Leadership",
+      "url": "https://lukaszadamski.com/",
+      "snippet": "Łukasz Adamski is the first Golden Kubestronaut in Poland, one of the first worldwide, and the only engineer globally to complete all CNCF certifications within a single month.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

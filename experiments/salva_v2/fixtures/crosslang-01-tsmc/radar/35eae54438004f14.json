@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-01-tsmc",
+  "strategy": "radar",
+  "query": "台積電 founded TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:34.670702+00:00",
+  "results": [
+    {
+      "title": "台積電 - 維基百科，自由的百科全書",
+      "url": "https://zh.wikipedia.org/zh-tw/台灣積體電路製造",
+      "snippet": "2 days ago - 台灣積體電路製造（英語：Taiwan Semiconductor Manufacturing Company, Ltd.），簡稱台積電、TSMC，與旗下子公司合稱台積電集團，是臺灣一家專注於半導體晶片製造的高科技跨國企業，總部位於新竹科學園區，是全球前十大企業，也...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台灣積體電路製造 - 維基百科，自由的百科全書",
+      "url": "https://zh.wikipedia.org/zh-hant/台灣積體電路製造",
+      "snippet": "June 14, 2026 - 台灣積體電路製造股份有限公司（英語：Taiwan Semiconductor Manufacturing Company, Ltd.，簡稱台積電、TSMC，與旗下子公司合稱台積電集團）是臺灣一家專注於半導體晶片製造的高科技跨國企業，總部位於臺灣新竹科學園區，是全球...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/TSMC",
+      "snippet": "1 day ago - Taiwan Semiconductor Manufacturing Company Limited (Chinese: 台灣積體電路製造股份有限公司 · ; Taiwan Semiconductor or TSMC) is a Taiwanese multinational semiconductor contract manufacturing and design company. Headquartered in Hsinchu Science Park, it is one of the world's largest ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電當初到底是如何被創立的？不是張忠謀 - 林子揚的美股長期投資部落格",
+      "url": "https://www.granitefirm.com/blog/blog/2025/02/06/台積電當初到底是如何被創立的/",
+      "snippet": "May 1, 2026 - 台積電的真正創辦人不是張忠謀，真正創立台積電的應是台灣1970至1980年代的台灣政府，以及提出想法奔走的幾位非常有遠見的經濟官僚。建議您一併閱讀我的貼文《葉萬安駁斥張忠謀的「政府不甘投資台積電」論》和《台...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "護國神山的由來：當年的台積電，是如何在一片質疑中被催生出來？ ｜ 瞿宛文 ／ 獨評讀好書 ｜ 獨立評論",
+      "url": "https://opinion.cw.com.tw/blog/profile/390/article/13390",
+      "snippet": "March 15, 2023 - 台積電成立於解嚴之前的1987年2月。它的成績與基礎實源於台灣戰後前期的產業政策，源於當時經建主事者以及海內外華人，基於中華民族主義推動工業救國的驅動力。同時，它可說是一個如假包換的公部門企畫案，是公部門推動成立的企業，只是為了規避僵固的國營事業的規範，而讓正式的官股占比低於一半，同時對日後經營並未進行太多干預。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電：台灣「護國神山」成長記 - BBC News 中文",
+      "url": "https://www.bbc.com/zhongwen/trad/57337274",
+      "snippet": "June 13, 2021 - 1987年創立於台灣新竹科學園區的台積電，發展30多年來已經成為全球芯片代工製造服務的龍頭，員工超過51000人，為客戶生產的芯片應用廣泛，包括電腦、通訊產品、消費性及工業用電...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電",
+      "url": "https://www.linkedin.com/company/tsmc",
+      "snippet": "April 10, 2026 - TSMC | 841,918 followers on LinkedIn. Established in 1987, TSMC is the world's first dedicated semiconductor foundry. As the founder and a leader of the Dedicated IC Foundry segment, TSMC has built its reputation by offering advanced and ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "14. 台積電企業團 TSMC GROUP – 中華民國三三企業交流會",
+      "url": "https://www.sansanfe.org.tw/portfolio/15-台積電企業團-tsmc-group/",
+      "snippet": "台積公司成立於民國七十六年，在半導體產業中首創專業積體電路製造服務模式。身為專業積體電路製造服務業的創始者與領導者，台積公司係第一個推出28奈米製程的專業積體電路服務公司；民國九十九年，提供超過157種製程技術，為450多個客戶生產超過8,300種晶片，被廣泛地運用在電腦產品、通訊產品與消費性電子產品等多樣應用領域。民國一百年，台積公司所擁有及管理的產能預計將達到約1,348萬片八吋約當晶圓。台積公司在台灣設有二座先進的",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "About TSMC - Taiwan Semiconductor Manufacturing Company Limited",
+      "url": "https://www.tsmc.com/english/aboutTSMC",
+      "snippet": "Established in 1987, TSMC is the world's first dedicated semiconductor foundry. TSMC (TWSE: 2330, NYSE: TSM) created the semiconductor Dedicated IC Foundry business model when it was founded in 1987.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Company Info - Taiwan Semiconductor Manufacturing Company Limited",
+      "url": "https://www.tsmc.com/english/aboutTSMC/company_profile",
+      "snippet": "1 week ago - TSMC (TWSE: 2330, NYSE: TSM) created the semiconductor Dedicated IC Foundry business model when it was founded in 1987.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

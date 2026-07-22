@@ -1,0 +1,79 @@
+{
+  "task_id": "single-01-tsmc",
+  "strategy": "anchor",
+  "query": "site:crunchbase.com TSMC",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:24:55.721565+00:00",
+  "results": [
+    {
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/?_pxhc=1622320623164",
+      "snippet": "TSMC. Product Launch. The iPhone 20 could be the first to use TSMC's new A14 process node (1.4nm) announced today.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/?_pxhc=1638948289569",
+      "snippet": "TSMC. Product Launch. The iPhone 20 could be the first to use TSMC's new A14 process node (1.4nm) announced today.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/?_pxhc=1635691215806",
+      "snippet": "TSMC promises to produce 2nm chips in the US, but don’t expect them in the next iPhone. Isomorphic Labs. Growth Prediction.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/?_pxhc=1606029206151",
+      "snippet": "TSMC promises to produce 2nm chips in the US, but don’t expect them in the next iPhone. Skims. Acquisition Prediction.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/?_pxhc=1633022634392",
+      "snippet": "TSMC. Product Launch. The iPhone 20 could be the first to use TSMC's new A14 process node (1.4nm) announced today.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing Company - Crunchbase",
+      "url": "https://www.crunchbase.com/organization/tsmc",
+      "snippet": "TSMC is a semiconductor manufacturer that offers wafer production processing and dedicated IC foundry.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Che-Chia Wei - Crunchbase Person Profile",
+      "url": "https://www.crunchbase.com/person/c-c-wei",
+      "snippet": "Che-Chia Wei is based out of Hsinchu and is the Chief Executive Officer of Taiwan Semiconductor Manufacturing Company. Che-Chia Wei previously worked at President and Co-Chief Executive Officer at Taiwan Semiconductor Manufacturing Company. Che-Chia Wei attended the National Chiao Tung University and Yale University.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC Arizona - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/tsmc-arizona",
+      "snippet": "In the city of Phoenix, TSMC Arizona aims to represent the world's most advanced semiconductor technology in the United States.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Lora Ho - Crunchbase Person Profile",
+      "url": "https://www.crunchbase.com/person/lora-ho",
+      "snippet": "Lora Ho is the Chief Financial Officer and Spokesperson of Taiwan Semiconductor Manufacturing Company Limited (TSMC). Joined TSMC in 1999, Ms. Ho served as Corporate Controller from 1999 to 2003, and became the Chief Financial Officer since 2003.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Muse Semiconductor - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/muse-semiconductor",
+      "snippet": "Muse Semiconductor offers MPW services for university researchers, IP suppliers, and startups, focusing on TSMC's Cybershuttle.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

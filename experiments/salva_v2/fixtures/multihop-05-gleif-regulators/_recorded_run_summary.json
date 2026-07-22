@@ -1,0 +1,83 @@
+{
+  "task_id": "multihop-05-gleif-regulators",
+  "entities": [
+    {
+      "title": "Home - GLEIF",
+      "source_urls": [
+        "https://www.gleif.org"
+      ],
+      "score": 0.3197,
+      "confidence": 0.3197
+    },
+    {
+      "title": "GLEIF (Global Legal Entity Identifier Foundation) | Regulatory ...",
+      "source_urls": [
+        "https://regulatorik.ai/en/framework/gleif"
+      ],
+      "score": 0.3491,
+      "confidence": 0.3491
+    },
+    {
+      "title": "Who are the GLEIF (Global Legal Entity Identifier Foundation ...",
+      "source_urls": [
+        "https://support.leiworldwide.com/kb/guide/en/who-are-the-gleif-global-legal-entity-identifier-foundation-QNGL2SJOpZ/Steps/3153370"
+      ],
+      "score": 0.3321,
+      "confidence": 0.3321
+    },
+    {
+      "title": "What Is GLEIF? (Global Legal Entity Identifier Foundation)",
+      "source_urls": [
+        "https://www.identity.org/what-is-gleif"
+      ],
+      "score": 0.3604,
+      "confidence": 0.3604
+    },
+    {
+      "title": "GLEIF | Global Legal Entity Identifier Foundation | LEI Register",
+      "source_urls": [
+        "https://www.lei-identifier.com/gleif"
+      ],
+      "score": 0.3391,
+      "confidence": 0.3391
+    },
+    {
+      "title": "tips_GLEIF.pdf",
+      "source_urls": [
+        "https://www.ecb.europa.eu/paym/pdf/cons/tips/tips_GLEIF.pdf"
+      ],
+      "score": 0.1601,
+      "confidence": 0.1601
+    },
+    {
+      "title": "Topica Booster: AI проверка иностранных компаний и документов...",
+      "source_urls": [
+        "https://www.topica.tech"
+      ],
+      "score": 0.3126,
+      "confidence": 0.3126
+    },
+    {
+      "title": "GitHub - OSINTERs/osint-probiv-bots · GitHub",
+      "source_urls": [
+        "https://github.com/OSINTERs/osint-probiv-bots"
+      ],
+      "score": 0.1783,
+      "confidence": 0.1783
+    },
+    {
+      "title": "On Tokenization: It’s about Standards, not Regulation | Medium",
+      "source_urls": [
+        "https://medium.com/@RRKUBLI/on-tokenization-its-about-standards-not-regulation-765635c5ac12"
+      ],
+      "score": 0.1489,
+      "confidence": 0.1489
+    }
+  ],
+  "meta": {
+    "qualified_count": 9,
+    "raw_count": 9,
+    "rounds": 3,
+    "domain": "partnerships"
+  }
+}

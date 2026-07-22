@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-03-naturehike-dach",
+  "strategy": "anchor",
+  "query": "Naturehike distributor partnership",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:30:50.865290+00:00",
+  "results": [
+    {
+      "title": "Naturehike Partnership • Wholesale Distribution Opportunities",
+      "url": "https://naturehike-outdoors.com/partnership/",
+      "snippet": "Start your partnership journey today by visiting our official store or contacting our distribution team directly to explore how Naturehike can strengthen your outdoor retail business.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike Taiwan -全館現貨 台灣總代理 安心享保固",
+      "url": "https://www.naturehiketw.com/?lang=zh-hans",
+      "snippet": "自創立以來Naturehike一直專注於戶外產品的研發與銷售，豐富的商品線熱銷全球68個國家。 致力於打造質感高CP值戶外生活。 台灣總代理提供您優良的購買體驗及售後服務。 加入會員享有超值待遇，折扣無上限。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike - 挪客B2B商城",
+      "url": "https://b2b.naturehike.cn/",
+      "snippet": "热销 价格 上新时间 Naturehike挪客 P系列单层帐篷 CNK2450WS030 ¥ 269 上新 已售1000件 Naturehike挪客森林 牛皮纸袋&编织袋 CSL2650XB012&CSL2650XB010&CSL2650XB011 ¥ 1.9 上新 Naturehike挪客 蒙加BASE徒步帐篷 CNK2650WS014 ¥ 699 上新 已售500件",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Avoid Fake NatureHike Gear: Verify Authorized Distributors & Local Stock in Taiwan for Safe Hiking - 淘寶",
+      "url": "https://world.taobao.com/lang/en-us/shopping-guide/2008637049967476736.htm",
+      "snippet": "Don't let counterfeit gear ruin your hike. Learn how to verify NatureHike authorized distributors in Taiwan, check physical stock, and spot fake zippers or fabric to ensure safety on the trail.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "關於我們 Naturehike Taiwan",
+      "url": "https://www.naturehiketw.com/pages/about-us",
+      "snippet": "Naturehike Taiwan提供1年售後保固。 陪您安心探索戶外生活。 Copyright © Naturehike Taiwan All Rights Reserved. Designed by CYBERBIZ.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Contact Us – Naturehike",
+      "url": "https://www.naturehike.com/pages/contact-us",
+      "snippet": "Oversea sales Email: helen@naturehike.com Oversea sales contact: +86-15990241150 Domestic sales contact: +86-19805885074 Office Time：8:30 a.m. - 5:30 p.m. (GMT+8) form monday to friday ( excluded holidays and weekends) We respond to most emails within a business day , but if you do not get a response form us, Please check your spam bin.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike Wholesale Info, Contact & Reviews | 2026",
+      "url": "https://portalwholesale.com/brands/naturehike",
+      "snippet": "Access detailed bulk order and distributor information for retailers including minimum orders, lead times, and international distribution details. Essential information for retail buyers and partners.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "成為合作夥伴 – NaturehikeHK",
+      "url": "https://naturehike.com.hk/pages/partner",
+      "snippet": "如 貴公司有意成為我們的分銷商，請到以下連結提交申請表： 填寫申請表 負責同事將會盡快與 貴公司聯繫。 如有任何疑問，歡迎Whatsapp直接與我們聯絡。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "wholesale – Naturehike",
+      "url": "https://www.naturehike.com/pages/wholesale",
+      "snippet": "Discover premium camping tents, hiking gear, and glamping equipment — enjoy nature with ease.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "",
+      "url": "/clev?event=StartpageResultClick&sc=2sbbv9InecKdQeXspzpoMuHgQnEYOewrHM4kuNfyTV9LkSf7pVYsaYLWopXp5I6tlXCNJTbKxyLgInbJs7Wt92ovBbswPsg5&payload={\"bdsSessionId\":\"cb6cabfdc1b743c584d6c77c56835db4\",\"cheqId\":\"\",\"countryCode\":\"TW\",\"deviceType\":\"mobile\",\"endpoint\":\"search.serp\",\"hasGoogleAds\":false,\"page_id\":\"1zAoDIGBYUMNCSa6d\",\"queryCategory\":\"web\",\"segment\":\"organic\",\"session_id\":\"1yuwgnCoBwi48xTUq\",\"surface\":\"serp-web\",\"transport\":\"href-request\"}",
+      "snippet": "",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

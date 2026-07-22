@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-05-gleif-regulators",
+  "strategy": "radar",
+  "query": "GLEIF collaboration Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:32:06.012424+00:00",
+  "results": [
+    {
+      "title": "GLEIF Partners Program - GLEIF Engagement - GLEIF - GLEIF",
+      "url": "https://www.gleif.org/en/about/gleif-engagement/gleif-partners-program",
+      "snippet": "GLEIF Partners Program The Global Legal Entity Identifier Foundation (GLEIF) Partners Program aims to drive collaboration among key industry players - including data and technology vendors, service providers, financial institutions, corporations, and trust service providers (TSPs) - to foster adoption and integration of the Legal Entity Identifier (LEI) and the verifiable LEI (vLEI) across ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Home - GLEIF",
+      "url": "https://www.gleif.org/",
+      "snippet": "The Global LEI Index is the only global online source for open, standardized and high quality legal entity reference data. Any interested party can easily access and search the complete Legal Entity Identifier (LEI) data pool using the web-based search tool developed by GLEIF.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF launches Global Partners Program | Digitalisation World",
+      "url": "https://form.digitalisationworld.com/news/70028/gleif-launches-global-partners-program",
+      "snippet": "The Global Legal Entity Identifier Foundation (GLEIF) has launched the GLEIF Partners Program, a new global initiative fostering increased collaboration among key stakeholders to accelerate the adoption of the Legal Entity Identifier (LEI) and verifiable LEI (vLEI) across sectors.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF Launches Global Partners Program To Advance Trusted ...",
+      "url": "https://mondovisione.com/news/gleif-launches-global-partners-program-to-advance-trusted-organizational-ident-202564/",
+      "snippet": "The Global Legal Entity Identifier Foundation (GLEIF) today launched the GLEIF Partners Program, a new global initiative fostering increased collaboration among key stakeholders to accelerate the adoption of the Legal Entity Identifier (LEI) and verifiable LEI (vLEI) across sectors. GLEIF's Partners Program creates a unique forum for data and technology vendors, financial institutions ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ISITC and GLEIF Launch Collaboration to Support Industry Best Practices ...",
+      "url": "https://isitc.org/news/press-releases/isitcgleif/",
+      "snippet": "The partnership will promote education, industry dialogue, and best practices to improve operational efficiency through consistent, reliable entity data. Branchburg, NJ, and Basel, Switzerland [June 16, 2026] - ISITC, a global industry trade group that is leading financial services operations into the future, and Global Legal Entity Identifier Foundation (GLEIF), the organization supporting ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF Joins Our Global Partner Program to Expand Trusted Business ...",
+      "url": "https://mojaloop.io/gleif-joins-our-global-partner-program-to-expand-trusted-business-identity-across-borders/",
+      "snippet": "The Mojaloop Foundation's newly launched global partner program brings together organizations committed to building inclusive instant payment systems (IIPS) and advancing financial inclusion. Among the program's founding partners is the Global Legal Entity Identifier Foundation (GLEIF), an organization dedicated to enabling trusted digital identity for businesses worldwide. To learn more ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF launches Partners Program - Securities Finance Times",
+      "url": "https://www.securitiesfinancetimes.com/securitieslendingnews/industryarticle.php?article_id=227931",
+      "snippet": "The Global Legal Entity Identifier Foundation (GLEIF) has launched the GLEIF Partners Program, a new global initiative fostering increased collaboration among stakeholders to accelerate the adoption of the LEI and verifiable LEI (vLEI). According to the firm, GLEIF's Partners Program creates a forum for data and technology vendors, financial institutions, and corporates, to develop offerings ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF Launches Global Partner Program to Boost Legal Entity ID Adoption",
+      "url": "https://idtechwire.com/gleif-launches-global-partner-program-to-boost-legal-entity-id-adoption/",
+      "snippet": "The Global Legal Entity Identifier Foundation (GLEIF) has launched its new Partners Program, a global initiative aimed at accelerating adoption of Legal Entity Identifiers (LEIs) and verifiable LEIs (vLEIs) across a broad range of industries. The program is intended to foster collaboration between data vendors, financial institutions, technology providers, and other stakeholders to support the ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF launches global program for LEI and vLEI adoption",
+      "url": "https://finadium.com/gleif-launches-global-program-for-lei-and-vlei-adoption/",
+      "snippet": "The Global Legal Entity Identifier Foundation (GLEIF) launched the GLEIF Partners Program, a global initiative fostering increased collaboration among key stakeholders to accelerate the adoption of the Legal Entity Identifier (LEI) and verifiable LEI (vLEI) across sectors. The forum is expected to include data and technology vendors, financial institutions, corporates, certification ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Gleif establishes partner programme - finextra.com",
+      "url": "https://www.finextra.com/pressarticle/105724/gleif-establishes-partner-programme",
+      "snippet": "Gleif establishes partner programme The Global Legal Entity Identifier Foundation (GLEIF) today launched the GLEIF Partners Program, a new global initiative fostering increased collaboration among ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

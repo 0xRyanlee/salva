@@ -1,0 +1,79 @@
+{
+  "task_id": "single-02-naturehike",
+  "strategy": "dive",
+  "query": "\"Naturehike\" China -blog -museum -review -job -news -report",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:24:59.641446+00:00",
+  "results": [
+    {
+      "title": "Товары и снаряжение для туризма и активного отдыха Naturehike.",
+      "url": "https://naturehike-global.ru/",
+      "snippet": "Палатки для туризма, спальники, посуда и аксессуары для приготовления пищи и уютного кемпинга по приятным ценам. Официальный дилер Naturehike в России.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Рюкзак Naturehike Discovery 70L. Обзор - YouTube",
+      "url": "https://www.youtube.com/watch?v=yKgkikV87yU",
+      "snippet": "Туристические рюкзаки в магазине \"Спорт-Марафон\": https://sport-marafon.ru/~2Is7yРюкзак Naturehike Discovery станет отличным рюкзаком как для новичков, так и...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Рюкзаки Naturehike — туристические, городские, женские, мужские",
+      "url": "https://naturehike.shop/catalog/backpacks",
+      "snippet": "Рюкзак туристический Naturehike Rock 2.0, 60 л, чёрный 4.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Mua Gối & phụ kiện NatureHike Online, Giá Tốt | Lazada.vn",
+      "url": "https://www.lazada.vn/goi-da-ngoai/brand-naturehike/",
+      "snippet": "China. Naturehike TPU Sleep Pillow Flocking Silent Ultralight Inflatable Camping Travel Quiet Soft Fabric Small Storage only 110g.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Установка и сборка 3-х местной автоматической палатки Naturehike",
+      "url": "https://yandex.ru/video/preview/17324121167889678810",
+      "snippet": "Установка и сборка 3-х местной автоматической палатки Naturehike. Rutube›Hiking Enthusiasts.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Penfield China 携手 Naturehike 打造全新户外联名系列 | Hypebeast",
+      "url": "https://hypebeast.cn/2022/8/penfield-china-naturehike-2022-outdoor-camping-collection",
+      "snippet": "为户外旅行者打造独特的露营装备。 据悉该联名系列将于 8 月 19 日正式在 Penfield China 官方渠道发售。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "NH17T001-T By Naturehike - SellerChecking",
+      "url": "https://sellerchecking.com/m/nh17t001-t",
+      "snippet": "Buy NH17T001-T online from China trusted suppliers at AliExpress with fast worldwide delivery. Those on a budget will find that the best cheap NH17T001-T offer china verified sellers.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Керамический антипригарный чайник Naturehike | AliExpress",
+      "url": "https://aliexpress.ru/item/1005007892234057.html",
+      "snippet": "Керамический антипригарный чайник Naturehike. Хорошие отзывы покупателей. Рейтинг- 4.5 Мы ускорили доставку!",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike 3000w Foldable Camping Cooker: Backpack Gas Stove...",
+      "url": "https://www.bossgoo.com/product-detail/naturehike-3000w-foldable-camping-cooker-backpack-65094745.html",
+      "snippet": "Naturehike Foldable Mini Gas Stove for Camping Hiking.Brand Name. Place Of Origin. Zhejiang, China.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Палатка Naturehike Star-River 2 20D + Floor Green",
+      "url": "https://www.kant.ru/catalog/product/1872062-palatka_naturehike_star_river_2_20d_floor_green/",
+      "snippet": "Сеть спортивных магазинов КАНТ: купить Палатка Naturehike Star-River 2 20D + Floor Green Цена 11613 руб Акции и скидки Бесплатная доставка по Москве и России.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

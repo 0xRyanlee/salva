@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-04-mediatek-brands",
+  "strategy": "anchor",
+  "query": "chipset partnership",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:31:22.351387+00:00",
+  "results": [
+    {
+      "title": "Chipset partners | Micron Technology Inc.",
+      "url": "https://www.micron.com/partners/partner-networks/chipset-partners",
+      "snippet": "Chipset partners Partner network Chipset and logic partners Collaborating with strategic partners is what we do. Our relationships with preferred partners and key enablers are a top priority. Through those relationships, we're building an ecosystem that promotes connections and co development efforts that lead to better solutions for our customers.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "AMD chipset partner - Micron Technology Inc.",
+      "url": "https://www.micron.com/partners/partner-networks/chipset-partners/amd",
+      "snippet": "Explore the partnership between AMD and Micron Technology for cutting-edge chipset and logic solutions.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Google expands partnership with Intel for AI chips - CNBC",
+      "url": "https://www.cnbc.com/2026/04/09/google-expands-partnership-with-intel-for-ai-chips-.html",
+      "snippet": "Google has committed to using multiple generations of Intel chips to power its AI data centers, in an expansion of an existing partnership.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Qualcomm stock rises on report of OpenAI smartphone chip partnership - CNBC",
+      "url": "https://www.cnbc.com/2026/04/27/qualcomm-qcom-openai-smartphone-chip-partnership-stock.html",
+      "snippet": "Qualcomm will be working alongside MediaTek to develop a smartphone chip for OpenAI, with manufacturer Luxshare co-designing the device, an analyst said.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek & Nvidia Joining Forces To Create ARM-based AI CPU",
+      "url": "https://tech4gamers.com/nvidia-mediatek-partnership/",
+      "snippet": "MediaTek's experience in chipset innovation and Nvidia's advantages in artificial intelligence and graphics processing technology will be combined through this partnership. By making a more effective AI processing solution, collaborative development is anticipated to spark innovations in the PC sector.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "OpenAI and Broadcom announce strategic collaboration to deploy 10 ...",
+      "url": "https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration/",
+      "snippet": "OpenAI and Broadcom announce a multi-year partnership to deploy 10 gigawatts of OpenAI-designed AI accelerators, co-developing next-generation systems and Ethernet solutions to power scalable, energy-efficient AI infrastructure by 2029.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Develops Chip Utilizing TSMC's 2nm Process, Achieving ...",
+      "url": "https://www.mediatek.com/press-room/mediatek-develops-chip-utilizing-tsmcs-2nm-process-achieving-milestones-in-performance-andpower-efficiency",
+      "snippet": "Marking a new milestone in the strong partnership between MediaTek and TSMC, this long-standing collaboration continues to yield high performance, power-efficient chipsets for customers in flagship mobile, compute, automotive, data center applications and more.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Collaborates with NVIDIA on RTX Spark to Power the Next Wave ...",
+      "url": "https://www.mediatek.com/press-room/mediatek-collaborates-with-nvidia-on-rtx-spark-to-power-the-next-wave-of-windows-pc-experiences",
+      "snippet": "Masterful System Integration: Leveraging its low-power expertise and strategic manufacturing partnership with TSMC, MediaTek fine-tuned every IP block to craft a highly optimized SoC. This integration is what allows NVIDIA RTX Spark to achieve peak performance while maintaining an ultra-low power profile.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Sasken Partners with Microsoft to Accelerate Smart Device Innovation ...",
+      "url": "https://www.prnewswire.com/news-releases/sasken-partners-with-microsoft-to-accelerate-smart-device-innovation-via-microsoft-devices-ecosystem-platform-mdep-302480020.html",
+      "snippet": "By collaborating with MDEP, Sasken will bring enhanced product engineering expertise, strengthened by Borqs' connected device portfolio and chipset partnerships, combined with its strengths in ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Broadcom signs long-term deal to develop Google's custom AI chips",
+      "url": "https://www.reuters.com/business/broadcom-signs-long-term-deal-develop-googles-custom-ai-chips-2026-04-06/",
+      "snippet": "Broadcom said on Monday it has signed a long-term agreement with Google to develop and supply future generations of custom artificial intelligence chips and other components for the company's ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

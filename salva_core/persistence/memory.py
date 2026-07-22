@@ -6,7 +6,11 @@ import logging
 from datetime import UTC, datetime
 
 from salva_core.schemas import QueryFamilyMemoryRecord
-from salva_core.vector_backends import ScalarHashVectorBackend, resolve_semantic_vector_backend
+from salva_core.vector_backends import (
+    JinaOmlxVectorBackend,
+    ScalarHashVectorBackend,
+    resolve_semantic_vector_backend,
+)
 
 from .db import DEFAULT_DB_PATH, get_conn
 
@@ -125,7 +129,13 @@ def search_query_family_memory(
         path = DEFAULT_DB_PATH
 
     backend = resolve_semantic_vector_backend()
-    query_embedding = backend.embed(query)
+    resolved_backend_name = backend.name
+    if isinstance(backend, JinaOmlxVectorBackend):
+        query_embedding, used_fallback = backend.embed_with_meta(query)
+        if used_fallback:
+            resolved_backend_name = "hybrid_hash"
+    else:
+        query_embedding = backend.embed(query)
     compatibility_backend = ScalarHashVectorBackend(dimensions=len(query_embedding))
     compatibility_query_embedding = compatibility_backend.embed(query)
     clauses: list[str] = ["sv.vector_kind = 'query_family'", "sv.dimensions = ?"]
@@ -167,7 +177,7 @@ def search_query_family_memory(
     for row in rows:
         embedding = [float(value) for value in json.loads(row[23])]
         score = backend.score(query_embedding, embedding)
-        backend_used = backend.name
+        backend_used = resolved_backend_name
         if compatibility_query_embedding and row[25] == len(compatibility_query_embedding):
             compatibility_score = compatibility_backend.score(compatibility_query_embedding, embedding)
             if compatibility_score > score:

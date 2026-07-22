@@ -1,0 +1,79 @@
+{
+  "task_id": "single-01-tsmc",
+  "strategy": "anchor",
+  "query": "TSMC",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:24:55.719116+00:00",
+  "results": [
+    {
+      "title": "TSMC - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/TSMC",
+      "snippet": "TSMC constitutes about 30 percent of the Taiwan Stock Exchange 's main index. [14][15] Taiwan Semiconductor Manufacturing Company (TSMC) was established in 1987 as a joint venture between Taiwan's government, the Industrial Technology Research Institute (ITRI), and private investors.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC",
+      "url": "https://grokipedia.com/page/TSMC",
+      "snippet": "Taiwan Semiconductor Manufacturing Company Limited (TSMC) is a Taiwanese multinational corporation and the world's leading dedicated independent semiconductor foundry, established in...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing Company Limited - TSMC",
+      "url": "https://www.tsmc.com/english",
+      "snippet": "TSMC has been the world's dedicated semiconductor foundry since 1987, and we support a thriving ecosystem of global customers and partners with the industry's leading process technology and portfolio of design enablement solutions to unleash innovation fo",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Company Info - Taiwan Semiconductor Manufacturing Company Limited - TSMC",
+      "url": "https://www.tsmc.com/english/aboutTSMC/company_profile",
+      "snippet": "Company Info TSMC (TWSE: 2330, NYSE: TSM) created the semiconductor Dedicated IC Foundry business model when it was founded in 1987.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC, the world's largest contract chipmaker, reports 68% surge ... - CNBC",
+      "url": "https://www.cnbc.com/2026/07/13/tsmc-june-revenue-rises-percent-ahead-second-quarter.html",
+      "snippet": "TSMC reported a 6.2% month-on-month and 68% year-on-year jump in June revenue. The company reported a first-half revenue of NT$ 2404.48 billion for 2026, marking a 35.6% increase compared to the ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC extends record quarter, profit jumps 35% on robust AI chip demand",
+      "url": "https://www.cnbc.com/2026/01/15/tsmc-q4-profit-record-ai-chip-demand-nt1-trillion.html",
+      "snippet": "TSMCy delivered another estimate-beating quarter, with profit up 35% from a year ago as advanced chip orders tied to AI continued to dominate its business.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC pledges another $100bn to expand US production in Arizona - BBC",
+      "url": "https://www.bbc.com/news/articles/c62x8ldxr7eo",
+      "snippet": "TSMC boss CC Wei (left) poses with Nvidia's Jensen Huang. TSMC is a key chip supplier for Nvidia Taiwanese chipmaker TSMC will invest another $100bn (£74bn) in Arizona as it expands its ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC - Taipei Times",
+      "url": "https://www.taipeitimes.com/News/topic/TSMC",
+      "snippet": "However, Lee also highlighted Wei's announcement that TSMC planned to build 13 leading-edge and advanced packaging fabs in Taiwan over the next several years, saying it would help ensure Taiwan remains home to most of TSMC's manufacturing capacity and most advanced technology.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC Adds $100 Billion to Its U.S. Spending Plan",
+      "url": "https://www.nytimes.com/2026/07/16/business/tsmc-chips-investment-arizona.html",
+      "snippet": "The pledge from the Taiwanese chip-making giant brought the total commitment to its fast-growing operations in Arizona to $265 billion.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing Company Limited (TSM)",
+      "url": "https://finance.yahoo.com/quote/TSM/",
+      "snippet": "Find the latest Taiwan Semiconductor Manufacturing Company Limited (TSM) stock quote, history, news and other vital information to help you with your stock trading and investing.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

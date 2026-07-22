@@ -1,0 +1,37 @@
+{
+  "task_id": "multihop-05-gleif-regulators",
+  "strategy": "pirate",
+  "query": "(filetype:ppt OR filetype:pptx) \"GLEIF\"",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:32:19.015781+00:00",
+  "results": [
+    {
+      "title": "A GLEIF recebe comentários das partes interessadas LEI sobre...",
+      "url": "https://www.gleif.org/pt/newsroom/blog/gleif-invites-feedback-from-lei-stakeholders-on-the-preview-of-its-golden-copy-and-delta-files-by-30-april-2018",
+      "snippet": "Uma das principais responsabilidades da Global Legal Entity Identifier Foundation (GLEIF) é garantir o acesso ao repositório global de Identificador…",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Baixar Gleif Lei Search | FileZone",
+      "url": "https://filezone.me/pt/gleif-lei-search",
+      "snippet": "Baixe documentos gratuitos de Gleif Lei Search de toda a Internet em formatos populares, incluindo arquivos PDF, Word, Excel, PowerPoint e materiais de estudo. Rápido, fácil e acessível.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Standardisasi: (Satu-Satunya) Jalan... - Ruang Berita & Media – GLEIF",
+      "url": "https://www.gleif.org/id/newsroom/gleif-podcasts/gleif-explains-standardization-the-only-road-to-quality-identity-data",
+      "snippet": "Pengenal Badan Hukum (LEI) menggunakan standar global dan menjadikannya tolok ukur yang diakui, disetujui, dan dipercaya oleh regulator dan badan hukum…",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Bension Berk Gürel – Global Legal Entity Identifier Foundation (GLEIF)",
+      "url": "https://de.linkedin.com/in/bension-berk-gürel-8ba7a2167",
+      "snippet": "PowerPoint'te Copilot: İstemden Sunuma. 55 Min. Anadili İngilizce Olmayan Kişiler İçin Sohbetler.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

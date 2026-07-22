@@ -2,12 +2,29 @@
 from __future__ import annotations
 
 import json
+import os
+import sqlite3
 import uuid
 from datetime import UTC, datetime
 
 from salva_core.schemas import DiscoveryRequest, JobRecord, StreamEventRecord
 
 from .db import DEFAULT_DB_PATH, get_conn
+
+# Passive orphan-recovery threshold: a "running" job whose heartbeat_at is
+# older than this is assumed to belong to a crashed worker (no active poller,
+# checked lazily on read -- see get_job()).
+_DEFAULT_HEARTBEAT_TIMEOUT_SECONDS = 300.0
+
+
+def _heartbeat_timeout_seconds() -> float:
+    raw = os.getenv("SALVA_JOB_HEARTBEAT_TIMEOUT_SECONDS")
+    if not raw:
+        return _DEFAULT_HEARTBEAT_TIMEOUT_SECONDS
+    try:
+        return float(raw)
+    except ValueError:
+        return _DEFAULT_HEARTBEAT_TIMEOUT_SECONDS
 
 
 def create_job(
@@ -59,11 +76,18 @@ def update_job_status(
     now = datetime.now(UTC).isoformat()
     with get_conn(path) as conn:
         existing = conn.execute(
-            "SELECT meta_json, run_id, error, tenant_id FROM jobs WHERE job_id = ?",
+            "SELECT meta_json, run_id, error, tenant_id, status FROM jobs WHERE job_id = ?",
             (job_id,),
         ).fetchone()
         if existing is None:
             raise KeyError(f"job not found: {job_id}")
+
+        # Cancellation wins the race: execution that was already in flight when
+        # a cancel was requested can still finish (success or error) after the
+        # job was marked cancelled -- that late completion/failure write must
+        # not silently resurrect it. See operational-guardrails-audit finding 2.
+        if existing[4] == "cancelled" and status in ("completed", "failed"):
+            return
 
         existing_meta = json.loads(existing[0]) if existing[0] else {}
         if meta:
@@ -92,6 +116,71 @@ def update_job_status(
         )
 
 
+def request_cancellation(job_id: str, path: str = DEFAULT_DB_PATH) -> None:
+    """Flag a job for cooperative cancellation.
+
+    Does not change `status` -- a running job's round_checkpoint observes this
+    flag between rounds and raises to unwind cleanly; the worker then writes
+    the terminal 'cancelled' status itself.
+    """
+    now = datetime.now(UTC).isoformat()
+    with get_conn(path) as conn:
+        conn.execute(
+            "UPDATE jobs SET cancel_requested = 1, updated_at = ? WHERE job_id = ?",
+            (now, job_id),
+        )
+
+
+def is_cancel_requested(job_id: str, path: str = DEFAULT_DB_PATH) -> bool:
+    with get_conn(path) as conn:
+        row = conn.execute(
+            "SELECT cancel_requested FROM jobs WHERE job_id = ?",
+            (job_id,),
+        ).fetchone()
+    return bool(row and row[0])
+
+
+def touch_job_heartbeat(job_id: str, path: str = DEFAULT_DB_PATH) -> None:
+    """Record worker liveness. Only applies while still 'running' so a stale
+    call after completion can't resurrect the row's heartbeat."""
+    now = datetime.now(UTC).isoformat()
+    with get_conn(path) as conn:
+        conn.execute(
+            "UPDATE jobs SET heartbeat_at = ? WHERE job_id = ? AND status = 'running'",
+            (now, job_id),
+        )
+
+
+def cancel_job(
+    job_id: str,
+    force: bool = False,
+    path: str = DEFAULT_DB_PATH,
+) -> tuple[bool, str, str | None]:
+    """Shared cancel decision logic for the MCP and REST cancel entry points.
+
+    Returns (ok, resulting_status, error_message). Queued jobs cancel
+    immediately. Running jobs only accept a cooperative request (force=True)
+    -- status stays 'running' until run_job's round_checkpoint observes
+    cancel_requested and exits.
+    """
+    job = get_job(job_id, path=path)
+    if job is None:
+        return False, "", f"job not found: {job_id}"
+    if job.status == "completed":
+        return False, job.status, f"job already completed: {job_id}"
+    if job.status == "failed" and not force:
+        return False, job.status, f"job already failed: {job_id}"
+    if job.status == "running":
+        if not force:
+            return False, job.status, "job is running, use force=true to cancel"
+        request_cancellation(job_id, path=path)
+        return True, "cancel_requested", None
+
+    now = datetime.now(UTC).isoformat()
+    update_job_status(job_id, "cancelled", meta={"cancelled_at": now}, path=path)
+    return True, "cancelled", None
+
+
 def append_stream_event(
     job_id: str,
     event_type: str,
@@ -116,6 +205,25 @@ def append_stream_event(
                 now,
             ),
         )
+
+
+def count_jobs_for_tenant(
+    tenant_id: str,
+    since: datetime,
+    path: str = DEFAULT_DB_PATH,
+) -> int:
+    """Count jobs for a tenant within a time window via indexed SQL COUNT.
+
+    Used by quota window evaluation -- unlike list_jobs(), this is not subject to
+    a default row-limit, so it never undercounts once total job volume exceeds
+    list_jobs' pagination default.
+    """
+    with get_conn(path) as conn:
+        row = conn.execute(
+            "SELECT COUNT(*) FROM jobs WHERE tenant_id = ? AND created_at >= ?",
+            (tenant_id, since.isoformat()),
+        ).fetchone()
+    return int(row[0])
 
 
 def list_jobs(
@@ -177,30 +285,65 @@ def get_job(job_id: str, path: str = DEFAULT_DB_PATH) -> JobRecord | None:
         row = conn.execute(
             """
             SELECT job_id, status, objective, output_profile, project_id, tenant_id,
-                   request_json, run_id, error, meta_json, created_at, updated_at
+                   request_json, run_id, error, meta_json, created_at, updated_at, heartbeat_at
             FROM jobs
             WHERE job_id = ?
             """,
             (job_id,),
         ).fetchone()
 
-    if row is None:
-        return None
+        if row is None:
+            return None
+
+        status, error, heartbeat_at = row[1], row[8], row[12]
+        if status == "running":
+            status, error = _reap_if_stale(conn, job_id, heartbeat_at, error)
 
     return JobRecord(
         job_id=row[0],
-        status=row[1],
+        status=status,
         objective=row[2],
         output_profile=row[3],
         project_id=row[4],
         tenant_id=row[5],
         request=json.loads(row[6]),
         run_id=row[7],
-        error=row[8],
+        error=error,
         meta=json.loads(row[9]),
         created_at=datetime.fromisoformat(row[10]),
         updated_at=datetime.fromisoformat(row[11]),
+        heartbeat_at=datetime.fromisoformat(heartbeat_at) if heartbeat_at else None,
     )
+
+
+def _reap_if_stale(
+    conn: sqlite3.Connection,
+    job_id: str,
+    heartbeat_at: str | None,
+    error: str | None,
+) -> tuple[str, str | None]:
+    """Passive orphan recovery: a 'running' job with no recent heartbeat is
+    assumed to belong to a crashed worker (OOM/SIGKILL leave no other signal).
+
+    Marks it 'failed' rather than requeueing -- retrieval/persistence side
+    effects aren't idempotent, so silently retrying risks duplicate writes.
+    Checked lazily here (on read) instead of a background poller, since this
+    card's scope is passive reaping, not an active recovery daemon.
+    """
+    if not heartbeat_at:
+        return "running", error
+    age = (datetime.now(UTC) - datetime.fromisoformat(heartbeat_at)).total_seconds()
+    if age < _heartbeat_timeout_seconds():
+        return "running", error
+
+    reaped_error = f"worker heartbeat timeout ({age:.0f}s) — job orphaned, worker likely crashed"
+    now = datetime.now(UTC).isoformat()
+    conn.execute(
+        "UPDATE jobs SET status = 'failed', error = ?, updated_at = ? "
+        "WHERE job_id = ? AND status = 'running'",
+        (reaped_error, now, job_id),
+    )
+    return "failed", reaped_error
 
 
 def get_job_request(job_id: str, path: str = DEFAULT_DB_PATH) -> DiscoveryRequest | None:

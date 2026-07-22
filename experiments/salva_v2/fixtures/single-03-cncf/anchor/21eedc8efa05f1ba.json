@@ -1,0 +1,79 @@
+{
+  "task_id": "single-03-cncf",
+  "strategy": "anchor",
+  "query": "CNCF filetype:pdf",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:25:44.771669+00:00",
+  "results": [
+    {
+      "title": "GitHub - marcduiker/cncf-foundation: This repo contains several...",
+      "url": "https://github.com/marcduiker/cncf-foundation",
+      "snippet": "The charter under which CNCF operates. Maintainer election policy for the maintainer-elected TOC member and the two maintainers on the governing board.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Edit PDF - Edit PDF files online",
+      "url": "https://www.pdf2go.com/edit-pdf",
+      "snippet": "This online PDF editor lets you edit a PDF document directly. Add text or images, or draw boxes, circles, and arrows on your PDF page.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "The CNCF Data Storage in Cloud Native AI White Paper | Xing Yang",
+      "url": "https://www.linkedin.com/posts/yangxing_the-cncf-data-storage-in-cloud-native-ai-activity-7483657556943347712-6a6J",
+      "snippet": "I am thrilled to announce that the CNCF TAG Infrastructure Whitepaper on Data Storage in Cloud Native AI has been officially published!",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "${\\mathsf{KubeS...",
+      "url": "https://tianweiz07.github.io/Papers/26-tdsc-2.pdf",
+      "snippet": "We counted the top 10 TPAs with the highest number of GitHub stars from the three CNCF project types, and Fig. 12 shows the average latency of the TPCs used for each TPA.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "OpenFeature",
+      "url": "https://openfeature.dev/",
+      "snippet": "OpenFeature is an open source CNCF incubating project under the Apache 2 license. Check out the project on GitHub and consider joining the OpenFeature community!",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ANTI MONEY LAUNDERING POLICY and Procedures",
+      "url": "https://www.cncf.org/wp-content/uploads/download-manager-files/cncf_anti_money_laundering_policy___procedures.pdf",
+      "snippet": "Where required by law or local practices, CNCF offices and Organisations may enhance the standards and requirements set out in this policy.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "OpenTelemetry",
+      "url": "https://opentelemetry.io/",
+      "snippet": "Tracing and metrics APIs are stable across all major languages. Thousands of organizations run OpenTelemetry in production. Backed by the CNCF and major cloud providers.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Medium",
+      "url": "https://devopsworld.medium.com/how-to-certify-in-kubernetes-1a999dc36d21",
+      "snippet": "CNCF provides a detailed exam curriculum and a list of topics covered in the exam, which you can use as a study guide.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Unlocking the Future of Trustworthy AI: How Cloud-Native...",
+      "url": "https://techgig.com/news/ai/cloud-native-infrastructure-key-for-trustworthy-agentic-ai-cncf-analysis/132473927",
+      "snippet": "Highlights. CNCF analysis states agentic AI will use mature cloud-native infrastructure, not new systems. Technologies like Kubernetes and OpenTelemetry offer orchestration...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "The fastest path to state-of-the-art LLM inference on any... | llm-d",
+      "url": "https://llm-d.ai/docs/dev",
+      "snippet": "CNCF llm-d is a CNCF Sandbox project, founded by Red Hat, Google Cloud, IBM Research, CoreWeave, and NVIDIA. Well-Lit Paths.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

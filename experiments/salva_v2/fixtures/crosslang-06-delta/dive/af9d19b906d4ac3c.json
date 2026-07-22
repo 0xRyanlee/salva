@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-06-delta",
+  "strategy": "dive",
+  "query": "\"台達電子\" TW -blog -museum -review -job -news -report",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:29:24.810606+00:00",
+  "results": [
+    {
+      "title": "台達電子－最新職缺徵才中｜Yourator 新創・數位人才求職平台｜找工作、求職、徵才",
+      "url": "https://www.yourator.co/companies/deltaww",
+      "snippet": "公司介紹 公司名稱：台達電子工業股份有限公司（DELTA ELECTRONICS,INC.） 成立日期：1971年4月 員工人數：台灣約9,300人 全球約83,000人 【企業使命】 環保 節能 愛地球 【台達電獲選為台灣指數公司發布「台灣上市公司勞工權益指數」權重前十大成分股。】 「台灣上市公司勞工權益指數」利用企業社會 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台達電子｜領航世界，我就是力量!台達電工程菁英招募中-104人力銀行",
+      "url": "https://events.104.com.tw/delta/20231003163043/",
+      "snippet": "台達電子｜領航世界，我就是力量!台達電工程菁英招募中，提供多元培訓、優渥獎酬、全球外派機會，遇見自己的無盡可能!台達電工程菁英招募中-104人力銀行",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "#台達電子 - Search / X | X (formerly Twitter)",
+      "url": "https://twitter.com/hashtag/台達電子?src=hashtag_click",
+      "snippet": "See posts about #台達電子 on X. See what people are saying and join the conversation.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台達電子的最新討論 | Dcard",
+      "url": "https://www.dcard.tw/topics/台達電子",
+      "snippet": "各位好，小弟工作年資約8年，主要待在南部半導體（成熟製程）、新能源相關產業（鋰電、氫能）服務，目前最上手的核心技能是電化學相關產品設計與高等電化學分析的技術。目前任職電化學產品設計師，近期剛結案與北美",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "innergie - 優惠推薦 - 2026年7月 | Rakuten樂天市場",
+      "url": "https://www.rakuten.com.tw/search/innergie/",
+      "snippet": "台達電子 Innergie 90W T9 原廠變壓器 充電器 電源線 Asus Acer Hp Dell Lenovo.Innergie 台達電 ADP-60BW BTA-1 60C Pro摺疊版60瓦 USB-C 萬用充電器 無線單顆版.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台達電志工服務",
+      "url": "https://foundation.deltaww.com/Energy_teachers/storyView_D53DB7FD-91F6-4D98-B1A0-E01EAFAC000F",
+      "snippet": "鄭宇智／台達電子文教基金會.電話：(02) 8797-2088. 電子郵件信箱：volunteer@delta-foundation.org.tw.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "innergie 台達電 - PChome 24h購物",
+      "url": "https://24h.pchome.com.tw/search/?q=innergie+台達電",
+      "snippet": "DELTA 台達電子 Innergie C-A USB-C對USB充電線 白 1.8M.台達電子 Innergie 65W 65U 原廠變壓器 充電器 電源線 Asus Acer Hp Dell Lenovo.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Link to instagram.com",
+      "url": "https://www.instagram.com/explore/tags/台達電子/",
+      "snippet": "The site owner hides the web page description.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Link to facebook.com",
+      "url": "https://www.facebook.com/pages/台達電子/351899728153962/",
+      "snippet": "The site owner hides the web page description.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "The power behind competitiveness",
+      "url": "https://www.deltapowersolutions.com/media/download/Manual-UPS-N-1-3kVA-zh-tw.pdf",
+      "snippet": "台達 Amplon 射手座系列.口口口o口l提提提u提軟軟軟t供供供io供體體體nRRRs可可可RSSS.cS---以以以o222-m3332在在在2223/z下下下2協協協h協-定定定tw台台台定/m採.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

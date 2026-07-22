@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-02-asus",
+  "strategy": "anchor",
+  "query": "site:crunchbase.com 華碩",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:28:06.756347+00:00",
+  "results": [
+    {
+      "title": "ASUSTeK Computer - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/asus",
+      "snippet": "ASUSTeK Computer is a Taiwanese multinational computer hardware and electronics manufacturer.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "List of top Companies That Exited in 2008 - Crunchbase",
+      "url": "https://www.crunchbase.com/hub/companies-that-exited-in-2008",
+      "snippet": "This list of companies and startups that exited with an IPO or acquisition in 2008 provides data on their funding history, investment activities, and acquisition trends. Insights about top trending companies, startups, investments and M&A activities, notable investors of these companies, their management team, and recent news are also included.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Eli Chervinski - Founder @ InFASH - Crunchbase Person Profile",
+      "url": "https://www.crunchbase.com/person/eli-chervinski",
+      "snippet": "Eli is a serial entrepreneur with over 25 years of communications, advertising marketing and management experience. Prior to Founding inFASH and creating WAAM, he Co-Founded Appnext a leading mobile discovery platform that connects over 500M users daily to the apps and services they need. Looking constantly at the world around us and searching for the basic things that might change the way we ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Claus Biernoth - Vice President Sales @ First Sensor - Crunchbase",
+      "url": "https://www.crunchbase.com/person/claus-biernoth",
+      "snippet": "Claus Biernoth studied industrial engineering (Wirtschaftsingenieurwesen) at the TU Berlin and earned an MBA from Instituto de Empresa Madrid. He began his professional career in sales management in the USA. In recent years Claus Biernoth has been responsible for the business development of companies worldwide. He is a well-known expert in component and system distribution in the field of ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "John Rose - CEO and President @ Boson Software - Crunchbase",
+      "url": "https://www.crunchbase.com/person/john-rose-688c",
+      "snippet": "John Rose is the President and CEO of Boson Software. He previously worked at Tennessee Technological University Foundation as a Member, Board of Directors. John Rose attended Tennessee Technological University.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Alice Jacobs Nesselrodt - Chief Executive Officer - Crunchbase",
+      "url": "https://www.crunchbase.com/person/alice-jacobs-nesselrodt",
+      "snippet": "Alice Jacobs Nesselrodt is the Chief Executive Officer of Convergence Group. She previously served as Chair and CEO of IntelligentMDx. Alice attended Harvard Medical School, where she earned a Doctor of Medicine.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ATS Resume Checker - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/ats-resume-checker",
+      "snippet": "ATS Resume Checker scores resumes against applicant tracking systems and delivers instant AI fixes to help job seekers land more interviews.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Troy McQuagge - CEO @ USHEALTH Group - Crunchbase Person Profile",
+      "url": "https://www.crunchbase.com/person/troy-mcquagge",
+      "snippet": "Troy McQuagge is the CEO & Founder of USHEALTH Group & he attended University of Central Florida in 1983.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Jalandhar Trade and Manufacturing Association - Crunchbase",
+      "url": "https://www.crunchbase.com/organization/jalandhar-trade-and-manufacturing-association",
+      "snippet": "Jalandhar Trade and Manufacturing Association provides networking, consulting, events, and advocacy services for traders and manufacturers.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Matt Bozik - Investment Professional @ Braemar Energy Ventures ...",
+      "url": "https://www.crunchbase.com/person/matt-bozik",
+      "snippet": "Matt Bozik is an associate on the investment team. Prior to joining Braemar, Matt worked as an investment banker in the Energy Group at Credit Suisse in New York. While at Credit Suisse, Matt advised clients in the cleantech and power and utilities spaces on a range of transactions, including M&A deals, debt and equity financings, project financings, and structured product transactions. Matt ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

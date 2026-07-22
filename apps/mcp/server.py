@@ -315,27 +315,28 @@ def salva_job_cancel(job_id: str, force: bool = False) -> str:
     """
     Cancel a queued or running job.
 
+    A queued job cancels immediately. A running job only accepts a
+    cooperative cancel (force=true): the worker checks between retrieval
+    rounds and stops there, marking the job cancelled once it exits --
+    it is not killed mid-round.
+
     Args:
         job_id: The job ID to cancel
         force: Force cancel even if job is running (default False)
     """
-    from datetime import datetime
+    from salva_core.persistence import cancel_job
 
-    job = get_job(job_id)
-    if job is None:
-        return json.dumps({"error": f"job not found: {job_id}", "ok": False})
+    ok, status, error = cancel_job(job_id, force=force)
+    if not ok:
+        return json.dumps({"error": error, "ok": False})
 
-    if job.status == "completed":
-        return json.dumps({"error": f"job already completed: {job_id}", "ok": False})
-    if job.status == "failed" and not force:
-        return json.dumps({"error": f"job already failed: {job_id}", "ok": False})
-    if job.status == "running" and not force:
-        return json.dumps({"error": "job is running, use force=true to cancel", "ok": False})
-
-    from salva_core.persistence import update_job_status
-    update_job_status(job_id, "cancelled", meta={"cancelled_at": datetime.now().isoformat()})
-
-    return json.dumps({"ok": True, "job_id": job_id, "status": "cancelled"})
+    result: dict = {"ok": True, "job_id": job_id, "status": status}
+    if status == "cancel_requested":
+        result["message"] = (
+            "Cancellation requested. The worker checks between retrieval "
+            "rounds and will mark the job cancelled once it stops."
+        )
+    return json.dumps(result)
 
 
 # ---------------------------------------------------------------------------

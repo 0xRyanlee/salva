@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-02-asus",
+  "strategy": "anchor",
+  "query": "華碩 filetype:pdf",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:28:03.705245+00:00",
+  "results": [
+    {
+      "title": "Edit PDF - Edit PDF files online",
+      "url": "https://www.pdf2go.com/edit-pdf",
+      "snippet": "This online PDF editor lets you edit a PDF document directly. Add text or images, or draw boxes, circles, and arrows on your PDF page. You can also highlight passages or crop and copy parts of the PDF.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "JPG to PDF Converter | Convert Your Images to PDF Online",
+      "url": "https://smallpdf.com/jpg-to-pdf",
+      "snippet": "Convert JPG images to PDF files for free. Our online JPG to PDF converter tool creates a PDF from images or photos with just a few clicks. No signup needed.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "偏鄉若比鄰，華碩與高通啟動「遠距醫療照護計畫」 - ioioTimes 科技世代",
+      "url": "https://www.ioiotimes.com/?p=42974",
+      "snippet": "隨著 AI 新時代到來，華碩與國際半導體大廠美國高通公司（Qualcomm）合作「無線關愛」遠距醫療照護計畫，鎖定台灣醫療資源最匱乏的 8 處偏鄉，透過醫療物聯網，以.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "chinatimes.com/realtimenews/20260717002184-260410",
+      "url": "https://www.chinatimes.com/realtimenews/20260717002184-260410",
+      "snippet": "華碩以「AI-enabled Carbon Management Total Solution」為核心，透過「系統平台、AI賦能應用與技術顧問協輔」的整合解決方案，為關渡醫院建構系統化碳管理模式，協助接軌國際碳盤查標準、 建置減量管理能力。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "press.asus.com/tw/news/press-releases/asus-guandu-hospital-low...",
+      "url": "https://press.asus.com/tw/news/press-releases/asus-guandu-hospital-low-carbon-healthcare-mou/",
+      "snippet": "華碩以「AI-enabled Carbon Management Total Solution」為核心，透過「系統平台、AI 賦能應用與技術顧問協輔」的整合解決方案，為關渡醫院建構系統化碳管理模式，接軌國際碳盤查標準、建置. 減量管理能力，並運用數據支持減量決策與淨零推動，奠定低碳醫療發展的基石。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "【ASUS 華碩】 TUF H-T500MV-05210H121W5 C5 RTX3050...",
+      "url": "https://gmonline.twglobalmall.com/product/2EC0321120005031",
+      "snippet": "ASUS 華碩. 【ASUS 華碩】TUF H-T500MV-05210H121W5 C5 RTX3050 電競桌機.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ASUSWRT 4.0",
+      "url": "https://routerkb.asuscomm.com/?page_id=9&lang=en",
+      "snippet": "Managing the full function VPN with both ASUS router app and web interface. The VPN Fusion can easily achieve VPN connection to network devices like Smart TV, Game console, without installing the VPN client software. It also runs VPN and ordinary int...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩攜關渡醫院 推動低碳醫療數位轉型 - 產業 - 工商時報",
+      "url": "https://www.ctee.com.tw/news/20260717701515-430502",
+      "snippet": "華碩（2357）宣布與關渡醫院簽署「低碳醫療數位轉型合作備忘錄（MOU）」，導入華碩「碳數據管理平台」推動低碳醫療轉型，象徵華碩將多年永續管理實務、碳數據治理.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "讓永續成為企業內建能力 華碩分享深耕20... | 經濟日報",
+      "url": "https://money.udn.com/money/story/12276/9519542",
+      "snippet": "華碩電腦吳澤欣永續長在Podcast節目《士說新語・秀倫理》中，親自揭示華碩如何在20多年投入永續的歷程裡，將永續從「合規要求」轉化為「創造企業價值」。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "[出門] 挑戰超輕薄筆電!!華碩ZenBook 3/Transformer 3/Transformer...",
+      "url": "https://agirls.aotter.net/post/50502",
+      "snippet": "Apple 蘋果. ASUS 華碩.[出門] 挑戰超輕薄筆電!!華碩ZenBook 3/Transformer 3/Transformer 3 Pro設計理念大公開.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

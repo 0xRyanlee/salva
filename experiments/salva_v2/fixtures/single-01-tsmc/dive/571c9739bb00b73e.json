@@ -1,0 +1,79 @@
+{
+  "task_id": "single-01-tsmc",
+  "strategy": "dive",
+  "query": "\"台積電\" TW -blog -museum -review -job -news -report",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:24:55.552873+00:00",
+  "results": [
+    {
+      "title": "台積電 - 維基百科，自由的百科全書",
+      "url": "https://zh.wikipedia.org/zh-tw/台灣積體電路製造",
+      "snippet": "2 days ago - 台灣積體電路製造（英語：Taiwan Semiconductor Manufacturing Company, Ltd.），簡稱台積電、TSMC，與旗下子公司合稱台積電集團，是臺灣一家專注於半導體晶片製造的高科技跨國企業，總部位於新竹科學園區，是全球前十大企業，也...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電 2330 - 總覽 - 鉅亨網 - 台股",
+      "url": "https://www.cnyes.com/twstock/2330/summary/overview",
+      "snippet": "台積電(2330) 即時行情 2410.00 +3.88% Anue鉅亨提供台積電第一手新聞、即時走勢、歷史股價、技術線圖、三大法人買賣超、融資融券、每股盈餘、外資持股、股利發放、財報分析、營收、EPS、重訊公告等資訊，讓您聚焦投資決策，快速掌握台股焦點。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "(2330)台積電價量走勢圖 - PChome Online 股市",
+      "url": "https://pchome.megatime.com.tw/stock/sto0/ock0/sid2330.html",
+      "snippet": "台積電(2330)個股即時資訊 - 成交價: 2410.00, 漲跌: +90.00, PChome Online股市提供即時報價、個股走勢、成交資訊、當日行情，價量變化、個股健診及個股相關新聞等。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電 (2330.TW) 估價 - Yahoo股市",
+      "url": "https://tw.stock.yahoo.com/quote/2330.TW/price-valuations",
+      "snippet": "台積電(2330.TW)，Yahoo股市 Yahoo奇摩股市提供三種評估法評估股價，股價淨值比評估、本益比評估、現金股利評估。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電 | 關鍵字新聞 | 中央社 Cna",
+      "url": "https://www.cna.com.tw/tag/21764/",
+      "snippet": "關於台積電的中央社新聞: 英媒：中國考慮限制AI模型和半導體技術出口、台經院估今年經濟成長率逾10% AI商機可持續至2028年、台積電穩軍心 台股強 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電 (2330.TW) 河流圖 - Yahoo股市",
+      "url": "https://tw.stock.yahoo.com/quote/2330.TW/streamgraph",
+      "snippet": "台積電(2330.TW)，Yahoo股市 Yahoo奇摩股市提供個股本益比河流圖等資訊。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "最新台積電熱門報導文章｜商周",
+      "url": "https://www.businessweekly.com.tw/Tags/台積電",
+      "snippet": "路透社報導，台積電財務長黃仁昭16日公布第2季亮眼財報後表示，他們對亞利桑那州的進展「非常滿意... 護國神山台積電2025年非主管員工平均年薪407.2萬元，年增2成，從2024年排行第7向上提升至第... 晶圓代工廠台積電16日召開 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電(2330.TW) 走勢圖 - Yahoo股市",
+      "url": "https://tw.stock.yahoo.com/quote/2330.TW",
+      "snippet": "1 day ago - 台積電群益5A售12台積電凱基67售14台積電凱基5A售11台積電凱基5C售09台積電統一68購01台積電凱基67售15台積電群益5A售14台積電群益5A售15台積電富邦74售03台積電凱基63售08台積電群益5A售16台積電群益5A售19",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電(2330.TW) 相關新聞 - Yahoo股市",
+      "url": "https://tw.stock.yahoo.com/quote/2330.TW/news",
+      "snippet": "圓代工龍頭台積電（2330）今（20）日展現抗跌韌性，盤中大漲35元至2,325元，帶動台股走勢。對此，分析師認為，其實還沒跌完，但這3天內有機會維持反彈格局，提醒投資人應適度「去槓桿、降部位」以提高現金比重；另一位投顧董座看好台積電中長期基本面，並給出「大跌大買、小跌小買、不跌照買」的12字訣。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電(2330.TW) 財務報表 - 營收表 - Yahoo股市",
+      "url": "https://tw.stock.yahoo.com/quote/2330.TW/revenue",
+      "snippet": "May 8, 2026 - 5269.TW · 1,470.00 · 35.002.44% 1,190 · 台積電 · 2330.TW · 2,320.00 · 30.001.31% 45,197 · 相關概念股 · 概念股 · 當日平均漲跌% 近1月平均漲跌% 智慧家庭 · 0.27% 11.51% HomePod · 0.30% 12.32% 車聯網 · 0.31% 13.26% 台資在中國高獲利 ·",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

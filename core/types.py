@@ -119,6 +119,7 @@ class UnifiedResult:
     organizer_domain: str | None = None
 
     relevance_score: float = 0.0
+    confidence: float = 0.0
     qualified: bool = False
     reject_reasons: list[str] = field(default_factory=list)
     discovered_at: datetime = field(default_factory=lambda: datetime.now(UTC))

@@ -68,6 +68,10 @@ select = ["E", "F", "I", "UP", "B"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+addopts = "-m 'not live'"
+markers = [
+  "live: tests that require a real network call or a running local service (e.g. omlx, a live API server).",
+]
 
 [tool.mypy]
 python_version = "3.11"

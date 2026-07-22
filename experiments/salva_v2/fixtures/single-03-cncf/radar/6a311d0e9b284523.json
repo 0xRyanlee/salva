@@ -1,0 +1,79 @@
+{
+  "task_id": "single-03-cncf",
+  "strategy": "radar",
+  "query": "CNCF site:crunchbase.com",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:25:51.242683+00:00",
+  "results": [
+    {
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/?_pxhc=1621956464475",
+      "snippet": "Next Godzilla x Kong movie announces title with a dramatic new teaser – and it's already in production. Cloud Native Computing Foundation (CNCF) Logo.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/?_pxhc=1634443598817",
+      "snippet": "It is very likely that Cloud Native Computing Foundation (CNCF) will grow. Learn about the companies that matter to you (for free)Get personalized private market analysis.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/?_pxhc=1619113424940",
+      "snippet": "Playtika projects record 2025 revenue growth with new game launches and strategic D2C focus. Cloud Native Computing Foundation (CNCF) Logo.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) - CrunchbaseCloud Native Computing Foundation (CNCF) - News & AnalysisCloud Native Computing Foundation (CNCF) - CrunchbaseCloud Native Computing Foundation (CNCF) - Profiles & ContactsCloud Native Computing Foundation (CNCF) - Financial DetailsinwinSTACK - Crunchbase Company Profile & FundingChris Aniszczyk - Chief Operating Officer @ Cloud Native ...",
+      "url": "https://www.crunchbase.com/organization/cloud-native-computing-foundation",
+      "snippet": "CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus. Jun 30, 2026 · CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus. Jun 18, 2026 · CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus. CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus. CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus. See more interactive data and historical milestones on desktop for the best experience Cloud Native Computing Foundation (CNCF) Closed Founded Private Taipei, T'ai-pei, Taiwan 101-250 www.inwinstack.com/index.php/en/home/ Chris Aniszczyk has 7 current jobs including Chief Operating Officer at Cloud Native Computing Foundation (CNCF), Executive Director at Open Container Initiative (OCI), and Chief Technology Officer at Cloud Native Computing Foundation (CNCF).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) - News & Analysis",
+      "url": "https://www.crunchbase.com/organization/cloud-native-computing-foundation/news_and_analysis",
+      "snippet": "Jun 30, 2026 · CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) - Crunchbase",
+      "url": "https://www.crunchbase.com/organization/cloud-native-computing-foundation/signals_and_news/timeline",
+      "snippet": "Jun 18, 2026 · CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) - Profiles & Contacts",
+      "url": "https://www.crunchbase.com/organization/cloud-native-computing-foundation/profiles_and_contacts",
+      "snippet": "CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) - Financial Details",
+      "url": "https://www.crunchbase.com/organization/cloud-native-computing-foundation/financial_details",
+      "snippet": "CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "inwinSTACK - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/inwinstack",
+      "snippet": "See more interactive data and historical milestones on desktop for the best experience Cloud Native Computing Foundation (CNCF) Closed Founded Private Taipei, T'ai-pei, Taiwan 101-250 www.inwinstack.com/index.php/en/home/",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Kubermatic - News & Analysis",
+      "url": "https://www.crunchbase.com/organization/kubermatic/news_and_analysis",
+      "snippet": "CNCF Launches Certified Kubernetes AI Conformance Program to Standardize AI Workloads on Kubernetes.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

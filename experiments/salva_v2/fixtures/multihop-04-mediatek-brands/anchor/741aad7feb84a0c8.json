@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-04-mediatek-brands",
+  "strategy": "anchor",
+  "query": "chipset Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:31:21.441440+00:00",
+  "results": [
+    {
+      "title": "Global 5G Chipset Market Size To Grow USD 174.23 Billion By 2032",
+      "url": "https://finance.yahoo.com/news/global-5g-chipset-market-size-120000544.html",
+      "snippet": "Jun 19, 2023 ... The Global 5G chipset Market Size was valued at USD 32.73 Billion in 2022 and the Worldwide 5G chipset Market Size is expected to reach USD ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global 5G Chipset Market Share Will Continue To Expand Steadily ...",
+      "url": "https://www.taiwannews.com.tw/news/4591262",
+      "snippet": "Jul 7, 2022 ... The balanced (most likely) projection is used to quantify global 5G chipset market in every aspect of the classification from perspectives of ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Chipset and Processors Industry Analysis and Consulting",
+      "url": "https://www.cognitivemarketresearch.com/list/electronics-&-electrical/chipset-and-processors",
+      "snippet": "Chipset and Processors Industry Overview ... The global chipset and processors market is projected to reach USD 441.2 billion in 2025 and expand to USD 609.4 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global 5G Chipset Market - Ken Research Stated the Industry",
+      "url": "https://www.openpr.com/news/4574967/global-5g-chipset-market-ken-research-stated-the-industry",
+      "snippet": "Jul 13, 2026 ... Global 5G Chipset Market reaches USD 24 billion, driven by 5G networks, smartphones, IoT adoption, and AI-powered chip innovation. Comprehensive ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global 5G Chipset Market Size, Share and Growth Research Report",
+      "url": "https://www.bccresearch.com/market-research/semiconductor-manufacturing/global-5G-chipset-market-report.html?srsltid=AfmBOooOF5Q8ACfsixygXo6Y1pq7GQUt523qfnMa7c6PgjYKqSzCMT_M",
+      "snippet": "The global market for 5G chipset was nearly $26.1 billion in 2022, growing to $72.0 billion in 2028 at a CAGR of 19.1% during the period 2023-2028.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Chipset 晶元科技",
+      "url": "https://www.chipsetcomm.com.tw/",
+      "snippet": "Chipset Communication Co., Ltd. was founded in 1994 and has been a leading manufacturer of computer peripherals in Taiwan. Our product line is currently ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Intel® Chipset Products",
+      "url": "https://www.intel.com/content/www/us/en/products/details/chipsets.html",
+      "snippet": "Intel® Chipset Products. Get the essential features you need—from the data center to the network edge. Choose chipsets for extreme power and performance, for ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Viettel Unveils 5G Chipset and Human AI to the Global Technology ...",
+      "url": "https://news.taiwannet.com.tw/news/121787/viettel-unveils-5g-chipset-and-human-ai-to-the-global-technology-community.html",
+      "snippet": "Feb 27, 2024 ... 台灣產經新聞網Global Business News訊息（文章來源：PR Newswire 美通社）：Viettel Unveils 5G Chipset and Human AI to the Global Technology ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "5G market grows as GCT begins chipset rollout",
+      "url": "https://dig.watch/updates/5g-market-grows-as-gct-begins-chipset-rollout",
+      "snippet": "Jul 22, 2025 ... GCT Semiconductor Holding, Inc. has begun delivering samples of its latest 5G chipsets to lead customers, including Airspan Networks and Orbic.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GCT Semiconductor, Inc.",
+      "url": "https://www.gctsemi.com/",
+      "snippet": "GCT's 4G LTE chips and modules enable superior high-speed LTE connectivity to commercial devices worldwide.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

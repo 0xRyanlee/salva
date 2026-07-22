@@ -1,0 +1,79 @@
+{
+  "task_id": "single-06-gleif",
+  "strategy": "anchor",
+  "query": "GLEIF Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:10.550871+00:00",
+  "results": [
+    {
+      "title": "Home – GLEIF",
+      "url": "https://www.gleif.org/",
+      "snippet": "GLEIF Blog Date: 2026-07-15 Organizational Identity Is the Layer Global Trade Has Been Missing. Digital trade will not be realized by digitizing paper documents alone.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF | Global Legal Entity Identifier Foundation | LEI Register",
+      "url": "https://www.lei-identifier.com/gleif/",
+      "snippet": "Global LEI Index is the only worldwide online source providing open, standardized, high-quality legal entity reference data; through this, GLEIF can enable individuals and entities to make...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global Legal Entity Identifier Foundation (GLEIF) (@GLEIF) on X",
+      "url": "https://twitter.com/GLEIF",
+      "snippet": "Enabling global identity. Protecting digital trust. The guardian of Legal Entity Identifiers (LEIs) & Verifiable LEIs (vLEIs).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global Legal Entity Identifier Foundation (GLEIF) | LinkedIn",
+      "url": "https://www.linkedin.com/company/global-legal-entity-identifier-foundation-gleif-",
+      "snippet": "The value of GLEIF lies in transparency. Our global LEI system empowers people, businesses, and governments to make safer decisions, such as with whom to buy from, borrow money...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global Legal Entity Identifier Foundation (GLEIF) - YouTube",
+      "url": "https://www.youtube.com/@GLEIF",
+      "snippet": "Enabling global identity. Protecting digital trust. The guardian of Legal Entity Identifiers (LEIs) and verifiable LEIs (vLEIs).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Get the world's cheapest LEI-code | Fast and easy LEI registration",
+      "url": "https://leiservice.com/",
+      "snippet": "The ROC was established in 2013 for the coordination and supervision of the framework of the Global LEI System. Layer 2: GLEIF (Global Legal Entity Identifier Foundation).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "What is a Legal Entity Identifier (LEI Number)?",
+      "url": "https://leiworldwide.com/news/what-is-a-legal-entity-identifier",
+      "snippet": "GLEIF works to ensure the operational integrity of the Global LEI System (GLEIS) by setting and maintaining technical standards and protocols for the LEI.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "LEI Code Lookup — EU Verifier",
+      "url": "https://www.eu-verifier.eu/lei",
+      "snippet": "LEI Code Lookup. Check LEI format and look up entity records in the Global LEI Index operated by GLEIF.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "LEI code Frequently Asked Questions | GetLEI",
+      "url": "https://www.getlei.com/faq/",
+      "snippet": "Q: What does GLEIF stand for, and what is it? GLEIF stands for “Global Legal Entity Identifier Foundation.”",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Organizational stucture of the LEI system | Resources | LEI.info",
+      "url": "https://lei.info/portal/resources/lei-governence/",
+      "snippet": "The organizational structure of the LEI system is constructed of three major tiersLEI ROC – LEI Regulatory Oversight CommitteeGLEIF – Global Legal Entity Identifier Foundation",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

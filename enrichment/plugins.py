@@ -10,7 +10,7 @@ from dataclasses import dataclass, field
 from typing import Literal, Protocol, cast
 from urllib.parse import urlparse
 
-from enrichment.omlx import enrich as omlx_enrich
+from enrichment.omlx import enrich_with_diagnostics as omlx_enrich_with_diagnostics
 from salva_core.schemas import (
     CanonicalEntity,
     DiscoveryRequest,
@@ -69,7 +69,18 @@ class OMLXPlugin:
             "price": entity.attributes.get("price_amount") or "",
             "source_url": entity.source_urls[0] if entity.source_urls else "",
         }
-        result = omlx_enrich(domain, fields)
+        outcome = omlx_enrich_with_diagnostics(domain, fields, request=request)
+        if outcome.error is not None:
+            return PluginOutcome(
+                plugin=self.name,
+                target_entity_id=entity.entity_id,
+                status="failed",
+                message=(
+                    f"OMLX enrichment 失敗（{outcome.attempts}/{outcome.max_retries + 1} 次"
+                    f"嘗試後放棄）：{outcome.error}"
+                ),
+            )
+        result = outcome.data
         if not result:
             return PluginOutcome(
                 plugin=self.name,

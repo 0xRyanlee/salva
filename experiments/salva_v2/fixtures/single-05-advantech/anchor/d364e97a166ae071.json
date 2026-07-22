@@ -1,0 +1,79 @@
+{
+  "task_id": "single-05-advantech",
+  "strategy": "anchor",
+  "query": "site:crunchbase.com Advantech",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:04.914202+00:00",
+  "results": [
+    {
+      "title": "Advantech - Crunchbase Company Profile & FundingAdvantech - Crunchbase Company Profile & Fundingadvantech - Crunchbase Company Profile & FundingAdvanTech - Crunchbase Company Profile & FundingAdvantech - Crunchbase Company Profile & FundingAdvantech Ltd - Crunchbase Company Profile & FundingAdvanTech, Inc. - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/advantech",
+      "snippet": "With comprehensive product ranges, customer-centric design services, and an extensive global network, Advantech is your most trustworthy partner to empower numerous innovations in the connected eWorld. Advantech is a leader in providing trusted, innovative products, services, and solutions. They offers comprehensive system integration, hardware, software, customer-centric design services, embedded systems, automation products, and global logistics support. Advantech develops industrial cellular routers, router applications, and management software for IoT and industrial networking. AdvanTech is an IT and services company providing managed IT, VOIP, and cyber security services. Advantech is an IT consultancy that offers unified communication, data intelligence, VoIP, consulting and managed IT services. Frequently Asked Questions Where is Advantech Ltd's headquarters? Advantech Ltd is located in Bene Beraq, Tel Aviv, Israel. Frequently Asked Questions Where is AdvanTech, Inc.'s headquarters? AdvanTech, Inc. is located in Annapolis, Maryland, United States. Who are AdvanTech, Inc.'s competitors? Alternatives and possible competitors to AdvanTech, Inc. may include Simulations Plus, Altair, and MathWorks.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech - Crunchbase Company Profile & Fundingadvantech - Crunchbase Company Profile & FundingAdvanTech - Crunchbase Company Profile & FundingAdvantech - Crunchbase Company Profile & FundingAdvantech Ltd - Crunchbase Company Profile & FundingAdvanTech, Inc. - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/advantech-co-ltd",
+      "snippet": "Advantech is a leader in providing trusted, innovative products, services, and solutions. They offers comprehensive system integration, hardware, software, customer-centric design services, embedded systems, automation products, and global logistics support. Advantech develops industrial cellular routers, router applications, and management software for IoT and industrial networking. AdvanTech is an IT and services company providing managed IT, VOIP, and cyber security services. Advantech is an IT consultancy that offers unified communication, data intelligence, VoIP, consulting and managed IT services. Frequently Asked Questions Where is Advantech Ltd's headquarters? Advantech Ltd is located in Bene Beraq, Tel Aviv, Israel. Frequently Asked Questions Where is AdvanTech, Inc.'s headquarters? AdvanTech, Inc. is located in Annapolis, Maryland, United States. Who are AdvanTech, Inc.'s competitors? Alternatives and possible competitors to AdvanTech, Inc. may include Simulations Plus, Altair, and MathWorks.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "advantech - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/advantech-ec15",
+      "snippet": "Advantech develops industrial cellular routers, router applications, and management software for IoT and industrial networking.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "AdvanTech - Crunchbase Company Profile & FundingAdvantech - Crunchbase Company Profile & FundingAdvantech Ltd - Crunchbase Company Profile & FundingAdvanTech, Inc. - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/advantech-6ec4",
+      "snippet": "AdvanTech is an IT and services company providing managed IT, VOIP, and cyber security services. Advantech is an IT consultancy that offers unified communication, data intelligence, VoIP, consulting and managed IT services. Frequently Asked Questions Where is Advantech Ltd's headquarters? Advantech Ltd is located in Bene Beraq, Tel Aviv, Israel. Frequently Asked Questions Where is AdvanTech, Inc.'s headquarters? AdvanTech, Inc. is located in Annapolis, Maryland, United States. Who are AdvanTech, Inc.'s competitors? Alternatives and possible competitors to AdvanTech, Inc. may include Simulations Plus, Altair, and MathWorks.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech - Crunchbase Company Profile & FundingAdvantech Ltd - Crunchbase Company Profile & FundingAdvanTech, Inc. - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/advantech-a7de",
+      "snippet": "Advantech is an IT consultancy that offers unified communication, data intelligence, VoIP, consulting and managed IT services. Frequently Asked Questions Where is Advantech Ltd's headquarters? Advantech Ltd is located in Bene Beraq, Tel Aviv, Israel. Frequently Asked Questions Where is AdvanTech, Inc.'s headquarters? AdvanTech, Inc. is located in Annapolis, Maryland, United States. Who are AdvanTech, Inc.'s competitors? Alternatives and possible competitors to AdvanTech, Inc. may include Simulations Plus, Altair, and MathWorks.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Ltd - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/advantech-ltd",
+      "snippet": "Frequently Asked Questions Where is Advantech Ltd's headquarters? Advantech Ltd is located in Bene Beraq, Tel Aviv, Israel.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "AdvanTech, Inc. - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/advantech-inc",
+      "snippet": "Frequently Asked Questions Where is AdvanTech, Inc.'s headquarters? AdvanTech, Inc. is located in Annapolis, Maryland, United States. Who are AdvanTech, Inc.'s competitors? Alternatives and possible competitors to AdvanTech, Inc. may include Simulations Plus, Altair, and MathWorks.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Technologies Japan... - Crunchbase Acquisition Profile",
+      "url": "https://www.crunchbase.com/acquisition/advantech-acquires-advantech-technologies-japan--f7c35d19",
+      "snippet": "Advantech Technologies Japan acquired by Advantech. Save.Advantech Advantech is a leader in providing trusted innovative embedded and automation products and solutions.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "A3 Communications acquires AdvanTech Incorporated - 2020-06-30",
+      "url": "https://www.crunchbase.com/acquisition/a3-communications-acquires-advantech-incorporated--b2f28ee3",
+      "snippet": "AdvanTech Incorporated AdvanTech is a full service security integration company serving a wide range of educational and healthcare customers.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech acquires Innocore Gaming... - Crunchbase Acquisition Profile",
+      "url": "https://www.crunchbase.com/acquisition/advantech-acquires-innocore-gaming--2e07578c",
+      "snippet": "Innocore Gaming acquired by Advantech.Advantech Advantech is a leader in providing trusted innovative embedded and automation products and solutions. Announced Date.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

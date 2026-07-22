@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-06-advantech-cloud",
+  "strategy": "anchor",
+  "query": "cloud platform Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:32:23.432404+00:00",
+  "results": [
+    {
+      "title": "Top 10: Cloud Platforms | Technology Magazine",
+      "url": "https://technologymagazine.com/top10/top-10-cloud-platforms-2025",
+      "snippet": "The global cloud infrastructure services market surged to US$330.4bn in 2024, a remarkable US$60bn leap from 2023. With cloud continuing to be a priority for major corporations, Technology Magazine profiles 10 of the world's leading cloud providers.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "The World's Largest Cloud Providers, Ranked by Market Share",
+      "url": "https://www.visualcapitalist.com/the-worlds-largest-cloud-providers-ranked-by-market-share/",
+      "snippet": "Cloud computing has become the backbone of the modern digital economy, powering everything from social media to enterprise software. This visualization breaks down the global market share of the largest cloud service providers, highlighting who dominates this trillion-dollar industry.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "AI and Cloud Computing Services | Google Cloud",
+      "url": "https://cloud.google.com/",
+      "snippet": "Meet your business challenges head on with AI and cloud computing services from Google, including security, data management, and hybrid & multi-cloud.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "10 Top Cloud Service Providers for Business ... - DigitalOcean",
+      "url": "https://www.digitalocean.com/resources/articles/cloud-service-providers",
+      "snippet": "Google Cloud Platform is a global cloud infrastructure provider known for its strengths in data analytics, containerized applications, and AI services. It can be adopted by organizations building cloud-native systems and large-scale data platforms.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud computing market leaders - statistics & facts | Statista",
+      "url": "https://www.statista.com/topics/13473/cloud-computing-market-leaders/",
+      "snippet": "Cloud computing market leaders The global cloud computing market remains heavily concentrated among a few major players, collectively known as the \"Big Three\" hyperscalers: Amazon Web Services ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Top 8 Cloud Platform Services Ranked: Azure, AWS, Google Lead ... - CRN",
+      "url": "https://www.crn.com/news/cloud/2024/top-8-cloud-platform-services-ranked-azure-aws-google-lead-gartner-magic-quadrant",
+      "snippet": "Gartner Magic Quadrant for cloud platform services leaders AWS, Microsoft Azure, Google, IBM, Oracle, Alibaba Cloud, Huawei and Tencent.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Top 10 Cloud Platform Service Providers in 2025 - GeeksforGeeks",
+      "url": "https://www.geeksforgeeks.org/blogs/cloud-platform-service-providers/",
+      "snippet": "-Satya Nadella Top 10 Cloud Platform Service Providers in 2025 In 2025, it's really important to know about the top 10 cloud platform service providers. Companies like Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP) are leading the pack. They offer a wide range of services that help businesses be more creative and grow.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Top 10 Cloud Service Providers Worldwide (Updated 2026)",
+      "url": "https://www.softwebsolutions.com/resources/top-cloud-service-providers/",
+      "snippet": "Explore the top cloud service providers in 2026 including AWS, Azure, Salesforce, GCP and many more. Get insights on benefits, features, services, and pros & cons.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global Locations - Regions & Zones | Google Cloud",
+      "url": "https://cloud.google.com/about/locations",
+      "snippet": "Google Cloud offers regions across the world to provide customers with global coverage, low cost, low latency, and application availability.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Best Cloud Service Providers in 2026: 10 Top Platforms Ranked",
+      "url": "https://www.fluence.network/blog/best-cloud-service-providers/",
+      "snippet": "Compare the best cloud service providers of 2026 on cost, reliability, compliance, and performance to choose the right platform for your business needs.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

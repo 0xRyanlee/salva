@@ -19,13 +19,21 @@ from __future__ import annotations
 import logging
 import re
 from collections import Counter
-from collections.abc import Mapping
+from collections.abc import Callable, Mapping
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from typing import Any, Protocol, cast
 
 from core.keyword_graph import KeywordGraph
+from core.query_proposal import PoolItem, QueryProposal, propose_followup_query
 from core.types import Intent, QueryFamily, SearchTelemetry, UnifiedResult
+from processing.confidence import (
+    ConfidenceSignals,
+    RankingWeights,
+    RetrievalProvenance,
+    corroboration_saturation,
+    rank_candidates,
+)
 from retrieval.seed_fetcher import fetch_entity_names
 from salva_core.routes import PROFILE_ROUTE_HINTS
 
@@ -121,6 +129,13 @@ class SalvaController:
         keyword_graph: KeywordGraph | None = None,
         experience_profile: str = "",
         scoring_context: dict[str, Any] | None = None,
+        admission_policy: str = "gate",
+        max_admitted: int = 25,
+        ranking_weights: RankingWeights | None = None,
+        enable_query_proposal: bool = False,
+        query_proposal_fn: Callable[[list[PoolItem], Intent, float], QueryProposal] | None = None,
+        query_proposal_saturation_threshold: float = 0.4,
+        round_checkpoint: Callable[[], None] | None = None,
     ):
         self.intent = intent
         self.retrievers = retrievers
@@ -130,6 +145,28 @@ class SalvaController:
         self.qualify_threshold = qualify_threshold
         self.convergence_threshold = convergence_threshold
         self.results_per_query = results_per_query
+        # "gate": final entity set = per-round qualify-flag (legacy default).
+        # "rank": gate no longer selects output -- every candidate gets a
+        # retrieval-derived confidence and the top max_admitted by confidence
+        # are handed (ordered) to the downstream scoped rerank. The per-round
+        # qualify flag still drives round-2+ keyword feedback either way.
+        self.admission_policy = admission_policy
+        self.max_admitted = max_admitted
+        self.ranking_weights = ranking_weights
+        # Optional bounded LLM query-proposal step (amended 2026-07-21, see
+        # CLAUDE.md "Deterministic Pipeline First"). Off by default -- an
+        # opt-in addition to the deterministic keyword-graph expansion, not a
+        # replacement for it. Fires at most once, after the scheduled rounds,
+        # only when the pool's corroboration signal looks thin.
+        self.enable_query_proposal = enable_query_proposal
+        self._query_proposal_fn = query_proposal_fn or propose_followup_query
+        self.query_proposal_saturation_threshold = query_proposal_saturation_threshold
+        # Called at the top of every round (job-queue cancellation checkpoint).
+        # May raise to unwind the run early -- the controller has no opinion on
+        # what it raises or why; that's the caller's (worker.py) job semantics,
+        # not multi-round strategy.
+        self.round_checkpoint = round_checkpoint
+        self._provenance = RetrievalProvenance()
         # Extra key/value pairs merged into every round's telemetry.metadata,
         # which is the context dict passed to scorer.score(). Computed once
         # by the caller (e.g. stability signals -- one domain-level lookup
@@ -157,6 +194,9 @@ class SalvaController:
         self._bootstrap_seed_urls()
 
         for round_num in range(1, self.intent.max_rounds + 1):
+            if self.round_checkpoint is not None:
+                self.round_checkpoint()
+
             rotation = self._strategy_rotation
             strategy = rotation[(round_num - 1) % len(rotation)]
             retriever = self.retrievers.get(strategy) or next(iter(self.retrievers.values()))
@@ -204,16 +244,92 @@ class SalvaController:
                 break
             prev_rate = rate
 
-        qualified = [r for r in self._all_results if r.qualified]
+        # Always rank the full pool by retrieval-derived confidence so every
+        # candidate carries result.confidence downstream, regardless of policy.
+        ranked = rank_candidates(
+            self._all_results, self.intent, self._provenance,
+            weights=self.ranking_weights,
+        )
+
+        if self.enable_query_proposal and self._run_followup_query(ranked):
+            ranked = rank_candidates(
+                self._all_results, self.intent, self._provenance,
+                weights=self.ranking_weights,
+            )
+
+        if self.admission_policy == "rank":
+            selected = [result for result, _, _ in ranked[: self.max_admitted]]
+        else:
+            selected = [r for r in self._all_results if r.qualified]
+
         self._run.ended_at = datetime.now(UTC)
-        self._run.total_qualified = len(qualified)
+        self._run.total_qualified = len(selected)
         self._run.total_raw = len(self._all_results)
 
         logger.info(
-            "Run complete: %d qualified / %d raw in %.1fs",
-            len(qualified), len(self._all_results), self._run.elapsed_seconds
+            "Run complete: %d selected (%s) / %d raw in %.1fs",
+            len(selected), self.admission_policy, len(self._all_results),
+            self._run.elapsed_seconds,
         )
-        return qualified, self._run
+        return selected, self._run
+
+    # ------------------------------------------------------------------
+    # Bounded LLM query-proposal follow-up (optional, off by default)
+    # ------------------------------------------------------------------
+
+    def _run_followup_query(
+        self,
+        ranked: list[tuple[UnifiedResult, float, ConfidenceSignals]],
+    ) -> bool:
+        """Consult the (possibly LLM-backed) proposer once, after the
+        scheduled rounds, only when the pool's corroboration signal is thin.
+        Returns True iff an extra round actually ran (so callers know to
+        re-rank). Never raises on LLM/network failure -- degrades to no-op.
+        """
+        if self._run is None or not self._all_results:
+            return False
+
+        saturation = corroboration_saturation(ranked)
+        if saturation >= self.query_proposal_saturation_threshold:
+            return False
+
+        pool = [
+            PoolItem(title=result.title, url=result.source_url, snippet=result.description)
+            for result, _, _ in ranked[:12]
+        ]
+        try:
+            proposal = self._query_proposal_fn(pool, self.intent, saturation)
+        except Exception:
+            logger.exception("query-proposal step failed; skipping follow-up round")
+            return False
+
+        if not proposal.need_followup or not proposal.query:
+            return False
+        query = proposal.query
+        if query in self._seen_queries:
+            return False
+
+        strategy = self._run.rounds[-1].strategy if self._run.rounds else self._strategy_rotation[0]
+        retriever = self.retrievers.get(strategy) or next(iter(self.retrievers.values()))
+        round_num = len(self._run.rounds) + 1
+        query_family = QueryFamily(
+            round_num=round_num,
+            queries=[query],
+            strategy=strategy,
+            notes=["llm_query_proposal_followup"],
+        )
+
+        logger.info(
+            "query-proposal follow-up round %d [%s]: %r (saturation=%.2f)",
+            round_num, strategy, query, saturation,
+        )
+        round_summary, telemetries = self._execute_round(
+            round_num, strategy, query_family, retriever
+        )
+        self._run.rounds.append(round_summary)
+        for t in telemetries:
+            self.graph.apply_telemetry(t)
+        return True
 
     # ------------------------------------------------------------------
     # Seed URL bootstrap
@@ -273,6 +389,13 @@ class SalvaController:
 
         for query in fresh_queries:
             raw_hits = retriever.search(query, n=self.results_per_query)
+            for raw in raw_hits:
+                url = raw.get("url", "") if isinstance(raw, dict) else ""
+                if url:
+                    provider = (
+                        raw.get("retrieval_instance") or raw.get("engine") or strategy
+                    )
+                    self._provenance.observe(url, str(provider), strategy, query)
             content_type_counts: Counter[str] = Counter()
             source_kind_counts: Counter[str] = Counter()
             prefilter_rejected = 0

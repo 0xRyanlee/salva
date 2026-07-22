@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-03-acer",
+  "strategy": "radar",
+  "query": "宏碁 founded TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:28:13.820970+00:00",
+  "results": [
+    {
+      "title": "宏碁 - 維基百科，自由的百科全書",
+      "url": "https://zh.wikipedia.org/zh-tw/宏碁",
+      "snippet": "2016年6月，宏碁及瑞典商Starbreeze共同宣布將設立合資公司，發展StarVR虛擬實境頭戴式顯示器。 2016年10月，宏碁計畫於2017年第一季擴大VR產品布局，推出支援Windows Holographic平台虛擬實境頭戴式顯示器。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "宏碁 - 維基百科，自由的百科全書",
+      "url": "https://zh.wikipedia.org/zh-tw/宏碁股份有限公司",
+      "snippet": "宏碁創立時，使用「Multitech」做為品牌名稱。 1987年，宏碁集團董事長 施振榮 獨排眾議，認為企業在長期發展中為了不同的使命與任務，應該修改不合時宜的名字，而決定放棄「Multitech」這個價值兩千萬美元的品牌。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "施振榮- 維基百科，自由的百科全書",
+      "url": "https://zh.wikipedia.org/zh-tw/施振榮",
+      "snippet": "施振榮（臺��羅：Si chìn-êng，英語：Stan Shih，1944年12月18日—），生於台灣日治時期的臺中州彰化郡鹿港街（今彰化縣鹿港鎮），宏碁創辦人、宏碁榮譽董事長暨智榮基金會董事長， ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "宏碁",
+      "url": "https://tw.linkedin.com/company/acer",
+      "snippet": "宏碁| 302973 位LinkedIn 關注者。Founded in 1976, Acer is one of the world's top ICT companies with a presence in more than 160 countries.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Acer's early success story in Taiwan - Facebook",
+      "url": "https://www.facebook.com/groups/1974693462806123/posts/4142626046012843/",
+      "snippet": "Aug 24, 2025 ... 宏碁故事宏碁電腦集團創業時， ... 1980 to 2025: Taiwan has developed into a technology Island led by TSMC founded ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "英特爾與宏碁智醫透過AI PC將眼部病變檢測時間大幅縮短",
+      "url": "https://newsroom.intel.com/zh-tw/用戶端運算/英特爾與宏碁智醫透過ai-pc將眼部病變檢測時間大幅",
+      "snippet": "Jun 11, 2025 ... ... 宏碁AI PC。 Founded in 1895, National Taiwan University Hospital is a nation. 宏碁智醫將AI推論技術帶給最需要的第一線人員和地點，推動AI醫療 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "蒸蒸日上—資訊產業廠商的經營發展策略分析：以宏碁集團為例",
+      "url": "https://tdr.lib.ntu.edu.tw/handle/123456789/93019?mode=full",
+      "snippet": "3. 陳威辰 (2014) 世界品牌臺灣雙A宏碁與華碩的營運發展個案研究 4. 楊珮靜 (2016) 台灣品牌電腦的經營策略分析-以宏碁為例 ... Acer Group, founded in 1976 by Stan ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Acer 發展里程碑總覽｜品牌歷史與創新紀錄 | Acer 集團",
+      "url": "https://www.acer.com/corporate/zh/overview/milestones",
+      "snippet": "「宏碁公司」成立，登記的資本額為新台幣 100萬元，專注業務、產品設計及微處理機技術顧問。 （65年8月1日) 67年 成立微處理機研習中心，為台灣資訊產業培育3,000多位工程師 68年 成立台中、高雄分公司，拓展中南部業務 為客戶設計出台灣第一台量產的 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Acer Group Home | Acer 集團",
+      "url": "https://www.acer.com/corporate/zh",
+      "snippet": "宏碁公司創立於1976年，是全球頂尖的資通訊公司之一。隨著產業的發展及生活型態的轉變，宏碁將在消費和商用市場開闢契機建立全新生態圈，推出更多結合硬體、軟體和服務整合性應用與產品。宏碁一直以打破人與科技的藩籬視為企業使命，全球約有超過7,700名員工致力於研發、設計、行銷、販售 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "宏碁股份有限公司宏碁 - 維基百科，自由的百科全書深入解析國際科技巨頭血統：Acer宏碁是正港台灣的嗎？ - UpToGo宏碁 (2353.TW) 基本資料 - Yahoo股市",
+      "url": "https://www.findcompany.com.tw/宏碁股份有限公司",
+      "snippet": "宏碁智聯網投資控股股份有限公司 木真投資有限公司 宏碁資訊服務股份有限公司 上櫃 宏碁智通股份有限公司 群碁投資股份有限公司 宏碁智聯資產管理股份有限公司 聚澤數位整合有限公司 宏碁創立時，使用「Multitech」做為品牌名稱。 1987年，宏碁集團董事長 施振榮 獨排眾議，認為企業在長期發展中為了不同的使命與任務，應該修改不合時宜的名字，而決定放棄「Multitech」這個價值兩千萬美元的品牌。 1981年，宏碁在新竹科學園區設立工廠並推出「小教授一號」，隨後在1982年推出台灣與全球第一部中文家用電腦「小教授二號」，奠定了其在電腦硬體製造領域的堅實基礎。 當時，宏碁所使用的英文品牌名稱為「Multitech」。 捨棄兩千萬美元價值的商標，Acer正式誕生 12 hours ago · 宏碁(2353.TW)，Yahoo股市 Yahoo奇摩股市提供公司基本資料、統一編號、股務相關基本資料、實收資本額、普通股數、特別股、變更、與重要行事曆如董事會、股東常會、除權日、除息日等資訊。 宏碁是台灣的嗎? 綜上所述，Acer宏碁無庸置疑是一家道地源自台灣的跨國科技巨頭。 從1976年以100萬台幣起家的小型技術諮詢公司，蛻變為如今引領全球PC市場、佈局AI與綠能環保（RE100倡議）的龐大集團，宏碁始終將根基留在台灣。 宏碁電腦公司何時成立? 1976年，宏碁電腦公司在台北市成立，成立初期登記資本額為新台幣100萬元，當時以「微處理機的園丁」自許，從事技術諮詢、進出口貿易，推廣微處理機應用。 1977年，成立宏碁美國分公司。 1978年，成立「宏亞微處理機研習中心」。 宏碁獲得2016年台北國際電腦展創新設計獎殊榮的產品有哪些? 2016年，宏碁八項產品榮獲2016年台北國際電腦展創新設計獎殊榮，包括：迷你PC Revo Build、Aspire One 11筆電、Acer XR342CK曲面螢幕、Acer RT240Y窄邊框纖薄美型螢幕、短焦LED投影機Acer K138STi 、雷射超短焦投影機Predator Z850以及Liquid Jade 2手機和Liquid Jade Primo Desktop Kit。 宏碁acer是什麼? 為了擺脫電腦硬體硬梆梆的形象，宏碁電腦使用13年之久的企業識別系統在2001年3月8日正式改為「acer」，其中英文字母大寫的A改為英文小寫的「a」，「e」以流線型圖像字體塑造宏碁在網路時代的全新形象。 因為「AceR」商標給外界的印象多是有稜有角的硬體，為了符合網路時代全新形象，於是決定改為流線型圖像字體，再創網路時代新王國。 2011年4月11日，宏碁集團發表新聞稿，再次更新企業識別商標，將原來「acer」商標的線條做了局部修正，並採用青綠色字體，使其更貼近年輕人。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

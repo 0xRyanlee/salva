@@ -1,0 +1,139 @@
+{
+  "task_id": "multihop-04-mediatek-brands",
+  "entities": [
+    {
+      "title": "Global 5G Chipset Market Size To Grow USD 174.23 Billion By 2032",
+      "source_urls": [
+        "https://finance.yahoo.com/news/global-5g-chipset-market-size-120000544.html"
+      ],
+      "score": 0.3771,
+      "confidence": 0.3771
+    },
+    {
+      "title": "Global 5G Chipset Market Share Will Continue To Expand Steadily ...",
+      "source_urls": [
+        "https://www.taiwannews.com.tw/news/4591262"
+      ],
+      "score": 0.353,
+      "confidence": 0.353
+    },
+    {
+      "title": "Chipset and Processors Industry Analysis and Consulting",
+      "source_urls": [
+        "https://www.cognitivemarketresearch.com/list/electronics-&-electrical/chipset-and-processors"
+      ],
+      "score": 0.3658,
+      "confidence": 0.3658
+    },
+    {
+      "title": "GCT Semiconductor, Inc.",
+      "source_urls": [
+        "https://www.gctsemi.com"
+      ],
+      "score": 0.163,
+      "confidence": 0.163
+    },
+    {
+      "title": "Google expands partnership with Intel for AI chips - CNBC",
+      "source_urls": [
+        "https://www.cnbc.com/2026/04/09/google-expands-partnership-with-intel-for-ai-chips-.html"
+      ],
+      "score": 0.2622,
+      "confidence": 0.2622
+    },
+    {
+      "title": "MediaTek Develops Chip Utilizing TSMC's 2nm Process, Achieving ...",
+      "source_urls": [
+        "https://www.mediatek.com/press-room/mediatek-develops-chip-utilizing-tsmcs-2nm-process-achieving-milestones-in-performance-andpower-efficiency"
+      ],
+      "score": 0.3061,
+      "confidence": 0.3061
+    },
+    {
+      "title": "Partnerships | Brandworks Technologies",
+      "source_urls": [
+        "https://www.bwtech.in/public/partnerships"
+      ],
+      "score": 0.4016,
+      "confidence": 0.4016
+    },
+    {
+      "title": "Become a Partner — SIMO",
+      "source_urls": [
+        "https://www.simo.co/partners/become-a-partner.html"
+      ],
+      "score": 0.3521,
+      "confidence": 0.3521
+    },
+    {
+      "title": "Iridium NTN Direct | Iridium",
+      "source_urls": [
+        "https://www.iridium.com/services/iridium-ntn-direct"
+      ],
+      "score": 0.3176,
+      "confidence": 0.3176
+    },
+    {
+      "title": "AMD ׀ together we advance_AI",
+      "source_urls": [
+        "https://www.amd.com/en.html"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "Qualcomm - Wikipedia",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Qualcomm"
+      ],
+      "score": 0.195,
+      "confidence": 0.195
+    },
+    {
+      "title": "JCET Group —— Home",
+      "source_urls": [
+        "https://www.jcetglobal.com/en"
+      ],
+      "score": 0.3176,
+      "confidence": 0.3176
+    },
+    {
+      "title": "PPT_WIRELESS_3333.pptx",
+      "source_urls": [
+        "https://www.slideshare.net/slideshow/pptwireless3333pptx/255270933"
+      ],
+      "score": 0.1441,
+      "confidence": 0.1441
+    },
+    {
+      "title": "PowerPoint PresentationCOSC3330/6308 Computer ArchitecturePowerPoint PresentationPowerPoint Presentationwww.firaconsortium.orgPowerPoint Presentation",
+      "source_urls": [
+        "https://mingrany.github.io/assets/files/trio_slides_sigcomm_2022.pptx"
+      ],
+      "score": 0.1591,
+      "confidence": 0.1591
+    },
+    {
+      "title": "ChipSets - Digimon Masters Online Wiki - DMO Wiki",
+      "source_urls": [
+        "https://dmowiki.com/ChipSets"
+      ],
+      "score": 0.1894,
+      "confidence": 0.1894
+    },
+    {
+      "title": "Station-Drivers - News",
+      "source_urls": [
+        "https://www.station-drivers.com/index.php/en"
+      ],
+      "score": 0.1593,
+      "confidence": 0.1593
+    }
+  ],
+  "meta": {
+    "qualified_count": 16,
+    "raw_count": 16,
+    "rounds": 3,
+    "domain": "partnerships"
+  }
+}

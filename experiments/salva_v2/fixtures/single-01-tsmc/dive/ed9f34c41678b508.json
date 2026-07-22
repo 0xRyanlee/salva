@@ -1,0 +1,79 @@
+{
+  "task_id": "single-01-tsmc",
+  "strategy": "dive",
+  "query": "\"TSMC\" TW -blog -museum -review -job -news -report",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:24:55.551975+00:00",
+  "results": [
+    {
+      "title": "台灣積體電路製造 - 维基百科，自由的百科全书",
+      "url": "https://zh.wikipedia.org/wiki/台灣積體電路製造",
+      "snippet": "4 days ago - 台灣積體電路製造（英語：Taiwan Semiconductor Manufacturing Company, Ltd.），簡稱台積電、TSMC，與旗下子公司合稱台積電集團，是臺灣一家專注於半导体晶片製造的高科技跨國企業，總部位於新竹科學園區，是全球前十大企業，也...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan's TSMC says it has started mass production of 'most advanced ...",
+      "url": "https://www.straitstimes.com/business/taiwans-tsmc-says-it-has-started-mass-production-of-most-advanced-2nm-semiconductor-chips",
+      "snippet": "TAIPEI - Taiwanese tech titan TSMC has started mass-producing its cutting-edge 2-nanometre (nm) semiconductor chips, the company said in a statement seen by AFP on Dec 31. TSMC is the world's ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan indicts ex-TSMC employee over alleged theft of trade secrets for ...",
+      "url": "https://www.reuters.com/world/asia-pacific/taiwan-indicts-ex-tsmc-employee-over-alleged-theft-trade-secrets-use-china-2026-07-20/",
+      "snippet": "Taiwan prosecutors indicted a former TSMC employee on Monday for allegedly stealing TSMC trade secrets involving technologies designated by Taiwan as national core technologies, with intent to ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan Investigates TSMC Employees Over Possible Trade Secret Theft",
+      "url": "https://www.nytimes.com/2025/08/05/business/taiwan-tsmc-chips-leak-trade-secrets.html",
+      "snippet": "TSMC suspected the employees of illegally acquiring company trade secrets \"related to core technologies,\" which could be a violation of Taiwan's national security law, the prosecutor's ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC touts advanced packaging, 2nm progress at tech symposium",
+      "url": "https://focustaiwan.tw/sci-tech/202605140021",
+      "snippet": "Taiwan Semiconductor Manufacturing Co. (TSMC) showcased advances in its next-generation chipmaking and packaging technologies Thursday at the 2026 Taiwan Technology Symposium in Hsinchu.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "About TSMC - Taiwan Semiconductor Manufacturing Company Limited",
+      "url": "https://www.tsmc.com/english/aboutTSMC",
+      "snippet": "TSMC (TWSE: 2330, NYSE: TSM) created the semiconductor Dedicated IC Foundry business model when it was founded in 1987. In 2025, the Company manufactured 12,682 different products using 305 distinct technologies for 534 different customers for various applications covering a variety of end ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Investors - Taiwan Semiconductor Manufacturing ... - TSMC",
+      "url": "https://investor.tsmc.com/english",
+      "snippet": "4 days ago - TSMC (TWSE: 2330, NYSE: TSM) created the semiconductor Dedicated IC Foundry business model when it was founded in 1987.TSMC served about 465 customers and manufactured more than 9,920 products for various applications covering a variety of computer, ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC | LinkedIn",
+      "url": "https://www.linkedin.com/company/tsmc",
+      "snippet": "April 10, 2026 - TSMC is listed on the Taiwan Stock Exchange (TWSE) under ticker number 2330, and its American Depositary Shares trade on the New York Stock Exchange (NYSE) under the symbol \"TSM\".",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC's unit TSMC Global acquires fixed-income securities for $10 mln | MarketScreener",
+      "url": "https://www.marketscreener.com/news/tsmc-s-unit-tsmc-global-acquires-fixed-income-securities-for-10-mln-ce7f5adfdc89f325",
+      "snippet": "May 23, 2026 - Taiwan Semiconductor Manufacturing Co Ltd: says unit TSMC Global acquires fixed-income securities for $10 million ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC Fabs - Taiwan Semiconductor Manufacturing Company Limited",
+      "url": "https://www.tsmc.com/english/aboutTSMC/TSMC_Fabs",
+      "snippet": "August 1, 2025 - Skip to main content · TSMC Fabs · 12-inch FABs · Corporate Headquarters & Fab 12A · 8, Li-Hsin Rd. 6, Hsinchu Science Park, Hsinchu 300-096, Taiwan, R.O.C · TEL: 886-3-5636688 · View Map · Fab 12B · 168, Park Ave. 2, Hsinchu Science Park, Hsinchu 300-091, Taiwan, R.O.C",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

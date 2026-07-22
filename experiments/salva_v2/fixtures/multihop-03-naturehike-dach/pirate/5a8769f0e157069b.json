@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-03-naturehike-dach",
+  "strategy": "pirate",
+  "query": "intitle:\"Naturehike distributor\"",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:31:18.018183+00:00",
+  "results": [
+    {
+      "title": "Naturehike Distributor Store - Walmart.com",
+      "url": "https://www.walmart.com/seller/102775398/cp/shopall",
+      "snippet": "Naturehike Distributor Store - Walmart.com Naturehike is a one-stop camping equipment brand. Since its inception, it has been focusing on the research and development, design and sales of camping equipment, and its series of products have covered a wide range of fields such as outdoor camping, outdoor recreation, mountaineering and hiking, t…",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Seller StoreFront - Naturehike Distributor Store - Walmart.com",
+      "url": "https://www.walmart.com/seller/102775398",
+      "snippet": "Seller StoreFront - Naturehike Distributor Store - Walmart.com Naturehike is a one-stop camping equipment brand. Since its inception, it has been focusing on the research and development, design and sales of camping equipment, and its series of products have covered a wide range of fields such as outdoor camping, outdoor recreation, mountaineering and hiking, t…",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike Taiwan -全館現貨 台灣總代理 安心享保固",
+      "url": "https://www.naturehiketw.com/",
+      "snippet": "自創立以來Naturehike一直專注於戶外產品的研發與銷售，豐富的商品線熱銷全球68個國家。致力於打造質感高CP值戶外生活。台灣總代理提供您優良的購買體驗及售後服務。 加入會員享有超值待遇，折扣無上限。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike Official Store | Outdoor & Camping Gear",
+      "url": "https://naturehike-store.com/",
+      "snippet": "Explore Naturehike camping gear, tents, backpacks, sleeping bags and outdoor equipment designed for comfort, adventure and travel.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike Distributor Store - Consumer Complaints and Reviews",
+      "url": "https://www.wmtsellers.com/naturehike-distributor-store",
+      "snippet": "Naturehike Distributor Store cancellations, returns and exchanges policy, estimated shipping times, and shipping information might be available by contacting Naturehike Distributor Store. Their contact information including business name, phone number, address and email are unavailable. If a seller is not responding to customer service, returns, refunds and other issues contact Walmart.com",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Avetlist — USA Wholesale Distributor Directory for Sellers",
+      "url": "https://avetlist.com/",
+      "snippet": "Find authorized USA wholesale distributors for Amazon FBA, Walmart Marketplace, and eBay. 21,000+ verified distributor contacts scored 40-100. Filtered by state and category. Instant Excel delivery.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike • Lightweight Camping & Hiking Gear • Official Website",
+      "url": "https://naturehike-outdoors.com/",
+      "snippet": "Naturehike Official Store for Global Adventurers Naturehike produces lightweight camping and hiking gear trusted by budget-conscious adventurers on every continent who demand quality without premium price tags. The official store delivers the complete product catalog at the best available price with direct manufacturer support and comprehensive warranty coverage. Place your order online today ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike, Return to Nature",
+      "url": "https://www.naturehike.com/",
+      "snippet": "A professional lightweight outdoor brand dedicated to simplifying outdoor travel. Discover premium camping tents, hiking gear, and glamping equipment — enjoy nature with ease.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Tentsoutdoor",
+      "url": "https://tentsoutdoor.myshopify.com/",
+      "snippet": "Tentsoutdoor Promotions, new products and sales. Directly to your inbox.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Apex OutSports Distribution",
+      "url": "https://www.apexoutsports.com/",
+      "snippet": "Apex OutSports Distribution - Your Partner in Outdoor Retail Success We specialize in providing outdoor retailers with high-quality, affordable gear that meets the demands of adventurers everywhere.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

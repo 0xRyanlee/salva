@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-01-cncf-founders",
+  "strategy": "radar",
+  "query": "CNCF founding members joint Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:29:54.222864+00:00",
+  "results": [
+    {
+      "title": "Ambassadors | CNCF",
+      "url": "https://www.cncf.io/people/ambassadors/",
+      "snippet": "As a member of the founding team and technical leadership committee for OpenSearch a Linux Foundation project, Maintainer of Jaeger a CNCF graduated project for distributed tracing. Contributor to OpenTelemetry.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) Guide: Projects, Pricing...",
+      "url": "https://machinecircuit.com/cloud-native-computing-foundation-cncf-guide-projects-pricing-benefits/",
+      "snippet": "Founded in 2015 under the Linux Foundation, CNCF has become the driving force behind many of the most important open-source projects in cloud computing. In this guide, we’ll explore CNCF in detail—its mission, projects, membership benefits, pricing, and future outlook.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF Strengthens Partnership with Broadcom as a Platinum Member...",
+      "url": "https://au.finance.yahoo.com/news/cncf-strengthens-partnership-broadcom-platinum-160000713.html",
+      "snippet": "Broadcom has elevated its membership to Platinum, deepening its commitment to the CNCF ecosystem and cloud native community. Broadcom recently contributed Velero, a Kubernetes-native backup, restore and migration platform, to the CNCF Sandbox.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF founding member explains why customers are... - SiliconANGLE",
+      "url": "https://siliconangle.com/2020/11/20/cncf-founder-explains-why-customers-are-as-crucial-as-tech-in-agile-it-kubecon/",
+      "snippet": "Customers and users are actually often quite eager to provide feedback. Owens knows this, because, since day one, the CNCF has actively encouraged end users to get involved in and contribute to projects. Today, over 150 end users make up a vital unit of the foundation.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "[Q3-CNCF-Madison] Why the CNCF Matters to You - Speaker Deck",
+      "url": "https://speakerdeck.com/cloudnativemadison/q3-cncf-madison-why-the-cncf-matters-to-you",
+      "snippet": "Who is CNCF? Founded in 2015, the CNCF hosts critical. components of the global technology infrastructure.And innovative startups - 600+ members Silver Members. How the CNCF Powers Innovation CNCF’s mission is to make. Cloud Native computing ubiquitous.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) on LinkedIn: #kubecon...",
+      "url": "https://www.linkedin.com/posts/cloud-native-computing-foundation_kubecon-cloudnativecon-kubernetes-activity-7125023344298491905--IFz",
+      "snippet": "More Relevant Posts. Cloud Native Computing Foundation (CNCF). 108,620 followers. 2h.[NEWS] 25 new silver members join #CNCF this quarter.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global Warfare 4 — Apply to Join",
+      "url": "https://globalwarfare.gg/apply",
+      "snippet": "Join the event. Complete the application below to secure your spot in Global Warfare 4.Before filling in the form you must join our Discord and verify your Steam account through Platform Sync.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Alibaba Cloud, Baidu embrace open source as CNCF members",
+      "url": "https://outlinetts.com/article/page/rcrwireless/20171206/telco-cloud/alibaba-cloud-baidu-embrace-open-source-cncf-members/",
+      "snippet": "The company joined CNCF as a gold member. Baudi announced earlier this year the compatibility of. its deep learning framework PaddlePaddle with Kubernetes, making it the first machine learning tool to support the open source container management platform. The company said it and other.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Apple has joined the Cloud Native Computing... - UMA Technology",
+      "url": "https://umatechnology.org/apple-has-joined-the-cloud-native-computing-foundation-as-a-platinum-member/",
+      "snippet": "Apple joins CNCF as Platinum member, enhancing cloud-native efforts.Founded in 2015, the CNCF is an organization under the umbrella of the Linux Foundation and is designed to promote cloud-native technologies, foster collaboration, and support the growth of the community.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "A Deep Understanding of Cloud Native... - Alibaba Cloud Community",
+      "url": "https://www.alibabacloud.com/blog/a-deep-understanding-of-cloud-native-technology-and-application_596273",
+      "snippet": "In 2015, the Cloud Native Computing Foundation (CNCF) was founded. CNCF originally defined four characteristics of cloud-native architectures: containerized encapsulation, automated management, and microservices.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

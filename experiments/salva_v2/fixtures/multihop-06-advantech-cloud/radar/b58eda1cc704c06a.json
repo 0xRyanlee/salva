@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-06-advantech-cloud",
+  "strategy": "radar",
+  "query": "cloud platform partnership Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:32:33.441655+00:00",
+  "results": [
+    {
+      "title": "Google Cloud Partner Network",
+      "url": "https://cloud.google.com/partners",
+      "snippet": "Learn how Google Cloud's thousands of vetted and experienced partners and partner-built tools can help support your cloud journey.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Partner Home | Google Cloud",
+      "url": "https://partners.cloud.google.com/",
+      "snippet": "Unlock your growth: Become a partner today Click to start your journey and accelerate customer success with Google's leading cloud technology. Join our global ecosystem now!",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "IBM and Google Cloud Announce Strategic Partnership to Scale AI with ...",
+      "url": "https://newsroom.ibm.com/2026-06-04-ibm-and-google-cloud-announce-strategic-partnership-to-scale-ai-with-human-expertise-and-ai-powered-delivery",
+      "snippet": "IBM and Google Cloud announced the launch of a new Google Cloud Practice, designed to help organizations more quickly scale AI into production and modernize core systems. The new practice combines IBM's deep industry expertise and IBM Consulting Advantage - the company's AI-powered platform that helps IBM teams design, build and deploy AI solutions faster using agents and industry ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Welcome to the Microsoft Cloud Partner Program",
+      "url": "https://partner.microsoft.com/blog/article/welcome-to-the-microsoft-cloud-partner-program/",
+      "snippet": "Today, we mark the official launch of the new Microsoft Cloud Partner Program. It is my pleasure to welcome all our partners to this evolution in how we develop and deliver cloud applications, services, and devices for customers everywhere. With the global reach, strategic investments, and technology stack from Microsoft, we empower our partners to create and sell differentiated products and ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Welcome to the Microsoft AI Cloud Partner Program",
+      "url": "https://partner.microsoft.com/explore",
+      "snippet": "Welcome to the Cloud Partner Program The Cloud Partner Program is how you get the most out of Microsoft technology, our cloud platform investments, and a global network of customer connections. Through the program, we continue to build on our ongoing commitment to being a trusted partner to organizations everywhere.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "NVIDIA Cloud Partners Deliver Scalable AI Solutions | NVIDIA",
+      "url": "https://www.nvidia.com/en-us/data-center/gpu-cloud-computing/partners/",
+      "snippet": "Reference Platform NVIDIA Cloud Partners Reference Platform NCPs deliver the NVIDIA accelerated computing platform built on the NCP reference design, providing high-performance, scalable, and easy-to-use infrastructure for modern AI workloads. Explore a list of all global NVIDIA Cloud Partners.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Accenture and Google Cloud Expand Partnership to Scale Agentic ...",
+      "url": "https://newsroom.accenture.com/news/2026/accenture-and-google-cloud-expand-partnership-to-scale-agentic-transformation-for-global-enterprises-with-gemini-enterprise",
+      "snippet": "Accenture and Google Cloud today announced a significant expansion of their partnership, with the launch of a first-of-its-kind program focused on helping enterprises drive AI-powered reinvention and business value faster and at scale.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud computing market leaders - statistics & facts | Statista",
+      "url": "https://www.statista.com/topics/13473/cloud-computing-market-leaders/",
+      "snippet": "Cloud computing market leaders The global cloud computing market remains heavily concentrated among a few major players, collectively known as the \"Big Three\" hyperscalers: Amazon Web Services ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "S&P Global Advances AI-Powered Enterprise Transformation Through ...",
+      "url": "https://press.spglobal.com/2025-12-10-S-P-Global-Advances-AI-Powered-Enterprise-Transformation-Through-Strategic-Partnership-with-Google-Cloud",
+      "snippet": "The partnership will advance S&P Global's data distribution by unifying its proprietary data on BigQuery, Google Cloud's data to AI platform. This streamlined, strengthened data foundation will deliver faster, deeper, AI-ready insights through BigQuery Data Sharing.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Become an AWS Partner | AWS Partner Network",
+      "url": "https://aws.amazon.com/partners/",
+      "snippet": "The AWS Partner Network (APN) is a global community of partners that leverages programs, expertise, and resources to build, market, and sell customer offerings.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

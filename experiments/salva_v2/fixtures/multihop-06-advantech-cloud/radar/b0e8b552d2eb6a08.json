@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-06-advantech-cloud",
+  "strategy": "radar",
+  "query": "cloud platform collaboration Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:32:36.605155+00:00",
+  "results": [
+    {
+      "title": "AI and Cloud Computing Services | Google Cloud",
+      "url": "https://cloud.google.com/",
+      "snippet": "Build with the cloud platform designed for developers and AI. Try Google Cloud with free usage of over 20 products, plus new customers get $300 in free credits on signup.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cross-cloud collaboration with Microsoft 365",
+      "url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/cross-cloud-collaboration?view=o365-worldwide",
+      "snippet": "May 7, 2026 · Problem Statement Note Cross-Cloud collaboration refers to interoperability and interaction between business entities operating on different clouds. It ensures that users from various organizations can securely access and share resources, applications, and data across sovereign and global cloud environments.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Top 10 Best Cloud Collaboration Services | Top Picks 2026",
+      "url": "https://worldmetrics.org/service/cloud-collaboration/",
+      "snippet": "Top 10 Cloud Collaboration Services ranked for teams. Compare options from leaders like Accenture and Deloitte. Find the best fit fast.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "12 Best Online Collaboration Platforms (2026 Comparison)",
+      "url": "https://reclaim.ai/blog/collaboration-platforms",
+      "snippet": "Aug 18, 2025 · Slack is a cloud-based collaboration platform that brings channels, real-time chat, lightweight documents, and thousands of app integrations together in one place so that virtual teams can move faster without email overload.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Best online collaboration tool of 2025 - TechRadar",
+      "url": "https://www.techradar.com/best/best-online-collaboration-tools",
+      "snippet": "Dec 8, 2025 · However, collaboration tools aren't simply limited to office software such as Microsoft docs and spreadsheets, but could be anything from using cloud document storage for managing daily tasks, to ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Software Group home",
+      "url": "https://www.cloud.com/",
+      "snippet": "Cloud Software Group is a leading provider of enterprise infrastructure software solutions encompassing virtualization, integration, data management, automation, business intelligence, collaboration, networking and security.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "17 Best Cloud Collaboration Tools Reviewed For 2026",
+      "url": "https://thedigitalprojectmanager.com/tools/best-cloud-collaboration-tools/",
+      "snippet": "Jul 14, 2026 · I go over the best cloud collaboration tools with key features, screenshots, pricing, and pros & cons from an expert's perspective.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Secure Cloud Collaboration Platform for Global Teams",
+      "url": "https://boultbox.com/blog/secure-cloud-collaboration-platform",
+      "snippet": "Unlike basic cloud drives, these platforms are built for real-time collaboration, remote access, and sensitive business workflows — without compromising speed or security. BoultBox combines privacy-first cloud storage, zero-sync access, and fast global performance into one unified...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Top Cloud Collaboration Platforms for Business Management",
+      "url": "https://www.linkedin.com/advice/1/what-top-cloud-collaboration-platforms-remote-wtjae",
+      "snippet": "Discover the best cloud collaboration platforms for managing remote teams effectively and enhancing productivity in the digital workspace.Find expert answers in this collaborative article. Experts who add quality contributions will have a chance to be featured. Learn more.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Enterprise Level Edge Cloud Collaboration Platform Market",
+      "url": "https://www.wiseguyreports.com/reports/enterprise-level-edge-cloud-collaboration-platform-market",
+      "snippet": "Key Market Trends Insights. The Global Enterprise Level Edge Cloud Collaboration Platform Market is projected to grow at a CAGR of 13.4% from 2025 to 2035, driven by increasing demand for real-time collaboration tools across various industries.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-01-cncf-founders",
+  "strategy": "pirate",
+  "query": "intitle:\"CNCF founding members\"",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:30:18.669174+00:00",
+  "results": [
+    {
+      "title": "Cloud Native Computing Foundation - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cloud_Native_Computing_Foundation",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) is a subsidiary of the Linux Foundation founded in 2015 to support cloud-native computing. [1]",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) Insights",
+      "url": "https://insights.linuxfoundation.org/collection/details/cloud-native-computing-foundation-(cncf)",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) is an open-source organization under the Linux Foundation that promotes the development and adoption of cloud-native technologies. It serves as a hub for projects that enable scalable, resilient, and portable applications in modern cloud environments.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF community",
+      "url": "https://ocgroups.dev/cncf",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure. CNCF brings together the world's top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the nonprofit Linux Foundation.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "云原生计算基金会cncf.vip",
+      "url": "https://cncf.cc/",
+      "snippet": "关于CNCF CNCF是开源的、供应商中立的云原生计算中心，托管 Freemesh 和 go-zeus 等项目，使云原生具有普遍性和可持续性。 云原生是基于分布部署和统一运管的分布式云，以容器、微服务、DevOps等技术为基础建立的一套新型云技术产品体系，是云计算未来的发展方向。 云原生的发展离不开社区的支持 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cncf | Cncf",
+      "url": "https://community2.cncf.io/",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure. CNCF brings together the world's top developers, end users, and vendors and runs the largest open source developer conferences. CNCF is part of the nonprofit Linux Foundation.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) - GitHub",
+      "url": "https://github.com/cncf",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure. We bring together the world's top developers, end users, and vendors and run the largest open source developer conferences. CNCF is part of the nonprofit Linux Foundation. Try our graduated, incubating, and sandbox projects Explore the Cloud Native Landscape Join the end user ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF Ecosystem Continues to Drive Innovation with New Silver Members",
+      "url": "https://www.lelezard.com/en/news-21636815.html",
+      "snippet": "Organizations join the ever-growing cloud native ecosystem to drive innovation across industries and geographies NEW DELHI, Dec. 10, 2024 /PRNewswire/ -- KubeCon + CloudNativeCon India ? December ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation",
+      "url": "https://www.cncf.io/",
+      "snippet": "CNCF is the vendor-neutral hub of cloud native computing, dedicated to making cloud native ubiquitous.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "First AI Native Summit: Cloud Native and Accelerating AI-Native ...",
+      "url": "https://www.etsi.org/blogs/first-ai-native-summit-cloud-native-and-accelerating-ai-native-evolution/",
+      "snippet": "The first AI Native Summit, hosted by ETSI and co-organised by CNCF and LF AI & Data, was successfully held during CNCF KubeCon Europe 2026. Core members of the CNCF open-source community, including Orange, China Mobile, Alibaba, Red Hat, Huawei, […]",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation | San Francisco CA - Facebook",
+      "url": "https://www.facebook.com/CloudNativeComputingFoundation/",
+      "snippet": "Cloud Native Computing Foundation, San Francisco. 6,383 likes · 75 talking about this · 7 were here. Cloud native computing uses an open source software stack to deploy applications as microservices,...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "task_id": "single-02-naturehike",
+  "strategy": "radar",
+  "query": "camping equipment site:crunchbase.com",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:25:14.260656+00:00",
+  "results": [
+    {
+      "title": "DISTRIBUTION CAMPING PLUS INC. - Crunchbase Company Profile...",
+      "url": "https://www.crunchbase.com/organization/distribution-camping-plus-inc",
+      "snippet": "Distribution Camping Plus supplies commercial outdoor, park, and campground equipment to professional clients.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Roadsurfer is a camper rental company that provides various types of...",
+      "url": "https://www.crunchbase.com/organization/roadsurfer/profiles_and_contacts",
+      "snippet": "Roadsurfer is a camper rental company that provides various types of vehicles for outdoor travel.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Summer Is Here, And Startups Want You To Go Camping",
+      "url": "https://news.crunchbase.com/travel-tourism/camping-startups-summer/",
+      "snippet": "Apparently, there’s big money in getting you out of the house, and past funding to camping-related startups proves it.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/?ref=2020Colorscom",
+      "snippet": "Furthermore, Alibaba.com reported strong year-on-year growth in wholesale B2B cooling equipment orders across multiple European markets...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "sanders - Growth Outlook",
+      "url": "https://www.crunchbase.com/organization/alpha-mart-holdings-llc/growth_outlook",
+      "snippet": "Online shopping for a great selection of camping, outdoor, patio, home and kitchen and other products. Founded. obfuscated.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Drive Medical - Tech Details",
+      "url": "https://www.crunchbase.com/organization/drive-medical/tech_details",
+      "snippet": "Drive Medical is one of the fastest growing global distributors of durable medical equipment.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

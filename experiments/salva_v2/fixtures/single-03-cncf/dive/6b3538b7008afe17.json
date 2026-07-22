@@ -1,0 +1,79 @@
+{
+  "task_id": "single-03-cncf",
+  "strategy": "dive",
+  "query": "\"CNCF\" Global -blog -museum -review -job -news -report",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:25:33.322435+00:00",
+  "results": [
+    {
+      "title": "CNCF Cloud Native Mauritius",
+      "url": "https://community.cncf.io/cloud-native-mauritius/",
+      "snippet": "By connecting with the global CNCF community, we strive to empower individuals and businesses in Mauritius to innovate and excel in the rapidly evolving cloud-native landscape.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global Privacy Policy",
+      "url": "https://www.cncf.org/wp-content/uploads/download-manager-files/CNCF-Global-Privacy-Policy-2024.pdf",
+      "snippet": "This Privacy Policy sets out the approach which the Christina Noble Children’s Foundation (CNCF) CNCF (CNCF) will take in relation to the handling of Personal Information.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF Sustainability Week 2024 - London Meetup: Call for Speakers",
+      "url": "https://sessionize.com/cncf-sustainability-week-2024-london/",
+      "snippet": "The CNCF Global Week of Cloud Native Sustainability is an event organized by the CNCF TAG Environmental Sustainability and the wider Cloud Native Computing Foundation (CNCF)...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "wraith · master · Global / cncf-io · GitLab",
+      "url": "https://gitlab.com/Global-localhost/cncf-io/-/tree/master/wraith?ref_type=heads",
+      "snippet": "Rebuild of cncf.io site.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Andela Partners with CNCF to Train 20,000 African Developers - Aide...",
+      "url": "https://hub.aide-solutions.com/andela-partners-with-cncf-to-train-20000-african-developers/",
+      "snippet": "“By collaborating with Andela, we aim to empower African developers and bridge the global tech talent gap,” said Chris Aniszczyk, CNCF CTO. Key Benefits for Participants.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF Noble Challenge (@noblechallenge) / Twitter",
+      "url": "https://twitter.com/noblechallenge",
+      "snippet": "Global. cncf.org/noblechallenges. Joined March 2015.CNCF Noble Challenge’s Tweets. Pinned Tweet.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Sustainability Week - YouTube",
+      "url": "https://www.youtube.com/playlist?list=PL5uLNcv9SibBvjoW2QvLNz0gS5_FSYZuT",
+      "snippet": "The CNCF Global Week of Cloud Native Sustainability is an event organized by the CNCF TAG Environmental Sustainability and the wider Cloud Native Computing Foundation (CNCF)...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Łukasz Adamski — Strategic Engineering Leadership",
+      "url": "https://lukaszadamski.com/",
+      "snippet": "Łukasz Adamski is the first Golden Kubestronaut in Poland, one of the first worldwide, and the only engineer globally to complete all CNCF certifications within a single month.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Children's Walk for Hope – Walking to Give Children Back Their...",
+      "url": "https://childrenswalkforhope.org/",
+      "snippet": "The Children's Walk For Hope is a virtual event that will be held globally on Sunday 23rd of May 2021.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "containerd – An industry-standard container runtime with an emphasis...",
+      "url": "https://containerd.io/",
+      "snippet": "Network primitives for creation, modification, and deletion of interfaces. Multi-tenant supported with CAS storage for global images. OCI Runtime Spec support (aka runC).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

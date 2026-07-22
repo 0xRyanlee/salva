@@ -1,0 +1,23 @@
+{
+  "task_id": "single-06-gleif",
+  "strategy": "radar",
+  "query": "GLEIF site:crunchbase.com",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:20.773402+00:00",
+  "results": [
+    {
+      "title": "Fourthline - News & Analysis",
+      "url": "https://www.crunchbase.com/organization/fourthline/news_and_analysis",
+      "snippet": "Fourthline, GLEIF and AU10TIX appoint new C-suite leaders.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Entrust Datacard - News & Analysis",
+      "url": "https://www.crunchbase.com/organization/datacard-group/news_and_analysis",
+      "snippet": "Gleif sets up stakeholder group to drive uptake of LEIs within digital certificates.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "single-05-advantech",
+  "strategy": "anchor",
+  "query": "Advantech filetype:pdf",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:26:59.240549+00:00",
+  "results": [
+    {
+      "title": "Product Catalog 2024-2025 Embedded IoT Solutions - Advantech",
+      "url": "https://advcloudfiles.advantech.com/ecatalog/2024/03251313.pdf",
+      "snippet": "Advantech's EV charger platform simplifies system design by integrating essential components, offering multiple connections and expansion options for plug-and-charge functionality.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "2025 Star Product Guide - advcloudfiles.advantech.com",
+      "url": "https://advcloudfiles.advantech.com/ecatalog/2025/01151352.pdf",
+      "snippet": "Advantech offers a wide selection of industrial gateways and cutting-edge data monitoring software tailored to your data management needs in different settings.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Intelligent Motion Control Solutions - campaign.advantech.online",
+      "url": "https://campaign.advantech.online/en/global/2024-2025_IIoT_Master_Catalog/eBook/CH14_Intelligent-Motion-Control-Solutions.pdf",
+      "snippet": "The Advantech intelligent motion control product division provides solutions to OEM machine makers and system integrators. The core technologies are based on state-of-the-art DSP/FPGA/SoC processors, Advantech窶冱 own softmotion kernel for trajectory and control, EtherCAT motion bus, and configuration utilities.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "AI & Advanced Computer Vision - campaign.advantech.online",
+      "url": "https://campaign.advantech.online/en/global/2024-2025_IIoT_Master_Catalog/eBook/CH8_AI&Advanced-Computer-Vision.pdf",
+      "snippet": "EtherCAT 13 Solutions & Automation Controllers imaging, Advantech’s video captures are capable of supporting diverse video-related applications.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PCM-4823L - ADVANTECH - Advantech Boards",
+      "url": "https://www.advantechboards.net/advantech/pcm-4823l",
+      "snippet": "Buy the ADVANTECH PCM-4823L from Advantech Boards after requesting a quote.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Studio",
+      "url": "https://support.elmark.com.pl/advantech/pdf/AdvantechStudioTutorial.pdf",
+      "snippet": "Advantech Studio Overview. Creating a New Project. Tag Database Configuration.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PCL-10120-2 Arkusz danych(PDF) - Advantech Co., Ltd.",
+      "url": "https://www.alldatasheet.pl/datasheet-pdf/pdf/328138/ADVANTECH/PCL-10120-2.html",
+      "snippet": "Go To PDF Page. Pobierz Arkusz danych.ADVANTECH-PCL-10120-2 Datasheet 610Kb / 1P. 8-ch Relay and Isolated Digital Input PC/104 Module.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech GeniDAQ",
+      "url": "http://advdownload.advantech.com/productfile/Downloadfile3/1+GC+3912/genidaq.pdf",
+      "snippet": "Type Library Source for OLE Automation Interface. Summary. 12: Advantech GeniDAQ WinCE for HMI-640S Platform. Overview.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "IPC-610BP-40ZHE - ADVANTECH - Industrial Trading",
+      "url": "https://www.industrialtrading.net/advantech/ipc-610bp-40zhe",
+      "snippet": "Buy the ADVANTECH IPC-610BP-40ZHE from Industrial Trading after requesting a quote.Visible power status and HDD activity notification improves system availability. Datasheet. pdf file.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech GeniDAQ",
+      "url": "https://www.interworldna.com/images/advan/Genidaq.pdf",
+      "snippet": "Type Library Source for OLE Automation Interface. Summary. 12: Advantech GeniDAQ WinCE for HMI-640S Platform. Overview.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "single-05-advantech",
+  "strategy": "dive",
+  "query": "\"研華科技\" TW -blog -museum -review -job -news -report",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:26:44.505531+00:00",
+  "results": [
+    {
+      "title": "研華科技｜職涯探索｜人才招募 (@advantech_careers_tw) • Instagram photos and videos",
+      "url": "https://www.instagram.com/advantech_careers_tw/",
+      "snippet": "1,503 Followers, 6 Following, 157 Posts - 研華科技｜職涯探索｜人才招募 (@advantech_careers_tw) on Instagram: \"物聯網智能系統與嵌入式平台產業全球領導廠商 智能地球的推手🌍 提供Edge AI + Edge Computing軟硬體解決方案 - 你需要的 #招募資訊 #實習計畫 都在這裡 成為#研職擔當 享受#幸福日常 - 加入研華 勇往職前!\"",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "成為軟硬體完美整合的造局者：研華科技，當AI從雲端走向地端，工業電腦龍頭如何與台灣新創合作搶佔邊緣運算商機？",
+      "url": "https://meet.bnext.com.tw/articles/view/53003",
+      "snippet": "在過去四十年間，研華科技的成長軌跡幾乎等同於台灣工業電腦產業的發展史。從早期的自動化控制卡，到後來嵌入式平台與物聯網系統，研華始終是全球產業數位化背後最穩定、也最關鍵的硬體推手。然而，隨著生成式 AI 浪潮席捲全球，市場遊戲規則正快速改寫。 客戶不再滿足於購買一台「算力 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "【企業參訪】研華科技2026菁英領航計畫 (3/18三)",
+      "url": "https://web.ee.nsysu.edu.tw/p/406-1203-371720,r2042.php?Lang=zh-tw",
+      "snippet": "尋找研職擔當，3/18研華企業參訪、3/19線上說明會邀請你！ 研華科技是領先全球的物聯網智能系統及嵌入式平台產業領導廠商，致力於Edge Computing & Edge AI 與物聯網IoT各項軟、硬體解決方案，以「智能地球的推手」為目標，致力.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech 研華科技 ｜The Intelligent Planet begins at the Edge- PaPiin",
+      "url": "https://papiin.com/work-detail-11863",
+      "snippet": "Advantech 研華科技 深耕物聯網與智能解決方案，致力於將運算能力推向前線，讓數據的價值在源頭即時釋放，驅動更敏捷、更智慧的決策。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "研華科技推出具備確定性實時性能與靈活性的AMAX... | 經濟日報",
+      "url": "https://money.udn.com/money/story/123828/8875286",
+      "snippet": "AMAX憑借研華科技經過驗證的優化方法，展現卓越的實時性能。 該平台將英特爾®時序協調運算(TCC)技術與研華科技專業的BIOS工程能力和自動化控制專長相結合，可以達成500微秒至1毫秒的循環周期時間，且抖動極.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "#advantech #研華科技 #鍍晶的心臟 #三立新聞 #cnn | 研华",
+      "url": "https://cn.linkedin.com/posts/advantech_advantech-研華科技-鍍晶的心臟-activity-7442877872308039680-8_M3",
+      "snippet": "關鍵角色 🌏 #Advantech #研華科技 #鍍晶的心臟—AI之島 #三立新聞 #CNN.研華亞太暨海外新興市場區域總經理張敏忠，受邀出席首映發布會。研華張敏忠以新加坡為案例，分享研華的全球布局，以及結合在地文化與技術優勢推動智慧城市與智...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "研華科技企業分析摘要 許嘉玳Mandy1119 - YouTube",
+      "url": "https://www.youtube.com/watch?v=5O99jNs5XEQ",
+      "snippet": "Смотрите любимые видео, слушайте любимые песни, загружайте собственные ролики и делитесь ими с друзьями, близкими и целым миром.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "專題報導內頁 | 藝企網 ART&BUSINESS - anb.ncafroc.org.tw",
+      "url": "https://anb.ncafroc.org.tw/case_detail?sid=194",
+      "snippet": "研華股份有限公司（以下簡稱「研華科技」）於1983年由曾任職惠普的劉克振、黃育民及莊永順三人共同成立，投入工業電腦領域的研發，在成為工業自動化應用的領導品牌後，近年朝著物聯網與智慧城市的目標前進，如今研華科技的蹤跡已遍佈日常所見的醫院報到系統、點餐POS機、物流系統等。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "深入科技業視角：研華是好公司嗎？全方位評價與探討 - UpToGo",
+      "url": "https://uptogo.com.tw/科技/3c電子/研華是好公司嗎？/",
+      "snippet": "前言 許多科技業求職者在收到面試邀約或錄取通知時，心中難免會有個疑問：「研華是好公司嗎？」作為全球物聯網智能系統與工業電腦（IPC）的領導大廠，研華科技（Advantech）在業界擁有極高的知名度與穩健的財務表現。然而，在網路論壇如 Dcard、PTT、Mobile01 以及 GoodJob 職場透明化運動等平台上 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "研華WISE-Paas攜手TWCC 加速臺灣產業AI化-國家高速網路與計算中心",
+      "url": "https://www.nchc.org.tw/Message/MessageView/3734?mid=161&page=1",
+      "snippet": "研華科技技術長楊瑞祥. 研華科技技術長楊瑞祥.合業者攜手，為不同產業設計專屬系統，除此之外，研華的WISE-PaaS也提供各種I.App微服務，協助產業快速架構AIoT系統。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

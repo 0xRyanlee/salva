@@ -1,0 +1,79 @@
+{
+  "task_id": "single-03-cncf",
+  "strategy": "anchor",
+  "query": "CNCF founded",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:25:42.531704+00:00",
+  "results": [
+    {
+      "title": "Cloud Native Computing Foundation - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cloud_Native_Computing_Foundation",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) is a subsidiary of the Linux Foundation founded in 2015 to support cloud-native computing. [1] It was announced alongside Kubernetes 1.0, an open source container cluster manager, which was contributed to the Linux Foundation by Google as a seed technology.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) - SUSE",
+      "url": "https://www.suse.com/topics/definition/cloud-native-computing-foundation-cncf/",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) is an organization that was founded in December 2015 as part of the Linux Foundation. It works to drive adoption of cloud native technologies by fostering an ecosystem of open source, vendor-neutral projects.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "What is the Cloud Native Computing Foundation (CNCF ...",
+      "url": "https://www.kusari.dev/learning-center/cloud-native-computing-foundation-cncf",
+      "snippet": "Founded to make cloud-native computing ubiquitous, the CNCF provides a neutral space where projects can evolve and mature through community collaboration. The foundation manages over 150 projects spanning various stages of maturity, from sandbox initiatives to graduated projects that power millions of production workloads worldwide.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Who we are - CNCF",
+      "url": "https://www.cncf.io/about/who-we-are/",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure. We bring together the world’s top developers, end users, and vendors and run the largest open source developer conferences.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF: Cloud Native Computing Foundation Guide | Orca Security",
+      "url": "https://orca.security/glossary/cncf/",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) is an open-source foundation that fosters the development and adoption of cloud-native technologies. As part of the Linux Foundation, CNCF was founded in 2015 to serve as the vendor-neutral home for projects like Kubernetes, Prometheus, Envoy, and more.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) Guide: Projects ...",
+      "url": "https://machinecircuit.com/cloud-native-computing-foundation-cncf-guide-projects-pricing-benefits/",
+      "snippet": "Founded in 2015 under the Linux Foundation, CNCF has become the driving force behind many of the most important open-source projects in cloud computing. In this guide, we’ll explore CNCF in detail—its mission, projects, membership benefits, pricing, and future outlook.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) Company... | LeadIQ",
+      "url": "https://leadiq.com/c/cloud-native-computing-foundation-cncf/5a1d9da323000053008d80b7",
+      "snippet": "Learn more about Cloud Native Computing Foundation (CNCF)'s company details, contact information, competitors, and more.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF founding member explains why customers are... - SiliconANGLE",
+      "url": "https://siliconangle.com/2020/11/20/cncf-founder-explains-why-customers-are-as-crucial-as-tech-in-agile-it-kubecon/",
+      "snippet": "...first have to know what changes are worth making, according to Ken Owens (pictured), vice president of software development engineering at Mastercard Inc. and a founding member of CNCF.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "[Jan25-CNCF-Madison] Campfire Series Kickoff - Speaker Deck",
+      "url": "https://speakerdeck.com/cloudnativemadison/jan25-cncf-madison-campfire-series-kickoff",
+      "snippet": "The CNCF Founded in 2015, the Cloud Native Computing Foundation. supports vital open source projects (Kubernetes, Prometheus, Envoy, and more).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Dragonfly became the CNCF incubator program, and we chatted with...",
+      "url": "https://www.mo4tech.com/dragonfly-became-the-cncf-incubator-program-and-we-chatted-with-toc-the-foundations-first-chinese.html",
+      "snippet": "CNCF, founded in July 2015, is one of the important open source organizations under the Linux Foundation. Centering on the four major features of microservices, DevOps, continuous...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

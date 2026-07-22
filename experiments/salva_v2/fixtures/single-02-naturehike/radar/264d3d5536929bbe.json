@@ -1,0 +1,58 @@
+{
+  "task_id": "single-02-naturehike",
+  "strategy": "radar",
+  "query": "\"camping equipment\" site:crunchbase.com",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:25:20.248343+00:00",
+  "results": [
+    {
+      "title": "de wit schijndel - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/de-wit-schijndel",
+      "snippet": "De Wit Schijndel sells camping equipment, outdoor gear, garden furniture, sports apparel and related accessories.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Wild Land - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/wild-land",
+      "snippet": "Wild Land designs, manufactures, and sells outdoor camping equipment with an emphasis on simplifying overland camping. The company offers a variety of products including auto roof tents and models featuring the Flash Touch Mechanism, which allows for rapid setup and takedown.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Hammock Gear - Crunchbase Company Profile & FundingBF Evergreen Outdoor Sport & Leisure - Crunchbaseelevated camping experience llc - CrunchbaseGO Outdoors - Crunchbase Company Profile & Fundingbackcountry essentials - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/hammock-gear",
+      "snippet": "Hammock Gear manufactures custom camping equipment with the highest quality materials. They offer an ultralight, unbeatable standard of customer service from the competition. BF Evergreen Outdoor Sport & Leisure sells bicycle accessories, camping gear, lighting and related outdoor sport products. Elevated Camping Experience rents camping trailers, outdoor gear, and trip planning services for recreational campers. GO Outdoors is an outdoor store offering waterproof clothing, outdoor clothing, tents and camping equipment in the UK. Backcountry Essentials sells outdoor gear and services for skiing, climbing, hiking, and camping.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "BF Evergreen Outdoor Sport & Leisure - Crunchbase",
+      "url": "https://www.crunchbase.com/organization/bf-evergreen-outdoor-sport-leisure",
+      "snippet": "BF Evergreen Outdoor Sport & Leisure sells bicycle accessories, camping gear, lighting and related outdoor sport products.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "elevated camping experience llc - Crunchbase",
+      "url": "https://www.crunchbase.com/organization/elevated-camping-experience-llc",
+      "snippet": "Elevated Camping Experience rents camping trailers, outdoor gear, and trip planning services for recreational campers.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GO Outdoors - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/go-outdoors",
+      "snippet": "GO Outdoors is an outdoor store offering waterproof clothing, outdoor clothing, tents and camping equipment in the UK.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "backcountry essentials - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/backcountry-essentials",
+      "snippet": "Backcountry Essentials sells outdoor gear and services for skiing, climbing, hiking, and camping.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

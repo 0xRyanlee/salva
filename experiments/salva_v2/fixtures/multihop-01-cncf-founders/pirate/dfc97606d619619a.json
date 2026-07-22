@@ -1,0 +1,16 @@
+{
+  "task_id": "multihop-01-cncf-founders",
+  "strategy": "pirate",
+  "query": "filetype:pdf \"CNCF founding members\"",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:30:01.243806+00:00",
+  "results": [
+    {
+      "title": "Viewed by a VC investor: Cloud native (Part 1)",
+      "url": "https://mael.substack.com/p/cloud-native-viewed-by-a-vc-investor",
+      "snippet": "CNCF founding members include Google, CoreOS, RedHat, Twitter, Huawei, Intel, Cisco, IBM, Docker, Univa and VMware. CNCF now gathers 97 000+ contributors coming from 177 countries, 550+ members and 50+ projects which approximately represents...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

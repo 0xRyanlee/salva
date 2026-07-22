@@ -121,7 +121,18 @@ def build_semantic_vector_catalog() -> SemanticVectorCatalogResponse:
             description="Deterministic hybrid token + n-gram hash backend.",
             notes=[
                 "Dependency-free baseline for semantic memory.",
+                "Automatic fallback when jina_omlx is unreachable.",
+            ],
+        ),
+        SemanticVectorBackendDescriptor(
+            name="jina_omlx",
+            kind="jina_omlx",
+            dimensions=current_dimensions,
+            status="current" if current_backend == "jina_omlx" else "available",
+            description="Multilingual Jina v5 embeddings served by local omlx.",
+            notes=[
                 "Default backend for Salva runtime.",
+                "Falls back to hybrid_hash automatically when omlx is unreachable.",
             ],
         ),
         SemanticVectorBackendDescriptor(
@@ -278,7 +289,15 @@ def build_semantic_backend_benchmark(
 
 def build_semantic_embedding(text: str, dimensions: int = 96) -> list[float]:
     backend = resolve_semantic_vector_backend()
-    if backend.dimensions != dimensions:
+    # Only the two hash backends have a dimensions knob actually driven by
+    # SALVA_SEMANTIC_VECTOR_DIMENSIONS -- jina_omlx/sqlite_vec declare a fixed
+    # width (1024) that legitimately differs from the 96 default here, and
+    # coercing them through ScalarHashVectorBackend would silently swap real
+    # (or hybrid_hash-fallback) embeddings for the weaker compatibility
+    # baseline on every call. Let them embed at their natural width instead;
+    # the dimensions column on write + the dimensions filter on read already
+    # keep incompatible vector spaces from being compared against each other.
+    if backend.name in ("hybrid_hash", "scalar_hash") and backend.dimensions != dimensions:
         if backend.name == "hybrid_hash":
             backend = HybridHashVectorBackend(dimensions=dimensions)
         else:

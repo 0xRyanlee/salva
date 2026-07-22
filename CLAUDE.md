@@ -42,11 +42,27 @@ LLMs are bounded reasoning modules, not the pipeline itself. The enrichment orde
 ```
 keyword expansion (deterministic)
   → retrieval (multi-provider, policy-aware)
+    → optional bounded LLM query-proposal step (scoped prompt, proposes
+      follow-up queries only — not free-form reasoning; amended 2026-07-21,
+      see below)
   → extract → normalize → dedupe → classify → score (all deterministic)
   → enrichment (LLM via omlx — scoped, bounded prompts only)
 ```
 
-Do not expand the LLM's role inside the core pipeline without discussion.
+**Amendment 2026-07-21**: the retrieval loop may include a bounded LLM
+query-proposal step (scoped prompt requesting follow-up search queries
+only, not free-form reasoning). Owner-approved after a fable-led review
+found pure deterministic query expansion under-fetches primary sources
+that a freely-searching agent can find (CNCF founders case: Salva's
+multi-round retrieval fetched a Wikipedia secondary list, missed the
+original 2015 press release a bare agent found by searching further).
+Implementation is gated on the frozen-corpus replay harness
+(`salva-methodology-frozen-corpus-harness` on the board) so the change
+can be evaluated reproducibly offline before going live — do not wire
+this into `core/controller.py` before that harness exists.
+
+Do not expand the LLM's role beyond this scoped query-proposal step
+without further discussion.
 
 ## Architecture Boundaries
 

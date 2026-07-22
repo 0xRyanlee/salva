@@ -1,0 +1,79 @@
+{
+  "task_id": "single-03-cncf",
+  "strategy": "radar",
+  "query": "\"CNCF\" site:crunchbase.com",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:25:55.436911+00:00",
+  "results": [
+    {
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/?_pxhc=1621956464475",
+      "snippet": "Next Godzilla x Kong movie announces title with a dramatic new teaser – and it's already in production. Cloud Native Computing Foundation (CNCF) Logo.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/?_pxhc=1638244887254",
+      "snippet": "It is very likely that Cloud Native Computing Foundation (CNCF) will grow.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) - CrunchbaseCloud Native Computing Foundation (CNCF) - News & AnalysisCloud Native Computing Foundation (CNCF) - Profiles & ContactsCloud Native Computing Foundation (CNCF) - CrunchbaseCloud Native Computing Foundation (CNCF) - Financial DetailsChris Aniszczyk - Chief Operating Officer @ Cloud Native ...Jonathan Bryce - CEO, Executive Director @ Open ... - Crunchbase",
+      "url": "https://www.crunchbase.com/organization/cloud-native-computing-foundation",
+      "snippet": "CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus. Jun 30, 2026 · CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus. CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus. Jun 18, 2026 · CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus. CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus. Chris Aniszczyk has 7 current jobs including Chief Operating Officer at Cloud Native Computing Foundation (CNCF), Executive Director at Open Container Initiative (OCI), and Chief Technology Officer at Cloud Native Computing Foundation (CNCF). Jonathan Bryce has 5 current jobs including Executive Director at Linux Foundation, Executive Director at Cloud Native Computing Foundation (CNCF), and Founder & Executive Director at OpenInfra Foundation. What does CNCF stand for? CNCF stands for Cloud Native Computing Foundation. It hosts critical components of cloud native software stacks, including Kubernetes and Prometheus. What technologies does CNCF use for its website? According to BuiltWith, Cloud Native Computing Foundation (CNCF) is actively using 82 technologies for its website, including HTML5, Adobe Fonts, and DigiCert. Where is cloud native computing foundation (CNCF) located? The Cloud Native Computing Foundation (CNCF) is located in San Francisco, California, United States.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) - News & Analysis",
+      "url": "https://www.crunchbase.com/organization/cloud-native-computing-foundation/news_and_analysis",
+      "snippet": "Jun 30, 2026 · CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) - Profiles & Contacts",
+      "url": "https://www.crunchbase.com/organization/cloud-native-computing-foundation/profiles_and_contacts",
+      "snippet": "CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) - Crunchbase",
+      "url": "https://www.crunchbase.com/organization/cloud-native-computing-foundation/signals_and_news/timeline",
+      "snippet": "Jun 18, 2026 · CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) - Financial Details",
+      "url": "https://www.crunchbase.com/organization/cloud-native-computing-foundation/financial_details",
+      "snippet": "CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Jonathan Bryce - CEO, Executive Director @ Open ... - Crunchbase",
+      "url": "https://www.crunchbase.com/person/jonathan-bryce",
+      "snippet": "Jonathan Bryce has 5 current jobs including Executive Director at Linux Foundation, Executive Director at Cloud Native Computing Foundation (CNCF), and Founder & Executive Director at OpenInfra Foundation.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Better Stack - News & Analysis",
+      "url": "https://www.crunchbase.com/organization/better-stack/news_and_analysis",
+      "snippet": "CNCF Welcomes 21 New Silver Members As Global Demand Surges for Observability, AI, and Secure Cloud Native Infrastructure.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Kubermatic - News & Analysis",
+      "url": "https://www.crunchbase.com/organization/kubermatic/news_and_analysis",
+      "snippet": "CNCF Launches Certified Kubernetes AI Conformance Program to Standardize AI Workloads on Kubernetes.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

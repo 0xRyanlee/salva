@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-02-asus",
+  "strategy": "dive",
+  "query": "\"華碩\" TW -blog -museum -review -job -news -report",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:49.940127+00:00",
+  "results": [
+    {
+      "title": "華碩新聞中心 ASUS Pressroom | 官方華碩新聞、最新消息與新聞稿",
+      "url": "https://press.asus.com/tw/",
+      "snippet": "AI數位轉型找華碩!ASUS EXPERTHUB共好生態圈上線",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "關於 | 華碩新聞中心 ASUS Pressroom | 官方華碩新聞、最新消息與新聞稿",
+      "url": "https://press.asus.com/tw/about/",
+      "snippet": "探索官方華碩新聞中心 - 華碩新聞的首選來源，提供最新產品發布、科技創新與公司動態。 立即掌握華碩新聞最新資訊 https://press.asus.com/tw",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "領航國際!華碩再獲《TIME》全球最佳企業殊榮 | iThome",
+      "url": "https://www.ithome.com.tw/pr/171220",
+      "snippet": "華碩宣布再度榮登《TIME》雜誌享譽盛名的「全球最佳企業」（World's Best Companies）排行榜。此項殊榮旨在表彰員工滿意度、營收成長及永續發展等表現卓越的企業，肯定華碩在資訊科技、電子、硬體與設備產業中，追尋無與倫比的堅定承諾。 《TIME》2025 年「全球最佳企業」，聚焦擁有高員工滿意度 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩為何能打造出全台最強超級電腦？兩個關鍵大啖資料中心商機",
+      "url": "https://www.cw.com.tw/article/5136495",
+      "snippet": "以消費電子品牌深植人心的華碩，抓住AI資料中心建置維運商機，成為全台最會做超級電腦的企業，華碩如何做到？",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "深度解析和碩跟華碩什麼關係？從母子變兄弟的科技業分家始末 - UpToGo",
+      "url": "https://uptogo.com.tw/商業/經營策略/和碩跟華碩什麼關係？/",
+      "snippet": "前言：科技雙雄的歷史糾葛 在台灣的電子產業發展史上，華碩（ASUS）與和碩（Pegatron）這兩個名字無疑佔據了舉足輕重的地位。許多投資人或消費者在提及這兩家公司時，經常會感到混淆：它們究竟是同一家公司，還是競爭對手？為何兩者的名字如此相似？事實上，這不僅是一個關於企業改名的 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩 ASUS - PChome 24h購物",
+      "url": "https://24h.pchome.com.tw/search/?brands=1_391",
+      "snippet": "華碩 ASUS，線上購，PChome 提供華碩 ASUS多樣的商品系列，現在買華碩 ASUS商品享多種優惠活動!今天就下單，享受美好的購物體驗吧!",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩Zenfone 12 Ultra價格、規格多少？最台AI手機讓銷量成長3成？",
+      "url": "https://www.bnext.com.tw/article/82212/asus-zenfone-12-ultra-ai-formosa-mareket?sn_f=1&sn_u=361e9e8f4c9b107d8ceb401adee6285f",
+      "snippet": "華碩 Zenfone 12 Ultra AI摘要. 此外，也升級支援LINE、Whatsapp、WeChat的AI即時通話口譯2.0及AI搜尋助手。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "【小粉紅大鬧工會】宣揚統戰亂控CEO... - 鏡週刊 Mirror Media",
+      "url": "https://www.mirrormedia.mg/story/20250310fin002",
+      "snippet": "搭上AI（人工智慧）熱潮，國內品牌大廠華碩去年營收大爆發，外資圈都看好今年業績續旺，沒想到，華碩內部卻爆出工會染紅疑慮。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩 AICS Office Tour opportunity",
+      "url": "https://isa.site.nthu.edu.tw/p/406-1182-226554,r3486.php?Lang=zh-tw",
+      "snippet": "時間：10:00 - 13:30. 地點：台北市北投區立德路115號(華碩立功大樓)，捷運關渡站步行7分鐘. 交通：請自行前往. 費用：全程免費. 活動亮點： 參訪華碩總部大樓，體驗AICS開放輕鬆...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩看記憶體缺貨兩年 AI... | LINE TODAY",
+      "url": "https://today.line.me/tw/v3/article/8nqxY0z",
+      "snippet": "隨著AI需求持續升溫，輝達(NVIDIA)新一代Vera Rubin平台預計今年下半年量產，華碩也將成為首批供應鏈成員。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

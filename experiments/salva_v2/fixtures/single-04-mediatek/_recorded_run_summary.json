@@ -1,0 +1,67 @@
+{
+  "task_id": "single-04-mediatek",
+  "entities": [
+    {
+      "title": "MediaTek - Wikipedia",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/MediaTek"
+      ],
+      "score": 0.1295,
+      "confidence": 0.1295
+    },
+    {
+      "title": "聯發科技 - 維基百科，自由的百科全書",
+      "source_urls": [
+        "https://zh.wikipedia.org/zh-tw/MediaTek"
+      ],
+      "score": 0.1307,
+      "confidence": 0.1307
+    },
+    {
+      "title": "MediaTek Investor FAQ | Stock Ticker, Dividends & Reports",
+      "source_urls": [
+        "https://www.mediatek.com/investor-relations/investor-relations-faq"
+      ],
+      "score": 0.3744,
+      "confidence": 0.3744
+    },
+    {
+      "title": "職缺資訊",
+      "source_urls": [
+        "https://careers.mediatek.com/zh-tw/jobs"
+      ],
+      "score": 0.2499,
+      "confidence": 0.2499
+    },
+    {
+      "title": "MediaTek",
+      "source_urls": [
+        "https://grokipedia.com/page/MediaTek"
+      ],
+      "score": 0.4716,
+      "confidence": 0.4716
+    },
+    {
+      "title": "Airoha Technology Corp. - Crunchbase Company Profile & Funding",
+      "source_urls": [
+        "https://www.crunchbase.com/organization/airoha-technology-corp"
+      ],
+      "score": 0.29,
+      "confidence": 0.29
+    },
+    {
+      "title": "Finbarr Moynihan - General Manager, Corporate Sales @ MediaTek ...",
+      "source_urls": [
+        "https://www.crunchbase.com/person/finbarr-moynihan"
+      ],
+      "score": 0.2414,
+      "confidence": 0.2414
+    }
+  ],
+  "meta": {
+    "qualified_count": 7,
+    "raw_count": 7,
+    "rounds": 3,
+    "domain": "companies"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "single-05-advantech",
+  "strategy": "anchor",
+  "query": "Advantech",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:26:52.744711+00:00",
+  "results": [
+    {
+      "title": "AdvanTech subfloor",
+      "url": "https://grokipedia.com/page/AdvanTech_subfloor",
+      "snippet": "AdvanTech subfloor is a branded line of engineered oriented strand board (OSB) panels produced by Huber Engineered Woods since 1997, featuring a proprietary moisture-resistant formulation and enhanced structural integrity designed specifically for u…",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Co-Creating the Future of the IoT World",
+      "url": "https://www.advantech.com/en-us",
+      "snippet": "To promote IoT, big data, and artificial intelligence, Advantech develops IoT hardware and software solutions with edge computing intelligence and WISE-PaaS core software to assist business partners and clients in connecting their industrial systems.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Product A-Z - Advantech",
+      "url": "https://www.advantech.com/en-us/Products/atoz",
+      "snippet": "To promote IoT, big data, and artificial intelligence, Advantech develops IoT hardware and software solutions with edge computing intelligence and WISE-PaaS core software to assist business partners and clients in connecting their industrial systems.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "AdvanTech® | Huber Engineered Woods",
+      "url": "https://www.huberwood.com/advantech",
+      "snippet": "AdvanTech® subflooring, subfloor adhesive and sheathing products bring performance quality and confidence into every build.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech - LinkedIn",
+      "url": "https://www.linkedin.com/company/advantech",
+      "snippet": "Advantech | 123,563 followers on LinkedIn. Advantech is a global leader in IoT intelligent systems and embedded platforms, with the corporate vision of \"Enabling an Intelligent Planet.\"",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Home | Advantech International",
+      "url": "https://www.advantechinternational.com/",
+      "snippet": "AdvanTech is a Sales, Market Development, Project Management and Distribution Organization. Through our international footprint, we connect unique Mobility and Automation component technologies to the global marketplace.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Work at Advantech USA – Work at Advantech USA",
+      "url": "https://workatadvantech.com/",
+      "snippet": "Advantech is the world's largest IPC company and a leader in IoT solutions. Learn about its core values, job opportunities, employee activities and social responsibility.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "AdvanTech® Subflooring | Huber Engineered Woods",
+      "url": "https://www.huberwood.com/advantech/subflooring",
+      "snippet": "AdvanTech® subflooring combines superior strength, moisture resistance & nail-holding power to deliver dependable edge-to-edge support to prevent squeaks.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "advantech.com.tr",
+      "url": "http://www.advantech.com.tr/",
+      "snippet": "Advantech Türkiye Ofisi.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Climate Challenges in the Tropics: Advantech Hel - Advantech",
+      "url": "https://www.advantech.com/en/resources/case-study/climate-challenges-in-the-tropics-advantech-helps-myanmar-hotel-build-the-central-monitoring-system",
+      "snippet": "There are three main reasons why 7 Mile chose Advantech’s ADAM-6200 series: high temperature resistance, multi-protocol support, and a special daisy chain auto-bypass design.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

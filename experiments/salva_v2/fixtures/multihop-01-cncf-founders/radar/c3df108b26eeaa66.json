@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-01-cncf-founders",
+  "strategy": "radar",
+  "query": "CNCF founding members collaboration Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:29:52.769475+00:00",
+  "results": [
+    {
+      "title": "Cloud Native Computing Foundation (CNCF)",
+      "url": "https://www.cncf.io/",
+      "snippet": "Members. Building and selling cloud native tech? Shape the ecosystem and drive cross-company collaboration with more than 700 members. Become a Member ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation announces new members ...",
+      "url": "https://www.cncf.io/announcements/2015/12/17/cloud-native-computing-foundation-announces-new-members-begins-accepting-technical-contributions/",
+      "snippet": "Dec 17, 2015 ... We're pleased to be contributors to CNCF as it enables Cisco to collaborate directly with the entire cloud native community and create a set of ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Governing Board | CNCF",
+      "url": "https://www.cncf.io/people/governing-board/",
+      "snippet": "The CNCF Governing Board (GB) is responsible for marketing and other business oversight and budget decisions for the CNCF. The GB does not make technical…",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Members | CNCF",
+      "url": "https://www.cncf.io/about/members/",
+      "snippet": "View the Members of the Cloud Native Computing Foundation and learn how to become or refer a member.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF Welcomes New Silver Members as Global Demand for Cloud ...",
+      "url": "https://aijourn.com/cncf-welcomes-new-silver-members-as-global-demand-for-cloud-native-infrastructure-grows/",
+      "snippet": "Jun 17, 2026 ... The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure, including Kubernetes, Prometheus ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Join the CNCF End User Contributor Program",
+      "url": "https://www.cncf.io/enduser-contributor/",
+      "snippet": "End User Contributors gain access to specialized CNCF events, programs, and privileges offered exclusively to End User Members & End User Contributors.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "68 New Members Join the Cloud Native Computing Foundation",
+      "url": "https://www.cncf.io/announcements/2022/03/08/68-new-members-join-the-cloud-native-computing-foundation/",
+      "snippet": "Mar 8, 2022 ... The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure, including Kubernetes, Prometheus ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Who We Are | CNCF",
+      "url": "https://www.cncf.io/about/who-we-are/",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure. We bring together the world's top ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation announces 11 new members ...",
+      "url": "https://www.cncf.io/announcements/2017/02/14/cloud-native-computing-foundation-announces-11-new-members-annual-open-source-leadership-summit/",
+      "snippet": "Feb 14, 2017 ... “We look forward to collaborating with our fellow CNCF members and getting involved in technology projects to promote secure, scalable and ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation Continues Steady Growth with ...",
+      "url": "https://www.cncf.io/announcements/2020/06/29/cloud-native-computing-foundation-continues-steady-growth-with-30-new-members/",
+      "snippet": "Jun 29, 2020 ... From Open Source Summit North America, CNCF welcomes 30 new members, including A10 Networks, Futurewei, and Toyota Motor Corporation SAN ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections.abc import Callable
 from typing import Any
 
 from core.controller import RoundSummary, SalvaController
@@ -119,6 +120,7 @@ def run_discovery(payload: DiscoveryRequest) -> tuple[list[CanonicalEntity], lis
 
 def execute_discovery(
     payload: DiscoveryRequest,
+    round_checkpoint: Callable[[], None] | None = None,
 ) -> tuple[list[CanonicalEntity], list[CanonicalRelation], list[TelemetryRecord], dict[str, Any], list[SourceAttemptRecord]]:
     routing_boosts: dict[str, float] | None = None
     if payload.execution.persistence != "none":
@@ -169,6 +171,7 @@ def execute_discovery(
         keyword_graph=graph,
         experience_profile=experience_plan.profile,
         scoring_context=scoring_context,
+        round_checkpoint=round_checkpoint,
     )
     results, summary = controller.run()
 
@@ -252,15 +255,13 @@ def _build_scorer(payload: DiscoveryRequest, domain: str) -> QualificationScorer
 def _build_stability_scoring_context(payload: DiscoveryRequest, domain: str) -> dict[str, Any]:
     """Opt-in stability gating: {} unless payload.stability.enabled is True.
 
-    payload.stability doesn't exist on DiscoveryRequest yet -- getattr()
-    returns None until a follow-up card adds that field and exposes it via
-    MCP/REST, at which point this starts actually running. Until then this
-    function always returns {}, matching every other caller's existing
-    behavior exactly (empty scoring_context merges into telemetry.metadata
-    as a no-op).
-
     Computed once per discover() call here, not per round/candidate --
     compute_stability_signals() does one domain-level DB read.
+
+    campaign_id is forwarded from execution context so drift/volatility never
+    mixes history across campaigns; compute_stability_signals() also defaults
+    to memory_status="promoted" so quarantine (unverified/failed) records
+    never drive the signal either.
     """
     stability_policy = getattr(payload, "stability", None)
     if stability_policy is None or not getattr(stability_policy, "enabled", False):
@@ -270,7 +271,10 @@ def _build_stability_scoring_context(payload: DiscoveryRequest, domain: str) -> 
 
     db_path = get_db_path_for_project(payload.execution.project_id)
     signals = compute_stability_signals(
-        domain, min_history=stability_policy.min_history, path=db_path
+        domain,
+        min_history=stability_policy.min_history,
+        path=db_path,
+        campaign_id=payload.execution.campaign_id,
     )
     if signals is None:
         return {}

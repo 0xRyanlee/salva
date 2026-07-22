@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-01-cncf-founders",
+  "strategy": "anchor",
+  "query": "CNCF founding members partnership",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:29:44.222331+00:00",
+  "results": [
+    {
+      "title": "Cloud Native Computing Foundation Announces AT&T as... | CNCF",
+      "url": "https://www.cncf.io/announcements/2021/02/02/cloud-native-computing-foundation-announces-att-as-platinum-member/",
+      "snippet": "AT&T, a CNCF founding member, provides more than 100 million U.S. consumers with entertainment and communications experiences across TV, mobile, and broadband. The company is a disruptive innovator of Network Function Virtualization (NFV) and Software Defined Networking...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF Strengthens Partnership with Broadcom as a Platinum Member...",
+      "url": "https://au.finance.yahoo.com/news/cncf-strengthens-partnership-broadcom-platinum-160000713.html",
+      "snippet": "Broadcom recently contributed Velero, a Kubernetes-native backup, restore and migration platform, to the CNCF Sandbox. CNCF Platinum membership reinforces a shared commitment to open source collaboration, vendor-neutral innovation and long-term ecosystem sustainability.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF founding member explains why customers are... - SiliconANGLE",
+      "url": "https://siliconangle.com/2020/11/20/cncf-founder-explains-why-customers-are-as-crucial-as-tech-in-agile-it-kubecon/",
+      "snippet": "Companies first have to know what changes are worth making, according to Ken Owens (pictured), vice president of software development engineering at Mastercard Inc. and a founding member of CNCF.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Broadcom Goes CNCF Platinum After Handing... - StorageReview.com",
+      "url": "https://www.storagereview.com/news/broadcom-goes-cncf-platinum-after-handing-velero-to-the-sandbox",
+      "snippet": "The move expands Broadcom’s participation in the CNCF ecosystem as enterprises operationalize AI, analytics, and other data-intensive workloads on Kubernetes-based platforms. The announcement follows Broadcom’s recent contribution of Velero to the CNCF Sandbox.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF and Andela to Train African Developers in Cloud Native Tech",
+      "url": "https://www.techarena.co.ke/2024/11/19/cncf-andela-train-30000-african-developers/",
+      "snippet": "CNCF and Linux Foundation has partnered with Andela to train 20,000 to 30,000 African technologists in cloud native basics.“This partnership showcases the global impact of CNCF’s education programs.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Leading in Cloud Native, Huawei Cloud Unleashes Digital with 10 New...",
+      "url": "https://vyapaarikapuvath.lk/?p=6144",
+      "snippet": "Huawei Cloud worked with partners to develop the Pangu NLP model for the Arabic language that supports hundreds of billions of parameters. The semantic understanding accuracy reached 95%.In 2015, Huawei became the only CNCF founding member from Asia.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CA Technologies joins Cloud Native Computing Foundation, ETCIO",
+      "url": "https://cio.economictimes.indiatimes.com/news/cloud-computing/ca-technologies-joins-cloud-native-computing-foundation/61964860",
+      "snippet": "Founded in 2015, CNCF sustains and integrates open source technologies like Kubernetes and Prometheus.CA is also a member of the Cloud Foundry Foundation, OpenAPI and the Open Mainframe Foundation.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Giants Form Foundation to Drive Container Interoperability",
+      "url": "https://www.datacenterknowledge.com/business/cloud-giants-form-foundation-to-drive-container-interoperability",
+      "snippet": "Founding CNCF members include Box, Cisco, CoreOS, Cycle Computing, Docker, eBay, Goldman Sachs, Google, Huawei, IBM, Intel, Joyent, Mesosphere, Twitter, Switch Supernap, Univa, VMware, and Weaveworks. In addition, Chanezon noted, the CNCF is still open to recruiting...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Open Source and Vendor Lock-In - cloud13.ch",
+      "url": "https://www.cloud13.ch/2023/01/12/open-source-and-vendor-lock-in/",
+      "snippet": "Founding CNCF members include companies like Google, Red Hat, Intel, Cisco, IBM, and VMware. Currently, the CNCF has over 167k project contributors, over 800 members, and more than 130 certified Kubernetes distributions and platforms.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CLOUD NATIVE COMPUTING FOUNDATION Cloud Native Updates Ch",
+      "url": "https://events.static.linuxfound.org/sites/events/files/slides/CNCF+Keynote-+OSS+EU+2017.pdf",
+      "snippet": "CNCF Founded* in Mid 2015: 22 Members.The Linux Foundation. Projects Membership. TechCrunch: As Kubernetes Hits 1.0, Google Donates Technology To Newly Formed Cloud Native Computing Foundation.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

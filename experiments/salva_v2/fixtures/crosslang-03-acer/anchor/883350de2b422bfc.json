@@ -1,0 +1,58 @@
+{
+  "task_id": "crosslang-03-acer",
+  "strategy": "anchor",
+  "query": "site:crunchbase.com 宏碁",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:28:33.155894+00:00",
+  "results": [
+    {
+      "title": "Acer - Crunchbase Company Profile & FundingJörg Aldenkott - CEO @ Schwarz Produktion - CrunchbaseIra Wolfson - Senior Managing Director @ Evercore Partners ...Mary Ann Azevedo, Author at Crunchbase NewsAlice Jacobs Nesselrodt - Chief Executive Officer ...List of top Blackstone Group Portfolio Companies - CrunchbaseTroy McQuagge - CEO @ USHEALTH Group - Crunchbase Person Profile",
+      "url": "https://www.crunchbase.com/organization/acer",
+      "snippet": "Acer is a Taiwanese multinational hardware and electronics corporation. Jörg Aldenkott is the CEO of Schwarz Produktion. Ira Wolfson is a senior managing director in Evercore’s strategic advisory practice. He has been an advisor to companies and investment firms worldwide for nearly 30 years. 6 days ago · Mary Ann Azevedo is a freelance reporter for Crunchbase News. She has more than 20 years of business reporting and editing experience for publications such as TechCrunch, FinLedger, Crunchbase News, Crain, Forbes and Silicon Valley Business Journal. She has earned numerous awards, including the New ... Alice Jacobs Nesselrodt is the Chief Executive Officer of Convergence Group. She previously served as Chair and CEO of IntelligentMDx. Alice attended Harvard Medical School, where she earned a Doctor of Medicine. Sep 15, 2000 · Blackstone Group is a private equity firm that invests in buyouts, debt, mergers and acquisitions, mezzanine, and growth capital. This list of organizations invested in by Blackstone Group provides data on their funding history, investment activities, and acquisition trends. Insights about top trending companies, startups, investments and M&A activities, notable investors of these companies ... Troy McQuagge is the CEO & Founder of USHEALTH Group & he attended University of Central Florida in 1983.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Jörg Aldenkott - CEO @ Schwarz Produktion - CrunchbaseIra Wolfson - Senior Managing Director @ Evercore Partners ...Mary Ann Azevedo, Author at Crunchbase NewsAlice Jacobs Nesselrodt - Chief Executive Officer ...List of top Blackstone Group Portfolio Companies - CrunchbaseTroy McQuagge - CEO @ USHEALTH Group - Crunchbase Person Profile",
+      "url": "https://www.crunchbase.com/person/jörg-aldenkott",
+      "snippet": "Jörg Aldenkott is the CEO of Schwarz Produktion. Ira Wolfson is a senior managing director in Evercore’s strategic advisory practice. He has been an advisor to companies and investment firms worldwide for nearly 30 years. 6 days ago · Mary Ann Azevedo is a freelance reporter for Crunchbase News. She has more than 20 years of business reporting and editing experience for publications such as TechCrunch, FinLedger, Crunchbase News, Crain, Forbes and Silicon Valley Business Journal. She has earned numerous awards, including the New ... Alice Jacobs Nesselrodt is the Chief Executive Officer of Convergence Group. She previously served as Chair and CEO of IntelligentMDx. Alice attended Harvard Medical School, where she earned a Doctor of Medicine. Sep 15, 2000 · Blackstone Group is a private equity firm that invests in buyouts, debt, mergers and acquisitions, mezzanine, and growth capital. This list of organizations invested in by Blackstone Group provides data on their funding history, investment activities, and acquisition trends. Insights about top trending companies, startups, investments and M&A activities, notable investors of these companies ... Troy McQuagge is the CEO & Founder of USHEALTH Group & he attended University of Central Florida in 1983.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Ira Wolfson - Senior Managing Director @ Evercore Partners ...Mary Ann Azevedo, Author at Crunchbase NewsAlice Jacobs Nesselrodt - Chief Executive Officer ...List of top Blackstone Group Portfolio Companies - CrunchbaseTroy McQuagge - CEO @ USHEALTH Group - Crunchbase Person Profile",
+      "url": "https://www.crunchbase.com/person/ira-wolfson",
+      "snippet": "Ira Wolfson is a senior managing director in Evercore’s strategic advisory practice. He has been an advisor to companies and investment firms worldwide for nearly 30 years. 6 days ago · Mary Ann Azevedo is a freelance reporter for Crunchbase News. She has more than 20 years of business reporting and editing experience for publications such as TechCrunch, FinLedger, Crunchbase News, Crain, Forbes and Silicon Valley Business Journal. She has earned numerous awards, including the New ... Alice Jacobs Nesselrodt is the Chief Executive Officer of Convergence Group. She previously served as Chair and CEO of IntelligentMDx. Alice attended Harvard Medical School, where she earned a Doctor of Medicine. Sep 15, 2000 · Blackstone Group is a private equity firm that invests in buyouts, debt, mergers and acquisitions, mezzanine, and growth capital. This list of organizations invested in by Blackstone Group provides data on their funding history, investment activities, and acquisition trends. Insights about top trending companies, startups, investments and M&A activities, notable investors of these companies ... Troy McQuagge is the CEO & Founder of USHEALTH Group & he attended University of Central Florida in 1983.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Mary Ann Azevedo, Author at Crunchbase News",
+      "url": "https://news.crunchbase.com/author/mary-ann-azevedo/",
+      "snippet": "6 days ago · Mary Ann Azevedo is a freelance reporter for Crunchbase News. She has more than 20 years of business reporting and editing experience for publications such as TechCrunch, FinLedger, Crunchbase News, Crain, Forbes and Silicon Valley Business Journal. She has earned numerous awards, including the New ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Alice Jacobs Nesselrodt - Chief Executive Officer ...List of top Blackstone Group Portfolio Companies - CrunchbaseTroy McQuagge - CEO @ USHEALTH Group - Crunchbase Person Profile",
+      "url": "https://www.crunchbase.com/person/alice-jacobs-nesselrodt",
+      "snippet": "Alice Jacobs Nesselrodt is the Chief Executive Officer of Convergence Group. She previously served as Chair and CEO of IntelligentMDx. Alice attended Harvard Medical School, where she earned a Doctor of Medicine. Sep 15, 2000 · Blackstone Group is a private equity firm that invests in buyouts, debt, mergers and acquisitions, mezzanine, and growth capital. This list of organizations invested in by Blackstone Group provides data on their funding history, investment activities, and acquisition trends. Insights about top trending companies, startups, investments and M&A activities, notable investors of these companies ... Troy McQuagge is the CEO & Founder of USHEALTH Group & he attended University of Central Florida in 1983.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "List of top Blackstone Group Portfolio Companies - Crunchbase",
+      "url": "https://www.crunchbase.com/hub/blackstone-group-portfolio-companies",
+      "snippet": "Sep 15, 2000 · Blackstone Group is a private equity firm that invests in buyouts, debt, mergers and acquisitions, mezzanine, and growth capital. This list of organizations invested in by Blackstone Group provides data on their funding history, investment activities, and acquisition trends. Insights about top trending companies, startups, investments and M&A activities, notable investors of these companies ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Troy McQuagge - CEO @ USHEALTH Group - Crunchbase Person Profile",
+      "url": "https://www.crunchbase.com/person/troy-mcquagge",
+      "snippet": "Troy McQuagge is the CEO & Founder of USHEALTH Group & he attended University of Central Florida in 1983.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

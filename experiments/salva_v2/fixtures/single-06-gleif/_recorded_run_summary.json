@@ -1,0 +1,99 @@
+{
+  "task_id": "single-06-gleif",
+  "entities": [
+    {
+      "title": "Домашняя страница – GLEIF",
+      "source_urls": [
+        "https://www.gleif.org/ru"
+      ],
+      "score": 0.4398,
+      "confidence": 0.4398
+    },
+    {
+      "title": "Global Legal Entity Identifier Foundation (GLEIF) - YouTube",
+      "source_urls": [
+        "https://www.youtube.com/channel/UCP2xdWOFG7dWNaFIBKyejhg"
+      ],
+      "score": 0.3597,
+      "confidence": 0.3597
+    },
+    {
+      "title": "Global Legal Entity Identifier Foundation (GLEIF) (@GLEIF) on X",
+      "source_urls": [
+        "https://twitter.com/GLEIF"
+      ],
+      "score": 0.4178,
+      "confidence": 0.4178
+    },
+    {
+      "title": "alacra.com/alacra/outside/periodicv3/banking/info/gleif.html",
+      "source_urls": [
+        "https://www.alacra.com/alacra/outside/periodicv3/banking/info/gleif.html"
+      ],
+      "score": 0.3844,
+      "confidence": 0.3844
+    },
+    {
+      "title": "Global Legal Entity Identifier Foundation | Digital Ident...",
+      "source_urls": [
+        "https://www.weboftrust.org/entity/global_legal_entity_identifier_foundation-1478"
+      ],
+      "score": 0.4393,
+      "confidence": 0.4393
+    },
+    {
+      "title": "LEI nummer registrering | LEI kod med data från Bolagsverket",
+      "source_urls": [
+        "https://sv.nordlei.org"
+      ],
+      "score": 0.3684,
+      "confidence": 0.3684
+    },
+    {
+      "title": "Legal Entity Identifiers - and the Foundation That Champions the ...",
+      "source_urls": [
+        "https://www.garp.org/risk-intelligence/technology/legal-entity-identifiers-250131"
+      ],
+      "score": 0.3725,
+      "confidence": 0.3725
+    },
+    {
+      "title": "PDF [Title goes here] - Regulations.gov",
+      "source_urls": [
+        "https://downloads.regulations.gov/TREAS-DO-2023-0001-0025/attachment_1.pdf"
+      ],
+      "score": 0.157,
+      "confidence": 0.157
+    },
+    {
+      "title": "Fourthline - News & Analysis",
+      "source_urls": [
+        "https://www.crunchbase.com/organization/fourthline/news_and_analysis"
+      ],
+      "score": 0.3604,
+      "confidence": 0.3604
+    },
+    {
+      "title": "Ubisecure - Crunchbase Company Profile & FundingTrackonomy Systems - Crunchbase Company Profile & FundingZum - Crunchbase Company Profile & FundingNorthern Trust - Crunchbase Company Profile & Funding",
+      "source_urls": [
+        "https://www.crunchbase.com/organization/ubisecure"
+      ],
+      "score": 0.5255,
+      "confidence": 0.5255
+    },
+    {
+      "title": "Menyederhanakan alur kerja layanan keuangan dengan Pengenal...",
+      "source_urls": [
+        "https://id.linkedin.com/pulse/streamlining-financial-services-workflows-verifiable-legal-"
+      ],
+      "score": 0.3567,
+      "confidence": 0.3567
+    }
+  ],
+  "meta": {
+    "qualified_count": 11,
+    "raw_count": 11,
+    "rounds": 3,
+    "domain": "companies"
+  }
+}

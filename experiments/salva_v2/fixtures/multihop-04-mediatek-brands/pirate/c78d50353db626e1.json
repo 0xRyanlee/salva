@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-04-mediatek-brands",
+  "strategy": "pirate",
+  "query": "intitle:\"chipset\"",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:31:55.434250+00:00",
+  "results": [
+    {
+      "title": "Chipset - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chipset",
+      "snippet": "The chipset is usually found on the motherboard of computers. Chipsets are usually designed to work with a specific family of microprocessors.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ChipSets - Digimon Masters Online Wiki - DMO Wiki",
+      "url": "https://dmowiki.com/ChipSets",
+      "snippet": "3 chipsets slots, plus a random bonus stat equivalent to R11 chipset between HP, DS, AT, or DE. Obtainable from Fanglongmon Dungeon , Loot Boxes or events. 103-Purple-BT.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Chipset Device Software - Systemboard [Device Driver]",
+      "url": "https://support.ts.fujitsu.com/Search/SWP1204910.asp",
+      "snippet": "Title: Chipset Device Software [Device Driver]. Version (Date)",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Drivers Intel Chipset Device Software Server 10.1.2.86 WHQL",
+      "url": "https://www.touslesdrivers.com/index.php?v_page=23&v_code=53730&v_langue=en",
+      "snippet": "Title. Chipset Device Software Server. Hardware category.Additional informations. Drivers Chipset Device Software pour les cartes mères équipées d'un chipset Intel. History of this version.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Is there a site explaining all the existing Intel chipsets? | AnandTech...",
+      "url": "https://forums.anandtech.com/threads/is-there-a-site-explaining-all-the-existing-intel-chipsets.1008512/",
+      "snippet": "The Intel Chipset linecard page has all you need in terms of chipsets and sockets. As for processors, nothing special in the Pentium 4 line.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Chipset - Interstellar Rift Wiki",
+      "url": "https://www.interstellarrift.com/wiki/index.php?title=Chipset",
+      "snippet": "A Chipset is created with a 3D Printer, and inserted into the Cyber Warfare Suite to drain, repair or boost firewalls of an enemy or your own ship.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PS5000 Series >Slim Type >Chipset Driver",
+      "url": "https://www.pro-face.com/otasuke/download/ps/ps5000/chipset3.htm",
+      "snippet": "Download. Title. Chipset Driver. File Name / Size.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "chipset Impact Factor, Ranking, publication fee, indexing",
+      "url": "https://journalsearches.com/journal.php?title=chipset",
+      "snippet": "The details of chipset in 2026 like Impact Factor, Indexing, Ranking, acceptance rate, publication fee, publication time.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Budget 5G Chipset Destroys PS2 Emulation | Dimensity... - YouTube",
+      "url": "https://www.youtube.com/watch?v=Wl5Fbu8PG2g",
+      "snippet": "О сервисе Прессе Авторские права Связаться с нами Авторам Рекламодателям...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Station-Drivers - News",
+      "url": "https://www.station-drivers.com/index.php/en/",
+      "snippet": "Intel Chipset Device Software Version 10.1.20551.8850. Realtek UcmCx Client Device Drivers Version 10.0.28000.118. Intel® Arc™ Pro Graphics Windows 10 and Windows 11 DCH Drivers...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

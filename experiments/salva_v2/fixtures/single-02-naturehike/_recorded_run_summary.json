@@ -1,0 +1,91 @@
+{
+  "task_id": "single-02-naturehike",
+  "entities": [
+    {
+      "title": "China Camping Equipment, Camping Equipment Wholesale, Manufacturers, Price | Made-in-China.com",
+      "source_urls": [
+        "https://www.made-in-china.com/products-search/hot-china-products/Camping_Equipment.html"
+      ],
+      "score": 0.4523,
+      "confidence": 0.4523
+    },
+    {
+      "title": "Camping Equipment China - Durable & Portable Tents",
+      "source_urls": [
+        "https://www.alibaba.com/showroom/camping-equipment-china.html"
+      ],
+      "score": 0.3344,
+      "confidence": 0.3344
+    },
+    {
+      "title": "Outdoor camping equipment manufacturers, Camping gear supplier - ZheJiang Kaisi Outdoor Products Co.,Ltd",
+      "source_urls": [
+        "https://www.kaisioutdoor.com"
+      ],
+      "score": 0.4141,
+      "confidence": 0.4141
+    },
+    {
+      "title": "Mua Gối & phụ kiện NatureHike Online, Giá Tốt | Lazada.vn",
+      "source_urls": [
+        "https://www.lazada.vn/goi-da-ngoai/brand-naturehike"
+      ],
+      "score": 0.3031,
+      "confidence": 0.3031
+    },
+    {
+      "title": "Coleman (brand) - Wikipedia",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Coleman_(brand)"
+      ],
+      "score": 0.1635,
+      "confidence": 0.1635
+    },
+    {
+      "title": "PDF Camp and Road Trip Check List - Free Printable PDF www.outbackguides",
+      "source_urls": [
+        "https://outbackguides.com/documents/campingChecklist.pdf"
+      ],
+      "score": 0.181,
+      "confidence": 0.181
+    },
+    {
+      "title": "DISTRIBUTION CAMPING PLUS INC. - Crunchbase Company Profile...",
+      "source_urls": [
+        "https://www.crunchbase.com/organization/distribution-camping-plus-inc"
+      ],
+      "score": 0.3993,
+      "confidence": 0.3993
+    },
+    {
+      "title": "sanders - Growth Outlook",
+      "source_urls": [
+        "https://www.crunchbase.com/organization/alpha-mart-holdings-llc/growth_outlook"
+      ],
+      "score": 0.4162,
+      "confidence": 0.4162
+    },
+    {
+      "title": "Drive Medical - Tech Details",
+      "source_urls": [
+        "https://www.crunchbase.com/organization/drive-medical/tech_details"
+      ],
+      "score": 0.3606,
+      "confidence": 0.3606
+    },
+    {
+      "title": "LUNO® - LinkedIn",
+      "source_urls": [
+        "https://www.linkedin.com/company/lunolife"
+      ],
+      "score": 0.3572,
+      "confidence": 0.3572
+    }
+  ],
+  "meta": {
+    "qualified_count": 10,
+    "raw_count": 10,
+    "rounds": 3,
+    "domain": "companies"
+  }
+}

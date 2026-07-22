@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-05-chunghwa-telecom",
+  "strategy": "radar",
+  "query": "中華電信 headquarters TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:29:04.609666+00:00",
+  "results": [
+    {
+      "title": "聯絡我們| 中華電信歐洲子公司",
+      "url": "https://www.cht.com.tw/home/chtweb/europe/zh-eu/contact.html",
+      "snippet": "公司名： · 中華電信歐洲有限責任公司 · 公司名(英文)： · Chunghwa Telecom Europe GmbH · 電子信箱： · phoebewang@cht.com.tw · 地址： · 1st floor, Prager Straße 13, 01069 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "關於中華| 中華電信CHT.com.tw",
+      "url": "https://www.cht.com.tw/zh-tw/home/cht/about-cht/introduction/about-cht",
+      "snippet": "中華電信是國內最大之綜合電信業者。主要業務涵蓋固網通信、行動通信及寬頻接取與網際網路，亦以大數據、資安、雲端及網路 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "中華電信股份有限公司台灣北區電信分公司台北營運處台北敦北服務 ...",
+      "url": "https://info.technews.tw/company/38525385-中華電信股份有限公司台灣北區電信分公司台北營運處台北敦北服務中心",
+      "snippet": "中華電信股份有限公司台灣北區電信分公司台北營運處台北敦北服務中心（統一編號38525385），登記地址臺北市松山區精忠里民生東路4段69號1樓。提供登記資料、董監事、營業 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "關於中華電信全球股份有限公司 - Chunghwa Telecom Global",
+      "url": "https://www.chtglobal.com/zh-tw/global/us/about-us",
+      "snippet": "中華電信全球(股)公司為中華電信集團在北美的轉投資公司，提供企業級國際網路、ICT、雲端與基礎設施整合解決方案，服務全球多國企業與在地企業，支援跨國營運與數位發展。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "院區位置 - 中華電信研究院",
+      "url": "https://www.chttl.com.tw/map.html",
+      "snippet": "Copyrights © 2026 All Rights Reserved by Chunghwa Telecom laboratories. 網頁建置：資訊中心團隊｜視覺設計：中華電信人因美學團隊. 桃園市楊梅區電研路99號 �技術合作 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "中華電信股份有限公司台北營運處｜統編81691784",
+      "url": "https://mygov.tw/company/81691784",
+      "snippet": "Jun 9, 2026 ... 作為中華電信體系的營運據點,主要從事有線通信服務與無線電信 ... 台灣日�本眼鏡股份有限公司大安分公司, 2026-01-20, 無, 眼鏡及其零配件零售.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "中華電信股份有限公司臺灣南區電信分公司屏東營運處里港服務中心",
+      "url": "https://info.technews.tw/company/81614611-中華電信股份有限公司臺灣南區電信分公司屏東營運處里港服務中心",
+      "snippet": "中華電信股份有限公司臺灣南區電信分公司屏東營運處里港服務中心（統一編號81614611），登記地址屏東縣里港鄉春林村中山路2號。提供登記資料、董監事、營業項目等公開資訊 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "接受 - 中華電信",
+      "url": "https://www.cht.com.tw/zh-tw/global/th/services",
+      "snippet": "tw. T +66 2-248-7101~2 ・ F +66 2-248-7100. A 33/4, The 9th Towers, Grand Rama 9, Tower B, 25th Fl., Unit No. TNBO 2503 Rama 9 Road Huaykwang District ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "中華電信股份有限公司臺灣北區電信分公司供應處處本部",
+      "url": "https://www.taiwan-yellowpages.com.tw/CategoryListing.aspx?cid=595&CurrentPage=11",
+      "snippet": "Need offline telephone books? Taipei, Taiwan 2026-07-07 Tue AM 01:50. Related ... Chunghwa Telecom Co Ltd Northern Region BranchSecretary Office. 中華 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "院區位置 - 中華電信研究院",
+      "url": "https://www.chttl.com.tw/en/map.html",
+      "snippet": "Map. Home; Campus Locations. Taoyuan Headquarter. Taipei Branch. Kaohsiung Branch. Tender Information · CSR · Privacy Protection Policy · Campus Locations.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

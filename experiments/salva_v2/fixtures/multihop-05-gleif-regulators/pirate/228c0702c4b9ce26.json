@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-05-gleif-regulators",
+  "strategy": "pirate",
+  "query": "filetype:pdf \"GLEIF\"",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:32:12.033713+00:00",
+  "results": [
+    {
+      "title": "GLEIF Partners Program",
+      "url": "https://www.gleif.org/about/gleif-engagement/gleif-partners-program/2025-03-12_q-a_gleif-partners-program_v1.0.pdf",
+      "snippet": "GLEIF works closely with partners by showcasing innovative solutions, providing resources, co-hosting events, enabling links across stakeholders and supporting joint initiatives that promote LEI and vLEI adoption.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF - stratml.us",
+      "url": "https://stratml.us/pdfs/GLEIF.pdf",
+      "snippet": "GLEIF makes available the Global LEI Index; i.e. the only global online source that provides open, standardized and high quality legal entity reference data. By doing so, GLEIF enables people and businesses to make smarter, less costly and more reliable decisions about who to do business with.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF Partners Program Charter",
+      "url": "https://www.gleif.org/about/gleif-engagement/gleif-partners-program/2025-04-10_gleif-partner-program-charter_v1.0.pdf",
+      "snippet": "GLEIF delivers, under open data terms of use, high quality and free-of-charge business card information about legal entities.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "A Response by the Global Legal Identifier Foundation (GLEIF ...",
+      "url": "https://www.sec.gov/files/ctf-input-global-legal-entity-identifier-foundation-3-24-25.pdf",
+      "snippet": "o Task Force: March 27th, 2025 To: Securities and Exchange Commission (SEC), Crypto Task Force. First, some background on GLEIF: Established by the Financial Stability Board (FSB) in June 2014 under the mission of improving financial stability and transparency due to the aftermat.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF - 028-T0030 - Conformity Flag Infographic - v2",
+      "url": "https://rapidlei.com/wp-content/uploads/2025/11/2024-gleif-policy-conformity-flag-infographic-lei-transparency.pdf",
+      "snippet": "GLEIF regulates a genuinely universal identification standard – a unique 20-character code created for a legal entity. There's no other like it. A single code represents a single organization so that anyone, anywhere in the world, can trust an organization is who it claims to be.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF Golden Copy and Delta Files - LEI Data – GLEIF",
+      "url": "https://www.gleif.org/en/lei-data/gleif-golden-copy",
+      "snippet": "Download as PDF: GLEIF Golden Copy and Delta Files Specification and User Manual.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "tips_GLEIF.pdf",
+      "url": "https://www.ecb.europa.eu/paym/pdf/cons/tips/tips_GLEIF.pdf?9f064fdcc9195dd66ce8019990efbefe",
+      "snippet": "GLEIF would like to thank the ECB and the Eurosystem for the opportunity to provide feedback to the Market Consultation on the TARGET Instant Payments Settlement User Requirements.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global Legal Entity Identifier Foundation (GLEIF) - YouTube",
+      "url": "https://www.youtube.com/channel/UCP2xdWOFG7dWNaFIBKyejhg",
+      "snippet": "The guardian of Legal Entity Identifiers (LEIs) and verifiable LEIs (vLEIs). GLEIF regulates a genuinely universal identification standard – a unique 20-character code created for a legal entity.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "2021-07-08_UNCEBTS GLEIF",
+      "url": "https://unstats.un.org/unsd/business-stat/UNCEBTS/Documents/Fourth_Meeting/UNCEBTS_4th_Meeting_Session_7e2_GLEIF.pdf",
+      "snippet": "§ GLEIF is overseen by 71 regulators and 19 observers in the Regulatory Oversight Committee (LEI ROC) from 50 countries. § GLEIF Board has 16 independent directors.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "EWA – Artikel – gleif",
+      "url": "https://ewa.saw-leipzig.de/articles/gleif/de",
+      "snippet": "— Mhd. gleif ‚schief, schräg‘, subst. gleif st. m. ‚das Abschüssige, Schräge‘. Im Frühnhd. und nhd. dial. ist lediglich das mhd.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

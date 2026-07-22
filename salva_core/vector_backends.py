@@ -155,10 +155,19 @@ class JinaOmlxVectorBackend:
             return None
 
     def embed(self, text: str) -> list[float]:
+        vector, _used_fallback = self.embed_with_meta(text)
+        return vector
+
+    def embed_with_meta(self, text: str) -> tuple[list[float], bool]:
+        """Like embed(), but also reports whether the omlx call actually
+        succeeded. Callers that label results by backend name (e.g.
+        persistence/memory.py's backend_used field) need this -- self.name
+        is always "jina_omlx" even on a silent hash fallback, which would
+        otherwise mislabel a hash score as a real semantic one."""
         result = self._call([text])
         if result:
-            return result[0]
-        return self._fallback.embed(text)
+            return result[0], False
+        return self._fallback.embed(text), True
 
     def score(self, left: list[float], right: list[float]) -> float:
         if not left or not right or len(left) != len(right):
@@ -261,7 +270,10 @@ _instance_lock = threading.Lock()
 
 
 def resolve_semantic_vector_backend() -> SemanticVectorBackend:
-    backend = os.environ.get("SALVA_SEMANTIC_VECTOR_BACKEND", "hybrid_hash").strip() or "hybrid_hash"
+    # Default is jina_omlx (real embeddings) -- falls back to hybrid_hash
+    # internally (JinaOmlxVectorBackend._fallback) whenever omlx is unreachable,
+    # so this never hard-fails a caller that doesn't have omlx running.
+    backend = os.environ.get("SALVA_SEMANTIC_VECTOR_BACKEND", "jina_omlx").strip() or "jina_omlx"
     dimensions = _read_dimensions()
 
     global _scalar_hash_instances, _hybrid_hash_instances, _jina_omlx_instance, _sqlite_vec_instance

@@ -1,0 +1,51 @@
+{
+  "task_id": "single-03-cncf",
+  "strategy": "radar",
+  "query": "CNCF site:linkedin.com",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:26:02.569086+00:00",
+  "results": [
+    {
+      "title": "F5 Leans into CNCF for Open Application Standards | LinkedIn",
+      "url": "https://www.linkedin.com/posts/jayankbhalod_f5-nginx-cncf-activity-7474861185067143168-HVgB",
+      "snippet": "F5 leans into CNCF because it’s where the industry aligns on open, interoperable standards for building and running modern applications at scale.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Kubernetes-first Platform Engineering with OpenChoreo at CNCF",
+      "url": "https://www.linkedin.com/posts/lakmal-warusawithana-b8191450_building-ai-native-kubernetes-first-platforms-activity-7440548462355542016-hmlC",
+      "snippet": "I’ll be discussing AI-native, Kubernetes-first platform engineering, and sharing how we’re building developer platforms with OpenChoreo (CNCF Sandbox), keeping Kubernetes as the...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "We’re back in 2026 CNCF Kathmandu returns with the Cloud...",
+      "url": "https://www.linkedin.com/posts/activity-7415746886160142336-IqBh",
+      "snippet": "View organization page for CNCF Kathmandu. CNCF Kathmandu. 716 followers. 3w.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "They are right. Not everyone needs Kubernetes. But 130K+ open jobs...",
+      "url": "https://www.linkedin.com/posts/kareen-a-8012b1149_they-are-right-not-everyone-needs-kubernetes-activity-7434190801577897984-gdGZ",
+      "snippet": "But 130K+ open jobs do not lie. The latest CNCF report shares facts others refuse to tell you to keep you in your comfort zone.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "49% are using OpenTelemetry in production, 26% are evaluating it!",
+      "url": "https://www.linkedin.com/posts/severinneumann_49-are-using-opentelemetry-in-production-activity-7419661887019266048-9v4q",
+      "snippet": "Thanks to the fantastic people at Cloud Native Computing Foundation (CNCF) who run this yearly survey and everyone who took the time to answer it, it's a valuable asset for everyone in...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "As this is a day for milestones. :p I have left Google... ...to join the...",
+      "url": "https://www.linkedin.com/posts/mrbobbytables_as-this-is-a-day-for-milestones-p-i-have-activity-7204491925234589696-5B9x",
+      "snippet": "Welcome to CNCF! We are stoked to have you and I can't wait to see all the amazing milestones you will help this community achieve.They’re lucky to have you over at the CNCF, Bob!",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

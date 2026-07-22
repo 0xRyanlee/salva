@@ -37,13 +37,22 @@ class RoutedRetriever:
         self.strategy = strategy
         self.retrieval_mode = retrieval_mode
         self.last_attempts: list[RetrievalAttempt] = []
+        # True when the most recent search() call never got a genuine
+        # attempt-response from any provider — every usable provider raised
+        # an exception, or none were usable (all in cooldown / none configured).
+        # False whenever at least one provider ran without erroring, even if
+        # it legitimately returned zero results (that's "no results", not
+        # "provider exhausted") or the answer came from cache.
+        self.last_search_exhausted: bool = False
         self.providers: list[RetrieverProtocol] = _build_provider_chain(policy, strategy)
         self._health = health if health is not None else get_health_registry()
         self._cache = cache if cache is not None else get_serp_cache()
 
     def search(self, query: str, n: int = 10) -> list[dict[str, Any]]:
         self.last_attempts = []
+        self.last_search_exhausted = False
         if not self.providers:
+            self.last_search_exhausted = True
             return []
 
         # Tier 0: SERP cache — skip all providers if we have a fresh result
@@ -73,12 +82,15 @@ class RoutedRetriever:
         """
         fallback_results: list[dict[str, Any]] = []
         fallback_pid: str | None = None
+        attempted = 0
+        errored = 0
 
         for provider in self.providers:
             pid = _provider_id(provider)
             if not self._health.is_usable(pid):
                 continue
 
+            attempted += 1
             try:
                 provider_results = provider.search(query, n)
                 self.last_attempts.extend(getattr(provider, "last_attempts", []))
@@ -86,17 +98,20 @@ class RoutedRetriever:
                     continue
                 if _has_content(provider_results):
                     self._health.record_success(pid)
+                    self.last_search_exhausted = False
                     return _dedupe_results(provider_results)[:n]
                 if not fallback_results:
                     fallback_results = provider_results
                     fallback_pid = pid
             except Exception as exc:
+                errored += 1
                 self.last_attempts.extend(getattr(provider, "last_attempts", []))
                 self._health.record_failure(pid, _classify_error(str(exc)))
                 continue
 
         if fallback_results and fallback_pid:
             self._health.record_success(fallback_pid)
+        self.last_search_exhausted = attempted == 0 or errored == attempted
         return _dedupe_results(fallback_results)[:n]
 
     def _search_adaptive(self, query: str, n: int) -> list[dict[str, Any]]:
@@ -106,8 +121,11 @@ class RoutedRetriever:
 
         usable = [p for p in self.providers if self._health.is_usable(_provider_id(p))]
         if not usable:
+            self.last_search_exhausted = True
             return []
 
+        completed = 0
+        errored = 0
         with ThreadPoolExecutor(max_workers=min(3, len(usable))) as executor:
             futures = {
                 executor.submit(provider.search, query, n): provider
@@ -117,9 +135,11 @@ class RoutedRetriever:
             for future in as_completed(futures, timeout=self.policy.request_timeout * 2):
                 provider = futures[future]
                 pid = _provider_id(provider)
+                completed += 1
                 try:
                     provider_results = future.result()
                 except Exception as exc:
+                    errored += 1
                     self.last_attempts.extend(getattr(provider, "last_attempts", []))
                     self._health.record_failure(pid, _classify_error(str(exc)))
                     continue
@@ -133,6 +153,7 @@ class RoutedRetriever:
                             f.cancel()
                         break
 
+        self.last_search_exhausted = completed == 0 or errored == completed
         return _dedupe_results(results)[:n]
 
     def _search_parallel(self, query: str, n: int) -> list[dict[str, Any]]:

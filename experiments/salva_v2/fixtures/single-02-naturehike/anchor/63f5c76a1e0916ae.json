@@ -1,0 +1,79 @@
+{
+  "task_id": "single-02-naturehike",
+  "strategy": "anchor",
+  "query": "camping equipment filetype:pdf",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:25:08.308027+00:00",
+  "results": [
+    {
+      "title": "PDF Camping Equipment Checklist - Ontario Parks",
+      "url": "https://www.ontarioparks.ca/pdf/learntocamp/camping_checklist.pdf",
+      "snippet": "Water shoes, if needed PFDs or lifejackets Sports equipment (e.g., soccer ball) Bikes/helmets/ lights/locks Beach umbrella Guidebooks and maps Fishing rod, tackle and fishing license Canoe, paddles and canoe safety kit (bailer, 15 m rope, whistle, PFDs)",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF CAMPING GUIDE - assets.thesca.org",
+      "url": "https://assets.thesca.org/s3fs-public/attachments/Camping_Gear_Top_Tips.pdf",
+      "snippet": "That's why we've created this quick-reference camping guide—to share camping's awesome power with as many potential conservationists as possible. Compiled by SCA outdoor experts who spend weeks and months at a time living on the land, this guide contains the most important things you need to know before you unplug and head out for your next (or even first!) nature experience. After a ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF CAMPING ESSENTIALS CHECKLIST - National Wildlife Federation",
+      "url": "https://www.nwf.org/-/media/PDFs/Great-American-Campout/camping-checklist.pdf",
+      "snippet": "CAMPING ESSENTIALS CHECKLIST REMEMBER: Make sure you research what amenities are offered at your site before you pack to ensure you only bring what you need. These are our essentials for most locations:",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF CAMPING CHECKLIST - REI Co-op",
+      "url": "https://www.rei.com/dam/family_camping_checklist_final.pdf",
+      "snippet": "CAMPING CHECKLIST Many campgrounds have drinkable water. If not, bring your own, or be prepared to treat water if there's a water source. And depending on how remote your campsite is, navigation tools such as a map, compass and/or GPS may be required",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF Camp and Road Trip Check List - Free Printable PDF www.outbackguides",
+      "url": "https://outbackguides.com/documents/campingChecklist.pdf",
+      "snippet": "Camp and Road Trip Check List - Free Printable PDF www.outbackguides.com Comprehensive Camping Equipment Checklist This is a comprehensive list use it as a guide. Write your own list from these ideas to suit your family or print this list Add anything else you require.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF Family Camping Checklist Beginner Essentials Intermediate Comfort Items ...",
+      "url": "https://www.gofamilycamping.com/wp-content/uploads/2026/03/family_camping_checklist-V3.pdf",
+      "snippet": "Cooking Equipment Saucepan, skillet, or griddle Cooking utensils (spatula, tongs) Can opener Aluminum foil",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF The Ultimate Camping Checklist - Go RV Rentals",
+      "url": "https://gorvrentals.com/wp-content/uploads/2024/04/The-Ultimate-Camping-Checklist-by-Go-RV-Rentals.pdf",
+      "snippet": "Navigation Equipment for RV Camping Trip Checklist RV GPS RV-specific road atlas Compass and destination map Hiking trail map",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF Camping Equipment - Level 1",
+      "url": "https://www.lutheranpioneers.org/wp-content/uploads/2019/08/Camping-Equipment-Level-1.pdf",
+      "snippet": "Camping Equipment - Level 1 Tents Camping equipment comes in all styles and sizes from a little backpacking tent to a 30 foot long RV. You walk into Gander Mountain or Cabela's and you see 50 different sleeping bags, 30 to 40 different tents, 10 different camp stoves and enough lanterns to light up the cosmos!",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF Microsoft Word - CampingEquipmentList.docx - Troop 728",
+      "url": "http://www.troop728.org/resources/CampingEquipmentList.pdf",
+      "snippet": "Camping Equipment Checklist This list summarizes the minimum equipment necessary for a typical weekend camp-out. Long-term camps (Summer Camp, Winter Camp, High Adventure Treks) are addressed by other lists.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF Family Camping Equipment - ocscouts.org",
+      "url": "https://ocscouts.org/wp-content/uploads/2025/08/Family-Camping-Equipment.pdf",
+      "snippet": "Water - 2 Gallons Per Person Minimum Kitchen Camp Stove (Propane or Butane Only)",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

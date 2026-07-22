@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-02-tsmc-customers",
+  "strategy": "pirate",
+  "query": "intitle:\"TSMC customers\"",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:30:44.240886+00:00",
+  "results": [
+    {
+      "title": "TSMC customer rankings revealed: Apple Dominates and Nvidia Second ...",
+      "url": "https://www.exportsemi.com/company-post/tsmc-customer-rankings-revealed-apple-dominates-nvidia-second-followed-by-amd-intel/",
+      "snippet": "TSMC customer rankings revealed: Apple Dominates and Nvidia Second, Followed by AMD,Intel Time:June 18, 2024 Editor:Ana Hu Source:China Exportsemi",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC's top ten customers are exposed! - iMedia - 頭條匯",
+      "url": "https://min.news/en/economy/61b5f606397ea7960635c60a9ea8488f.html",
+      "snippet": "Data shows that Apple's contribution to TSMC's revenue is as high as 25.93%, and the Apple family feeds a quarter of TSMC. MediaTek accounted for 5.8%, AMD accounted for 4.39%, Qualcomm accounted for 3.9%, Broadcom accounted for 3.77%, NVIDIA accounted for 2.83%. According to Taiwanese media reports, semiconductor practitioners said that the cooperation between Intel and TSMC should last at ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC's top five customers: reshuffle, biggest dark horse exposure!",
+      "url": "https://www.icyi.com/tsmcs-top-five-customers-reshuffle-biggest-dark-horse-exposure",
+      "snippet": "TSMC's 2025-2026 Customer Ranking List: The global semiconductor AI application competition is intensifying, and the company estimates that TSMC's 2026 major customer ranking will be reshuffled. Key driver: Broadcom collaborates with OpenAI; Intel partners with Nvidia, outsourcing TSMC orders increase. Apple maintains its core position and is estimated to be TSMC's largest customer by 2024 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Top 8 TSMC Customers — Ranked by Revenue Share | Ali Kamaly",
+      "url": "https://www.linkedin.com/posts/ali-kamaly_semiconductors-tsmc-foundries-activity-7359555437634945026-7pbq",
+      "snippet": "Top 8 TSMC Customers — Ranked by Revenue Share TSMC is the undisputed foundry giant — but its customer mix reveals how deeply its revenue depends on a handful of tech titans. This snapshot ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Top 8 TSMC Customers by Revenue Share: Who Powers the World's Leading ...",
+      "url": "https://testflowinc.com/blog/top-8-tsmc-customers-revenue-share-analysis",
+      "snippet": "Top 8 TSMC Customers by Revenue Share: Who Powers the World's Leading Foundry TSMC's customer portfolio reads like a who's who of the tech industry. From Apple's iPhone processors to NVIDIA's AI accelerators, discover which companies drive the world's most advanced semiconductor foundry and why their relationships matter.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC says it manufactured 12,682 different products for 534 customers ...",
+      "url": "https://siliconcanals.com/j-v-tsmc-says-it-manufactured-12682-different-products-for-534-customers-in-2025-meaning-the-chips-inside-your-phone-car-and-bank-all-trace-back-to-one-company-on-a-single-island/",
+      "snippet": "TSMC's 2025 annual report disclosed it manufactured 12,682 unique chip designs for 534 customers — meaning Apple, Nvidia, your car's brakes, and your bank card all trace back to the same handful of fabs on one Taiwanese island.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Apple Loses Top Spot at TSMC as Nvidia Becomes Its Biggest Customer",
+      "url": "https://www.macobserver.com/news/apple-loses-top-spot-at-tsmc-as-nvidia-becomes-its-biggest-customer/",
+      "snippet": "Apple loses TSMC's top customer position in 2026 as Nvidia's AI chip demand reshapes foundry revenue and investment priorities.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC Client Rankings Shake Up by 2026 - SmBom",
+      "url": "https://www.smbom.com/news/45740",
+      "snippet": "TSMC's 2026 client rankings may shift as Broadcom rises fast, potentially overtaking NVIDIA, while Apple remains the top contributor to revenue.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Nvidia overtakes Apple as the number one TSMC client, as revenue more ...",
+      "url": "https://www.pcguide.com/pro/news-pro/nvidia-overtakes-apple-as-the-number-one-tsmc-client-as-revenue-more-than-doubles-in-one-year/",
+      "snippet": "Nvidia's continued push for AI growth has taken the company to the top of TSMC's client list, overtaking Apple based on revenue share.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Nvidia set to supplant Apple as TSMC's largest customer - CNBC",
+      "url": "https://www.cnbc.com/2026/01/26/nvidia-set-to-supplant-apple-as-tsmcs-largest-customer.html",
+      "snippet": "The positional swap will mark a fundamental shift in the semiconductor industry, reflecting Nvidia's growing importance amid the AI infrastructure buildout.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

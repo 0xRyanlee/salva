@@ -1,0 +1,211 @@
+{
+  "task_id": "crosslang-01-tsmc",
+  "entities": [
+    {
+      "title": "台積電 - 維基百科，自由的百科全書",
+      "source_urls": [
+        "https://zh.wikipedia.org/zh-tw/台灣積體電路製造"
+      ],
+      "score": 0.241,
+      "confidence": 0.241
+    },
+    {
+      "title": "台灣積體電路製造 - 維基百科，自由的百科全書",
+      "source_urls": [
+        "https://zh.wikipedia.org/zh-hant/台灣積體電路製造"
+      ],
+      "score": 0.241,
+      "confidence": 0.241
+    },
+    {
+      "title": "TSMC - Wikipedia",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/TSMC"
+      ],
+      "score": 0.241,
+      "confidence": 0.241
+    },
+    {
+      "title": "台積電當初到底是如何被創立的？不是張忠謀 - 林子揚的美股長期投資部落格",
+      "source_urls": [
+        "https://www.granitefirm.com/blog/blog/2025/02/06/台積電當初到底是如何被創立的"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "護國神山的由來：當年的台積電，是如何在一片質疑中被催生出來？ ｜ 瞿宛文 ／ 獨評讀好書 ｜ 獨立評論",
+      "source_urls": [
+        "https://opinion.cw.com.tw/blog/profile/390/article/13390"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "Company Info - Taiwan Semiconductor Manufacturing Company Limited",
+      "source_urls": [
+        "https://www.tsmc.com/english/aboutTSMC/company_profile"
+      ],
+      "score": 0.421,
+      "confidence": 0.421
+    },
+    {
+      "title": "摩爾定律已死？ 台積電張曉強霸氣喊：I don’t care...",
+      "source_urls": [
+        "https://www.bnext.com.tw/article/79931/moore's-law-works-dosent-matter"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "台積電豪砸3.2兆投資美國 谷立言：美台夥伴關係最佳寫照 - 民視新聞網",
+      "source_urls": [
+        "https://www.ftvnews.com.tw/news/detail/2026717W0630"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "錢鏡你家2／靠「80元價差」連賺6趟 杜金龍公開台積電第三季操作法",
+      "source_urls": [
+        "https://www.mnews.tw/story/mm-20260716-184mon-230416"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "台積電擴大環保承諾 成首家獲OECM... | LINE TODAY",
+      "source_urls": [
+        "https://today.line.me/tw/v3/article/peK6o79"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "ctee.com.tw/news/20241230701532-430704",
+      "source_urls": [
+        "https://www.ctee.com.tw/news/20241230701532-430704"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "0721【Live】 1140-1400... - YouTube",
+      "source_urls": [
+        "https://www.youtube.com/watch"
+      ],
+      "score": 0.09999999999999999,
+      "confidence": 0.09999999999999999
+    },
+    {
+      "title": "YAYAPAY!耶耶配",
+      "source_urls": [
+        "https://www.yayapay.com.tw"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "耗時2年才如願一窺工廠內部 CNN... | 好房網News",
+      "source_urls": [
+        "https://news.housefun.com.tw/news/article/392990416868.html"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "台積員工最早幾點上班？調研揭台積電工程師每日行程 | TechNews 科技新報",
+      "source_urls": [
+        "https://technews.tw/2025/03/22/semi-vision-unveiled-the-daily-routine-of-tsmc-employees"
+      ],
+      "score": 0.0,
+      "confidence": 0.0
+    },
+    {
+      "title": "台積電員工分紅 平均每人200萬餘元 - 客新聞 HakkaNews",
+      "source_urls": [
+        "https://hakkanews.tw/2025/02/12/tsmc-employees-received-an"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "台積電擴大徵才 釋出8000職缺 鎖定AI、大數據與數位轉型人才",
+      "source_urls": [
+        "https://tw.stock.yahoo.com/news/台積電擴大徵才-釋出8000職缺-鎖定ai-大數據與數位轉型人才-093742185.html"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "台積電全球員工破8萬人 台灣廠區占比達87.06％｜財富自由",
+      "source_urls": [
+        "https://stock.ltn.com.tw/article/amx8kxygcdjq"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "(2330)台積電價量走勢圖 - PChome Online 股市",
+      "source_urls": [
+        "https://pchome.megatime.com.tw/stock/sid2330.html"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "台積電adr(Tsm) - 即時行情技術分析 - 國際股市 | 玩股網",
+      "source_urls": [
+        "https://www.wantgoo.com/global/tsm"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "台積電亮麗業績未起作用 台指期夜盤震盪 | 期貨市場 | 期貨 | 經濟日報",
+      "source_urls": [
+        "https://money.udn.com/money/story/11112/8927399"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "FSMOne | 台積電能靠「底氣」逆風而行嗎",
+      "source_urls": [
+        "https://www.fsmone.com.hk/article/article-details/327501"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "給想進台積電工作的你：我如何在台積電存活？ 前台積電主管的故事",
+      "source_urls": [
+        "https://pinshuoi.com/8246"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "台灣積體電路製造股份有限公司 民國一百零七年度年報(一)",
+      "source_urls": [
+        "https://investor.tsmc.com/static/annualReports/2019/chinese/pdf/c_all.pdf"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "Crunchbase | Knowledge Center",
+      "source_urls": [
+        "https://support.crunchbase.com"
+      ],
+      "score": 0.2,
+      "confidence": 0.2
+    }
+  ],
+  "meta": {
+    "qualified_count": 25,
+    "raw_count": 25,
+    "rounds": 3,
+    "domain": "companies"
+  }
+}

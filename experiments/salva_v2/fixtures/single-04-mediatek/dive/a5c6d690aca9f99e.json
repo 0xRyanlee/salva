@@ -1,0 +1,79 @@
+{
+  "task_id": "single-04-mediatek",
+  "strategy": "dive",
+  "query": "\"聯發科\" TW -blog -museum -review -job -news -report",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:26:12.497891+00:00",
+  "results": [
+    {
+      "title": "聯發科元大52購06(030642.TW) 走勢圖 - Yahoo奇摩股市",
+      "url": "https://tw.stock.yahoo.com/quote/030642.TW",
+      "snippet": "升級VIP. 聯發科元大52購06.聯發科元大52購06即時行情. 資料時間：",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "發哥又發牌了！聯發科放量萬張漲6成。AI超級電腦將橫空出世 - 理財周刊",
+      "url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/184662",
+      "snippet": "圖片來源:聯發科. 圖片來源:聯發科. 聯發科日K線圖(圖片來源:Yahoo股市). 圖片出處:聯發科官網.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "[聯發科分析] 聯發科、AMD... | 台股新聞分析",
+      "url": "https://insight.senya.com.tw/analysis/e3e38ee5",
+      "snippet": "股價走勢圖 2454.TW 聯發科.梁伯嵩：聯發科技前瞻技術平台資深處長｜邊緣運算是AI 關鍵戰場，台灣晶片就是機器的神經系統【塞掐Side Chat】E370.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "聯發科強調深耕 Wi-Fi 7 具備多項核心專利技術， Flogic Wi-Fi... - Cool3c",
+      "url": "https://www.cool3c.com/article/184446",
+      "snippet": "聯發科實現單晶片 MLO. 聯發科搶先布局，期許能在 Wi-Fi 7 發展與布局取得領先.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "聯發科技搶占Wi-Fi 7晶片先機 MLO/多天線無線體驗再升級 | 新通訊",
+      "url": "https://www.2cm.com.tw/2cm/zh-tw/market/31EF19F789B04FBBA6A0B142B52619C5",
+      "snippet": "新推出的Wi-Fi 7規格帶來多重鏈結運作(Multi-link Operation, MLO)及多天線等創新技術，聯發科技也積極參與次世代無線網路標準制定、技術研發及測試規範，並與標準.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "隨著Android... - 優分析UAnalyze",
+      "url": "https://uanalyze.com.tw/articles/724924886",
+      "snippet": "聯發科(2454-TW)是主要手機晶片大廠，營運地區主要在中國（但不限於），營收中有高達52%來自手機晶片市場。 聯發科的客戶包括多家知名的智慧型手機品牌：",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "【半導體人才荒3-3】台灣薪水最高的IC... | LINE TODAY",
+      "url": "https://today.line.me/tw/v3/article/MLgL6mV",
+      "snippet": "【半導體人才荒3-3】台灣薪水最高的IC設計業！ 聯發科選才看中4大特質.陳冠州說，聯發科選才著重「O、A、G、I」四大特質，也就是 Open 開放態度、Aggressive 企圖心、Global 國際視野、Innovative 創新思維。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "mirrormedia.mg/story/20241231fin002",
+      "url": "https://www.mirrormedia.mg/story/20241231fin002",
+      "snippet": "IC設計龍頭聯發科董事長蔡明介，不僅中國市場經營有成，近年來更把目標鎖定蘋果、Google等美系大客戶，去年底外媒彭博社爆料，蘋果智慧型手錶Apple Watch將採用聯發科晶片，激勵聯發科股價衝破1,400元。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GSMA Groupe Speciale Mobile Association",
+      "url": "https://d86o2zu8ugzlg.cloudfront.net/documents/2024聯發科技永續報告書_中文版_第二章_0915.pdf",
+      "snippet": "2.2.2 文化. 自 2002 年 起 聯 發 科 技 每 年 都 會 舉 辦 研 發 金 獎 暨 特 殊 貢 獻 獎Innovation Award and Special Contribution Award, ISCA此為公司技術創新之最高殊榮更是鼓勵及肯定同仁在公司的付出。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "安森美重挫！ 執行長喊話 功率半導體續揚？ 高通搶ASIC... - YouTube",
+      "url": "https://www.youtube.com/watch?v=LFiJArfeOY0",
+      "snippet": "О сервисе Прессе Авторские права Связаться с нами Авторам Рекламодателям...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

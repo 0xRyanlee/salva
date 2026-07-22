@@ -1,0 +1,79 @@
+{
+  "task_id": "single-06-gleif",
+  "strategy": "dive",
+  "query": "\"GLEIF\" Global -blog -museum -review -job -news -report",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:06.315467+00:00",
+  "results": [
+    {
+      "title": "Домашняя страница – GLEIF",
+      "url": "https://www.gleif.org/ru/",
+      "snippet": "Процесс сертификации GLEIF. Привязка кодов LEI к регистрационным органам. Управление качеством данных GLEIF.GLEIF – Global Legal Entity Identifier Foundation.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global Legal Entity Identifier Foundation (GLEIF) - YouTube",
+      "url": "https://www.youtube.com/channel/UCP2xdWOFG7dWNaFIBKyejhg",
+      "snippet": "Enabling global identity. Protecting digital trust.GLEIF regulates a genuinely universal identification standard – a unique 20-character code created for a legal entity. There's no other like it.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global Legal Entity Identifier Foundation (GLEIF) (@GLEIF) on X",
+      "url": "https://twitter.com/GLEIF",
+      "snippet": "Enabling global identity. Protecting digital trust. The guardian of Legal Entity Identifiers (LEIs) & Verifiable LEIs (vLEIs).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "alacra.com/alacra/outside/periodicv3/banking/info/gleif.html",
+      "url": "https://www.alacra.com/alacra/outside/periodicv3/banking/info/gleif.html",
+      "snippet": "The Global Legal Entity Identifier Foundation (the GLEIF) was created as the operational arm of the GLEIS.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global Legal Entity Identifier Foundation (GLEIF) | LinkedIn",
+      "url": "https://br.linkedin.com/company/global-legal-entity-identifier-foundation-gleif-",
+      "snippet": "The value of GLEIF lies in transparency. Our global LEI system empowers people, businesses, and governments to make safer decisions, such as with whom to buy from, borrow money...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global Legal Entity Identifier Foundation | Digital Ident...",
+      "url": "https://www.weboftrust.org/entity/global_legal_entity_identifier_foundation-1478",
+      "snippet": "Private Entity. Website. gleif.org. Country (HQ). Switzerland.St. Alban-Vorstadt 12 4052 Basel Switzerland. Trade Name. Global Legal Entity Identifier Foundation (GLEIF).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "LEI nummer registrering | LEI kod med data från Bolagsverket",
+      "url": "https://sv.nordlei.org/",
+      "snippet": "Vår system är integrerat med GLEIF (Global Legal Entity Identifier Foundation) och Bolagsverket. Detta säkerställer att din LEI-information är uppdaterad och tillförlitlig.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "LEI Code - Register LEI Code in 2 minutes for £40 per year",
+      "url": "https://www.leicertificate.org/",
+      "snippet": "At GLEIF you will find the Global LEI Index, which is a database of all existing LEI codes. On GLEIF’s website anyone can search for LEI numbers to find out which company or legal person is...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "What to do if my LEI code provider goes out of business?",
+      "url": "https://globalfinreg.com/en/articles/what-to-do-if-your-LEI-code-provider-goes-out-of-business",
+      "snippet": "According to GLEIF, the ‘LEI Management Transfer Process will run from July 27, 2023, to August 22, 2023.’ In the table below, you can see the GLEIF-appointed LOUs across markets",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Legal Entity Identifier - Receive your LEI code today | LEI United Arab...",
+      "url": "https://leicodeae.com/what-is-lei.php",
+      "snippet": "\"We believe that ultimately there should be one identity behind every business. Having an LEI number will help to achieve this objective.\" GLEIF - Global Legal Entity Identifier Foundation.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

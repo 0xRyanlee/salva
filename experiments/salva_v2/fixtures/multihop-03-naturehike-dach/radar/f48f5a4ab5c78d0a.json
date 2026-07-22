@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-03-naturehike-dach",
+  "strategy": "radar",
+  "query": "Naturehike distributor partnership Germany, Austria, Switzerland (DACH)",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:30:55.953716+00:00",
+  "results": [
+    {
+      "title": "wholesale – Naturehike",
+      "url": "https://www.naturehike.com/pages/wholesale?srsltid=AfmBOop0Wmhv9Laps3U4uTq9EHiUog4CWS0WI5k76B7hXSs2CIVq2GzO",
+      "snippet": "Headquarters in China. Ningbo Naturehike Import & Export Co.,Ltd. Add: No. 55, Chuangfu Road, Xiaogang Street, Beilun District, Ningbo City, ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "About_Us - Naturehike",
+      "url": "https://www.naturehike.com/en-de/pages/about_us?srsltid=AfmBOoqVKJMVrQEvzzRZd9nsXST6k4LoAB6-XOuigFjgYay7Du4ll9XI",
+      "snippet": "Founded in 2010, Naturehike is a premiere destination for camping equipment for families and friends who enjoy the outdoors. We make products that are ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Buy Naturehike products online now - Galaxus",
+      "url": "https://www.galaxus.ch/en/brand/naturehike-62214",
+      "snippet": "Naturehike YL06Plus Foldable, lightweight chair with high backrest and armrest. 1. Naturehike Mongar Zelt ul 2 15d cnk2550ws016-moon rock sand.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike Europe - Facebook",
+      "url": "https://www.facebook.com/61576320807885/",
+      "snippet": "Naturehike, Return to Nature. Where Nature Beckons, There We Are. Outdoor Equipment Store. . Follow. Details. . Not yet rated (0 Reviews). Photos.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Top 11 Camping Equipment Investors in DACH - Inven",
+      "url": "https://www.inven.ai/company-lists/top-11-camping-equipment-investors-in-dach",
+      "snippet": "The list features 11 investors with headquarters spread across Germany and Switzerland. ... Their collaboration with a community of angel investors ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike Europe Store - Amazing products with ... - AliExpress",
+      "url": "https://www.aliexpress.com/store/5362097",
+      "snippet": "Discover the wide range of from AliExpress Top Seller Naturehike Europe Store.Enjoy ✓Free Shipping Worldwide ... Russian, Portuguese, Spanish, French, German, ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike, Return to Nature",
+      "url": "https://www.naturehike.com/?srsltid=AfmBOooNTag0SXQ9TTK8pM7u2FyfLSm38Y1YoEeN__BNhCKS_80FFpGk",
+      "snippet": "A professional lightweight outdoor brand dedicated to simplifying outdoor travel. Discover premium camping tents, hiking gear, and glamping equipment ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike Global Store - Amazing products with ... - AliExpress",
+      "url": "https://www.aliexpress.com/store/4411007",
+      "snippet": "Russian, Portuguese, Spanish, French, German, Italian, Dutch, Turkish, Japanese, Korean, Thai, Arabic, Hebrew, Polish. Browse by Category. All Popular ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike - trailrebel",
+      "url": "https://www.trailrebel.ch/collections/naturehike?srsltid=AfmBOooaoDLFPYsZfegTLIMufAETs4NSc4Sfkcx1klj5CX7GRnXLw0JV",
+      "snippet": "Die Produkte sind langlebig und umweltfreundlich und sollen jedem die Möglichkeit geben, die urbanen Zwänge hinter sich zu lassen und zurück zur Natur zu kehren ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike All - Camperreich",
+      "url": "https://www.camperreich.ch/collections/naturehike-all?srsltid=AfmBOopoLZGQIwA9Zg889v5RuzJk-4y7BWpNinCZQIQgWgiUv9BqNLoy",
+      "snippet": "Direkt zum Inhalt. Facebook. New - Crosscamp Parts in unserem Shop. Announce something here. Announce something here ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

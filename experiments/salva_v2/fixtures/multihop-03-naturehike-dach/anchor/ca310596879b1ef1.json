@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-03-naturehike-dach",
+  "strategy": "anchor",
+  "query": "Naturehike distributor distributor Germany, Austria, Switzerland (DACH)",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:30:47.188400+00:00",
+  "results": [
+    {
+      "title": "Distributors – Naturehike",
+      "url": "https://www.naturehike.com/en-ch/pages/distributors",
+      "snippet": "naturehike official distributors. Asia. Headquarters in China. Ningbo Naturehike Import & Export Co.,Ltd. Add: No. 55, Chuangfu Road, Xiaogang Street, Beilun District, Ningbo City, Zhejiang Province.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "About Us – Naturehikeus",
+      "url": "https://www.naturehikeus.com/pages/about-us",
+      "snippet": "We are official distributors for the renowned NATUREHIKE brand, bringing you their full collection of innovative, lightweight, and high-quality gear. Known for its exceptional value, NATUREHIKE specializes in products like tents, sleeping bags, sleeping pads...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GREAT OUTDOORS PH | NATUREHIKE DISTRIBUTOR - YouTube",
+      "url": "https://www.youtube.com/watch?v=tMGyf86ivZU",
+      "snippet": "Looking for genuine Naturehike products, after sales and local warranty?Great Outdoor Ph is finally opening their showroom this coming May 6, 2022.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Seller StoreFront - Naturehike Distributor Store - Walmart.com",
+      "url": "https://www.walmart.com/global/seller/102775398",
+      "snippet": "Naturehike Distributor Store. 8304 AutumnCrest Ct. dallas, TX 75249, US.Naturehike is a one-stop camping equipment brand.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "DACH Countries 2026",
+      "url": "https://worldpopulationreview.com/country-rankings/dach-countries",
+      "snippet": "DACH Countries 2026. Germany (Deutschland). Austria. Switzerland (Confœderatio Helvetica).DACH is an acronym that stands for D — Deutschland, A — Austria, and CH — Confœderatio Helvetica (Switzerland’s official name in Latin).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "WE Fashion - Online Shop | Country Selector",
+      "url": "https://www.wefashion.com/",
+      "snippet": "Netherlands Germany Belgium Switzerland Austria France.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Contact Distribution | Bel",
+      "url": "https://www.belfuse.com/company/contact-distribution",
+      "snippet": "Bel Authorized Distributors. Find your regional distribution partner.-Germany & Austria & Switzerland (DACH). - Belgium & the Netherlands & Luxembourg (Benelux).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturexplore | eBay Australia Stores",
+      "url": "https://www.ebay.com.au/str/naturexplore",
+      "snippet": "Discover the Outdoors with Naturexplore: Your Exclusive Naturehike Distributor in Australia! Explore our wide range of premium camping gear, all designed for quality and affordability.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "9T LABS new hires, including CTO and sales managers | 3dpbm",
+      "url": "https://www.voxelmatters.com/9t-labs-new-hires-including-cto-sales-managers-for-italy-and-dach-regions/",
+      "snippet": "9T LABS hires new CTO, sales managers for Italy and Dach. Swiss machinery OEM expands executive, sales teams in EU ahead of commercial launch of hybrid 3D printing technology. Photo of Andrea Gambini Andrea GambiniJuly 19, 2021.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Where to Buy Formovie - Formovie Global",
+      "url": "https://www.formovie.com/pages/where-to-buy",
+      "snippet": "About Formovie Blog Affiliate Program Sales and Distribution Opportunities Media & Influencers Partnership.Germany · Austria · Switzerland (DACH Region).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

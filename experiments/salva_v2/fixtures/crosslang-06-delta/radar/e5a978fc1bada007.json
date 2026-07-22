@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-06-delta",
+  "strategy": "radar",
+  "query": "台達電子 founded TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:29:29.780477+00:00",
+  "results": [
+    {
+      "title": "台達電子 - 維基百科，自由的百科全書",
+      "url": "https://zh.wikipedia.org/zh-tw/台達電子工業股份有限公司",
+      "snippet": "台達電子工業股份有限公司 （英語： Delta Electronics, Inc.，簡稱 台達電子工業 、 DELTA 、 台達電子 、 台達電），是一家 臺灣 的電子製造 跨國企業，專攻電源與變壓系統，總部位於 臺北市 內湖區，1971年4月4日由 鄭崇華 創立。 台達電子台北內湖總部",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Delta Electronics - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Delta_Electronics",
+      "snippet": "Delta Electronics [10] was founded in 1971 in Xinzhuang Town, Taipei County (now Xinzhuang District, New Taipei City). Its first products were TV deflection coils, electronic components and winding magnetic components.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台達電子工業股份有限公司台達 (台達電子工業股份有限公司):公司簡介,經營理念,質量政策,產品及...Delta Electronics - Wikipedia台達電子公司介紹 | 2308.TW 基本資料與企業簡介 — BigGo 財經",
+      "url": "https://www.findcompany.com.tw/台達電子工業股份有限公司",
+      "snippet": "台達電子工業股份有限公司 DELTA ELECTRONICS, INC. 統編:34051920,地址:桃園市龜山區山頂里興邦路31之1號 基本介紹 公司名稱：台達電子 外文名：Delta Electronics, Inc. 成立時間：1971年 經營範圍：視訊顯像系統、網路通信系統、LED照明 公司類型：民辦 公司口號：環保 節能 愛地球 年營業額：79億美元（2018年） 創始人：鄭崇華 Delta Electronics [10] was founded in 1971 in Xinzhuang Town, Taipei County (now Xinzhuang District, New Taipei City). Its first products were TV deflection coils, electronic components and winding magnetic components. 聯絡電話 886 2 8797 2088 公司簡稱 台達電 傳真號碼 (02)87972351 公司代號 2308.TW 公司網站 https://www.deltaww.com 成立日期 1975-08-20 電子郵件 2308@deltaww.com 台達電子集團在哪些產品領域居世界級的領導地位? 公司 概況 台達電子 集團為世界第一的交換式電源供應器與風扇產品的領導廠商，並且在多項產品領域亦居世界級的領導地位，其中包括提供電源管理的整體解決方案、視訊顯示器、工業自動化、網路通訊產品與可再生能源相關產品。 台達是什麼? 台達集團 台達集團創立於1971年，為 電源管理 與散熱管理解決方案的領導廠商，並在多項產品領域居世界級重要地位。 面對日益嚴重的 氣候變遷 議題，台達秉持“環保 節能 愛地球”的經營使命，運用電源設計與管理的基礎，整合全球資源與創新研發，深耕三大業務範疇，包含“電源及零組件”、“ 能源管理 ”與“智慧型綠生活”。 台達集團運營據點遍布全球，在中國大陸、中國 台灣 、美國、 泰國 、日本、 墨西哥 、印度、 巴西 以及歐洲等地設有研發中心和生產基地。 台達為實踐對於 環境保護 的承諾，自2004年起，全球新建辦公大樓、生產基地均依 綠建築 工法 設計建造。 2012年起，台達陸續榮獲多項國際榮耀與肯定。 台達(中國)的發展起源於何處? 台達 (中國)概況 台達 (中國)的發展，起源於南方的 珠三角 地區，最早可追溯到1992年在 廣東 省 東莞 市 石碣鎮 設立仲權電子廠，以及同一年在上海投資成立 中達電通股份有限公司；其後陸續於天津、江蘇、安徽、湖南等地增設新廠，至2012年已有二十年的歷史。 台達是哪個國家的? 台達 (中國)的發展，起源於南方的 珠三角 地區，最早可追溯到1992年在 廣東 省 東莞 市 石碣鎮 設立仲權電子廠，以及同一年在上海投資成立 中達電通股份有限公司；其後陸續於天津、江蘇、安徽、湖南等地增設新廠，至2012年已有二十年的歷史。 台達 (中國)有廣東東莞、天津、江蘇吳江、安徽 蕪湖 、湖南 郴州 等五個生產基地；上海、杭州、東莞、吳江、武漢、南京、西安、 廈門 等八個研發中心；環境關聯物質分析、精密量測、物性 失效分析 、焊錫技術、電磁兼容、半導體失效分析、化材分析、質量工程、 安規 等九所完善的實驗室，其中多數 均已 取得 國家認可；另有分布於全國各地的40餘個營業分支機構，員工總數達五萬餘人，2011年的營收將近300億人民幣。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台達 (台達電子工業股份有限公司):公司簡介,經營理念,質量政策,產品及...",
+      "url": "https://www.newton.com.tw/wiki/台達電子工業股份有限公司/896038",
+      "snippet": "基本介紹 公司名稱：台達電子 外文名：Delta Electronics, Inc. 成立時間：1971年 經營範圍：視訊顯像系統、網路通信系統、LED照明 公司類型：民辦 公司口號：環保 節能 愛地球 年營業額：79億美元（2018年） 創始人：鄭崇華",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "DELTA 台達電子 Innergie... - PChome 24h購物",
+      "url": "https://24h.pchome.com.tw/prod/DCABI1-A900F5EZD",
+      "snippet": "DELTA 台達電子 Innergie 65W 65U 原廠變壓器 充電器 電源線 Asus Acer Hp Dell Lenovo,輸人電壓：100-240V;輸出電壓：19V / 65W 迷你新款;輸出電流：3.42A,PChome 24h購物,多元支付,超值,優惠,可靠迅速,您的網路購物的首選.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台達電子 Innergie... | Yahoo拍賣",
+      "url": "https://tw.bid.yahoo.com/item/101291759371",
+      "snippet": "台達電子 Innergie 65W 65U 原廠變壓器 充電器 電源線 Asus Acer Hp Dell Lenovo | 適用:ASUS ACER LENOVO HP DELL...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台達電子｜領航世界，我就是力量!台達電工程菁英招募中-104...",
+      "url": "https://jp.pinterest.com/pin/783204191481497034/",
+      "snippet": "events.104.com.tw. 台達電子｜領航世界，我就是力量!台達電工程菁英招募中-104人力銀行.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Delta 台達電子 太陽能變流器 M30A_230（30KW 三相 380V）｜保固5年",
+      "url": "https://energyshop.auo.com/product/detail/2275597",
+      "snippet": "品牌. Delta 台達電子.IP66 防護等級. 台達總部位於台灣，全球布局完整，致力於技術創新與環境永續，每年投入逾8%營收於研發。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台達電子 Global | 智慧物聯、節能永續、價值共創",
+      "url": "https://www.deltaww.com/zh-TW/index",
+      "snippet": "台達致力於創新，持續開發高效節能的產品與技術。憑藉在電源管理與散熱解決方案領域的核心競爭力，我們已拓展至四大事業範疇，包括「電源及零組件」、「交通」、「自動化」與「基礎設施」 ，逐步實現永續AI、智慧製造與智慧城市的發展願景。 電源及零組件 交通 自動化 基礎設施 了解更多 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台達電子公司介紹 | 2308.TW 基本資料與企業簡介 — BigGo 財經",
+      "url": "https://finance.biggo.com.tw/quote/2308.TW/profile",
+      "snippet": "聯絡電話 886 2 8797 2088 公司簡稱 台達電 傳真號碼 (02)87972351 公司代號 2308.TW 公司網站 https://www.deltaww.com 成立日期 1975-08-20 電子郵件 2308@deltaww.com",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

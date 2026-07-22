@@ -1,0 +1,259 @@
+{
+  "task_id": "crosslang-05-chunghwa-telecom",
+  "entities": [
+    {
+      "title": "中華電信 - 維基百科，自由的百科全書",
+      "source_urls": [
+        "https://zh.wikipedia.org/zh-tw/中華電信"
+      ],
+      "score": 0.095,
+      "confidence": 0.095
+    },
+    {
+      "title": "Chunghwa Telecom - Wikipedia",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Chunghwa_Telecom"
+      ],
+      "score": 0.241,
+      "confidence": 0.241
+    },
+    {
+      "title": "關於我們 | 中華電信 CHT.com.tw",
+      "source_urls": [
+        "https://www.cht.com.tw/zh-tw/home/cht"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "關於中華電信 | 中華電信友善專區 - 中華電信網路門市",
+      "source_urls": [
+        "https://www.cht.com.tw/home/accessibility/about.html"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "中華電信股份有限公司",
+      "source_urls": [
+        "https://www.findcompany.com.tw/中華電信股份有限公司"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "聯絡我們| 中華電信歐洲子公司",
+      "source_urls": [
+        "https://www.cht.com.tw/home/chtweb/europe/zh-eu/contact.html"
+      ],
+      "score": 0.2893,
+      "confidence": 0.2893
+    },
+    {
+      "title": "中華電信股份有限公司台灣北區電信分公司台北營運處台北敦北服務 ...",
+      "source_urls": [
+        "https://info.technews.tw/company/38525385-中華電信股份有限公司台灣北區電信分公司台北營運處台北敦北服務中心"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "院區位置 - 中華電信研究院",
+      "source_urls": [
+        "https://www.chttl.com.tw/map.html"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "中華電信股份有限公司台北營運處｜統編81691784",
+      "source_urls": [
+        "https://mygov.tw/company/81691784"
+      ],
+      "score": 0.1942,
+      "confidence": 0.1942
+    },
+    {
+      "title": "中華電信股份有限公司臺灣南區電信分公司屏東營運處里港服務中心",
+      "source_urls": [
+        "https://info.technews.tw/company/81614611-中華電信股份有限公司臺灣南區電信分公司屏東營運處里港服務中心"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "中華電信股份有限公司臺灣北區電信分公司供應處處本部",
+      "source_urls": [
+        "https://www.taiwan-yellowpages.com.tw/CategoryListing.aspx"
+      ],
+      "score": 0.2885,
+      "confidence": 0.2885
+    },
+    {
+      "title": "中華電信女籃喜迎50... - 放言Fount Media",
+      "source_urls": [
+        "https://www.fountmedia.io/article/178304"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "親愛的中華電信客戶您好！ 歡慶雙12... | Cofacts",
+      "source_urls": [
+        "https://en.cofacts.tw/article/139lk7jnvms54"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "降低簡訊詐騙風險！ 中華電信推出「123... | LINE TODAY",
+      "source_urls": [
+        "https://today.line.me/tw/v3/article/l2zKBXk"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "Google 稱中華電信未達 Chrome... - Cool3c",
+      "source_urls": [
+        "https://www.cool3c.com/article/240502"
+      ],
+      "score": 0.1942,
+      "confidence": 0.1942
+    },
+    {
+      "title": "認識中華電信股份有限公司員工｜104人才社群",
+      "source_urls": [
+        "https://profile.104.com.tw/company/1a2x6bk73o"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "「守護美好，幸福達陣」 中華電信邀您一起做公益獻愛心",
+      "source_urls": [
+        "https://www.fountmedia.io/article/2061"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "Hami Point官方網站 ｜中華電信紅利點數",
+      "source_urls": [
+        "https://hamipoint.cht.com.tw/news/433/view"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "網民對中華電信的憤怒不能再予漠視 - 日報 - 工商時報",
+      "source_urls": [
+        "https://www.ctee.com.tw/news/20110714700007-439901"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "帶頭衝刺結婚率 中華電信集團結婚72對新人大曬恩愛",
+      "source_urls": [
+        "https://www.digitimes.com.tw/tech/dt/n/shwnws.asp"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "手機自動登入中華電信 Wi-Fi 熱點，Android 、iPad 版本加入！ | T客邦",
+      "source_urls": [
+        "https://www.techbang.com/posts/13074-automatic-login-chunghwa-telecom-mobile-wi-fi-hot-spot-joining-the-android-version"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "中華電信只因「太晚交資料」被Google撤信任憑證 強調不是資安問題",
+      "source_urls": [
+        "https://www.technice.com.tw/techmanage/175590"
+      ],
+      "score": 0.142,
+      "confidence": 0.142
+    },
+    {
+      "title": "【獨家】憑證遭Google...",
+      "source_urls": [
+        "https://www.upmedia.mg/tw/investigation/survey/232366"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "做老爸的後盾！ 中華電信獻上炫父豪禮，購機享優惠、贈Hami Point...",
+      "source_urls": [
+        "https://www.fountmedia.io/article/158058"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "141214 Popu Lady- MORE 庭萱focus @中華電信Hami活動 - YouTube",
+      "source_urls": [
+        "https://www.youtube.com/watch"
+      ],
+      "score": 0.0887,
+      "confidence": 0.0887
+    },
+    {
+      "title": "AIoT 技術與應用研",
+      "source_urls": [
+        "https://www.cht.com.tw/zh-TW/home/cht/-/media/Web/PDF/Recruit-and-Training/Recruit/2024/113-School.pdf"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "台湾",
+      "source_urls": [
+        "https://www.soumu.go.jp/g-ict/country/taiwan/pdf/886.pdf"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "2026-07月獨家-5G吃到飽不降速直殺57折! 限時特案別錯過 -地標網通",
+      "source_urls": [
+        "https://www.landtop.com.tw/reviews/36"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "存股族的最愛:中華電(2412) | 艾蜜莉-自由之路",
+      "source_urls": [
+        "https://emily01.com/taiwan-stock/461"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "「電信女籃夏令營」點燃多元學習力 打造偏鄉孩子難忘暑假 | ETtoday...",
+      "source_urls": [
+        "https://www.ettoday.net/news/20260717/3202609.htm"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "Qichacha (QCC) - Crunchbase Company Profile & FundingList of top Companies That Exited in 2008 - CrunchbaseDavid Axmark - Crunchbase Person ProfileCrunchbaseSINA - Crunchbase Company Profile & Funding",
+      "source_urls": [
+        "https://www.crunchbase.com/organization/qichacha"
+      ],
+      "score": 0.3,
+      "confidence": 0.3
+    }
+  ],
+  "meta": {
+    "qualified_count": 31,
+    "raw_count": 31,
+    "rounds": 3,
+    "domain": "companies"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-06-delta",
+  "strategy": "radar",
+  "query": "台達電子 headquarters TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:29:31.535603+00:00",
+  "results": [
+    {
+      "title": "台達電子｜領航世界，我就是力量!台達電工程菁英招募中-104...",
+      "url": "https://jp.pinterest.com/pin/783204191481497034/",
+      "snippet": "events.104.com.tw. 台達電子｜領航世界，我就是力量!台達電工程菁英招募中-104人力銀行.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MSCI 新興市場 ESG 領先指數 MSCI EM (EMERGING MARKETS)",
+      "url": "https://filecenter.deltaww.com/ir/download/annual_report/ch/2019annual_c.pdf",
+      "snippet": "0 0.0000% 0 0.0000% 交通大學控制工 Delta Electronics 無 無 無 無 程系台達電子 (Thailand) Public 工業股份有限公 Company Limited董 司總經理暨營運 事…等 長.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "innergie 台達電 - PChome 24h購物",
+      "url": "https://24h.pchome.com.tw/search/?q=innergie+台達電",
+      "snippet": "台達 Innergie C-L 1.8m USB-C 對 Lightning充電線【IP0752】.$2,500. 折扣. 台達電子 Innergie 65W 65U 原廠變壓器 充電器 電源線 Asus Acer Hp Dell Lenovo.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "《看見台灣II》開拍，台達電資金、4K設備支援|數位時代 BusinessNext",
+      "url": "https://www.bnext.com.tw/article/44852/delta-beyond-beauty-taiwan-from-above-ii?sn_f=1&sn_u=d8ec1a82d04fd03b66fbb5991cb07999",
+      "snippet": "《看見台灣II》開拍，台達電資金、4K設備支援.客服信箱：service@bnext.com.tw.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Google",
+      "url": "https://www.google.com/",
+      "snippet": "Поиск информации в интернете: веб страницы, картинки, видео и многое другое.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "The power behind competitiveness",
+      "url": "https://www.deltapowersolutions.com/media/download/Manual-UPS-N-1-3kVA-zh-tw.pdf",
+      "snippet": "台達 Amplon 射手座系列.台達 Amplon 射手座系列. ii. 目錄.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台達電AI... | LINE TODAY",
+      "url": "https://today.line.me/tw/v3/article/NvR0wMG",
+      "snippet": "台達電AI伺服器電源與散熱系統需求大幅提升，電源相關產品約占2025年營收逾20%，液冷散熱產品約占9%，兩者合計約占公司營收三成，成為近年成長主力； 數據顯示，電力電子事業獲利年增顯著，帶動整體毛利率與營業淨利率同步提升。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Link to facebook.com",
+      "url": "https://www.facebook.com/hashtag/台達電子/?__eep__=6",
+      "snippet": "The site owner hides the web page description.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台達電斥7,178萬美元收購行動基因 擴展癌症精準檢測市場-環球生技月刊",
+      "url": "https://news.gbimonthly.com/tw/article/show.php?num=77965",
+      "snippet": "這也是台達電自2010年從生醫電子部門衍生成立達爾生技以來，再次大規模投入精準醫療市場。 據台達電重訊內容，該筆交易相對人多達16位，其中，包括在美國那斯達克上市公司Prenetics Global Limited為行動基因最大股東，持股約七成。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Kokonna Pioneering AI-Powered Color E-Ink Digital Art... | Fortress",
+      "url": "https://www.fortress.com.hk/en/",
+      "snippet": "Shop for Kokonna Pioneering AI-Powered Color E-Ink Digital Art Frame (International Edition) now at Fortress! Explore other Kokonna Sharing Moment compare prices, deals & features. Same-day delivery or pickup! Buy now!",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

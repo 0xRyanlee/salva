@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-03-naturehike-dach",
+  "strategy": "pirate",
+  "query": "filetype:pdf \"Naturehike distributor\"",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:31:08.109958+00:00",
+  "results": [
+    {
+      "title": "Naturehike Australia Official Distributor | AU Stock Camping Gear",
+      "url": "https://www.naturexplore.com.au/",
+      "snippet": "Shop Naturehike camping gear in Australia. Official distributor with AU local stock in Brisbane. Fast shipping on tents, chairs, sleeping gear and outdoor equipment.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GREAT OUTDOORS PH | NATUREHIKE DISTRIBUTOR - YouTube",
+      "url": "https://www.youtube.com/watch?v=tMGyf86ivZU",
+      "snippet": "Looking for genuine Naturehike products, after sales and local warranty?Great Outdoor Ph is finally opening their showroom this coming May 6, 2022.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Seller StoreFront - Naturehike Distributor Store - Walmart.com",
+      "url": "https://www.walmart.com/global/seller/102775398",
+      "snippet": "Naturehike Distributor Store profile photo. Naturehike Distributor Store. 8304 AutumnCrest Ct. dallas, TX 75249, US.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Keaslian Naturehike: Distributor Resmi Hike n Run | TikTok",
+      "url": "https://www.tiktok.com/@hikenrun/video/7470816893134294273",
+      "snippet": "Dengan bukti yang ada Hike n Run adalah distributor resmi satu - satu nya di Indoensia untuk Brand Naturehike asal China. Share konten ini agar lebih banyak orang yang peduli tentang keaslian produk sebelum membelinya.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Privacy policy – Naturehike Pakistan",
+      "url": "https://naturehike.pk/pages/privacy-policy",
+      "snippet": "As the official Naturehike distributor in Pakistan, we are committed to protecting your personal information while providing a safe and seamless shopping experience for camping tents, sleeping bags, backpacks, and outdoor gear.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Distributor Naturehike Indonesia Terpercaya",
+      "url": "https://www.accio.com/supplier/id/distributor-naturehike-indonesia",
+      "snippet": "Temukan distributor Naturehike di Indonesia dengan produk berkualitas tinggi. Cek pilihan terbaik, harga kompetitif, dan layanan cepat. Click to explore pilihan terbaik untuk kebutuhan berkemah Anda!",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GREAT OUTDOORS PH | NATUREHIKE DISTRIBUTOR - Danbi Camp",
+      "url": "https://danbicamp.com/great-outdoors-ph-naturehike-distributor-yeti-pre-opening-showroom-visit-camping-ph/",
+      "snippet": "Great outdoors ph | naturehike distributor | yeti | pre opening showroom visit | camping ph |.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "NATUREHIKE air mattress automatic inflatable... | Shopee Malaysia",
+      "url": "https://shopee.com.my/NATUREHIKE-air-mattress-automatic-inflatable-pillow-double-sleep-pad-outdoor-camping-tilam-angin-i.134533487.23988448029",
+      "snippet": "Ready Stock in Malaysia We are Original Naturehike Distributor, Welcome Wholesales and Agent/Dropship Pos in same day if payment before 12pm Follow us to get discount voucher. Brand - NATUREHIKE Hi there, fellow adventurers!",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Seller StoreFront - Naturehike Distributor Store - Walmart.com",
+      "url": "https://www.walmart.com/seller/102775398",
+      "snippet": "Seller StoreFront - Naturehike Distributor Store - Walmart.com Naturehike is a one-stop camping equipment brand. Since its inception, it has been focusing on the research and development, design and sales of camping equipment, and its series of products have covered a wide range of fields such as outdoor camping, outdoor recreation, mountaineering and hiking, t…",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike Distributor Store - Walmart.com",
+      "url": "https://www.walmart.com/global/seller/102775398/cp/shopall",
+      "snippet": "Naturehike Distributor Store - Walmart.com WISHRUN Amphibious Remote Control Car, 1:14 Waterproof Monster Truck with 1 Rechargeable Battery, 2.4GHz 4WD Off-Road RC Vehicle for Kids Ages 4-12",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-03-naturehike-dach",
+  "strategy": "radar",
+  "query": "Naturehike distributor joint Germany, Austria, Switzerland (DACH)",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:31:02.539148+00:00",
+  "results": [
+    {
+      "title": "wholesale – Naturehike",
+      "url": "https://www.naturehike.com/pages/wholesale?srsltid=AfmBOop8isWQSwopYhEe_UXtATc9nldwc9qbWPVzcA5R822n9rxBpdZ0",
+      "snippet": "Headquarters in China. Ningbo Naturehike Import & Export Co.,Ltd. Add: No. 55, Chuangfu Road, Xiaogang Street, Beilun District, Ningbo City, ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike Taiwan -全館現貨台灣總代理安心享保固",
+      "url": "https://www.naturehiketw.com/?srsltid=AfmBOorra7PLQhNO2jo-vsUYE83TSE1Q5dPvK4Fl7yNNh3fQ12NGAK3_",
+      "snippet": "自創立以來Naturehike一直專注於戶外產品的研發與銷售，豐富的商品線熱銷全球68個國家。致力於打造質感高CP值戶外生活。台灣總代理提供您優良的購買體驗及售後服務。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "About_Us - Naturehike",
+      "url": "https://www.naturehike.com/en-de/pages/about_us?srsltid=AfmBOoo97O-_lXRGBFLlsKdNgR3Ay6aF0h-9rvzv-9zhDeoqskqjBrda",
+      "snippet": "Naturehike sleeping pad for insulation and comfort while sleeping in a tent. Naturehike rectangular sleeping bag for spacious comfort during summer camping ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike: High-Quality Outdoor Gear at Factory Prices",
+      "url": "https://naturehike-shop.com/gb/",
+      "snippet": "Explore Naturehike for premium camping, hiking, and outdoor equipment. Get durable, high-performance gear directly from the factory at unbeatable prices.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Buy Naturehike Products Online at Best Prices in Taiwan | Ubuy",
+      "url": "https://www.u-buy.com.tw/en/brand/naturehike?srsltid=AfmBOoqeXE0IeqEvabKLpmySO1fYIzIHPOHO160PZCgi7KyUlDkVXaY1",
+      "snippet": "Brands Similar to Naturehike. Decathlon. Decathlon is a multinational sporting goods retailer that offers a wide range of outdoor gear and equipment. They ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Buy Naturehike products online now - Galaxus",
+      "url": "https://www.galaxus.ch/en/brand/naturehike-62214",
+      "snippet": "Naturehike YL06Plus Foldable, lightweight chair with high backrest and armrest. 1. Naturehike Mongar Zelt ul 2 15d cnk2550ws016-moon rock sand.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "關於我們Naturehike Taiwan",
+      "url": "https://www.naturehiketw.com/pages/about-us?srsltid=AfmBOoroaJp2xsBpf8OiTFcLwLxYnVk56rJfJOjYFlBeSyFWmSqgS42z",
+      "snippet": "Naturehike Taiwan提供1年售後保固。陪您安心探索戶外生活。 聯絡資訊. Line官方ID：@607ravqq. 週一至週五10:00-18:00. helena@naturehiketw.com. 公司資訊.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike - trailrebel",
+      "url": "https://www.trailrebel.ch/collections/naturehike?srsltid=AfmBOor5qLKjCxQtA4r_5UZke2nVPvo93UlwHwMKz4QCQiHPt9TUyPtN",
+      "snippet": "Die Produkte sind langlebig und umweltfreundlich und sollen jedem die Möglichkeit geben, die urbanen Zwänge hinter sich zu lassen und zurück zur Natur zu kehren ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike All - Camperreich",
+      "url": "https://www.camperreich.ch/collections/naturehike-all?srsltid=AfmBOoq6D0gE_PTEB7Hv4SzaVKtX2IojAT_FfMOuclGqC3aiEK-3UC06",
+      "snippet": "Direkt zum Inhalt. Facebook. New - Crosscamp Parts in unserem Shop. Announce something here. Announce something here ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Naturehike, Return to Nature",
+      "url": "https://www.naturehike.com/en-de?srsltid=AfmBOookV5BWDKQ2X5NNaUMvTS6sLrthBMaqmwAx3COwM0NYPi0wbQOL",
+      "snippet": "A professional lightweight outdoor brand dedicated to simplifying outdoor travel. Discover premium camping tents, hiking gear, and glamping equipment ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-04-mediatek-brands",
+  "strategy": "radar",
+  "query": "chipset partnership Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:31:32.247332+00:00",
+  "results": [
+    {
+      "title": "Partnerships | Brandworks Technologies",
+      "url": "https://www.bwtech.in/public/partnerships",
+      "snippet": "Brandworks Technologies global partnerships, chipset partners, technology licenses and strategic associations.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Chipset partner: MPS | Micron Technology Inc.",
+      "url": "https://sg.micron.com/partners/partner-networks/chipset-partners/mps",
+      "snippet": "Learn about MPS’ collaboration with Micron Technology to advance chipset and logic technologies.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Sparklan Chipset Partner - M2M experts in Wireless Wifi Module",
+      "url": "https://www.sparklan.com/partners/",
+      "snippet": "Our Chipset partner includes popular names like Qualcom Atheros, Media Tek Inc, Realtek semiconductor corporation and Broadcom.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Via, S3 accelerate chipset partnership - EDN",
+      "url": "https://www.edn.com/via-s3-accelerate-chipset-partnership/",
+      "snippet": "The educational resource for the global engineering community techonline.com.Via, S3 accelerate chipset partnership. December 28, 1999 by EDN. Comments 0.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Infineon Partner Ecosystem - Infineon Technologies",
+      "url": "https://www.infineon.com/cms/en/partner-network/#!channel=5546d462503812bb015066c2cde41738",
+      "snippet": "Our global Wireless Module Partner Ecosystem enables development of IoT applications On Time, On Budget, and with Minimized Risk.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Become a Partner — SIMO",
+      "url": "https://www.simo.co/partners/become-a-partner.html",
+      "snippet": "Global deployment experience — from chipset to cloud. SIMO has accumulated a decade of experience deploying globally connected devices...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Verizon Partners with Movandi, NXP, Qualcomm for 5G - EE Times",
+      "url": "https://www.eetimes.com/verizon-partners-with-movandi-nxp-qualcomm-for-5g/",
+      "snippet": "Chipset partnership for home equipment.Nitin also held a role with government promoting U.K. technology globally in the U.S., Brazil, Middle East and Africa, and India.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Porter’s Five Forces of Micron Technology - Porter Analysis",
+      "url": "https://porteranalysis.com/porters-five-forces-of-micron-technology/",
+      "snippet": "Bargaining Power of Buyers. The global semiconductor industry is driven largely by the demand from electronics such as smartphones, the Internet of things devices and cloud computing.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Iridium NTN Direct | Iridium",
+      "url": "https://www.iridium.com/services/iridium-ntn-direct",
+      "snippet": "Truly global coverage — pole-to-pole reach leveraging Iridium’s 66-satellite LEO network. Standards-based integration — NB-IoT and Direct-to-Device (D2D) using industry standards.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "AMD ׀ together we advance_AI",
+      "url": "https://www.amd.com/en.html",
+      "snippet": "AMD is the only AI partner offering CPU, GPU, and adaptive computing solutions, enabling optimized AI deployments tailored to your needs. Open Ecosystem Approach.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

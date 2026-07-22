@@ -50,6 +50,7 @@ CREATE TABLE IF NOT EXISTS discovery_runs (
     output_profile TEXT NOT NULL,
     campaign_id TEXT,
     continuation_id TEXT,
+    tenant_id TEXT,
     persistence_mode TEXT NOT NULL DEFAULT 'audit',
     request_json TEXT NOT NULL,
     entities_json TEXT NOT NULL,
@@ -416,6 +417,22 @@ def _probe_writable(conn: sqlite3.Connection) -> None:
         raise
 
 
+def _extract_tenant_id(request_json: str | None, meta_json: str | None) -> str | None:
+    for raw in (request_json, meta_json):
+        if not raw:
+            continue
+        try:
+            payload = json.loads(raw)
+        except (TypeError, ValueError):
+            continue
+        if not isinstance(payload, dict):
+            continue
+        tenant = payload.get("tenant_id")
+        if isinstance(tenant, str) and tenant.strip():
+            return tenant.strip()
+    return None
+
+
 def _migrate_schema(conn: sqlite3.Connection) -> None:
     discovery_run_columns = {
         row[1] for row in conn.execute("PRAGMA table_info(discovery_runs)").fetchall()
@@ -429,6 +446,26 @@ def _migrate_schema(conn: sqlite3.Connection) -> None:
     for column, sql_type in discovery_run_required_columns.items():
         if column not in discovery_run_columns:
             conn.execute(f"ALTER TABLE discovery_runs ADD COLUMN {column} {sql_type}")
+
+    # tenant_id is a first-class column (not just request_json/meta_json) so quota
+    # window counts can be computed with an indexed SQL COUNT instead of paginating
+    # through list_runs() and filtering in Python -- the latter silently truncates
+    # at list_runs' default limit once run volume exceeds it (see quotas.py).
+    if "tenant_id" not in discovery_run_columns:
+        conn.execute("ALTER TABLE discovery_runs ADD COLUMN tenant_id TEXT")
+        for run_id, request_json, meta_json in conn.execute(
+            "SELECT run_id, request_json, meta_json FROM discovery_runs"
+        ).fetchall():
+            tenant_id = _extract_tenant_id(request_json, meta_json)
+            if tenant_id:
+                conn.execute(
+                    "UPDATE discovery_runs SET tenant_id = ? WHERE run_id = ?",
+                    (tenant_id, run_id),
+                )
+    conn.execute(
+        "CREATE INDEX IF NOT EXISTS idx_discovery_runs_tenant_created "
+        "ON discovery_runs(tenant_id, created_at)"
+    )
     conn.execute(
         "CREATE INDEX IF NOT EXISTS idx_discovery_runs_campaign "
         "ON discovery_runs(campaign_id)"
@@ -531,6 +568,18 @@ def _migrate_schema(conn: sqlite3.Connection) -> None:
         conn.execute("ALTER TABLE jobs ADD COLUMN worker_id TEXT")
     if "tenant_id" not in job_columns:
         conn.execute("ALTER TABLE jobs ADD COLUMN tenant_id TEXT")
+    for job_id, request_json, meta_json in conn.execute(
+        "SELECT job_id, request_json, meta_json FROM jobs WHERE tenant_id IS NULL"
+    ).fetchall():
+        tenant_id = _extract_tenant_id(request_json, meta_json)
+        if tenant_id:
+            conn.execute(
+                "UPDATE jobs SET tenant_id = ? WHERE job_id = ?",
+                (tenant_id, job_id),
+            )
+    conn.execute(
+        "CREATE INDEX IF NOT EXISTS idx_jobs_tenant_created ON jobs(tenant_id, created_at)"
+    )
 
     query_family_columns = {
         row[1] for row in conn.execute("PRAGMA table_info(query_family_memory)").fetchall()
@@ -612,6 +661,16 @@ def _migrate_schema(conn: sqlite3.Connection) -> None:
     }.items():
         if col not in rm_columns:
             conn.execute(f"ALTER TABLE routing_memory ADD COLUMN {col} {sql_type}")
+
+    # Cooperative cancellation flag + liveness heartbeat for running jobs --
+    # cancel_requested lets run_job's round_checkpoint observe a cancel request
+    # between rounds; heartbeat_at lets get_job() passively reap jobs whose
+    # worker crashed (OOM/SIGKILL) without any active polling daemon.
+    job_columns = {row[1] for row in conn.execute("PRAGMA table_info(jobs)").fetchall()}
+    if "cancel_requested" not in job_columns:
+        conn.execute("ALTER TABLE jobs ADD COLUMN cancel_requested INTEGER NOT NULL DEFAULT 0")
+    if "heartbeat_at" not in job_columns:
+        conn.execute("ALTER TABLE jobs ADD COLUMN heartbeat_at TEXT")
 
 
 def _ensure_hold_schema_registry(conn: sqlite3.Connection) -> None:

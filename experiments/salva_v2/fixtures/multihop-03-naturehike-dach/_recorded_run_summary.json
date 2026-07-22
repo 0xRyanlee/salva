@@ -1,0 +1,115 @@
+{
+  "task_id": "multihop-03-naturehike-dach",
+  "entities": [
+    {
+      "title": "Distributors – Naturehike",
+      "source_urls": [
+        "https://www.naturehike.com/en-ch/pages/distributors"
+      ],
+      "score": 0.2239,
+      "confidence": 0.2239
+    },
+    {
+      "title": "About Us – Naturehikeus",
+      "source_urls": [
+        "https://www.naturehikeus.com/pages/about-us"
+      ],
+      "score": 0.1912,
+      "confidence": 0.1912
+    },
+    {
+      "title": "GREAT OUTDOORS PH | NATUREHIKE DISTRIBUTOR - YouTube",
+      "source_urls": [
+        "https://www.youtube.com/watch"
+      ],
+      "score": 0.1638,
+      "confidence": 0.1638
+    },
+    {
+      "title": "DACH Countries 2026",
+      "source_urls": [
+        "https://worldpopulationreview.com/country-rankings/dach-countries"
+      ],
+      "score": 0.3292,
+      "confidence": 0.3292
+    },
+    {
+      "title": "WE Fashion - Online Shop | Country Selector",
+      "source_urls": [
+        "https://www.wefashion.com"
+      ],
+      "score": 0.2986,
+      "confidence": 0.2986
+    },
+    {
+      "title": "Contact Distribution | Bel",
+      "source_urls": [
+        "https://www.belfuse.com/company/contact-distribution"
+      ],
+      "score": 0.3402,
+      "confidence": 0.3402
+    },
+    {
+      "title": "Naturexplore | eBay Australia Stores",
+      "source_urls": [
+        "https://www.ebay.com.au/str/naturexplore"
+      ],
+      "score": 0.1535,
+      "confidence": 0.1535
+    },
+    {
+      "title": "9T LABS new hires, including CTO and sales managers | 3dpbm",
+      "source_urls": [
+        "https://www.voxelmatters.com/9t-labs-new-hires-including-cto-sales-managers-for-italy-and-dach-regions"
+      ],
+      "score": 0.1755,
+      "confidence": 0.1755
+    },
+    {
+      "title": "Where to Buy Formovie - Formovie Global",
+      "source_urls": [
+        "https://www.formovie.com/pages/where-to-buy"
+      ],
+      "score": 0.09999999999999999,
+      "confidence": 0.09999999999999999
+    },
+    {
+      "title": "成為合作夥伴 – NaturehikeHK",
+      "source_urls": [
+        "https://naturehike.com.hk/pages/partner"
+      ],
+      "score": 0.1813,
+      "confidence": 0.1813
+    },
+    {
+      "title": "给欧洲大牌做了10年嫁衣，转身用平价帐篷撬开热带市场 - DNY123",
+      "source_urls": [
+        "https://www.dny123.com/t/OO1VsXR2"
+      ],
+      "score": 0.2518,
+      "confidence": 0.2518
+    },
+    {
+      "title": "關於我們Naturehike Taiwan",
+      "source_urls": [
+        "https://www.naturehiketw.com/pages/about-us"
+      ],
+      "score": 0.3284,
+      "confidence": 0.3284
+    },
+    {
+      "title": "Tentsoutdoor",
+      "source_urls": [
+        "https://tentsoutdoor.myshopify.com"
+      ],
+      "score": 0.1531,
+      "confidence": 0.1531
+    }
+  ],
+  "meta": {
+    "qualified_count": 13,
+    "raw_count": 13,
+    "rounds": 3,
+    "domain": "partnerships"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-02-tsmc-customers",
+  "strategy": "anchor",
+  "query": "TSMC customers partnership",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:30:24.852156+00:00",
+  "results": [
+    {
+      "title": "TSMC — Википедия",
+      "url": "https://ru.wikipedia.org/wiki/TSMC",
+      "snippet": "TSMC владеет компанией WaferTech (США, штат Вашингтон; ей принадлежит завод в Camas, Вашингтон (200 мм)), а также долей в совместном предприятии SSMC[англ.]",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC & Customers Agree To a 3nm Price Hike Given That The...",
+      "url": "https://wccftech.com/tsmc-customers-agree-3nm-price-hike-given-steady-supply/",
+      "snippet": "TSMC's customers have reportedly agreed to a raise in 3nm chip supply pricing in exchange for the condition that the Taiwan giant keeps up with the semiconductor supply.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC: почему 90% передовых чипов в мире делают на... / Хабр",
+      "url": "https://habr.com/ru/articles/1026690/",
+      "snippet": "Taiwan Semiconductor Manufacturing Company, более известная как TSMC (Тайчун, Центральный научный парк Тайваня). Только TSMC может делать 3 нанометра...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC posts record profit and pledges $100bn to expand... | Euronews",
+      "url": "https://www.euronews.com/business/2026/07/16/tsmc-posts-record-profit-and-pledges-100bn-to-expand-us-manufacturing",
+      "snippet": "Taiwan Semiconductor Manufacturing Company (TSMC) beat Wall Street expectations on Thursday with a record second-quarter net profit, up 77% from a year earlier...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC’s $265 Billion US Spend Driven by Demand, Rivals... - Bloomberg",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-19/tsmc-s-265-billion-us-spend-driven-by-demand-rivals-cfo-says",
+      "snippet": "Taiwan Semiconductor Manufacturing Co. is adding $100 billion to its investments in Arizona to meet strong demand from US customers and to ward off ambitious rivals, a senior...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Business Contacts - Taiwan Semiconductor Manufacturing...",
+      "url": "https://www.tsmc.com/english/aboutTSMC/business_contacts",
+      "snippet": "New Customer Engagement. TSMC is a dedicated contract semiconductor manufacturer that provides wafer fabrication and advance packaging solutions.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Earnings From Taiwan Semiconductor and ASML... | The Motley Fool",
+      "url": "https://www.fool.com/investing/2026/07/19/tsmc-asml-strong-earnings-why-ai-stocks-falling/",
+      "snippet": "These companies, such as TSMC, Nvidia, and ASML, generated significant earnings growth, making them early winners of the AI revolution.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "У этой компании нет ни фабрик, ни розницы — и она... | Дзен",
+      "url": "https://dzen.ru/a/aApRKbRKNzJMnXNF",
+      "snippet": "Это — TSMC, или Taiwan Semiconductor Manufacturing Company. О ней редко говорят в новостях для широкой публики. У неё нет магазинов, шоурумов, логотипов на...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing Company... - Yahoo Finance",
+      "url": "https://finance.yahoo.com/quote/TSM/",
+      "snippet": "Find the latest Taiwan Semiconductor Manufacturing Company Limited (TSM) stock quote, history, news and other vital information to help you with your stock trading and investing.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "dbs.com.sg",
+      "url": "https://www.dbs.com.sg/",
+      "snippet": "It manufactures Toyota, Honda, Mitsubishi, and Fiat cars in collaboration with...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

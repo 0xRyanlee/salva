@@ -1,0 +1,79 @@
+{
+  "task_id": "single-05-advantech",
+  "strategy": "dive",
+  "query": "\"Advantech\" TW -blog -museum -review -job -news -report",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:26:39.542554+00:00",
+  "results": [
+    {
+      "title": "File:Advantech logo.svg - 維基百科，自由的百科全書",
+      "url": "https://zh.wikipedia.org/zh-tw/File:Advantech_logo.svg",
+      "snippet": "cs.wikipedia.org的使用狀況. Advantech.Advantech. www.wikidata.org的使用狀況.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Careers",
+      "url": "https://advantech.wd3.myworkdayjobs.com/zh-TW/External",
+      "snippet": "Advantech is a global leader in the fields of IoT intelligent systems and embedded platforms. Advantech operates business in 28 countries with approximately 9,000 employees worldwide. We have a great diversity of roles across our global organization that benefit from differing levels of flexibility.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Quality Manufacturing - Advantech",
+      "url": "https://www2.advantech.tw/DMS/Manufacturing.aspx",
+      "snippet": "Advantech realizes its design strengths with three world-class production centers in China and Taiwan. Constructed for lean manufacturing and utilizing a customer-driven Enterprise Resource Planning (ERP) system, these manufacturing sites are highly flexible and respond to just-in-time requests.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Employee Portal - Homepage - Advantech",
+      "url": "https://employeezone.advantech.com.tw/net",
+      "snippet": "The employee portal is for Advantech worldwide employees.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Co., LTD. - 智慧產業 - en.icaa.org.tw",
+      "url": "https://en.icaa.org.tw/advantech",
+      "snippet": "Advantech has the corporate vision to \"Enable an Intelligent Planet\". The company is a global leader in the fields of IoT intelligent systems and embedded platforms.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CVE-2022-50591 Advantech iView SNMP Management Tool sql...",
+      "url": "https://vuldb.com/?id.331413",
+      "snippet": "A vulnerability was found in Advantech iView and classified as critical. This vulnerability is uniquely identified as CVE-2022-50591. It is suggested to upgrade the affected component.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech / Advantech.tw valuation and analysis",
+      "url": "https://advantech.tw.siteindices.com/",
+      "snippet": "Advantech.tw has global traffic rank of 270,482 and ranks the 5,378th in Taiwan.Advantech.tw has an estimated worth of US$ 153,756, based on its estimated Ads revenue.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "研華共創物聯網世界的未來 - Advantech",
+      "url": "https://www.advantech.com/zh-tw",
+      "snippet": "研華是全球工業電腦的領導廠商, 提供嵌入式電腦與工業自動化的解決方案, 產品涵蓋工業電腦, 嵌入式系統, 單板電腦, 工業用主機板, 液晶平板電腦, 醫療用電腦, 車載電腦, 工業用I/O, 資料擷取模組, 工業通訊, 自動化控制器, 人機介面, 數位電子看板等, 產品廣泛應用於工廠與機械自動化, 環境監控, 電信, 交通, 醫療, POI/POS, 樓宇自動化, 家庭智慧系統、無線網路應用與網路通信應用等。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "研華共創物聯網世界的未來 - Advantech",
+      "url": "https://www.advantech.com/zh-tw/careers",
+      "snippet": "Jun 4, 2026 · 一路以來，主管在專案上的指導讓我收穫很多，從中不僅學到如何推動 EIoT 產品，也逐漸累積跨部門與 RBU 溝通的經驗，讓我面對挑戰時更有信心。 工作之餘，參加公司社團跑步、騎車、潛水，讓我在拓展興趣的同時，把能量再帶回工作中。 我在研華感受到滿滿的團隊精神，同事間的互相幫助與支持，讓我深刻體會到「身為研華人」的驕傲。 在研華的日子裡，最有熱忱的事，就是透過軟體的力量見證產業的變革。 軟體發展的過程中，我看見各產業邁向數位化與智慧化，也為能盡一份心力而感到自豪。 研華的創新文化與開放精神，讓我持續保持對工作的熱忱。 在工作中，我一直提醒自己保持熱忱，把挑戰當成成長的機會。 來到研華後，我特別感受到團隊合作的氛圍。 研華不只提升了我的專業技能，也讓我在人際溝通與思維上都有進步。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Always-On備援方案, Advantech (TW) - YouTube",
+      "url": "https://www.youtube.com/watch?v=7xMSZQnwN-s",
+      "snippet": "О сервисе Прессе Авторские права Связаться с нами Авторам Рекламодателям...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

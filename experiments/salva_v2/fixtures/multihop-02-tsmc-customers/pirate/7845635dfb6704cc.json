@@ -1,0 +1,23 @@
+{
+  "task_id": "multihop-02-tsmc-customers",
+  "strategy": "pirate",
+  "query": "(filetype:ppt OR filetype:pptx) \"TSMC customers\"",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:30:43.179620+00:00",
+  "results": [
+    {
+      "title": "Explore Current Semiconductor Jobs & Careers | TSMC",
+      "url": "https://www.tsmc.com/static/english/careers/index.htm",
+      "snippet": "With TSMC careers, you can surround yourself with big talent and learn from them. With comprehensive training & development programs as well as flexible semiconductor career path, your potential can be unleashed.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Values and Business Philosophy - Taiwan Semiconductor...",
+      "url": "https://www.tsmc.com/english/aboutTSMC/values",
+      "snippet": "TSMC Core Values Integrity Integrity is our most basic and most important core value. We tell the truth.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

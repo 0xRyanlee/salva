@@ -1,0 +1,79 @@
+{
+  "task_id": "single-02-naturehike",
+  "strategy": "radar",
+  "query": "camping equipment site:linkedin.com",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:25:29.363042+00:00",
+  "results": [
+    {
+      "title": "Outdoor Camping Equipment Market Size By Type | By Application",
+      "url": "https://www.linkedin.com/pulse/outdoor-camping-equipment-market-size-type-application-s9mbe",
+      "snippet": "The outdoor camping equipment market is a dynamic segment within the broader outdoor recreation industry, characterized by steady growth and evolving consumer preferences.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Camping Cooking Equipment Market Volume Forecast, Industry...",
+      "url": "https://www.linkedin.com/pulse/camping-cooking-equipment-market-volume-forecast-industry-wiqkf",
+      "snippet": "The Camping Cooking Equipment Market Research Report provides an authoritative, data-driven foundation for strategic decision-making in one of the fastest-evolving global industries.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Europe Camping Equipment Rental Market by Applications And by...",
+      "url": "https://www.linkedin.com/pulse/europe-camping-equipment-rental-market-applications-ivaae",
+      "snippet": "It is expected to hit USD 1.2 billion in 2024, driven by rising industrial demand and ongoing innovation.\" The Europe Camping Equipment Rental Market is witnessing significant growth, driven...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Outdoor Barbeques Equipment in the Real World: 5 Uses You'll...",
+      "url": "https://www.linkedin.com/pulse/outdoor-barbeques-equipment-real-world-5-uses-youll-mub9c",
+      "snippet": "Top 5 Uses of Outdoor Barbeques Equipment in 2025. 1. Backyard Family Gatherings. One of the most common uses is hosting family and friends in private backyards.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Westfield Outdoor, Inc. - LinkedIn",
+      "url": "https://www.linkedin.com/company/westfield-outdoor-inc",
+      "snippet": "Designing and manufacturing camping gear and products to help take the worry out of your outdoor adventures. | Westfield Outdoors® was founded in 2004 with a focus and commitment to help ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "LUNO® - LinkedIn",
+      "url": "https://www.linkedin.com/company/lunolife",
+      "snippet": "LUNO® | 3,796 followers on LinkedIn. Trusted Leader for Vehicle Based Camping Gear. Designed and Tested in Bend, OR. | Luno® is a movement in the way people travel.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Campmor, Inc. - LinkedIn",
+      "url": "https://www.linkedin.com/company/campmor-inc.",
+      "snippet": "Campmor provides camping gear, clothing, and outdoor equipment at low everyday prices. | Campmor began decades ago in a garage, and has blossomed over the years into one of the world's...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Maurice Sporting Goods - LinkedIn",
+      "url": "https://www.linkedin.com/company/maurice-sporting-goods",
+      "snippet": "Our product categories include fishing, hunting, marine, camping, outdoor recreation, athletics, sports licensed, and gift products.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Stansport Inc. - LinkedIn",
+      "url": "https://www.linkedin.com/company/stansport-inc.",
+      "snippet": "Since 1949, Stansport has been providing quality, yet affordable camping gear for the everyday camper.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "White Duck Outdoors - LinkedIn",
+      "url": "https://www.linkedin.com/company/white-duck-outdoors",
+      "snippet": "We celebrate unique perspectives and stories, and by delivering gear that can be used by anyone, we aim to create more of them.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

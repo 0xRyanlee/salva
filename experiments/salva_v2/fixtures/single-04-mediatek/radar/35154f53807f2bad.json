@@ -1,0 +1,79 @@
+{
+  "task_id": "single-04-mediatek",
+  "strategy": "radar",
+  "query": "MediaTek headquarters TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:26:21.053372+00:00",
+  "results": [
+    {
+      "title": "Taiwan Offices - MediaTek",
+      "url": "https://corp.mediatek.com/about/office-locations/mediatek-tw-offices",
+      "snippet": "Taiwan Office Locations MediaTek Inc. (Headquarters) 新竹科學園區篤行一路1號No.1, Dusing 1st Rd., Hsinchu Science Park, Hsinchu City 300, …",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Office Locations",
+      "url": "https://corp.mediatek.com/about/office-locations",
+      "snippet": "MediaTek's offices span the globe - from the United States to China, Dubai, Finland, India, Japan, Korea, Singapore, Sweden, Taiwan and the United Kingdom.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Contact MediaTek | Global Offices and Enquiries",
+      "url": "https://www.mediatek.com/company/contact-us",
+      "snippet": "MediaTek Dubai. P.O. Box 502337, Office No. 156, Building No. 17,. Dubai Internet City,. Dubai, U.A.E.. Tel: +971-43625000. Fax: +971-44308369.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Inc. - Headquarters in East District, Hsinchu City Taiwan",
+      "url": "https://maps.apple.com/place?place-id=IF2DDFF597841C154",
+      "snippet": "View details about MediaTek Inc. - Headquarters in East District, Hsinchu City Taiwan on Apple Maps. Address, driving directions, images, nearby attractions ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "United States Office Locations - MediaTek",
+      "url": "https://corp.mediatek.com/about/office-locations/mediatek-usa-offices",
+      "snippet": "United States Office Locations MediaTek USA Inc. (Austin) / MediaTek North America Inc. (Austin) 5914 West Courtyard Drive, Suite 400 Austin, ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek breaks ground on new office building in Hsinchu - YouTube",
+      "url": "https://www.youtube.com/watch?v=eIr_P7rlkUo",
+      "snippet": "Jan 30, 2024 ... Leading integrated circuit designer MediaTek on Tuesday broke ground on a new office building in Hsinchu County. The company is building a ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Inc. (MTK) headquarters in Hsinchu, Taiwan, Wednesday ...",
+      "url": "https://www.alamy.com/mediatek-inc-mtk-headquarters-in-hsinchu-taiwan-wednesday-oct-20-2021-ap-photochiang-ying-ying-image507288223.html",
+      "snippet": "Oct 20, 2021 ... Download this stock image: MediaTek Inc. (MTK) headquarters in Hsinchu, Taiwan, Wednesday, Oct. 20, 2021. (AP Photo/Chiang Ying-ying) ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Mediatek Headquarters, Hsinchu, Taiwan - Wanderlog",
+      "url": "https://wanderlog.com/place/details/11662225/mediatek-headquarters",
+      "snippet": "Located in Taiwan, the Mediatek Headquarters is a hub for technological innovation and collaboration. The company's office building offers state-of-the-art ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Corporate Headquarters, Office Locations and Addresses",
+      "url": "https://craft.co/mediatek/locations",
+      "snippet": "MediaTek is headquartered in Hsinchu, No.1, Dusing 1st Rd., Hsinchu Science Park, Taiwan, and has 41 office locations. Locations. Country, City, Address. Taiwan ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Inc Locations - Headquarters & Offices – GlobalData",
+      "url": "https://www.globaldata.com/company-profile/mediatek-inc/locations/",
+      "snippet": "Head Office. MediaTek Inc Country. Taiwan. Address. No. 1, Dusing 1st Road, Hsinchu Science Park, Hsinchu, 300. Phone Number. 886 3 5670766. Website. www.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

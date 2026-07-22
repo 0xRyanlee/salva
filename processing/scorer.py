@@ -16,11 +16,69 @@ not hardcoded — callers control which domains are noise or trusted for their u
 """
 from __future__ import annotations
 
+import re
+from collections import Counter
 from dataclasses import dataclass, field
 from datetime import UTC
 from typing import Any
 
 from core.types import Intent, UnifiedResult
+from salva_core.vector_backends import resolve_semantic_vector_backend
+
+_TOKEN_RE = re.compile(r"[a-z0-9]+")
+
+# BM25 Okapi TF-saturation constants (standard defaults).
+_BM25_K1 = 1.5
+_BM25_B = 0.75
+# Reference document length for the (1 - b + b * doc_len/avgdl) length-norm
+# term -- there's no run-level corpus available at single-result scoring
+# time to compute a real average, so this approximates a typical title +
+# snippet token count instead.
+_BM25_AVG_DOC_LEN = 40.0
+
+# Blend weight between the BM25 lexical signal and semantic vector
+# similarity in _content_match. Starting point, not load-bearing elsewhere --
+# ranking/gating on top of this signal is a separate card's scope.
+_CONTENT_MATCH_ALPHA = 0.5
+
+
+def _tokenize(text: str) -> list[str]:
+    return _TOKEN_RE.findall(text.lower())
+
+
+def _bm25_tf_saturation(text_tokens: list[str], query_tokens: list[str]) -> float:
+    """BM25-style term-frequency saturation, normalized to [0, 1].
+
+    Each candidate result is scored independently (no batch/corpus available
+    at this call site), so this omits real corpus IDF -- every query term is
+    weighted equally. What it adds over naive substring presence-checking:
+    repeated occurrences saturate with diminishing returns instead of being
+    ignored, multi-word terms match on constituent tokens rather than exact
+    phrase, and document length is normalized against a fixed reference.
+    """
+    if not text_tokens or not query_tokens:
+        return 0.0
+    doc_len = len(text_tokens)
+    counts = Counter(text_tokens)
+    length_norm = _BM25_K1 * (1 - _BM25_B + _BM25_B * doc_len / _BM25_AVG_DOC_LEN)
+    total = 0.0
+    for term in query_tokens:
+        tf = counts.get(term, 0)
+        if tf == 0:
+            continue
+        total += (tf * (_BM25_K1 + 1)) / (tf + length_norm)
+    max_possible = len(query_tokens) * (_BM25_K1 + 1)
+    return min(1.0, total / max_possible) if max_possible > 0 else 0.0
+
+
+def _semantic_content_score(text: str, intent: Intent) -> float:
+    if not intent.primary_terms or not text.strip():
+        return 0.0
+    backend = resolve_semantic_vector_backend()
+    query_text = " ".join(intent.primary_terms)
+    score = backend.score(backend.embed(query_text), backend.embed(text))
+    return max(0.0, min(1.0, score))
+
 
 # Defaults — override via ScorerConfig to match your domain and retrieval targets.
 DEFAULT_NOISE_DOMAINS: frozenset[str] = frozenset({
@@ -325,8 +383,12 @@ class QualificationScorer:
 
     @staticmethod
     def _content_match(text: str, intent: Intent) -> float:
-        hits = sum(1 for t in intent.primary_terms if t.lower() in text)
-        return min(1.0, hits / max(len(intent.primary_terms), 1))
+        query_tokens = _tokenize(" ".join(intent.primary_terms))
+        bm25_score = _bm25_tf_saturation(_tokenize(text), query_tokens)
+        semantic_score = _semantic_content_score(text, intent)
+        return round(
+            _CONTENT_MATCH_ALPHA * bm25_score + (1 - _CONTENT_MATCH_ALPHA) * semantic_score, 6
+        )
 
     @staticmethod
     def _contact_completeness(result: UnifiedResult) -> float:

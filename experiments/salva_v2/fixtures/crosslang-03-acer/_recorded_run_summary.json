@@ -1,0 +1,139 @@
+{
+  "task_id": "crosslang-03-acer",
+  "entities": [
+    {
+      "title": "宏碁 - 維基百科，自由的百科全書",
+      "source_urls": [
+        "https://zh.wikipedia.org/zh-tw/宏碁"
+      ],
+      "score": 0.095,
+      "confidence": 0.095
+    },
+    {
+      "title": "宏碁 - 維基百科，自由的百科全書",
+      "source_urls": [
+        "https://zh.wikipedia.org/zh-tw/宏碁股份有限公司"
+      ],
+      "score": 0.095,
+      "confidence": 0.095
+    },
+    {
+      "title": "施振榮- 維基百科，自由的百科全書",
+      "source_urls": [
+        "https://zh.wikipedia.org/zh-tw/施振榮"
+      ],
+      "score": 0.095,
+      "confidence": 0.095
+    },
+    {
+      "title": "宏碁",
+      "source_urls": [
+        "https://tw.linkedin.com/company/acer"
+      ],
+      "score": 0.4032,
+      "confidence": 0.4032
+    },
+    {
+      "title": "Acer's early success story in Taiwan - Facebook",
+      "source_urls": [
+        "https://www.facebook.com/groups/1974693462806123/posts/4142626046012843"
+      ],
+      "score": 0.3693,
+      "confidence": 0.3693
+    },
+    {
+      "title": "英特爾與宏碁智醫透過AI PC將眼部病變檢測時間大幅縮短",
+      "source_urls": [
+        "https://newsroom.intel.com/zh-tw/用戶端運算/英特爾與宏碁智醫透過ai-pc將眼部病變檢測時間大幅"
+      ],
+      "score": 0.3693,
+      "confidence": 0.3693
+    },
+    {
+      "title": "蒸蒸日上—資訊產業廠商的經營發展策略分析：以宏碁集團為例",
+      "source_urls": [
+        "https://tdr.lib.ntu.edu.tw/handle/123456789/93019"
+      ],
+      "score": 0.275,
+      "confidence": 0.275
+    },
+    {
+      "title": "宏碁股份有限公司 - 統編 20828393【2026 最新】| 台灣公司資料查詢網",
+      "source_urls": [
+        "https://www.comptw.com/item/20828393"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "認識宏碁股份有限公司員工｜104人才社群 - profile.104.com.tw",
+      "source_urls": [
+        "https://profile.104.com.tw/company/9kgoqw8"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "宏碁_宏碁最新动态_IT之家",
+      "source_urls": [
+        "https://m.ithome.com/tags/宏碁"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "多元子公司貢獻營收 老虎隊亮眼 宏碁再孵新事業 - 日報 - 工商時報",
+      "source_urls": [
+        "https://www.ctee.com.tw/news/20250530700206-439901"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "宏碁笔记本排行榜评价怎么样品牌推荐-苏宁易购",
+      "source_urls": [
+        "https://m.suning.com/dgzt/0287w.html"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "《電週邊》宏碁2月營收雙升 寫疫後同期新高 | Yahoo News",
+      "source_urls": [
+        "https://tw.stock.yahoo.com/news/電週邊-宏碁2月營收雙升-寫疫後同期新高-013038108.html"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "宏碁雙11狂歡慶，豪送首爾雙人遊、iPhone 17... - ioioTimes 科技世代",
+      "source_urls": [
+        "https://www.ioiotimes.com"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "PDF 2024 宏碁永續報告書Acer Sustainability Report",
+      "source_urls": [
+        "https://www.acer.com/sustainability/uploads/files/shares/sustainability-report/2024_Acer_Sustainability_Report_zh.pdf"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "Jörg Aldenkott - CEO @ Schwarz Produktion - CrunchbaseIra Wolfson - Senior Managing Director @ Evercore Partners ...Mary Ann Azevedo, Author at Crunchbase NewsAlice Jacobs Nesselrodt - Chief Executive",
+      "source_urls": [
+        "https://www.crunchbase.com/person/jörg-aldenkott"
+      ],
+      "score": 0.3318,
+      "confidence": 0.3318
+    }
+  ],
+  "meta": {
+    "qualified_count": 16,
+    "raw_count": 16,
+    "rounds": 3,
+    "domain": "companies"
+  }
+}

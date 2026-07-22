@@ -48,15 +48,16 @@ def persist_discovery_run(
     run_id = f"run:{uuid.uuid4()}"
     now = datetime.now(UTC).isoformat()
     plugin_reports = meta.get("plugin_reports", [])
+    tenant_id = _resolve_tenant_id(request.tenant_id, meta)
 
     with get_conn(path) as conn:
         conn.execute(
             """
             INSERT INTO discovery_runs (
                 run_id, objective, output_profile, project_id, campaign_id, continuation_id,
-                persistence_mode, request_json, entities_json, relations_json,
+                tenant_id, persistence_mode, request_json, entities_json, relations_json,
                 meta_json, created_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 run_id,
@@ -65,6 +66,7 @@ def persist_discovery_run(
                 request.execution.project_id,
                 request.execution.campaign_id,
                 request.execution.continuation_id,
+                tenant_id,
                 request.execution.persistence,
                 request.model_dump_json(),
                 json.dumps([entity.model_dump(mode="json") for entity in entities], ensure_ascii=False),
@@ -384,6 +386,34 @@ def persist_discovery_run(
             )
 
     return run_id
+
+
+def _resolve_tenant_id(request_tenant_id: str | None, meta: dict[str, Any]) -> str | None:
+    if request_tenant_id and request_tenant_id.strip():
+        return request_tenant_id.strip()
+    meta_tenant = meta.get("tenant_id")
+    if isinstance(meta_tenant, str) and meta_tenant.strip():
+        return meta_tenant.strip()
+    return None
+
+
+def count_runs_for_tenant(
+    tenant_id: str,
+    since: datetime,
+    path: str = DEFAULT_DB_PATH,
+) -> int:
+    """Count discovery_runs for a tenant within a time window via indexed SQL COUNT.
+
+    Used by quota window evaluation -- unlike list_runs(), this is not subject to
+    a default row-limit, so it never undercounts once total run volume exceeds
+    list_runs' pagination default.
+    """
+    with get_conn(path) as conn:
+        row = conn.execute(
+            "SELECT COUNT(*) FROM discovery_runs WHERE tenant_id = ? AND created_at >= ?",
+            (tenant_id, since.isoformat()),
+        ).fetchone()
+    return int(row[0])
 
 
 def list_runs(

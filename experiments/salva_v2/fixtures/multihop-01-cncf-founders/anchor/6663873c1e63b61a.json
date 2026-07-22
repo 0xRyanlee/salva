@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-01-cncf-founders",
+  "strategy": "anchor",
+  "query": "CNCF founding members Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:29:42.649613+00:00",
+  "results": [
+    {
+      "title": "Cloud Native Computing Foundation Announces AT&T as... | CNCF",
+      "url": "https://www.cncf.io/announcements/2021/02/02/cloud-native-computing-foundation-announces-att-as-platinum-member/",
+      "snippet": "Global telecommunications leader doubles down on commitment to the cloud native ecosystem and telecom innovation SAN FRANCISCO, Calif. – Feb 2, 2021 – The Cloud Native Computing Foundation® (CNCF®)…",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF founding member explains why customers are... - SiliconANGLE",
+      "url": "https://siliconangle.com/2020/11/20/cncf-founder-explains-why-customers-are-as-crucial-as-tech-in-agile-it-kubecon/",
+      "snippet": "Shift left and then iterate already. Customers and users are actually often quite eager to provide feedback. Owens knows this, because, since day one, the CNCF has actively encouraged end users to get involved in and contribute to projects.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) Guide: Projects, Pricing...",
+      "url": "https://machinecircuit.com/cloud-native-computing-foundation-cncf-guide-projects-pricing-benefits/",
+      "snippet": "Founded in 2015 under the Linux Foundation, CNCF has become the driving force behind many of the most important open-source projects in cloud computing. In this guide, we’ll explore CNCF in detail—its mission, projects, membership benefits, pricing, and future outlook.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF Strengthens Partnership with Broadcom as a Platinum Member...",
+      "url": "https://au.finance.yahoo.com/news/cncf-strengthens-partnership-broadcom-platinum-160000713.html",
+      "snippet": "CNCF Platinum membership reinforces a shared commitment to open source collaboration, vendor-neutral innovation and long-term ecosystem sustainability.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Open Source and Vendor Lock-In - cloud13.ch",
+      "url": "https://www.cloud13.ch/2023/01/12/open-source-and-vendor-lock-in/",
+      "snippet": "Founding CNCF members include companies like Google, Red Hat, Intel, Cisco, IBM, and VMware. Currently, the CNCF has over 167k project contributors, over 800 members, and more than 130 certified Kubernetes distributions and platforms.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Giants Form Foundation to Drive Container Interoperability",
+      "url": "https://www.datacenterknowledge.com/business/cloud-giants-form-foundation-to-drive-container-interoperability",
+      "snippet": "Founding CNCF members include Box, Cisco, CoreOS, Cycle Computing, Docker, eBay, Goldman Sachs, Google, Huawei, IBM, Intel, Joyent, Mesosphere, Twitter, Switch Supernap, Univa, VMware, and Weaveworks. In addition, Chanezon noted, the CNCF is still open to recruiting...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "A Deep Understanding of Cloud Native... - Alibaba Cloud Community",
+      "url": "https://www.alibabacloud.com/blog/a-deep-understanding-of-cloud-native-technology-and-application_596273",
+      "snippet": "In 2015, the Cloud Native Computing Foundation (CNCF) was founded. CNCF originally defined four characteristics of cloud-native architectures: containerized encapsulation, automated management, and microservices.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud-Based Services",
+      "url": "https://ijcnis.org/index.php/ijcnis/article/download/8045/2224",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) plays a pivotal role in standardizing. and promoting cloud-native technologies, fostering a collaborative ecosystem where enterprises, startups, and individual developers. contribute to the advancement of cloud infrastructure.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CLOUD NATIVE COMPUTING FOUNDATION Cloud Native Updates Ch",
+      "url": "https://events.static.linuxfound.org/sites/events/files/slides/CNCF+Keynote-+OSS+EU+2017.pdf",
+      "snippet": "CNCF Founded* in Mid 2015: 22 Members.Cloud native computing foundation. 141 Members (~2 years, 6x+ growth) Platinum Members. CISCO. docker.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Leading in Cloud Native, Huawei Cloud Unleashes... - mid-east.info",
+      "url": "https://mid-east.info/leading-in-cloud-native-huawei-cloud-unleashes-digital-with-10-new-services/",
+      "snippet": "Huawei Cloud marks its presence with innovations in native technologies. At this event, three cloud native products are released globally: CCE Turbo for container engine and UCS for ubiquitous cloud native.In 2015, Huawei became the only CNCF founding member from Asia.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

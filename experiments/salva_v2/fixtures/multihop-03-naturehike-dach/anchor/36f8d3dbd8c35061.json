@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-03-naturehike-dach",
+  "strategy": "anchor",
+  "query": "DACH distributor Germany, Austria, Switzerland (DACH)",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:30:52.811415+00:00",
+  "results": [
+    {
+      "title": "Dach Medical Group - a member of AddLife Group",
+      "url": "https://www.dach-medical-group.com/en/home.html",
+      "snippet": "The DACH Medical Group represents and sells highly developed, procedure-facilitating medical devices from selected international manufacturers in Germany, Austria and Switzerland.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "LKQ DACH | Automotive Aftermarket Leader in DACH Region",
+      "url": "https://www.lkqdach.lkqeurope.com/en",
+      "snippet": "Discover LKQ DACH - your reliable partner for automotive parts, workshop equipment and smart workshop solutions in Germany, Austria and Switzerland.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Dach Medical Group - a member of AddLife Group",
+      "url": "https://www.dach-medical-group.com/",
+      "snippet": "Die DACH Medical Group Holding AG repräsentiert und vertreibt hochentwickelte, verfahrenserleichternde Medizinprodukte von ausgewählten internationalen Herstellern in Deutschland, Österreich und der Schweiz.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Partner Brands - Distribution Made Different | DACH B2B Distributor",
+      "url": "https://www.partnerbrands.de/",
+      "snippet": "Partner Brands - Premium B2B distributor for the DACH region. We help international brands enter Germany, Austria, and Switzerland through major retailers. Distribution made different.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "DACH Medical Group Holding AG - Distributor of Medical Devices",
+      "url": "https://www.medical-xprt.com/companies/dach-medical-group-holding-ag-126766",
+      "snippet": "The DACH Medical Group Holding AG is a medical device distribution company, dedicated to the distribution of medical devices in the markets of Germany, Austria and Switzerland.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Schutzkleidung online kaufen - DACH-Germany.de",
+      "url": "https://www.dach-germany.de/",
+      "snippet": "Schutzkleidung für Medizin, Pharma, Labor und Industrie: Made in Germany nachhaltig produziert höchste Sicherheits-Standards Jetzt günstig on…",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Winterhalter Trading | DACH Import & Distribution",
+      "url": "https://www.winterhaltertrading.com/",
+      "snippet": "Ready to enter the DACH market? For manufacturers, suppliers and brand owners looking for support with import, distribution or market entry in Germany, Austria and Switzerland.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "DACH Market Entry Guide 2026: Germany, Austria & Switzerland",
+      "url": "https://trademarkbuysale.com/dach-market-entry-guide/",
+      "snippet": "Entering the DACH market in 2026? Complete guide covering Germany, Austria & Switzerland — company formation, trademark strategy, tax, e-commerce & VAT.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CORUM Distributor Change: Barentz to Serve DACH & Eastern Europe - LinkedIn",
+      "url": "https://www.linkedin.com/posts/corum-inc-tw_change-of-distributors-announcement-dach-activity-7444648272889217024-J3wR",
+      "snippet": "Change of Distributors Announcement - DACH & Eastern Europe Dear Valued Customers and Partners, CORUM would like to inform you of an upcoming adjustment to our distribution structure in the DACH ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "· DEG - Alles für das Dach eG",
+      "url": "https://www.deg-dach.de/",
+      "snippet": "Die DEG ist Europas stärkster Fachhändler für die Bedachungsbranche. Bei uns gibt es »Alles für das Dach« und weil wir es können, ist es schon morg...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

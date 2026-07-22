@@ -1,0 +1,8 @@
+{
+  "task_id": "multihop-03-naturehike-dach",
+  "strategy": "pirate",
+  "query": "(filetype:ppt OR filetype:pptx) \"Naturehike distributor\"",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:31:15.183203+00:00",
+  "results": []
+}

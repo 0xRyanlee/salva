@@ -1,0 +1,79 @@
+{
+  "task_id": "single-04-mediatek",
+  "strategy": "dive",
+  "query": "\"MediaTek\" TW -blog -museum -review -job -news -report",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:26:08.416211+00:00",
+  "results": [
+    {
+      "title": "聯發科技 - 維基百科，自由的百科全書",
+      "url": "https://zh.wikipedia.org/zh-tw/MediaTek",
+      "snippet": "MediaTek Wireless FZ-LLC （杜拜）. MediaTek Bangalore Private Limited（印度）. MediaTek India Technology Pvt. Ltd （印度）.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Taiwan 聯發科技 - YouTube",
+      "url": "https://www.youtube.com/channel/UC6rXCwHK_IAwV5IjIpJyquQ",
+      "snippet": "MediaTek Taiwan 聯發科技. @mediatektaiwan7171. • 2,57 тыс. подписчиков • 74 видео.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek | MediaTek Helio Smartphones, IoT, Automotive...",
+      "url": "https://web.archive.org/web/20180314132536/https://www.mediatek.tw/products/smartphones/mediatek-helio-p60",
+      "snippet": "MediaTek semiconductor products includes Helio smartphones, tablets, IoT, Automotive, Wi-Fi & 4G LTE connectivity and home entertainment.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek 硬體工程師薪資 在Taiwan| NT$1.85M-NT... | Levels.fyi",
+      "url": "https://www.levels.fyi/zh-tw/companies/mediatek/salaries/hardware-engineer/locations/taiwan",
+      "snippet": "MediaTek 的 硬體工程師 職位 in Taiwan回報的年度總薪酬中位數為 NT$2,381,299。 How can I negotiate a higher 硬體工程師 offer at MediaTek?",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "mediatek.tw 競爭對手 - 熱門網站如 mediatek.tw | Similarweb",
+      "url": "https://www.similarweb.com/zh-tw/website/mediatek.tw/competitors/",
+      "snippet": "mediatek.tw 的前十大競爭對手.與 mediatek.tw 相似度排名第二的網站是 manhung.tech，緊隨其後位居前三的是 16rd.com。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "2454.TW - MediaTek Inc.: Performance & Analysis | PortfoliosLab",
+      "url": "https://portfolioslab.com/symbol/2454.TW",
+      "snippet": "The table below present risk-adjusted performance metrics for MediaTek Inc. (2454.TW) and compare them to S&P 500 Index. Values are calculated on a 1-year rolling basis and updated daily.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Inc. (2454.TW), калькулятор онлайн, конвертер",
+      "url": "https://www.calc.ru/2454.TW.html",
+      "snippet": "2454.TW - это тикер или символ акций MediaTek Inc.. Вы можете купить или продать акции MediaTek Inc. на фондовой бирже Тайваньская фондовая биржа.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek (Taiwan) : Acquisition of MStar Semiconductor (Taiwan)...",
+      "url": "https://research.ftserussell.com/products/index-notices/home/getnotice/?id=335930",
+      "snippet": "MediaTek (Taiwan, 6372480) will remain in the index with an increased shares in issue total of 1,569,513,598* and an unchanged investability weighting of 93%.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電3奈米、第二代全大核！ 聯發科AI旗艦晶片天璣9400發表- SOGI...",
+      "url": "https://www.sogi.com.tw/articles/mediatek/6263140",
+      "snippet": "速引擎，且支援 MediaTek Frame Rate Converter（MFRC 2.0）、超解析度（Super Resolution Technology）等技術，打造出流暢遊戲、極致畫質與節省功耗的視覺體驗。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台湾地区 | 联发科技",
+      "url": "https://corp.mediatek.cn/about/office-locations/mediatek-tw-offices",
+      "snippet": "MediaTek. 简体中文.5F, No.5, Tai-Yuen 1st St., Chupei City 302, Hsinchu county, Taiwan.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

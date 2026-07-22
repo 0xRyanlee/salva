@@ -1,0 +1,79 @@
+{
+  "task_id": "single-04-mediatek",
+  "strategy": "anchor",
+  "query": "MediaTek filetype:pdf",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:26:31.865770+00:00",
+  "results": [
+    {
+      "title": "February 4, 2026 - MediaTek",
+      "url": "https://www.mediatek.com/hubfs/MediaTek+Assets/Pdfs/Quarterly+Earnings+Release/2025/Quarterly+Earnings+Release-2025Q4/Press+Release.pdf?hsLang=en",
+      "snippet": "Feb 4, 2026 · MediaTek Inc. Reports Fourth-Quarter and Full-Year 2025 Consolidated Results tal information. Non-TIFRS financial information should be considered in addition to, not as a substitute for, TIFRS finan ial information. Earnings distribution is made in accordance with financial st tement TIFRS.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Enter Document title here - MediaTek",
+      "url": "https://cdn-www.mediatek.com/posts/2023-English-Annual-Report_Final.pdf",
+      "snippet": "MediaTek will continue to invest in the development of key technologies, providing optimized processor architectures to meet the increasing demand for computing and the improvement of data transmission speeds.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Inc. and MediaTek USA Inc. - downloads.regulations.gov",
+      "url": "https://downloads.regulations.gov/TREAS-DO-2026-0067-0043/attachment_1.pdf",
+      "snippet": "MediaTek welcomes the opportunity to provide the U.S. Department of the Treasury’s Office of Investment Security with input to inform how the Committee on Foreign Investment in the United States (CFIUS) may streamline aspects of its foreign investment review process, both through the Known Investor Program and more broadly, while maintaining ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Dimensity 720",
+      "url": "https://mediatek-marketing.files.svdcdn.com/production/documents/MediaTek-Dimensity-720-Product-Brief-PDFMD720PB-0720.pdf?dm=1684470668",
+      "snippet": "With innate energy-efficient innovations in an ultra-small 7nm SoC, the MediaTek Dimensity 720 is the most efficient 5G chip in its class. In addition to a fully-integrated 5G modem, MediaTek 5G UltraSave provides a range of extra power-saving technologies.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Download MediaTek DA File for all models (all versions)",
+      "url": "https://androidmtk.com/mediatek-da-file",
+      "snippet": "Download MediaTek DA file to unlock the secure storage on the MediaTek devices that came/shipped with the enabled secure boot storage.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TFT MTK Module the Best FREE Mediatek Unlocking tool. - YouTube",
+      "url": "https://www.youtube.com/watch?v=jGhHnEUKIP4",
+      "snippet": "TFT MTK Module the Best FREE Mediatek Unlocking tool. Factory reset, FRP Reset and MI Bypass.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Mediatek (MTK) Scatter Files | Forum",
+      "url": "https://www.hovatek.com/forum/thread-12724.html",
+      "snippet": "Here is a collection of Mediatek scatter files for various chipsets. These scatter files were pulled from different devices and are not intended for you to use directly on your device.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek X20 Development",
+      "url": "https://esys.ir/images/img_Item/1100/Files/MediaTek-X20-Development-Board-Hardware-User-Manual.docx.pdf",
+      "snippet": "MediaTek X20 Development Board Hardware User Manual. Version 1.0, July 2016.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MTK Driver - Official MediaTek Driver for Windows",
+      "url": "https://mtkdriver.com/",
+      "snippet": "MTK Driver for Windows v5.1632. Download the MTK Driver, made by MediaTek. The MTK Drivers work perfectly with all MediaTek devices running Android OS.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "How to install Mediatek Driver on Windows Computer",
+      "url": "https://xiaomidriver.com/install-mediatek-driver",
+      "snippet": "Requirements: Mediatek USB Driver supports Windows Computers running on x32 or x64 bit. The Mediatek driver may or may not work on Windows XP and Vista computers.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

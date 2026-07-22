@@ -36,6 +36,7 @@ from salva_core.llm import list_llm_provider_descriptors, probe_omlx_health
 from salva_core.mode_resolver import explain_experience_plan
 from salva_core.navigation import build_mate_report, build_pilot_advice
 from salva_core.persistence import (
+    cancel_job,
     create_job,
     get_job,
     get_run,
@@ -343,6 +344,25 @@ async def jobs(
 
 @app.get("/v1/jobs/{job_id}", response_model=JobRecord)
 async def job_detail(job_id: str) -> JobRecord:
+    item = get_job(job_id)
+    if item is None:
+        raise HTTPException(status_code=404, detail="Job not found")
+    return item
+
+
+@app.post("/v1/jobs/{job_id}/cancel", response_model=JobRecord)
+async def job_cancel(job_id: str, force: Annotated[bool, Query()] = False) -> JobRecord:
+    """Cancel a queued or running job.
+
+    A queued job cancels immediately. A running job only accepts a
+    cooperative cancel (force=true): the worker checks between retrieval
+    rounds and stops there -- it is not killed mid-round.
+    """
+    ok, _status, error = cancel_job(job_id, force=force)
+    if not ok:
+        status_code = 404 if error and "not found" in error else 409
+        raise HTTPException(status_code=status_code, detail=error)
+
     item = get_job(job_id)
     if item is None:
         raise HTTPException(status_code=404, detail="Job not found")

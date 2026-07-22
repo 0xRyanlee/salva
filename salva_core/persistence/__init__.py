@@ -36,12 +36,17 @@ from .hold import (
 )
 from .jobs import (
     append_stream_event,
+    cancel_job,
     claim_next_job,
+    count_jobs_for_tenant,
     create_job,
     get_job,
     get_job_request,
+    is_cancel_requested,
     list_jobs,
     list_stream_events,
+    request_cancellation,
+    touch_job_heartbeat,
     update_job_status,
 )
 from .memory import (
@@ -51,6 +56,7 @@ from .memory import (
     search_query_family_memory,
 )
 from .runs import (
+    count_runs_for_tenant,
     get_run,
     list_runs,
     persist_discovery_run,
@@ -71,18 +77,24 @@ __all__ = [
     "get_conn",
     "get_db_path_for_project",
     # runs
+    "count_runs_for_tenant",
     "get_run",
     "list_runs",
     "persist_discovery_run",
     "update_run_meta",
     # jobs
     "append_stream_event",
+    "cancel_job",
     "claim_next_job",
+    "count_jobs_for_tenant",
     "create_job",
     "get_job",
     "get_job_request",
+    "is_cancel_requested",
     "list_jobs",
     "list_stream_events",
+    "request_cancellation",
+    "touch_job_heartbeat",
     "update_job_status",
     # telemetry
     "list_plugin_reports",

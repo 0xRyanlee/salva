@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-06-advantech-cloud",
+  "strategy": "anchor",
+  "query": "Advantech Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:32:31.988554+00:00",
+  "results": [
+    {
+      "title": "Advantech Co-Creating the Future of the IoT World",
+      "url": "https://www.advantech.com/en-us",
+      "snippet": "To promote IoT, big data, and artificial intelligence, Advantech develops IoT hardware and software solutions with edge computing intelligence and WISE-PaaS core software to assist business partners and clients in connecting their industrial systems.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Global Services",
+      "url": "https://www.advantech.com/en-us/ags",
+      "snippet": "Advantech's ability to provide assistance and solutions to its customers worldwide, regardless of location or time zone. It includes a range of services such as technical support, troubleshooting, product inquiries, and after-sales service.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech | Service Center",
+      "url": "https://campaign.advantech.online/en/global/network-security/sd-wan-solution/serviceCenter.html",
+      "snippet": "We offers 24/7 global technical support through various channels such as email, hotline calls, support website, and online chat. We ensure fast local delivery worldwide through centralized manufacturing, local buffer storage, and localized production and support services.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Edge Computing Platform",
+      "url": "https://campaign.advantech.online/en/global/intelligent-systems/edge-computing/",
+      "snippet": "Advantech is a leading provider of industrial PCs, offering various edge computers with stable high performance and rugged industrial design. With almost forty-year experience in the global IPC market, Advantech has diverse reliable technologies and solutions for implementing IoT and Industry 4.0, that can provide customers with application-oriented products and customization services.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Home | Advantech International",
+      "url": "https://www.advantechinternational.com/",
+      "snippet": "AdvanTech International is a trusted leader in providing innovative component solutions across the Mobility and Automation sectors. Our focus on quality, technology and customer satisfaction drives our mission to deliver excellence.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "advantech.com",
+      "url": "http://advantech.com/",
+      "snippet": "Скачать Advantech Serial Device Server Configuration Utility.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Global Services - Advantech",
+      "url": "https://adv-www-jp.azurewebsites.net/en/ags",
+      "snippet": "Supported by four logistics centers located in Taiwan, China, Europe, and the United States, Advantech’s global service network offers an extensive spectrum of services that...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "IoT Company - Advantech - Global Lighting Forum",
+      "url": "https://www.shine.lighting/advantech/",
+      "snippet": "Advantech’s corporate vision is to enable an intelligent planet. The company is a global leader in the fields of IoT intelligent systems and embedded platforms.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Global 2025 Company Profile: Valuation... | PitchBook",
+      "url": "https://pitchbook.com/profiles/company/66126-88",
+      "snippet": "Advantech Global. This is a profile preview from the PitchBook Platform.Advantech Global General Information. Description. Manufacturer of thin film transistors and LED displays.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech – Global Distributor of Electronic Components",
+      "url": "https://www.globalcomponents.net/active/advantech/",
+      "snippet": "Founded in 1983, Advantech has more than 5,000 employees worldwide and a global reach with teams in seven geographic regions. Advantech’s products are serviced by an extensive...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

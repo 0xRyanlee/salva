@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-05-chunghwa-telecom",
+  "strategy": "radar",
+  "query": "中華電信 founded TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:29:01.230313+00:00",
+  "results": [
+    {
+      "title": "中華電信 - 維基百科，自由的百科全書",
+      "url": "https://zh.wikipedia.org/zh-tw/中華電信",
+      "snippet": "中華電信 （簡稱 中華電 、 CHT）是 臺灣 綜合電信服務業者 之一，前身為 交通部電信總局 的營運部門，1996年 中華民國政府 施行 電信自由化 政策，根據電信三法從交通部電信總局中 分拆 及 公司化 而來 [1][2]。 主要業務涵蓋固網通訊、行動通訊、寬頻接取與網際網路，亦以巨量資料、資安、物聯 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Chunghwa Telecom - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chunghwa_Telecom",
+      "snippet": "Chunghwa Telecom headquarters office Chunghwa Telecom Dongmen Service Center in Zhongzheng District, Taipei Chunghwa Telecom (Chinese: 中華電信; pinyin: Zhōnghuá Diànxìn; lit. 'Chinese Telecommunications'), officially Chunghwa Telecom Co., Ltd., is the largest integrated telecommunications service provider in Taiwan, [1] providing PSTN, mobile phone, and broadband services, operated by ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "關於我們 | 中華電信 CHT.com.tw",
+      "url": "https://www.cht.com.tw/zh-tw/home/cht",
+      "snippet": "關於我們,提供您中華電信關於我們相關資訊查詢。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "關於中華電信 | 中華電信友善專區 - 中華電信網路門市",
+      "url": "https://www.cht.com.tw/home/accessibility/about.html",
+      "snippet": "關於中華電信的介紹內容 本公司於民國85年7月1日由當時交通部電信總局營運部門改制成立，成立時資本額為新台幣964.77億元，主要業務涵蓋固網通信、行動通信，以及數據通信三大領域，提供語音服務、專線電路、網際網路、寬頻上網、智慧型網路、虛擬網路、電子商務、企業整合服務，以及各類 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "中華電信股份有限公司",
+      "url": "https://www.findcompany.com.tw/中華電信股份有限公司",
+      "snippet": "中華電信股份有限公司 CHUNGHWA TELECOM CO., LTD. 統編:96979933,地址:臺北市中正區信義路一段21之3號",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "中華電信 - Wikiwand",
+      "url": "https://www.wikiwand.com/zh-tw/中華電信",
+      "snippet": "中華電信（簡稱中華電、CHT）是臺灣綜合電信服務業者之一，前身為交通部電信總局的營運部門，1996年中華民國政府施行電信自由化政策，根據電信三法從交通部電信總局中分拆及公司化而來。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "中華電信股份有限公司-企業專頁 - ict.teema.org.tw",
+      "url": "https://ict.teema.org.tw/company/profile.asp?MENO=10&offer=1",
+      "snippet": "中華電信股份有限公司是中華民國的電信業者，前身為交通部電信總局的營運部門，1996年因中華民國政府施行電信自由化政策，根據電信三法從交通部電信總局中分拆及公司化而來，其業務範圍涵蓋固網電信、行動通信及數據通信等。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "中華電信:中華電信於民國85年7月1日由當時交通部、電信總局營運部門改制 -百科知識中文網",
+      "url": "https://www.jendow.com.tw/wiki/中華電信",
+      "snippet": "中華電信於民國85年7月1日由當時交通部、電信總局營運部門改制成立，主要業務涵蓋固網通信、行動通信，以及數據通信三大領域，提供語音服務、專線電路、網際網路、寬頻上網、智慧型網路、虛擬網路、電子商務、企業整合服務，以及各類加值服務，系國內營運經驗最豐富、規模最大之綜合 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "中華電信歷史 - class.vbird.tw",
+      "url": "https://class.vbird.tw/~4040n053/web0/ct/5-2.html",
+      "snippet": "中華電信歷史 中華民國的電信服務事業原由交通部電信總局專營。為開放電信產業，中華民國政府自1980年代後期開始推動「電信自由化」政策，逐步將電信事業開放予民間企業經營。而在電信自由化的計畫當中，最重要的即是電信事業的「政企分離」，將電信事業的管理與經營脫鉤。 1996年7月1日 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "中華電 (2412.TW) 基本資料 - Yahoo股市",
+      "url": "https://tw.stock.yahoo.com/quote/2412.TW/profile",
+      "snippet": "中華電(2412.TW)，Yahoo股市 Yahoo奇摩股市提供公司基本資料、統一編號、股務相關基本資料、實收資本額、普通股數、特別股、變更、與重要行事曆如董事會、股東常會、除權日、除息日等資訊。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

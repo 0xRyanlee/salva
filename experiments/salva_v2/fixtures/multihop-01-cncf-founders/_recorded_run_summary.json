@@ -1,0 +1,83 @@
+{
+  "task_id": "multihop-01-cncf-founders",
+  "entities": [
+    {
+      "title": "Cloud Native Computing Foundation Announces AT&T as... | CNCF",
+      "source_urls": [
+        "https://www.cncf.io/announcements/2021/02/02/cloud-native-computing-foundation-announces-att-as-platinum-member"
+      ],
+      "score": 0.4043,
+      "confidence": 0.4043
+    },
+    {
+      "title": "CNCF founding member explains why customers are... - SiliconANGLE",
+      "source_urls": [
+        "https://siliconangle.com/2020/11/20/cncf-founder-explains-why-customers-are-as-crucial-as-tech-in-agile-it-kubecon"
+      ],
+      "score": 0.1738,
+      "confidence": 0.1738
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) Guide: Projects, Pricing...",
+      "source_urls": [
+        "https://machinecircuit.com/cloud-native-computing-foundation-cncf-guide-projects-pricing-benefits"
+      ],
+      "score": 0.2376,
+      "confidence": 0.2376
+    },
+    {
+      "title": "Open Source and Vendor Lock-In - cloud13.ch",
+      "source_urls": [
+        "https://www.cloud13.ch/2023/01/12/open-source-and-vendor-lock-in"
+      ],
+      "score": 0.1818,
+      "confidence": 0.1818
+    },
+    {
+      "title": "Cloud Giants Form Foundation to Drive Container Interoperability",
+      "source_urls": [
+        "https://www.datacenterknowledge.com/business/cloud-giants-form-foundation-to-drive-container-interoperability"
+      ],
+      "score": 0.2253,
+      "confidence": 0.2253
+    },
+    {
+      "title": "South Valley Journal | Educating | Entertaining | Informing",
+      "source_urls": [
+        "https://pr.rivertonjournal.com/article/Over-30-New-Members-Join-the-Cloud-Native-Computing-Foundation"
+      ],
+      "score": 0.222,
+      "confidence": 0.222
+    },
+    {
+      "title": "Kubernetes",
+      "source_urls": [
+        "https://kubernetes.io"
+      ],
+      "score": 0.1582,
+      "confidence": 0.1582
+    },
+    {
+      "title": "Google",
+      "source_urls": [
+        "https://www.google.com"
+      ],
+      "score": 0.236,
+      "confidence": 0.236
+    },
+    {
+      "title": "云原生计算基金会cncf.vip",
+      "source_urls": [
+        "https://cncf.cc"
+      ],
+      "score": 0.195,
+      "confidence": 0.195
+    }
+  ],
+  "meta": {
+    "qualified_count": 9,
+    "raw_count": 9,
+    "rounds": 3,
+    "domain": "partnerships"
+  }
+}

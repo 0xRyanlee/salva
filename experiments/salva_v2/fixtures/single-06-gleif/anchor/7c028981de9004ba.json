@@ -1,0 +1,79 @@
+{
+  "task_id": "single-06-gleif",
+  "strategy": "anchor",
+  "query": "GLEIF founded",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:12.973386+00:00",
+  "results": [
+    {
+      "title": "History - GLEIF – GLEIF",
+      "url": "https://www.gleif.org/en/about/history",
+      "snippet": "GLEIF is a not-for-profit organization created to support the implementation and use of the LEI. The GLEIF Board held its inaugural meeting in Zurich, Switzerland, on 26 June 2014.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "10 Years of GLEIF - This is GLEIF - GLEIF – GLEIF",
+      "url": "https://www.gleif.org/en/gleif-anniversary/",
+      "snippet": "It was within this context that the Global Legal Entity Identifier Foundation (GLEIF) was born. Founded on the mission to reinstate trust and transparency in global financial transactions, GLEIF has spent a decade innovating and empowering businesses worldwide.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF | Global Legal Entity Identifier Foundation",
+      "url": "https://www.lei-identifier.com/gleif/",
+      "snippet": "What is GLEIF, and when was it founded? The Global Legal Entity Identifier Foundation (GLEIF) was established in June 2014 by the Financial Stability Board.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF | Global Legal Entity Identifier Foundation - LEI Register India",
+      "url": "https://www.legalentityidentifier.in/gleif/",
+      "snippet": "GLEIF established in 2014, by the Financial Stability Board. The foundations' overhaul is to ensure the operational integrity of the Global LEI System.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF (Global Legal Entity Identifier Foundation)",
+      "url": "https://regulatorik.ai/en/framework/gleif",
+      "snippet": "The Global Legal Entity Identifier Foundation (GLEIF) is a non-profit organisation founded in Basel, Switzerland in 2014 that oversees the global system for issuing and managing Legal Entity Identifiers (LEIs). It operates under the oversight of the LEI Regulatory Oversight Committee (LEI ROC).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF | Global Legal Entity Identifier Foundation | LEI Register",
+      "url": "https://www.leicode.sg/gleif/",
+      "snippet": "What is GLEIF and when was it founded? The Global Legal Entity Identifier Foundation (GLEIF) was established in June 2014, by the Financial Stability Board.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "What Is GLEIF and How the Global LEI System Works",
+      "url": "https://leiprices.com/what-is-gleif-and-how-the-global-lei-system-works/",
+      "snippet": "GLEIF stands for the Global Legal Entity Identifier Foundation. It was established in June 2014 as a not-for-profit organization to support the implementation and use of the LEI. That timing matters because the LEI did not appear as a standalone market product.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "About GLEIF",
+      "url": "https://stratml.us/pdfs/GLEIF.pdf",
+      "snippet": "Established by the Financial Stability Board in June 2014, the Global Legal Entity Identifier Foundation (GLEIF) is tasked to support the implementation and use of the Legal Entity Identifier (LEI).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Who are the GLEIF (Global Legal Entity Identifier Foundation)? | Customer Knowledge Base - LEI Worldwide",
+      "url": "https://support.leiworldwide.com/kb/guide/en/who-are-the-gleif-global-legal-entity-identifier-foundation-QNGL2SJOpZ/Steps/3153370",
+      "snippet": "Established by the Financial Stability Board (fsb) in June 2014, the Global Legal Entity Identifier Foundation (GLEIF) has the role of supporting the implementation and use of the Legal Entity Identifier (LEI).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "",
+      "url": "/clev?event=StartpageResultClick&sc=AR5cSbelfw8iPmO2JiRXNHkRpttBZ2Oxr8HdIi5ZND6k2I9cNNuLbt14iuDh6sBmuN3KKKlwZ5zvWB6WCcWNr5trWWCvLL&payload={\"bdsSessionId\":\"6c17fe2027f949f5b4b59603ad06cf42\",\"cheqId\":\"\",\"countryCode\":\"TW\",\"deviceType\":\"mobile\",\"endpoint\":\"search.serp\",\"hasGoogleAds\":false,\"page_id\":\"zo2XeR7N43oOZPTB\",\"queryCategory\":\"web\",\"segment\":\"organic\",\"session_id\":\"oIq4yU131dZ9cf3R\",\"surface\":\"serp-web\",\"transport\":\"href-request\"}",
+      "snippet": "",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "single-04-mediatek",
+  "strategy": "radar",
+  "query": "MediaTek founded TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:26:17.647248+00:00",
+  "results": [
+    {
+      "title": "MediaTek - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/MediaTek",
+      "snippet": "MediaTek became the biggest smartphone chipset vendor with 31% market share in Q3 2020. This was assisted by its strong performance in regions such as China and India.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "聯發科技 - 維基百科，自由的百科全書",
+      "url": "https://zh.wikipedia.org/zh-tw/MediaTek",
+      "snippet": "聯發科技股份有限公司 （MediaTek Inc.，常簡稱 聯發科 或 MTK）是一家總部位於 臺灣 新竹科學園區 的 積體電路設計 公司，專注於 無線通訊 、 行動運算 、 人工智慧 與多媒體等領域的晶片設計 [1]。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Investor FAQ | Stock Ticker, Dividends & Reports",
+      "url": "https://www.mediatek.com/investor-relations/investor-relations-faq",
+      "snippet": "FAQ Corporate History When was MediaTek established? MediaTek was incorporated on May 28, 1997 in the Science-Based Industrial Park, Hsin-Chu, Taiwan. When was MediaTek listed on the Taiwan Stock Exchange? MediaTek was listed on the Taiwan Stock Exchange (TSE) on July 23, 2001 under the ticker 2454.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Inc.（An electronic technology company established in .....",
+      "url": "https://baike.baidu.com/en/item/MediaTek+Inc./945451",
+      "snippet": "MediaTek Inc. (English name: MediaTek Inc., MTK), commonly abbreviated as MediaTek, was established in May 1997. Headquartered in Hsinchu City, Taiwan Province, China, it is an enterprise primarily engaged in semiconductors and related equipment.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Inc. (2454.TW) - The Complete Story | Powering ...",
+      "url": "https://empor.top/asia/2454.TW",
+      "snippet": "Discover the complete story of MediaTek Inc. (2454.TW) - from founding to present day. Explore business strategies, financial performance, and market insights of this Taiwan company.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "About MediaTek | Empowering a Connected World",
+      "url": "https://www.mediatek.com/company/discover",
+      "snippet": "MediaTek Incorporated (TWSE: 2454) is the world’s fifth largest global fabless semiconductor company. We are market leaders in developing innovative systems-on-chip (SoC) for mobile device, home entertainment, connectivity and IoT (Internet of Things) products.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Which country is MediaTek from? - iNEWS - 資訊咖",
+      "url": "https://inf.news/en/economy/613357bf3a0d6d66619f5bf0fb0886b4.html",
+      "snippet": "May 28, 2026 · Founded in 1997, MediaTek is a company focusing on semiconductor design. The company is headquartered in Hsinchu Science Park, Taiwan, with branches in Shanghai, Shenzhen, Beijing, Taipei and other places.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "20th Anniversary | MediaTek",
+      "url": "https://i.mediatek.com/mediatek20",
+      "snippet": "MediaTek is established on Innovation 1st Road in Taiwan. 5月于台湾新竹科学园区创新一路成立. MediaTek is established on Innovation 1st Road in Taiwan. 1997.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek - LinkedIn",
+      "url": "https://www.linkedin.com/company/mediatek",
+      "snippet": "MediaTek (TWSE: 2454) is a global leader in fabless semiconductor design, providing solutions from the edge to the cloud. Powering over 2 billion connected ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Inc. Price: Quote, Forecast, Charts & News (2454.TW)",
+      "url": "https://www.perplexity.ai/finance/2454.TW",
+      "snippet": "MediaTek Inc. (TWSE: 2454) is a Taiwanese fabless semiconductor company founded in 1997 and headquartered in Hsinchu Science Park, Taiwan, specializing in ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

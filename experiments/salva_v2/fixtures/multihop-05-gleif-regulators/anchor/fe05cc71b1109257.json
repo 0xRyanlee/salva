@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-05-gleif-regulators",
+  "strategy": "anchor",
+  "query": "GLEIF regulatory body Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:31:57.369258+00:00",
+  "results": [
+    {
+      "title": "Home - GLEIF",
+      "url": "https://www.gleif.org/",
+      "snippet": "The Global LEI Index is the only global online source for open, standardized and high quality legal entity reference data. Any interested party can easily access and search the complete Legal Entity Identifier (LEI) data pool using the web-based search tool developed by GLEIF.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF (Global Legal Entity Identifier Foundation) | Regulatory ...",
+      "url": "https://regulatorik.ai/en/framework/gleif",
+      "snippet": "Summary The Global Legal Entity Identifier Foundation (GLEIF) is a non-profit organisation founded in Basel, Switzerland in 2014 that oversees the global system for issuing and managing Legal Entity Identifiers (LEIs). It operates under the oversight of the LEI Regulatory Oversight Committee (LEI ROC).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Who are the GLEIF (Global Legal Entity Identifier Foundation ...",
+      "url": "https://support.leiworldwide.com/kb/guide/en/who-are-the-gleif-global-legal-entity-identifier-foundation-QNGL2SJOpZ/Steps/3153370",
+      "snippet": "Established by the Financial Stability Board (fsb) in June 2014, the Global Legal Entity Identifier Foundation (GLEIF) has the role of supporting the implementation and use of the Legal Entity Identifier (LEI). The foundation is backed and overseen by the Regulatory Oversight Committee, representing public authorities from around the globe that have come together to jointly drive forward ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "What Is GLEIF? (Global Legal Entity Identifier Foundation)",
+      "url": "https://www.identity.org/what-is-gleif/",
+      "snippet": "The Regulatory Oversight Committee (ROC): The ROC serves as the overarching governance body for the LEI system, providing strategic direction, establishing global policies, and ensuring adherence to international standards.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "What Is GLEIF and How the Global LEI System Works",
+      "url": "https://leiprices.com/what-is-gleif-and-how-the-global-lei-system-works/",
+      "snippet": "What is GLEIF? Learn how the Global Legal Entity Identifier Foundation runs the LEI system, accredits issuers, and provides open data.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF | Global Legal Entity Identifier Foundation | LEI Register",
+      "url": "https://www.lei-identifier.com/gleif/",
+      "snippet": "The Global Legal Entity Identifier Foundation (GLEIF) was established in June 2014 by the Financial Stability Board. The Regulatory Oversight Committee supports and looks after the foundation, an organization representing public authorities from around the world that has joined to drive transparency within the global financial markets.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF | Global Legal Entity Identifier Foundation - LEI Register",
+      "url": "https://www.legalidentifier.com/gleif/",
+      "snippet": "The Global Legal Entity Identifier Foundation (GLEIF) was established in June 2014 by the Financial Stability Board. The Regulatory Oversight Committee supports and looks after the foundation, an organization representing public authorities worldwide that has joined to drive transparency within the global financial markets.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Who and what is the GLEIF? | Ubisecure RapidLEI",
+      "url": "https://rapidlei.com/knowledge-base/the-gleif/",
+      "snippet": "The GLEIF (Global LEI Foundation) is a not-for-profit body established by the Financial Stability Board (FSB) and overseen by the LEI Regulatory Oversight Committee (LEI ROC).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "What Is GLEIF? The Foundation Behind Every LEI | Trusted LEI",
+      "url": "https://trustedlei.eu/regulatory-updates/what-is-gleif",
+      "snippet": "Behind every LEI code stands a single global body: GLEIF, the Global Legal Entity Identifier Foundation. If the LEI is the identifier, GLEIF is the organisation that makes sure it means the same thing everywhere in the world.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF GLEIF - stratml.us",
+      "url": "https://stratml.us/pdfs/GLEIF.pdf",
+      "snippet": "About GLEIF Established by the Financial Stability Board in June 2014, the Global Legal Entity Identifier Foundation (GLEIF) is tasked to support the implementation and use of the Legal Entity Identifier (LEI). The foundation is backed and overseen by the LEI Regulatory Oversight Committee, representing public authorities from around the globe that have come together to jointly drive forward ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-05-chunghwa-telecom",
+  "strategy": "dive",
+  "query": "\"中華電信\" TW -blog -museum -review -job -news -report",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:29:00.271344+00:00",
+  "results": [
+    {
+      "title": "byone.tkb.com.tw/upload/file/examList/112中華電信招考簡章(1129...)",
+      "url": "https://byone.tkb.com.tw/upload/file/examList/112中華電信招考簡章(1129修訂版).pdf",
+      "snippet": "錄取人員. 網路查詢甄試結果. 112 年 3 月 1 日(三)14:00 名單由中華電信股份有限公司. 辦理後續進用事宜。 註本簡章各項內容若有變更以台灣金融研訓院及中華電信股份有限公司網站最新公告為準。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "土城門市 三星 A36 8G/256G 攜碼中華電信5G月租799... | Yahoo拍賣",
+      "url": "https://tw.bid.yahoo.com/item/101646413190",
+      "snippet": "中華精選999(30)吃到飽.門號專案手機. Samsung 三星. 中華電信.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "[情報] 中華電信 升速500m 1099元 - 看板 Lifeismoney - 批踢踢實業坊",
+      "url": "https://www.ptt.cc/bbs/Lifeismoney/M.1654339159.A.B37.html",
+      "snippet": "→ jojomaan: 跨戶共用 中華不是會抓嗎？",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "cht.com.tw/home/cht/-/media/web/pdf/investors/shareholder-services/ir...",
+      "url": "https://www.cht.com.tw/home/cht/-/media/web/pdf/investors/shareholder-services/ir-calendar/20241106/3113q3-2024-consolidated-financial-statements-tifrssch.pdf?sc_lang=zh-tw",
+      "snippet": "中華電信公司現有之業務係由原電信總局辦理。 原電信 總局係於 32 年由交通部成立以促進電信建設之發展並制定電信政策為 目的。司 領航電信股份有限公司 Chief International Corp. 上海是泰網絡科技有限公司 中華精測科技股份有限公司.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "fountmedia.io/article/271696",
+      "url": "https://www.fountmedia.io/article/271696",
+      "snippet": "中華電信全區網路監控中心. GNOC.中華電信啟動七股濕地AI保育3.0！",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "bnext.com.tw/article/11373/BN-ARTICLE-11373",
+      "url": "https://www.bnext.com.tw/article/11373/BN-ARTICLE-11373",
+      "snippet": "圖／ 中華電信5G加速器. 中華電信5G加速器：不只給資源，更幫新創找到市場.圖／ 中華電信5G加速器. 不只拚 AI，更提前布局 6G！ 中華電信新增「海地星空特別獎」.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "時戳服務系統技術規範政策",
+      "url": "https://eca.hinet.net/download/eTSAPS-v1.1.pdf",
+      "snippet": "中華電信股份有限公司 iii. eTSAPS.本時戳服務機構為達成中華電信公開金鑰基礎建設時戳政策之需 求並支援合格電子簽章使用時戳服務(也就是和 REGULATION (EU) No 910/2014 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 23. July 2014 on electronic identification and...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "三度蟬聯 Frost & Sullivan... | 哈佛商業評論・與世界一流管理接軌",
+      "url": "https://www.hbrtaiwan.com/article/23488/cht",
+      "snippet": "全球知名顧問公司 Frost & Sullivan 近日頒發《2024年亞太最佳實踐獎》(2024 Frost & Sullivan Best Practices Awards)，中華電信三度蟬聯「台灣年度最佳電信服務業者獎」(Taiwan Telecom Company of the Year Award)及「台灣 5G 服.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "forum.gamer.com.tw/C.php?bsn=60030&snA=527050",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=60030&snA=527050",
+      "snippet": "我使用中華電信近10年.中華電信光世代100M/40M Twitter 載入速度異常. 閒聊. 中華電信光世代推雙向1G月租NT$1299，但超量會降速懲罰. 心得. TKD-Cycle8，客製化全鋁單模鍵盤，無.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Link to instagram.com",
+      "url": "https://www.instagram.com/cht_official/",
+      "snippet": "The site owner hides the web page description.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

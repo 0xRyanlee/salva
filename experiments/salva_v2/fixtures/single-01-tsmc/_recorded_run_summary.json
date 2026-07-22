@@ -1,0 +1,43 @@
+{
+  "task_id": "single-01-tsmc",
+  "entities": [
+    {
+      "title": "Question Type Single-Select Who founded TSMC | StudyX",
+      "source_urls": [
+        "https://studyx.ai/questions/4lh1s5x/question-type-single-select-who-founded-tsmc-ren-zhengfei-morris-chang-lee-byung-chull"
+      ],
+      "score": 0.4347,
+      "confidence": 0.4347
+    },
+    {
+      "title": "TSMC's Arizona fab profit margin lags behind Taiwan's | Jessie Zhu...",
+      "source_urls": [
+        "https://www.linkedin.com/posts/jessie-zhu-bab1855b_a-blogger-citing-data-from-an-industry-analysis-activity-7413619864906608640-YKRX"
+      ],
+      "score": 0.5675,
+      "confidence": 0.5675
+    },
+    {
+      "title": "Morris Chang founded TSMC — the world's most important company.",
+      "source_urls": [
+        "https://www.abc.net.au/news/2023-08-19/tsmc-the-most-important-company-in-the-world/102728172"
+      ],
+      "score": 0.4518,
+      "confidence": 0.4518
+    },
+    {
+      "title": "Crunchbase",
+      "source_urls": [
+        "https://www.crunchbase.com"
+      ],
+      "score": 0.232,
+      "confidence": 0.232
+    }
+  ],
+  "meta": {
+    "qualified_count": 4,
+    "raw_count": 4,
+    "rounds": 3,
+    "domain": "companies"
+  }
+}

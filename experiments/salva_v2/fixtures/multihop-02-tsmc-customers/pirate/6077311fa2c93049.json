@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-02-tsmc-customers",
+  "strategy": "pirate",
+  "query": "filetype:pdf \"TSMC customers\"",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:30:37.140935+00:00",
+  "results": [
+    {
+      "title": "TSMC",
+      "url": "https://investor.tsmc.com/sites/ir/annual-report/2024/2024+Annual+Report_E.pdf",
+      "snippet": "TSMC is committed to the welfare of customers, sup-pliers, employees, shareholders, and society. These stakeholders all contribute to TSMC’s success, and TSMC is dedicated to serving their best interests.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC CoWoS versus Intel EMIB Semiconductor Packaging - SemiWiki",
+      "url": "https://semiwiki.com/semiconductor-manufacturers/tsmc/371412-tsmc-cowos-versus-intel-emib-semiconductor-packaging/",
+      "snippet": "TSMC CoWoS and Intel EMIB are advanced packaging platforms designed to overcome the economic and physical limits of monolithic system...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC",
+      "url": "https://worldlypartners.com/wp-content/uploads/2025/01/TSMC.pdf",
+      "snippet": "By 2023, TSMC had grown to serve 528 customers and manufactured 11,895 products across a wide range of applications, including computing, smartphones, automotive, and other digital. 9 Fighting An Unprepared Battle – Rethinking Auto Semiconductor Strategy in An Uncertain Era.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Top 8 TSMC Customers — Ranked by Revenue Share | Ali Kamaly",
+      "url": "https://www.linkedin.com/posts/ali-kamaly_semiconductors-tsmc-foundry-activity-7347970615636570112-XI_F",
+      "snippet": "This snapshot breaks down TSMC’s largest customers by share of revenue: -> Apple (23%) The iPhone juggernaut relies on TSMC to build the world’s most advanced SoCs, from A-series to M-series chips — accounting for nearly a quarter of TSMC’s revenue alone.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Report: TSMC's Lead Time for 7nm Chips Is Still... | Tom's Hardware",
+      "url": "https://www.tomshardware.com/news/report-tsmcs-lead-time-for-7nm-chips-is-still-6-months-or-more",
+      "snippet": "TSMC said during an earnings call in July 2019 that it expected to start volume production of its 5nm chips in the first half of 2020. Some of its customers, including Apple and Huawei, are reportedly planning to use those chips in phones this year.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC Raises 2026 Budget, Adds $100B in U.S. - EE Times",
+      "url": "https://www.eetimes.com/tsmc-boosts-2026-expansion-budget-adds-100b-to-u-s-investment/",
+      "snippet": "TSMC is raising its 2026 capital budget to as much as $64 billion and adding $100 billion to its U.S. investment to meet surging AI demand.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC Just Announced Fantastic News for Nvidia... | The Motley Fool",
+      "url": "https://www.fool.com/investing/2026/07/16/tsmc-just-announced-fantastic-news-for-nvidia-shar/",
+      "snippet": "TSMC just reported quarterly earnings, and both revenue and profit blew past estimates. The company has been on a roll, with earnings soaring quarter after quarter amid the artificial intelligence (AI) boom.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC's 'Chip-for-Vaccine' Swap To Delay Integrated Circuit Chip.....",
+      "url": "https://wccftech.com/tsmcs-chip-for-vaccine-swap-to-delay-integrated-circuit-chip-production/",
+      "snippet": "Chipmaker Taiwan Semiconductor Manufacturing Company's (TSMC) bid to aid Taiwanese authoroties in prucuring vaccines has costs of its own.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Top 10 TSMC Customers Said to have Cut Orders for... | TechPowerUp",
+      "url": "https://www.techpowerup.com/302774/top-10-tsmc-customers-said-to-have-cut-orders-for-2023",
+      "snippet": "The fact that TSMC has increased its 2023 pricing by six percent should at least help offset some of the potential losses for the company, but it all depends on the demand for the rest of the year. Demand for mobile devices is down globally...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Why does Taiwan make all the chips? – Compound Semiconductor News",
+      "url": "https://www.csfusion.org/semiconductor/why-does-taiwan-make-all-the-chips/",
+      "snippet": "TSMC is the world’s largest chip maker and a vital supplier to the United States and other Western nations. Does China have a chip shortage? Chip shortages have become one of the biggest problems for automakers around the world...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

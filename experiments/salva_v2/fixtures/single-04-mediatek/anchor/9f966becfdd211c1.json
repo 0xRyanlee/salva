@@ -1,0 +1,79 @@
+{
+  "task_id": "single-04-mediatek",
+  "strategy": "anchor",
+  "query": "MediaTek",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:26:25.825133+00:00",
+  "results": [
+    {
+      "title": "MediaTek - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/MediaTek",
+      "snippet": "MediaTek Inc. (Chinese: 聯發科技股份有限公司; pinyin: Liánfā Kējì Gǔfèn Yǒuxiàn Gōngsī), sometimes informally abbreviated as MTK, is a Taiwanese fabless semiconductor company that designs and markets a range of semiconductor products, providing chips for wireless communications, high-definition television, handheld mobile devices like smartphones and tablet computers ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "List of MediaTek systems on chips - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/List_of_MediaTek_systems_on_chips",
+      "snippet": "This is a list of MediaTek processors for use in smartphones, tablets, smartwatches, IoT, Wi-Fi routers and access points, smart TVs and smartbooks.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek",
+      "url": "https://grokipedia.com/page/MediaTek",
+      "snippet": "MediaTek Incorporated (TWSE: 2454) is a Taiwanese fabless semiconductor company founded on May 28, 1997, and headquartered in Hsinchu Science Park, Hsinchu City,...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek | Home Page",
+      "url": "https://www.mediatek.com/",
+      "snippet": "MediaTek powers smarter devices with cutting-edge chipsets for smartphones, smart homes, automotive, IoT, and more. Discover innovation that connects.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek: Semiconductor Products, Technologies and Innovations",
+      "url": "https://corp.mediatek.com/index.php/",
+      "snippet": "MediaTek is a fabless semiconductor company creating pioneering products for Helio smartphones, automotive, IoT, home entertainment and mobile communications.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Inc. (2454.TW) - Yahoo Finance",
+      "url": "https://finance.yahoo.com/quote/2454.TW/",
+      "snippet": "Find the latest MediaTek Inc. (2454.TW) stock quote, history, news and other vital information to help you with your stock trading and investing.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek - LinkedIn",
+      "url": "https://www.linkedin.com/company/mediatek",
+      "snippet": "MediaTek | 549,093 followers on LinkedIn. This Chip Changes Everything | MediaTek (TWSE: 2454) is a global leader in fabless semiconductor design, providing solutions from the edge to the cloud ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek chip guide: All you need to know - Android Authority",
+      "url": "https://www.androidauthority.com/mediatek-processors-879510/",
+      "snippet": "From 5G flagship silicon to chipsets found in $100 smartphones, join us as we demystify MediaTek processors in our comprehensive chip guide.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek | PowerByMediaTek | Home page",
+      "url": "https://www.poweredbymediatek.com/",
+      "snippet": "MediaTek in Your Life Every day, new MediaTek powered products from the world's biggest brands are showing up all over the world. Take a look at what's new on the market and using our latest technology.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Inc, 2454:TAI profile - FT.com - Financial Times",
+      "url": "https://markets.ft.com/data/equities/tearsheet/profile?s=2454:TAI",
+      "snippet": "MediaTek Inc (2454:TAI) company profile with history, revenue, mergers & acquisitions, peer analysis, institutional shareholders and more.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

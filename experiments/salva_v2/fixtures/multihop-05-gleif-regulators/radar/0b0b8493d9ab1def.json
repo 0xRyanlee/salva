@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-05-gleif-regulators",
+  "strategy": "radar",
+  "query": "GLEIF partnership Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:32:04.808746+00:00",
+  "results": [
+    {
+      "title": "Home – GLEIF",
+      "url": "https://www.gleif.org/",
+      "snippet": "GLEIF – Global Legal Entity Identifier Foundation. We enable smarter, less costly and more reliable decisions about who to do business with. GLEIF AI Learn how Newsletter.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Bringing Trusted Digital Identities to Global Trade",
+      "url": "https://blog.iota.org/gleif-partnership/",
+      "snippet": "At IOTA, we’re committed to real-world assets and global trade, and this partnership with GLEIF brings trusted digital identities into supply chains to create real economic opportunity.”",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF Joins Our Global Partner Program to Expand... - Mojaloop",
+      "url": "https://mojaloop.io/gleif-joins-our-global-partner-program-to-expand-trusted-business-identity-across-borders/",
+      "snippet": "Through its partnership with Mojaloop, GLEIF is helping demonstrate that digital public goods — when applied thoughtfully — can fill crucial gaps in global infrastructure.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "#gleif #globallei #digitalidentity #theconnector | The Connector.",
+      "url": "https://www.linkedin.com/posts/jointheconnector_gleif-globallei-digitalidentity-activity-7292104532006735872-BbLF",
+      "snippet": "This partnership represents a shared commitment to innovation and excellence in legal entity identification, driving growth and trust in the global marketplace.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Gleif establishes partner programme",
+      "url": "https://www.finextra.com/pressarticle/105724/gleif-establishes-partner-programme",
+      "snippet": "GLEIF’s Partners Program creates a unique forum for data and technology vendors, financial institutions, corporates, certification authorities...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF launches global partners... - Trade Treasury Payments",
+      "url": "https://tradetreasurypayments.com/news/gleif-launches-global-partners-programme-to-advance-lei-and-vlei-adoption-across-financial-and-digital-identity-systems",
+      "snippet": "GLEIF launches global partners programme to advance LEI and vLEI adoption across financial and digital identity systems. Devanshee Dave· Reporter.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF and Finbridge Global streamline... - Securities Finance Times",
+      "url": "https://www.securitiesfinancetimes.com/securitieslendingnews/technologyarticle.php?article_id=227431",
+      "snippet": "The collaboration will allow Finbridge Global to introduce the legal entity identifier to verify the identity of listed fintech providers on the platform.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF includes CTI in Vendor & Services Providers Group",
+      "url": "https://cleartraced.com/gleif-includes-cleartraced-esg-data-directory/",
+      "snippet": "GLEIF Includes Cleartraced in Its Global Partner Solutions for the LEI Ecosystem.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "x.com/GLEIF",
+      "url": "https://x.com/GLEIF",
+      "snippet": "@GLEIF.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Chainlink partners with GLEIF to bring... | MEXC News",
+      "url": "https://www.mexc.co/news/chainlink-partners-with-gleif-to-bring-institutional-grade-on-chain-identity-to-digital-assets/115756",
+      "snippet": "GLEIF and Chainlink have partnered to provide a trusted on-chain solution for verifying the legal identities behind digital assets and smart contracts.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

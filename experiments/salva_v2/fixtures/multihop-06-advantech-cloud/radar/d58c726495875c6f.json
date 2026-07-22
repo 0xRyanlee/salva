@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-06-advantech-cloud",
+  "strategy": "radar",
+  "query": "cloud platform joint Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:32:38.116072+00:00",
+  "results": [
+    {
+      "title": "AILE Cloud - Cloud Computing Services",
+      "url": "https://aile.in/about",
+      "snippet": "CloudPlatform Global Presence. Join Our Team.Ready to get started with CloudPlatform? Join thousands of businesses that trust CloudPlatform for their cloud computing needs.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "cloud.ruijienetworks.com",
+      "url": "https://cloud.ruijienetworks.com/",
+      "snippet": "Ruijie Cloud Provide a free, safe and reliable cloud management platform...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Computing & Web Hosting | OVHcloud Ireland",
+      "url": "https://www.ovhcloud.com/en-ie/",
+      "snippet": "SNC Cloud Platform. SecNumCloud security with Public Cloud experience.Global leader in a trusted cloud. We do not sell, use or transfer your data. Choose where to store your data and the jurisdiction that protects it from our global network.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global Warfare 4 — Apply to Join",
+      "url": "https://globalwarfare.gg/apply",
+      "snippet": "Join the event. Complete the application below to secure your spot in Global Warfare 4.Before filling in the form you must join our Discord and verify your Steam account through Platform Sync.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Join DeepSeek API platform to access our AI models, developer...",
+      "url": "https://platform.deepseek.com/",
+      "snippet": "Join DeepSeek API platform to access our AI models, developer resources and API documentation.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Sberbank sign deal to develop joint cloud platform",
+      "url": "https://www.retailbankerinternational.com/news/sberbank-sign-deal-develop-joint-cloud-platform/",
+      "snippet": "With the development of this cloud platform, the company intends to provide cloud solutions to its partners and external customers. Sberbank CEO and Executive Board chairman Herman Gref said: “To build a cloud platform...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Supabase | The Postgres Development Platform",
+      "url": "https://supabase.com/",
+      "snippet": "Secure, scalable execution of AI-generated code in the cloud. Supabase empowers us to focus on innovation rather than infrastructure. It's the backbone of our platform, enabling scalability and seamless developer experiences.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Google and Blackstone launch joint cloud platform with focus on AI",
+      "url": "https://unn.ua/en/news/google-and-blackstone-launch-joint-cloud-platform-with-focus-on-ai",
+      "snippet": "Google and Blackstone will create a cloud platform based on TPU chips. Blackstone is investing $5 billion to launch 500 megawatts of capacity by 2027.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Omada Cloud Management Platform",
+      "url": "https://omada.tplinkcloud.com/",
+      "snippet": "",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Movie Tickets, Plays, Sports, Events & Cinemas nearby - BookMyShow",
+      "url": "https://in.bookmyshow.com/",
+      "snippet": "BookMyShow offers showtimes, movie tickets, reviews, trailers, concert tickets and events near Mumbai . Also features promotional offers, coupons and mobile app.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-04-foxconn",
+  "strategy": "radar",
+  "query": "鴻海 employees TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:28:48.100453+00:00",
+  "results": [
+    {
+      "title": "鴻海科技集團 - 维基百科，自由的百科全书",
+      "url": "https://zh.wikipedia.org/wiki/鴻海科技集團",
+      "snippet": "鴻海科技集團 （英語： Foxconn Technology Group）是源自 臺灣 的 跨國企業 集團，1974年創辦，以 富士康 （Foxconn）做為商標名稱。其專注於 電子產品的代工服務 （EMS），研發生產精密電氣元件、機殼、 準系統 、系統組裝、光通訊元件、液晶顯示件等3C產品上、下游產品及服務。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "關於鴻海 - 鴻海科技集團 - Hon Hai",
+      "url": "https://www.honhai.com/zh-tw/about/group-profile",
+      "snippet": "鴻海精密工業股份有限公司（臺灣證券交易所代碼：2317）於1974年肇基於臺灣，以模具為根基，逐漸發展為高科技服務企業。在電子代工服務領域（EMS）排名全球第一，市占率超過四成，範圍涵蓋消費性電子產品、雲端網路產品、電腦終端產品、元件及其他等四大產品領域。全球員工總人數季節性 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "鴻海精密工業股份有限公司｜徵才中－104人力銀行鴻海精密工業股份有限公司 | LinkedIn鴻海 (2317.TW) 公司概況及事件 - Yahoo 財經鴻海科技集團 FOXCONN－最新職缺徵才中｜Yourator 新創・數位人才求職...鴻海科技集團 - 维基百科，自由的百科全书",
+      "url": "https://www.104.com.tw/company/233rv1s",
+      "snippet": "鴻海精密工業股份有限公司（臺灣證券交易所代碼：2317）於1974年肇基於臺灣，以模具為根基，逐漸發展為高科技服務企業。在電子代工服務領域（EMS）排名全球第一，市占率超過四成，範圍涵蓋消費性電子產品、雲端網路產品、電腦終端產品、元件及其他等四大產品領域。全球員工總人數季節性 ... 鴻海精密工業股份有限公司 | 63,973 位 LinkedIn 關注者。攜手全球標竿客戶共同創造全方位智慧生活 | 鴻海精密工業股份有限公司（臺灣證券交易所代碼：2317）於1974年肇基於臺灣，以模具為根基，逐漸發展為高科技服務企業。在電子代工服務領域（EMS）排名全球第一，市占率超過四成，範圍涵蓋消費 ... +1.28% +0.37% +0.00% -0.14% +0.03% -0.28% 2317.TW 鴻海 240.50 +0.63% 摘要 新聞 圖表 統計資料 歷史數據 金融 分析 期權 持股人 Taiwan - Delayed Quote•TWD 鴻海精密工業股份有限公司（臺灣證券交易所代碼：2317）於 1974 年肇基於臺灣，以模具為根基，逐漸發展為高科技服務企業。 在電子代工服務領域（EMS）排名全球第一，市占率超過四成，範圍涵蓋消費性電子產品、雲端網路產品、電腦終端產品、元件及其他等四大產品領域。 全球員工總人數季節性 ... 鴻海科技集團 （英語： Foxconn Technology Group）是源自 臺灣 的 跨國企業 集團，1974年創辦，以 富士康 （Foxconn）做為商標名稱。其專注於 電子產品的代工服務 （EMS），研發生產精密電氣元件、機殼、 準系統 、系統組裝、光通訊元件、液晶顯示件等3C產品上、下游產品及服務。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "首頁 - 鴻海科技集團",
+      "url": "https://www.honhai.com/zh-tw",
+      "snippet": "鴻海科技集團作為科技服務的領先者，近年積極投入「電動車、數位健康、機器人」三大新興產業以及「人工智慧、半導體、新世代通訊技術」三項新技術領域，以「三加三」結合作為集團重要的長期發展策略，為全球標竿客戶提供完整解決方案，成為全方位智慧生活提供者。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "鴻海精密工業股份有限公司 | LinkedIn",
+      "url": "https://tw.linkedin.com/company/鴻海精密工業股份有限公司",
+      "snippet": "鴻海精密工業股份有限公司 | 63,973 位 LinkedIn 關注者。攜手全球標竿客戶共同創造全方位智慧生活 | 鴻海精密工業股份有限公司（臺灣證券交易所代碼：2317）於1974年肇基於臺灣，以模具為根基，逐漸發展為高科技服務企業。在電子代工服務領域（EMS）排名全球第一，市占率超過四成，範圍涵蓋消費 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "鴻海 (2317.TW) 公司概況及事件 - Yahoo 財經",
+      "url": "https://hk.finance.yahoo.com/quote/2317.TW/profile/",
+      "snippet": "+1.28% +0.37% +0.00% -0.14% +0.03% -0.28% 2317.TW 鴻海 240.50 +0.63% 摘要 新聞 圖表 統計資料 歷史數據 金融 分析 期權 持股人 Taiwan - Delayed Quote•TWD",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "鴻海科技集團 FOXCONN－最新職缺徵才中｜Yourator 新創・數位人才求職...",
+      "url": "https://www.yourator.co/companies/honhai",
+      "snippet": "鴻海精密工業股份有限公司（臺灣證券交易所代碼：2317）於 1974 年肇基於臺灣，以模具為根基，逐漸發展為高科技服務企業。 在電子代工服務領域（EMS）排名全球第一，市占率超過四成，範圍涵蓋消費性電子產品、雲端網路產品、電腦終端產品、元件及其他等四大產品領域。 全球員工總人數季節性 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "鴻海全球人才招募網",
+      "url": "https://recruit.foxconn.com/",
+      "snippet": "我們積極建構一套健康互聯網，全方位地照護同仁的身心健康. 了解更多. 薪資福利. 提供完善的薪資及福利制度，包含三節禮金、年終獎金、績效獎金與員工酬勞…",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CMS Login - 鴻海",
+      "url": "https://adm.honhai.com/",
+      "snippet": "請選擇, 簡體中文, 繁體中文, 英文, 英文(us), 越南語, 西班牙文. 賬�密登入 相信登入. 登入. Copyright © 2026 鴻海精密工業股份有限公司著作權所有.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "職缺搜尋 - 鴻海全球人才招募網",
+      "url": "https://recruit.foxconn.com/isite-web-tw/main/jobsearch",
+      "snippet": "4、各項員工意見調查的規劃與執行。 查看. 我要應徵. PP23121800001, [身障友善]人資資深/高級專員, 台灣, 1.擔任 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

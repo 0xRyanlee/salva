@@ -25,7 +25,7 @@ echo "✓ API is running"
 # 執行測試
 echo ""
 echo "Running integration tests..."
-python3 -m pytest tests/test_integration_real_calls.py -v --tb=short "$@"
+python3 -m pytest tests/live/test_integration_real_calls.py -m live -v --tb=short "$@"
 
 echo ""
 echo "=== Tests Complete ==="

@@ -1,0 +1,243 @@
+{
+  "task_id": "crosslang-02-asus",
+  "entities": [
+    {
+      "title": "華碩 - 维基百科，自由的百科全书",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/華碩"
+      ],
+      "score": 0.095,
+      "confidence": 0.095
+    },
+    {
+      "title": "Asus - Wikipedia",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Asus"
+      ],
+      "score": 0.1468,
+      "confidence": 0.1468
+    },
+    {
+      "title": "華碩- 維基百科，自由的百科全書",
+      "source_urls": [
+        "https://zh.wikipedia.org/zh-tw/華碩"
+      ],
+      "score": 0.095,
+      "confidence": 0.095
+    },
+    {
+      "title": "華碩電腦股份有限公司",
+      "source_urls": [
+        "https://www.findcompany.com.tw/華碩電腦股份有限公司"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "華碩電腦企業總部大樓 - 易境永續設計顧問GreenJump",
+      "source_urls": [
+        "https://www.greenjump.com.tw/projects/leedprojects/asusligong"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "前往華碩電腦企業總部, 立德路, 15, 台北市北投區的行車路線 - Waze",
+      "source_urls": [
+        "https://www.waze.com/zh-TW/live-map/directions/華碩電腦企業總部-立德路-15-台北市北投區"
+      ],
+      "score": 0.3176,
+      "confidence": 0.3176
+    },
+    {
+      "title": "華碩電腦企業總部- 工程實績 - 勝堡村營造",
+      "source_urls": [
+        "https://www.sptc.com.tw/project/j3YFWuWdhpOK3SQ0"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "到訪台北ASUS總部！令人羨慕的華碩總部「立功大樓」！ - Saiga NAK",
+      "source_urls": [
+        "https://saiganak.com/zh/review/asus-headquarters-report"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "而造就「華碩品質，堅若磐石」響亮名聲 本次企業參訪帶領同學走入 ...",
+      "source_urls": [
+        "https://www.facebook.com/tys1999/posts/企業參訪華碩電腦-活動回顧用自己的力量改變世界跨國企業總部就設在台灣的asus華碩電腦-持續著這個信念而造就華碩品質堅若磐石響亮名聲本次企業參訪帶領同學走入秘密/1090405203132763"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "Yi-Cheng Huang Email & Phone Number | Audi Taiwan Aftersales...",
+      "source_urls": [
+        "https://rocketreach.co/yi-cheng-huang-email_270607"
+      ],
+      "score": 0.3176,
+      "confidence": 0.3176
+    },
+    {
+      "title": "Pokémon UNITE API - Stats, Leaderboards and More",
+      "source_urls": [
+        "https://uniteapi.dev"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "Gmail",
+      "source_urls": [
+        "http://www.gmail.com"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "華碩電競顯示器OLED面板採雙軌供貨、增LG Display | LINE TODAY",
+      "source_urls": [
+        "https://today.line.me/tw/v3/article/kEKJM7q"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "Приложения в Google Play – GlideX",
+      "source_urls": [
+        "https://play.google.com/store/apps/details"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "Bureau of Consular Affairs, Ministry of Foreign Affairs, Republic of...",
+      "source_urls": [
+        "https://www.boca.gov.tw/mp-2.html"
+      ],
+      "score": 0.2885,
+      "confidence": 0.2885
+    },
+    {
+      "title": "mirrormedia.mg/story/20170710fin006",
+      "source_urls": [
+        "https://www.mirrormedia.mg/story/20170710fin006"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "所向披靡！ 華碩九度登台灣最具價值國際品牌 - ioioTimes 科技世代",
+      "source_urls": [
+        "https://www.ioiotimes.com"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "【圖解】華碩熬5年推掌機Ally...",
+      "source_urls": [
+        "https://www.bnext.com.tw/article/76390/asus-rog-gaming-ally"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "雙A 5月營收報佳音 宏碁創13年同期高、華碩亦寫同期新高｜知新聞",
+      "source_urls": [
+        "https://www.knews.com.tw/news/EEE743B35DA96CE8F99AD8F243E5E3FD"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "englishcareer.com.tw/people-view/angie-ma",
+      "source_urls": [
+        "https://www.englishcareer.com.tw/people-view/angie-ma"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "華碩AI開學祭 東京迪士尼雙人遊等你拿 - 十分好傳媒 - 科技爆報",
+      "source_urls": [
+        "https://3c.goodinc.today"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "個股動態報導內容-F531A3B1-DA88-4E9D-B711-45B7AC783EC1",
+      "source_urls": [
+        "https://fubon-ebrokerdj.fbs.com.tw/z/zc/zcv/zcvz/zcvz_F531A3B1-DA88-4E9D-B711-45B7AC783EC1.djhtm"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "Edit PDF - Edit PDF files online",
+      "source_urls": [
+        "https://www.pdf2go.com/edit-pdf"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "ASUSWRT 4.0",
+      "source_urls": [
+        "https://routerkb.asuscomm.com"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "華碩攜關渡醫院 推動低碳醫療數位轉型 - 產業 - 工商時報",
+      "source_urls": [
+        "https://www.ctee.com.tw/news/20260717701515-430502"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "讓永續成為企業內建能力 華碩分享深耕20... | 經濟日報",
+      "source_urls": [
+        "https://money.udn.com/money/story/12276/9519542"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "[出門] 挑戰超輕薄筆電!!華碩ZenBook 3/Transformer 3/Transformer...",
+      "source_urls": [
+        "https://agirls.aotter.net/post/50502"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "ASUSTeK Computer - Crunchbase Company Profile & Funding",
+      "source_urls": [
+        "https://www.crunchbase.com/organization/asus"
+      ],
+      "score": 0.4194,
+      "confidence": 0.4194
+    },
+    {
+      "title": "Matt Bozik - Investment Professional @ Braemar Energy Ventures ...",
+      "source_urls": [
+        "https://www.crunchbase.com/person/matt-bozik"
+      ],
+      "score": 0.2659,
+      "confidence": 0.2659
+    }
+  ],
+  "meta": {
+    "qualified_count": 29,
+    "raw_count": 29,
+    "rounds": 3,
+    "domain": "companies"
+  }
+}

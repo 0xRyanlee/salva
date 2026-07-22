@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-02-asus",
+  "strategy": "anchor",
+  "query": "華碩",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:28:02.124623+00:00",
+  "results": [
+    {
+      "title": "mirrormedia.mg/story/20170710fin006",
+      "url": "https://www.mirrormedia.mg/story/20170710fin006",
+      "snippet": "本刊調查，這次讓華碩施崇棠決定出重手的關鍵，就在於被他視為明日之星的手機事業受到重擊。 本刊調查，這次讓華碩施崇棠決定出重手的關鍵，就在於被他視為明日之星的手機事業受...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩、宏碁 布局Google新品 - 日報 - 工商時報",
+      "url": "https://www.ctee.com.tw/news/20260514700298-439901",
+      "snippet": "供應鏈，將與Google合作打造首批Googlebook產品，為相關廠商再添話題。 PC品牌大廠華碩公布今年首季稅後純益97.97億元，季減14.1％、年減23.4％，每股稅後...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "所向披靡！ 華碩九度登台灣最具價值國際品牌 - ioioTimes 科技世代",
+      "url": "https://www.ioiotimes.com/?p=12866",
+      "snippet": "經濟部工業局今日揭曉台灣最佳國際品牌價值，華碩品牌價值較前年增加16%，總計高達21.63億美元，亦是第九度登上台灣最具價值的國際品牌。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "【圖解】華碩熬5年推掌機Ally...",
+      "url": "https://www.bnext.com.tw/article/76390/asus-rog-gaming-ally?sn_f=1&sn_u=06bae34e6ead4c5dc36acb9378b7e028",
+      "snippet": "【圖解】華碩熬5年推掌機Ally，衝上美國銷量第一！ 兩大利箭，助攻華碩搶吃1.6兆商機.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "雙A 5月營收報佳音 宏碁創13年同期高、華碩亦寫同期新高｜知新聞",
+      "url": "https://www.knews.com.tw/news/EEE743B35DA96CE8F99AD8F243E5E3FD",
+      "snippet": "【記者李宜儒／台北報導】電腦品牌廠宏碁及華碩5月營收均交佳績，其中宏碁近13年來同期新高；華碩也寫下5月單月新高紀錄。 宏碁多重事業引擎策略持續發酵.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "englishcareer.com.tw/people-view/angie-ma",
+      "url": "https://www.englishcareer.com.tw/people-view/angie-ma/",
+      "snippet": "她表示，商用英語不是只有學語言，還要大量接觸國際商業趨勢，彌補了資管系所學的不足，加上具備英語溝通能力，令她一畢業就能進入華碩電腦擔任PM。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩AI開學祭 東京迪士尼雙人遊等你拿 - 十分好傳媒 - 科技爆報",
+      "url": "https://3c.goodinc.today/?p=563",
+      "snippet": "華碩AI開學祭 東京迪士尼雙人遊等你拿. 華碩AI開學祭，購買ASUS Vivobook S系列，登錄送NT$2,000電子禮券。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩「all in AI... | 經濟日報",
+      "url": "https://money.udn.com/money/story/11162/9270783",
+      "snippet": "華碩董事長施崇棠。 記者蘇健忠／攝影. 華碩董事長施崇棠。華碩表示，公司是第一批出貨B300及GB 300 AI伺服器的企業，目前出貨時程順利。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "個股動態報導內容-F531A3B1-DA88-4E9D-B711-45B7AC783EC1",
+      "url": "https://fubon-ebrokerdj.fbs.com.tw/z/zc/zcv/zcvz/zcvz_F531A3B1-DA88-4E9D-B711-45B7AC783EC1.djhtm",
+      "snippet": "1.事實發生日:115/02/23 2.公司名稱:華碩電腦股份有限公司 3.與公司關係(請輸入本公司或子公司):本公司 4.相互持股比例:不適用 5.傳播媒體名稱:經.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "[ 生活 ] 華碩品質，堅若….. – 走過的、學過的、看過的",
+      "url": "https://jerome.anyday.com.tw/archives/204",
+      "snippet": "華碩.保固期過了.電腦若壞掉.若華碩沒有預存的備料.就沒辦法修理. 有人說電腦淘汰很快.華碩是大廠.不可能留一些過期的配件.等人維修. 並不是每個人.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

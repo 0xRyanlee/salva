@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-05-chunghwa-telecom",
+  "strategy": "anchor",
+  "query": "中華電信 filetype:pdf",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:29:14.687211+00:00",
+  "results": [
+    {
+      "title": "做老爸的後盾！ 中華電信獻上炫父豪禮，購機享優惠、贈Hami Point...",
+      "url": "https://www.fountmedia.io/article/158058",
+      "snippet": "中華電信獻上炫父豪禮，購機享優惠、贈Hami Point最高14388點.中華電信啟動七股濕地AI保育3.0！",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Google 稱中華電信未達 Chrome... - Cool3c",
+      "url": "https://www.cool3c.com/article/240502",
+      "snippet": "Mash Yang發佈Google 稱中華電信未達 Chrome 信任標準 中華電信回應明年三月前取回信任，最新資訊於2026-05-13 07:45：華電信與 Netlock 發行的 TLS 憑證。Google 稱中華電信未達 Chrome 信任標準 中華電信回應明年三月前取回信任.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "141214 Popu Lady- MORE 庭萱focus @中華電信Hami活動 - YouTube",
+      "url": "https://www.youtube.com/watch?v=sq0He2CP0A4",
+      "snippet": "Смотрите любимые видео, слушайте любимые песни, загружайте собственные ролики и делитесь ими с друзьями, близкими и целым миром.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "AIoT 技術與應用研",
+      "url": "https://www.cht.com.tw/zh-TW/home/cht/-/media/Web/PDF/Recruit-and-Training/Recruit/2024/113-School.pdf?la=zh-TW",
+      "snippet": "中華電信公司 113 年校園徵才遴選簡章. 所需專長及相關經驗 1. 具備資安、個資與電信網路資通訊安全基礎知識 2. 熟悉次世代防火牆NGFW、網站應用程式防火牆WAF、資 安檢測PT/VA、SOC監控中心等.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台湾",
+      "url": "https://www.soumu.go.jp/g-ict/country/taiwan/pdf/886.pdf",
+      "snippet": "台湾における 2G サービスは 2009 年末まで 4 事業者が提供していたが、和信 電訊が遠傳電信に吸収合併されたため、現在は中華電信、台湾モバイル及び. 遠傳 電信の 3 事業者によって提供されている。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "2026-07月獨家-5G吃到飽不降速直殺57折! 限時特案別錯過 -地標網通",
+      "url": "https://www.landtop.com.tw/reviews/36",
+      "snippet": "電信公司. 中華電信. 台灣大哥大. 遠傳電信.本月最便宜5G吃到飽不降速. 中華電信. 遠傳電信.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "en.cofacts.tw/article/1shg6aukbggp0",
+      "url": "https://en.cofacts.tw/article/1shg6aukbggp0",
+      "snippet": "尾數幸運星. 中華電信股份有限公司個人家庭分公司 版權所有 © Chunghwa Telecom Co., Ltd. (統一編號：96979949) 隱私權政策 個資蒐集條款.親愛的中華電信用戶您好，12月生日快樂！",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Chrome 於 Security",
+      "url": "https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/73339",
+      "snippet": "接 到不具有有效憑證的網站時瀏覽器將提出安全警告 而構成網際網路連線安全及信任的重要機制。 在本案事件中擔任政府網站服務憑證發行機構的 中華電信股份有限公司(下稱中華電信)卻疑似因為管理 及技術問題導致瀏覽器供應商Google Chrome不信任其.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "存股族的最愛:中華電(2412) | 艾蜜莉-自由之路",
+      "url": "https://emily01.com/taiwan-stock/461",
+      "snippet": "二、基本資料：中華電為 半公股公司. 台灣的電信業原屬於交通部電信總局專營， 政府自1980年代後期開始推動「電信自由化」， 於1996年立法通過電信三法， 正式成立「中華電信股份有限公司」， 屬於中.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "「電信女籃夏令營」點燃多元學習力 打造偏鄉孩子難忘暑假 | ETtoday...",
+      "url": "https://www.ettoday.net/news/20260717/3202609.htm",
+      "snippet": "（圖／中華電信基金會提供）. 04中華電信基金會林榮賜董事長驚喜現身和小朋友尬球.jpg OK 。 （圖／中華電信提供）. （圖／中華電信基金會提供）.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

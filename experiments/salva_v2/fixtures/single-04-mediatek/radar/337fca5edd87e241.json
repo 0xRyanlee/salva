@@ -1,0 +1,79 @@
+{
+  "task_id": "single-04-mediatek",
+  "strategy": "radar",
+  "query": "MediaTek employees TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:26:23.398889+00:00",
+  "results": [
+    {
+      "title": "MediaTek employees earn highest average compensation in 2023",
+      "url": "https://focustaiwan.tw/business/202407010021",
+      "snippet": "Jul 1, 2024 ... MediaTek Inc. paid the highest average annual compensation to non-managerial full-time employees of any of Taiwan's listed companies.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Number of Employees 2026 - Revelio Labs",
+      "url": "https://www.reveliolabs.com/companies/mediatek/employees/",
+      "snippet": "MediaTek's workforce has grown 4.1% from 2023 to 2025, up 1.8% year over year in 2025. Its workforce is concentrated most in Taiwan (55.4%), followed by China ( ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台灣 - MediaTek",
+      "url": "https://corp.mediatek.tw/about/office-locations/mediatek-tw-offices",
+      "snippet": "MediaTek Inc. (Headquarters) 新竹科學園區篤行一路1號No.1, Dusing 1st Rd., Hsinchu Science Park, Hsinchu City 300, Taiwan Tel: +886-3-567-0766…",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Reviews in Taiwan | Glassdoor",
+      "url": "https://www.glassdoor.com/Reviews/MediaTek-Taiwan-Reviews-EI_IE40142.0,8_IL.9,15_IN240.htm",
+      "snippet": "Work environment & culture – MediaTek fosters a collaborative atmosphere where teamwork is emphasized, allowing employees to learn from talented colleagues ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek: Employee Directory | ZoomInfo.com",
+      "url": "https://www.zoominfo.com/pic/mediatek-inc/180798457",
+      "snippet": "MediaTek corporate office is located in No.1 Dusing 1st Hsinchu Rd, Hsinchu, Taiwan, 30078, Taiwan and has 10K+ employees. Likely to Engage tag. Highly Engaged ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek",
+      "url": "https://www.mediatek.com/zh-tw/",
+      "snippet": "Explore MediaTek's cutting-edge technology for smartphones, smart home devices, IoT, wearables, and more. Discover the latest in connectivity, AI, gaming, ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "人才布局 - MediaTek",
+      "url": "https://corp.mediatek.tw/about/sustainability/talent/talent-strategy",
+      "snippet": "透過多元人才交流合作，釋放潛能、激發創新，提升公司的產業競爭力。我們致力於創造一個讓每位員工都感到被尊重和價值被認可的工作環境，從而提升員工的工作滿意度和歸屬 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Careers: 首頁",
+      "url": "https://careers.mediatek.com/zh-tw",
+      "snippet": "為每個人創造更美好的未來. Taiwan.jpg. Taiwan. Singapore.jpg. Singapore. Korea.jpg ... 無論是實習生還是管理職，我們都提供專屬的培訓課程，並搭配多元化的員工福利，讓��你 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "聯發科技 - LinkedIn",
+      "url": "https://tw.linkedin.com/company/mediatek",
+      "snippet": "聯發科技| 548679 位LinkedIn 關注者。This Chip Changes Everything | MediaTek (TWSE: 2454) is a global leader in fabless semiconductor design, ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "職缺資訊",
+      "url": "https://careers.mediatek.com/zh-tw/jobs",
+      "snippet": "... 工作生活成長多元共融工作領域職缺應徵流程. mapicon.svg 繁體中文. mailicon.svg 聯絡我們 · Cookie聲明法律聲明隱私權政策. ©2026 MediaTek Inc. All Rights Reserved.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

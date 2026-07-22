@@ -1,0 +1,79 @@
+{
+  "task_id": "single-01-tsmc",
+  "strategy": "radar",
+  "query": "TSMC employees TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:24:55.717577+00:00",
+  "results": [
+    {
+      "title": "TSMC - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/TSMC",
+      "snippet": "1 day ago - In June 2025, TSMC announced the establishment of the TSMC-UTokyo Lab (TSMC-University of Tokyo Laboratory), marking its first joint research laboratory with an overseas university. In August 2025, TSMC reported that two current employees and six former employees had illegally acquired trade ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing: Number of Employees 2012-2026 | TSM | MacroTrends",
+      "url": "https://www.macrotrends.net/stocks/charts/TSM/taiwan-semiconductor-manufacturing/number-of-employees",
+      "snippet": "Interactive chart of Taiwan Semiconductor Manufacturing (TSM) annual worldwide employee count from 2012 to 2026. Taiwan Semiconductor Manufacturing total number of employees in 2025 was 90,557, a 8.03% increase from 2024. Taiwan Semiconductor Manufacturing total number of employees in 2024 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing Company (TSM) Number of Employees 2000-2025",
+      "url": "https://stockanalysis.com/stocks/tsm/employees/",
+      "snippet": "Taiwan Semiconductor Manufacturing Company had 90,557 employees as of December 31, 2025.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "How many employees work at Taiwan Semicon Mfg? | Revelio Labs",
+      "url": "https://www.reveliolabs.com/companies/taiwan-semicon-mfg/employees",
+      "snippet": "Taiwan Semiconductor Manufacturing Co., Ltd. has 77,277 employees as of December 2025. Explore headcount trends, salary data, geographic breakdown, and job postings powered by Revelio Labs workforce intelligence.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "50% of TSMC's Arizona employees are from Taiwan, despite recent controversies — company plans to hire more US workers over time | Tom's Hardware",
+      "url": "https://www.tomshardware.com/tech-industry/semiconductors/50-percent-of-tsmcs-arizona-employees-are-from-taiwan-despite-recent-controversies-company-plans-to-hire-more-us-workers-over-time",
+      "snippet": "January 1, 2025 - When announcing the project in 2020, TSMC assured the public it would create jobs for locals, so bringing over 1,000 employees from Taiwan contradicts the foundry's promise to hire talent from Arizona, which naturally angered unions.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC Arizona struggles to overcome vast differences between Taiwanese and US work culture | SemiWiki",
+      "url": "https://semiwiki.com/forum/threads/tsmc-arizona-struggles-to-overcome-vast-differences-between-taiwanese-and-us-work-culture.20774/",
+      "snippet": "August 9, 2024 - However, they said they were unsure if lighter workloads would continue as the factory built up to full production next year. About half of the 2,200 workers at TSMC in Phoenix were brought in from Taiwan, 7,200 miles away. The company said it would create 6,000 jobs as it built the next two ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "r/technology on Reddit: Angry TSMC employees considering strikes, unionization over employee bonuses, report claims — company reportedly considering 15% payout cut to fund capex despite record revenues fuelled by AI surge",
+      "url": "https://www.reddit.com/r/technology/comments/1to41jf/angry_tsmc_employees_considering_strikes/",
+      "snippet": "May 26, 2026 - Tsmc employees are paid the highest in the country, their purchasing power is enormous, but again greed never stops so everybody plays victim from billionaire to average hustler ... To clarify. Tsmc isn’t the highest-paying company. MediaTek and other IC design companies all pay higher annual salaries than TSMC. https://blog.104.com.tw...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC Employee Directory, Headcount & Staff | LeadIQ",
+      "url": "https://leadiq.com/c/tsmc/5a1d95b92300005e00846705/employee-directory",
+      "snippet": "TSMC has approximately 24K employees as of December 2025.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC Information",
+      "url": "https://rocketreach.co/tsmc-profile_b5c63b77f42e0c59",
+      "snippet": "TSMC is a Semiconductor Manufacturing, Electronics, and Application Specific Semiconductors company located in Hsinchu, Taiwan with $87.7 billion in revenue and 25,298 employees. Find top employees, contact details and business statistics at ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Inside TSMC's cultural shift in Arizona - Axios Phoenix",
+      "url": "https://www.axios.com/local/phoenix/2025/05/06/tsmc-culture-arizona-expansion",
+      "snippet": "May 6, 2025 - Thirteen former employees filed a lawsuit against the company last year alleging there was an \"anti-American culture\" at TSMC and that Asian and Taiwanese workers were given more opportunities than local employees, the New York Times reported.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

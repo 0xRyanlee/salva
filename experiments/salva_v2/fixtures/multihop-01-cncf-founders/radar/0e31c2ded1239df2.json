@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-01-cncf-founders",
+  "strategy": "radar",
+  "query": "CNCF founding members partnership Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:29:50.091004+00:00",
+  "results": [
+    {
+      "title": "CNCF Strengthens Partnership with Broadcom as a Platinum Member...",
+      "url": "https://au.finance.yahoo.com/news/cncf-strengthens-partnership-broadcom-platinum-160000713.html",
+      "snippet": "CNCF Platinum membership reinforces a shared commitment to open source collaboration, vendor-neutral innovation and long-term ecosystem sustainability.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation Announces AT&T as... | CNCF",
+      "url": "https://www.cncf.io/announcements/2021/02/02/cloud-native-computing-foundation-announces-att-as-platinum-member/",
+      "snippet": "Global telecommunications leader doubles down on commitment to the cloud native ecosystem and telecom innovation SAN FRANCISCO, Calif. – Feb 2, 2021 – The Cloud Native Computing Foundation® (CNCF®)…",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF, Andela Partner to Train 20,000+ African Tech Professionals",
+      "url": "https://techeconomy.ng/cncf-andela-partner-to-train-20000-african-tech-professionals/",
+      "snippet": "“This partnership showcases the global impact of CNCF’s education programs.”We are excited to partner with CNCF to extend training and, ultimately, enhance job opportunities for African workers.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF founding member explains why customers are... - SiliconANGLE",
+      "url": "https://siliconangle.com/2020/11/20/cncf-founder-explains-why-customers-are-as-crucial-as-tech-in-agile-it-kubecon/",
+      "snippet": "Companies first have to know what changes are worth making, according to Ken Owens (pictured), vice president of software development engineering at Mastercard Inc. and a founding member of CNCF.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "KodeKloud at KubeCon India 2025: Key Moments",
+      "url": "https://kodekloud.com/blog/why-kubecon-india-2025-meant-more-to-kodekloud/?trk=article-ssr-frontend-pulse_little-text-block",
+      "snippet": "KodeKloud made waves at KubeCon India 2025 with new partnerships, inspiring meetups, and...Chris’s journey from IBM and Code9 to Twitter and CNCFWhy CNCF chose Hyderabad and Mumbai for KubeCon India",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Leading in Cloud Native, Huawei Cloud Unleashes Digital with 10 New...",
+      "url": "https://vyapaarikapuvath.lk/?p=6144",
+      "snippet": "Huawei Cloud worked with partners to develop the Pangu NLP model for the Arabic language that supports hundreds of billions of parameters. The semantic understanding accuracy reached 95%.In 2015, Huawei became the only CNCF founding member from Asia.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Giants Form Foundation to Drive Container Interoperability",
+      "url": "https://www.datacenterknowledge.com/business/cloud-giants-form-foundation-to-drive-container-interoperability",
+      "snippet": "Founding CNCF members include Box, Cisco, CoreOS, Cycle Computing, Docker, eBay, Goldman Sachs, Google, Huawei, IBM, Intel, Joyent, Mesosphere, Twitter, Switch Supernap, Univa, VMware, and Weaveworks. In addition, Chanezon noted, the CNCF is still open to recruiting...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CLOUD NATIVE COMPUTING FOUNDATION Cloud Native Updates Ch",
+      "url": "https://events.static.linuxfound.org/sites/events/files/slides/CNCF+Keynote-+OSS+EU+2017.pdf",
+      "snippet": "CNCF Founded* in Mid 2015: 22 Members.The Linux Foundation. Projects Membership. TechCrunch: As Kubernetes Hits 1.0, Google Donates Technology To Newly Formed Cloud Native Computing Foundation.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "How to Empower Your Business with Cloud Native... | Medium",
+      "url": "https://alibaba-cloud.medium.com/a-deep-understanding-of-cloud-native-technology-and-application-bd545b5aba45",
+      "snippet": "The latest description about cloud-native architectures on the official Pivotal website shows four key characteristics: DevOps, continuous delivery, microservices, and containers. In 2015, the Cloud Native Computing Foundation (CNCF) was founded.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Google",
+      "url": "https://www.google.com/",
+      "snippet": "Поиск информации в интернете: веб страницы, картинки, видео и многое другое.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

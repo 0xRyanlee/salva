@@ -1,0 +1,79 @@
+{
+  "task_id": "single-06-gleif",
+  "strategy": "dive",
+  "query": "\"Global Legal Entity Identifier Foundation\" Global -blog -museum -review -job -news -report",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:09.081324+00:00",
+  "results": [
+    {
+      "title": "The Global LEI System - GLEIF - GLEIF",
+      "url": "https://www.gleif.org/en/about-lei/gleif-management-of-the-global-lei-system/",
+      "snippet": "Global Legal Entity Identifier Foundation (GLEIF) provides many services to support its partners in the Global LEI System and optimize the quality, reliability, and usability of the LEI and its associated data.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global ID for Global Business - Inside the LEI System",
+      "url": "https://www.febis.org/2025/07/15/global-id-for-global-business-inside-the-lei-system/",
+      "snippet": "GLEIF or the Global Legal Entity Identifier Foundation is a not-for-profit organization, headquartered in Switzerland, and was founded in 2014 by the Financial Stability Board.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Legal Entity Identifiers - and the Foundation That Champions the ...",
+      "url": "https://www.garp.org/risk-intelligence/technology/legal-entity-identifiers-250131",
+      "snippet": "The Global Legal Entity Identifier Foundation (GLEIF) was established in 2014 to maintain the standard and carry the mission forward on an international scale.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Who are the GLEIF (Global Legal Entity Identifier Foundation ...",
+      "url": "https://support.leiworldwide.com/kb/guide/en/who-are-the-gleif-global-legal-entity-identifier-foundation-QNGL2SJOpZ/Steps/3153370",
+      "snippet": "Established by the Financial Stability Board (fsb) in June 2014, the Global Legal Entity Identifier Foundation (GLEIF) has the role of supporting the implementation and use of the Legal Entity Identifier (LEI). The foundation is backed and overseen by the Regulatory Oversight Committee, representing public authorities from around the globe that have come together to jointly drive forward ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "The global LEI system for LEI codes - globalfinreg.com",
+      "url": "https://globalfinreg.com/en/articles/the-global-lei-system",
+      "snippet": "GLEIF stands for 'Global Legal Entity Identifier Foundation' and is the organization behind the LEI system. It was founded in 2014 and was tasked with implementing a global system that could be used to identify the movements of legal entities in the financial markets.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF (Global Legal Entity Identifier Foundation)",
+      "url": "https://regulatorik.ai/en/framework/gleif",
+      "snippet": "The Global Legal Entity Identifier Foundation (GLEIF) is a non-profit organisation founded in Basel, Switzerland in 2014 that oversees the global system for issuing and managing Legal Entity Identifiers (LEIs).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF Database Explained - How Global LEI Data Works",
+      "url": "https://leisearch.com/gleif-database-explained",
+      "snippet": "GLEIF Database Explained - How Global LEI Data Works Quick Answer The GLEIF database is the central repository of all Legal Entity Identifiers worldwide, operated by the Global Legal Entity Identifier Foundation. It contains 2.7M+ LEI records with two layers of data: Level 1 (\"who is who\") and Level 2 (\"who owns whom\").",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "This is GLEIF - GLEIF - GLEIF",
+      "url": "https://www.gleif.org/en/about/this-is-gleif",
+      "snippet": "The Global Legal Entity Identifier Foundation (GLEIF) is a supra-national, not-for-profit organization created to support the implementation and use of the Legal Entity Identifier (LEI) and its digital counterpart, the verifiable LEI (vLEI). Established in 2014 by the Financial Stability Board (FSB), GLEIF is backed and overseen by the Regulatory Oversight Committee (ROC). The ROC is a ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Organizational stucture of the LEI system",
+      "url": "https://lei.info/portal/resources/lei-governence/",
+      "snippet": "GLEIF - Global Legal Entity Identifier Foundation The Global Legal Entity Identifier Foundation, established in 2014 as supra-national, not-for-profit organization acts as the operational arm of the Global LEI system and in its activity is overseen by LEI ROC.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "What is GLEIF | LEI-Registrar",
+      "url": "https://lei-registrar.com/en-us/what-is-gleif",
+      "snippet": "What is GLEIF and its role GLEIF stands for Global Legal Entity Identifier Foundation, a non-profit organization founded to facilitate the implementation and use of the Legal Entity Identifier (LEI). This foundation was established in 2014 by the Financial Stability Board, and its headquarters are in Switzerland.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

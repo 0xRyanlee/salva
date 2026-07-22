@@ -1,0 +1,79 @@
+{
+  "task_id": "single-02-naturehike",
+  "strategy": "anchor",
+  "query": "camping equipment founded",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:25:04.383039+00:00",
+  "results": [
+    {
+      "title": "Coleman (brand) - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Coleman_(brand)",
+      "snippet": "Coleman (brand) ... The Coleman Company, Inc. is an American manufacturer of outdoor recreation products, best known for its camping gear including lanterns, portable stoves, sleeping bags, chairs, and coolers. Founded in 1902 and currently headquartered in Chicago, the company employs approximately 4,000 people.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Camping World - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Camping_World",
+      "snippet": "Camping World Holdings, Inc. is an American corporation specializing in selling recreational vehicles (RVs), recreational vehicle parts, and recreational vehicle service. They also sell supplies for camping. The company has its headquarters in Lincolnshire, Illinois.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Top 22 Camping Equipment Companies",
+      "url": "https://www.inven.ai/company-lists/top-22-camping-equipment-companies",
+      "snippet": "Top 22 Camping Equipment Companies 1. The Coleman Company, Inc. Website: coleman.com Ownership type: Corporate Headquarters: Chicago, Illinois, United States (USA) Employee distribution: United States (USA) 79%, China 6%, Australia 4%, Other 10% Latest funding: April 2021 Founded year: 1900 Headcount: 1001-5000 LinkedIn: the-coleman-company-inc- The Coleman Company, Inc. is a manufacturer and ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Who Started Camping World? The History Behind a Pioneer in Outdoor Retail",
+      "url": "https://kittrek.com/blog/who-started-camping-world-the-history-behind-a-pioneer-in-outdoor-retail",
+      "snippet": "The Birth of Camping World: A Vision to Serve Outdoor Enthusiasts Started in 1966: Camping World was founded in 1966 by David Garvin , who saw the need for a retail store catering specifically to campers and RV owners.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Top 26 Outdoor Adventure Equipment Manufacturing Companies",
+      "url": "https://www.inven.ai/company-lists/top-26-outdoor-adventure-equipment-manufacturing-companies",
+      "snippet": "Founded year: 1971 Headcount: 1001-5000 LinkedIn: mountainequipmentcoop ... Outdoor Adventure Equipment Manufacturing Insights: Key Companies ... Want to Find More Outdoor Adventure Equipment Manufacturing Companies? If you want to find more companies that offer a range of apparel, gear, and specialized accessories you can do so with Inven.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "The Evolution of Camping Gear: From Basic to High-Tech",
+      "url": "https://www.beyondthetent.com/camping-gear-evolution/",
+      "snippet": "Camping as we know it today traces back to the early 20th Century. Since its inception as a recreational activity, camping gear has evolved from necessities to the high-tech and innovative gear we see today. This post will walk you through a timeline of the evolution of camping gear, beginning with the basics and ending with the newest high-tech gear we see today. Keep reading to see how ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Alphabetized listing of many Historic Outdoor Gear Companys, by The ...",
+      "url": "http://www.oregonphotos.com/Alphabetized+by+company+name.htm",
+      "snippet": "Now a part of a larger company \"Industrial Design,\" which has become largely a distributorship of neat camping-related items, such as Swedish knives and fire-starting equipment. G Greg Draper, Keith Jackson Walrus Tents, founded circa late '80s, by Bob Swanson and George Marks after they exited the company they had founded (Sierra Designs).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "COLEMAN, WILLIAM (1870-1957) | Encyclopedia of the Great Plains",
+      "url": "https://plainshumanities.unl.edu/encyclopedia/doc/egp.ind.015.html",
+      "snippet": "William Coffin Coleman founded a manufacturing company that became a world leader in the production of camping equipment. Born in Chatham, New York, on May 21, 1870, Coleman grew up in Labette County, Kansas.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "The Coleman Company, Inc. — Company History",
+      "url": "https://www.company-histories.com/The-Coleman-Company-Inc-Company-History.html",
+      "snippet": "The Coleman Company, Inc. is one of the most famous and successful manufacturers of camping equipment and outdoor recreational products.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Outdoor Gear Industry History 1855 - 2007",
+      "url": "http://outdoorinov8.com/compasshistory.html",
+      "snippet": "Compass: Charting the Evolution of Outdoor Gear Outdoor Gear Industry History 1855 - 2007 Brand Year Product Ajungilak founded 1855 Blacks of Greenock founded 1861 Helly Hansen started 1877 Fairydown founded 1889 Ajungilak make their first sleeping bag, filled with reindeer hair & kapok Primus brand created 1892",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

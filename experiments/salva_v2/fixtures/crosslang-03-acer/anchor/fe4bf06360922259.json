@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-03-acer",
+  "strategy": "anchor",
+  "query": "宏碁",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:28:22.198000+00:00",
+  "results": [
+    {
+      "title": "宏碁_宏碁最新动态_IT之家",
+      "url": "https://m.ithome.com/tags/宏碁",
+      "snippet": "宏碁. 宏碁宣布 9 月 3 日举行德国柏林 next@acer 全球记者会，全产品线新品亮相.宏碁推出暗影骑士 PG271K“可移动”显示器：4K 72Hz / FHD 144Hz 双模.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "acer.com.cn",
+      "url": "https://www.acer.com.cn/",
+      "snippet": "宏碁电脑（上海）有限公司 一体机平板云桌面服务器台式机工控机裸眼3D电脑...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "bilibili.com/video/BV1cByMBvE3n/?spm_id_from=333.788.recommend...",
+      "url": "https://www.bilibili.com/video/BV1cByMBvE3n/?spm_id_from=333.788.recommend_more_video.12",
+      "snippet": "宏碁内存系列#宏碁 #宏碁内存 #宏碁冰刃 #宏碁影锋 #宏碁炫光星舰.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "宏碁 | 搜尋標籤 | 經濟日報",
+      "url": "https://money.udn.com/search/tagging/1001/宏碁",
+      "snippet": "宏碁資訊6月營收強、下半年續攻AI 午盤股價站波段新高.宏碁集團旗下子公司6月營收出爐，宏碁資訊（6811）、展碁皆繳出佳績。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "宏碁 – 芋傳媒 TaroNews",
+      "url": "https://taronews.tw/tag/宏碁/",
+      "snippet": "電腦品牌廠宏碁受惠於旗下子公司 AI 應用帶動新需求，宏碁今天公布 5 月合併營收約新台幣 261 .宏碁未來將繼續為年輕一代搭建舞台，讓年輕人為台灣、為國際社會做出更大的貢獻。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "宏碁 | iThome",
+      "url": "https://www.ithome.com.tw/tags/宏碁",
+      "snippet": "宏碁Wave 7路由器存在2項滿分重大漏洞.園等，加速5G AIoT應用研發及驗證 ；宏碁發表首款支援5G的Wi-Fi 7路由器，乙太網路，還支援5G，具備雙WAN連接。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "多元子公司貢獻營收 老虎隊亮眼 宏碁再孵新事業 - 日報 - 工商時報",
+      "url": "https://www.ctee.com.tw/news/20250530700206-439901",
+      "snippet": "多元業務範疇，接下來宏碁也持續觀察使用者需求，從大的Megatrend（宏觀趨勢）、看到小的Microtrend（微趨勢），開拓新契機。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "宏碁笔记本排行榜评价怎么样品牌推荐-苏宁易购",
+      "url": "https://m.suning.com/dgzt/0287w.html",
+      "snippet": "苏宁易购为您提供宏碁笔记本正品行货，包括宏碁笔记本的商品报价，参数，评价，品牌，排行，图片，店铺，视频，热门促销活动等信息，为您提供全面的宏碁笔记.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "《電週邊》宏碁2月營收雙升 寫疫後同期新高 | Yahoo News",
+      "url": "https://tw.stock.yahoo.com/news/電週邊-宏碁2月營收雙升-寫疫後同期新高-013038108.html",
+      "snippet": "宏碁積極建立的多重事業引擎的策略持續發酵，非電腦及顯示器相關事業營收占2月營收達32%、累計前兩月營收的37%。《電週邊》宏碁遊戲大漲40％掀狂潮 母公司宏碁也沾光.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "宏碁雙11狂歡慶，豪送首爾雙人遊、iPhone 17... - ioioTimes 科技世代",
+      "url": "https://www.ioiotimes.com/?p=127584",
+      "snippet": "宏碁雙11 登錄送、周周抽，好禮大放送！宏碁誠摯邀請所有消費者把握雙11 檔期，親臨門市或線上商城選購宏碁最新 AI PC 及電競產品，輕鬆將多項大獎帶回家！",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

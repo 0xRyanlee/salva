@@ -1,0 +1,67 @@
+{
+  "task_id": "single-05-advantech",
+  "entities": [
+    {
+      "title": "History & Milestones - Advantech",
+      "source_urls": [
+        "https://www.advantech.com/en-us/about/historyandmilestones"
+      ],
+      "score": 0.2537,
+      "confidence": 0.2537
+    },
+    {
+      "title": "Advantech Co-Creating the Future of the IoT World",
+      "source_urls": [
+        "https://www.advantech.com/en-us"
+      ],
+      "score": 0.2538,
+      "confidence": 0.2538
+    },
+    {
+      "title": "Advantech - OpenFoundry",
+      "source_urls": [
+        "https://web-archive-2025.openfoundry.org/en/resourcecatalog/Embedded/Taiwan-Companies/advantech.html"
+      ],
+      "score": 0.3124,
+      "confidence": 0.3124
+    },
+    {
+      "title": "Advantech_研華股份有限公司 ｜徵才中－104人力銀行",
+      "source_urls": [
+        "https://www.104.com.tw/company/2d9ntmw"
+      ],
+      "score": 0.2789,
+      "confidence": 0.2789
+    },
+    {
+      "title": "研華IoTMart｜工業電腦(IPC)的全球領導品牌> 物聯網,資料擷取模組 ...",
+      "source_urls": [
+        "https://iotmart.advantech.com.tw/contactus.aspx"
+      ],
+      "score": 0.411,
+      "confidence": 0.411
+    },
+    {
+      "title": "關於研華",
+      "source_urls": [
+        "https://www.advantech.com/zh-tw/about"
+      ],
+      "score": 0.3028,
+      "confidence": 0.3028
+    },
+    {
+      "title": "Employee Portal - Homepage - Advantech",
+      "source_urls": [
+        "https://employeezone.advantech.com.tw/net"
+      ],
+      "score": 0.315,
+      "confidence": 0.315
+    }
+  ],
+  "meta": {
+    "qualified_count": 7,
+    "raw_count": 7,
+    "rounds": 3,
+    "domain": "companies"
+  }
+}

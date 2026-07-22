@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-05-gleif-regulators",
+  "strategy": "anchor",
+  "query": "LEI regulatory body Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:32:02.772479+00:00",
+  "results": [
+    {
+      "title": "LEI Numbers: Legal Identifier Regulatory Bodies and Process",
+      "url": "https://stage.leidatabase.org/lei-regulatory-bodies-and-registration-process/",
+      "snippet": "As a legal identifier regulatory body, their function is to coordinate and supervise the Global LEI System. Additionally, the LEIROC oversees the operations of the Global Legal Entity Identifier Foundation (GLEIF).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "The Legal Entity Identifier (LEI) - LEI & vLEI - Organizational Identity...",
+      "url": "https://www.gleif.org/en/organizational-identity/lei-vlei/the-legal-entity-identifier-lei",
+      "snippet": "Every LEI is unique and can represent only one entity. Each entity’s LEI code connects to verified reference information from authoritative local sources, including the entity’s ownership structure, which is accessible in the Global LEI Index.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global LEI System Guide Architecture And Benefits - LEI Worldwide",
+      "url": "https://leidev.eu/lei-news/global-lei-system/",
+      "snippet": "The Global LEI System provides unique identification for legal entities. Learn about the three tier hierarchy and how GLEIF manages high quality data worldwide.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Legal Entity Identifier (LEI) Registration - SSL Dragon",
+      "url": "https://www.ssldragon.com/lei-codes/",
+      "snippet": "Get quick LEI registration with our smooth LEI application form. Seamless Legal Entity Identifier registration for companies of all sizes.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global LEI System",
+      "url": "https://www.leiroc.org/lei.htm",
+      "snippet": "Global LEI System. Regulatory uses of the LEI. International Governance Body for Derivatives Data Elements. Publications.LEIs are issued by \"Local Operating Units\" (LOUs) of the Global LEI System.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "LEI FAQ (Frequently Asked Questions)",
+      "url": "https://leiworldwide.com/faq",
+      "snippet": "No the LEI is a global system and an LEI can be applied for on LEI Worldwide in any country. You may obtain an LEI code from and LEI provider located outside your country of residence, or a country outside the legal jurisdiction of the legal entity applying.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "What Is GLEIF? (Global Legal Entity Identifier Foundation)",
+      "url": "https://www.identity.org/what-is-gleif/",
+      "snippet": "LOUs are also called “LEI Issuers” or “LEI Issuing Organizations.” The LOU’s accreditation process assists the GLEIF. It helps determine whether an organization can issue Legal Entity Identifiers (LEIs) and maintain LEI reference data in the Global LEI System.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Legal Entity Identifier (LEI) Resource Center | Investment Company...",
+      "url": "https://www.ici.org/lei",
+      "snippet": "Inaugural Meeting of the Global Legal Entity Identifier (LEI) Regulatory Oversight Committee (ROC) (January 28, 2013, pdf).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "LEI code Frequently Asked Questions | GetLEI",
+      "url": "https://www.getlei.com/faq/",
+      "snippet": "Get LEI code to Identify Business Globally. Global legal entity identifier number in a standardized form.GLEIF is accountable to the LEI Regulatory Oversight Committee (LEI ROC), a body that verifies the quality of the work GLEIF does in maintaining the LEI system.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Register LEI. Fast & Automated. RapidLEI GLEIF-Accredited.",
+      "url": "https://rapidlei.com/register-lei/",
+      "snippet": "These LEI Issuer organisations are accredited by the Global LEI Foundation (GLEIF), the regulatory body overseeing the Global Legal Entity Identifier System. Understanding the basics of Legal Entity Identifiers: What is an LEI Number. How long does it take to register an LEI?",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

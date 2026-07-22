@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-03-acer",
+  "strategy": "dive",
+  "query": "\"宏碁\" TW -blog -museum -review -job -news -report",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:28:10.210410+00:00",
+  "results": [
+    {
+      "title": "宏碁 - 維基百科，自由的百科全書",
+      "url": "https://zh.wikipedia.org/zh-tw/宏碁",
+      "snippet": "宏碁 （英語暨品牌名稱： acer）是源自 臺灣 的 跨國 科技公司，成立於1976年，其產品包括 個人電腦 、 電競 產品和 虛擬實境 裝置等。 根據 高德納公司 在2024年第4季度的統計，宏碁是全球第6大 個人電腦供應商 [1]；根據市調機構IHS資料顯示，宏碁2019年第1季在全球電競螢幕市場，以20.6%市佔率成為 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Acer 台灣官方商城 | Predator 掠奪者 | 筆記型電腦 | 桌上型電腦 | 顯示設備 | 周邊商品",
+      "url": "https://store.acer.com/zh-tw/",
+      "snippet": "提供宏碁集團旗下最新，最優惠的商品，電競系列，創作者系列，輕薄以及效能的筆電，桌電，電腦螢幕，投影機以及周邊商品，更有全館免運費的服務．享受與Acer最貼近的良好體驗。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "宏碁資訊服務股份有限公司 ｜徵才中－104人力銀行",
+      "url": "https://www.104.com.tw/company/1a2x6blg3z",
+      "snippet": "宏碁資訊服務股份有限公司（簡稱：AEB宏碁資訊，股票代碼6811），成立於2012年，是宏碁旗下在資訊服務產業與數位雲端趨勢下的重要策略布局，長期專注於B2B的IT應用服務，協助企業營運由地端走向雲端，以及大數據、人工智慧等新科技的實際落地，為企業創造地端到雲端的新價值。提供雲端與 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "旗艦新品 | Acer 台灣官方商城",
+      "url": "https://store.acer.com/zh-tw/new",
+      "snippet": "提供宏碁集團旗下最新，最優惠的商品，電競系列，創作者系列，輕薄以及效能的筆電，桌電，電腦螢幕，投影機以及周邊商品，更有全館免運費的服務．享受與Acer最貼近的良好體驗。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "宏碁「小虎隊」，從家電賣到美妝 Ceo親自下海!營收獲利雙雙翻倍",
+      "url": "https://www.cw.com.tw/article/5136950",
+      "snippet": "【TGS Works! 個案精讀】作為宏碁集團眾多轉投資公司之一的展碁，十年前曾因為電商與強勢零售商崛起，而逐漸失去成長動能。但它如何運用原有團隊，長出新的成長曲線，2014年至2024年淨利年均複合成長率高達近三成？《天下》與管理名師李吉仁，聯手拆解展碁十年轉型再成長之路。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "宏碁 (2353.TW) 走勢圖 - Yahoo股市",
+      "url": "https://tw.stock.yahoo.com/quote/2353.TW",
+      "snippet": "宏碁(2353.TW)，Yahoo股市 Yahoo奇摩股市提供您即時報價、個股走勢、成交資訊、當日籌碼，價量變化、個股相關新聞等即時資訊。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "2026 Acer 宏碁筆電推薦｜商務・文書・電競機完整選購指南",
+      "url": "https://corp.sinya.com.tw/post/3819/",
+      "snippet": "Acer 宏碁筆電就是很多人心中的首選! 不論你是上班族、學生，還是遊戲與影音創作者，宏碁都有完整的產品線對應不同族群。 本篇將完整推薦 2025 年宏碁熱門筆電，包括： 【商務筆電推薦】TravelMate 系列 【文書筆電推薦】Acer Lite 系列",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "宏碁 (2353.TW) 個股公告 - Yahoo股市",
+      "url": "https://tw.stock.yahoo.com/quote/2353.TW/announcement",
+      "snippet": "宏碁(2353.TW)，Yahoo股市 Yahoo奇摩股市提供個股相關新聞、個股公告等即時資訊。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "宏碁多元轉型 營收及獲利顯現 股價強攻漲停 - 理財周刊",
+      "url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/229978/",
+      "snippet": "圖片來源：宏碁官網 宏碁 (2353)近期股價轉強，法人表示，主要來自AI PC換機潮、營收創高，以及「多重事業引擎」逐漸發酵，以工業電腦、智慧醫療、能源及家電四大主軸擴展成長曲線，降低過去過度依賴PC景氣循環的印象。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "bnext.com.tw/article/51325/aopen-acer-volta-supermarket-chrome-fast...",
+      "url": "https://www.bnext.com.tw/article/51325/aopen-acer-volta-supermarket-chrome-fast-food-order",
+      "snippet": "車充電網新創Volta Charging數位看板合作方，今年底北美充電站將衝上2,000座。 宏碁群龍計畫最閃亮黑馬.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

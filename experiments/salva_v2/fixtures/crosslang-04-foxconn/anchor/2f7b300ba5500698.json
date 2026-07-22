@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-04-foxconn",
+  "strategy": "anchor",
+  "query": "鴻海 filetype:pdf",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:28:50.804539+00:00",
+  "results": [
+    {
+      "title": "PDF 鴻海精密工業股份",
+      "url": "https://image.foxconn.com/upload/202512/financy_by_month/Hon_Hai_Monthly_Revenue_Report_November_2025_CN_20251205_9429.pdf",
+      "snippet": "_ 鴻海2025 年前11 月累計營收_ 2025 年累計前11 月營收為7 兆2,369 億, 年增16.63%。「雲端網路產品類別」及「元件及其他產品類別」與去年同期相比強勁成長、「電腦終端產品類別」和「消費智能產品類別」則表現約略持平。說明如下:",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF Q2 FY25 鴻海精密工業股 - image.honhai.com",
+      "url": "https://image.honhai.com/upload/202508/law_talk/Hon_Hai_2Q25_Results_Chinese_20250814_4238.pdf",
+      "snippet": "Q2 FY25 鴻海精密工業股份有限公司 第二季法人說明會",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF 法說會逐字稿 - Hon Hai",
+      "url": "https://image.honhai.com/upload/law_talk/Hon_Hai_2Q24_Results_Transcript_Chinese_20240814_1651.pdf",
+      "snippet": "巫俊毅James Wu 鴻海精密股份有限公司—發言人 各位投資以及媒體先進大家好,我是James,歡迎各位參加鴻海公司法人說明會。因為劉董事長目前正在海外進行商務洽談,無法親自出席法說會,所以今天將由財務長黃德才先生以及我為各位說明。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF 鴻海精密工業股份",
+      "url": "https://image.foxconn.com/upload/202511/financy_by_month/Hon_Hai_Monthly_Revenue_Report_October_2025_CN_20251105_5541.pdf",
+      "snippet": "鴻海精密工業股份有限公司 2025 年 月營收摘要",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF Twse 臺灣證券交易所>個股資訊",
+      "url": "https://www.twse.com.tw/pdf/ch/2317_ch.pdf",
+      "snippet": "鴻海精密工業股份有限公 股票代號: 2317",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF 鴻海精密工業股份有限公司",
+      "url": "https://www.honhai.com/s3/reports/重要內規/鴻海公司章程_20201217.pdf",
+      "snippet": "第一條:本公司依照公司法規定組織之,定中文名稱為鴻海精密工業股份有限公司,英文名稱為HON HAI PRECISION INDUSTRY CO., LTD.。 第二條:本公司所營事業如述:",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF Taiwan Stock Exchange Corp. - TWSE",
+      "url": "https://www.twse.com.tw/pdf/en/2317_en.pdf",
+      "snippet": "HON HAI PRECISION IND. CO. Generated Date: 2026/07/20",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF 鴻海精密工業股份有限公司",
+      "url": "https://mops.twse.com.tw/nas/STR/231720200221PR001.pdf",
+      "snippet": "鴻海精密工業股份有限公司 企業社會責任實務守則 第一章 總則 第一條 為實踐企業社會責任,並促進經濟、社會與環境生態之平衡及永續發展,依「上市櫃公司企業社會責任實務守則」制定本實務守則,以資遵循。 第二條 本守則所適用範圍包括本公司及其集團企業之整體營運活動。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF Presentation - mopsov.twse.com.tw",
+      "url": "https://mopsov.twse.com.tw/nas/STR/667220260508E001.pdf",
+      "snippet": "Disclaimer Statement This presentation and release contain \"forward looking statements\" which may include projections of future results of operations financial condition or business prospects based on our own information and other sources.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF www.honhai.com",
+      "url": "https://www.honhai.com/s3/reports/CSR/CN/2022/鴻海-2022ESG(CH)-20230711-完整版.pdf",
+      "snippet": "關於本報告書 鴻海精密工業股份有限公司( 以下簡稱「集團」或「鴻海」),自 2009 年起發行首本「2008 年度企業社會責任報告書」,並於2022 年起更名為「永續報告書」,身為良好企業公民,我們致力落實永續作為以對應聯合國永續發展目標,並向各界利害關係人揭露集團推動永續治理的財務及非財務績效 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

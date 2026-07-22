@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-04-mediatek-brands",
+  "strategy": "radar",
+  "query": "chipset collaboration Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:31:33.234632+00:00",
+  "results": [
+    {
+      "title": "Why a shared semiconductor taxonomy matters",
+      "url": "https://www.oecd.org/en/blogs/2024/11/speaking-the-same-chip-language-why-a-shared-semiconductor-taxonomy-matters-for-global-co-operation-and-supply-chain-resilience.html",
+      "snippet": "This comprehensive approach allows for a more nuanced understanding of the global semiconductor manufacturing landscape, enabling policymakers and industry stakeholders to better assess production capabilities, potential bottlenecks, and opportunities for collaboration and diversification.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CHIPS Alliance",
+      "url": "https://www.chipsalliance.org/",
+      "snippet": "CHIPS (Common Hardware for Interfaces, Processors and Systems) Alliance harnesses the energy of open source collaboration to accelerate hardware development.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Valens Semiconductor",
+      "url": "https://www.valens.com/newsroom/valens-semiconductor-and-intel-foundry-services-announce-strategic-relationship-for-next-generation-a-phy-product/",
+      "snippet": "Learn about the collaboration between Valens and Intel to produce high-performance A-PHY chipsets, aiming to boost automotive safety and performance.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Broadcom Unveils World's First Integrated 5G and Wi-Fi 8 FWA Platform ...",
+      "url": "https://www.broadcom.com/company/news/product-releases/64351",
+      "snippet": "Broadcom Unveils World's First Integrated 5G and Wi-Fi 8 FWA Platform in Collaboration with Samsung Electronics PALO ALTO, Calif., May 27, 2026 (GLOBE NEWSWIRE) -- Broadcom Inc. (NASDAQ: AVGO), a global technology leader that designs, develops, and supplies semiconductor and infrastructure software solutions, today announced its collaboration with Samsung Electronics Co., Ltd. on a new ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Collaborating to advance research and innovation on essential chips for ...",
+      "url": "https://news.mit.edu/2025/mit-globalfoundries-collaborate-advance-research-innovation-essential-chips-for-ai-0228",
+      "snippet": "MIT Microsystems Technology Laboratories and GlobalFoundries announce a new research agreement to advance research and innovation on essential chips for AI, particularly in power consumption by data centers and edge devices.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Partnerships and Alliances - Sasken",
+      "url": "https://www.sasken.com/about-us/partnerships-and-alliances",
+      "snippet": "PARTNERSHIPS ALLIANCES Sasken is a specialist in Product Engineering and Digital Transformation providing concept-to-market, chip-to-cognition R&D services to global leaders in Semiconductor, Automotive, Industrials, Smart Devices & Wearables, Enterprise Grade Devices, Satcom and Transportation industries.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Rohde & Schwarz and Autotalks collaborate to verify world's first 5G ...",
+      "url": "https://www.rohde-schwarz.com/us/about-us/news-press/all-news/rohde-schwarz-and-autotalks-collaborate-to-verify-world-s-first-5g-v2x-chipset-using-new-capabilities-of-the-rs-cmp180-radiocommunication-tester_229356-1465668.html",
+      "snippet": "Christoph Pointner, Senior Vice President Mobile Radio Testers at Rohde & Schwarz, says: \"The close collaboration with pioneering V2X chipset vendor Autotalks helps to mutually validate our solutions, provide a trusted reference to our respective customers and accelerate the deployment of 5G-V2X by the entire ecosystem.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Mapping the semiconductor value chain | OECD",
+      "url": "https://www.oecd.org/en/publications/mapping-the-semiconductor-value-chain_4154cdbf-en.html",
+      "snippet": "The semiconductor value chain is highly complex, with globally distributed production processes and tightly interconnected segments. This paper identifies the key segments, its actors, inputs, and datasets, offering a comprehensive view of the semiconductor ecosystem. It examines each segment to identify bottlenecks and vulnerabilities. The analysis of cross-country linkages within the ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Meeting of Semiconductor Associations from Around the World Underscores ...",
+      "url": "https://www.semiconductors.org/meeting-of-semiconductor-associations-from-around-the-world-underscores-importance-of-global-chip-sector-collaboration/",
+      "snippet": "Meeting of Semiconductor Associations from Around the World Underscores Importance of Global Chip Sector Collaboration Thursday, Mar 02, 2023, 10:30am by Semiconductor Industry Association",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "A World of Chips Acts: The Future of U.S.-EU Semiconductor ... - CSIS",
+      "url": "https://www.csis.org/analysis/world-chips-acts-future-us-eu-semiconductor-collaboration",
+      "snippet": "With the enactment of the U.S. and EU Chips Acts, the question is how collaborative activities can be deepened, broadened, and leveraged by direct engagement to address the vulnerabilities faced by both ecosystems.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

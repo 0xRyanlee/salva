@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-04-foxconn",
+  "strategy": "radar",
+  "query": "鴻海 headquarters TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:28:42.612646+00:00",
+  "results": [
+    {
+      "title": "鴻海科技集團 - 维基百科，自由的百科全书",
+      "url": "https://zh.wikipedia.org/wiki/鴻海科技集團",
+      "snippet": "鴻海科技集團 （英語： Foxconn Technology Group）是源自 臺灣 的 跨國企業 集團，1974年創辦，以 富士康 （Foxconn）做為商標名稱。其專注於 電子產品的代工服務 （EMS），研發生產精密電氣元件、機殼、 準系統 、系統組裝、光通訊元件、液晶顯示件等3C產品上、下游產品及服務。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Contact Us - Hon Hai Technology Group - Foxconn",
+      "url": "https://www.foxconn.com/en-us/contact",
+      "snippet": "「 Hon Hai Group Headquarters 」- media@foxconn.com - No.2, Zihyou St., Tucheng Dist., New Taipei City 236, TaiwanPhone：+886-2-2268-3466",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "聯絡我們 - 鴻海科技集團 - Hon Hai",
+      "url": "https://www.honhai.com/zh-tw/contact",
+      "snippet": "「 鴻海集團 (總部) 」- media@foxconn.com - 23678新北市土城區土城工業區自由街2號電話：+886-2-2268-3466",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "首頁 - 鴻海科技集團",
+      "url": "https://www.honhai.com/zh-tw",
+      "snippet": "鴻海科技集團作為科技服務的領先者，近年積極投入「電動車、數位健康、機器人」三大新興產業以及「人工智慧、半導體、新世代通訊技術」三項新技術領域，以「三加三」結合作為集團重要的長期發展策略，為全球標竿客戶提供完整解決方案，成為全方位智慧生活提供者。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Hon Hai Precision Industry Co., Ltd.",
+      "url": "https://www.findcompany.com.tw/en/鴻海精密工業股份有限公司",
+      "snippet": "No. 66, Zhongshan Rd., Tucheng Dist., New Taipei City 23680, Taiwan (R.O.C.)",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "產業價值鏈資訊平台 > 聯絡方式",
+      "url": "https://ic.tpex.org.tw/company_contact.php?stk_code=2317",
+      "snippet": "鴻海聯絡方式 聯絡人 巫俊毅 公務電話 分機5010-10001 電子郵件 media@foxconn.com 公司網址 www.honhai.com.tw 公司電話 02-2268-3466 公司傳真 公司地址 新北市土城區自由街2號",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "鴻海精密工業股份有限公司｜徵才中－104人力銀行",
+      "url": "https://www.104.com.tw/company/233rv1s",
+      "snippet": "鴻海精密工業股份有限公司（臺灣證券交易所代碼：2317）於1974年肇基於臺灣，以模具為根基，逐漸發展為高科技服務企業。在電子代工服務領域（EMS）排名全球第一，市占率超過四成，範圍涵蓋消費性電子產品、雲端網路產品、電腦終端產品、元件及其他等四大產品領域。全球員工總人數季節性 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Home - Hon Hai Technology Group - Foxconn",
+      "url": "https://www.foxconn.com/en-us",
+      "snippet": "As the leader of technology services, Hon Hai Technology Group has actively invested in the three emerging industries of \"electric vehicles, digital health, and robots\" in recent years, as well as \"artificial intelligence, semiconductor, and new generation communication technology\". Combined with the Group's important long -term development strategy, it provides a complete solution for global ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "鴻海 HON HAI-公司投資人關係整合平台 TDCC IR Platform",
+      "url": "https://irplatform.tdcc.com.tw/ir/en/contact/detail/730E2321-52C1-4735-9EF4-8D7F96A802C4",
+      "snippet": "公司投資人關係整合平台 TDCC IR Platform TW Login About Us Events IR Contacts ESG Ratings Responsible Investment 2.0 Voting Disclosure",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "2317 鴻海 HON HAI-公司投資人關係整合平台 TDCC IR Platform",
+      "url": "https://irplatform.tdcc.com.tw/ir/zh/contact/detail/730E2321-52C1-4735-9EF4-8D7F96A802C4",
+      "snippet": "2317 鴻海 HON HAI 公司基本資料 官方網站： https://www.honhai.com/zh-tw 地址：新北市土城區自由街2號 電話： (02)2268-3466 辦理股票 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

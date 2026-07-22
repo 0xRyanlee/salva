@@ -1,0 +1,75 @@
+{
+  "task_id": "multihop-02-tsmc-customers",
+  "entities": [
+    {
+      "title": "Top 8 TSMC Customers by Revenue Share: Who Powers the World's ...",
+      "source_urls": [
+        "https://testflowinc.com/blog/top-8-tsmc-customers-revenue-share-analysis"
+      ],
+      "score": 0.3655,
+      "confidence": 0.3655
+    },
+    {
+      "title": "Top 8 TSMC Customers — Ranked by Revenue Share | Ali Kamaly",
+      "source_urls": [
+        "https://www.linkedin.com/posts/ali-kamaly_semiconductors-tsmc-foundries-activity-7359555437634945026-7pbq"
+      ],
+      "score": 0.2638,
+      "confidence": 0.2638
+    },
+    {
+      "title": "Nvidia set to supplant Apple as TSMC's largest customer - CNBC",
+      "source_urls": [
+        "https://www.cnbc.com/2026/01/26/nvidia-set-to-supplant-apple-as-tsmcs-largest-customer.html"
+      ],
+      "score": 0.1756,
+      "confidence": 0.1756
+    },
+    {
+      "title": "Business Contacts - Taiwan Semiconductor Manufacturing...",
+      "source_urls": [
+        "https://www.tsmc.com/english/aboutTSMC/business_contacts"
+      ],
+      "score": 0.1746,
+      "confidence": 0.1746
+    },
+    {
+      "title": "У этой компании нет ни фабрик, ни розницы — и она... | Дзен",
+      "source_urls": [
+        "https://dzen.ru/a/aApRKbRKNzJMnXNF"
+      ],
+      "score": 0.1585,
+      "confidence": 0.1585
+    },
+    {
+      "title": "dbs.com.sg",
+      "source_urls": [
+        "https://www.dbs.com.sg"
+      ],
+      "score": 0.1773,
+      "confidence": 0.1773
+    },
+    {
+      "title": "[News] Global Wafer Foundry Market Pattern Could be Reshaped",
+      "source_urls": [
+        "https://www.trendforce.com/news/2025/04/11/news-global-wafer-foundry-market-pattern-could-be-reshaped"
+      ],
+      "score": 0.3384,
+      "confidence": 0.3384
+    },
+    {
+      "title": "TSMCs partnerships and collaborations with major technology companies",
+      "source_urls": [
+        "https://www.csfusion.org/news/tsmcs-partnerships-and-collaborations-with-major-technology-companies"
+      ],
+      "score": 0.3099,
+      "confidence": 0.3099
+    }
+  ],
+  "meta": {
+    "qualified_count": 8,
+    "raw_count": 8,
+    "rounds": 3,
+    "domain": "partnerships"
+  }
+}

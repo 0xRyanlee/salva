@@ -1,0 +1,79 @@
+{
+  "task_id": "single-06-gleif",
+  "strategy": "anchor",
+  "query": "GLEIF filetype:pdf",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:14.637303+00:00",
+  "results": [
+    {
+      "title": "PDF GLEIF Partners Program",
+      "url": "https://www.gleif.org/about/gleif-engagement/gleif-partners-program/2025-03-12_q-a_gleif-partners-program_v1.0.pdf",
+      "snippet": "GLEIF is launching the Partners Program to enhance collaboration and engagement with key stakeholders, including data and technology vendors, service providers, financial institutions, corporates, certification authorities (CAs), and trust service providers (TSPs). This program aims to promote the adoption of the Legal Entity Identifier (LEI) and the verifiable LEI (vLEI) across industries ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF A Response by the Global Legal Identifier Foundation (GLEIF) to the the ...",
+      "url": "https://www.sec.gov/files/ctf-input-global-legal-entity-identifier-foundation-3-24-25.pdf",
+      "snippet": "First, some background on GLEIF: Established by the Financial Stability Board (FSB) in June 2014 under the mission of improving financial stability and transparency due to the aftermath of the financial crisis, GLEIF is tasked to support the implementation and use of the LEI (Legal Entity Identifier, ISO 17442). Even though the primary and initial usage and adoption of the LEI predominantly ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF GLEIF Partners Program Charter",
+      "url": "https://www.gleif.org/about/gleif-engagement/gleif-partners-program/2025-04-10_gleif-partner-program-charter_v1.0.pdf",
+      "snippet": "GLEIF establishes the Partners Program to foster collaboration among key stakeholders, including data and technology vendors, services providers, financial institutions, corporates, certification authorities (CAs), and trust service providers (TSPs). This program aims to foster the adoption and use of the LEI and the vLEI across sectors, enhancing transparency and efficiency in business ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF GLEIF - stratml.us",
+      "url": "https://stratml.us/pdfs/GLEIF.pdf",
+      "snippet": "About GLEIF Established by the Financial Stability Board in June 2014, the Global Legal Entity Identifier Foundation (GLEIF) is tasked to support the implementation and use of the Legal Entity Identifier (LEI). The foundation is backed and overseen by the LEI Regulatory Oversight Committee, representing public authorities from around the globe that have come together to jointly drive forward ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF [Title goes here] - Regulations.gov",
+      "url": "https://downloads.regulations.gov/TREAS-DO-2023-0001-0025/attachment_1.pdf",
+      "snippet": "GLEIF is working directly with financial institutions within its Validation Agent operating model (VA) to issue and renew LEIs for their clients, in cooperation with LEI Issuer organizations officially accredited by GLEIF, by leveraging their business as usual client identification procedures in Know Your Customer (KYC) and client onboarding ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF The vLEI: Introducing Digital I.D. for Organizations Everywhere",
+      "url": "https://rapidlei.com/wp-content/uploads/2025/11/2023-gleif-introduction-to-vlei-digital-identity-v2-2.pdf",
+      "snippet": "tifier Foundation (GLEIF) is answering this urgent, unmet need. GLEIF is pioneering a multi-stakeholder effort to cr ate a new global ecosystem for organizational digital identity. In February 2022, GLEIF published an Ecosystem Governance Framework, together with a technical supporting infrastructure, for a verifiable LEI (vLEI), a digitally ver",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF Response of the Global Legal Entity Identifier Foundation (GLEIF) to ...",
+      "url": "https://www.sec.gov/comments/s7-08-23/s70823-192639-382762.pdf",
+      "snippet": "May 22nd, 2023 The Global Legal Entity Identifier Foundation (GLEIF) is pleased to provide comments to the Securities and Exchange Commission (Commission) on the proposed rule for electronic submission of certain materials under the Securities Act of 1934; amendments regarding the FOCUS Report.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF GLEIF - 028-T0030 - Conformity Flag Infographic - v2",
+      "url": "https://rapidlei.com/wp-content/uploads/2025/11/2024-gleif-policy-conformity-flag-infographic-lei-transparency.pdf",
+      "snippet": "Regulatory Oversight Committee (ROC) and GLEIF to encouraging renewals and promoting current, complete data reporting by legal entities. The flag is a visual sign, giving it a stamp of 'conforming' approval.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF Response of the Global Legal Entity Identifier Foundation (GLEIF) to ...",
+      "url": "https://download.asic.gov.au/media/hmco4ysh/global-legal-entity-identifier-foundation.pdf",
+      "snippet": "GLEIF fully supports the ASIC's initiative to update regulatory guidance on digital assets and financial services. As digital asset markets continue to evolve, there is a critical need for standardized and interoperable organizational identity frameworks. The Legal Entity Identifier (LEI) and verifiable LEI (vLEI) can play a pivotal role in supporting ASIC's regulatory objectives by ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF Organizational Identity -Securely identify and verify organizations ...",
+      "url": "https://www.unescap.org/sites/default/d8files/event-documents/GLEIF_Organizational+Indentity-Securely+identify+and+verify+organizations_people&roles+with+the+LEI&vLEI.pdf",
+      "snippet": "What is the Global Legal Entity Identifier Foundation (GLEIF)? GLEIF is a not-for-profit Swiss foundation, founded by the Financial Stability Board (FSB).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

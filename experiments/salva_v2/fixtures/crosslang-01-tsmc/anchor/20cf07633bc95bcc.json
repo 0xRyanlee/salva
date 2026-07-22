@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-01-tsmc",
+  "strategy": "anchor",
+  "query": "台積電",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:36.762482+00:00",
+  "results": [
+    {
+      "title": "台積電 - 維基百科，自由的百科全書 - zh.wikipedia.org",
+      "url": "https://zh.wikipedia.org/zh-tw/台灣積體電路製造",
+      "snippet": "台積電是工研院的技術移轉衍生公司，其第一個廠房位於工研院中興院區，由台積電向 經濟部 租用，由此可看出台積電與台灣半導體產業發展的密切關係。 該廠房已於2002年結束租期，歸還給經濟部與工研院。 [9] 1994年，台積電在 臺灣證券交易所 掛牌上市。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/TSMC",
+      "snippet": "The Nvidia GeForce GTX 1070, which uses the GP104 die manufactured by TSMC on its 16 nm node TSMC's N7+ is the first commercially available extreme-ultraviolet lithographic process in the semiconductor industry. [115] It uses ultraviolet patterning and enables more acute circuits to be implemented on the silicon. N7+ offers a 15-20 percent higher transistor density and 10 percent reduction ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電 (2330.TW) 走勢圖 - Yahoo股市",
+      "url": "https://tw.stock.yahoo.com/quote/2330.TW",
+      "snippet": "台積電(2330.TW)，Yahoo股市 Yahoo奇摩股市提供您即時報價、個股走勢、成交資訊、當日籌碼，價量變化、個股相關新聞等即時資訊。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電 (2330) 即時股價行情 - 玩股網",
+      "url": "https://www.wantgoo.com/stock/2330",
+      "snippet": "台積電(2330)上市半導體，股價2390漲跌幅3.02%，對接證交所、期交所報價來源繪製即時走勢、技術分析線圖、盤後更新三大法人買賣超、融資融券餘額、主力券商進出行情，每月每季更新財報、營收、EPS、股利等公司資訊供投資人做最佳買賣判斷。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "(2330)台積電價量走勢圖 - PChome Online 股市",
+      "url": "https://pchome.megatime.com.tw/stock/sid2330.html",
+      "snippet": "台積電(2330)個股即時資訊 - 成交價: 2410.00, 漲跌: +90.00, PChome Online股市提供即時報價、個股走勢、成交資訊、當日行情，價量變化、個股健診及個股相關新聞等。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電 (2330.TW) 技術分析 - Yahoo股市",
+      "url": "https://tw.stock.yahoo.com/quote/2330.TW/technical-analysis",
+      "snippet": "台積電(2330.TW)，Yahoo股市 Yahoo奇摩股市提供個股技術分析功能，包含MA、KD、RSI、MACD 等技術指標，與K線圖來協助您研判股市走勢與決定買賣策略。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台灣積體電路製造股份有限公司(台積電) ｜徵才中－104人力銀行",
+      "url": "https://www.104.com.tw/company/a5h92m0",
+      "snippet": "台積公司是全世界最大的專業積體電路製造服務公司．台積公司在民國七十六年成立於台灣新竹科學工業園區，並...。 公司位於新竹市。 產業：半導體製造業。 應徵台灣積體電路製造股份有限公司 (台積電)工作，請上104人力銀行投遞履歷。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電adr(Tsm) - 即時行情技術分析 - 國際股市 | 玩股網",
+      "url": "https://www.wantgoo.com/global/tsm",
+      "snippet": "台積電ADR(TSM)最新價格408.66漲跌幅2.58%，提供即時走勢圖、技術分析K線圖，數種技術指標供自訂參數，包含：均線MA、KD、RSI、MACD、DMI、SAR、威廉指標、力道K、布林通道、天羅地網，未來指標包含：差離、三關價、CDP、逆勢操作。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "晶圓廠區 - 台灣積體電路製造股份有限公司 - Tsmc",
+      "url": "https://www.tsmc.com/chinese/aboutTSMC/TSMC_Fabs",
+      "snippet": "台積電 (南京) 有限公司及晶圓十六廠",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing Company Limited - TSMC",
+      "url": "https://www.tsmc.com/english",
+      "snippet": "TSMC has been the world's dedicated semiconductor foundry since 1987, and we support a thriving ecosystem of global customers and partners with the industry's leading process technology and portfolio of design enablement solutions to unleash innovation fo",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

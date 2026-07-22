@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-04-mediatek-brands",
+  "strategy": "pirate",
+  "query": "filetype:pdf \"chipset\"",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:31:44.514146+00:00",
+  "results": [
+    {
+      "title": "List of Intel chipsets - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/List_of_Intel_chipsets",
+      "snippet": "Early IBM XT-compatible mainboards did not yet have a chipset, but relied instead on a collection of discrete TTL chips by Intel:[1]. the 8284 clock generator. the 8288 bus controller.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Chipset Brief Intel 800 Series Chipset with Intel Core Ultra ...",
+      "url": "https://cdrdv2-public.intel.com/842318/intel-800-series-chipset-brief-public.pdf",
+      "snippet": "Intel® 800 Series Chipset with Intel® CoreTM Ultra Desktop Processors (Series 2) s Chipsets are designed to enable their intelligent erformance and next-gen connectivity. The Intel® 800 Series has something for every user. From the latest technology features that users need to connect and work to the enthusiast-level options for those who demand",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Intel® 700 Series Chipset Brie",
+      "url": "https://cdrdv2-public.intel.com/786840/700-series-chipset-brief.pdf",
+      "snippet": "tel® 700 Series Chipset Brief Embedded on the motherboard, chipsets control the interaction between a CPU and every other peripheral system on the mother-board, including R. M, storage, and I/O components. They are a crucial part of your PC, defining not only the connectivity that your PC can support, but also what.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Chipset Brief Z890 Chipset with Intel Core Ultra Desktop ...",
+      "url": "https://www.asipartner.com/wp-content/uploads/2024/10/intel-z890-chipset-brief.pdf",
+      "snippet": "Intel® Z890 Chipset with Intel® CoreTM Ultra Desktop Processors (Series 2) re designed to enable their intelligent performance and next-gen connectivity. For everything from elite gaming rigs to enthusiast creator PCs,",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Active Chipset Reference Design Guide (Rev. A)",
+      "url": "https://www.ti.com/lit/ug/sluuas6a/sluuas6a.pdf",
+      "snippet": "This document provides system design information for the Texas Instruments Active-Cell Balancing chipset. Use this reference design guide along with the data sheets for the devices listed in this document.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Intel® CPU and Chipset Matrix Table - ieiworld.com",
+      "url": "https://dls.ieiworld.com/IEIWEB/MARKETING_MATERIAL/2021_catalog/0-14_Intel_CPU_and_Chipset_Matrix_Table.pdf",
+      "snippet": "Chipset DDR4-1866/2133, DDR3L-1333/1600@1.35V C236 DDR3 and DDR3L 1333/1600 at 1.5V DDR3 1333/1600",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ES51920 chipset - Cyrustek",
+      "url": "http://www.cyrustek.com.tw/wp-content/uploads/ES51920.pdf",
+      "snippet": "The chipset provides the open/short calibration process to get the better accuracy for high/low impedance measurement. The purpose of open/short calibration is to reduce the parasitic effect of the test fixture.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "T/486DX2, T/486SXl/SXLC and T/486DLC/SLC Desktop Chipset...",
+      "url": "https://ardent-tool.com/CPU/docs/TI/chipset.pdf",
+      "snippet": "To compute..power to. Compete. T/486DX2, T/486SXl/SXLC and T/486DLC/SLC Desktop Chipset Support Summary. Vendor. Part Number.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "(PDF) A 3.1 to 10.6 GHz 100 Mb/s Pulse-Based Ultra-Wideband Radio...",
+      "url": "https://www.academia.edu/5164277/A_3_1_to_10_6_GHz_100_Mb_s_Pulse_Based_Ultra_Wideband_Radio_Receiver_Chipset",
+      "snippet": "The chipset achieves a 100 Mb/s wireless link in the 3.1 to 10.6 GHz range.A bit-error-rate (BER) of 10^-3 is recorded at -80 dBm sensitivity.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "A 3.5-to-6.2-GHz Mixer-First Acoustic-Filtering Chipset with...",
+      "url": "https://experts.illinois.edu/en/publications/a-35-to-62-ghz-mixer-first-acoustic-filtering-chipset-with-mixed-",
+      "snippet": "A 3.5-to-6.2-GHz Mixer-First Acoustic-Filtering Chipset with Mixed-Domain Asymmetric IF and Complex BB Recombination Achieving 170 MHz BW and +27 dBm IIP3 at 1×BW offset.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

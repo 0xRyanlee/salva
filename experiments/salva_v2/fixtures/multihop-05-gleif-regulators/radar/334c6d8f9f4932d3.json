@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-05-gleif-regulators",
+  "strategy": "radar",
+  "query": "GLEIF joint Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:32:07.510116+00:00",
+  "results": [
+    {
+      "title": "Home – GLEIF",
+      "url": "https://www.gleif.org/",
+      "snippet": "GLEIF – Global Legal Entity Identifier Foundation. We enable smarter, less costly and more reliable decisions about who to do business with. GLEIF AI Learn how Newsletter.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global Legal Entity Identifier Foundation (GLEIF) - YouTube",
+      "url": "https://www.youtube.com/@GLEIF",
+      "snippet": "Recording: ADB-GLEIF Joint Asia Webinar Series on LEI: Part 2 - Intro of LEI in the United States. Global Legal Entity Identifier Foundation (GLEIF).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "x.com/GLEIF",
+      "url": "https://x.com/GLEIF",
+      "snippet": "@GLEIF.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF Joins Our Global Partner Program to Expand... - Mojaloop",
+      "url": "https://mojaloop.io/gleif-joins-our-global-partner-program-to-expand-trusted-business-identity-across-borders/",
+      "snippet": "GLEIF manages the Global Legal Entity Identifier (LEI) system, which assigns each business a unique, validated identifier that links to an open, publicly accessible company record.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "#gleif #itfa #lei #vlei #trade #collaboration | Global Legal Entity...",
+      "url": "https://www.linkedin.com/posts/global-legal-entity-identifier-foundation-gleif-_gleif-itfa-lei-activity-7422254867559313408-4h5x",
+      "snippet": "GLEIF joins ITFA as an Associate Organization The Global Legal Entity Identifier Foundation (GLEIF) has joined the International Trade and Forfaiting Association (ITFA)...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF Archives - BCR Publishing",
+      "url": "https://bcrpub.com/topic/gleif/",
+      "snippet": "GLEIF joins ITFA as an Associate Organisation.GLEIF plays a critical role in enhancing transparency and trust in global financial markets through the Legal Entity Identifier (LEI)...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Companies join Global Open Data Integration Network",
+      "url": "https://internationalsecurityjournal.com/global-open-data-integration/",
+      "snippet": "The GLEIF has announced that Open Supply Hub, Wikimedia Deutschland and Wikirate International have joined the Global Open Data Integration Network (GODIN).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Home | Global Energy Monitor",
+      "url": "https://globalenergymonitor.org/",
+      "snippet": "GLEIF and Global Energy Monitor Partner to Increase Transparency in Energy Asset Ownership.Erica Scott-Adjei Joins Global Energy Monitor as Chief Development Officer.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Joint GLEIF – XII Legal Identity in XBRL WG convene | XBRL",
+      "url": "https://www.xbrl.org/joint-gleif-xii-legal-identity-in-xbrl-wg-convene/",
+      "snippet": "Join a Jurisdiction. Direct Membership.Frankfurt, Germany was the site of the first meeting of the new joint XII/GLEIF Legal Identity in XBRL (LIX) Working Group.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Numeracle Joins GLEIF Vendor & Services Providers Relationship...",
+      "url": "https://www.numeracle.com/press-releases/numeracle-joins-gleif",
+      "snippet": "A globally recognized and accredited vetting organization, GLEIF is the only global online source that provides open, standardized, high-quality legal entity reference data.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

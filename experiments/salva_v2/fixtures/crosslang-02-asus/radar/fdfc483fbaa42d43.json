@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-02-asus",
+  "strategy": "radar",
+  "query": "華碩 founded TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:55.210466+00:00",
+  "results": [
+    {
+      "title": "華碩 - 维基百科，自由的百科全书",
+      "url": "https://zh.wikipedia.org/wiki/華碩",
+      "snippet": "華碩專賣店 ROG玩家国度专卖店 華碩電腦，簡稱 華碩 （英語譯名暨品牌名稱： ASUS），是源自 臺灣 的 跨國 科技公司，成立於1989年，總部位於 臺北市 關渡。其產品主要為家用與商務用 桌上型電腦 、 筆記型電腦 、 平板電腦 、 主機板 、 顯示卡 、 顯示器 、 儲存裝置 、 外圍設備 、 行動電話 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Asus - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Asus",
+      "snippet": "Asus was founded in Taipei in 1989 [13] by Tzu-Hsien Tung, Ted Hsu, Wayne Hsieh and M.T. Liao, [14] all four having previously worked at Acer as hardware engineers.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩- 維基百科，自由的百科全書",
+      "url": "https://zh.wikipedia.org/zh-tw/華碩",
+      "snippet": "華碩電腦，簡稱華碩（英語譯名暨品牌名稱：ASUS），是源自臺灣的跨國科技公司，成立於1989年，總部位於臺北市關渡。其產品主要為家用與商務用桌上型電腦、筆記型電腦、平板 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩- 維基百科，自由嘅百科全書",
+      "url": "https://zh-yue.wikipedia.org/wiki/華碩",
+      "snippet": "華碩. ASUS ，顯卡、主機��板、電競筆電市佔均全球前二嘅知名科技企業，台灣嘅跨國科技公司. 其他文嘅版本; 撈緊… 下載PDF; 監視 · 改. 華碩（Asus）係臺灣一間電子公司，專 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩(2357.TW) 公司概況及事件 - Yahoo 財經",
+      "url": "https://hk.finance.yahoo.com/quote/2357.TW/profile/",
+      "snippet": "... 華碩(2357.TW) 的公司概況， ... was founded in 1989 and is headquartered in Taipei City, Taiwan. 公司管治.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ASUSTeK Computer (ASUS) - The Technology Giant That Began ...",
+      "url": "https://taiwan.md/en/economy/asus-computer/",
+      "snippet": "Mar 20, 2026 ... ASUSTeK Computer Inc. was founded on April 2, 1989, by four former Acer engineers: T.H. Tung, Ted Hsu, Wayne Hsieh, and M.T. Liao.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩大事紀 - 全方位科技解決方案的領導品牌 | ASUS 台灣",
+      "url": "https://www.asus.com/tw/content/about_asus_history/",
+      "snippet": "華碩為全球知名的跨國科技企業，創立於1989年，以提供頂尖的主機板，以及高品質的個人電腦、螢幕、顯示卡、路由器及全方位科技解決方案聞名。至今，華碩持續研發設計新世代的智慧創新技術，以無與倫比的絕佳體驗為消費者織就美好數位生活。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩電腦股份有限公司",
+      "url": "https://www.findcompany.com.tw/華碩電腦股份有限公司",
+      "snippet": "華碩電腦股份有限公司 ASUSTEK COMPUTER INCORPORATION 統編:23638777,地址:臺北市北投區立德路15號1樓",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩電腦股份有限公司 (華碩電腦):華碩的由來,榮耀里程碑,綠色華碩,企...",
+      "url": "https://www.newton.com.tw/wiki/華碩電腦/1790853",
+      "snippet": "華碩電腦股份有限公司（簡稱 華碩），品牌為“ASUS”，公司成立於1990年4月2日，是台灣的國際品牌公司，也是全球最大的主機板的製造商，同時亦為顯示卡、桌上電腦、通訊產品、光碟機等產品的領導廠商；另外，“華碩”之名來自該公司成為“華人之碩”的期望，而英文名ASUS的靈感來自希臘神話 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "About ASUS Home｜ASUS 台灣",
+      "url": "https://www.asus.com/tw/content/about-asus/",
+      "snippet": "華碩提供多種電腦產品及解決方案，致力於創新與品質。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

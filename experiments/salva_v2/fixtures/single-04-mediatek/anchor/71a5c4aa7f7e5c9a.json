@@ -1,0 +1,79 @@
+{
+  "task_id": "single-04-mediatek",
+  "strategy": "anchor",
+  "query": "site:crunchbase.com MediaTek",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:26:33.791832+00:00",
+  "results": [
+    {
+      "title": "MediaTek - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/mediatek",
+      "snippet": "MediaTek Inc. is a Taiwanese fabless semiconductor company that provides system-on-chip solutions for wireless communications.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Ventures - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/mediatek-ventures-0a7d",
+      "snippet": "MediaTek Ventures focuses on innovation and seeks companies that aim to change the world through technology. Their goal is to extend MediaTek's heritage of innovation and create collaborative ecosystems that align with MediaTek's corporate objectives.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Richtek Technology Corporation acquired by MediaTek",
+      "url": "https://www.crunchbase.com/acquisition/mediatek-acquires-richtek-technology-corporation--42d4377b",
+      "snippet": "MediaTek MediaTek Inc. is a Taiwanese fabless semiconductor company that provides system-on-chip solutions for wireless communications.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Ventures - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/mediatek-ventures",
+      "snippet": "MediaTek Ventures specialize in innovation, whether in technology, markets or business models.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Director & President & COO @ MediaTek Ventures - Crunchbase",
+      "url": "https://www.crunchbase.com/person/joe-chen-13e5",
+      "snippet": "Joe Chen is based out of San Jose and is the Director, President and COO of MediaTek Ventures. Joe Chen attended National Chiao Tung University.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Airoha Technology Corp. - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/airoha-technology-corp",
+      "snippet": "Details Legal Name Dafa Technology Co., Ltd. Also Known As MediaTek Operating Status Active Company Type For Profit About the Company",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Brian Hsu - Crunchbase Person Profile",
+      "url": "https://www.crunchbase.com/person/brian-hsu-1479",
+      "snippet": "Brian Jia-Shuo Hsu Managing Partner of MediaTek Ventures.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Finbarr Moynihan - General Manager, Corporate Sales @ MediaTek ...",
+      "url": "https://www.crunchbase.com/person/finbarr-moynihan",
+      "snippet": "Finbarr Moynihan is the GM/VP of Corporate Marketing at MediaTek. He attended University College Cork.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ScaleFlux - Financial Details - Crunchbase",
+      "url": "https://www.crunchbase.com/organization/scaleflux/financial_details",
+      "snippet": "ScaleFlux is funded by 17 investors. MediaTek and SK Group are the most recent investors. Which investors participated in the most funding rounds? Show",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/",
+      "snippet": "This month on Crunchbase 12,999,361 new predictions 53,674 new insights 3,575 new funding rounds",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

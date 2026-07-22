@@ -1,0 +1,44 @@
+{
+  "task_id": "crosslang-04-foxconn",
+  "strategy": "anchor",
+  "query": "site:crunchbase.com 鴻海",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:28:58.391257+00:00",
+  "results": [
+    {
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/?rogueline=",
+      "snippet": "Make better decisions, faster. Discover and act on private market activity with predictive company intelligence.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Amcor acquires Bemis Company... - Crunchbase Acquisition Profile",
+      "url": "https://www.crunchbase.com/acquisition/amcor-ltd-acquires-bemis-company--d3d0a32b",
+      "snippet": "Announced Date. Aug 6, 2018. Completed On Date. Jun 12, 2019. Acquisition Type. Acquisition. Price. $6.8B. Acquisition Status. Complete. Disposition of Acquired Organization. Separate Entity.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "SDIC Leading Private Equity Fund Management - Crunchbase...",
+      "url": "https://www.crunchbase.com/organization/sdic-leading-private-equity-fund-management",
+      "snippet": "SDIC Leading Private Equity Fund Management is a private equity firm managing advanced industry fund-of-funds.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "And Factory acquires SouthWorks... - Crunchbase Acquisition Profile",
+      "url": "https://www.crunchbase.com/acquisition/and-factory-acquires-southworks-6b89--ef7d6f4d",
+      "snippet": "SouthWorks SouthWorks is engaged in management at both Web and native development of the social game business at Pokelabo.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Acorns acquires GoHenry - 2023-04-03 - Crunchbase Acquisition Profile",
+      "url": "https://www.crunchbase.com/acquisition/acorns-grow-acquires-gohenry--10a46ff2",
+      "snippet": "GoHenry Gohenry is a developer of a kids money management application helping young people to take part in the digital economy.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-01-tsmc",
+  "strategy": "radar",
+  "query": "台積電 headquarters TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:34.843501+00:00",
+  "results": [
+    {
+      "title": "摩爾定律已死？ 台積電張曉強霸氣喊：I don’t care...",
+      "url": "https://www.bnext.com.tw/article/79931/moore's-law-works-dosent-matter",
+      "snippet": "摩爾定律已死？ 台積電張曉強霸氣喊：I don’t care！台積電擴增CoWoS產能進展？",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電豪砸3.2兆投資美國 谷立言：美台夥伴關係最佳寫照 - 民視新聞網",
+      "url": "https://www.ftvnews.com.tw/news/detail/2026717W0630",
+      "snippet": "圖、文／CTWANT台積電董事長暨總裁魏哲家昨（16）日在法說會宣布，將加碼投資美國亞利桑那州1000億美元（約新台幣3兆2346億元），預計新建4座晶圓廠及先進封裝設施，以滿足美國客戶未來多年強勁需求。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "錢鏡你家2／靠「80元價差」連賺6趟 杜金龍公開台積電第三季操作法",
+      "url": "https://www.mnews.tw/story/mm-20260716-184mon-230416",
+      "snippet": "杜金龍認為盤整的台積電適合區間操作。 杜金龍認為盤整的台積電適合區間操作。 鏡週刊2026.07.17 07:40 臺北時間. 錢鏡你家2／靠「80元價差」連賺6趟 杜金龍公開台積電第三季操作法.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電擴大環保承諾 成首家獲OECM... | LINE TODAY",
+      "url": "https://today.line.me/tw/v3/article/peK6o79",
+      "snippet": "(圖：台積電提供). 聯合國環境署訂定 5 月 22 日為國際生物多樣性 (International Day for Biodiversity Diversity)，台積電.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ctee.com.tw/news/20241230701532-430704",
+      "url": "https://www.ctee.com.tw/news/20241230701532-430704",
+      "snippet": "台積電承諾投入650億美元（約新台幣2.13兆）建造亞利桑那廠，並獲得《晶片法案》（CHIPS and Science Act）提供的66億美元（約新台幣2162億）補助。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "en.cofacts.tw/article/3tf63l07xdyjk",
+      "url": "https://en.cofacts.tw/article/3tf63l07xdyjk",
+      "snippet": "國民黨也在蔣經國命令下 借錢投資台積電 在台積電最困難的時候 當起台積電的大股東 所以台積電也是名符其實的 「黨營事業」或「黨資事業」. 但是台積電爬出虧錢泥淖後 李登輝也控制了國民黨 命令國民黨賣掉台積電股票 改投資中華開發銀行.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "0721【Live】 1140-1400... - YouTube",
+      "url": "https://www.youtube.com/watch?v=whxMHLlpKDg",
+      "snippet": "Syrskyi Records Message to Fedorov | Zelenskyy’s Headquarters to Review Countrywide Protests.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "YAYAPAY!耶耶配",
+      "url": "https://www.yayapay.com.tw/",
+      "snippet": "2分鐘示範「超飆」 前13支觸發超飆，10支大漲，7支漲停板. 台積電長抱金融債 透過ETF與神同行?搶當美國電信三雄的債主?佳世達(2352.TW).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "সিকে৪৪৪.com অ্যাক্সেস লিঙ্ক সুরক্ষা পরীক্ষা করুন",
+      "url": "https://ck444.ai/",
+      "snippet": "美股七大科技巨頭市值蒸發4000億美元 台積電下調半導體行業增速預期.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "耗時2年才如願一窺工廠內部 CNN... | 好房網News",
+      "url": "https://news.housefun.com.tw/news/article/392990416868.html",
+      "snippet": "耗時2年才如願一窺工廠內部 CNN讚台灣人才就是台積電秘密武器.台積電董事長劉德音表示，台灣的人才就是台積電的秘密武器；人資長何麗梅則透露，台積電在美國的人力管理將依當地文化做調整。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

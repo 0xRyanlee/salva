@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-06-delta",
+  "strategy": "anchor",
+  "query": "site:crunchbase.com 台達電子",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:29:40.288451+00:00",
+  "results": [
+    {
+      "title": "Crunchbase | Knowledge Center",
+      "url": "https://support.crunchbase.com/",
+      "snippet": "How do I create a Crunchbase profile? On Crunchbase, any registered and socially authenticated user can add a profile page. Before you begin, use our sear... How do I register for a Crunchbase account? As a free registered Crunchbase user, you have t...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/",
+      "snippet": "This month on Crunchbase 12,999,361 new predictions 53,674 new insights 3,575 new funding rounds",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Teradata - Crunchbase Company Profile & FundingMediaTek - Crunchbase Company Profile & FundingDonald Hayden - Crunchbase Person ProfileATS Resume Checker - Crunchbase Company Profile & FundingTopas Holding AG in Dübendorf - CrunchbaseAlice Jacobs Nesselrodt - Chief Executive Officer ...",
+      "url": "https://www.crunchbase.com/organization/teradata",
+      "snippet": "Teradata is the connected multi-cloud data platform company. Our enterprise analytics solve business challenges from start to scale. MediaTek Inc. is a Taiwanese fabless semiconductor company that provides system-on-chip solutions for wireless communications. Donald J. Hayden previously worked at WindMIL Therapeutics as a CEO. Donald J. Hayden attended the Harvard University. ATS Resume Checker scores resumes against applicant tracking systems and delivers instant AI fixes to help job seekers land more interviews. Topas Holding AG drives long-term growth through private equity, wealth management, and strategic financial advisory. Alice Jacobs Nesselrodt is the Chief Executive Officer of Convergence Group. She previously served as Chair and CEO of IntelligentMDx. Alice attended Harvard Medical School, where she earned a Doctor of Medicine.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek - Crunchbase Company Profile & FundingDonald Hayden - Crunchbase Person ProfileATS Resume Checker - Crunchbase Company Profile & FundingTopas Holding AG in Dübendorf - CrunchbaseAlice Jacobs Nesselrodt - Chief Executive Officer ...",
+      "url": "https://www.crunchbase.com/organization/mediatek",
+      "snippet": "MediaTek Inc. is a Taiwanese fabless semiconductor company that provides system-on-chip solutions for wireless communications. Donald J. Hayden previously worked at WindMIL Therapeutics as a CEO. Donald J. Hayden attended the Harvard University. ATS Resume Checker scores resumes against applicant tracking systems and delivers instant AI fixes to help job seekers land more interviews. Topas Holding AG drives long-term growth through private equity, wealth management, and strategic financial advisory. Alice Jacobs Nesselrodt is the Chief Executive Officer of Convergence Group. She previously served as Chair and CEO of IntelligentMDx. Alice attended Harvard Medical School, where she earned a Doctor of Medicine.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Donald Hayden - Crunchbase Person ProfileATS Resume Checker - Crunchbase Company Profile & FundingTopas Holding AG in Dübendorf - CrunchbaseAlice Jacobs Nesselrodt - Chief Executive Officer ...",
+      "url": "https://www.crunchbase.com/person/donald-j-hayden-jr",
+      "snippet": "Donald J. Hayden previously worked at WindMIL Therapeutics as a CEO. Donald J. Hayden attended the Harvard University. ATS Resume Checker scores resumes against applicant tracking systems and delivers instant AI fixes to help job seekers land more interviews. Topas Holding AG drives long-term growth through private equity, wealth management, and strategic financial advisory. Alice Jacobs Nesselrodt is the Chief Executive Officer of Convergence Group. She previously served as Chair and CEO of IntelligentMDx. Alice attended Harvard Medical School, where she earned a Doctor of Medicine.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ATS Resume Checker - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/ats-resume-checker",
+      "snippet": "ATS Resume Checker scores resumes against applicant tracking systems and delivers instant AI fixes to help job seekers land more interviews.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Topas Holding AG in Dübendorf - Crunchbase",
+      "url": "https://www.crunchbase.com/organization/topas-holding-ag",
+      "snippet": "Topas Holding AG drives long-term growth through private equity, wealth management, and strategic financial advisory.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Asia Startup Investment Up In Q3",
+      "url": "https://news.crunchbase.com/venture/asia-vc-funding-rises-q3-2025-ai-data/",
+      "snippet": "Asia’s startup funding rose sequentially in the third quarter, boosted by a handful of hardtech-focused megarounds. Overall, investors put $16.8 billion into reported seed- through growth-stage rounds for companies across Asia, per Crunchbase data. T...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Insight-backed PayCargo Inks First VC Funding For Supply Chain...",
+      "url": "https://news.crunchbase.com/venture/insight-backed-paycargo-inks-first-vc-funding-for-supply-chain-payments/?mkt_tok=eyJpIjoiWlRFME5qTTVNRFV3WXpnMiIsInQiOiJWVndmQnlZUWZIbVJOYUdBa1JjekgwMU5taTAxaExNSzFHRHkzSUxjRjF4aTNEOElVdGVySW1WRmh2dnBrdXN2N0pwY0pYSGF4XC9RMHM4eDRBbUhwQjhhUGgzTnZEa2dKU3QrdVNxNFJ6NmpqVlBCdFRSV1gxdldDUzVcL1JwZjNEIn0=",
+      "snippet": "PayCargo, a payments network for the global supply chain industry, received its first institutional funding round, a $35 million Series A, led by Insight Partners. Subscribe to the Crunchbase Daily. The company’s leadership interviewed more than 40 f...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ReCharge Raises $277M To Plug Into Merchant Subscription Programs",
+      "url": "https://news.crunchbase.com/fintech-ecommerce/recharge-raises-277m-to-plug-into-merchant-subscription-programs/",
+      "snippet": "Companies are looking for steady monthly revenue and more personalized relationships with their customers, while consumers want to purchase their favorite products in their own ways. Many brands have turned to subscription models to do so, and for th...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

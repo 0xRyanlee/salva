@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-05-gleif-regulators",
+  "strategy": "anchor",
+  "query": "GLEIF partnership",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:31:59.426126+00:00",
+  "results": [
+    {
+      "title": "GLEIF Partners Program - GLEIF Engagement - GLEIF - GLEIF",
+      "url": "https://www.gleif.org/en/about/gleif-engagement/gleif-partners-program",
+      "snippet": "GLEIF Partners Program The Global Legal Entity Identifier Foundation (GLEIF) Partners Program aims to drive collaboration among key industry players - including data and technology vendors, service providers, financial institutions, corporations, and trust service providers (TSPs) - to foster adoption and integration of the Legal Entity Identifier (LEI) and the verifiable LEI (vLEI) across ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Partner Solutions - GLEIF Partners Program - GLEIF Engagement - GLEIF",
+      "url": "https://www.gleif.org/en/about/gleif-engagement/gleif-partners-program/gleif-partners-solution",
+      "snippet": "At Global Legal Entity Identifier Foundation (GLEIF), we empower organizations to establish trust, enhance transparency, and streamline business interactions through the Legal Entity Identifier (LEI) and the verifiable LEI (vLEI). Our global ecosystem of partners provides innovative solutions that harness the power of LEI and vLEI across industries, driving secure and efficient digital ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ISITC and GLEIF Launch Collaboration to Support Industry Best Practices ...",
+      "url": "https://isitc.org/news/press-releases/isitcgleif/",
+      "snippet": "The partnership will promote education, industry dialogue, and best practices to improve operational efficiency through consistent, reliable entity data. Branchburg, NJ, and Basel, Switzerland [June 16, 2026] - ISITC, a global industry trade group that is leading financial services operations into the future, and Global Legal Entity Identifier Foundation (GLEIF), the organization supporting ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF Joins Our Global Partner Program to Expand Trusted Business ...",
+      "url": "https://mojaloop.io/gleif-joins-our-global-partner-program-to-expand-trusted-business-identity-across-borders/",
+      "snippet": "The Mojaloop Foundation's newly launched global partner program brings together organizations committed to building inclusive instant payment systems (IIPS) and advancing financial inclusion. Among the program's founding partners is the Global Legal Entity Identifier Foundation (GLEIF), an organization dedicated to enabling trusted digital identity for businesses worldwide. To learn more ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF launches Global Partners Program | Digitalisation World",
+      "url": "https://form.digitalisationworld.com/news/70028/gleif-launches-global-partners-program",
+      "snippet": "GLEIF's Partners Program creates a unique forum for data and technology vendors, financial institutions, corporates, certification authorities, and trust service providers that brings together key stakeholders to develop high-value offerings by leveraging the technology and strategic importance of the LEI and vLEI. The innovation led by GLEIF partners will be key to advancing a more trusted ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF Launches Global Partners Program To Advance Trusted ...",
+      "url": "https://mondovisione.com/news/gleif-launches-global-partners-program-to-advance-trusted-organizational-ident-202564/",
+      "snippet": "The Global Legal Entity Identifier Foundation (GLEIF) today launched the GLEIF Partners Program, a new global initiative fostering increased collaboration among key stakeholders to accelerate the adoption of the Legal Entity Identifier (LEI) and verifiable LEI (vLEI) across sectors. GLEIF's Partners Program creates a unique forum for data and technology vendors, financial institutions ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF and Chainlink form strategic partnership to bring institutional ...",
+      "url": "https://identityweek.net/gleif-and-chainlink-form-strategic-partnership-to-bring-institutional-grade-identity-solution-to-blockchain-industry/",
+      "snippet": "The Global Legal Entity Identifier Foundation (GLEIF), the only global source of open, standardised and high-quality legal entity reference data, and Chainlink, the industry-standard oracle platform, today announced a strategic partnership to create an institutional-grade identity solution for the blockchain industry. The solution combines GLEIF's verifiable Legal Entity Identifier (vLEI ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GLEIF launches Partners Program - Securities Finance Times",
+      "url": "https://www.securitiesfinancetimes.com/securitieslendingnews/industryarticle.php?article_id=227931",
+      "snippet": "The Global Legal Entity Identifier Foundation (GLEIF) has launched the GLEIF Partners Program, a new global initiative fostering increased collaboration among stakeholders to accelerate the adoption of the LEI and verifiable LEI (vLEI). According to the firm, GLEIF's Partners Program creates a forum for data and technology vendors, financial institutions, and corporates, to develop offerings ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Gleif establishes partner programme - finextra.com",
+      "url": "https://www.finextra.com/pressarticle/105724/gleif-establishes-partner-programme",
+      "snippet": "\"Our partnership with GLEIF marks a significant milestone in NETS Solutions' mission to deliver robust, future-ready solutions in payments and securities settlement.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Bringing Trusted Digital Identities to Global Trade",
+      "url": "https://blog.iota.org/gleif-partnership/",
+      "snippet": "At IOTA, we're committed to real-world assets and global trade, and this partnership with GLEIF brings trusted digital identities into supply chains to create real economic opportunity.\" Stay tuned for updates as our proof-of-concept with GLEIF develops.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

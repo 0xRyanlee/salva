@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-01-tsmc",
+  "strategy": "anchor",
+  "query": "site:crunchbase.com 台積電",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:45.848288+00:00",
+  "results": [
+    {
+      "title": "Crunchbase | Knowledge Center",
+      "url": "https://support.crunchbase.com/",
+      "snippet": "How do I create a Crunchbase profile? On Crunchbase, any registered and socially authenticated user can add a profile page. Before you begin, use our sear... How do I register for a...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/?ref=mention.network",
+      "snippet": "Upgrade browser for full Crunchbase experience. You're accessing Crunchbase in a browser that is no longer supported.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/",
+      "snippet": "This month on Crunchbase 12,999,361 new predictions 53,674 new insights 3,575 new funding rounds",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Rockchip - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/rockchip",
+      "snippet": "Rockchip is a integrated circuit design company, providing professional chip solutions for intelligent cellphone, tablet computer, phablet.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/mediatek",
+      "snippet": "MediaTek Inc. is a Taiwanese fabless semiconductor company that provides system-on-chip solutions for wireless communications.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "VIA Technologies - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/via",
+      "snippet": "VIA Technologies is a fabless technology company that offers processor platforms for the PC, client, ultra-mobile, and embedded markets.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Empower Semiconductor - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/empower-semiconductor",
+      "snippet": "Empower Semiconductor develops power management technologies for computing and electronic systems.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Sea - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/garena",
+      "snippet": "Sea runs Shopee for e-commerce, Garena in gaming, and SeaMoney for digital payments in Southeast Asia & Taiwan.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "STATS ChipPAC - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/stats-chippac",
+      "snippet": "STATS ChipPAC is a leading provider of advanced semiconductor packaging and test services to global customers in the communication.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Accton Technology - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/accton-technology",
+      "snippet": "Accton Technology is a global premier provider of networking and communications solutions for top tier networking, computer, and telecommunications vendors. Leveraging its advanced software applications and state-of-the-art ASIC, Accton collaborates with its strategic partners to design, develop and manufacture innovative, leading-edge technologies in Zero Time. The company's constantly ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

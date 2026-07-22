@@ -1,0 +1,79 @@
+{
+  "task_id": "single-01-tsmc",
+  "strategy": "radar",
+  "query": "TSMC headquarters TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:24:55.716348+00:00",
+  "results": [
+    {
+      "title": "TSMC - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/TSMC",
+      "snippet": "Headquartered in Hsinchu Science Park, it is one of the world's largest non-U.S. companies by market capitalisation. It holds a commanding majority in the ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC Fabs - Taiwan Semiconductor Manufacturing Company Limited",
+      "url": "https://www.tsmc.com/english/aboutTSMC/TSMC_Fabs",
+      "snippet": "Corporate Headquarters & Fab 12A. 8, Li-Hsin Rd. 6, Hsinchu Science Park, Hsinchu 300-096, Taiwan, R.O.C.. TEL: 886-3-5636688. View Map. Fab 12B. 168, Park Ave ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC | LinkedIn",
+      "url": "https://www.linkedin.com/company/tsmc",
+      "snippet": "TSMC also obtains eight-inch wafer capacity from other companies in which the Company has an equity interest. TSMC is listed on the Taiwan Stock Exchange (TWSE) ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC Museum of Innovation",
+      "url": "https://www.tsmcmoi.com/en",
+      "snippet": "This gallery explores how TSMC and its dedicated IC foundry business model help unleash innovation in the global IC industry. As a trusted technology and ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC Arizona - Taiwan Semiconductor Manufacturing Company ...",
+      "url": "https://www.tsmc.com/static/abouttsmcaz/index.htm",
+      "snippet": "In 2020, TSMC chose Phoenix, Arizona, for its first advanced U.S. semiconductor manufacturing site — a milestone investment that has expanded from $12 billion ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing Company Limited",
+      "url": "https://www.tsmc.com/english",
+      "snippet": "TSMC has been the world's dedicated semiconductor foundry since 1987, and we support a thriving ecosystem of global customers and partners with the ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Business Contacts - Taiwan Semiconductor Manufacturing ...",
+      "url": "https://www.tsmc.com/english/aboutTSMC/business_contacts",
+      "snippet": "TSMC is headquartered in the Hsinchu Science Park, Taiwan, and has account management and engineering service offices in China, Europe, India, Japan, North ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Contact Us - Taiwan Semiconductor Manufacturing Company Limited",
+      "url": "https://www.tsmc.com/english/contact-us",
+      "snippet": "2851 Junction Avenue, San Jose, CA 95134, U.S.A. ... TSMC Washington, LLC. 5509 N.W. Parker Street, Camas, WA 98607-9299, U.S.A. ... VisEra Technologies Company ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing Company - sector content",
+      "url": "https://oiainternship.ntu.edu.tw/sector/view/3f6a2e20Fa24",
+      "snippet": "Established in 1987 and headquartered in Hsinchu Science Park, Taiwan, TSMC pioneered the pure-play foundry business model by focusing solely on ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Contact Us & Locations - Taiwan Semiconductor",
+      "url": "http://www.taiwansemi.com/en/global-locations/",
+      "snippet": "Taiwan Semiconductor supports multinational customers through a global network of sales offices, distributors, and representatives worldwide.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

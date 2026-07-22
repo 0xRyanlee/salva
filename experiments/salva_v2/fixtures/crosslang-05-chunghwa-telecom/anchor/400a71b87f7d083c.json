@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-05-chunghwa-telecom",
+  "strategy": "anchor",
+  "query": "site:crunchbase.com 中華電信",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:29:20.777177+00:00",
+  "results": [
+    {
+      "title": "Qichacha (QCC) - Crunchbase Company Profile & FundingList of top Companies That Exited in 2008 - CrunchbaseDavid Axmark - Crunchbase Person ProfileCrunchbaseSINA - Crunchbase Company Profile & FundingIPO Archives - Crunchbase NewsJohn Andreadis - Managing Partner @ Evolution Venture ...",
+      "url": "https://www.crunchbase.com/organization/qichacha",
+      "snippet": "Qichacha delivers data and analytics on China-based private and public companies to consumers and enterprises via mobile app, web, and APIs. This list of companies and startups that exited with an IPO or acquisition in 2008 provides data on their funding history, investment activities, and acquisition trends. Insights about top trending companies, startups, investments and M&A activities, notable investors of these companies, their management team, and recent news are also included. David Axmark is one of the founders of [MySQL AB](/organization/mysql) and a developer of the free database server, MySQL. He has been invol... For additional support on importing list, please check out our Knowledge Center SINA is an online media company and MVAS provider in the people’s republic of china and for the global Chinese communities. 6 days ago · Venture funding into fintech startups climbed nearly 23% year over year in H1 2026, even as deal count fell more than 25%, Crunchbase data shows, a sign that investors are writing fewer, but much larger checks into the sector as they focus on areas such as wealth management, financial infrastructure and enterprise automation. We take a look at the numbers. John Andreadis is the Managing Partner of Evolution Venture Partners. He attended Columbia University.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "List of top Companies That Exited in 2008 - CrunchbaseDavid Axmark - Crunchbase Person ProfileCrunchbaseSINA - Crunchbase Company Profile & FundingIPO Archives - Crunchbase NewsJohn Andreadis - Managing Partner @ Evolution Venture ...",
+      "url": "https://www.crunchbase.com/hub/companies-that-exited-in-2008",
+      "snippet": "This list of companies and startups that exited with an IPO or acquisition in 2008 provides data on their funding history, investment activities, and acquisition trends. Insights about top trending companies, startups, investments and M&A activities, notable investors of these companies, their management team, and recent news are also included. David Axmark is one of the founders of [MySQL AB](/organization/mysql) and a developer of the free database server, MySQL. He has been invol... For additional support on importing list, please check out our Knowledge Center SINA is an online media company and MVAS provider in the people’s republic of china and for the global Chinese communities. 6 days ago · Venture funding into fintech startups climbed nearly 23% year over year in H1 2026, even as deal count fell more than 25%, Crunchbase data shows, a sign that investors are writing fewer, but much larger checks into the sector as they focus on areas such as wealth management, financial infrastructure and enterprise automation. We take a look at the numbers. John Andreadis is the Managing Partner of Evolution Venture Partners. He attended Columbia University.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "David Axmark - Crunchbase Person ProfileCrunchbaseSINA - Crunchbase Company Profile & FundingIPO Archives - Crunchbase NewsJohn Andreadis - Managing Partner @ Evolution Venture ...",
+      "url": "https://www.crunchbase.com/person/david-axmark",
+      "snippet": "David Axmark is one of the founders of [MySQL AB](/organization/mysql) and a developer of the free database server, MySQL. He has been invol... For additional support on importing list, please check out our Knowledge Center SINA is an online media company and MVAS provider in the people’s republic of china and for the global Chinese communities. 6 days ago · Venture funding into fintech startups climbed nearly 23% year over year in H1 2026, even as deal count fell more than 25%, Crunchbase data shows, a sign that investors are writing fewer, but much larger checks into the sector as they focus on areas such as wealth management, financial infrastructure and enterprise automation. We take a look at the numbers. John Andreadis is the Managing Partner of Evolution Venture Partners. He attended Columbia University.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CrunchbaseSINA - Crunchbase Company Profile & FundingIPO Archives - Crunchbase NewsJohn Andreadis - Managing Partner @ Evolution Venture ...",
+      "url": "https://www.crunchbase.com/csv-import",
+      "snippet": "For additional support on importing list, please check out our Knowledge Center SINA is an online media company and MVAS provider in the people’s republic of china and for the global Chinese communities. 6 days ago · Venture funding into fintech startups climbed nearly 23% year over year in H1 2026, even as deal count fell more than 25%, Crunchbase data shows, a sign that investors are writing fewer, but much larger checks into the sector as they focus on areas such as wealth management, financial infrastructure and enterprise automation. We take a look at the numbers. John Andreadis is the Managing Partner of Evolution Venture Partners. He attended Columbia University.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "SINA - Crunchbase Company Profile & FundingIPO Archives - Crunchbase NewsJohn Andreadis - Managing Partner @ Evolution Venture ...",
+      "url": "https://www.crunchbase.com/organization/sina",
+      "snippet": "SINA is an online media company and MVAS provider in the people’s republic of china and for the global Chinese communities. 6 days ago · Venture funding into fintech startups climbed nearly 23% year over year in H1 2026, even as deal count fell more than 25%, Crunchbase data shows, a sign that investors are writing fewer, but much larger checks into the sector as they focus on areas such as wealth management, financial infrastructure and enterprise automation. We take a look at the numbers. John Andreadis is the Managing Partner of Evolution Venture Partners. He attended Columbia University.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "IPO Archives - Crunchbase News",
+      "url": "https://news.crunchbase.com/sections/public/ipo/",
+      "snippet": "6 days ago · Venture funding into fintech startups climbed nearly 23% year over year in H1 2026, even as deal count fell more than 25%, Crunchbase data shows, a sign that investors are writing fewer, but much larger checks into the sector as they focus on areas such as wealth management, financial infrastructure and enterprise automation. We take a look at the numbers.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Crunchbase | Knowledge Center",
+      "url": "https://support.crunchbase.com/",
+      "snippet": "How do I create a Crunchbase profile? On Crunchbase, any registered and socially authenticated user can add a profile page. Before you begin, use our sear... How do I register for a Crunchbase account? As a free registered Crunchbase user, you have t...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "创投数据合作项目 (Venture Program for China) - Crunchbase",
+      "url": "https://about.crunchbase.com/partners/venture-program-chinese/",
+      "snippet": "创投数据合作项目 (Venture Program). 目前，Crunchbase 与 4000 多家风险投资公司, 创业加速器和孵化器合作。 来加入我们吧。 Crunchbase 创投数据合作项目 (Venture Program) 帮助投资者轻松维护公司数据，准确描述公司现状并更新投资项目信息。 现在加入您将获...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/",
+      "snippet": "OpenEvidence reported significant growth in its user base, with its AI-powered medical search platform reaching 860,000 licensed and verified U.S. clinicians and achieving daily active usage by a majority of U.S. physicians across over 10,000 hospita...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Top Startup Ecosystems in 2021: Ranking 1,000 Cities... - Crunchbase",
+      "url": "https://about.crunchbase.com/blog/top-startup-ecosystems-in-2021-ranking-1000-cities-and-100-countries/",
+      "snippet": "StartupBlink, a global startup and innovation research center, has launched the Startup Ecosystem Rankings Index 2021.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-02-asus",
+  "strategy": "radar",
+  "query": "華碩 employees TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:28:00.218586+00:00",
+  "results": [
+    {
+      "title": "Yi-Cheng Huang Email & Phone Number | Audi Taiwan Aftersales...",
+      "url": "https://rocketreach.co/yi-cheng-huang-email_270607",
+      "snippet": "Yi-Cheng Huang, based in Taiwan, is currently a Aftersales Field Manager at Audi Taiwan. Yi-Cheng Huang brings experience from previous roles at Gogoro, TAIKOO MOTORS LIMITED - TAIWAN BRANCH and Johnson & Johnson.Yi-Cheng Huang. Senior Software Engineer at 華碩.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Pokémon UNITE API - Stats, Leaderboards and More",
+      "url": "https://uniteapi.dev/",
+      "snippet": "© 2026 UniteAPI. All rights reserved. Not affiliated with Nintendo or The Pokemon Company.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Официальная служба поддержки | ASUS России",
+      "url": "https://www.asus.com/ru/support/",
+      "snippet": "Центр Поддержки ASUS позволяет скачать Драйверы, Руководства, Прошивки, Программное Обеспечение; найти ответы на частые вопросы и методы устранения проблем.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "宏碁、華碩 5月營收飆高音 - 日報 - 工商時報",
+      "url": "https://www.ctee.com.tw/news/20260610700165-439901",
+      "snippet": "宏碁、華碩營收表現雙A品牌廠在前一波PC提前拉貨高峰後，5月業績雙雙回檔，但隨產品ASP（平均售價）推升效益發酵，宏碁5月集團合併營收261.66億元、年增36.5％，仍寫近13年來同期新高。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Gmail",
+      "url": "http://www.gmail.com/",
+      "snippet": "Gmail is email that’s intuitive, efficient, and useful. 15 GB of storage, less spam, and mobile access.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩電競顯示器OLED面板採雙軌供貨、增LG Display | LINE TODAY",
+      "url": "https://today.line.me/tw/v3/article/kEKJM7q",
+      "snippet": "綜合陸媒報導，華碩(2357)推出的全球首款24.5吋OLED電競顯示器(ROG Strix OLED XG259QWPG Ace)已確認採用LG Display的OLED面板，打破此前市場認為其僅會採用京東方(BOE)面板的. 預期，而採雙軌供貨。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "bnext.com.tw/article/73559/asus-web3-jan-mag",
+      "url": "https://www.bnext.com.tw/article/73559/asus-web3-jan-mag",
+      "snippet": "2019年華碩雲端（ASUS Cloud）取得標案，整合了10家區塊鏈新創打造「區塊鏈即服務平台」，透過平台只要10分鐘就能打造一條區塊鏈，降低企業進入門檻；此外，也嘗試.客服信箱：service@bnext.com.tw.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Приложения в Google Play – GlideX",
+      "url": "https://play.google.com/store/apps/details?id=com.asus.glidex&hl=ru",
+      "snippet": "華碩電腦股份有限公司.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ASUS WebStorage",
+      "url": "https://service.asuswebstorage.com/",
+      "snippet": "ASUS WebStorage is a Cloud Storage Service that helps user backup data, sync file between devices and share data to friends.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Bureau of Consular Affairs, Ministry of Foreign Affairs, Republic of...",
+      "url": "https://www.boca.gov.tw/mp-2.html",
+      "snippet": "2026-02-04【Announcement】Note for ROC (Taiwan) visa applicants who have resided in or visited Afghanistan, Pakistan, the Democratic Republic of the Congo, Guinea, Algeria, Djibouti, Cameroon, or Chad for four weeks or longer in the past year.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

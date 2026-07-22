@@ -2,8 +2,7 @@
 
 See salva_core/schemas.py::StabilityPolicy and processing/scorer.py::
 ScorerConfig.w_stability for the policy toggle and the scoring term this
-is intended to feed (wiring happens in a separate follow-up card -- this
-module is pure computation, not wired into any scoring path yet).
+feeds (wired via salva_core/service.py::_build_stability_scoring_context).
 
 MVP scope is deliberately domain-level, not per-node/per-hyperedge: Salva's
 persisted history (salva_core.persistence.memory.query_family_memory) only
@@ -23,6 +22,8 @@ def compute_stability_signals(
     min_history: int = 3,
     limit: int = 10,
     path: str | None = None,
+    campaign_id: str | None = None,
+    memory_status: str | None = "promoted",
 ) -> dict[str, float] | None:
     """Compute drift + volatility over a domain's recent query-family history.
 
@@ -30,18 +31,28 @@ def compute_stability_signals(
     not enough data to say anything meaningful; callers should treat this as
     "unknown," not "stable."
 
-    list_query_family_memory() has no domain filter (only run_id/objective/
-    strategy/campaign_id/continuation_id/memory_status), so this over-fetches
-    a broader recent window (ordered by created_at DESC) and filters
-    client-side by record.domain, rather than adding a new domain-filtered
-    SQL query function with no other consumer.
+    campaign_id/memory_status are forwarded straight to
+    list_query_family_memory()'s own filters (same style as
+    read_top_query_families_for_seeding()) -- without them this read spans
+    every campaign in the domain, including quarantine (unverified/failed)
+    records, and that noise/leak would feed straight into w_stability
+    scoring. memory_status defaults to "promoted" so quarantine records
+    never drive drift/volatility unless a caller explicitly opts out by
+    passing memory_status=None. list_query_family_memory() still has no
+    domain filter, so this over-fetches a broader recent window (ordered by
+    created_at DESC) and filters client-side by record.domain, rather than
+    adding a new domain-filtered SQL query function with no other consumer.
     """
     normalized = _normalize_domain(domain)
     fetch_limit = max(limit * 5, 50)
     if path is not None:
-        records, _total = list_query_family_memory(limit=fetch_limit, path=path)
+        records, _total = list_query_family_memory(
+            limit=fetch_limit, path=path, campaign_id=campaign_id, memory_status=memory_status
+        )
     else:
-        records, _total = list_query_family_memory(limit=fetch_limit)
+        records, _total = list_query_family_memory(
+            limit=fetch_limit, campaign_id=campaign_id, memory_status=memory_status
+        )
 
     domain_records = [r for r in records if _normalize_domain(r.domain or "") == normalized][:limit]
     if len(domain_records) < min_history:

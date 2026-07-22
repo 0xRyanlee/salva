@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-01-tsmc",
+  "strategy": "radar",
+  "query": "台積電 employees TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:35.074895+00:00",
+  "results": [
+    {
+      "title": "台積電-人力資源處張進益處長 - 勞動力資源網總系統管理",
+      "url": "https://workforce.wda.gov.tw/index.php/HE_LectInf/Detail/33",
+      "snippet": "南臺灣電子科技產業發達，企業單位求才若渴，未來在人才的「選、訓、育、用、留」皆是企業面臨的重要課題。本場講座特別邀請台積電(南科)人力資源處張進益處長，與我們分享人才對於「產學、就業、城市」未來發展的決勝關鍵，內容包含「南科榮景犇騰」、「台積在南科之未來」、「產業趨勢與人才需求」、「產學合作培育未來人才」、「科技人才嚮往的城市願景」、「科技浪潮再旺20年」等，歡迎參加共創未來。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "認識台灣積體電路製造股份有限公司(台積電)員工｜104人才社群",
+      "url": "https://profile.104.com.tw/company/a5h92m0",
+      "snippet": "台灣積體電路製造股份有限公司(台積電)台積公司是全世界最大的專業積體電路製造服務公司． 台積公司在民國七十六年成立於台灣新竹科學工業園區，並開創了專業積體電路製造服務商業模式。 台積公司以領先業界的製程技術及設計解決方案組合支援其全球客戶及夥伴生態系統的蓬勃發展，以此釋放全球半導體產業的創新。身為全球的企業公民，台積公司的營運範圍遍及亞洲、歐洲及北美。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積員工最早幾點上班？調研揭台積電工程師每日行程 | TechNews 科技新報",
+      "url": "https://technews.tw/2025/03/22/semi-vision-unveiled-the-daily-routine-of-tsmc-employees/",
+      "snippet": "March 22, 2025 - 10:00：更高層級的生產製造會議，必須就產品進度與品質回報（出包會被電）。 ... 19:00~20:00：若無重大問題，將工作交接給晚班同事後準備離開， 但若有緊急狀況，工程師可能需要工作到深夜甚至更晚。 · 不過隨著台積電全球化佈局加速，台灣科技產業特殊的職場文化也在美國出現水土不服現象，根據美國職場評論網站 Glassdoor 和匿名論壇 Blind，台積電的平均評分僅有 3~3.2 顆星，低於三星的 3.7 顆，以及英特爾、德州儀器的 3.5 顆。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電員工分紅 平均每人200萬餘元 - 客新聞 HakkaNews",
+      "url": "https://hakkanews.tw/2025/02/12/tsmc-employees-received-an/",
+      "snippet": "June 19, 2025 - 隨著獲利攀高，台積電去年度員工業績獎金與酬勞（分紅）總金額增加到1405億9256萬元；其中員工業績獎金約702億9628萬元，已於每季季後發放，酬勞（分紅）約702億9628萬元，預計今年7月發放。台積電去年底台灣員工人數約7萬人，估計平均每人可得金額約200.84萬元，年增51.32萬元，增幅約34.32%。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電擴大徵才 釋出8000職缺 鎖定AI、大數據與數位轉型人才",
+      "url": "https://tw.stock.yahoo.com/news/台積電擴大徵才-釋出8000職缺-鎖定ai-大數據與數位轉型人才-093742185.html",
+      "snippet": "March 13, 2026 - 晶圓代工龍頭台積電（TSMC）持續擴張，因應全球對先進晶片的需求，宣布今年將招募約 8000 名員工。《AOL.com》報導，台積電本次徵才鎖定多個領域，包括電機工程、材料科學、機械工...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電全球員工破8萬人 台灣廠區占比達87.06％｜財富自由",
+      "url": "https://stock.ltn.com.tw/article/amx8kxygcdjq",
+      "snippet": "台積電新出爐「2024年永續報告書」指出，2024年全球員工總數共計8萬4512人；依勞雇合約分類，正職員工為8萬3825人、臨時員工為687人；若依勞雇類型分類，包含全職員工8萬4208人、兼職...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電 人資職缺請益 - 科技業 forum | Dcard",
+      "url": "https://www.dcard.tw/f/tech_job/p/259635181",
+      "snippet": "August 26, 2025 - 想問一下有沒有人或認識的人在台積當hr，看到有說越少人討論越輕鬆，感覺沒什麼看到有人在討論hr相關職缺所以想問看看。我也知道不同function分很細，所以有任何人知道的話都歡迎分享🙏，有發另一篇是被 - 台積電,...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台灣積體電路製造股份有限公司(台積電)📢｜徵才中",
+      "url": "https://www.104.com.tw/company/a5h92m0",
+      "snippet": "We cannot provide a description for this page right now",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台灣就業通-找工作-公司資訊 - 台灣積體電路製造股份有限公司(台積電 tsmc)",
+      "url": "https://job.taiwanjobs.gov.tw/internet/jobwanted/company_desc2.aspx?EMPLOYER_ID=569",
+      "snippet": "工作內容 第一線負責晶片製造過程，改善機台製程參數的設定，提升良率並提升機台每單位時間產出，降低生產成本 ... 職務名稱(職業類別) 技術員職類【115年7月18日(六)上午09:00-12:00 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "別再瞎扯「美積電」！台積電台灣廠區員工占比87％｜財富自由",
+      "url": "https://stock.ltn.com.tw/article/wkzkxqhrfxsx",
+      "snippet": "We cannot provide a description for this page right now",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

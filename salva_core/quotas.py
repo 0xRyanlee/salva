@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import os
 from datetime import UTC, datetime, timedelta
-from typing import Any, Literal
+from typing import Literal
 
 from salva_core.schemas import (
     QuotaPolicy,
@@ -11,7 +11,7 @@ from salva_core.schemas import (
     TenantQuotaResponse,
 )
 
-from .persistence import DEFAULT_DB_PATH, list_jobs, list_runs
+from .persistence import DEFAULT_DB_PATH, count_jobs_for_tenant, count_runs_for_tenant
 
 
 def load_quota_policy() -> QuotaPolicy:
@@ -50,13 +50,11 @@ def evaluate_tenant_quota(
             violated=["tenant_id_required"] if resolved_policy.enabled else [],
         )
 
-    runs, _ = list_runs(path=path)
-    jobs, _ = list_jobs(path=path)
     now = datetime.now(UTC)
 
     windows = [
-        _build_window("hourly", now - timedelta(hours=1), tenant_id, runs, jobs, resolved_policy),
-        _build_window("daily", now - timedelta(days=1), tenant_id, runs, jobs, resolved_policy),
+        _build_window("hourly", now - timedelta(hours=1), tenant_id, path, resolved_policy),
+        _build_window("daily", now - timedelta(days=1), tenant_id, path, resolved_policy),
     ]
 
     violated = _collect_violations(windows, resolved_policy)
@@ -85,20 +83,11 @@ def _build_window(
     window: Literal["hourly", "daily"],
     since: datetime,
     tenant_id: str,
-    runs: list[Any],
-    jobs: list[Any],
+    path: str,
     policy: QuotaPolicy,
 ) -> QuotaWindowUsage:
-    run_count = sum(
-        1
-        for run in runs
-        if run.created_at >= since and _record_tenant(run.request, run.meta) == tenant_id
-    )
-    job_count = sum(
-        1
-        for job in jobs
-        if job.created_at >= since and _record_tenant(job.request, job.meta, job.tenant_id) == tenant_id
-    )
+    run_count = count_runs_for_tenant(tenant_id, since, path=path)
+    job_count = count_jobs_for_tenant(tenant_id, since, path=path)
 
     if window == "hourly":
         run_limit = policy.hourly_run_limit
@@ -138,13 +127,3 @@ def _remaining(limit: int | None, count: int) -> int | None:
     if limit is None:
         return None
     return max(limit - count, 0)
-
-
-def _record_tenant(request: dict[str, Any], meta: dict[str, Any], explicit_tenant: str | None = None) -> str | None:
-    if explicit_tenant and explicit_tenant.strip():
-        return explicit_tenant.strip()
-    for payload in (request, meta):
-        tenant = payload.get("tenant_id")
-        if isinstance(tenant, str) and tenant.strip():
-            return tenant.strip()
-    return None

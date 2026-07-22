@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-05-chunghwa-telecom",
+  "strategy": "anchor",
+  "query": "中華電信",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:29:11.401087+00:00",
+  "results": [
+    {
+      "title": "「守護美好，幸福達陣」 中華電信邀您一起做公益獻愛心",
+      "url": "https://www.fountmedia.io/article/2061",
+      "snippet": "讓愛護孩童的家長們，也能夠將關懷分給「等家寶寶」；中華電信們特地與無毒農業共同合作，現在只要民眾申辦「色情守門員」服務，中華電信就會替每筆該訂.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Google 稱中華電信未達 Chrome... - Cool3c",
+      "url": "https://www.cool3c.com/article/240502",
+      "snippet": "在Google新措施正式於8月實施後，包含Windows、macOS、ChromeOS、Android、Linux平台上的Chrome 139及之後版本，都將無法繼續開啟使用中華電信及Netlock所核發新憑證的網站。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Hami Point官方網站 ｜中華電信紅利點數",
+      "url": "https://hamipoint.cht.com.tw/news/433/view",
+      "snippet": "活動期間：115/6/1~115/6/18. 活動內容：於活動期間，於點數商城(包含票券館、品牌館、好買市集、神腦生活、SUPERBUY市集及VIP購省館)刷中華電信聯名卡購物，累積滿以下額度，即可獲贈相應點.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "網民對中華電信的憤怒不能再予漠視 - 日報 - 工商時報",
+      "url": "https://www.ctee.com.tw/news/20110714700007-439901",
+      "snippet": "根據網民Dakon Wang的分析，2010年度稅前純益率比較，日本NTT11.4％，香港電訊盈科13.4％，韓國電信7.5％，中華電信卻高達30.4％，高居首位，很大的原因是光纖寬頻收費.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "帶頭衝刺結婚率 中華電信集團結婚72對新人大曬恩愛",
+      "url": "https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?id=0000546538_3FE4YMJ74GKKUN70JADVY",
+      "snippet": "作為幸褔企業表率，電信龍頭中華電信帶頭衝刺結婚率，近日於圓山大飯店盛大舉辦「中華電信107年員眷集團結婚」，再現中華電信集團結婚的幸福傳統！",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "手機自動登入中華電信 Wi-Fi 熱點，Android 、iPad 版本加入！ | T客邦",
+      "url": "https://www.techbang.com/posts/13074-automatic-login-chunghwa-telecom-mobile-wi-fi-hot-spot-joining-the-android-version",
+      "snippet": "還記得中華電信今年 1 月開始推廣手機自動登入中華電信 Wi-Fi 熱點嗎？ 這項一開始只支援 iPhone 的服務，現在也終於開放給 Android 手機和 iPad 使用者了。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "中華電信只因「太晚交資料」被Google撤信任憑證 強調不是資安問題",
+      "url": "https://www.technice.com.tw/techmanage/175590/",
+      "snippet": "中華電信只因「太晚交資料」被Google撤信任憑證 強調不是資安問題. 2025-06-04.Google於本週宣布，自2025年8月1日起，最新版Chrome瀏覽器將停止預設信任中華電信及NetLock於7月31日後簽發的TLS（傳輸層安全通訊協定）網站憑證，消息一出，引發.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "【獨家】憑證遭Google...",
+      "url": "https://www.upmedia.mg/tw/investigation/survey/232366",
+      "snippet": "Google撤銷中華電信的憑證信任，此風波雖對中華電的業務影響不大，卻不利企業形象。不過，8月1日後，Chrome瀏覽器將停止預設信任中華電信新簽發的TLS憑證，也為事實，可能影響民眾對政府數位服務的信任。 Google撤銷憑證肇因 中華電：未及時回覆新規.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "bunnybit.medium.com/各種光世代小知識-b40817b0563d",
+      "url": "https://bunnybit.medium.com/各種光世代小知識-b40817b0563d",
+      "snippet": "需要知道現今中華電信的數據機大多已經擁有 1.硬體PPPOE撥接 2.NAT 3.Wifi AP 4.PPPOE Relay 這幾種功能。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Link to instagram.com",
+      "url": "https://www.instagram.com/cht_official/",
+      "snippet": "The site owner hides the web page description.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "task_id": "crosslang-04-foxconn",
+  "entities": [
+    {
+      "title": "鴻海科技集團 - 维基百科，自由的百科全书",
+      "source_urls": [
+        "https://zh.wikipedia.org/wiki/鴻海科技集團"
+      ],
+      "score": 0.095,
+      "confidence": 0.095
+    },
+    {
+      "title": "首頁 - 鴻海科技集團",
+      "source_urls": [
+        "https://www.honhai.com/zh-tw"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "集團大事紀 - 鴻海科技集團 - Hon Hai",
+      "source_urls": [
+        "https://www.honhai.com/zh-tw/about/group-profile/key-milestones"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "從黑白電視旋鈕到全球代工霸主：揭祕當年 郭台銘 創辦鴻海？ 的艱辛與傳奇 - UpToGo",
+      "source_urls": [
+        "https://uptogo.com.tw/歷史/人物傳記/郭台銘-創辦鴻海？"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "鴻海 (2317.TW) 基本資料 - Yahoo股市",
+      "source_urls": [
+        "https://tw.stock.yahoo.com/quote/2317.TW/profile"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "鴻海怎麼挑新創？劉揚偉公開4大心法、親曝創業經驗與投資「失敗學」 - 產業 - 工商時報",
+      "source_urls": [
+        "https://www.ctee.com.tw/news/20260712700007-430502"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "產業價值鏈資訊平台 > 聯絡方式",
+      "source_urls": [
+        "https://ic.tpex.org.tw/company_contact.php"
+      ],
+      "score": 0.2893,
+      "confidence": 0.2893
+    },
+    {
+      "title": "鴻海精密工業股份有限公司｜徵才中－104人力銀行",
+      "source_urls": [
+        "https://www.104.com.tw/company/233rv1s"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "鴻海全球人才招募網",
+      "source_urls": [
+        "https://recruit.foxconn.com"
+      ],
+      "score": 0.2233,
+      "confidence": 0.2233
+    },
+    {
+      "title": "鴻海精密工業 - Wikipedia",
+      "source_urls": [
+        "https://ja.wikipedia.org/wiki/鴻海精密工業"
+      ],
+      "score": 0.0887,
+      "confidence": 0.0887
+    },
+    {
+      "title": "深入解析鴻海集團旗下有哪些公司？完整企業版圖與業務大解密",
+      "source_urls": [
+        "https://uptogo.com.tw/商業/公司財務/鴻海集團旗下有哪些公司？"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "PDF 鴻海精密工業股份",
+      "source_urls": [
+        "https://image.foxconn.com/upload/202512/financy_by_month/Hon_Hai_Monthly_Revenue_Report_November_2025_CN_20251205_9429.pdf"
+      ],
+      "score": 0.1443,
+      "confidence": 0.1443
+    },
+    {
+      "title": "Crunchbase",
+      "source_urls": [
+        "https://www.crunchbase.com"
+      ],
+      "score": 0.2,
+      "confidence": 0.2
+    }
+  ],
+  "meta": {
+    "qualified_count": 13,
+    "raw_count": 13,
+    "rounds": 3,
+    "domain": "companies"
+  }
+}

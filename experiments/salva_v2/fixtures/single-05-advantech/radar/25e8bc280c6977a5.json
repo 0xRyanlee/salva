@@ -1,0 +1,79 @@
+{
+  "task_id": "single-05-advantech",
+  "strategy": "radar",
+  "query": "Advantech headquarters TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:26:47.766507+00:00",
+  "results": [
+    {
+      "title": "研華共創物聯網世界的未來 - Advantech",
+      "url": "https://www.advantech.com/zh-tw",
+      "snippet": "Advantech Homepage. Menu. 註冊 / Log In. 我的帳戶; Log Out · 我的研華; 搜尋; 台灣; 線上諮詢. Visit the Advantech Global website, or choose your country or ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Co., LTD. - Intelligent Computer & AIoT Association",
+      "url": "https://en.icaa.org.tw/advantech",
+      "snippet": "Company Name:Advantech Co., LTD. · Contact:Jennifer Huang · Tel:+886 7732-3399 ext.7388 · Email: jennifer.huang@advantech.com.tw · Fax: · Website:www.advantech.com ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Co Ltd Locations - Headquarters & Offices - GlobalData",
+      "url": "https://www.globaldata.com/company-profile/advantech-co-ltd/locations/",
+      "snippet": "Other Locations & Subsidiaries ; Advanixs Corporation. Taiwan ; Advantech Poland Sp. Z.O.O. Poland ; Advantech Service-IoT (Shanghai) Co., Ltd. China ; Huan Yan ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "研華科技股份有限公司Advantech Co., Ltd. ��台北市內 ... - FCC Report",
+      "url": "https://fcc.report/FCC-ID/M82-WISE1530/3737986.pdf",
+      "snippet": "Dec 12, 2017 ... Advantech Co., Ltd. 台北市內湖區瑞光路26 巷20 弄1 號. No.1, Alley 20, Lane 26, Rueiguang Road Neihu District, Taipei 114, Taiwan, R.O.C.. Tel ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "聯繫我們- ESG - Advantech",
+      "url": "https://esg.advantech.com/zh-tw/contact-us",
+      "snippet": "電話：886-2-7732-3399 Ext:3622. Email：supplier@advantech.com.tw. 媒體. ��聯絡人： 謝先生. 電話：886-2-7732-3399 Ext:7388. Email：corp.pr@advantech.com. 誠信相關 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Contact Advantech - 研華",
+      "url": "https://www.advantech.com/zh-tw/form/ce5fc4bf-a662-40f8-8dd7-5c87faaf54a2?callback=016e0c22-04d5-4f62-aa88-ebcdb8fb37a8",
+      "snippet": "This site is only for preview, no UTM and Callback URL function. Please do not use this site's URL to do anything. © 1983-2026 Advantech Co., Ltd.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "大型企業、園區- 研華 - Advantech",
+      "url": "https://www.advantech.com/zh-tw/products/large-branch-campus/sub_b633d56c-6a01-4a41-b101-56c4f6438054",
+      "snippet": "Advantech Homepage. Menu. 註冊 / Log In. 我的帳戶; Log Out · 我的研華; 搜尋; 台灣; 線上諮詢. Visit the Advantech Global website, or choose your country or ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ADVANTECH CO., LTD. - Taiwantrade",
+      "url": "https://www.taiwantrade.com/suppliers/detail.html?companyid=393",
+      "snippet": "Nov 11, 2024 ... Company Fax Number. +886-2-27947302 ; Office Address. 114 No. 1, alley 20, Lane 26, Rueiguang Road, Neihu District, Taipei Google Map ; Company ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "研華IoTMart｜工業電腦(IPC)的全球領導品牌> 物聯網,資料擷取模組 ...",
+      "url": "https://iotmart.advantech.com.tw/contactus.aspx?srsltid=AfmBOoomSpvaw_lE_8Lf0kMEWFdnQYYjaXBss_M3QXJHtezlmRkTSmsS",
+      "snippet": "研華總部| Advantech Headquarters. Phone: 0800-777-111 ; 研華台北陽光大樓| Advantech Taiwan - Taipei Sunny Building. Phone: 02-7732-3399 ; 研華AIoT智能共創園區| ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "關於研華",
+      "url": "https://www.advantech.com/zh-tw/about",
+      "snippet": "Advantech Homepage. Menu. 註冊 / Log In. 我的帳戶; Log Out · 我的研華; 搜尋; 台灣; 線上諮詢. Visit the Advantech Global website, or choose your country or ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

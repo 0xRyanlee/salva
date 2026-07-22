@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-04-mediatek-brands",
+  "strategy": "anchor",
+  "query": "MediaTek Dimensity Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:31:28.549990+00:00",
+  "results": [
+    {
+      "title": "List of MediaTek systems on chips - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/List_of_MediaTek_systems_on_chips",
+      "snippet": "List of MediaTek systems on chips ... This is a list of MediaTek processors for use in smartphones, tablets, smartwatches, IoT, Wi-Fi routers and access points, smart TVs and smartbooks.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek | Dimensity | 5G Smartphone Chips",
+      "url": "https://www.mediatek.com/products/smartphones/dimensity-5g",
+      "snippet": "Discover what the cutting edge of smartphone technology has to offer with MediaTek Dimensity 9000 family. Experience unparalleled performance, 5G connectivity, and flagship features.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Dimensity series explained: 6000, 7000, 8000 & 9000",
+      "url": "https://www.mediatek.com/tek-talk-blogs/mediatek-dimensity-series-explained-6000-7000-8000-9000",
+      "snippet": "Oct 1, 2025 · Discover the MediaTek Dimensity 6000, 7000, 8000 & 9000 series. Compare features, performance, AI, gaming, and 5G to find the best smartphone processor.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Dimensity Processors Explained: Naming, Performance ...MediaTek Dimensity Processors: A Deep Dive into 5G ...List of MediaTek systems on chips - WikipediaMediaTek Dimensity Series Explained: 6000, 7000, 8000 & 9000Dimensity Chipset Guide: Understanding MediaTek’s Smartphone ...",
+      "url": "https://techpp.com/2025/02/08/mediatek-dimensity-processors-explained/",
+      "snippet": "Feb 8, 2025 · MediaTek Dimensity processors decoded—naming conventions, performance insights, and top picks for 2025. See which chip powers the best smartphones this year. Apr 29, 2026 · This comprehensive guide will explore the intricacies of the MediaTek Dimensity lineup, its capabilities, and how it stands against competitors like Qualcomm Snapdragon in the ever-evolving landscape of mobile technology. List of MediaTek systems on chips ... This is a list of MediaTek processors for use in smartphones, tablets, smartwatches, IoT, Wi-Fi routers and access points, smart TVs and smartbooks. Oct 6, 2025 · MediaTek Dimensity is a family of 5G smartphone processors (SoCs – system on chips) designed to power everything from affordable devices to flagship smartphones. The series ranges from the Dimensity 6000 (mainstream 5G processors) to the Dimensity 9000 (ultra-performance flagship processors). Feb 21, 2025 · MediaTek has carved out a dominant space in the mobile chipset industry, powering everything from flagship smartphones to budget-friendly devices. Its Dimensity lineup continues to evolve, offering a range of processors tailored to different performance tiers.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Dimensity Processors: A Deep Dive into 5G ...",
+      "url": "https://www.rickyspears.com/tech/mediatek-dimensity-processors-a-deep-dive-into-5g-performance-in-2025/",
+      "snippet": "Apr 29, 2026 · This comprehensive guide will explore the intricacies of the MediaTek Dimensity lineup, its capabilities, and how it stands against competitors like Qualcomm Snapdragon in the ever-evolving landscape of mobile technology.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Dimensity Series Explained: 6000, 7000, 8000 & 9000",
+      "url": "https://chinagadgetsreviews.com/mediatek-dimensity-series-explained-6000-7000-8000-9000.html",
+      "snippet": "Oct 6, 2025 · MediaTek Dimensity is a family of 5G smartphone processors (SoCs – system on chips) designed to power everything from affordable devices to flagship smartphones. The series ranges from the Dimensity 6000 (mainstream 5G processors) to the Dimensity 9000 (ultra-performance flagship processors).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Dimensity Chipset Guide: Understanding MediaTek’s Smartphone ...",
+      "url": "https://new.c.mi.com/global/post/1533897",
+      "snippet": "Feb 21, 2025 · MediaTek has carved out a dominant space in the mobile chipset industry, powering everything from flagship smartphones to budget-friendly devices. Its Dimensity lineup continues to evolve, offering a range of processors tailored to different performance tiers.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Infinix GT 30 Mediatek Dimensity 7400 Pubg Mobile... - YouTube",
+      "url": "https://www.youtube.com/watch?v=Aft8Wgzonhs",
+      "snippet": "Infinix GT 30 Mediatek Dimensity 7400 Pubg Mobile Smooth Extreme+ Gaming Test.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Mediatek Dimensity 7360 Turbo Gaming Test | TikTok",
+      "url": "https://www.tiktok.com/discover/mediatek-dimensity-7360-turbo-gaming-test",
+      "snippet": "Performa gaming optimal! mediatek dimensity 7360 turbo gaming, gaming smartphone dengan dimensity 7360, performan gaming tanpa lag, vivo v60 lite ulasan...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "MediaTek Dimensity 7200 ushers in enhanced charm in... - Digpu News",
+      "url": "https://digpu.com/technology-news/dimensity-7200-gaming-photography",
+      "snippet": "The latest we hear on that front is that global fabless semiconductor company MediaTek has unveiled its new Dimensity 7200 chipset as part of the new Dimensity 7000 series.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

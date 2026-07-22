@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-04-foxconn",
+  "strategy": "dive",
+  "query": "\"鴻海\" TW -blog -museum -review -job -news -report",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:28:39.861371+00:00",
+  "results": [
+    {
+      "title": "首頁 - 鴻海科技集團 - foxconn.com.tw",
+      "url": "https://www.foxconn.com.tw/zh-tw/about/introduction",
+      "snippet": "鴻海科技集團作為科技服務的領先者，近年積極投入「電動車、數位健康、機器人」三大新興產業以及「人工智慧、半導體、新世代通訊技術」三項新技術領域，以「三加三」結合作為集團重要的長期發展策略，為全球標竿客戶提供完整解決方案，成為全方位智慧生活提供者。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "最新鴻海熱門報導文章｜商周",
+      "url": "https://www.businessweekly.com.tw/Tags/鴻海",
+      "snippet": "看鴻海議題文章上商業周刊，不斷更新，提供您最新「鴻海」深度報導分析、時事新聞!針對時下熱門議題分析對於經濟 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "集團大事紀 - 鴻海科技集團 - Foxconn",
+      "url": "https://www.foxconn.com.tw/zh-tw/about/group-profile/key-milestones",
+      "snippet": "鴻海與高市府Y15聯開案簽約 投入159億打造南台灣旗艦總部",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "今周刊 - 鴻海最新、熱門精選文章",
+      "url": "https://www.businesstoday.com.tw/tag?name=鴻海",
+      "snippet": "科技 影／沒有B柱的鴻海MODEL A超炫!化身日式計程車「側滑門進出便利」，還有哪些設計打動日本人？ 鴻海MODEL A化身「日式電動計程車」，進軍日本台灣形象展。去年底才在鴻海科技日現身的純電MPV電動車MODEL A，一直鎖定日本為首發市場，如今首度在日本亮相，引發參展民眾熱議。由於MODEL A不只 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "1檔鴻海(2317)從帳面虧損300萬到獲利420萬...該落袋為安？為何他說至少抱到2028年？目標價 元再下車- 今周刊",
+      "url": "https://www.businesstoday.com.tw/article/category/183008/post/202510130002/",
+      "snippet": "鴻海(2317)股價近期一路走高，讓投資鴻海兩年多的Ryan爸爸含息獲利來到420萬!不過鴻海也曾經帳損300萬讓他懷疑人生，為何他最後堅持下來？巴爺爺說過：「財富會從沒有耐心的人口袋流向有耐心的人。」他也表示還不會賣出鴻海，至少要抱到2028年，目標價300元才會分批獲利了結。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台灣廠區 - 鴻海科技集團 - Hon Hai",
+      "url": "https://www.honhai.com/zh-tw/press-center/fabs?category=taiwan",
+      "snippet": "鴻海科技集團作為科技服務的領先者，近年積極投入「電動車、數位健康、機器人」三大新興產業以及「人工智慧、半導體、新世代通訊技術」三項新技術領域，以「三加三」結合作為集團重要的長期發展策略，為全球標竿客戶提供完整解決方案，成為全方位智慧生活提供者。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "鴻海 (2317.TW) 個股公告 - Yahoo股市",
+      "url": "https://tw.stock.yahoo.com/quote/2317.TW/announcement",
+      "snippet": "鴻海(2317.TW)，Yahoo股市 Yahoo奇摩股市提供個股相關新聞、個股公告等即時資訊。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "害很多人入場鴻海（2317）？！ - YouTube",
+      "url": "https://www.youtube.com/watch?v=FeZHvDZUKVc",
+      "snippet": "О сервисе Прессе Авторские права Связаться с нами Авторам Рекламодателям...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "「AI還只是剛開始！ 」鴻海劉揚偉估AI產值8年內飆逾40...",
+      "url": "https://www.bnext.com.tw/article/81000/aiia-foxconn",
+      "snippet": "鴻海董事長劉揚偉10月23日出席AIIA聯盟成立啟動儀式時提到，AI不會泡沫化，未來市場需求也會持續增加，但在算力的提升下，穩定的能源和供應鏈是關. 鍵。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "鴻海(2317)... | 優分析UAnalyze - 理解市場． 參與市場",
+      "url": "https://uanalyze.com.tw/articles/9285712704",
+      "snippet": "2025年3月27日（優分析產業數據中心）－根據知情人士透露，台灣電子代工大廠鴻海(2317-TW)計畫於4月9日在日本舉辦一場電動車（EV）策略說明會，藉此深化其.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

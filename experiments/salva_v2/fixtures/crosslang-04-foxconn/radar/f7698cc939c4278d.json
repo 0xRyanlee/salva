@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-04-foxconn",
+  "strategy": "radar",
+  "query": "鴻海 founded TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:28:40.787156+00:00",
+  "results": [
+    {
+      "title": "鴻海科技集團 - 维基百科，自由的百科全书",
+      "url": "https://zh.wikipedia.org/wiki/鴻海科技集團",
+      "snippet": "鴻海科技集團 （英語： Foxconn Technology Group）是源自 臺灣 的 跨國企業 集團，1974年創辦，以 富士康 （Foxconn）做為商標名稱。其專注於 電子產品的代工服務 （EMS），研發生產精密電氣元件、機殼、 準系統 、系統組裝、光通訊元件、液晶顯示件等3C產品上、下游產品及服務。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "首頁 - 鴻海科技集團",
+      "url": "https://www.honhai.com/zh-tw",
+      "snippet": "鴻海科技集團作為科技服務的領先者，近年積極投入「電動車、數位健康、機器人」三大新興產業以及「人工智慧、半導體、新世代通訊技術」三項新技術領域，以「三加三」結合作為集團重要的長期發展策略，為全球標竿客戶提供完整解決方案，成為全方位智慧生活提供者。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "集團大事紀 - 鴻海科技集團 - Hon Hai",
+      "url": "https://www.honhai.com/zh-tw/about/group-profile/key-milestones",
+      "snippet": "鴻海與高市府Y15聯開案簽約 投入159億打造南台灣旗艦總部",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "關於鴻海 - 鴻海科技集團 - Foxconn",
+      "url": "https://www.foxconn.com.tw/zh-tw/about/group-profile",
+      "snippet": "鴻海精密工業股份有限公司（臺灣證券交易所代碼：2317）於1974年肇基於臺灣，以模具為根基，逐漸發展為高科技服務企業。在電子代工服務領域（EMS）排名全球第一，市占率超過四成，範圍涵蓋消費性電子產品、雲端網路產品、電腦終端產品、元件及其他等四大產品領域。全球員工總人數季節性 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "創辦人 - 鴻海科技集團",
+      "url": "http://www.029300.com/zh-tw/about/group-profile/founder",
+      "snippet": "鴻海公司在郭台銘先生領導期間 ，締造無數個台灣精密工業與電子科技業之成就 ，產業版圖遍佈世界各地。2016年策略結盟夏普株式會社 ，創下日本產業史上 ，外資企業第一次注資日本百年企業之先例；2018年 ，鴻海旗下尊龙时凯工業互聯網公司（Fii）在上海證交所A股掛牌上市 ，打破最快獲得審核 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "從黑白電視旋鈕到全球代工霸主：揭祕當年 郭台銘 創辦鴻海？ 的艱辛與傳奇 - UpToGo",
+      "url": "https://uptogo.com.tw/歷史/人物傳記/郭台銘-創辦鴻海？/",
+      "snippet": "前言 當我們談論全球電子代工產業的龍頭，鴻海精密（Foxconn）的名字無人不知。這家掌握了蘋果iPhone供應鏈命脈、年營收突破六兆新台幣的科技巨艦，其起點並非高科技實驗室，而是一間位於台灣板橋的簡陋塑膠工廠。許多人不禁好奇，當年 郭台銘 創辦鴻海？ 的過程究竟充滿了多少不為人知的 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "深入瞭解全球科技巨擘：最完整的鴻海公司簡介？帶您一探究竟 - UpToGo",
+      "url": "https://uptogo.com.tw/科技/3c電子/鴻海公司簡介？/",
+      "snippet": "前言 提到台灣的科技產業，絕對不能忽略在全球供應鏈中扮演關鍵角色的「鴻海精密工業股份有限公司」（Hon Hai Precision Industry Co., Ltd.，國際通稱為 Foxconn）。從1974年創立初期一家僅有10名員工、生產黑白電視機旋鈕的小型塑膠廠，如今已蛻變為全球電子代工服務（EMS）領域市佔率超過四成的超級 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "鴻海 (2317.TW) 基本資料 - Yahoo股市",
+      "url": "https://tw.stock.yahoo.com/quote/2317.TW/profile",
+      "snippet": "鴻海(2317.TW)，Yahoo股市 Yahoo奇摩股市提供公司基本資料、統一編號、股務相關基本資料、實收資本額、普通股數、特別股、變更、與重要行事曆如董事會、股東常會、除權日、除息日等資訊。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "鴻海科技集團 - 中文百科 - wikis.tw",
+      "url": "https://wikis.tw/鴻海科技集團",
+      "snippet": "鴻海科技集團（英語譯名：Hon Hai Technology Group）是總部位於臺灣新北市土城區的跨國企業集團，亦為世界第四大的資訊科技公司。是1974年由郭台銘與友人合資於土城創辦，目前主要生產地則在中國大陸，以富士康（Foxconn）做為商標...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "鴻海怎麼挑新創？劉揚偉公開4大心法、親曝創業經驗與投資「失敗學」 - 產業 - 工商時報",
+      "url": "https://www.ctee.com.tw/news/20260712700007-430502",
+      "snippet": "根據《財訊》雙週刊報導，2026台灣創投暨私募投資年會今（7）日登場，鴻海科技集團董事長劉揚偉擔任主題演講嘉賓，竟然不藏私地分享了鴻海集團自身的投資經驗，甚至還坦承投了一堆，但投後管理卻做得不太好，更自曝了兩個失敗的投資案例，體認到投後管理的資本紀律重要性。 劉揚偉曾在 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

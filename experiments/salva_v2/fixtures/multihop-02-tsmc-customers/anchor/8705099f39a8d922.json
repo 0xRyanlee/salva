@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-02-tsmc-customers",
+  "strategy": "anchor",
+  "query": "wafer foundry foundry customer Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:30:27.320663+00:00",
+  "results": [
+    {
+      "title": "Wafer Foundry Market 2026: Growth Fueled by AI & Automation to 2033",
+      "url": "https://www.linkedin.com/pulse/wafer-foundry-market-2026-growth-fueled-ai-automation-zhwdf/",
+      "snippet": "Additionally, geopolitical uncertainties, such as trade restrictions and tariffs, may disrupt global supply chains, affecting wafer foundry operations and customer sourcing strategies.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "14nm Wafer Foundry Market Size & Share 2026-2032",
+      "url": "https://www.360iresearch.com/library/intelligence/14nm-wafer-foundry",
+      "snippet": "14nm Wafer Foundry Market by Product Type (Field Programmable Gate Array, Graphics Processing Unit, Integrated Circuit), Technology Type (Bulk Planar, FinFET), Application, End User - Global Forecast 2026-2032.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "[News] Global Wafer Foundry Market Pattern Could be Reshaped",
+      "url": "https://www.trendforce.com/news/2025/04/11/news-global-wafer-foundry-market-pattern-could-be-reshaped/",
+      "snippet": "Samsung Reorganizes Foundry Division to Strengthen HBM Competitiveness. Recently, media reports revealed that Samsung Electronics’ Device Solutions (DS) division has posted a “regular recruitment” notice targeting personnel in its foundry division.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Wafer Foundry Market Evolution: Trends & Growth Forecast to 2033",
+      "url": "https://www.datainsightsmarket.com/reports/wafer-foundry-167117",
+      "snippet": "The Wafer Foundry market shows significant growth driven by advanced node demand and expanding applications. Gain key insights into market dynamics and 2033 projections.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Silicon Photonics Wafer Foundry Market Size, Growth | Report [2034]",
+      "url": "https://www.marketreportsworld.com/market-reports/silicon-photonics-wafer-foundry-market-14723284",
+      "snippet": "Global foundry fleets process wafer diameters spanning 200 mm and 300 mm, plus specialty substrates, with 300 mm lines representing 57% of current production volume and 200 mm lines representing 33%; specialty/other formats account for 10%.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Microsoft Word - LoMC Development Strategies of pure wafer...",
+      "url": "https://www.isahp.org/uploads/lomc_chang_tzeng_tsengwaferfoundries.pdf",
+      "snippet": "The characteristics of foundry business has been described and the factors of driving pure play wafer foundry business which include manufacturing competence and development strategies, partnership with clients, production/customer oriented business strategies, technology and global...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global Analog & Power Wafer Foundry Market... | Bonafide Research",
+      "url": "https://www.bonafideresearch.com/product/95001608/global-analog-power-wafer-foundry-market",
+      "snippet": "Analog IC Wafer Foundry focuses on the production of integrated circuits that process continuous signals, such as voltage regulators, amplifiers, and power management devices.2.1 World Market Overview. 2.1.1 Global Analog & Power Wafer Foundry Annual Sales 2019-2030.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "28nm Wafer Foundry Market: $10.26B by 2033, 15.2% CAGR",
+      "url": "https://www.archivemarketresearch.com/reports/28nm-wafer-foundry-822259",
+      "snippet": "The global 28nm Wafer Foundry Market is currently valued at an estimated USD 10,260 million as of 2024, exhibiting robust expansion driven by sustained demand across diverse application sectors.Customer Segmentation & Buying Behavior in the 28nm Wafer Foundry Market.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Hefei's Semiconductor Giant, Ranked Ninth Globally, Heads to Hong...",
+      "url": "https://eu.36kr.com/en/p/3834380350924681",
+      "snippet": "In wafer foundry, the size of silicon wafers has developed from the initial 6 - inch and 8 - inch to the current mainstream 12 - inch. Although 8 - inch production lines still support traditional applications, the current incremental production capacity mainly comes from 12 - inch wafers...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ACM Research Delivers Multiple Single-Wafer Cleaning Systems to...",
+      "url": "https://finviz.com/news/323021/acm-research-delivers-multiple-single-wafer-cleaning-systems-to-foundry-customer-in-singapore",
+      "snippet": "The systems support wafer backside cleaning and wet etch processes for advanced semiconductor manufacturing. Its core process technologies have undergone international process validation and are designed to meet the stringent performance, yield...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-03-acer",
+  "strategy": "anchor",
+  "query": "宏碁 filetype:pdf",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:28:24.866137+00:00",
+  "results": [
+    {
+      "title": "PDF 2024 宏碁永續報告書Acer Sustainability Report",
+      "url": "https://www.acer.com/sustainability/uploads/files/shares/sustainability-report/2024_Acer_Sustainability_Report_zh.pdf",
+      "snippet": "宏碁2024 COMPUTEX展位獲永續設計獎銀獎 2024 台北國際電腦展上,宏碁展位設計體現3R 策略,以Reduce (減少使用)Reuse (物盡其用)Recycle (循環再利用)實踐減碳淨零的決心;從展覽主題、設計至材料應用,皆以低碳及創新的理念,展現出環保低碳的精神,因而榮獲COMPUTEX 永續設計 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF 宏碁遊戲股份有限公司",
+      "url": "https://acergaming.com/files/investor/2_Shareholder/2-2-AnnualReport/2025-Annual_Report.pdf",
+      "snippet": "宏碁遊戲的公司成立宗旨即為提供遊戲玩家完整的遊戲生態圈,為實踐我們的使命,宏 碁遊戲在113年度營運主軸在強化現有代理品牌業務服務並持續拓展海外業務,開拓布局其 他遊戲品牌代理以及鞏固遊戲產業上下游之串聯,帶動更深遠之綜效。 2 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF 宏碁遊戲股份有限公司",
+      "url": "https://mopsov.twse.com.tw/nas/STR/690820260225M001.pdf",
+      "snippet": "立足台灣,深耕亞洲的遊戲行業加速器。 2026 年2 月25 日",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF Corporate Introduction",
+      "url": "https://mopsov.twse.com.tw/nas/STR/235320250509M001.pdf",
+      "snippet": "個人電腦包含筆記型電腦及桌上型電腦。Chromebook 營收、第一季年增年第一季非電腦及顯示器事業佔營收50.1%。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF 2024 - Acer United States",
+      "url": "https://www.acer.com/sustainability/uploads/files/shares/tcfd-report/2024_TCFD_Report_zh.pdf",
+      "snippet": "宏碁的IFRS 永續揭露準則專案小組為董事會與 風險管理暨永續發展委員會下的任務性編組，由會計長與永續長共同擔任負責人，由內部稽核最高主管擔任觀察員，成員包括營運、法遵、 資安、風險、財務、永續、以及專案管理職能代表。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF 宏碁資訊 永續報告書",
+      "url": "https://aebpt-uat.aceraeb.com/common/attachment/file/2024.pdf?key=1393",
+      "snippet": "永續經營營運與治理包容職場與社會附錄 2024 年對宏碁資訊而言, 是意義非凡的嶄新里程碑。 我們正式搬遷至台北南港自購黃金級綠建築辦公室,這不僅展現了我們對永續發展的承諾,更透過地緣優勢整合周邊 ICT 產業資源, 為企業客戶創造綜效。 科技的發展與永續環境息息相關, 發展科技的同時, 必須 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF 公司名稱:宏碁遊戲股份有限公司 ( 股票代號:6908) - TPEx",
+      "url": "https://www.tpex.org.tw/storage/emerging_register/2022/09/1662012981_6892_CH_6908.pdf",
+      "snippet": "公司簡介( 公司介紹、歷史沿革、經營理念、未來展望等) 一、公司介紹 宏碁遊戲股份有限公司設立於民國109 年7 月31日,創立初衷定位為電競生態圈的建構者,營運服務囊括消費性電子商品、遊戲軟體與點數及平台與網路服務。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF 宏碁股份有限公司",
+      "url": "https://www.aceraeb.com/common/attachment/file/21.AEB公司章程+114Y.pdf?key=15174",
+      "snippet": "宏碁資訊服務股份有限公司 公司章程 第一章 總則 第一條: 本公司依照公司法規定組織之,定名為「宏碁資訊服務股份有限公司」,英文名稱定為「ACER E-ENABLING SERVICE BUSINESS",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF 倚天酷",
+      "url": "https://www.acergadget.com/wp-content/uploads/2025/05/2025股東年報.pdf",
+      "snippet": "一、 經營方針與實施概況 倚天酷碁股份有限公司(以下簡稱「本公司」)致力於推動ESG企業社會責任、公司治理,以及促進智慧生活。在2024 年,我們專注於發展微移動(Micro mobility )騎行與ESG節能減碳綠色環保,持續推出相關概念的主要產品,與擴展我們在泛美(Pan America)市場的業務版圖。 ( 一) E-Mobility產品 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF 宏碁遊戲股份有限公司 公司治理實務守則 修訂前後條文對照表",
+      "url": "https://acergaming.com/files/investor/3_Governance/3-1-Corporate_Governance_Practice_Principles/Corporate_Governance_Best_Practice_Principles.pdf",
+      "snippet": "第二條 公司治理原則 公司建立公司治理制度,除應遵守法令及章程之規定,暨與證券交易所或櫃檯買賣中心所簽訂之契約及相關規範事項外,應依下列原則為之:",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

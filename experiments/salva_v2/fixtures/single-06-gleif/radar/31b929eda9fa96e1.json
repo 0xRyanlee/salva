@@ -1,0 +1,72 @@
+{
+  "task_id": "single-06-gleif",
+  "strategy": "radar",
+  "query": "\"GLEIF\" site:crunchbase.com",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:27.074178+00:00",
+  "results": [
+    {
+      "title": "Global Legal Entity Identifier Foundation - CrunchbaseClare Rowley - Head of Business Operations @ Global Legal ...Ubisecure - Crunchbase Company Profile & FundingTrackonomy Systems - Crunchbase Company Profile & FundingZum - Crunchbase Company Profile & FundingNorthern Trust - Crunchbase Company Profile & FundingZenity - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/global-legal-entity-identifier-foundation",
+      "snippet": "Jun 17, 2017 · GLEIF manages the issuance and maintenance of Legal Entity Identifiers (LEIs) through a network of partners, ensuring unique identification of legal entities worldwide. Prior to working with GLEIF, Ms. Rowley worked at the United States Federal Deposit Insurance Corporation where she led technology initiatives improving bank resolution programs and contributed to research on subprime mortgages. The company is also GLEIF-accredited to issue Legal Entity Identifiers (LEI) via its RapidLEI service and has quickly become the global #1 LEI Issuer both in terms of volume and data quality. Trackonomy Systems enhances supply chain visibility through smart label tracking solutions. Zūm provides child transportation for school districts and busy families. Northern Trust is a global leader in delivering innovative investment management, asset and fund administration, fiduciary and banking. Zenity secures AI agents everywhere - across SaaS, cloud, and the endpoint.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Clare Rowley - Head of Business Operations @ Global Legal ...Ubisecure - Crunchbase Company Profile & FundingTrackonomy Systems - Crunchbase Company Profile & FundingZum - Crunchbase Company Profile & FundingNorthern Trust - Crunchbase Company Profile & FundingZenity - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/person/clare-rowley",
+      "snippet": "Prior to working with GLEIF, Ms. Rowley worked at the United States Federal Deposit Insurance Corporation where she led technology initiatives improving bank resolution programs and contributed to research on subprime mortgages. The company is also GLEIF-accredited to issue Legal Entity Identifiers (LEI) via its RapidLEI service and has quickly become the global #1 LEI Issuer both in terms of volume and data quality. Trackonomy Systems enhances supply chain visibility through smart label tracking solutions. Zūm provides child transportation for school districts and busy families. Northern Trust is a global leader in delivering innovative investment management, asset and fund administration, fiduciary and banking. Zenity secures AI agents everywhere - across SaaS, cloud, and the endpoint.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Ubisecure - Crunchbase Company Profile & FundingTrackonomy Systems - Crunchbase Company Profile & FundingZum - Crunchbase Company Profile & FundingNorthern Trust - Crunchbase Company Profile & FundingZenity - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/ubisecure",
+      "snippet": "The company is also GLEIF-accredited to issue Legal Entity Identifiers (LEI) via its RapidLEI service and has quickly become the global #1 LEI Issuer both in terms of volume and data quality. Trackonomy Systems enhances supply chain visibility through smart label tracking solutions. Zūm provides child transportation for school districts and busy families. Northern Trust is a global leader in delivering innovative investment management, asset and fund administration, fiduciary and banking. Zenity secures AI agents everywhere - across SaaS, cloud, and the endpoint.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Trackonomy Systems - Crunchbase Company Profile & FundingZum - Crunchbase Company Profile & FundingNorthern Trust - Crunchbase Company Profile & FundingZenity - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/trackonomy-systems",
+      "snippet": "Trackonomy Systems enhances supply chain visibility through smart label tracking solutions. Zūm provides child transportation for school districts and busy families. Northern Trust is a global leader in delivering innovative investment management, asset and fund administration, fiduciary and banking. Zenity secures AI agents everywhere - across SaaS, cloud, and the endpoint.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Zum - Crunchbase Company Profile & FundingNorthern Trust - Crunchbase Company Profile & FundingZenity - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/liftee",
+      "snippet": "Zūm provides child transportation for school districts and busy families. Northern Trust is a global leader in delivering innovative investment management, asset and fund administration, fiduciary and banking. Zenity secures AI agents everywhere - across SaaS, cloud, and the endpoint.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Northern Trust - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/northern-trust",
+      "snippet": "Northern Trust is a global leader in delivering innovative investment management, asset and fund administration, fiduciary and banking.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Zenity - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/zenity",
+      "snippet": "Zenity secures AI agents everywhere - across SaaS, cloud, and the endpoint.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Fourthline - News & Analysis",
+      "url": "https://www.crunchbase.com/organization/fourthline/news_and_analysis",
+      "snippet": "Fourthline, GLEIF and AU10TIX appoint new C-suite leaders.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Entrust Datacard - News & Analysis",
+      "url": "https://www.crunchbase.com/organization/datacard-group/news_and_analysis",
+      "snippet": "Gleif sets up stakeholder group to drive uptake of LEIs within digital certificates.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

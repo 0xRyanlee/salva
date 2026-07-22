@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-06-advantech-cloud",
+  "strategy": "pirate",
+  "query": "(filetype:ppt OR filetype:pptx) \"cloud platform\"",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:32:46.252288+00:00",
+  "results": [
+    {
+      "title": "Presentation cloud management platform | PDF",
+      "url": "https://www.slideshare.net/slideshow/presentation-cloud-management-platform/50997338",
+      "snippet": "The platform offers comprehensive features for infrastructure management, including self-service portals, resource management, and advanced network configurations. - View online for free.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GitHub - amelcharolinesgn2/ClouD-Infrastructure-SISKA-2025...",
+      "url": "https://github.com/amelcharolinesgn2/ClouD-Infrastructure-SISKA-2025",
+      "snippet": "Cloud Infrastructure vs Cloud Architecture.ppt.GCP-Create_a_new_Windows_VM_Instance.ppt. III_Concepts_&_Technologies_Cloud_Computing.pptx.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Google Cloud Free 300 và Sự Đột Phá Của Công Nghệ - CloudAZ",
+      "url": "https://cloudaz.io/google-cloud-free-300-va-su-dot-pha-cua-cong-nghe/",
+      "snippet": "Khám phá sâu hơn về ưu đãi Google Cloud Free 300 và cách tận dụng một cách chi tiết, từ đăng ký tài khoản GCP đến sử dụng dịch vụ miễn phí và quản lý tài nguyên.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Open Source Intelligence Techniques - Bazzell M. - 2021",
+      "url": "https://ru.djvu.online/file/t94i5swCa5y0y",
+      "snippet": "\"Cisco\" filetype:ppt \"Cisco\" filetype:pptx The second search provided an additional 12,700 files. This brings our total to over 27,000 PowerPoint files, which is overwhelming.The \"filetype\" operator can identify any file by the file type within any website.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "How to Fix the Video Not Playing in Google Drive?",
+      "url": "https://www.nucleustechnologies.com/blog/fix-the-video-not-playing-issue-in-google-drive/",
+      "snippet": "PowerPoint Repair. Recover complete PPT, PPTX, PPS file with text, images, graphics, audio, etc.Also, it can be opening a document or PPT file on an android mobile phone or web browser. Our android mobiles can sync our contacts and other data on a daily basis with Google.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "OSINT Techniques: Resources for Uncovering... - DOKUMEN.PUB",
+      "url": "https://dokumen.pub/osint-techniques-resources-for-uncovering-online-information-1nbsped-9798345969250.html",
+      "snippet": "common document file types and the associated file extensions. As previously explained, both Google and Bing are capable of searching any file type regardless of the file association. Remember that Bing demands \"filetype\" while Google seems to prefer \"ext\".",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Alteryx training in pune Jobs, Employment | Freelancer",
+      "url": "https://www.br.freelancer.com/job-search/alteryx-training-in-pune/",
+      "snippet": "By the end of the engagement I should have: • A structured slide deck (PDF or PPT) that mirrors each lecture. • Recorded sessions we can replay for future reference. • A concise command/PowerCLI cheat-sheet highlighting the key workflows you demonstrate.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "bitovi/n8n-nodes-google-search - npm",
+      "url": "https://www.npmjs.com/package/@bitovi/n8n-nodes-google-search",
+      "snippet": "Additional Search ParametersFile Type: Filter results by file type (e.g., pdf, doc, etc.)Filter: Enable/disable duplicate content filter",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "自訂 Input File 檔案上傳按鈕 CSS 最佳解法﹍實作範例＠WFU BLOG",
+      "url": "https://tw.wfublog.com/2017/10/input-type-file-upload-css-skill.html",
+      "snippet": "前面提到的討論串「Styling an input type=“file” button」，裡面第二個解答，沒有被評為最佳解答，但獲得最多的推薦，其實就是本篇的最佳解。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Input/output Error Colab - Free Download PDF",
+      "url": "https://ebookpdf.com/input-output-error-colab",
+      "snippet": "Discover and download Input/output Error Colab.pdf for free. EbookPDF provides quick access to millions of PDF documents.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

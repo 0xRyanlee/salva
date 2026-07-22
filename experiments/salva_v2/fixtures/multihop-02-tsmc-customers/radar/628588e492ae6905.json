@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-02-tsmc-customers",
+  "strategy": "radar",
+  "query": "TSMC customers partnership Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:30:29.503720+00:00",
+  "results": [
+    {
+      "title": "Nvidia set to supplant Apple as TSMC's largest customer - CNBC",
+      "url": "https://www.cnbc.com/2026/01/26/nvidia-set-to-supplant-apple-as-tsmcs-largest-customer.html",
+      "snippet": "Nvidia will become TSMC's largest customer this year, according to analyst estimates and Huang himself. Apple is believed to currently be TSMC's largest customer. The positional swap will mark a ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMCs partnerships and collaborations with major technology companies",
+      "url": "https://www.csfusion.org/news/tsmcs-partnerships-and-collaborations-with-major-technology-companies/",
+      "snippet": "These partnerships have played a pivotal role in TSMC's ability to stay at the forefront of the semiconductor industry. One notable example of TSMC's successful partnership is its collaboration with research institutions and universities. By teaming up with academic institutions, TSMC gains access to cutting-edge research and talent.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing Company Limited - TSMC",
+      "url": "https://www.tsmc.com/english",
+      "snippet": "TSMC has been the world's dedicated semiconductor foundry since 1987, and we support a thriving ecosystem of global customers and partners with the industry's leading process technology and portfolio of design enablement solutions to unleash innovation fo",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Grand Alliance - Taiwan Semiconductor Manufacturing Company Limited - TSMC",
+      "url": "https://www.tsmc.com/english/dedicatedFoundry/grandAlliance",
+      "snippet": "The TSMC Grand Alliance is a powerful driving force behind semiconductor innovation. It brings together customers, OIP partners, including IP Alliance, EDA Alliance, Design Center Alliance, Cloud Alliance, Value Chain Alliance, TSMC 3DFabric® Alliance, and key equipment and materials makers to achieve greater collaboration.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PDF Sony Semiconductor Solutions Announces Preliminary Agreement with TSMC ...",
+      "url": "https://www.sony.com/en/SonyInfo/IR/news/20260508_03_E.pdf",
+      "snippet": "The Company supports a thriving ecosystem of global customers and partners with the industry's leading process technologies and portfolio of design enablement solutions to unleash innovation for the global semiconductor industry.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GlobalFoundries Licenses GaN Technology from TSMC to Accelerate U.S ...",
+      "url": "https://gf.com/news-and-events/news/globalfoundries-licenses-gan-technology-from-tsmc-to-accelerate-u-s-manufactured-power-portfolio-for-datacenter-industrial-and-automotive-custo/",
+      "snippet": "Technology licensing agreement will advance development of GF's next generation GaN technologies with products available in late 2026 MALTA, N.Y., November 10, 2025 - GlobalFoundries (Nasdaq: GFS) (GF) today announced that it has entered into a technology licensing agreement with TSMC for 650V and 80V Gallium Nitride (GaN) technology. This strategic move will accelerate GF's next ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Powering the future: Why GF's new agreement with TSMC is supercharging ...",
+      "url": "https://gf.com/news-and-events/blog/powering-the-future-why-gfs-new-agreement-with-tsmc-is-supercharging-gan-innovation/",
+      "snippet": "On Nov 11, GlobalFoundries announced a new partnership with Taiwan Semiconductor Manufacturing Company (TSMC) on gallium nitride technology to power the next generation of products for data center, industrial and automotive power applications. We sat down with Téa Williams, the Senior Vice President of the Power Business at GF, to discuss this technology agreement, why […]",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Nvidia-TSMC Strategic Alliance: What the Latest Meeting ... - LinkedIn",
+      "url": "https://www.linkedin.com/pulse/nvidia-tsmc-strategic-alliance-what-latest-meeting-means-aujla-erylc",
+      "snippet": "Nvidia CEO Jensen Huang's recent meeting with Taiwan Semiconductor Manufacturing Company (TSMC) executives at the chipmaker's annual sports day in Hsinchu, Taiwan on November 8-9, 2025 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC's top-10/20/30/40 customers; Who spends how much on ... - Substack",
+      "url": "https://exploresemis.substack.com/p/tsmcs-top-10203040-customers-who",
+      "snippet": "TSMC, the world's largest semiconductor foundry, served 532 customers in 2022. However, its top-10 customers accounted for 68% of its revenue. Apple, the largest customer, accounted for 23% of TSMC's revenue. In this post, I address which company contributed how much income to TSMC, the top-10 customer revenue trend and Apple's revenue concentration.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "NVIDIA Officially Overtakes Apple as TSMC's Biggest Customer; There's ...",
+      "url": "https://wccftech.com/nvidia-officially-overtakes-apple-as-tsmc-largest-customer/",
+      "snippet": "NVIDIA has officially overtaken Apple as TSMC's largest chip customer, as the AI buildout drives chip demand never seen before.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

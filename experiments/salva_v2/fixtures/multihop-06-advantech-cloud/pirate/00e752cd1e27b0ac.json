@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-06-advantech-cloud",
+  "strategy": "pirate",
+  "query": "intitle:\"cloud platform\"",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:32:49.556551+00:00",
+  "results": [
+    {
+      "title": "What is a cloud platform? - ServiceNow",
+      "url": "https://www.servicenow.com/platform/what-is-a-cloud-platform.html",
+      "snippet": "A cloud platform is an IT environment on remote servers delivering computing resources online, with pay-as-you-go access to infrastructure and tools.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Computing Platforms: Providers, Security & Risks",
+      "url": "https://www.cloudwards.net/cloud-computing-platforms/",
+      "snippet": "Discover top cloud platforms, security insights & risks. Compare AWS, Azure & Google Cloud + explore key cloud computing fundamentals. Explained by experts",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Best Cloud Platform Software (2026)",
+      "url": "https://worldmetrics.org/best/cloud-platform-software/",
+      "snippet": "Jun 8, 2026 · Explore the top 10 Cloud Platform Software picks with rankings and comparisons of Microsoft Azure, Amazon Web Services, and Google Cloud.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Top 8 Cloud Platform Services Ranked: Azure, AWS, Google Lea",
+      "url": "https://www.positioniseverything.net/top-8-cloud-platform-services-ranked-azure-aws-google-lead-gartner-magic-quadrant/",
+      "snippet": "May 25, 2026 · Gartner’s latest Magic Quadrant for cloud platform services confirms what many enterprise buyers already see in competitive bids: Microsoft Azure, Amazon Web Services, and Google Cloud remain the clear leaders in scale, capability, and strategic influence. Their advantage comes from deep infrastructure footprints, mature platform services, strong AI portfolios, broad partner ecosystems, and ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "10 Best Cloud Service Providers Reviewed for 2026 - The CTO Club",
+      "url": "https://thectoclub.com/services/best-cloud-service-providers/",
+      "snippet": "Jul 7, 2026 · Choosing the right cloud service provider is crucial for business success. As an IT specialist, I’ve tested, reviewed, and evaluated the most popular cloud service providers to shortlist the best tools to help you select the ideal platform based on scalability, security, pricing, and industry focus. Say goodbye to cloud confusion and hello to optimized cloud solutions!",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Top 10: Cloud Platforms | Technology Magazine",
+      "url": "https://technologymagazine.com/top10/top-10-cloud-platforms-2025",
+      "snippet": "Aug 6, 2025 · This week's Top 10 shines a light on the most innovative and useful cloud platforms available in today's market",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Best Cloud Platform Software (2026) - gitnux.org",
+      "url": "https://gitnux.org/best/cloud-platform-software/",
+      "snippet": "Jun 8, 2026 · Compare the top 10 Cloud Platform Software options from Azure, AWS, and Google Cloud. See rankings and pick the best fit.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Infrastructure | Oracle",
+      "url": "https://www.oracle.com/cloud/",
+      "snippet": "Oracle Cloud Infrastructure (OCI). The next-generation cloud designed to run any application, faster and more securely, for less.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GCP in 60 Minutes — Zero to Cloud Hero. - YouTube",
+      "url": "https://www.youtube.com/watch?v=HnFxsQDuiLY",
+      "snippet": "Learn Google Cloud Platform (GCP) from scratch in 60 mins! Perfect for beginners & those prepping for cloud roles/certs.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "High Performance, High Frequency, Bare Metal, Affordable Cloud...",
+      "url": "https://www.vultr.com/pricing/",
+      "snippet": "We are simplifying the cloud.Vultr is available in 33 cloud data center regions. Advanced Network. High speed public and private networking.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

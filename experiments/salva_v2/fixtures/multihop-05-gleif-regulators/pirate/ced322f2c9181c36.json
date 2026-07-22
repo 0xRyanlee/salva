@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-05-gleif-regulators",
+  "strategy": "pirate",
+  "query": "intitle:\"GLEIF\"",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:32:21.929033+00:00",
+  "results": [
+    {
+      "title": "Global Legal Entity Identifier Foundation (GLEIF) - YouTube",
+      "url": "https://www.youtube.com/channel/UCP2xdWOFG7dWNaFIBKyejhg",
+      "snippet": "The guardian of Legal Entity Identifiers (LEIs) and verifiable LEIs (vLEIs). GLEIF regulates a genuinely universal identification standard – a unique 20-character code created for a legal entity.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global Legal Entity Identifier Foundation (GLEIF) (@GLEIF) on X",
+      "url": "https://twitter.com/GLEIF",
+      "snippet": "Global Legal Entity Identifier Foundation (GLEIF) (@GLEIF) on X. Enabling global identity. Protecting digital trust.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "#gleif #globallei #digitalidentity #theconnector | The Connector.",
+      "url": "https://www.linkedin.com/posts/jointheconnector_gleif-globallei-digitalidentity-activity-7292104532006735872-BbLF",
+      "snippet": "Through its management of the LEI system, GLEIF ensures the operational integrity of a globally recognized, open, and non-proprietary legal entity identification system.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ontology - dataset by gleif | data.world",
+      "url": "https://data.world/gleif/ontology",
+      "snippet": "OWL Ontology covering Legal Entity Identifiers and related concepts.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "LEI Search",
+      "url": "https://search.gleif.org/",
+      "snippet": "GLEIF Logo How to use Challenge LEI Data About LEI Data.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Topica Booster: AI проверка иностранных компаний и документов...",
+      "url": "https://www.topica.tech/",
+      "snippet": "· GLEIF (Global Legal Entity Identifier Foundation): База данных LEI-кодов. Позволяет связать юридическое лицо с авторитетным источником регистрации (реестром)...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "НРД: LOU – присвоение и верификация кодов LEI, передача...",
+      "url": "https://www.nsd.ru/services/depozitariy/prisvoenie-identifikatsionnykh-kodov/lou-prisvoenie-i-verifikatsiya-kodov-lei-peredacha-v-gleif/",
+      "snippet": "Коды LEI, присвоенные НРД, размещены на сайте www.lei-code.ru, а также в международной базе GLEIF, куда НРД передает их в установленном GLEIF формате.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GitHub - OSINTERs/osint-probiv-bots · GitHub",
+      "url": "https://github.com/OSINTERs/osint-probiv-bots",
+      "snippet": "search.gleif.org. Поиск истории изменений компаний и данных о владельцах.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "On Tokenization: It’s about Standards, not Regulation | Medium",
+      "url": "https://medium.com/@RRKUBLI/on-tokenization-its-about-standards-not-regulation-765635c5ac12?trk=public_post_comment-text",
+      "snippet": "GLEIF (LEI), ICMA’s Bond Data Taxonomy (BDT), FINOS’ Common Domain Model (CDM), and ACTUS together form a foundational semantic stack for modern, automated financial...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Trends in Digital Iden/ty Verica/on",
+      "url": "https://www.unescap.org/sites/default/d8files/event-documents/Enhancing+transparency+and+trust+in+global+transactions+through+unique+identifiers+-+GLEIF.pdf",
+      "snippet": "§ GLEIF is the Root of Trust — Root AID to establish the Root of Trust — Delegated AIDs to issue Credentials. § GLEIF qualifies a trusted network of Qualified vLEI Issuers (QVIs).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

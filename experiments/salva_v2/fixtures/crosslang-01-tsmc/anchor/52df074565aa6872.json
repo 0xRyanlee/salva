@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-01-tsmc",
+  "strategy": "anchor",
+  "query": "台積電 filetype:pdf",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:39.268375+00:00",
+  "results": [
+    {
+      "title": "台積電 (2330.TW/2330 TT) - kgi.com.hk",
+      "url": "https://www.kgi.com.hk/zh-cn/-/media/files/kgishk/research-reports/tw-reports/2024/01/tsmc_2330-tt_10062025.pdf",
+      "snippet": "N2 採用時程以及營收規模遠大於N3。 台積電N2 預計在4Q25 投片，2026 年產生 營收貢獻，我們預期N2 月產能將從今年底的2.5 萬片擴張到明年底的7-7.5 萬片。 明年N2 可望佔整體營收比重15%，大幅超越N3 第一年的營收貢獻(6%)。 對比過 去Apple (美)是主要最先進製程節點的採用者，AMD (美)此次將取代過去Apple ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電豪砸3.2兆投資美國 谷立言：美台夥伴關係最佳寫照 - 民視新聞網",
+      "url": "https://www.ftvnews.com.tw/news/detail/2026717W0630",
+      "snippet": "圖、文／CTWANT台積電董事長暨總裁魏哲家昨（16）日在法說會宣布，將加碼投資美國亞利桑那州1000億美元（約新台幣3兆2346億元），預計新建4座晶圓廠及先進封裝設施，以滿足美國客戶未來多年強勁需求。台積電豪砸3.2兆投資美國 谷立言：美台夥伴關係最佳寫照. Line. Facebook.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "摩爾定律已死？ 台積電張曉強霸氣喊：I don’t care...",
+      "url": "https://www.bnext.com.tw/article/79931/moore's-law-works-dosent-matter",
+      "snippet": "摩爾定律已死？ 台積電張曉強霸氣喊：I don’t care！台積電擴增CoWoS產能進展？",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "JPG to PDF Converter | Convert Your Images to PDF Online",
+      "url": "https://smallpdf.com/jpg-to-pdf",
+      "snippet": "Convert JPG images to PDF files for free. Our online JPG to PDF converter tool creates a PDF from images or photos with just a few clicks. No signup needed.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電亮麗業績未起作用 台指期夜盤震盪 | 期貨市場 | 期貨 | 經濟日報",
+      "url": "https://money.udn.com/money/story/11112/8927399",
+      "snippet": "台積電亮麗業績未起作用 台指期夜盤震盪. 台股示意圖。 聯合報系資料照片.7月電子期金融期齊漲. 7月15日期交所日盤行情. 美半導體上揚台積電ADR下跌 法人：觀察台指期結算.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "錢鏡你家2／靠「80元價差」連賺6趟 杜金龍公開台積電第三季操作法",
+      "url": "https://www.mnews.tw/story/mm-20260716-184mon-230416",
+      "snippet": "杜金龍認為盤整的台積電適合區間操作。 杜金龍認為盤整的台積電適合區間操作。 鏡週刊2026.07.17 07:40 臺北時間. 錢鏡你家2／靠「80元價差」連賺6趟 杜金龍公開台積電第三季操作法.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "FSMOne | 台積電能靠「底氣」逆風而行嗎",
+      "url": "https://www.fsmone.com.hk/article/article-details/327501",
+      "snippet": "年初至今，台積電股價維持波動格局，先是2月份受到DeepSeek的一記重槌令晶片相關股票受壓，然候是特朗普威脅對台灣加徵100%關稅，揚言當地搶走了美國大.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "給想進台積電工作的你：我如何在台積電存活？ 前台積電主管的故事",
+      "url": "https://pinshuoi.com/8246/",
+      "snippet": "台積電8D問題解決法.給想進台積電工作的你：我如何在台積電存活？ 前台積電主管的故事.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台積電（2330）帶頭開紅盤！ 1月營收月增22...",
+      "url": "https://www.moneyweekly.com.tw/ArticleData/Info/Article/138239",
+      "snippet": "預計台積電可能會考慮調高先進晶片代工的價格10%。 此外，台積電也在年假期間率先公告1月營收為2,157.9億元，月增22.4%，年增7.9%，改寫歷史同期新高。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台灣積體電路製造股份有限公司 民國一百零七年度年報(一)",
+      "url": "https://investor.tsmc.com/static/annualReports/2019/chinese/pdf/c_all.pdf",
+      "snippet": "7.1 概述 7.2 環保、安全與衛生管理 7.3 台積電文教基金會 7.4 台積電慈善基金會 7.5 台積 i 公益 7.6 履行社會責任情形及與上市上櫃公司. 企業社會責任實務守則差異情形及原因.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

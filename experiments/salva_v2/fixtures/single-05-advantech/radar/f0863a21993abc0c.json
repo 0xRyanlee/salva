@@ -1,0 +1,79 @@
+{
+  "task_id": "single-05-advantech",
+  "strategy": "radar",
+  "query": "Advantech employees TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:26:50.223863+00:00",
+  "results": [
+    {
+      "title": "Employee Portal - Homepage - Advantech",
+      "url": "https://employeezone.advantech.com.tw/net",
+      "snippet": "The employee portal is for Advantech worldwide employees.······",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech - Employee Portal",
+      "url": "https://crm-portal.advantech.com.tw/FRONT/Default.aspx",
+      "snippet": "The Advantech CRM portal is for Advantech worldwide employees.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech_研華股份有限公司 ｜徵才中－104人力銀行",
+      "url": "https://www.104.com.tw/company/2d9ntmw",
+      "snippet": "Advantech is currently looking for an experienced product manager who play an important role to support existing product sustaining and NPI for dedicated product line.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "工業電腦, 嵌入式電腦, 單板電腦, 產業電腦, 工業主機板, 網路安全平台, 數位電子看板, 工業自動化 ... - Advantech",
+      "url": "https://www2.advantech.tw/DMS/Manufacturing.aspx",
+      "snippet": "Advantech realizes its design strengths with three world-class production centers in China and Taiwan. Constructed for lean manufacturing and utilizing a customer-driven Enterprise Resource Planning (ERP) system, these manufacturing sites are highly flexible and respond to just-in-time requests.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech Employee Directory, Headcount & Staff | LeadIQ",
+      "url": "https://leadiq.com/c/advantech/5a1d8aca24000024006507c6/employee-directory",
+      "snippet": "Explore Advantech's employee directory to find accurate email addresses and contact information. Book a demo today.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Advantech - Company Profile & Staff Directory | ContactOut",
+      "url": "https://contactout.com/company/advantech-7500199",
+      "snippet": "Advantech is an Industrial Automation company located in No. 1, Alley 20, Lane 26, Rueiguang Road, Neihu District, Taipei 114 Taiwan, TW with 3,082 employees. Access Advantech's email format and Advantech staff directory for direct contact details of 3,082 employees.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "經營團隊 - 研華 - Advantech",
+      "url": "https://www.advantech.com/zh-tw/about/executive-team",
+      "snippet": "身為Intel ECA (Embedded & Communication Alliance) 的Premier Partner及Windows Embedded Gold Partner, 研華自1983年以來持繼以先進的技術及全球化的服務, 在產業用高可靠度的電腦平台中維持領先地位.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "研華共創物聯網世界的未來 - Advantech",
+      "url": "https://www.advantech.com/zh-tw",
+      "snippet": "身為Intel ECA (Embedded & Communication Alliance) 的Premier Partner及Windows Embedded Gold Partner, 研華自1983年以來持繼以先進的技術及全球化的服務, 在產業用高可靠度的電腦平台中維持領先地位.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "工業電腦, 嵌入式電腦, 單板電腦, 產業電腦, 工業主機板, 網路安全平台, 數位電子看板, 工業自動化 ... - Advantech",
+      "url": "https://www2.advantech.tw/dms/",
+      "snippet": "Gaming Medical Retail Mobile Transportation Play Hard- Work Harder Maximize your business core values as we take care of the rest Precision and Perfection Uncompromising quality ensures mission-critical healthcare application success Reliable Solutions to Transform Business Solutions to provide advantages that matter Rather than blur the line between lightness and ruggedness, we eliminate it ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "",
+      "url": "/clev?event=StartpageResultClick&sc=AR5cSbel8h4qEL64fUQDSxFMzMNcRVRq9q2YwqMd744Beqw8ML72DbyKs7VXvwNlYQF55hndhUIjdHqsGDWN86butQxoex&payload={\"bdsSessionId\":\"dd339e452f53485a828b183ab8cdbfac\",\"cheqId\":\"\",\"countryCode\":\"TW\",\"deviceType\":\"mobile\",\"endpoint\":\"search.serp\",\"hasGoogleAds\":false,\"page_id\":\"Ez7zYZM87hNKdHnY\",\"queryCategory\":\"web\",\"segment\":\"organic\",\"session_id\":\"DDijQFy6I1DKDXf5\",\"surface\":\"serp-web\",\"transport\":\"href-request\"}",
+      "snippet": "",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-02-tsmc-customers",
+  "strategy": "anchor",
+  "query": "TSMC customers foundry customer Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:30:22.552195+00:00",
+  "results": [
+    {
+      "title": "Top 8 TSMC Customers by Revenue Share: Who Powers the World's ...",
+      "url": "https://testflowinc.com/blog/top-8-tsmc-customers-revenue-share-analysis",
+      "snippet": "Taiwan Semiconductor Manufacturing Company (TSMC) doesn't just manufacture chips—it manufactures the future. With over 60% of the global foundry market and exclusive production of the world's most advanced processors, TSMC's customer relationships shape entire industries. But who are the tech titans that depend on TSMC's fabrication capabilities? This deep dive reveals TSMC's top 8 customers ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Top 8 TSMC Customers — Ranked by Revenue Share | Ali Kamaly",
+      "url": "https://www.linkedin.com/posts/ali-kamaly_semiconductors-tsmc-foundries-activity-7359555437634945026-7pbq",
+      "snippet": "Top 8 TSMC Customers — Ranked by Revenue Share TSMC is the undisputed foundry giant — but its customer mix reveals how deeply its revenue depends on a handful of tech titans.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Nvidia set to supplant Apple as TSMC's largest customer - CNBC",
+      "url": "https://www.cnbc.com/2026/01/26/nvidia-set-to-supplant-apple-as-tsmcs-largest-customer.html",
+      "snippet": "Jan 26, 2026 · The shift also highlights TSMC's role as the largest contract supply foundry in the world, providing chip manufacturing and related services to nearly every processor maker.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC Statistics 2026: Semiconductor Fabrication Output And ...",
+      "url": "https://www.quantumrun.com/consulting/tsmc-statistics/",
+      "snippet": "Jun 22, 2026 · Full-year 2025 revenue closed at $122.42 billion, with TSMC holding 69.9% of the global foundry market. This brief covers the latest TSMC statistics for 2026 across revenue, fabrication output, foundry capacity, process node mix, customer segments, and geographic exposure.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC’s top-10/20/30/40 customers; Who spends how ... - Substack",
+      "url": "https://exploresemis.substack.com/p/tsmcs-top-10203040-customers-who",
+      "snippet": "May 25, 2023 · TSMC, the world's largest semiconductor foundry, served 532 customers in 2022. However, its top-10 customers accounted for 68% of its revenue. Apple, the largest customer, accounted for 23% of TSMC's revenue.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC Statistics 2026: Revenue, Market Share & Capex",
+      "url": "https://axis-intelligence.com/tsmc-statistics/",
+      "snippet": "Jul 4, 2026 · The global pure-play foundry market (Foundry 2.0 definition used by TSMC) grew approximately 16% year-over-year in 2025 per TSMC’s Annual Report. TSMC accounts for more than a quarter of projected global semiconductor capex in 2026 ($54B midpoint vs. ~$200B industry total per Bits&Chips research).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC's Top 10 Customers: Who Powers Its $80B Revenue?",
+      "url": "https://www.linkedin.com/posts/ali-kamaly_semiconductors-tsmc-apple-activity-7378037467817402368-twlT",
+      "snippet": "Top 10 Customers of TSMC — Who Actually Powers Its $80B Revenue? If you think TSMC just “makes chips,” think again — it’s the silent engine behind nearly every iconic tech brand.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Global Pure Foundry Market Share: Quarterly - Counterpoint Research",
+      "url": "https://counterpointresearch.com/en/insights/global-semiconductor-foundry-market-share",
+      "snippet": "Jun 4, 2026 ... TSMC maintained its dominant position with a 72% share of the pure-play foundry market, supported by the ramp-up of N3 in smartphone and PC ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC nets nearly 70% of 2025 foundry market - Taipei Times",
+      "url": "https://www.taipeitimes.com/News/biz/archives/2026/03/14/2003853777",
+      "snippet": "Mar 14, 2026 ... Taiwan Semiconductor Manufacturing Co's (TSMC, 台積電) share of the global foundry market rose to almost 70 percent last year amid booming ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Samsung's foundry customers reportedly flock to TSMC - Reddit",
+      "url": "https://www.reddit.com/r/hardware/comments/1fvdvrb/samsungs_foundry_customers_reportedly_flock_to/",
+      "snippet": "Oct 3, 2024 ... Samsung's foundry customers reportedly flock to TSMC — three firms move to Taiwanese chipmaker in latest exodus.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-02-tsmc-customers",
+  "strategy": "radar",
+  "query": "TSMC customers joint Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:30:35.665607+00:00",
+  "results": [
+    {
+      "title": "TSMC’s top-10/20/30/40 customers; Who spends how ... - Substack",
+      "url": "https://exploresemis.substack.com/p/tsmcs-top-10203040-customers-who",
+      "snippet": "May 25, 2023 · Here is my attempt to identify TSMC's customers, who accounted for more than 80% of its revenue in 2022. I will try to separate more customers in future iterations. The company's top-10 customers include Apple, Qualcomm, AMD, Broadcom, NVIDIA, MediaTek, Intel, Marvell, NXP and Unisoc.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Nvidia set to supplant Apple as TSMC's largest customer - CNBC",
+      "url": "https://www.cnbc.com/2026/01/26/nvidia-set-to-supplant-apple-as-tsmcs-largest-customer.html",
+      "snippet": "Jan 26, 2026 · Apple is believed to currently be TSMC's largest customer. The positional swap will mark a fundamental shift in the semiconductor industry, reflecting Nvidia's growing importance amid the AI...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC, Bosch, Infineon, and NXP Establish Joint Venture ...",
+      "url": "https://www.infineon.com/press-release/2023/infxxx202308-144",
+      "snippet": "The planned joint venture will be 70% owned by TSMC, with Bosch, Infineon, and NXP each holding 10% equity stake, subject to regulatory approvals and other conditions.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing Company Limited - TSMC",
+      "url": "https://www.tsmc.com/english",
+      "snippet": "TSMC has been the world's dedicated semiconductor foundry since 1987, and we support a thriving ecosystem of global customers and partners with the industry's leading process technology and portfolio of design enablement solutions to unleash innovation for the global semiconductor industry.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC's Top 10 Customers: Who Powers Its $80B Revenue?",
+      "url": "https://www.linkedin.com/posts/ali-kamaly_semiconductors-tsmc-apple-activity-7378037467817402368-twlT",
+      "snippet": "Top 10 Customers of TSMC — Who Actually Powers Its $80B Revenue? If you think TSMC just “makes chips,” think again — it’s the silent engine behind nearly every iconic tech brand.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Top Five Customers of TSMC Set to Undergo Reshuffle",
+      "url": "https://chippub.substack.com/p/top-five-customers-of-tsmc-set-to",
+      "snippet": "Sep 22, 2025 · Analysts forecast TSMC’s top seven customers in 2025 (by revenue share) as follows: Apple (25%–27%), NVIDIA (11%), MediaTek (9%), Qualcomm (8%), AMD (7%), Broadcom (7%), and Intel (6%). By 2026, rankings are expected to shift due to growing applications and strategic partnerships.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC’s $265 Billion US Spend Driven by Demand, Rivals... - Bloomberg",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-19/tsmc-s-265-billion-us-spend-driven-by-demand-rivals-cfo-says",
+      "snippet": "Taiwan Semiconductor Manufacturing Co. is adding $100 billion to its investments in Arizona to meet strong demand from US customers and to ward off ambitious rivals, a senior executive said this week.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSMC enregistre un bénéfice record et promet 100... | Euronews",
+      "url": "https://fr.euronews.com/business/2026/07/16/tsmc-enregistre-un-benefice-record-et-promet-100-milliards-de-dollars-pour-ses-usines-amer",
+      "snippet": "TSMC a annoncé jeudi un bénéfice trimestriel record et relevé ses prévisions de chiffre d’affaires, portée par l’explosion de la demande de puces d’intelligence artificielle qui continue d’alimenter la croissance du premier sous-traitant mondial de semi-conducteurs.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Taiwan to keep best TSMC tech despite US push - Taipei Times",
+      "url": "https://www.taipeitimes.com/News/taiwan/archives/2026/07/18/2003860953",
+      "snippet": "The investment would allow TSMC to operate closer to its largest US customers, respond more quickly to growing global demand for advanced chips and contribute to more resilient supply chains, he said.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "TSM Hisse Senedi Fiyatı — TSMC Grafiği — TradingView",
+      "url": "https://tr.tradingview.com/symbols/NYSE-TSM/",
+      "snippet": "Gerçek zamanlı fiyatları Taiwan Semiconductor Manufacturing Company Ltd. almanın kolay bir yolu. Canlı TSM yatırma makbuzu grafiğini, finans bilgilerini ve piyasa haberlerini görüntüleyin.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

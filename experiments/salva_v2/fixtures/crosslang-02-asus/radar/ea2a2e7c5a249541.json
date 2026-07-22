@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-02-asus",
+  "strategy": "radar",
+  "query": "華碩 headquarters TW",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:57.728485+00:00",
+  "results": [
+    {
+      "title": "華碩- 維基百科，自由的百科全書",
+      "url": "https://zh.wikipedia.org/zh-tw/華碩",
+      "snippet": "華碩電腦，簡稱華碩（英語譯名暨品牌名稱：ASUS），是源自臺灣的跨國科技公司，成立於1989年，總部位於臺北市關渡。其產品主要為家用與商務用桌上型電腦、筆記型電腦 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ASUS 台灣",
+      "url": "https://www.asus.com/tw/",
+      "snippet": "華碩產品涵蓋筆記型電腦、桌機、手機、路由器、螢幕、主機板等，不斷追求科技創新，同時我們積極進軍電競和AIOT領域，致力提供多元化科技解決方案。華碩品牌以品質卓越、 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩電腦股份有限公司｜徵才中 - 104人力銀行",
+      "url": "https://www.104.com.tw/company/auxx12g",
+      "snippet": "【徵才職缺】RD20075 通訊研發工程師、RD10015 介面設計師_UI/GUI Designer(華碩設計中心)、AD30058 網站程式設計師【公司簡介】631 個工作職缺、資本額：370億。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩電腦企業總部大樓 - 易境永續設計顧問GreenJump",
+      "url": "https://www.greenjump.com.tw/projects/leedprojects/asusligong",
+      "snippet": "&全世界最大的LEED V4 BD+C: NC(新建築版) 白金級 ． 專案地點：台北市北投區，台灣 ．",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩電腦股份有限公司(ASUS) | 徵才中- 1111人力銀行",
+      "url": "https://www.1111.com.tw/corp/2160005/",
+      "snippet": "身為全球科技領導品牌，華碩致力傳遞無與倫比的體驗，為世人擘劃美好數位生活藍圖。以進化式創新構築明日科技藍圖聞名，並持續以使用者為中心，打...想加入華碩電腦股份 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩",
+      "url": "https://tw.linkedin.com/company/asus",
+      "snippet": "關於我們 ; 網站: http://www.asus.com. 外部華碩連結 ; 產業: 電腦硬體製造 ; 公司規模: 10,001+ 名員工 ; 總部: Taipei CityTaipei ; 類型: 上市公司.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "前往華碩電腦企業總部, 立德路, 15, 台北市北投區的行車路線 - Waze",
+      "url": "https://www.waze.com/zh-TW/live-map/directions/華碩電腦企業總部-立德路-15-台北市北投區?to=place.w.79626491.796068304.14308466",
+      "snippet": "華碩電腦企業總部. 立德路, 15, 台北市北投區, Taiwan. 在Waze 中開啟. 0228943447. 華碩電腦企業總部, 立德路, 15, 台北市北投區, Taiwan.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "華碩電腦企業總部- 工程實績 - 勝堡村營造",
+      "url": "https://www.sptc.com.tw/project/j3YFWuWdhpOK3SQ0?category=projects3",
+      "snippet": "華碩電腦企業總部座落在關渡平原上，以大口徑基徑為基礎，上部以鋼骨結構搭配單元式帷幕，整體設計流暢豐富。曾是華碩集團運籌帷幄、立足台灣、放眼世界的企業中心。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "到訪台北ASUS總部！令人羨慕的華碩總部「立功大樓」！ - Saiga NAK",
+      "url": "https://saiganak.com/zh/review/asus-headquarters-report/",
+      "snippet": "May 8, 2023 ... 前幾天公開了在台灣三創生活園區的華碩和ROG旗艦店的遊記，這次會為在家介紹ASUS總部！ASUS的總部在2019年5月搬進了新大樓。這座巨大的建築物就是立功 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "而造就「華碩品質，堅若磐石」響亮名聲 本次企業參訪帶領同學走入 ...",
+      "url": "https://www.facebook.com/tys1999/posts/企業參訪華碩電腦-活動回顧用自己的力量改變世界跨國企業總部就設在台灣的asus華碩電腦-持續著這個信念而造就華碩品質堅若磐石響亮名聲本次企業參訪帶領同學走入秘密/1090405203132763/",
+      "snippet": "Mar 13, 2025 ... 企業參訪｜#華碩電腦活動回顧】 「用自己的力量改變世界」跨國企業總部就設在台灣的ASUS華碩電腦，持續著這個信念，而造就「華碩品質，堅若磐石」響亮 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

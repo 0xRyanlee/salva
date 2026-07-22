@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-04-mediatek-brands",
+  "strategy": "radar",
+  "query": "chipset joint Global",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:31:38.276952+00:00",
+  "results": [
+    {
+      "title": "Qualcomm - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Qualcomm",
+      "snippet": "Qualcomm Incorporated (/ ˈkwɒlkɒm /) [2] is an American multinational technology corporation headquartered in San Diego, California. [3] The company develops and designs technologies for global communications and computing, including next-generation mobile networks, smart devices, and semiconductors — such as mobile processors and artificial intelligence chips. The company holds essential ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Nokia and Finland's Tampere University join forces to develop 5G chipsets",
+      "url": "https://www.nokia.com/newsroom/nokia-and-finlands-tampere-university-join-forces-to-develop-5g-chipsets/",
+      "snippet": "Press Release Nokia and Finland's Tampere University join forces to develop 5G chipsets Joint venture creates foundation for long-term development of silicon-based processors 6 October, 2020 Espoo, Finland - Nokia today announced that it has joined forces with Tampere University to establish a 'Center of Excellence' to enhance the develo...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Nokia and Finland's Tampere University join forces to develop 5G chipsets",
+      "url": "https://finance.yahoo.com/news/nokia-finland-tampere-university-join-080000929.html",
+      "snippet": "Press ReleaseNokia and Finland's Tampere University join forces to develop 5G chipsets * Joint venture creates foundation for long-term development of silicon-based processors6 October ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Silicon Labs and Wirepas Surpass 10 Million Chipsets, Powering ...",
+      "url": "https://www.prnewswire.com/news-releases/silicon-labs-and-wirepas-surpass-10-million-chipsets-powering-industrial-iot-at-scale-302471407.html",
+      "snippet": "This milestone confirms that their joint solution is not just technically sound, it is market-proven at scale, and ready to support the digital backbone of global infrastructure.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Joint test lab supports sub-6GHz chipset design",
+      "url": "https://www.electronicspecifier.com/products/5g/joint-test-lab-supports-sub-6ghz-chipset-design/",
+      "snippet": "The common goal is to enable chipset solutions that better fit global operators' requirements. Unigroup Spreadtrum & RDA had already selected Rohde & Schwarz for 2G, 3G and 4G, and now the two companies are continuing their collaboration on current key technologies.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Chips Joint Undertaking",
+      "url": "https://www.chips-ju.europa.eu/",
+      "snippet": "Chips JU The Chips JU is the European public-private partnership that promotes the development and adoption of advanced nano-electronic chip technologies and systems manufactured in Europe. The Chips JU programme is structured into two parts that address the needs of Europe's semiconductor ecosystem: Chips for Europe Initiative and Electronic Components and Systems Research and Innovation (ECS ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Chips, Power and Geopolitics: The Global Race to Control Semiconductor ...",
+      "url": "https://www.microwavejournal.com/articles/45564-chips-power-and-geopolitics-the-race-to-control-the-future",
+      "snippet": "The CHIPS and Science Act, signed into law on August 9, 2022, represents a $280 billion investment over 10 years to rebuild America's semiconductor manufacturing base and advance scientific innovation. 24 Of this total, $200 billion is dedicated to broader scientific research and development and commercialization efforts in emerging technologies, 24 as shown in Figure 2. The semiconductor ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "JCET Group —— Home",
+      "url": "https://www.jcetglobal.com/en",
+      "snippet": "About JCET Founded in 1972, JCET Group is the world's leading integrated circuit manufacturing and technology services provider. JCET is a global company that serves the world through our rich technology patent portfolio, our eight-site manufacturing powerhouse, and our dedicated teams around the globe.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GCT Semiconductor and Skylo partner on satellite IoT",
+      "url": "https://iotbusinessnews.com/2026/02/11/gct-semiconductor-and-skylo-partner-on-satellite-iot/",
+      "snippet": "GCT Semiconductor and Skylo partner to enhance global satellite IoT connectivity with joint chip and module certification for seamless multi-use device integration.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Elon Musk unveils $20 billion 'TeraFab' chip project to make chips ...",
+      "url": "https://www.tomshardware.com/tech-industry/elon-musk-formally-launches-20-billion-terafab-chip-project",
+      "snippet": "The joint Tesla-SpaceX fab will make both terrestrial inference chips and space-hardened processors.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

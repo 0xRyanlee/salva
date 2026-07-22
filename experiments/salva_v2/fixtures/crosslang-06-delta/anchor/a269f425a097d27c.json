@@ -1,0 +1,79 @@
+{
+  "task_id": "crosslang-06-delta",
+  "strategy": "anchor",
+  "query": "台達電子",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:29:35.741178+00:00",
+  "results": [
+    {
+      "title": "【台達電子】 M+護智燈-日出燈(40Hz、台達M+...)",
+      "url": "https://m.momoshop.com.tw/goods.momo?i_code=13054218",
+      "snippet": "看更多「燈飾照明」熱門商品. #台達電子. #台達.品牌名稱. 台達電子. 材質. 金屬、竹、ABS.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "innergie 台達電 - PChome 24h購物",
+      "url": "https://24h.pchome.com.tw/search/?q=innergie+台達電",
+      "snippet": "DELTA 台達電子 Innergie C-A USB-C對USB充電線 白 1.8M.$2,500. 折扣. 台達電子 Innergie 65W 65U 原廠變壓器 充電器 電源線 Asus Acer Hp Dell Lenovo.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "innergie - 優惠推薦 - 2026年7月 | Rakuten樂天市場",
+      "url": "https://www.rakuten.com.tw/search/innergie/",
+      "snippet": "台達電子 Innergie 90W T9 原廠變壓器 充電器 電源線 Asus Acer Hp Dell Lenovo. $ 1,290.Innergie 台達電 ADP-60BW BTA-1 60C Pro摺疊版60瓦 USB-C 萬用充電器 無線單顆版.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "【2026】台達電浴室暖風機推薦10... | BALIMAN情報局",
+      "url": "https://baliman.tw/blog/post/delta-bath-heater",
+      "snippet": "【台達電子】標準型300系列 多功能循環涼暖風機 遙控型 VHB30ACRT-B/VHB30BCRT-B(冬天暖氣機【台達電子】含基本安裝-浴室廁所涼暖風機-豪華400系列遙控型韻律風門-6-8坪【台達電子】多功能浴室廁所涼暖風機-豪華300系列遙控型韻律風門-適用...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台達電浴室暖風機推薦2026...",
+      "url": "https://recommendking.cc/post19403/",
+      "snippet": "台達電子 多功能浴室廁所涼暖風機-豪華300系列遙控型韻律風門-適用3-6坪(VHB30ACMRT-A/VHB30BCMRT-A). 台達電子 多功能浴室廁所循環涼暖風機-標準型300系列遙控型-適用3-6坪(VHB30ACRT-B/VHB30BCRT-B).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "鄭平：電力缺口是AI... | 經濟日報",
+      "url": "https://money.udn.com/money/story/5612/9546920",
+      "snippet": "鄭平：電力缺口是AI最大挑戰 台達電從電網到晶片垂直整合一站輸出. 台達電子董事長鄭平（左2）親自坐鎮 COMPUTEX 2026。",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台達電桃三研發中心 啟用 - 日報 - 工商時報",
+      "url": "https://www.ctee.com.tw/news/20111227700153-439901",
+      "snippet": "台達電子於上週舉行桃園三廠暨研發中心（簡稱桃三研發中心）落成啟用典禮，全面導入台達節能以及工業自動化產品和控制系統，設置太陽能板、LED照明、",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "台達 DC Wallbox 50kW... | LINE TODAY",
+      "url": "https://today.line.me/tw/v2/article/vX6q7jm",
+      "snippet": "值得一提的是，台達電子 DC Wallbox 50kW 直流充電樁具有高達 96% 的能源轉換效率，既是減少能源浪費、也可降低業者營運成本；系統支援 OCPP v1.6 (未來可升級至. v2.01)、乙太網路、行動網路通訊，雙槍可自 CCS1 與 CCS2 二種主流充電規格中自由挑...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "The power behind competitiveness",
+      "url": "https://www.deltapowersolutions.com/media/download/Manual-UPS-N-1-3kVA-zh-tw.pdf",
+      "snippet": "台達 Amplon 射手座系列. ii. 目錄.台達 Amplon 射手座系列. 66.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "GRI G3 指標索引",
+      "url": "https://filecenter.deltaww.com/about/download/2013_Delta_CSR_Report_CH.pdf",
+      "snippet": "身為全球企業公民台達支持電子行業行為準則Electronic Industry Code of Conduct, EICC、世界人權宣言Universal Declaration of Human Rights、國際 勞工組織三方原則宣言International Labor Ofce Tripartite Declaration of Principles及 OECD 多國企業指.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "task_id": "multihop-06-advantech-cloud",
+  "entities": [
+    {
+      "title": "Top 10: Cloud Platforms | Technology Magazine",
+      "source_urls": [
+        "https://technologymagazine.com/top10/top-10-cloud-platforms-2025"
+      ],
+      "score": 0.3611,
+      "confidence": 0.3611
+    },
+    {
+      "title": "The World's Largest Cloud Providers, Ranked by Market Share",
+      "source_urls": [
+        "https://www.visualcapitalist.com/the-worlds-largest-cloud-providers-ranked-by-market-share"
+      ],
+      "score": 0.36,
+      "confidence": 0.36
+    },
+    {
+      "title": "AI and Cloud Computing Services | Google Cloud",
+      "source_urls": [
+        "https://cloud.google.com"
+      ],
+      "score": 0.2009,
+      "confidence": 0.2009
+    },
+    {
+      "title": "Unlock ROI with Platform Partnerships | Vertisystem",
+      "source_urls": [
+        "https://vertisystem.com/blog/platform-partnerships-define-the-next-era-of-digital-transformation"
+      ],
+      "score": 0.2794,
+      "confidence": 0.2794
+    },
+    {
+      "title": "Find a Microsoft partner",
+      "source_urls": [
+        "https://partner.microsoft.com/en-us/partnership/find-a-partner"
+      ],
+      "score": 0.1645,
+      "confidence": 0.1645
+    },
+    {
+      "title": "Advantech | Service Center",
+      "source_urls": [
+        "https://campaign.advantech.online/en/global/network-security/sd-wan-solution/serviceCenter.html"
+      ],
+      "score": 0.3039,
+      "confidence": 0.3039
+    },
+    {
+      "title": "Best online collaboration tool of 2025 - TechRadar",
+      "source_urls": [
+        "https://www.techradar.com/best/best-online-collaboration-tools"
+      ],
+      "score": 0.2628,
+      "confidence": 0.2628
+    },
+    {
+      "title": "Global Warfare 4 — Apply to Join",
+      "source_urls": [
+        "https://globalwarfare.gg/apply"
+      ],
+      "score": 0.3221,
+      "confidence": 0.3221
+    },
+    {
+      "title": "Movie Tickets, Plays, Sports, Events & Cinemas nearby - BookMyShow",
+      "source_urls": [
+        "https://in.bookmyshow.com"
+      ],
+      "score": 0.0,
+      "confidence": 0.0
+    },
+    {
+      "title": "SAP BTP - Wikipedia",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/SAP_BTP"
+      ],
+      "score": 0.1172,
+      "confidence": 0.1172
+    },
+    {
+      "title": "GitHub - razeone/cp100: Add PDF lectures · GitHub",
+      "source_urls": [
+        "https://github.com/razeone/cp100"
+      ],
+      "score": 0.1719,
+      "confidence": 0.1719
+    },
+    {
+      "title": "Open Source Intelligence Techniques - Bazzell M. - 2021",
+      "source_urls": [
+        "https://ru.djvu.online/file/t94i5swCa5y0y"
+      ],
+      "score": 0.1508,
+      "confidence": 0.1508
+    },
+    {
+      "title": "Alteryx training in pune Jobs, Employment | Freelancer",
+      "source_urls": [
+        "https://www.br.freelancer.com/job-search/alteryx-training-in-pune"
+      ],
+      "score": 0.1441,
+      "confidence": 0.1441
+    },
+    {
+      "title": "自訂 Input File 檔案上傳按鈕 CSS 最佳解法﹍實作範例＠WFU BLOG",
+      "source_urls": [
+        "https://tw.wfublog.com/2017/10/input-type-file-upload-css-skill.html"
+      ],
+      "score": 0.0,
+      "confidence": 0.0
+    }
+  ],
+  "meta": {
+    "qualified_count": 14,
+    "raw_count": 14,
+    "rounds": 3,
+    "domain": "partnerships"
+  }
+}

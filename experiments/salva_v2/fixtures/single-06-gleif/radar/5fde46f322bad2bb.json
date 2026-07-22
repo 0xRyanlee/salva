@@ -1,0 +1,51 @@
+{
+  "task_id": "single-06-gleif",
+  "strategy": "radar",
+  "query": "GLEIF site:linkedin.com",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:27:34.634513+00:00",
+  "results": [
+    {
+      "title": "Trinsic Joins GLEIF to Accelerate Organizational Identity... | LinkedIn",
+      "url": "https://www.linkedin.com/posts/trinsic-id_trinsic-partners-with-gleif-global-legal-activity-7421918667766132736-4Ev4",
+      "snippet": "That’s why Trinsic has officially joined the GLEIF Partners Program, a global initiative that supports the broader adoption of the Legal Entity Identifier (LEI) and the verifiable LEI (vLEI)...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "We're bringing the real world on-chain — starting with trade.",
+      "url": "https://www.linkedin.com/posts/iotafoundation_were-bringing-the-real-world-on-chain-activity-7373705239469834241-FjxV",
+      "snippet": "IOTAhas signed an MoU with the Global Legal Entity Identifier Foundation (GLEIF) to explore how trusted business identities can be anchored on-chain to power global trade and supply...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Earlier this week, I was in Frankfurt for Global Legal Entity Identifier...",
+      "url": "https://www.linkedin.com/posts/siddharthyagnamurthy_earlier-this-week-i-was-in-frankfurt-for-activity-7402699377502261248-2mLB",
+      "snippet": "A huge thank you to Global Legal Entity Identifier Foundation (GLEIF) for hosting such an insightful programme, and warm congratulations to the winners and all the finalists.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "#lei #vlei | Alexandre Kech",
+      "url": "https://www.linkedin.com/posts/alexandrekech_lei-vlei-activity-7407349909529608192-Qwfr",
+      "snippet": "This week, we came together at Global Legal Entity Identifier Foundation (GLEIF) for our Winter celebration — a moment to pause, reconnect, and reflect on what has been an...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "A lot is riding on how we collectively shape market structures for digital...",
+      "url": "https://www.linkedin.com/posts/ivan-mortimer-schutts-6b5b6_a-lot-is-riding-on-how-we-collectively-shape-activity-7458230751042449410-A4_i",
+      "snippet": "GLEIF launched this Call for Papers to promote independent, interdisciplinary research that informs the governance and market design of digital organizational identity...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Menyederhanakan alur kerja layanan keuangan dengan Pengenal...",
+      "url": "https://id.linkedin.com/pulse/streamlining-financial-services-workflows-verifiable-legal-?tl=id",
+      "snippet": "GLEIF telah berupaya menciptakan layanan LEI yang sepenuhnya didigitalkan yang memungkinkan verifikasi identitas instan dan otomatis antara rekanan di seluruh dunia.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

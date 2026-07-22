@@ -1,0 +1,79 @@
+{
+  "task_id": "multihop-04-mediatek-brands",
+  "strategy": "pirate",
+  "query": "(filetype:ppt OR filetype:pptx) \"chipset\"",
+  "n": 10,
+  "recorded_at": "2026-07-21T12:31:49.962877+00:00",
+  "results": [
+    {
+      "title": "Chipset Modeling: Present and Future - ibis.org",
+      "url": "https://ibis.org/cookbook/taskgroup/ibis-cookbook-outline-mm2.ppt",
+      "snippet": "Chipset Modeling: Present and Future. New IBIS Cookbook. 1.0 Introduction . 1.1 Quick Overview of an IBIS File . 1.2 Steps to creating an IBIS Model . 2.0 Pre-Modeling Steps . 2.1 Basic Decisions . Model Version and Complexity . Specification Model vs. Part Model . Fast and Slow Corner Model Limits . Inclusion of SSO Effects.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PPT_WIRELESS_3333.pptx",
+      "url": "https://www.slideshare.net/slideshow/pptwireless3333pptx/255270933",
+      "snippet": "PPTX, PDF132 views. PPT_WIRELESS_3333.pptx. AI-enhanced description.PPT. Pengantar jaringan wireless. byZainudin Aboed. 49 slides626 views. PPT.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PowerPoint PresentationCOSC3330/6308 Computer ArchitecturePowerPoint PresentationPowerPoint Presentationwww.firaconsortium.orgPowerPoint Presentation",
+      "url": "https://mingrany.github.io/assets/files/trio_slides_sigcomm_2022.pptx",
+      "snippet": "Our proposed system for efficient in-network straggler mitigation Achieve 1.8x faster training time for machine learning jobs by leveraging Juniper Networks’ programmable chipset. Talk outline Overview of Juniper Networks’ chipset Trio-ML: our proposed in-network straggler mitigation for distributed ML training Evaluations Talk outline Current trends (II) Frequent doubling of GPU speeds Every 12 to 18 months New paradigm: Visual computing stands at the intersection graphic processing and parallel computing Can implement novel graphics algorithms Use GPUs for non-conventional applications Two results Triumph of heterogeneous architectures Combining powers of CPU and GPU GPUs become scalable parallel processors Moving from hardware-defined pipelining architectures to more flexible programmable architectures From GPGU to CUDA GPGU General-Purpose computing on GPU Uses traditional graphics API and graphics pipeline From GPGU to CUDA CUDA Compute Unified Device Architecture Parallel computing platform and programming model C/C++ Invented by NVIDIA Single Program Multiple Data approach GPU SYSTEM ARCHITECTURE Old School Approach Intel Architecture AMD Architecture Variations Unified Memory Architecture (UMA): GPU shares RAM with CPU Lower memory bandwidth, higher latency Cheap, low-end solution Scalable Link Interconnect: NVIDIA Allows multiple GPUs High-end solution Integrated solutions Integrate CPU and Northbridge Integrate GPU and chipset Game console Similar architectures Architectures evolve over time Objective is to reduce costs while maintaining performance GPU interfaces and drivers GPU attached to CPU via PCI-Express Replaces older AGP Interfaces such as OpenGL and Direct3D use the GPU as a coprocessor Send commands, programs and data to GPU through a specific GPU device driver Graphics logical pipeline Basic Unified GPU Architecture Programmable processor array Tightly integrated with fixed-function processors for texture filtering, rasterization, raster operations Emphasis in on very high level of parallelism Example architecture Tesla architecture (NVIDIA Geoforce 8800) 116 streaming processors (SP) cores Organized as 14 multithreaded streaming multiprocessors (SM) Each SP core Manages 96 concurrent threads Thread state are maintained by hardware Connects with four 64-bit DRAM partitions Example architecture Each SM has 8 SP cores 2 special function units Separate caches for instructions and constants A multithreaded instruction unit Shared memory (NUMA?) Virtual memory I/O The Motherboard and Chipset The CPU is assisted by a set of chips that help it manage the memory, storage, and I/O devices. They comprise the chipset. (c) Smruti R. Sarangi, 2023 Diagram of the Motherboard CPU Millimeter-wave (mmWave) technologies represent a cornerstone for emerging wireless network infrastructure, and for RF sensing systems in security, health, and automotive domains. Formed the Joint UWB MAC PHY Working Group (JUMPWG) to advance UWB technology specs used in the CCC Digital Key. Work together to enable the implementation and deployment of UWB-enabled secure wireless payment systems. Support coexistence and seamless integration of RTLS use cases through a joint working group. Jan 22, 2018 · Packet TNC (Kantronics, TNC-X, MFJ, etc.), or SignaLinkor similar USB soundcard interface. Might require a USB to Serialdongle.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "COSC3330/6308 Computer ArchitecturePowerPoint PresentationPowerPoint Presentationwww.firaconsortium.orgPowerPoint Presentation",
+      "url": "https://www2.cs.uh.edu/~paris/3330/PowerPoint/Appendix+A+GPUs.ppt",
+      "snippet": "Current trends (II) Frequent doubling of GPU speeds Every 12 to 18 months New paradigm: Visual computing stands at the intersection graphic processing and parallel computing Can implement novel graphics algorithms Use GPUs for non-conventional applications Two results Triumph of heterogeneous architectures Combining powers of CPU and GPU GPUs become scalable parallel processors Moving from hardware-defined pipelining architectures to more flexible programmable architectures From GPGU to CUDA GPGU General-Purpose computing on GPU Uses traditional graphics API and graphics pipeline From GPGU to CUDA CUDA Compute Unified Device Architecture Parallel computing platform and programming model C/C++ Invented by NVIDIA Single Program Multiple Data approach GPU SYSTEM ARCHITECTURE Old School Approach Intel Architecture AMD Architecture Variations Unified Memory Architecture (UMA): GPU shares RAM with CPU Lower memory bandwidth, higher latency Cheap, low-end solution Scalable Link Interconnect: NVIDIA Allows multiple GPUs High-end solution Integrated solutions Integrate CPU and Northbridge Integrate GPU and chipset Game console Similar architectures Architectures evolve over time Objective is to reduce costs while maintaining performance GPU interfaces and drivers GPU attached to CPU via PCI-Express Replaces older AGP Interfaces such as OpenGL and Direct3D use the GPU as a coprocessor Send commands, programs and data to GPU through a specific GPU device driver Graphics logical pipeline Basic Unified GPU Architecture Programmable processor array Tightly integrated with fixed-function processors for texture filtering, rasterization, raster operations Emphasis in on very high level of parallelism Example architecture Tesla architecture (NVIDIA Geoforce 8800) 116 streaming processors (SP) cores Organized as 14 multithreaded streaming multiprocessors (SM) Each SP core Manages 96 concurrent threads Thread state are maintained by hardware Connects with four 64-bit DRAM partitions Example architecture Each SM has 8 SP cores 2 special function units Separate caches for instructions and constants A multithreaded instruction unit Shared memory (NUMA?) Virtual memory I/O The Motherboard and Chipset The CPU is assisted by a set of chips that help it manage the memory, storage, and I/O devices. They comprise the chipset. (c) Smruti R. Sarangi, 2023 Diagram of the Motherboard CPU Millimeter-wave (mmWave) technologies represent a cornerstone for emerging wireless network infrastructure, and for RF sensing systems in security, health, and automotive domains. Formed the Joint UWB MAC PHY Working Group (JUMPWG) to advance UWB technology specs used in the CCC Digital Key. Work together to enable the implementation and deployment of UWB-enabled secure wireless payment systems. Support coexistence and seamless integration of RTLS use cases through a joint working group. Jan 22, 2018 · Packet TNC (Kantronics, TNC-X, MFJ, etc.), or SignaLinkor similar USB soundcard interface. Might require a USB to Serialdongle.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PowerPoint PresentationPowerPoint Presentationwww.firaconsortium.orgPowerPoint Presentation",
+      "url": "https://www.cse.iitd.ac.in/~srsarangi/osbook/slides/2.arch-fundamentals.pptx",
+      "snippet": "Virtual memory I/O The Motherboard and Chipset The CPU is assisted by a set of chips that help it manage the memory, storage, and I/O devices. They comprise the chipset. (c) Smruti R. Sarangi, 2023 Diagram of the Motherboard CPU Millimeter-wave (mmWave) technologies represent a cornerstone for emerging wireless network infrastructure, and for RF sensing systems in security, health, and automotive domains. Formed the Joint UWB MAC PHY Working Group (JUMPWG) to advance UWB technology specs used in the CCC Digital Key. Work together to enable the implementation and deployment of UWB-enabled secure wireless payment systems. Support coexistence and seamless integration of RTLS use cases through a joint working group. Jan 22, 2018 · Packet TNC (Kantronics, TNC-X, MFJ, etc.), or SignaLinkor similar USB soundcard interface. Might require a USB to Serialdongle.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PowerPoint Presentationwww.firaconsortium.orgPowerPoint Presentation",
+      "url": "https://renjiezhao.github.io/files/MCube_slides_20min.pptx",
+      "snippet": "Millimeter-wave (mmWave) technologies represent a cornerstone for emerging wireless network infrastructure, and for RF sensing systems in security, health, and automotive domains. Formed the Joint UWB MAC PHY Working Group (JUMPWG) to advance UWB technology specs used in the CCC Digital Key. Work together to enable the implementation and deployment of UWB-enabled secure wireless payment systems. Support coexistence and seamless integration of RTLS use cases through a joint working group. Jan 22, 2018 · Packet TNC (Kantronics, TNC-X, MFJ, etc.), or SignaLinkor similar USB soundcard interface. Might require a USB to Serialdongle.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "www.firaconsortium.org",
+      "url": "https://www.firaconsortium.org/sites/default/files/2026-06/2026_FiRa_Intro_Presentation_June_2026.pptx",
+      "snippet": "Formed the Joint UWB MAC PHY Working Group (JUMPWG) to advance UWB technology specs used in the CCC Digital Key. Work together to enable the implementation and deployment of UWB-enabled secure wireless payment systems. Support coexistence and seamless integration of RTLS use cases through a joint working group.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "PowerPoint Presentation",
+      "url": "https://www.stanares.org/wp-content/uploads/2019/04/Winlink-Express-Setup-and-Sending.pptx",
+      "snippet": "Jan 22, 2018 · Packet TNC (Kantronics, TNC-X, MFJ, etc.), or SignaLinkor similar USB soundcard interface. Might require a USB to Serialdongle.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Download OS2.0.209.0.VMUMIXM - Xiaomi... - Global Stable in MiFirm",
+      "url": "https://mifirm.net/download/22179",
+      "snippet": "File type. Global Stable.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "ASSUS BBXM-A Motherboard - Free Download PDF",
+      "url": "https://ebookpdf.com/assus-bbxm-a-motherboard",
+      "snippet": "Discover and download ASSUS BBXM-A Motherboard.pdf for free. EbookPDF provides quick access to millions of PDF documents.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}
