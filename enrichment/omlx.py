@@ -1,5 +1,8 @@
 """
-LLM enrichment via OMLX (local OpenAI-compatible endpoint).
+LLM enrichment. Amended 2026-07-23: defaults to the sidecar CLI
+passthrough/BYOK backend (salva_core.llm_sidecar), not the local omlx model
+server -- see board salva-llm-backend-cli-passthrough. complete_with_omlx
+remains available for callers that explicitly opt into it.
 
 This adapter uses bounded prompts so enrichment stays scoped and predictable.
 """
@@ -9,11 +12,15 @@ import json
 import logging
 import re
 import time
+from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Literal, cast
 
-from salva_core.llm import DEFAULT_OMLX_TIMEOUT, build_bounded_prompt, complete_with_omlx
+from salva_core.llm import LLMCompletionResult, LLMPromptBundle, build_bounded_prompt
+from salva_core.llm_sidecar import resolve_llm_completion_fn
 from salva_core.schemas import DiscoveryRequest
+
+CompleteFn = Callable[[LLMPromptBundle], LLMCompletionResult]
 
 logger = logging.getLogger("salva.enrichment.omlx")
 
@@ -63,17 +70,21 @@ def enrich(domain: str, fields: dict, model: str | None = None, request: Discove
 
 
 def enrich_with_diagnostics(
-    domain: str, fields: dict, model: str | None = None, request: DiscoveryRequest | None = None
+    domain: str,
+    fields: dict,
+    model: str | None = None,
+    request: DiscoveryRequest | None = None,
+    complete: CompleteFn | None = None,
 ) -> EnrichmentOutcome:
     system, user_template, task = _select_prompt_bundle(domain, request)
     user = user_template.format_map({k: (v or "") for k, v in fields.items()})
 
-    # Get timeout and retry config from request
-    timeout = DEFAULT_OMLX_TIMEOUT
+    # Retry count still comes from request.enrichment (backend-agnostic);
+    # omlx_timeout only applies to the legacy complete_with_omlx path since
+    # the sidecar/BYOK backends manage their own timeout (SALVA_SIDECAR_TIMEOUT
+    # env var, or the BYOK request's own timeout) and aren't per-call configurable.
     max_retries = 0
-
     if request and request.enrichment:
-        timeout = request.enrichment.omlx_timeout or DEFAULT_OMLX_TIMEOUT
         max_retries = request.enrichment.omlx_max_retries or 0
 
     bundle = build_bounded_prompt(
@@ -85,13 +96,15 @@ def enrich_with_diagnostics(
         temperature=0.2,
     )
 
+    runner: CompleteFn = complete if complete is not None else resolve_llm_completion_fn()
+
     # Retry loop with exponential backoff
     last_error = None
     attempts = 0
     for attempt in range(max(1, max_retries + 1)):
         attempts = attempt + 1
         try:
-            result = complete_with_omlx(bundle, timeout=timeout)
+            result = runner(bundle)
             if result.available and result.content:
                 return EnrichmentOutcome(
                     data=_parse_json(result.content), attempts=attempts, max_retries=max_retries

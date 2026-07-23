@@ -5,8 +5,10 @@ The retrieval-derived confidence ranking (processing/confidence.py) orders and
 bounds the candidate pool; this stage hands the top-K (already ordered, not an
 all-or-nothing dump) to a bounded LLM call that makes the final relevance
 judgment and returns a filtered {name, url, claim} list. The LLM client is
-injected (defaults to the local omlx endpoint) so it is unit-testable offline
-and degrades to a confidence-ordered passthrough when no LLM is reachable.
+injected (defaults to salva_core.llm_sidecar.resolve_llm_completion_fn() --
+BYOK if configured, else the local sidecar CLI passthrough; amended
+2026-07-23, no longer local omlx) so it is unit-testable offline and
+degrades to a confidence-ordered passthrough when no LLM is reachable.
 """
 from __future__ import annotations
 
@@ -15,12 +17,8 @@ import re
 from collections.abc import Callable
 from dataclasses import dataclass, field
 
-from salva_core.llm import (
-    LLMCompletionResult,
-    LLMPromptBundle,
-    build_bounded_prompt,
-    complete_with_omlx,
-)
+from salva_core.llm import LLMCompletionResult, LLMPromptBundle, build_bounded_prompt
+from salva_core.llm_sidecar import resolve_llm_completion_fn
 
 CompleteFn = Callable[[LLMPromptBundle], LLMCompletionResult]
 
@@ -109,7 +107,7 @@ def scoped_rerank(
     if not scoped:
         return RerankResult(kept=[], llm_available=False, dropped_count=0, notes=["empty_pool"])
 
-    runner: CompleteFn = complete if complete is not None else complete_with_omlx
+    runner: CompleteFn = complete if complete is not None else resolve_llm_completion_fn()
     user = _TASK.format(
         question=question,
         market=market,

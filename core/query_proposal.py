@@ -8,8 +8,10 @@ and never replaces `core/keyword_graph.py`'s deterministic expansion -- its
 only output is {need_followup, query}. Motivated by the CNCF founders case:
 deterministic multi-round retrieval fetched a Wikipedia secondary list and
 missed the original 2015 press release; a freely-searching agent found it by
-searching further. The LLM client is injected (defaults to the local omlx
-endpoint) so this is unit-testable offline and degrades to "no follow-up"
+searching further. The LLM client is injected (defaults to
+salva_core.llm_sidecar.resolve_llm_completion_fn() -- BYOK if configured,
+else the local sidecar CLI passthrough; amended 2026-07-23, no longer local
+omlx) so this is unit-testable offline and degrades to "no follow-up"
 whenever the LLM is unreachable or returns something unparseable.
 """
 from __future__ import annotations
@@ -20,12 +22,8 @@ from collections.abc import Callable
 from dataclasses import dataclass, field
 
 from core.types import Intent
-from salva_core.llm import (
-    LLMCompletionResult,
-    LLMPromptBundle,
-    build_bounded_prompt,
-    complete_with_omlx,
-)
+from salva_core.llm import LLMCompletionResult, LLMPromptBundle, build_bounded_prompt
+from salva_core.llm_sidecar import resolve_llm_completion_fn
 
 CompleteFn = Callable[[LLMPromptBundle], LLMCompletionResult]
 
@@ -110,7 +108,7 @@ def propose_followup_query(
             need_followup=False, query=None, llm_available=False, notes=["empty_pool"]
         )
 
-    runner: CompleteFn = complete if complete is not None else complete_with_omlx
+    runner: CompleteFn = complete if complete is not None else resolve_llm_completion_fn()
     user = _TASK.format(
         domain=intent.domain,
         terms=", ".join(intent.primary_terms),

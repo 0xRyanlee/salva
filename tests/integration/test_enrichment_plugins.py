@@ -179,11 +179,13 @@ def test_omlx_prompt_selection_changes_by_objective(monkeypatch) -> None:
         )
 
     monkeypatch.setattr(omlx_module, "build_bounded_prompt", fake_build_bounded_prompt)
-    monkeypatch.setattr(
-        omlx_module,
-        "complete_with_omlx",
-        lambda bundle, **kwargs: SimpleNamespace(available=True, content='{"summary":"ok","tags":["alpha"]}', message=None),
-    )
+
+    def fake_complete(bundle):
+        return SimpleNamespace(
+            available=True, content='{"summary":"ok","tags":["alpha"]}', message=None
+        )
+
+    monkeypatch.setattr(omlx_module, "resolve_llm_completion_fn", lambda: fake_complete)
 
     request = DiscoveryRequest(
         objective="find_partnership_signals",
@@ -209,10 +211,10 @@ def test_omlx_enrich_with_diagnostics_reports_exhausted_retries(monkeypatch) -> 
     monkeypatch.setattr(omlx_module.time, "sleep", lambda *_args, **_kwargs: None)
     monkeypatch.setattr(
         omlx_module,
-        "complete_with_omlx",
-        lambda bundle, **kwargs: (_ for _ in ()).throw(
+        "resolve_llm_completion_fn",
+        lambda: (lambda bundle: (_ for _ in ()).throw(
             ConnectionError("omlx endpoint unreachable")
-        ),
+        )),
     )
 
     request = DiscoveryRequest(
@@ -235,10 +237,10 @@ def test_omlx_plugin_enrich_failure_surfaces_as_failed_outcome(monkeypatch) -> N
     monkeypatch.setattr(omlx_module.time, "sleep", lambda *_args, **_kwargs: None)
     monkeypatch.setattr(
         omlx_module,
-        "complete_with_omlx",
-        lambda bundle, **kwargs: (_ for _ in ()).throw(
+        "resolve_llm_completion_fn",
+        lambda: (lambda bundle: (_ for _ in ()).throw(
             ConnectionError("omlx endpoint unreachable")
-        ),
+        )),
     )
 
     request = DiscoveryRequest(
@@ -266,8 +268,8 @@ def test_omlx_enrichment_failure_is_persisted_and_visible_via_audit(monkeypatch,
     monkeypatch.setattr(omlx_module.time, "sleep", lambda *_args, **_kwargs: None)
     monkeypatch.setattr(
         omlx_module,
-        "complete_with_omlx",
-        lambda bundle, **kwargs: (_ for _ in ()).throw(TimeoutError("omlx request timed out")),
+        "resolve_llm_completion_fn",
+        lambda: (lambda bundle: (_ for _ in ()).throw(TimeoutError("omlx request timed out"))),
     )
 
     request = DiscoveryRequest(
