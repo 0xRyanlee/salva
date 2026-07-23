@@ -55,6 +55,9 @@ dev = [
   "mcp>=1.0.0",
   "coverage>=7.0.0",
 ]
+resolution = [
+    "nomenklatura>=4.12.0",
+]
 
 [project.scripts]
 salva = "apps.cli.main:main"
