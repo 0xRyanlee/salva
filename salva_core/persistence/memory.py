@@ -60,43 +60,55 @@ def list_query_family_memory(
     campaign_id: str | None = None,
     continuation_id: str | None = None,
     memory_status: str | None = None,
+    project_id: str | None = None,
     limit: int = 200,
     offset: int = 0,
     path: str = DEFAULT_DB_PATH,
 ) -> tuple[list[QueryFamilyMemoryRecord], int]:
+    # query_family_memory has no project_id column of its own -- it only
+    # exists on discovery_runs, joined here via run_id -- so non-default
+    # projects were previously just invisible to this listing (a visibility
+    # gap, not a cross-project leak: see
+    # docs/reports/memory-isolation-audit-20260721.md).
     clauses: list[str] = []
     params: list[object] = []
     if run_id:
-        clauses.append("run_id = ?")
+        clauses.append("qfm.run_id = ?")
         params.append(run_id)
     if objective:
-        clauses.append("objective = ?")
+        clauses.append("qfm.objective = ?")
         params.append(objective)
     if strategy:
-        clauses.append("strategy = ?")
+        clauses.append("qfm.strategy = ?")
         params.append(strategy)
     if campaign_id:
-        clauses.append("campaign_id = ?")
+        clauses.append("qfm.campaign_id = ?")
         params.append(campaign_id)
     if continuation_id:
-        clauses.append("continuation_id = ?")
+        clauses.append("qfm.continuation_id = ?")
         params.append(continuation_id)
     if memory_status:
-        clauses.append("memory_status = ?")
+        clauses.append("qfm.memory_status = ?")
         params.append(memory_status)
+    if project_id:
+        clauses.append("dr.project_id = ?")
+        params.append(project_id)
     where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
+    join = "JOIN discovery_runs dr ON qfm.run_id = dr.run_id" if project_id else ""
+    columns = ", ".join(f"qfm.{col.strip()}" for col in _MEMORY_SELECT_COLUMNS.split(","))
 
     with get_conn(path) as conn:
         total = conn.execute(
-            f"SELECT COUNT(*) FROM query_family_memory {where}",
+            f"SELECT COUNT(*) FROM query_family_memory qfm {join} {where}",
             params,
         ).fetchone()[0]
         rows = conn.execute(
             f"""
-            SELECT {_MEMORY_SELECT_COLUMNS}
-            FROM query_family_memory
+            SELECT {columns}
+            FROM query_family_memory qfm
+            {join}
             {where}
-            ORDER BY created_at DESC
+            ORDER BY qfm.created_at DESC
             LIMIT ? OFFSET ?
             """,
             [*params, limit, offset],
@@ -112,6 +124,7 @@ def search_query_family_memory(
     strategy: str | None = None,
     campaign_id: str | None = None,
     memory_status: str | None = None,
+    project_id: str | None = None,
     limit: int = 10,
     offset: int = 0,
     path: str | None = DEFAULT_DB_PATH,
@@ -152,7 +165,11 @@ def search_query_family_memory(
     if memory_status:
         clauses.append("qf.memory_status = ?")
         params.append(memory_status)
+    if project_id:
+        clauses.append("dr.project_id = ?")
+        params.append(project_id)
     where = f"WHERE {' AND '.join(clauses)}"
+    project_join = "JOIN discovery_runs dr ON qf.run_id = dr.run_id" if project_id else ""
 
     with get_conn(path) as conn:
         rows = conn.execute(
@@ -167,6 +184,7 @@ def search_query_family_memory(
                    qf.created_at, sv.embedding_json, sv.vector_id, sv.dimensions
             FROM query_family_memory qf
             JOIN semantic_vectors sv ON qf.memory_id = sv.source_id
+            {project_join}
             {where}
             ORDER BY qf.created_at DESC
             """,

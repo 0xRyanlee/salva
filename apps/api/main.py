@@ -546,6 +546,7 @@ async def query_families(
     campaign_id: Annotated[str | None, Query()] = None,
     continuation_id: Annotated[str | None, Query()] = None,
     memory_status: Annotated[str | None, Query()] = None,
+    project_id: Annotated[str | None, Query()] = None,
     limit: Annotated[int, Query(ge=1, le=500)] = 200,
     offset: Annotated[int, Query(ge=0)] = 0,
 ) -> QueryFamilyMemoryResponse:
@@ -562,6 +563,7 @@ async def query_families(
             "campaign_id": campaign_id,
             "continuation_id": continuation_id,
             "memory_status": memory_status,
+            "project_id": project_id,
         }.items()
         if value is not None
     })
@@ -590,6 +592,7 @@ async def semantic_query_families(
     strategy: Annotated[str | None, Query()] = None,
     campaign_id: Annotated[str | None, Query()] = None,
     memory_status: Annotated[str | None, Query()] = None,
+    project_id: Annotated[str | None, Query()] = None,
     limit: Annotated[int, Query(ge=1, le=50)] = 5,
     offset: Annotated[int, Query(ge=0)] = 0,
 ) -> SemanticQueryFamilySearchResponse:
@@ -605,6 +608,7 @@ async def semantic_query_families(
         for key, value in {
             "campaign_id": campaign_id,
             "memory_status": memory_status,
+            "project_id": project_id,
         }.items()
         if value is not None
     })
