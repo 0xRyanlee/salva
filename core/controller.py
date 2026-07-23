@@ -304,6 +304,11 @@ class SalvaController:
             return False
 
         if not proposal.need_followup or not proposal.query:
+            if not proposal.llm_available or proposal.notes:
+                logger.info(
+                    "query-proposal step degraded, no follow-up round: %s",
+                    ", ".join(proposal.notes) or "no reason recorded",
+                )
             return False
         query = proposal.query
         if query in self._seen_queries:

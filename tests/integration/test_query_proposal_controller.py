@@ -139,6 +139,27 @@ class TestSaturationGate:
         assert ran is False  # proposer said no
         assert called["n"] == 1
 
+    def test_llm_unavailable_no_followup_is_logged_not_silent(self, caplog):
+        """salva-enrichment-failure-telemetry: LLM-unavailable degradation
+        must be visible in logs, not a silent no-op indistinguishable from
+        "saturation was already fine"."""
+        controller, _ = _make_controller(enable_query_proposal=True)
+        ranked = _fake_ranked(query_support=1)
+        controller._run = RunSummary(intent_domain="companies", started_at=datetime.now(UTC))
+        controller._all_results = [ranked[0][0]]
+
+        def proposer(pool, intent, saturation):
+            return QueryProposal(
+                need_followup=False, query=None, llm_available=False,
+                notes=["llm_unavailable_no_followup"],
+            )
+
+        controller._query_proposal_fn = proposer
+        with caplog.at_level("INFO"):
+            ran = controller._run_followup_query(ranked)
+        assert ran is False
+        assert any("llm_unavailable_no_followup" in record.message for record in caplog.records)
+
 
 class TestFollowupExecution:
     def test_genuine_proposal_runs_one_extra_round(self):
