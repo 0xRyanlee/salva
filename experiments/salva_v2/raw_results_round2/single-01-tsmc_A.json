@@ -1,0 +1,14 @@
+{
+  "task_id": "single-01-tsmc",
+  "arm": "A",
+  "env_overrides": {},
+  "difficulty_tier": "single_entity",
+  "admitted_count": 5,
+  "gt_count": 1,
+  "recall_admitted": [
+    true
+  ],
+  "recall_admitted_rate": 1.0,
+  "requests_used": 2,
+  "recorded_at": "2026-07-23T18:02:50.305471+00:00"
+}

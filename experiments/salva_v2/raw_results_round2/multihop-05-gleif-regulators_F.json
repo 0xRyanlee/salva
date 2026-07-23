@@ -1,0 +1,28 @@
+{
+  "task_id": "multihop-05-gleif-regulators",
+  "arm": "F",
+  "env_overrides": {
+    "SALVA_ADMISSION_POLICY": "rank"
+  },
+  "difficulty_tier": "multi_hop",
+  "raw_count": 5,
+  "admitted_count": 5,
+  "gt_count": 4,
+  "recall_all": [
+    false,
+    false,
+    false,
+    false
+  ],
+  "recall_all_rate": 0.0,
+  "recall_admitted": [
+    false,
+    false,
+    false,
+    false
+  ],
+  "recall_admitted_rate": 0.0,
+  "entities_merged_count": 0,
+  "merge_groups": [],
+  "recorded_at": "2026-07-23T17:54:30.341166+00:00"
+}

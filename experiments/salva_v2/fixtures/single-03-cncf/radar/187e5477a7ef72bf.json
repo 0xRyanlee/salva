@@ -1,0 +1,79 @@
+{
+  "task_id": "single-03-cncf",
+  "strategy": "radar",
+  "query": "CNCF headquarters Global",
+  "n": 10,
+  "recorded_at": "2026-07-23T17:54:59.420563+00:00",
+  "results": [
+    {
+      "title": "Cloud Native Computing Foundation - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cloud_Native_Computing_Foundation",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) is a subsidiary of the Linux Foundation founded in 2015 to support cloud-native computing. [1]",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF): Headquarters, Global Offices ...",
+      "url": "https://www.highperformr.ai/company/cloud-native-computing-foundation",
+      "snippet": "Cloud Native Computing Foundation (CNCF) established in 2015 and headquartered in San Francisco., Learn more about Cloud Native Computing Foundation (CNCF) offices, leadership team, mission, and growth journey.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) - LinkedIn",
+      "url": "https://www.linkedin.com/company/cloud-native-computing-foundation",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) hosts critical components of those software stacks including Kubernetes and Prometheus; brings together the industry's top developers, end users, and ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) - Crunchbase",
+      "url": "https://www.crunchbase.com/organization/cloud-native-computing-foundation",
+      "snippet": "Where is Cloud Native Computing Foundation (CNCF)'s headquarters? Cloud Native Computing Foundation (CNCF) is located in San Francisco, California, United States.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF [Cloud Native Computing Foundation] - ContactOut",
+      "url": "https://contactout.com/company/Cloud-Native-Computing-Foundation-CNCF-78743",
+      "snippet": "Where is CNCF [Cloud Native Computing Foundation] headquarters located? CNCF [Cloud Native Computing Foundation] headquarters is located at 1 Letterman Drive, San Francisco, CA 94129, US.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) Information",
+      "url": "https://rocketreach.co/cloud-native-computing-foundation-cncf-profile_b502a4c1f6062cff",
+      "snippet": "Cloud Native Computing Foundation (CNCF) is an IT Services and IT Consulting, Cloud Computing, and Cloud Native Computing company_reader located in San Francisco, California with 430 employees. Find top employees, contact details and business statistics at RocketReach.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Contact Us - CNCF",
+      "url": "https://www.cncf.io/about/contact/",
+      "snippet": "Interested in becoming a member? Join us For Linux Foundation training and certification questions, including CKA, CKAD, and CKS, please submit a request for the LF Training & Certification team.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation",
+      "url": "https://www.cncf.io/",
+      "snippet": "CNCF is the vendor-neutral hub of cloud native computing, dedicated to making cloud native ubiquitous.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Christina Noble Children's Foundation",
+      "url": "https://www.cncf.org/",
+      "snippet": "The Christina Noble Children's Foundation (CNCF) is dedicated to serving the physical, medical, educational and emotional needs of vulnerable children. CNCF believes that every child is an individual who deserves love, respect and freedom from all forms of abuse and exploitation. We establish long-term relationships with the children we support and empower them to live happy, emotionally ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation Company Profile - Datanyze",
+      "url": "https://www.datanyze.com/companies/cloud-native-computing-foundation/450662916",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure, including Kubernetes, Prometheus, and Envoy. CNCF brings together the industry's top developers, end users, and vendors and runs the largest open source developer conferences in the world.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

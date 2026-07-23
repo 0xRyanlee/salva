@@ -1,0 +1,14 @@
+{
+  "task_id": "single-04-mediatek",
+  "arm": "A",
+  "env_overrides": {},
+  "difficulty_tier": "single_entity",
+  "admitted_count": 4,
+  "gt_count": 1,
+  "recall_admitted": [
+    true
+  ],
+  "recall_admitted_rate": 1.0,
+  "requests_used": 4,
+  "recorded_at": "2026-07-23T18:02:50.305930+00:00"
+}

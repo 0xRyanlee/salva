@@ -1,0 +1,23 @@
+{
+  "task_id": "crosslang-05-chunghwa-telecom",
+  "arm": "G",
+  "env_overrides": {
+    "SALVA_ENABLE_ENTITY_RESOLUTION": "true",
+    "SALVA_ADMISSION_POLICY": "rank"
+  },
+  "difficulty_tier": "cross_language",
+  "raw_count": 16,
+  "admitted_count": 13,
+  "gt_count": 1,
+  "recall_all": [
+    true
+  ],
+  "recall_all_rate": 1.0,
+  "recall_admitted": [
+    true
+  ],
+  "recall_admitted_rate": 1.0,
+  "entities_merged_count": 3,
+  "merge_groups": [],
+  "recorded_at": "2026-07-23T17:54:27.244107+00:00"
+}

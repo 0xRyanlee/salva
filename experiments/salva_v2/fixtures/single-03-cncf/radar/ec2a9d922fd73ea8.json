@@ -1,0 +1,79 @@
+{
+  "task_id": "single-03-cncf",
+  "strategy": "radar",
+  "query": "CNCF employees Global",
+  "n": 10,
+  "recorded_at": "2026-07-23T17:55:02.705263+00:00",
+  "results": [
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) Information",
+      "url": "https://rocketreach.co/cloud-native-computing-foundation-cncf-profile_b502a4c1f6062cff",
+      "snippet": "...Computing Foundation (CNCF) is an IT Services and IT Consulting, Cloud Computing, and Cloud Native Computing company located in San Francisco, California with 596 employees.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "End User Community | CNCF",
+      "url": "https://www.cncf.io/enduser/?ajs_aid=259ac87c-41b5-4182-a129-e02abd71b58c",
+      "snippet": "The CNCF End User Community offers a vendor-neutral environment for forward-thinking…Consolidated employees. CNCF membership (LF Membership Required).",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) Financial... | Apollo",
+      "url": "https://www.apollo.io/companies/CNCF--Cloud-Native-Computing-Foundation-/55eaba9ff3e5bb0a23000bb3",
+      "snippet": "Find and reach Cloud Native Computing Foundation (CNCF)'s employees by department, seniority, title, and much more.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) Analysis... | Similarweb",
+      "url": "https://www.similarweb.com/company/cncf.io/",
+      "snippet": "Avg. visit duration in Cloud Native Computing Foundation (CNCF)'s top domains.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF",
+      "url": "https://www.cncf.org/wp-content/uploads/2024/10/2023_CNCF_Annual_Report26-1.pdf",
+      "snippet": "About CNCF 07 - Where We Work 09 - 2023 Highlights 11 - Our Impact In 2023 12 - CNCF and The United Nations. Sustainable Development Goals.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF, Andela Partner to Train 20,000+ African Tech Professionals",
+      "url": "https://techeconomy.ng/cncf-andela-partner-to-train-20000-african-tech-professionals/",
+      "snippet": "“This partnership showcases the global impact of CNCF’s education programs.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "OpenFeature",
+      "url": "https://openfeature.dev/",
+      "snippet": "OpenFeature is an open source CNCF incubating project under the Apache 2 license. Check out the project on GitHub and consider joining the OpenFeature community!",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "KCD Beijing x vLLM 2026",
+      "url": "https://www.bagevent.com/event/9149844",
+      "snippet": "Kubernetes Community Days (KCD) was initiated by Cloud Native Computing Foundation (CNCF) and is jointly organized by local CNCF ambassadors, CNCF employees, and CNCF...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Express Employment Professionals | Temp Employment Agency",
+      "url": "https://www.expresspros.com/",
+      "snippet": "Express Employment Professionals helps job seekers find full-time, part-time, and temporary jobs while helping employers with staffing and workforce solutions.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Find Cheap Flights Worldwide & Book Your Ticket - Google Flights",
+      "url": "https://www.google.com/travel/flights",
+      "snippet": "Explore and compare cheap flights to anywhere with Google Flights. Find your next flight, track price changes to get the best deals, and book your ticket.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "multihop-04-mediatek-brands",
+  "arm": "A",
+  "env_overrides": {},
+  "difficulty_tier": "multi_hop",
+  "admitted_count": 12,
+  "gt_count": 5,
+  "recall_admitted": [
+    true,
+    true,
+    true,
+    true,
+    false
+  ],
+  "recall_admitted_rate": 0.8,
+  "requests_used": 4,
+  "recorded_at": "2026-07-23T18:02:50.306888+00:00"
+}

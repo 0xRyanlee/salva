@@ -1,0 +1,16 @@
+{
+  "task_id": "multihop-06-advantech-cloud",
+  "arm": "A",
+  "env_overrides": {},
+  "difficulty_tier": "multi_hop",
+  "admitted_count": 5,
+  "gt_count": 3,
+  "recall_admitted": [
+    false,
+    false,
+    false
+  ],
+  "recall_admitted_rate": 0.0,
+  "requests_used": 5,
+  "recorded_at": "2026-07-23T18:02:50.307019+00:00"
+}

@@ -1,0 +1,16 @@
+{
+  "task_id": "multihop-03-naturehike-dach",
+  "arm": "A",
+  "env_overrides": {},
+  "difficulty_tier": "multi_hop",
+  "admitted_count": 6,
+  "gt_count": 3,
+  "recall_admitted": [
+    false,
+    true,
+    false
+  ],
+  "recall_admitted_rate": 0.3333333333333333,
+  "requests_used": 5,
+  "recorded_at": "2026-07-23T18:02:50.306824+00:00"
+}

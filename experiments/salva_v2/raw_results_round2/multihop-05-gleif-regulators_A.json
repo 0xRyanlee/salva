@@ -1,0 +1,17 @@
+{
+  "task_id": "multihop-05-gleif-regulators",
+  "arm": "A",
+  "env_overrides": {},
+  "difficulty_tier": "multi_hop",
+  "admitted_count": 9,
+  "gt_count": 4,
+  "recall_admitted": [
+    true,
+    false,
+    false,
+    false
+  ],
+  "recall_admitted_rate": 0.25,
+  "requests_used": 4,
+  "recorded_at": "2026-07-23T18:02:50.306949+00:00"
+}

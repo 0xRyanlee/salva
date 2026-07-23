@@ -1,0 +1,79 @@
+{
+  "task_id": "single-03-cncf",
+  "strategy": "radar",
+  "query": "CNCF founded Global",
+  "n": 10,
+  "recorded_at": "2026-07-23T17:54:58.250807+00:00",
+  "results": [
+    {
+      "title": "Cloud Native Computing Foundation - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cloud_Native_Computing_Foundation",
+      "snippet": "3 days ago - Under OpenTelemetry, the projects ... and commercial backends.\" It is the \"second most active\" CNCF project. In October 2020, AWS announced the public preview of its distro for OpenTelemetry. Thanos enables global query views and unlimited retention of metrics....",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Who We Are | CNCF",
+      "url": "https://www.cncf.io/about/who-we-are/",
+      "snippet": "We bring together the world’s top developers, end users, and vendors and run the largest open source developer conferences. CNCF is part of the nonprofit Linux Foundation. “CNCF’s mission is to make cloud native computing ubiquitous…”",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "What is the Cloud Native Computing Foundation (CNCF)? Definition, Impact & Key Players Explained | Kusari®",
+      "url": "https://www.kusari.dev/learning-center/cloud-native-computing-foundation-cncf",
+      "snippet": "The Cloud Native Computing Foundation is a non-profit organization that hosts critical components of the global technology infrastructure. Founded to make cloud-native computing ubiquitous, the CNCF provides a neutral space where projects can evolve and mature through community collaboration.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "About CNCF - Children's Neuroblastoma Cancer Foundation",
+      "url": "https://www.cncfhope.org/about-cncf/",
+      "snippet": "August 6, 2025 - About CNCF CNCF was created in 2000 by the family and friends of Nick Tallungan, who at 10 years old, lost his courageous battle with neuroblastoma. One brave child motivated us to make a difference – for all families affected by this disease.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) - Crunchbase Company Profile & Funding",
+      "url": "https://www.crunchbase.com/organization/cloud-native-computing-foundation",
+      "snippet": "CNCF is an open source software foundation that hosts and nurtures projects like Kubernetes and Prometheus.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native Computing Foundation (CNCF) · GitHub",
+      "url": "https://github.com/CNCF",
+      "snippet": "We bring together the world's top developers, end users, and vendors and run the largest open source developer conferences. CNCF is part of the nonprofit Linux Foundation. Try our graduated, incubating, and sandbox projects ... Visit cncf.io to learn more!",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Governing Board | CNCF",
+      "url": "https://www.cncf.io/people/governing-board/",
+      "snippet": "Prior to joining Salesforce, Keshav spent seven years at Microsoft, where he was the founding PM leader for Azure Synapse Analytics, Microsoft Fabric and the Strategic ISVs Engineering team within Azure Data. In these roles, he built a global Customer Success Engineering organization from the ground up, championing customer-driven product development, field and partner enablement, and accelerating time-to-value for strategic customers on Azure Data Services and Microsoft Fabric.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native: The Cloud Native Computing Foundation (CNCF) – Open Cloud Tooling and Cloud Capabilities",
+      "url": "https://www.opencloudification.com/cloud-components-and-logic/the-cloud-native-computing-foundation-cncf/",
+      "snippet": "Founded in 2015 by the Linux Foundation, CNCF has become a leading force in the cloud native ecosystem. It hosts and sponsors a variety of open-source projects (e.g.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Over 30 New Members Join the Cloud Native Computing Foundation | CNCF",
+      "url": "https://www.cncf.io/announcements/2023/07/12/over-30-new-members-join-the-cloud-native-computing-foundation/",
+      "snippet": "July 12, 2023 - Cloud native computing empowers organizations to build and run scalable applications with an open source software stack in public, private, and hybrid clouds. The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure, including Kubernetes, Prometheus, and Envoy.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "foundation/charter.md at main · cncf/foundation",
+      "url": "https://github.com/cncf/foundation/blob/main/charter.md",
+      "snippet": "We encourage sustainability, growth, ... of the CNCF vision for the long term, with focus to reduce additional burden and toil on maintainers. We consider the future needs of cloud native impact on a global scale, to use resources efficiently for all projects. (i) Inclusive unity. Whether operating the Foundation, serving on ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    }
+  ]
+}

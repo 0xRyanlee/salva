@@ -1,0 +1,32 @@
+{
+  "task_id": "multihop-01-cncf-founders",
+  "arm": "E",
+  "env_overrides": {
+    "SALVA_ENABLE_ENTITY_RESOLUTION": "true"
+  },
+  "difficulty_tier": "multi_hop",
+  "raw_count": 8,
+  "admitted_count": 1,
+  "gt_count": 6,
+  "recall_all": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "recall_all_rate": 0.0,
+  "recall_admitted": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "recall_admitted_rate": 0.0,
+  "entities_merged_count": 0,
+  "merge_groups": [],
+  "recorded_at": "2026-07-23T17:54:28.115117+00:00"
+}

@@ -3,8 +3,57 @@
   "strategy": "dive",
   "query": "\"Cloud Native Computing Foundation\" Global -blog -museum -review -job -news -report",
   "n": 10,
-  "recorded_at": "2026-07-21T12:25:38.109847+00:00",
+  "recorded_at": "2026-07-23T17:54:55.156562+00:00",
   "results": [
+    {
+      "title": "CNCF Research Reveals How Cloud Native Technology is ...",
+      "url": "https://www.cncf.io/announcements/2025/04/01/cncf-research-reveals-how-cloud-native-technology-is-reshaping-global-business-and-innovation/",
+      "snippet": "Apr 1, 2025 · The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure, including Kubernetes, Prometheus, and Envoy. CNCF brings together the industry’s top developers, end users, and vendors and runs the largest open source developer conferences in the world.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF Welcomes New Silver Members as Global Demand for Cloud ...",
+      "url": "https://www.cncf.io/announcements/2026/06/17/cncf-welcomes-new-silver-members-as-global-demand-for-cloud-native-infrastructure-grows/",
+      "snippet": "Jun 18, 2026 · The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure, including Kubernetes, Prometheus, and Envoy. CNCF brings together the industry’s top developers, end users, and vendors and runs the largest open source developer conferences in the world.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "CNCF Drives Efforts To Standardize AI Functions In Our Cloud ...",
+      "url": "https://www.forbes.com/sites/adrianbridgwater/2024/03/21/cncf-drives-efforts-to-standardize-ai-for-our-cloud-native-future/",
+      "snippet": "Mar 21, 2024 · Keen to promote, enable and underpin these operational economic principles in the technology space is the Cloud Native Computing Foundation (CNCF), an organization that falls under the...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Backstage Project Evolves into Global Standard for Platform ...",
+      "url": "https://briefglance.com/companies/cloud-native-computing-foundation-cncf/pulses/19877",
+      "snippet": "Mar 25, 2026 · CNCF released a documentary titled 'Backstage: From Spreadsheet to Standard' on March 25, 2026, detailing the evolution of the Backstage project. · Backstage transitioned from an internal Spotify tool to a global open-source standard for platform engineering within the CNCF. · The project improved its ranking in the Annual Project Velocity reports from 8th in 2020 to 6th in 2025 ...",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "What is the Cloud Native Computing Foundation (CNCF ...",
+      "url": "https://www.kusari.dev/learning-center/cloud-native-computing-foundation-cncf",
+      "snippet": "The Cloud Native Computing Foundation is a non-profit organization that hosts critical components of the global technology infrastructure. Founded to make cloud-native computing ubiquitous, the CNCF provides a neutral space where projects can evolve and mature through community collaboration.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Exploring the CNCF Landscape: Overview of Cloud Native ...",
+      "url": "https://dev.to/mageshwaransekar/exploring-the-cncf-landscape-a-comprehensive-overview-of-cloud-native-technologies-2e6g",
+      "snippet": "Jan 15, 2025 · The CNCF Landscape (available here) is a visual representation of the cloud native technology ecosystem, categorizing thousands of open source projects that fall under the cloud native umbrella.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
+    {
+      "title": "Cloud Native: The Cloud Native Computing Foundation (CNCF)",
+      "url": "https://www.opencloudification.com/cloud-components-and-logic/the-cloud-native-computing-foundation-cncf/",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) is a nonprofit organization that aims to promote and advance the adoption of cloud-native computing practices. Cloud-native computing involves, for example, the use of container technologies and microservices to build and deploy applications in the cloud.",
+      "engine": "ddgs/auto",
+      "retrieval_instance": "ddgs"
+    },
     {
       "title": "Cloud native X.509 certificate management for Kubernetes and...",
       "url": "https://cert-manager.io/",
@@ -20,58 +69,9 @@
       "retrieval_instance": "ddgs"
     },
     {
-      "title": "KubeCon: 6 ways cloud native technologies are powering AI",
-      "url": "https://www.fierce-network.com/ai/six-ways-cloud-native-technologies-are-powering-ai",
-      "snippet": "Kubecon cloud native Cloud Native Computing Foundation Kubernetes. Priyanka Sharma, Executive Director, CNCF, Linux Foundation. Open interfaces and standards in cloud-native technologies provide a vast ecosystem of tools and runtimes.",
-      "engine": "ddgs/auto",
-      "retrieval_instance": "ddgs"
-    },
-    {
       "title": "Cloud Native Computing Foundation (CNCF) - Arch Town",
       "url": "https://archtown.org/cloud_native_computing_foundation_cncf",
       "snippet": "@cloud_native_computing_foundation_cncf.The home of Kubernetes, Prometheus, Envoy and the cloud-native ecosystem.",
-      "engine": "ddgs/auto",
-      "retrieval_instance": "ddgs"
-    },
-    {
-      "title": "Cloud native explained. An interview with Cheryl Hung, VP Ecosystem...",
-      "url": "https://www.computing.co.uk/interview/4022550/cloud-native-explained-interview-cheryl-hung-vp-ecosystem-cncf",
-      "snippet": "Cheryl Hung is VP Ecosystem at the Cloud Native Computing Foundation (CNCF) arriving at this role from Google, where she says cloud native practices have been the norm for a decade, via a stint a with storage platform StorageOS.",
-      "engine": "ddgs/auto",
-      "retrieval_instance": "ddgs"
-    },
-    {
-      "title": "Cloud native & container day 2025",
-      "url": "https://www.conoa.se/cloud-native-container-day/",
-      "snippet": "Cloud Native & Container Day 2024 recap. A huge thank you to everyone who made this event possible – our attendees, and the entire Conoa, Proact IT Sweden, and Creative Meetings team who worked tirelessly behind the scenes.",
-      "engine": "ddgs/auto",
-      "retrieval_instance": "ddgs"
-    },
-    {
-      "title": "Modern Observability with OpenTelemetry - YouTube",
-      "url": "https://www.youtube.com/watch?v=_OXYCzwFd1Y",
-      "snippet": "K.P. Simha, C. LeCNCF [Cloud Native Computing Foundation]1.7K views • 1 year agoLivePlaylist ()Mix (50+). 46:29. Why distributed tracing will replace (most) loggingLightstep is now ServiceNow Cloud Observability 4.9K views • 5 years agoLivePlaylist ()Mix (50+).",
-      "engine": "ddgs/auto",
-      "retrieval_instance": "ddgs"
-    },
-    {
-      "title": "Welcome | OAuth2 Proxy",
-      "url": "https://oauth2-proxy.github.io/oauth2-proxy/",
-      "snippet": "Cloud Native Computing Foundation. OAuth2 Proxy is a Cloud Native Computing Foundation Sandbox project. CNCF. The Linux Foundation® (TLF) has registered trademarks and uses trademarks.",
-      "engine": "ddgs/auto",
-      "retrieval_instance": "ddgs"
-    },
-    {
-      "title": "The OpenMetrics project — Creating a standard for exposing metrics...",
-      "url": "https://openmetrics.io/",
-      "snippet": "It specifies the de-facto standard for transmitting cloud-native metrics at scale, with support for both text representation and Protocol Buffers. You can track the project’s progress on the OpenMetrics mailing list. OpenMetrics is a Cloud Native Computing Foundation sandbox project.",
-      "engine": "ddgs/auto",
-      "retrieval_instance": "ddgs"
-    },
-    {
-      "title": "CNCF Jalandhar _ Info Session _ Slide Deck Template.pptx",
-      "url": "https://www.slideshare.net/slideshow/cncf-jalandhar-info-session-slide-deck-templatepptx/262991965",
-      "snippet": "The document outlines the Cloud Native Computing Foundation (CNCF) and its role in the global technology infrastructure since its founding in 2015. It emphasizes the importance of a code of conduct that promotes empathy, respect, and inclusivity within the community.",
       "engine": "ddgs/auto",
       "retrieval_instance": "ddgs"
     }

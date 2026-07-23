@@ -1,0 +1,22 @@
+{
+  "task_id": "crosslang-04-foxconn",
+  "arm": "E",
+  "env_overrides": {
+    "SALVA_ENABLE_ENTITY_RESOLUTION": "true"
+  },
+  "difficulty_tier": "cross_language",
+  "raw_count": 9,
+  "admitted_count": 0,
+  "gt_count": 1,
+  "recall_all": [
+    false
+  ],
+  "recall_all_rate": 0.0,
+  "recall_admitted": [
+    false
+  ],
+  "recall_admitted_rate": 0.0,
+  "entities_merged_count": 0,
+  "merge_groups": [],
+  "recorded_at": "2026-07-23T17:54:26.235701+00:00"
+}

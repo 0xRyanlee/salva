@@ -1,0 +1,23 @@
+{
+  "task_id": "single-05-advantech",
+  "arm": "G",
+  "env_overrides": {
+    "SALVA_ENABLE_ENTITY_RESOLUTION": "true",
+    "SALVA_ADMISSION_POLICY": "rank"
+  },
+  "difficulty_tier": "single_entity",
+  "raw_count": 7,
+  "admitted_count": 7,
+  "gt_count": 1,
+  "recall_all": [
+    true
+  ],
+  "recall_all_rate": 1.0,
+  "recall_admitted": [
+    true
+  ],
+  "recall_admitted_rate": 1.0,
+  "entities_merged_count": 0,
+  "merge_groups": [],
+  "recorded_at": "2026-07-23T17:54:23.380465+00:00"
+}

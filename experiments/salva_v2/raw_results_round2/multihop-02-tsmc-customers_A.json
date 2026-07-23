@@ -1,0 +1,18 @@
+{
+  "task_id": "multihop-02-tsmc-customers",
+  "arm": "A",
+  "env_overrides": {},
+  "difficulty_tier": "multi_hop",
+  "admitted_count": 7,
+  "gt_count": 5,
+  "recall_admitted": [
+    true,
+    false,
+    true,
+    true,
+    false
+  ],
+  "recall_admitted_rate": 0.6,
+  "requests_used": 3,
+  "recorded_at": "2026-07-23T18:02:50.306757+00:00"
+}

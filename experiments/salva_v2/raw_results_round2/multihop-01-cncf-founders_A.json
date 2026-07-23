@@ -1,0 +1,19 @@
+{
+  "task_id": "multihop-01-cncf-founders",
+  "arm": "A",
+  "env_overrides": {},
+  "difficulty_tier": "multi_hop",
+  "admitted_count": 1,
+  "gt_count": 6,
+  "recall_admitted": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "recall_admitted_rate": 0.0,
+  "requests_used": 2,
+  "recorded_at": "2026-07-23T18:02:50.306685+00:00"
+}

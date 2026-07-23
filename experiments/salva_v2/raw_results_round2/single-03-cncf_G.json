@@ -1,0 +1,23 @@
+{
+  "task_id": "single-03-cncf",
+  "arm": "G",
+  "env_overrides": {
+    "SALVA_ENABLE_ENTITY_RESOLUTION": "true",
+    "SALVA_ADMISSION_POLICY": "rank"
+  },
+  "difficulty_tier": "single_entity",
+  "raw_count": 9,
+  "admitted_count": 9,
+  "gt_count": 1,
+  "recall_all": [
+    false
+  ],
+  "recall_all_rate": 0.0,
+  "recall_admitted": [
+    false
+  ],
+  "recall_admitted_rate": 0.0,
+  "entities_merged_count": 0,
+  "merge_groups": [],
+  "recorded_at": "2026-07-23T17:55:16.377496+00:00"
+}

@@ -1,0 +1,27 @@
+{
+  "task_id": "multihop-06-advantech-cloud",
+  "arm": "G",
+  "env_overrides": {
+    "SALVA_ENABLE_ENTITY_RESOLUTION": "true",
+    "SALVA_ADMISSION_POLICY": "rank"
+  },
+  "difficulty_tier": "multi_hop",
+  "raw_count": 14,
+  "admitted_count": 14,
+  "gt_count": 3,
+  "recall_all": [
+    false,
+    false,
+    false
+  ],
+  "recall_all_rate": 0.0,
+  "recall_admitted": [
+    false,
+    false,
+    false
+  ],
+  "recall_admitted_rate": 0.0,
+  "entities_merged_count": 0,
+  "merge_groups": [],
+  "recorded_at": "2026-07-23T17:54:31.128945+00:00"
+}

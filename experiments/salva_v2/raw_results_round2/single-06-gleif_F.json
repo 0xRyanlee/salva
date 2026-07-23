@@ -1,0 +1,22 @@
+{
+  "task_id": "single-06-gleif",
+  "arm": "F",
+  "env_overrides": {
+    "SALVA_ADMISSION_POLICY": "rank"
+  },
+  "difficulty_tier": "single_entity",
+  "raw_count": 11,
+  "admitted_count": 11,
+  "gt_count": 1,
+  "recall_all": [
+    false
+  ],
+  "recall_all_rate": 0.0,
+  "recall_admitted": [
+    false
+  ],
+  "recall_admitted_rate": 0.0,
+  "entities_merged_count": 0,
+  "merge_groups": [],
+  "recorded_at": "2026-07-23T17:54:23.815560+00:00"
+}

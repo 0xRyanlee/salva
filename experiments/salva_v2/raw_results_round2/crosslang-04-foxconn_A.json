@@ -1,0 +1,14 @@
+{
+  "task_id": "crosslang-04-foxconn",
+  "arm": "A",
+  "env_overrides": {},
+  "difficulty_tier": "cross_language",
+  "admitted_count": 5,
+  "gt_count": 1,
+  "recall_admitted": [
+    false
+  ],
+  "recall_admitted_rate": 0.0,
+  "requests_used": 4,
+  "recorded_at": "2026-07-23T18:04:06.620387+00:00"
+}

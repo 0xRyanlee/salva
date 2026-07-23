@@ -1,0 +1,14 @@
+{
+  "task_id": "crosslang-03-acer",
+  "arm": "A",
+  "env_overrides": {},
+  "difficulty_tier": "cross_language",
+  "admitted_count": 5,
+  "gt_count": 1,
+  "recall_admitted": [
+    false
+  ],
+  "recall_admitted_rate": 0.0,
+  "requests_used": 3,
+  "recorded_at": "2026-07-23T18:02:50.306497+00:00"
+}

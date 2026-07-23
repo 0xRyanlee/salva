@@ -3,75 +3,75 @@
   "strategy": "dive",
   "query": "\"CNCF\" Global -blog -museum -review -job -news -report",
   "n": 10,
-  "recorded_at": "2026-07-21T12:25:33.322435+00:00",
+  "recorded_at": "2026-07-23T17:54:52.409331+00:00",
   "results": [
     {
-      "title": "CNCF Cloud Native Mauritius",
-      "url": "https://community.cncf.io/cloud-native-mauritius/",
-      "snippet": "By connecting with the global CNCF community, we strive to empower individuals and businesses in Mauritius to innovate and excel in the rapidly evolving cloud-native landscape.",
+      "title": "CNCF Research Reveals How Cloud Native Technology is ...",
+      "url": "https://www.cncf.io/announcements/2025/04/01/cncf-research-reveals-how-cloud-native-technology-is-reshaping-global-business-and-innovation/",
+      "snippet": "Apr 1, 2025 · The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure, including Kubernetes, Prometheus, and Envoy. CNCF brings together the industry’s top developers, end users, and vendors and runs the largest open source developer conferences in the world.",
       "engine": "ddgs/auto",
       "retrieval_instance": "ddgs"
     },
     {
-      "title": "Global Privacy Policy",
-      "url": "https://www.cncf.org/wp-content/uploads/download-manager-files/CNCF-Global-Privacy-Policy-2024.pdf",
-      "snippet": "This Privacy Policy sets out the approach which the Christina Noble Children’s Foundation (CNCF) CNCF (CNCF) will take in relation to the handling of Personal Information.",
+      "title": "CNCF Welcomes New Silver Members as Global Demand for Cloud ...",
+      "url": "https://www.cncf.io/announcements/2026/06/17/cncf-welcomes-new-silver-members-as-global-demand-for-cloud-native-infrastructure-grows/",
+      "snippet": "Jun 18, 2026 · The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure, including Kubernetes, Prometheus, and Envoy. CNCF brings together the industry’s top developers, end users, and vendors and runs the largest open source developer conferences in the world.",
       "engine": "ddgs/auto",
       "retrieval_instance": "ddgs"
     },
     {
-      "title": "CNCF Sustainability Week 2024 - London Meetup: Call for Speakers",
-      "url": "https://sessionize.com/cncf-sustainability-week-2024-london/",
-      "snippet": "The CNCF Global Week of Cloud Native Sustainability is an event organized by the CNCF TAG Environmental Sustainability and the wider Cloud Native Computing Foundation (CNCF)...",
+      "title": "Backstage Project Evolves into Global Standard for Platform ...",
+      "url": "https://briefglance.com/companies/cloud-native-computing-foundation-cncf/pulses/19877",
+      "snippet": "Mar 25, 2026 · CNCF released a documentary titled 'Backstage: From Spreadsheet to Standard' on March 25, 2026, detailing the evolution of the Backstage project. · Backstage transitioned from an internal Spotify tool to a global open-source standard for platform engineering within the CNCF. · The project improved its ranking in the Annual Project Velocity reports from 8th in 2020 to 6th in 2025 ...",
       "engine": "ddgs/auto",
       "retrieval_instance": "ddgs"
     },
     {
-      "title": "wraith · master · Global / cncf-io · GitLab",
-      "url": "https://gitlab.com/Global-localhost/cncf-io/-/tree/master/wraith?ref_type=heads",
-      "snippet": "Rebuild of cncf.io site.",
+      "title": "CNCF award winner glad to contribute to Korea's breakthrough ...",
+      "url": "https://www.koreatimes.co.kr/business/tech-science/20260123/cncf-award-winner-glad-to-contribute-to-koreas-breakthrough-in-open-source-cloud-ecosystem",
+      "snippet": "Jan 23, 2026 · During the KubeCon event, Son engaged with over 10,000 global cloud and open-source experts, building strong networks as a CNCF global ambassador. The awards helped raise Korea’s visibility and...",
       "engine": "ddgs/auto",
       "retrieval_instance": "ddgs"
     },
     {
-      "title": "Andela Partners with CNCF to Train 20,000 African Developers - Aide...",
-      "url": "https://hub.aide-solutions.com/andela-partners-with-cncf-to-train-20000-african-developers/",
-      "snippet": "“By collaborating with Andela, we aim to empower African developers and bridge the global tech talent gap,” said Chris Aniszczyk, CNCF CTO. Key Benefits for Participants.",
+      "title": "Linux Foundation + CNCF Patently Defend Open Source Software",
+      "url": "https://www.forbes.com/sites/adrianbridgwater/2024/09/16/linux-foundation--cncf-patently-defend-open-source-software/",
+      "snippet": "Sep 16, 2024 · The organization’s chief operating officer Shawn Ambwani suggests that the partnership with the Linux Foundation and CNCF is a significant step forward in the ongoing battle against patent trolls.",
       "engine": "ddgs/auto",
       "retrieval_instance": "ddgs"
     },
     {
-      "title": "CNCF Noble Challenge (@noblechallenge) / Twitter",
-      "url": "https://twitter.com/noblechallenge",
-      "snippet": "Global. cncf.org/noblechallenges. Joined March 2015.CNCF Noble Challenge’s Tweets. Pinned Tweet.",
+      "title": "CNCF Survey Cloud Native Maturity 628 Organizations | TFiR",
+      "url": "https://tfir.io/cncf-survey-cloud-native-maturity-2025/",
+      "snippet": "Feb 10, 2026 · The 2025 CNCF survey reveals cloud native maturity across 628 organizations. Hilary Carter from Linux Foundation explains methodology and key findings.",
       "engine": "ddgs/auto",
       "retrieval_instance": "ddgs"
     },
     {
-      "title": "Cloud Native Sustainability Week - YouTube",
-      "url": "https://www.youtube.com/playlist?list=PL5uLNcv9SibBvjoW2QvLNz0gS5_FSYZuT",
-      "snippet": "The CNCF Global Week of Cloud Native Sustainability is an event organized by the CNCF TAG Environmental Sustainability and the wider Cloud Native Computing Foundation (CNCF)...",
+      "title": "Who We Are | CNCF",
+      "url": "https://www.cncf.io/about/who-we-are/",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure. We bring together the world’s top developers, end users, and vendors and run the largest…",
       "engine": "ddgs/auto",
       "retrieval_instance": "ddgs"
     },
     {
-      "title": "Łukasz Adamski — Strategic Engineering Leadership",
-      "url": "https://lukaszadamski.com/",
-      "snippet": "Łukasz Adamski is the first Golden Kubestronaut in Poland, one of the first worldwide, and the only engineer globally to complete all CNCF certifications within a single month.",
+      "title": "Cloud Native Computing Foundation (CNCF) · GitHub",
+      "url": "https://github.com/CNCF",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure.",
       "engine": "ddgs/auto",
       "retrieval_instance": "ddgs"
     },
     {
-      "title": "Children's Walk for Hope – Walking to Give Children Back Their...",
-      "url": "https://childrenswalkforhope.org/",
-      "snippet": "The Children's Walk For Hope is a virtual event that will be held globally on Sunday 23rd of May 2021.",
+      "title": "Cloud Native Sustainability Month 2025: A global community movement for greener tech | CNCF",
+      "url": "https://www.cncf.io/blog/2025/10/24/cloud-native-sustainability-month-2025-a-global-community-movement-for-greener-tech/",
+      "snippet": "November 7, 2025 - After the big success from the last couple of years, with 20+ meetups around the world in 2024 and a global livestream, we’re back – now as CNCF Cloud Native Sustainability Month, extending beyond a week to allow more time for deeper global conversations on sustainability!",
       "engine": "ddgs/auto",
       "retrieval_instance": "ddgs"
     },
     {
-      "title": "containerd – An industry-standard container runtime with an emphasis...",
-      "url": "https://containerd.io/",
-      "snippet": "Network primitives for creation, modification, and deletion of interfaces. Multi-tenant supported with CAS storage for global images. OCI Runtime Spec support (aka runC).",
+      "title": "CNCF community",
+      "url": "https://community.cncf.io/",
+      "snippet": "The Cloud Native Computing Foundation (CNCF) hosts critical components of the global technology infrastructure. CNCF brings together the world's top developers, end users, and vendors and runs the largest open source developer conferences.",
       "engine": "ddgs/auto",
       "retrieval_instance": "ddgs"
     }
