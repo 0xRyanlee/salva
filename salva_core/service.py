@@ -186,6 +186,9 @@ def execute_discovery(
     telemetry     = _collect_telemetry(summary)
     source_attempts = _collect_source_attempts(retrievers)
     provider_kinds = _collect_provider_kinds(retrievers)
+    # getattr 不是多餘的防禦：test_query_proposal_harness_replay.py 真的會把
+    # retrievers 換成不具備這個屬性的 ReplayRetriever（見該檔案），這是會
+    # 發生的情境，拿掉 getattr 會讓那組測試整批 AttributeError。
     providers_exhausted = any(
         getattr(r, "any_search_exhausted", False) for r in retrievers.values()
     )
@@ -232,12 +235,15 @@ def execute_discovery(
 def _resolve_duplicate_entities_if_enabled(
     entities: list[CanonicalEntity],
 ) -> list[CanonicalEntity]:
-    """opt-in、預設關閉，比照 enable_query_proposal 的做法——board
-    salva-entity-resolution-nomenklatura-integration 拍板前先給一個安全
-    預設，接進去但不改變既有行為，除非明確開啟。開啟後在 entity extraction
-    完成、enrichment 開始前合併同 run 內的近似重複實體（見
-    salva_core/resolvers/entity_resolution.py），順便省下對即將被合併掉的
-    重複實體做 enrichment 的成本。"""
+    """opt-in、預設關閉，語意上比照 enable_query_proposal「預設關閉」的
+    精神——但實際開關機制不同：這裡是 env var（沿用 SALVA_PLANNER_USE_LLM
+    的既有慣例），enable_query_proposal 是 SalvaController 建構子參數，且
+    目前 execute_discovery() 根本沒把它傳進 SalvaController，正式流程永遠
+    是 False（不可達）；這支 env var 則在正式流程真的可觸發。兩者只有
+    「預設關閉」的意圖一致，機制不能互相類比。
+    開啟後在 entity extraction 完成、enrichment 開始前合併同 run 內的
+    近似重複實體（見 salva_core/resolvers/entity_resolution.py），順便省下
+    對即將被合併掉的重複實體做 enrichment 的成本。"""
     if os.getenv("SALVA_ENABLE_ENTITY_RESOLUTION", "").strip().lower() not in ("1", "true", "yes"):
         return entities
     from salva_core.resolvers.entity_resolution import resolve_duplicate_entities

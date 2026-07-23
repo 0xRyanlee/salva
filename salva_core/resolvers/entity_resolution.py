@@ -2,12 +2,18 @@
 的 CanonicalEntity 記錄（experiments/salva_v2/ENTITY_RESOLUTION_INTEGRATION_
 EVAL.md 的 step 3-4）。
 
-Step 3 發現：core/controller.py 目前完全沒有 entity-level 合併呼叫點——
-salva_core/service.py 對每個倖存的搜尋結果各自建一個 CanonicalEntity，
-沒有後續去重。這個模組是全新能力，不是取代既有邏輯。刻意還沒 wire 進
-service.py（見 board salva-entity-resolution-nomenklatura-integration）——
-因為接線會改變使用者可見的輸出，值得有自己的 opt-in flag 決策，比照
-enable_query_proposal 一開始就預設關閉的做法。
+跟 salva_core/persistence/hold.py 既有的 entity resolution 是不同層級、
+不衝突的兩套機制，分工如下：
+  - hold.py（normalize_alias/resolve_entity_normalized）：寫入時的跨 run
+    持久化 alias→canonical_id 正規化字串比對，含 GLEIF 外部 fallback。
+    Step 3 發現這套邏輯目前完全沒有接生產路徑，只被三個測試呼叫。
+  - entity_resolution.py（這裡）：單一 run 輸出前，用 nomenklatura scoring
+    對本次抓到的候選做模糊合併，不碰跨 run 持久化。
+兩者沒有呼叫順序依賴，也不是誰取代誰。
+
+已透過 salva_core/service.py::_resolve_duplicate_entities_if_enabled()
+接進 execute_discovery（opt-in，env var SALVA_ENABLE_ENTITY_RESOLUTION
+預設關閉，該函式 docstring 有機制細節）。
 
 只比較同一 FtM schema 的實體（經 ftm_adapter 的映射）——例如拿 Person 跟
 Company 比對絕不會是合法的重複配對，只會浪費一次 nomenklatura.matching

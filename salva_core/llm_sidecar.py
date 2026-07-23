@@ -104,11 +104,17 @@ def default_cli_runner(prompt: str, model_hint: str | None) -> tuple[str | None,
 
 def _cli_invocation(cli: str, prompt: str, model_hint: str | None) -> list[str] | None:
     if cli == "claude":
+        # prompt 是 -p 的 flag-argument，不是獨立 positional，一般 CLI
+        # 解析器不會把它誤判成另一個 flag，就算內容以 "-" 開頭也一樣。
         return ["claude", "-p", prompt, "--model", model_hint or "haiku"]
     if cli == "codex":
-        args = ["codex", "exec", prompt]
+        # prompt 這裡是 positional（見 `codex exec [OPTIONS] [PROMPT]`），
+        # 內容來自搜尋/爬蟲資料，攻擊者可能讓它以 "-" 開頭。用 "--" 明確
+        # 標記後面全部當 positional，避免被誤解成 flag。
+        args = ["codex", "exec"]
         if model_hint:
             args.extend(["-m", model_hint])
+        args.extend(["--", prompt])
         return args
     return None
 
