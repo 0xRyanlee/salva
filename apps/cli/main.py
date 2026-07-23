@@ -135,6 +135,8 @@ def find(
                 "domain": meta.get("domain"),
                 "memory_seeds_used": meta.get("memory_seeds_used", 0),
                 "execution": meta.get("execution", {}),
+                "providers_exhausted": meta.get("providers_exhausted", False),
+                "entities_merged_count": meta.get("entities_merged_count", 0),
                 "entities": [e.model_dump(mode="json") for e in entities],
             },
             ensure_ascii=False,
@@ -735,6 +737,10 @@ def _print_run_summary(entities, meta):
     typer.echo(f"qualified : {meta.get('qualified_count', 0)} / {meta.get('raw_count', 0)}")
     typer.echo(f"rounds    : {meta.get('rounds', 0)}")
     typer.echo(f"seeds     : {meta.get('memory_seeds_used', 0)} from memory")
+    if meta.get("providers_exhausted"):
+        typer.echo("⚠ providers_exhausted : provider 全滅或耗盡，結果可能不完整")
+    if meta.get("entities_merged_count"):
+        typer.echo(f"merged    : {meta['entities_merged_count']} 筆重複實體已合併")
     typer.echo("")
     for i, e in enumerate(entities, 1):
         title = e.title or "(no title)"
