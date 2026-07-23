@@ -10,7 +10,9 @@ board salva-llm-backend-cli-passthrough。owner 確認的設計（2026-07-23）�
     （ConnectionRefusedError/FileNotFoundError），不需要調校 polling 間隔。
   - 每個 salva instance 各自一個 sidecar，不跨機器共用。instance 身份預設
     用 discovery-run DB path 的穩定 hash，單一 DB 的開發環境只需登入一次，
-    不同部署（不同 SALVA_DB_PATH）各自獨立 socket。
+    不同部署（不同 SALVA_SQLITE_PATH）各自獨立 socket——注意這代表「同一份
+    SALVA_SQLITE_PATH 底下的多個 process」預設會共用同一個 sidecar，不是
+    每個 process 各自獨立；真的要每個 process 隔離需明確設 SALVA_INSTANCE_ID。
   - BYOK：任何 OpenAI-compatible 的 chat-completions 端點（見下方環境變數）
     優先於 sidecar 嘗試——刻意設定的付費 API 比環境裡剛好登入的本機 CLI
     意圖更明確，也不需要 terminal 一直開著。
@@ -26,6 +28,7 @@ import hashlib
 import json
 import logging
 import os
+import secrets
 import socket
 import subprocess
 import tempfile
@@ -58,6 +61,17 @@ def resolve_instance_id() -> str:
 def sidecar_socket_path(instance_id: str | None = None) -> Path:
     resolved = instance_id or resolve_instance_id()
     return Path(tempfile.gettempdir()) / f"salva-llm-sidecar-{resolved}.sock"
+
+
+def _token_path(socket_path: Path) -> Path:
+    return socket_path.with_suffix(socket_path.suffix + ".token")
+
+
+def _read_token(socket_path: Path) -> str | None:
+    try:
+        return _token_path(socket_path).read_text().strip()
+    except FileNotFoundError:
+        return None
 
 
 # ---------------------------------------------------------------------------
@@ -102,35 +116,54 @@ def _cli_invocation(cli: str, prompt: str, model_hint: str | None) -> list[str] 
 class SidecarServer:
     """在 Unix domain socket 上跑 accept-loop。一次 connection 對應一次
     請求/回應（client 每次 completion 呼叫都開新連線，連線斷掉乾脆地
-    代表「sidecar 不在了」，不用去推理半開的 stream 狀態）。"""
+    代表「sidecar 不在了」，不用去推理半開的 stream 狀態）。
+
+    socket path 是 DB path 的 hash 衍生，同機器上知道這個 repo checkout
+    路徑的人都能算出來——單靠路徑不可預測性不算身份驗證。所以另外生成一個
+    隨機 token，寫進權限收緊到 0600 的 sibling 檔案；同帳號的其他 process
+    理論上還是讀得到（本機開發工具的既定信任邊界），但機器上的其他帳號
+    讀不到，且無法在不知道 token 的情況下冒用已登入的 claude/codex 額度。"""
 
     def __init__(self, instance_id: str | None = None, runner: SidecarRunner = default_cli_runner):
         self.socket_path = sidecar_socket_path(instance_id)
         self.runner = runner
         self._server: socket.socket | None = None
+        self._token = secrets.token_hex(32)
 
     def serve_forever(self) -> None:
         if self.socket_path.exists():
             self.socket_path.unlink()
+        token_path = _token_path(self.socket_path)
+        token_path.write_text(self._token)
+        os.chmod(token_path, 0o600)
+
         self._server = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
         self._server.bind(str(self.socket_path))
+        os.chmod(self.socket_path, 0o600)
         self._server.listen(4)
         logger.info("salva LLM sidecar listening on %s", self.socket_path)
         try:
             while True:
                 conn, _ = self._server.accept()
+                conn.settimeout(DEFAULT_SOCKET_TIMEOUT)
                 with conn:
                     self._handle_one(conn)
         finally:
             self.socket_path.unlink(missing_ok=True)
+            token_path.unlink(missing_ok=True)
 
     def _handle_one(self, conn: socket.socket) -> None:
         try:
             raw = _recv_message(conn)
             request = json.loads(raw)
+            if request.get("token") != self._token:
+                _send_message(conn, json.dumps({"content": None, "error": "invalid token"}))
+                return
             prompt = f"{request['system_prompt']}\n\n{request['user_prompt']}"
             content, error = self.runner(prompt, request.get("model_name"))
             _send_message(conn, json.dumps({"content": content, "error": error}))
+        except TimeoutError:
+            pass  # 客戶端沒在 timeout 內送完整訊息 -- 放棄這個連線，accept-loop 不受影響
         except Exception as exc:  # noqa: BLE001 -- accept loop 絕不能被這裡的例外打斷
             try:
                 _send_message(conn, json.dumps({"content": None, "error": str(exc)}))
@@ -147,6 +180,20 @@ def complete_with_sidecar(
 ) -> LLMCompletionResult:
     started_at = perf_counter()
     socket_path = sidecar_socket_path(instance_id)
+    token = _read_token(socket_path)
+    if token is None:
+        return LLMCompletionResult(
+            provider_name="sidecar",
+            model_name=bundle.model_name or "unknown",
+            task=bundle.task,
+            available=False,
+            latency_ms=round((perf_counter() - started_at) * 1000.0, 2),
+            message=(
+                "sidecar not connected -- start it with "
+                "`python -m salva_core.llm_sidecar_run` in a terminal after "
+                "`claude login` or `codex login` (no auth token file found)"
+            ),
+        )
     try:
         with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as client:
             client.settimeout(DEFAULT_SOCKET_TIMEOUT)
@@ -157,6 +204,7 @@ def complete_with_sidecar(
                     "system_prompt": bundle.system_prompt,
                     "user_prompt": bundle.user_prompt,
                     "model_name": bundle.model_name,
+                    "token": token,
                 }),
             )
             raw = _recv_message(client)

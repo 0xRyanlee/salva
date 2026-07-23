@@ -3,6 +3,9 @@ SidecarServer(server)之間的 socket 協定，以及 BYOK-vs-sidecar 派工邏�
 CLI runner 是注入的，這些測試從不真的呼叫 claude/codex process。"""
 from __future__ import annotations
 
+import json
+import socket
+import stat
 import threading
 import time
 import uuid
@@ -12,6 +15,9 @@ import pytest
 from salva_core.llm import LLMPromptBundle
 from salva_core.llm_sidecar import (
     SidecarServer,
+    _recv_message,
+    _send_message,
+    _token_path,
     byok_configured,
     complete_with_byok,
     complete_with_sidecar,
@@ -75,6 +81,41 @@ def test_runner_error_surfaces_as_unavailable_not_a_crash(instance_id) -> None:
 def test_socket_path_is_per_instance() -> None:
     assert sidecar_socket_path("a") != sidecar_socket_path("b")
     assert sidecar_socket_path("a") == sidecar_socket_path("a")
+
+
+def test_socket_and_token_file_are_owner_only(instance_id) -> None:
+    """audit finding: socket path is a predictable hash, so file permissions
+    (not path secrecy) are what actually keeps a different local user from
+    hijacking an already-logged-in claude/codex session."""
+    server = _run_server_in_background(instance_id, lambda prompt, model_hint: ("{}", None))
+    socket_mode = stat.S_IMODE(server.socket_path.stat().st_mode)
+    token_mode = stat.S_IMODE(_token_path(server.socket_path).stat().st_mode)
+    assert socket_mode == 0o600
+    assert token_mode == 0o600
+
+
+def test_wrong_token_is_rejected_without_running_the_cli(instance_id) -> None:
+    """A raw connection that skips complete_with_sidecar()'s automatic token
+    read (simulating a different local user who found the socket path but
+    not the 0600 token file) must be refused before the CLI runner fires."""
+    called = {"n": 0}
+
+    def runner(prompt: str, model_hint: str | None):
+        called["n"] += 1
+        return "should never run", None
+
+    server = _run_server_in_background(instance_id, runner)
+    with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as client:
+        client.settimeout(2.0)
+        client.connect(str(server.socket_path))
+        _send_message(
+            client,
+            json.dumps({"system_prompt": "s", "user_prompt": "u", "token": "wrong-token"}),
+        )
+        raw = _recv_message(client)
+    payload = json.loads(raw)
+    assert payload["error"] == "invalid token"
+    assert called["n"] == 0
 
 
 def test_dispatcher_prefers_byok_when_configured(monkeypatch) -> None:
