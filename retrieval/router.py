@@ -44,6 +44,12 @@ class RoutedRetriever:
         # it legitimately returned zero results (that's "no results", not
         # "provider exhausted") or the answer came from cache.
         self.last_search_exhausted: bool = False
+        # Accumulates last_search_exhausted across every search() call made on
+        # this instance (one instance lives for a whole discovery run across
+        # multiple rounds/queries) -- surfaces as DiscoveryResponse.meta so
+        # callers can tell "provider exhaustion happened somewhere in this
+        # run" apart from "the topic legitimately had no results".
+        self.any_search_exhausted: bool = False
         self.providers: list[RetrieverProtocol] = _build_provider_chain(policy, strategy)
         self._health = health if health is not None else get_health_registry()
         self._cache = cache if cache is not None else get_serp_cache()
@@ -53,6 +59,7 @@ class RoutedRetriever:
         self.last_search_exhausted = False
         if not self.providers:
             self.last_search_exhausted = True
+            self.any_search_exhausted = True
             return []
 
         # Tier 0: SERP cache — skip all providers if we have a fresh result
@@ -67,6 +74,8 @@ class RoutedRetriever:
             results = self._search_adaptive(query, n)
         else:
             results = self._search_parallel(query, n)
+
+        self.any_search_exhausted = self.any_search_exhausted or self.last_search_exhausted
 
         if results:
             self._cache.set(self.strategy, query, results, region=region)
@@ -163,8 +172,11 @@ class RoutedRetriever:
 
         usable = [p for p in self.providers if self._health.is_usable(_provider_id(p))]
         if not usable:
+            self.last_search_exhausted = True
             return []
 
+        completed = 0
+        errored = 0
         with ThreadPoolExecutor(max_workers=len(usable)) as executor:
             futures = {
                 executor.submit(provider.search, query, n): provider
@@ -175,9 +187,11 @@ class RoutedRetriever:
                 for future in as_completed(futures, timeout=time_budget):
                     provider = futures[future]
                     pid = _provider_id(provider)
+                    completed += 1
                     try:
                         provider_results = future.result()
                     except Exception as exc:
+                        errored += 1
                         self.last_attempts.extend(getattr(provider, "last_attempts", []))
                         self._health.record_failure(pid, _classify_error(str(exc)))
                         continue
@@ -193,6 +207,7 @@ class RoutedRetriever:
                 if not f.done():
                     f.cancel()
 
+        self.last_search_exhausted = completed == 0 or errored == completed
         return _dedupe_results(results)[:n]
 
 

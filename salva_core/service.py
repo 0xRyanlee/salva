@@ -181,6 +181,9 @@ def execute_discovery(
     telemetry     = _collect_telemetry(summary)
     source_attempts = _collect_source_attempts(retrievers)
     provider_kinds = _collect_provider_kinds(retrievers)
+    providers_exhausted = any(
+        getattr(r, "any_search_exhausted", False) for r in retrievers.values()
+    )
 
     meta = {
         "qualified_count":        summary.total_qualified,
@@ -213,6 +216,7 @@ def execute_discovery(
         "domain_hints_active":    payload.intent.domain_hints is not None,
         "memory_seeds_used":      memory_seeds,
         "execution":              execution_meta(payload),
+        "providers_exhausted":    providers_exhausted,
     }
     if payload.tenant_id is not None:
         meta["tenant_id"] = payload.tenant_id
