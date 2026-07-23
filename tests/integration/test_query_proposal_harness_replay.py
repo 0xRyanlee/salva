@@ -51,7 +51,11 @@ def _run_replay_with_controller_kwargs(**controller_kwargs):
     captured: dict[str, SalvaController] = {}
 
     def controller_factory(*args, **kwargs):
-        controller = SalvaController(*args, **kwargs, **controller_kwargs)
+        # execute_discovery() now passes its own admission_policy (see
+        # salva_core.service._resolve_admission_policy) -- controller_kwargs
+        # here is this test's explicit override, so it must win on collision
+        # rather than being unpacked alongside kwargs as a duplicate kwarg.
+        controller = SalvaController(*args, **{**kwargs, **controller_kwargs})
         captured["controller"] = controller
         return controller
 

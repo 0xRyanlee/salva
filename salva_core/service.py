@@ -174,6 +174,7 @@ def execute_discovery(
         experience_profile=experience_plan.profile,
         scoring_context=scoring_context,
         round_checkpoint=round_checkpoint,
+        admission_policy=_resolve_admission_policy(),
     )
     results, summary = controller.run()
 
@@ -249,6 +250,18 @@ def _resolve_duplicate_entities_if_enabled(
     from salva_core.resolvers.entity_resolution import resolve_duplicate_entities
 
     return resolve_duplicate_entities(entities)
+
+
+def _resolve_admission_policy() -> str:
+    """docs/reports/pluggable-engine-architecture-research-20260721.md 點名
+    的「quick win」：admission_policy 一直是 SalvaController 的建構子參數，
+    但 execute_discovery() 從沒把它傳進去——正式流程永遠吃 default "gate"，
+    confidence.py 的排序訊號(已 ADOPT，見 CONFIDENCE_REBUILD_FINDINGS.md)
+    無法在 live 流程被真正拿來做 admission 決策。預設仍是 "gate"（不改變
+    既有行為），SALVA_ADMISSION_POLICY=rank 才切換成用 confidence 排序做
+    selection。"""
+    value = os.getenv("SALVA_ADMISSION_POLICY", "gate").strip().lower()
+    return value if value in ("gate", "rank") else "gate"
 
 
 def _resolve_qualify_threshold(payload: DiscoveryRequest, domain: str) -> float:
