@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from collections.abc import Callable
 from typing import Any
 
@@ -19,7 +20,8 @@ from salva_core.legacy import legacy_result_relations, legacy_result_to_entity
 from salva_core.mode_resolver import resolve_experience_plan
 from salva_core.navigation import build_mate_report, build_pilot_advice
 from salva_core.persistence import get_db_path_for_project, persist_discovery_run, update_run_meta
-from salva_core.persistence.hold import list_routing_memory, record_source_attempt as _record_source_attempt
+from salva_core.persistence.hold import list_routing_memory
+from salva_core.persistence.hold import record_source_attempt as _record_source_attempt
 from salva_core.routes import PROFILE_ROUTE_HINTS
 from salva_core.schemas import (
     CanonicalEntity,
@@ -176,6 +178,9 @@ def execute_discovery(
     results, summary = controller.run()
 
     entities = [legacy_result_to_entity(result, market=payload.intent.market) for result in results]
+    pre_resolution_entity_count = len(entities)
+    entities = _resolve_duplicate_entities_if_enabled(entities)
+    entities_merged_count = pre_resolution_entity_count - len(entities)
     entities, plugin_reports = enrich_entities(entities, payload)
     relations     = _collect_relations(results)
     telemetry     = _collect_telemetry(summary)
@@ -217,10 +222,27 @@ def execute_discovery(
         "memory_seeds_used":      memory_seeds,
         "execution":              execution_meta(payload),
         "providers_exhausted":    providers_exhausted,
+        "entities_merged_count":  entities_merged_count,
     }
     if payload.tenant_id is not None:
         meta["tenant_id"] = payload.tenant_id
     return entities, relations, telemetry, meta, source_attempts
+
+
+def _resolve_duplicate_entities_if_enabled(
+    entities: list[CanonicalEntity],
+) -> list[CanonicalEntity]:
+    """opt-in、預設關閉，比照 enable_query_proposal 的做法——board
+    salva-entity-resolution-nomenklatura-integration 拍板前先給一個安全
+    預設，接進去但不改變既有行為，除非明確開啟。開啟後在 entity extraction
+    完成、enrichment 開始前合併同 run 內的近似重複實體（見
+    salva_core/resolvers/entity_resolution.py），順便省下對即將被合併掉的
+    重複實體做 enrichment 的成本。"""
+    if os.getenv("SALVA_ENABLE_ENTITY_RESOLUTION", "").strip().lower() not in ("1", "true", "yes"):
+        return entities
+    from salva_core.resolvers.entity_resolution import resolve_duplicate_entities
+
+    return resolve_duplicate_entities(entities)
 
 
 def _resolve_qualify_threshold(payload: DiscoveryRequest, domain: str) -> float:
