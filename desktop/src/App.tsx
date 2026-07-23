@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react";
-import { Search, AlertTriangle, Sparkles } from "lucide-react";
+import { listen } from "@tauri-apps/api/event";
+import { Search, AlertTriangle, Sparkles, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
-import { checkHealth, discover, type CanonicalEntity, type DiscoverMeta } from "@/lib/api";
+import {
+  checkHealth,
+  checkLlmStatus,
+  discover,
+  type CanonicalEntity,
+  type DiscoverMeta,
+  type LlmSidecarStatus,
+} from "@/lib/api";
 
 const OBJECTIVES = [
   { value: "find_companies", label: "Companies" },
@@ -15,8 +23,16 @@ const OBJECTIVES = [
   { value: "find_market_activity", label: "Market Activity" },
 ];
 
+interface CoreStatusEvent {
+  online: boolean;
+  error: string | null;
+}
+
 function App() {
   const [coreOnline, setCoreOnline] = useState<boolean | null>(null);
+  const [coreError, setCoreError] = useState<string | null>(null);
+  const [showCoreError, setShowCoreError] = useState(false);
+  const [llmStatus, setLlmStatus] = useState<LlmSidecarStatus | null>(null);
   const [market, setMarket] = useState("Germany");
   const [industry, setIndustry] = useState("software");
   const [objective, setObjective] = useState("find_companies");
@@ -25,11 +41,26 @@ function App() {
   const [entities, setEntities] = useState<CanonicalEntity[]>([]);
   const [meta, setMeta] = useState<DiscoverMeta | null>(null);
 
+  // Rust 端 spawn core 後會 emit 一次立即結果（含失敗原因）；health-check
+  // 輪詢是補強訊號（例如 core 起來後又中途掛掉），兩者互補而非取代彼此。
+  useEffect(() => {
+    const unlisten = listen<CoreStatusEvent>("core-status", (event) => {
+      setCoreOnline(event.payload.online);
+      setCoreError(event.payload.error);
+    });
+    return () => {
+      unlisten.then((fn) => fn());
+    };
+  }, []);
+
   useEffect(() => {
     let cancelled = false;
     const poll = async () => {
       const online = await checkHealth();
-      if (!cancelled) setCoreOnline(online);
+      if (cancelled) return;
+      setCoreOnline(online);
+      if (online) setCoreError(null);
+      setLlmStatus(await checkLlmStatus());
     };
     poll();
     const interval = setInterval(poll, 3000);
@@ -53,6 +84,8 @@ function App() {
     }
   }
 
+  const llmUnavailable = llmStatus && !llmStatus.sidecar_reachable && !llmStatus.byok_configured;
+
   return (
     <main className="min-h-screen bg-background text-foreground flex flex-col">
       <header className="glass-1 border-b border-border/40 px-4 py-2.5 flex items-center justify-between">
@@ -60,18 +93,53 @@ function App() {
           <Sparkles size={16} className="text-primary" />
           <span className="type-title">Salva</span>
         </div>
-        <div className="flex items-center gap-1.5">
-          <span
-            className={cn(
-              "w-1.5 h-1.5 rounded-full",
-              coreOnline === null ? "bg-muted-foreground" : coreOnline ? "bg-success" : "bg-destructive",
-            )}
-          />
-          <span className="type-caption text-muted-foreground">
-            {coreOnline === null ? "connecting…" : coreOnline ? "core online" : "core offline"}
-          </span>
+        <div className="flex items-center gap-3">
+          {llmStatus && (
+            <span
+              className="type-caption text-muted-foreground"
+              title={
+                llmStatus.sidecar_reachable
+                  ? "LLM enrichment: sidecar 已連線"
+                  : llmStatus.byok_configured
+                    ? "LLM enrichment: 使用 BYOK 端點"
+                    : "LLM enrichment 未啟用——結果不含 rerank/query-proposal 加值，搜尋本身仍會正常運作"
+              }
+            >
+              LLM: {llmStatus.sidecar_reachable ? "sidecar" : llmStatus.byok_configured ? "BYOK" : "off"}
+            </span>
+          )}
+          <button
+            type="button"
+            onClick={() => coreError && setShowCoreError((v) => !v)}
+            className="flex items-center gap-1.5"
+          >
+            <span
+              className={cn(
+                "w-1.5 h-1.5 rounded-full",
+                coreOnline === null ? "bg-muted-foreground" : coreOnline ? "bg-success" : "bg-destructive",
+              )}
+            />
+            <span className="type-caption text-muted-foreground">
+              {coreOnline === null ? "connecting…" : coreOnline ? "core online" : "core offline"}
+            </span>
+            {coreError && <ChevronDown size={12} className="text-muted-foreground" />}
+          </button>
         </div>
       </header>
+
+      {coreError && showCoreError && (
+        <div className="border-b border-destructive/40 bg-destructive/10 px-4 py-2 type-caption text-destructive whitespace-pre-wrap">
+          {coreError}
+        </div>
+      )}
+      {llmUnavailable && (
+        <div className="border-b border-warn/40 bg-warn/10 px-4 py-2 type-caption text-warn">
+          LLM enrichment 未啟用——搜尋結果不含 rerank/追加查詢加值。要啟用：另開一個
+          terminal 執行 <code className="font-mono">python -m salva_core.llm_sidecar_run</code>
+          （需先 <code className="font-mono">claude login</code> 或{" "}
+          <code className="font-mono">codex login</code>），或設定 BYOK 環境變數。
+        </div>
+      )}
 
       <div className="flex-1 flex flex-col gap-4 p-4 max-w-3xl w-full mx-auto">
         <section className="glass-1 border border-border/30 rounded-lg p-3 space-y-3 overflow-hidden">
@@ -107,9 +175,13 @@ function App() {
             </div>
           </label>
 
-          <Button onClick={runSearch} disabled={loading || !market || !industry} className="w-full">
+          <Button
+            onClick={runSearch}
+            disabled={loading || !market || !industry || !coreOnline}
+            className="w-full"
+          >
             <Search size={14} className="mr-1.5" />
-            {loading ? "Searching…" : "Search"}
+            {loading ? "Searching…" : coreOnline ? "Search" : "等待 core 連線…"}
           </Button>
         </section>
 
@@ -141,7 +213,13 @@ function App() {
           {entities.length === 0 && !loading ? (
             <EmptyState
               icon={Search}
-              label={meta ? "no qualified results" : "run a search to see results"}
+              label={
+                !meta
+                  ? "run a search to see results"
+                  : meta.providers_exhausted
+                    ? "資料來源用盡導致 0 筆結果，建議稍後重試"
+                    : "no qualified results"
+              }
             />
           ) : (
             <ul className="space-y-2">

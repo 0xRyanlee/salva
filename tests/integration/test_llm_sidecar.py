@@ -22,6 +22,7 @@ from salva_core.llm_sidecar import (
     complete_with_byok,
     complete_with_sidecar,
     resolve_llm_completion_fn,
+    sidecar_reachable,
     sidecar_socket_path,
 )
 
@@ -81,6 +82,22 @@ def test_runner_error_surfaces_as_unavailable_not_a_crash(instance_id) -> None:
 def test_socket_path_is_per_instance() -> None:
     assert sidecar_socket_path("a") != sidecar_socket_path("b")
     assert sidecar_socket_path("a") == sidecar_socket_path("a")
+
+
+def test_sidecar_reachable_false_when_not_running(instance_id) -> None:
+    assert sidecar_reachable(instance_id) is False
+
+
+def test_sidecar_reachable_true_when_running_without_triggering_cli(instance_id) -> None:
+    called = {"n": 0}
+
+    def runner(prompt: str, model_hint: str | None):
+        called["n"] += 1
+        return "should never run for a reachability check", None
+
+    _run_server_in_background(instance_id, runner)
+    assert sidecar_reachable(instance_id) is True
+    assert called["n"] == 0
 
 
 def test_socket_and_token_file_are_owner_only(instance_id) -> None:

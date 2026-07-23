@@ -242,6 +242,20 @@ def complete_with_sidecar(
     )
 
 
+def sidecar_reachable(instance_id: str | None = None) -> bool:
+    """輕量存活檢查：只 connect() 不送任何請求，不會觸發真的 CLI 呼叫。
+    給 UI 顯示「LLM 後端可用嗎」用，不要拿 complete_with_sidecar() 做這件
+    事——那會真的付一次 claude/codex 呼叫的代價。"""
+    socket_path = sidecar_socket_path(instance_id)
+    try:
+        with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as client:
+            client.settimeout(2.0)
+            client.connect(str(socket_path))
+        return True
+    except (FileNotFoundError, ConnectionRefusedError, OSError):
+        return False
+
+
 # ---------------------------------------------------------------------------
 # BYOK：通用 OpenAI-compatible chat-completions 端點
 # ---------------------------------------------------------------------------

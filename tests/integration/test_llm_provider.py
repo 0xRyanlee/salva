@@ -74,3 +74,15 @@ def test_llm_api_endpoints(monkeypatch) -> None:
     health = client.get("/v1/llm/health")
     assert health.status_code == 200
     assert health.json()["available"] is True
+
+
+def test_llm_sidecar_status_endpoint(monkeypatch) -> None:
+    import salva_core.llm_sidecar as llm_sidecar_module
+
+    monkeypatch.setattr(llm_sidecar_module, "sidecar_reachable", lambda: True)
+    monkeypatch.setattr(llm_sidecar_module, "byok_configured", lambda: False)
+
+    client = TestClient(main.app)
+    response = client.get("/v1/llm/sidecar-status")
+    assert response.status_code == 200
+    assert response.json() == {"sidecar_reachable": True, "byok_configured": False}

@@ -303,6 +303,19 @@ async def llm_health(model_name: str | None = None) -> LLMHealthResponse:
     return LLMHealthResponse.model_validate(health.model_dump(mode="json"))
 
 
+@app.get("/v1/llm/sidecar-status")
+async def llm_sidecar_status() -> dict:
+    # 這支端點只查 salva_core/llm_sidecar.py（enrichment/rerank 現在的
+    # 預設後端），跟上面 /v1/llm/health 查的舊 omlx 路徑是兩個獨立系統，
+    # 刻意不合併——桌面 app 靠這支判斷要不要顯示「LLM enrichment 未啟用」。
+    from salva_core.llm_sidecar import byok_configured, sidecar_reachable
+
+    return {
+        "sidecar_reachable": sidecar_reachable(),
+        "byok_configured": byok_configured(),
+    }
+
+
 @app.post("/v1/jobs", response_model=JobRecord)
 async def create_discovery_job(payload: JobCreateRequest) -> JobRecord:
     tenant_id = _resolve_tenant_scope(payload.discovery.tenant_id, "job")
