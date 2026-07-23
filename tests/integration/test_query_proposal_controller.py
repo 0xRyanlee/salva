@@ -140,9 +140,8 @@ class TestSaturationGate:
         assert called["n"] == 1
 
     def test_llm_unavailable_no_followup_is_logged_not_silent(self, caplog):
-        """salva-enrichment-failure-telemetry: LLM-unavailable degradation
-        must be visible in logs, not a silent no-op indistinguishable from
-        "saturation was already fine"."""
+        """salva-enrichment-failure-telemetry：LLM 不可用的降級必須在日誌
+        裡看得到，不能是一個跟「飽和度本來就夠」無法區分的靜默 no-op。"""
         controller, _ = _make_controller(enable_query_proposal=True)
         ranked = _fake_ranked(query_support=1)
         controller._run = RunSummary(intent_domain="companies", started_at=datetime.now(UTC))

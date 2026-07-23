@@ -37,18 +37,16 @@ class RoutedRetriever:
         self.strategy = strategy
         self.retrieval_mode = retrieval_mode
         self.last_attempts: list[RetrievalAttempt] = []
-        # True when the most recent search() call never got a genuine
-        # attempt-response from any provider — every usable provider raised
-        # an exception, or none were usable (all in cooldown / none configured).
-        # False whenever at least one provider ran without erroring, even if
-        # it legitimately returned zero results (that's "no results", not
-        # "provider exhausted") or the answer came from cache.
+        # 最近一次 search() 呼叫完全沒有從任一 provider 拿到真正的
+        # attempt-response 時為 True——每個可用的 provider 都拋例外，或
+        # 根本沒有可用的（全在 cooldown / 沒配置任何一個）。只要有至少一個
+        # provider 順利跑完（就算合法地回傳零筆結果，那是「沒結果」不是
+        # 「provider 耗盡」），或答案來自 cache，就是 False。
         self.last_search_exhausted: bool = False
-        # Accumulates last_search_exhausted across every search() call made on
-        # this instance (one instance lives for a whole discovery run across
-        # multiple rounds/queries) -- surfaces as DiscoveryResponse.meta so
-        # callers can tell "provider exhaustion happened somewhere in this
-        # run" apart from "the topic legitimately had no results".
+        # 累積這個 instance 每一次 search() 呼叫的 last_search_exhausted
+        # （一個 instance 存活整個 discovery run 的多輪多查詢）——曝露到
+        # DiscoveryResponse.meta，讓呼叫方能分辨「這次 run 裡某處發生過
+        # provider 耗盡」跟「這個主題本來就沒結果」。
         self.any_search_exhausted: bool = False
         self.providers: list[RetrieverProtocol] = _build_provider_chain(policy, strategy)
         self._health = health if health is not None else get_health_registry()

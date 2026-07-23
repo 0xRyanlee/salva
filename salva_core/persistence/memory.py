@@ -65,11 +65,10 @@ def list_query_family_memory(
     offset: int = 0,
     path: str = DEFAULT_DB_PATH,
 ) -> tuple[list[QueryFamilyMemoryRecord], int]:
-    # query_family_memory has no project_id column of its own -- it only
-    # exists on discovery_runs, joined here via run_id -- so non-default
-    # projects were previously just invisible to this listing (a visibility
-    # gap, not a cross-project leak: see
-    # docs/reports/memory-isolation-audit-20260721.md).
+    # query_family_memory 本身沒有 project_id 欄位——只存在於
+    # discovery_runs，透過 run_id 在這裡 join——所以 non-default project
+    # 之前對這個 listing 完全不可見（是可見性缺口，不是跨 project 洩漏：
+    # 見 docs/reports/memory-isolation-audit-20260721.md）。
     clauses: list[str] = []
     params: list[object] = []
     if run_id:

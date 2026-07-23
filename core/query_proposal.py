@@ -1,18 +1,16 @@
-"""Bounded LLM query-proposal step for the multi-round retrieval loop.
+"""多輪檢索迴圈的 bounded LLM query-proposal 步驟。
 
-Amendment 2026-07-21 (CLAUDE.md, "Deterministic Pipeline First"): the
-deterministic retrieval loop may optionally consult a scoped, JSON-bounded
-LLM call that proposes ONE follow-up search query when the accumulated
-candidate pool looks thin. It never re-plans strategy, never reasons freely,
-and never replaces `core/keyword_graph.py`'s deterministic expansion -- its
-only output is {need_followup, query}. Motivated by the CNCF founders case:
-deterministic multi-round retrieval fetched a Wikipedia secondary list and
-missed the original 2015 press release; a freely-searching agent found it by
-searching further. The LLM client is injected (defaults to
-salva_core.llm_sidecar.resolve_llm_completion_fn() -- BYOK if configured,
-else the local sidecar CLI passthrough; amended 2026-07-23, no longer local
-omlx) so this is unit-testable offline and degrades to "no follow-up"
-whenever the LLM is unreachable or returns something unparseable.
+Amendment 2026-07-21（CLAUDE.md，"Deterministic Pipeline First"）：決定論
+檢索迴圈可以選擇性諮詢一個範圍受限、JSON-bounded 的 LLM 呼叫，在累積候選
+池看起來太薄時提議「一個」追加搜尋查詢。它從不重新規劃策略、從不自由
+推理，也從不取代 `core/keyword_graph.py` 的決定論式擴展——唯一輸出是
+{need_followup, query}。動機來自 CNCF founders 案例：決定論式多輪檢索抓到
+Wikipedia 的次要清單，卻漏掉 2015 年的原始新聞稿；一個自由搜尋的 agent
+靠繼續搜尋找到了它。LLM client 是注入的（預設走
+salva_core.llm_sidecar.resolve_llm_completion_fn()——BYOK 若有設定就優先，
+否則走本機 sidecar CLI passthrough；2026-07-23 修訂，不再是本機 omlx），
+所以可以離線做單元測試，LLM 連不上或回傳無法解析的內容時會降級成「不追加
+查詢」。
 """
 from __future__ import annotations
 
@@ -89,7 +87,7 @@ def _parse_proposal(content: str) -> tuple[bool, str | None] | None:
     query = data.get("query")
     query = query.strip() if isinstance(query, str) else ""
     if need and not query:
-        # Malformed "yes but no query given" -- never invent a query, just no-op.
+        # 格式錯誤：說要追加查詢卻沒給查詢字串——絕不自己編一個，直接 no-op。
         return False, None
     return need, (query if need else None)
 

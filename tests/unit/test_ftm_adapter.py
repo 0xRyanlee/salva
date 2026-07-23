@@ -1,8 +1,8 @@
-"""Round-trip contract for the Nomenklatura/FollowTheMoney adapter
-(experiments/salva_v2/ENTITY_RESOLUTION_INTEGRATION_EVAL.md, step 6):
-CanonicalEntity -> EntityProxy -> CanonicalEntity must be lossless on the
-core fields, and non-schema-recognized attribute keys must not silently
-vanish (they are asserted present in EntityProxy.context, not just dropped)."""
+"""Nomenklatura/FollowTheMoney adapter 的 round-trip contract
+（experiments/salva_v2/ENTITY_RESOLUTION_INTEGRATION_EVAL.md，step 6）：
+CanonicalEntity -> EntityProxy -> CanonicalEntity 在核心欄位上必須無損，
+非 schema-recognized 的 attribute key 也不能靜默消失（要斷言它們真的存在
+EntityProxy.context 裡，不是只是沒被丟掉）。"""
 from __future__ import annotations
 
 from datetime import UTC, datetime
@@ -61,10 +61,10 @@ def test_proxy_schema_matches_mapping_table() -> None:
 
 
 def test_attribute_keys_never_silently_disappear() -> None:
-    """A key with no matching FtM schema property must still survive via
-    context -- proven here by a full round trip, not just presence-checking
-    the intermediate proxy (which would pass even if proxy_to_canonical_entity
-    forgot to read it back)."""
+    """一個對不上任何 FtM schema 屬性的 key，還是要能透過 context 存活下來
+    ——這裡用完整 round trip 證明，而不是只檢查中間的 proxy 有沒有存在
+    （就算 proxy_to_canonical_entity 忘記讀回來，只檢查 proxy 那樣也會
+    通過）。"""
     entity = _make_entity("company", attributes={"totally_unknown_key_123": "value"})
     proxy = canonical_entity_to_proxy(entity)
     restored = proxy_to_canonical_entity(proxy)
@@ -72,10 +72,9 @@ def test_attribute_keys_never_silently_disappear() -> None:
 
 
 def test_schema_recognized_attribute_is_also_written_as_real_property() -> None:
-    """Attribute keys that collide with a real FtM property name (e.g. this
-    schema's own "name") get double-written: once into salva_extras for
-    lossless round-trip, once as an actual FtM property for downstream FtM
-    tool interop."""
+    """跟真實 FtM 屬性名稱撞名的 attribute key（例如這個 schema 自己的
+    "name"）會被寫兩份：一份進 salva_extras 做無損 round-trip，一份是真的
+    FtM property 給下游 FtM 工具互通用。"""
     entity = _make_entity("company", attributes={"country": "DE"})
     proxy = canonical_entity_to_proxy(entity)
     assert proxy.get("country") == ["DE"]

@@ -1,14 +1,13 @@
-"""Scoped LLM rerank -- production form of the accumulate-then-rerank pipeline
-that previously lived only in experiments/salva_v2/pipelines/accumulate_llm_rerank.md.
+"""Scoped LLM rerank——accumulate-then-rerank pipeline 的正式版，之前只活在
+experiments/salva_v2/pipelines/accumulate_llm_rerank.md 裡。
 
-The retrieval-derived confidence ranking (processing/confidence.py) orders and
-bounds the candidate pool; this stage hands the top-K (already ordered, not an
-all-or-nothing dump) to a bounded LLM call that makes the final relevance
-judgment and returns a filtered {name, url, claim} list. The LLM client is
-injected (defaults to salva_core.llm_sidecar.resolve_llm_completion_fn() --
-BYOK if configured, else the local sidecar CLI passthrough; amended
-2026-07-23, no longer local omlx) so it is unit-testable offline and
-degrades to a confidence-ordered passthrough when no LLM is reachable.
+檢索衍生的 confidence 排序（processing/confidence.py）先排序、限制候選池；
+這一階段把 top-K（已排序，不是全丟全收）交給一個 bounded LLM 呼叫做最終
+相關性判斷，回傳篩選過的 {name, url, claim} list。LLM client 是注入的
+（預設走 salva_core.llm_sidecar.resolve_llm_completion_fn()——BYOK 若有
+設定就優先，否則走本機 sidecar CLI passthrough；2026-07-23 修訂，不再是
+本機 omlx），所以可以離線做單元測試，LLM 連不上時會降級成 confidence
+排序後直接照單全收。
 """
 from __future__ import annotations
 

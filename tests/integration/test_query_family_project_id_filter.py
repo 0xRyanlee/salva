@@ -1,8 +1,8 @@
-"""query_family_memory has no project_id column of its own (only via
-discovery_runs.project_id, joined on run_id) -- previously list_query_family_memory()
-and search_query_family_memory() had no way to scope by project at all, so a
-non-default project's memory records were invisible to any caller (a
-visibility gap, not a leak: see docs/reports/memory-isolation-audit-20260721.md)."""
+"""query_family_memory 本身沒有 project_id 欄位（只透過 run_id 連到
+discovery_runs.project_id）——之前 list_query_family_memory()/
+search_query_family_memory() 完全沒有依 project 限定範圍的能力，non-default
+project 的記錄對任何呼叫方都不可見（是可見性缺口，不是洩漏：見
+docs/reports/memory-isolation-audit-20260721.md）。"""
 from __future__ import annotations
 
 from salva_core.persistence import (

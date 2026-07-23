@@ -1,8 +1,8 @@
-"""step 4 of experiments/salva_v2/ENTITY_RESOLUTION_INTEGRATION_EVAL.md:
-resolve_duplicate_entities() merges same-schema near-duplicate
-CanonicalEntity records via nomenklatura scoring + judgements. Uses a real
-nomenklatura.Resolver (in-memory SQLite session) -- not mocked -- since the
-Session/engine plumbing itself is exactly what step 4 needed to prove out."""
+"""experiments/salva_v2/ENTITY_RESOLUTION_INTEGRATION_EVAL.md 的 step 4：
+resolve_duplicate_entities() 透過 nomenklatura 打分+judgement 合併同 schema
+的近似重複 CanonicalEntity 記錄。用真實的 nomenklatura.Resolver（in-memory
+SQLite session）——不 mock——因為 Session/engine 這套接線本身就是 step 4
+要驗證的東西。"""
 from __future__ import annotations
 
 from salva_core.resolvers.entity_resolution import (
@@ -41,9 +41,9 @@ def test_unrelated_entities_stay_separate() -> None:
 
 
 def test_different_entity_types_never_compared_even_if_similar_names() -> None:
-    """A person and a company can coincidentally share a name-like string --
-    must never be merged, and must not even trigger a cross-schema
-    nomenklatura.matching call (which would be meaningless)."""
+    """一個 person 跟一個 company 可能碰巧共用類似的名稱字串——絕不能被
+    合併，甚至不該觸發跨 schema 的 nomenklatura.matching 呼叫（那樣做沒
+    意義）。"""
     entities = [
         _company("c1", "Acme Robotics"),
         CanonicalEntity(entity_id="p1", entity_type="person", title="Acme Robotics"),

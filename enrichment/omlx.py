@@ -1,10 +1,10 @@
 """
-LLM enrichment. Amended 2026-07-23: defaults to the sidecar CLI
-passthrough/BYOK backend (salva_core.llm_sidecar), not the local omlx model
-server -- see board salva-llm-backend-cli-passthrough. complete_with_omlx
-remains available for callers that explicitly opt into it.
+LLM enrichment。2026-07-23 修訂：預設改走 sidecar CLI passthrough/BYOK
+後端（salva_core.llm_sidecar），不是本機 omlx 模型伺服器——見 board
+salva-llm-backend-cli-passthrough。complete_with_omlx 仍可用，呼叫方明確
+選用即可。
 
-This adapter uses bounded prompts so enrichment stays scoped and predictable.
+這個 adapter 用 bounded prompts，讓 enrichment 保持範圍明確、可預期。
 """
 from __future__ import annotations
 
@@ -79,10 +79,10 @@ def enrich_with_diagnostics(
     system, user_template, task = _select_prompt_bundle(domain, request)
     user = user_template.format_map({k: (v or "") for k, v in fields.items()})
 
-    # Retry count still comes from request.enrichment (backend-agnostic);
-    # omlx_timeout only applies to the legacy complete_with_omlx path since
-    # the sidecar/BYOK backends manage their own timeout (SALVA_SIDECAR_TIMEOUT
-    # env var, or the BYOK request's own timeout) and aren't per-call configurable.
+    # 重試次數仍從 request.enrichment 來（跟後端無關）；omlx_timeout 只適用
+    # 於舊版 complete_with_omlx 路徑，因為 sidecar/BYOK 後端自己管理各自的
+    # timeout（SALVA_SIDECAR_TIMEOUT 環境變數，或 BYOK 請求自己的
+    # timeout），不支援逐次呼叫調整。
     max_retries = 0
     if request and request.enrichment:
         max_retries = request.enrichment.omlx_max_retries or 0

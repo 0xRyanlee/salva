@@ -1,7 +1,6 @@
-"""salva-llm-backend-cli-passthrough: the socket protocol between
-complete_with_sidecar() (client) and SidecarServer (server), and the
-BYOK-vs-sidecar dispatcher. The CLI runner is injected so these tests never
-shell out to a real claude/codex process."""
+"""salva-llm-backend-cli-passthrough：complete_with_sidecar()(client)與
+SidecarServer(server)之間的 socket 協定，以及 BYOK-vs-sidecar 派工邏輯。
+CLI runner 是注入的，這些測試從不真的呼叫 claude/codex process。"""
 from __future__ import annotations
 
 import threading

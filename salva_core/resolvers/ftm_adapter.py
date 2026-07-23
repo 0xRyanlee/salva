@@ -1,26 +1,22 @@
-"""Conversion between Salva's CanonicalEntity and FollowTheMoney EntityProxy.
+"""Salva 的 CanonicalEntity 與 FollowTheMoney EntityProxy 之間的雙向轉換。
 
-Part of the Nomenklatura entity-resolution integration (see
-experiments/salva_v2/ENTITY_RESOLUTION_INTEGRATION_EVAL.md, step 2). This
-module only does the schema translation -- it does not call
-nomenklatura.Resolver and is not wired into the live pipeline yet.
+屬於 Nomenklatura entity-resolution 整合的一部分（見
+experiments/salva_v2/ENTITY_RESOLUTION_INTEGRATION_EVAL.md，step 2）。本
+模組只做 schema 轉換——不呼叫 nomenklatura.Resolver，也還沒接進 live
+pipeline。
 
-Salva's entity_type is a flat 7-value Literal; FtM has ~70 hierarchical
-schemata with no precise match for several of Salva's types. The mapping
-below picks the closest existing schema rather than defining custom FtM
-schemata (deferred -- see the eval doc's "not now" list). Every schema
-chosen supports name/sourceUrl/notes/keywords so the mapping below is
-uniform; if a future entity_type is added, verify its target schema also
-supports those four properties or extend _to_context_extras() accordingly.
+Salva 的 entity_type 是扁平 7 值 Literal；FtM 有約 70 種階層 schemata，
+Salva 有幾個型別找不到精確對應。以下映射選最接近的既有 schema，而非自訂
+FtM schemata（延後——見 eval doc「不做」清單）。每個選中的 schema 都支援
+name/sourceUrl/notes/keywords，所以映射是一致的；未來若新增 entity_type，
+要確認目標 schema 也支援這四個屬性，或擴充 _to_context_extras()。
 
-Round-trip fidelity: entity_type, confidence, score, status, market,
-industry, event, created_at/updated_at, and the full original attributes
-dict do not have universal FtM schema properties across all six target
-schemata, so they are carried in EntityProxy.context (a dict FtM already
-round-trips through to_dict()/get_proxy(), not a schema property) rather
-than silently dropped. attributes keys that DO match a real property on the
-target schema are additionally written as FtM properties for interop with
-downstream FtM tooling.
+Round-trip 完整性：entity_type、confidence、score、status、market、
+industry、event、created_at/updated_at，以及完整原始 attributes dict，
+在這六種目標 schema 上都沒有通用的 FtM schema 屬性可對應，所以放進
+EntityProxy.context（FtM 本來就會透過 to_dict()/get_proxy() 一起round-trip
+的 dict，不是 schema 屬性）而不是靜默丟掉。attributes 裡真的對得上目標
+schema 屬性的 key，額外多寫一份 FtM property，方便下游 FtM 工具互通。
 """
 from __future__ import annotations
 
@@ -51,11 +47,10 @@ def canonical_entity_to_proxy(entity: CanonicalEntity) -> EntityProxy:
     schema = ENTITY_TYPE_TO_SCHEMA[entity.entity_type]
     schema_obj = model.get(schema)
     schema_props = schema_obj.properties
-    # The property that resolves proxy.caption is schema-specific -- e.g.
-    # Document's caption priority is ["fileName", "title"], not "name" (even
-    # though Document happens to also have an unrelated "name" property).
-    # Using the wrong key silently produces an empty caption that falls
-    # back to the schema label ("File") instead of entity.title.
+    # 決定 proxy.caption 的屬性是 schema 各自不同的——例如 Document 的
+    # caption 優先序是 ["fileName", "title"]，不是 "name"（即使 Document
+    # 剛好也有一個不相關的 "name" 屬性）。用錯 key 會讓 caption 靜默變空，
+    # 退回 schema 標籤（"File"）而非 entity.title。
     title_property = schema_obj.caption[0] if schema_obj.caption else "name"
 
     properties: dict[str, list[str]] = {title_property: [entity.title]}
@@ -66,12 +61,10 @@ def canonical_entity_to_proxy(entity: CanonicalEntity) -> EntityProxy:
     if entity.tags:
         properties["keywords"] = list(entity.tags)
 
-    # Best-effort FtM interop: attribute keys that match a real property on
-    # this schema get written as that property too (in addition to the
-    # verbatim stash below, so nothing is silently lost either way) --
-    # unless that key is one we already populated above, which would
-    # otherwise let an arbitrary attribute clobber e.g. the title/sourceUrl
-    # we just derived from dedicated CanonicalEntity fields.
+    # 盡力做到 FtM 互通：attribute key 對得上這個 schema 真實屬性的，額外
+    # 多寫一份成該屬性（加上下面逐字保底存一份，兩邊都不會遺失）——除非這
+    # 個 key 上面已經填過了，否則任意 attribute 會蓋掉剛從專屬
+    # CanonicalEntity 欄位算出來的 title/sourceUrl。
     for key, value in entity.attributes.items():
         if key in schema_props and key not in properties and value is not None:
             properties[key] = value if isinstance(value, list) else [str(value)]

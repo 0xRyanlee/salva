@@ -66,8 +66,8 @@ def test_sequential_success_not_exhausted(monkeypatch, tmp_path) -> None:
 
 
 def test_parallel_all_providers_fail_marks_exhausted(monkeypatch, tmp_path) -> None:
-    """_search_parallel previously never set last_search_exhausted at all --
-    a caller using retrieval_mode="parallel" could never see exhaustion."""
+    """_search_parallel 之前完全沒有設定 last_search_exhausted——用
+    retrieval_mode="parallel" 的呼叫方永遠看不到 exhaustion。"""
     retriever = _isolated_retriever(
         monkeypatch, tmp_path, [FailingProvider("one"), FailingProvider("two")], "parallel",
     )
@@ -89,9 +89,9 @@ def test_parallel_success_not_exhausted(monkeypatch, tmp_path) -> None:
 
 
 def test_any_search_exhausted_accumulates_across_calls(monkeypatch, tmp_path) -> None:
-    """A later successful call must not erase evidence that exhaustion
-    happened earlier in the same run -- any_search_exhausted is cumulative,
-    last_search_exhausted reflects only the most recent call."""
+    """後面一次成功的呼叫不能抹掉「同一個 run 裡早先發生過 exhaustion」
+    的證據——any_search_exhausted 是累積的，last_search_exhausted 只反映
+    最近一次呼叫。"""
     providers = [FailingProvider("one")]
     retriever = _isolated_retriever(monkeypatch, tmp_path, providers, "sequential")
     retriever.search("first query", n=10)

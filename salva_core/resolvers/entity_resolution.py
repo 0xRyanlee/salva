@@ -1,18 +1,17 @@
-"""Merge duplicate CanonicalEntity records within a single discovery run
-using nomenklatura's scoring + judgement model (step 3-4 of
-experiments/salva_v2/ENTITY_RESOLUTION_INTEGRATION_EVAL.md).
+"""在單一 discovery run 內，用 nomenklatura 的打分+judgement 模型合併重複
+的 CanonicalEntity 記錄（experiments/salva_v2/ENTITY_RESOLUTION_INTEGRATION_
+EVAL.md 的 step 3-4）。
 
-Step 3 finding: core/controller.py has no entity-level merge call site at
-all today -- salva_core/service.py builds one CanonicalEntity per surviving
-search result with no subsequent dedup. This module is new capability, not
-a replacement of live logic. It is NOT wired into service.py yet (see board
-salva-entity-resolution-nomenklatura-integration) -- deliberately, since
-wiring changes user-visible output and deserves an opt-in flag decision of
-its own, matching how enable_query_proposal shipped off-by-default first.
+Step 3 發現：core/controller.py 目前完全沒有 entity-level 合併呼叫點——
+salva_core/service.py 對每個倖存的搜尋結果各自建一個 CanonicalEntity，
+沒有後續去重。這個模組是全新能力，不是取代既有邏輯。刻意還沒 wire 進
+service.py（見 board salva-entity-resolution-nomenklatura-integration）——
+因為接線會改變使用者可見的輸出，值得有自己的 opt-in flag 決策，比照
+enable_query_proposal 一開始就預設關閉的做法。
 
-Only compares entities of the same FtM schema (via ftm_adapter's mapping) --
-comparing e.g. a Person against a Company is never a legitimate duplicate
-pair and wastes a nomenklatura.matching call.
+只比較同一 FtM schema 的實體（經 ftm_adapter 的映射）——例如拿 Person 跟
+Company 比對絕不會是合法的重複配對，只會浪費一次 nomenklatura.matching
+呼叫。
 """
 from __future__ import annotations
 
@@ -30,12 +29,11 @@ DEFAULT_MERGE_THRESHOLD = 0.7
 
 
 def make_ephemeral_resolver(db_url: str = "sqlite:///:memory:") -> Resolver:
-    """A resolver backed by a fresh in-memory judgement store, scoped to one
-    call site. Whether judgements should persist ACROSS runs (a durable
-    nomenklatura DB shared machine-wide, vs a fresh one per run) is a
-    separate wiring decision not made yet -- this is the safe default that
-    doesn't accidentally start accumulating a permanent cross-run store
-    before that decision is made."""
+    """一個由全新 in-memory judgement store 支撐的 resolver，範圍限定在
+    這一次呼叫。judgement 是否該跨 run 持久化（一個機器等級常駐的
+    nomenklatura DB，還是每次 run 都全新一份）是另一個尚未拍板的接線決策
+    ——這是安全預設，不會在那個決策定案前就意外開始累積一份永久的跨 run
+    儲存。"""
     engine = get_engine(db_url)
     get_metadata().create_all(bind=engine)
     return Resolver(make_session(db_url), create=True)
@@ -46,12 +44,11 @@ def resolve_duplicate_entities(
     resolver: Resolver | None = None,
     threshold: float = DEFAULT_MERGE_THRESHOLD,
 ) -> list[CanonicalEntity]:
-    """Returns a new list with score>=threshold pairs merged into one
-    CanonicalEntity (the earlier one in input order survives; source_urls/
-    tags/evidence from the merged-away entity are folded in, nothing is
-    silently dropped). O(n^2) within each schema group -- fine at
-    single-run entity counts (tens, not thousands); revisit with
-    nomenklatura's Index/blocking if that stops being true."""
+    """回傳一個新 list，score>=threshold 的配對合併成一個 CanonicalEntity
+    （輸入順序較早的那個存活；被合併掉的 entity 的 source_urls/tags/
+    evidence 會併進去，不會靜默丟失）。在每個 schema 群組內是 O(n^2)——
+    單一 run 的實體數量（幾十筆，非千筆等級）下沒問題；若這個假設不再
+    成立，改用 nomenklatura 的 Index/blocking 機制。"""
     if len(entities) < 2:
         return list(entities)
 
