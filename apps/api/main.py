@@ -4,6 +4,7 @@ import os
 from typing import Annotated
 
 from fastapi import Depends, FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 
 from apps.api.auth import require_auth
@@ -128,6 +129,17 @@ app = FastAPI(
     version="0.1.0",
     description="Standalone discovery intelligence runtime for multi-agent use.",
     dependencies=[Depends(require_auth)],
+)
+
+# desktop/ 的 Tauri 前端會呼叫這個本機 API——生產環境是 tauri://localhost，
+# `pnpm tauri dev` 底下 Vite 開發伺服器是 http://localhost:1420。刻意列白名單
+# 而非萬用字元，因為這支 API 本身可能之後掛 SALVA_API_KEY。
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["tauri://localhost", "http://localhost:1420", "http://127.0.0.1:1420"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Register exception handlers

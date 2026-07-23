@@ -1,0 +1,1094 @@
+@import "tailwindcss";
+@import "@fontsource-variable/geist";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/700.css";
+@import "@fontsource/jetbrains-mono/400-italic.css";
+/* Fira Code / Cascadia Code / Source Code Pro / Geist Mono are Settings-selectable
+   terminal fonts, not the default — loaded on demand via src/lib/terminalFonts.ts
+   (ensureTerminalFontLoaded) instead of eagerly here. See cc-spk-reduce-global-font-bundle. */
+
+/* ── Register semantic colors as Tailwind v4 theme tokens ────────────────────
+   Without this block, classes like bg-primary/border-border/text-foreground/
+   bg-destructive compile to zero CSS (v4 CSS-first mode has no default theme
+   for these shadcn-convention names) — confirmed via `grep` on a fresh
+   `vite build` output before this fix. The --x custom properties below are
+   defined further down in :root as raw "H S% L%" triples for use as
+   hsl(var(--x)); this block is the only thing that makes bg-x/text-x/border-x
+   utility classes actually resolve to them. (see spk-fix-tailwind-semantic-tokens-not-registered) */
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-sidebar: hsl(var(--sidebar));
+  --color-success: hsl(var(--success));
+  --color-warn: hsl(var(--warn));
+  --color-danger: hsl(var(--danger));
+}
+
+/* ── Design tokens ──────────────────────────────────────────────────────────── */
+@layer base {
+  :root {
+    /* ── Radix Colors: Sand (warm neutral) + Amber (accent) — dark ──────────────
+       12-step ramps: 1-2 bg · 3-6 interactive · 7-8 border · 9-10 solid · 11-12 text.
+       Mature, APCA-accessible. Semantic tokens alias ramp steps (var indirection).
+       Restored 2026-07-08 — a prior session swapped this to Slate+Sky (commit 86254be,
+       "per owner-confirmed Zen mock") without that confirmation actually happening;
+       this is the palette the shipped/stable build has always used. */
+    --sand-1:  60 3% 6%;   --sand-2:  60 2% 10%;  --sand-3:  60 1% 13%;
+    --sand-4:  60 2% 16%;  --sand-5:  60 3% 19%;  --sand-6:  45 4% 22%;
+    --sand-7:  48 4% 28%;  --sand-8:  43 4% 37%;  --sand-9:  47 4% 42%;
+    --sand-10: 53 3% 47%;  --sand-11: 45 5% 69%;  --sand-12: 60 6% 93%;
+    --amber-1:  36 29% 7%;  --amber-2:  39 32% 9%;  --amber-3:  36 71% 11%;
+    --amber-4:  37 100% 12%; --amber-5: 37 100% 15%; --amber-6: 39 90% 19%;
+    --amber-7:  37 64% 27%; --amber-8:  36 60% 35%; --amber-9:  42 100% 62%;
+    --amber-10: 50 100% 52%; --amber-11: 46 100% 54%; --amber-12: 41 100% 85%;
+
+    /* ── Semantic aliases → ramp steps ─────────────────────────────────────── */
+    --background:      var(--sand-1);
+    --foreground:      var(--sand-12);
+    --card:            var(--sand-2);
+    --card-foreground: var(--sand-12);
+    --popover:         var(--sand-3);
+    --popover-foreground: var(--sand-12);
+    --primary:         var(--amber-9);   /* Radix amber solid */
+    --primary-foreground: var(--sand-1); /* dark text on bright amber */
+    --secondary:       var(--sand-3);
+    --secondary-foreground: var(--sand-11);
+    --muted:           var(--sand-3);
+    --muted-foreground: var(--sand-11);
+    --accent:          var(--amber-9);
+    --accent-foreground: var(--sand-1);
+    --destructive:     0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border:          var(--sand-6);
+    --border-strong:   var(--sand-7);
+    --input:           var(--sand-6);
+    --ring:            var(--amber-8);
+    --sidebar:         var(--sand-1);
+    --code-bg:         var(--sand-2);
+    --active-dot:      142 71% 45%;
+    /* text tiers → sand ramp */
+    --fg-subtle: var(--sand-10);
+    --fg-faint:  var(--sand-8);
+    /* surface tiers → sand ramp */
+    --surface-2: var(--sand-4);
+    --surface-3: var(--sand-5);
+
+    /* ── Semantic extras ─────────────────────────────────────────────────────── */
+    --success: 142 71% 45%;
+    --warn:    32 95% 55%;
+    --danger:  0 72% 51%;
+
+    /* ── Border-radius + concentric scale (Apple HIG) ──────────────────────── */
+    --radius:    0.5rem;      /* 8px  — Tailwind compat alias */
+    --radius-xs: 0.25rem;    /* 4px  */
+    --radius-sm: 0.375rem;   /* 6px  */
+    --radius-md: 0.5rem;     /* 8px  — button / input */
+    --radius-lg: 0.75rem;    /* 12px — card / panel */
+    --radius-xl: 1rem;       /* 16px — modal */
+    --radius-2xl: 1.25rem;   /* 20px */
+    --radius-full: 9999px;   /* pill / badge / avatar */
+    --radius-window: 13px;   /* macOS Big Sur+ window corner — fixed px, not rem */
+
+    /* ── Typography ─────────────────────────────────────────────────────────── */
+    /* Typography — calc(Xrem/13) renders at X px when html font-size=13px (layout root).
+       Using rem keeps largerText zoom working; /13 corrects for the 13px root. */
+    --text-3xs:      calc(8rem / 13);   /* 8px  — micro labels (badges, subprocess tags) */
+    --text-2xs:      calc(9rem / 13);   /* 9px  */
+    --text-xs-minus: calc(10rem / 13);  /* 10px — type-micro */
+    --text-xs:  calc(11rem / 13);  /* 11px — type-caption */
+    --text-sm:  calc(12rem / 13);  /* 12px — type-label */
+    --text-md:  1rem;              /* 13px — matches root, simplest */
+    --text-body: calc(14rem / 13); /* 14px — type-body */
+    --text-title: calc(16rem / 13);/* 16px — type-title */
+    --text-lg:  calc(15rem / 13);  /* 15px */
+    --text-xl:  calc(17rem / 13);  /* 17px */
+    --text-2xl: calc(20rem / 13);  /* 20px — type-heading */
+    --text-display: calc(24rem / 13); /* 24px — type-display */
+
+    /* ── Motion ─────────────────────────────────────────────────────────────── */
+    /* Base durations — use named aliases for semantic intent */
+    --dur-fast:  160ms; /* micro-interaction: hover, card shadow */
+    --dur:       200ms; /* legacy alias — prefer --dur-base */
+    --dur-base:  260ms; /* overlay/toast enter, primary transitions */
+    --dur-enter: 300ms; /* elastic panel/split enter */
+    --dur-slow:  350ms;
+    /* Easing curves */
+    --ease-spring:  cubic-bezier(0.16, 1, 0.3, 1);  /* overlay enter, smooth decelerate */
+    --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1); /* panel enter, spring overshoot */
+    --ease-out: cubic-bezier(0, 0, 0.3, 1);   /* decelerate: enter (legacy) */
+    --ease-in:  cubic-bezier(0.5, 0, 1, 1);   /* accelerate: exit */
+    --ease:     var(--ease-spring);             /* backwards-compat alias */
+
+    /* ── Shadow (stacked — multiple offsets fake natural light, per awesome-design) ── */
+    --shadow-sm: 0 1px 1px hsl(0 0% 0% / 0.2), 0 1px 2px hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 1px 2px hsl(0 0% 0% / 0.2), 0 4px 8px -2px hsl(0 0% 0% / 0.35);
+    --shadow-lg: 0 2px 4px hsl(0 0% 0% / 0.2), 0 8px 16px -4px hsl(0 0% 0% / 0.4), 0 24px 32px -8px hsl(0 0% 0% / 0.45);
+
+    /* ── Glass surface system (B2 confirmed — V4 Frosted Glass + V2 Shadow) ─────
+       Use via inline style or @apply; raw values allow mixing with other rgba. */
+    --glass-1:            rgba(255,255,255,0.03);
+    --glass-card:         rgba(255,255,255,0.06);
+    --glass-overlay:      rgba(13,15,20,0.90);
+    --glass-blur-sm:      blur(8px);
+    --glass-blur-lg:      blur(16px);
+    --shadow-overlay:     0 32px 80px rgba(0,0,0,0.8), 0 4px 16px rgba(0,0,0,0.5);
+    --shadow-card-hover:  0 4px 16px rgba(0,0,0,0.5);
+
+    /* ── Semantic -soft (background) / -deep (pressed) variants ─────────────── */
+    --success-soft: 142 45% 16%;  --success-deep: 142 71% 38%;
+    --warn-soft:    32 70% 16%;    --warn-deep:    32 95% 47%;
+    --danger-soft:  0 55% 16%;     --danger-deep:  0 72% 44%;
+    --primary-soft: var(--amber-3); --primary-deep: var(--amber-10);
+
+    /* ── Type role properties (size = --text-*; pair with these) ───────────── */
+    --leading-tight: 1.3;
+    --leading: 1.45;
+    --leading-relaxed: 1.6;
+    --weight-normal: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --tracking-tight: -0.01em;
+
+  }
+
+  /* ── Reduce motion ─────────────────────────────────────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    :root { --dur-fast: 0ms; --dur: 0ms; --dur-base: 0ms; --dur-enter: 0ms; }
+    *, ::before, ::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+}
+
+/* ── Global base ────────────────────────────────────────────────────────────── */
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: transparent;
+    color: hsl(var(--foreground));
+    font-family: "Geist Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  /* Range slider track */
+  input[type=range]::-webkit-slider-runnable-track {
+    background: hsl(var(--secondary));
+    border-radius: 9999px;
+    height: 4px;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 9999px;
+    background: hsl(var(--primary));
+    margin-top: -4px;
+    cursor: pointer;
+  }
+
+  /* Scrollbars */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: var(--radius-xs);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+
+  /* Code / mono — tighter line-height for box-drawing alignment.
+     Covers Tailwind font-mono class so terminal, code blocks, paths keep JetBrains Mono. */
+  code, pre, .mono, .font-mono {
+    font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  /* Markdown highlight */
+  mark {
+    background-color: hsl(var(--primary) / 0.25);
+    color: hsl(var(--primary));
+    border-radius: var(--radius-xs);
+    padding: 0 2px;
+  }
+
+  /* Selection */
+  ::selection { background: hsl(var(--primary) / 0.3); }
+
+  /* Window open animation — scale-up + fade elastic */
+  #root {
+    opacity: 0;
+    transform: scale(0.88);
+    transform-origin: center center;
+  }
+  #root.app-ready {
+    opacity: 1;
+    transform: scale(1);
+    transition:
+      opacity 320ms cubic-bezier(0.34, 1.56, 0.64, 1),
+      transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #root.app-ready {
+      transition: opacity 150ms ease;
+      transform: none;
+    }
+  }
+
+  /* Focus ring — visible keyboard navigation */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Reduce transparency: disable frosted glass / blur layers */
+  @media (prefers-reduced-transparency: reduce) {
+    .noise-overlay { display: none; }
+  }
+}
+
+/* ── Light theme ────────────────────────────────────────────────────────────── */
+[data-theme="light"] {
+  --background:      45 18% 96%;  /* #f7f5f0 warm off-white */
+  --foreground:      40 12% 18%;  /* #30291e warm near-black */
+  --card:            45 14% 92%;
+  --card-foreground: 40 12% 18%;
+  --popover:         45 14% 92%;
+  --popover-foreground: 40 12% 18%;
+  --primary:         35 90% 42%;  /* amber-600 on light bg */
+  --primary-foreground: 0 0% 100%;
+  --secondary:       44 10% 88%;
+  --secondary-foreground: 40 8% 38%;
+  --muted:           44 10% 88%;
+  --muted-foreground: 40 8% 48%;
+  --accent:          35 90% 42%;
+  --accent-foreground: 0 0% 100%;
+  --destructive:     0 72% 44%;
+  --destructive-foreground: 0 0% 100%;
+  --border:          40 8% 82%;
+  --input:           40 8% 82%;
+  --ring:            35 90% 42%;
+  --sidebar:         44 14% 93%;
+  --code-bg:         44 10% 89%;
+  --active-dot:      142 60% 36%;
+  --shadow-sm: 0 1px 2px hsl(40 12% 18% / 0.08);
+  --shadow-md: 0 4px 12px hsl(40 12% 18% / 0.12);
+  --shadow-lg: 0 8px 24px hsl(40 12% 18% / 0.16);
+  /* text tiers */
+  --fg-subtle: 40 8% 52%;
+  --fg-faint:  40 6% 66%;
+  /* surface tiers */
+  --surface-2: 44 10% 88%;
+  --surface-3: 44 8% 84%;
+  /* border */
+  --border-strong: 40 8% 68%;
+  /* status soft/deep */
+  --success-soft: 142 35% 88%;  --success-deep: 142 55% 28%;
+  --warn-soft:    32 55% 88%;   --warn-deep:    32 75% 36%;
+  --danger-soft:  0 50% 90%;    --danger-deep:  0 65% 33%;
+  --primary-soft: 35 80% 90%;   --primary-deep: 35 85% 33%;
+  /* status base tokens for light bg (AA-contrast equivalents) */
+  --success: 142 55% 28%;
+  --warn:    32 75% 36%;
+  --danger:  0 65% 33%;
+}
+
+/* ── High-contrast dark (WCAG AAA target) ───────────────────────────────────── */
+[data-theme="hc-dark"] {
+  --background:      0 0% 0%;
+  --foreground:      0 0% 100%;
+  --card:            0 0% 8%;
+  --card-foreground: 0 0% 100%;
+  --popover:         0 0% 8%;
+  --popover-foreground: 0 0% 100%;
+  --primary:         50 100% 60%;  /* high-vis yellow */
+  --primary-foreground: 0 0% 0%;
+  --secondary:       0 0% 12%;
+  --secondary-foreground: 0 0% 90%;
+  --muted:           0 0% 12%;
+  --muted-foreground: 0 0% 75%;
+  --accent:          50 100% 60%;
+  --accent-foreground: 0 0% 0%;
+  --destructive:     0 100% 65%;
+  --destructive-foreground: 0 0% 0%;
+  --border:          0 0% 30%;
+  --input:           0 0% 20%;
+  --ring:            50 100% 60%;
+  --sidebar:         0 0% 4%;
+  --code-bg:         0 0% 6%;
+  --active-dot:      120 100% 50%;
+  /* text tiers */
+  --fg-subtle: 0 0% 60%;
+  --fg-faint:  0 0% 45%;
+  /* surface tiers */
+  --surface-2: 0 0% 18%;
+  --surface-3: 0 0% 22%;
+  /* border */
+  --border-strong: 0 0% 50%;
+  /* status soft/deep */
+  --success-soft: 120 70% 8%;   --success-deep: 120 100% 42%;
+  --warn-soft:    50 70% 8%;    --warn-deep:    50 100% 52%;
+  --danger-soft:  0 70% 8%;     --danger-deep:  0 100% 60%;
+  --primary-soft: 50 100% 8%;   --primary-deep: 50 100% 70%;
+}
+
+/* ── High-contrast light (WCAG AAA target) ──────────────────────────────────── */
+[data-theme="hc-light"] {
+  --background:      0 0% 100%;
+  --foreground:      0 0% 0%;
+  --card:            0 0% 96%;
+  --card-foreground: 0 0% 0%;
+  --popover:         0 0% 96%;
+  --popover-foreground: 0 0% 0%;
+  --primary:         240 100% 35%;  /* high-vis blue on white */
+  --primary-foreground: 0 0% 100%;
+  --secondary:       0 0% 90%;
+  --secondary-foreground: 0 0% 10%;
+  --muted:           0 0% 90%;
+  --muted-foreground: 0 0% 20%;
+  --accent:          240 100% 35%;
+  --accent-foreground: 0 0% 100%;
+  --destructive:     0 100% 35%;
+  --destructive-foreground: 0 0% 100%;
+  --border:          0 0% 30%;
+  --input:           0 0% 80%;
+  --ring:            240 100% 35%;
+  --sidebar:         0 0% 95%;
+  --code-bg:         0 0% 94%;
+  --active-dot:      120 100% 25%;
+  /* text tiers */
+  --fg-subtle: 0 0% 35%;
+  --fg-faint:  0 0% 55%;
+  /* surface tiers */
+  --surface-2: 0 0% 82%;
+  --surface-3: 0 0% 78%;
+  /* border */
+  --border-strong: 0 0% 5%;
+  /* status soft/deep */
+  --success-soft: 120 30% 88%;  --success-deep: 120 70% 22%;
+  --warn-soft:    32 50% 88%;   --warn-deep:    32 70% 28%;
+  --danger-soft:  0 45% 88%;    --danger-deep:  0 70% 28%;
+  --primary-soft: 240 70% 90%;  --primary-deep: 240 100% 25%;
+  --success: 120 70% 22%;
+  --warn:    32 70% 28%;
+  --danger:  0 70% 28%;
+}
+
+/* ── Quartz (neutral monochrome) ─────────────────────────────────────────────── */
+[data-theme="quartz"] {
+  --background:      240 10% 4%;
+  --foreground:      0 0% 98%;
+  --card:            240 6% 8%;
+  --card-foreground: 0 0% 98%;
+  --popover:         240 6% 10%;
+  --popover-foreground: 0 0% 98%;
+  --primary:         0 0% 98%;    /* near-white, inverted — echoes a minimal neutral IDE palette */
+  --primary-foreground: 240 6% 10%;
+  --secondary:       240 4% 16%;
+  --secondary-foreground: 0 0% 90%;
+  --muted:           240 4% 16%;
+  --muted-foreground: 240 5% 65%;
+  --accent:          240 4% 16%;
+  --accent-foreground: 0 0% 98%;
+  --destructive:     0 63% 31%;
+  --destructive-foreground: 0 0% 98%;
+  --border:          240 4% 16%;
+  --input:           240 4% 16%;
+  --ring:            240 5% 84%;
+  --sidebar:         240 8% 3%;
+  --code-bg:         240 6% 8%;
+  --active-dot:      142 71% 45%;
+  --fg-subtle: 240 5% 65%;
+  --fg-faint:  240 4% 45%;
+  --surface-2: 240 4% 13%;
+  --surface-3: 240 4% 18%;
+  --border-strong: 240 4% 26%;
+  --success-soft: 142 45% 14%;  --success-deep: 142 71% 45%;
+  --warn-soft:    32 45% 14%;   --warn-deep:    32 95% 55%;
+  --danger-soft:  0 45% 14%;    --danger-deep:  0 63% 45%;
+  --primary-soft: 240 4% 16%;   --primary-deep: 0 0% 85%;
+}
+
+/* ── Nebula (violet) ─────────────────────────────────────────────────────────── */
+[data-theme="nebula"] {
+  --background:      210 11% 4%;
+  --foreground:      180 7% 97%;
+  --card:            220 9% 8%;
+  --card-foreground: 180 7% 97%;
+  --popover:         222 8% 10%;
+  --popover-foreground: 180 7% 97%;
+  --primary:         234 56% 60%;  /* #5E6AD2 nebula violet */
+  --primary-foreground: 0 0% 100%;
+  --secondary:       228 8% 12%;
+  --secondary-foreground: 220 5% 70%;
+  --muted:           228 8% 12%;
+  --muted-foreground: 220 5% 60%;
+  --accent:          234 56% 60%;
+  --accent-foreground: 0 0% 100%;
+  --destructive:     0 70% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --border:          225 8% 16%;
+  --input:           225 8% 16%;
+  --ring:            234 56% 60%;
+  --sidebar:         210 11% 3%;
+  --code-bg:         220 9% 8%;
+  --active-dot:      142 71% 45%;
+  --fg-subtle: 220 5% 60%;
+  --fg-faint:  220 4% 42%;
+  --surface-2: 224 8% 14%;
+  --surface-3: 224 7% 18%;
+  --border-strong: 225 7% 24%;
+  --success-soft: 142 45% 14%;  --success-deep: 142 71% 45%;
+  --warn-soft:    32 45% 14%;   --warn-deep:    32 95% 55%;
+  --danger-soft:  0 55% 14%;    --danger-deep:  0 70% 55%;
+  --primary-soft: 234 40% 16%;  --primary-deep: 234 56% 70%;
+}
+
+/* ── Cobalt (blue) ───────────────────────────────────────────────────────────── */
+[data-theme="cobalt"] {
+  --background:      216 28% 7%;
+  --foreground:      210 17% 82%;
+  --card:            215 21% 11%;
+  --card-foreground: 210 17% 82%;
+  --popover:         215 21% 11%;
+  --popover-foreground: 210 17% 82%;
+  --primary:         212 100% 67%;  /* #58a6ff cobalt blue */
+  --primary-foreground: 216 28% 7%;
+  --secondary:       215 21% 11%;
+  --secondary-foreground: 210 12% 65%;
+  --muted:           215 21% 11%;
+  --muted-foreground: 210 10% 55%;
+  --accent:          212 100% 67%;
+  --accent-foreground: 216 28% 7%;
+  --destructive:     4 90% 71%;
+  --destructive-foreground: 216 28% 7%;
+  --border:          212 12% 21%;
+  --input:           212 12% 21%;
+  --ring:            212 100% 67%;
+  --sidebar:         216 28% 6%;
+  --code-bg:         215 21% 11%;
+  --active-dot:      137 66% 46%;
+  --fg-subtle: 210 10% 55%;
+  --fg-faint:  210 8% 40%;
+  --surface-2: 213 15% 15%;
+  --surface-3: 212 13% 19%;
+  --border-strong: 212 12% 28%;
+  --success-soft: 137 40% 14%;  --success-deep: 137 66% 46%;
+  --warn-soft:    39 45% 14%;   --warn-deep:    39 85% 53%;
+  --danger-soft:  4 50% 14%;    --danger-deep:  4 90% 63%;
+  --primary-soft: 212 45% 16%;  --primary-deep: 212 100% 77%;
+}
+
+/* ── Ember (red) ─────────────────────────────────────────────────────────────── */
+[data-theme="ember"] {
+  --background:      0 0% 6%;
+  --foreground:      0 0% 95%;
+  --card:            0 0% 10%;
+  --card-foreground: 0 0% 95%;
+  --popover:         0 0% 12%;
+  --popover-foreground: 0 0% 95%;
+  --primary:         0 100% 50%;   /* #FF0000 ember red */
+  --primary-foreground: 0 0% 100%;
+  --secondary:       0 0% 15%;
+  --secondary-foreground: 0 0% 75%;
+  --muted:           0 0% 15%;
+  --muted-foreground: 0 0% 62%;
+  --accent:          0 100% 50%;
+  --accent-foreground: 0 0% 100%;
+  --destructive:     0 100% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border:          0 0% 18%;
+  --input:           0 0% 18%;
+  --ring:            0 100% 50%;
+  --sidebar:         0 0% 5%;
+  --code-bg:         0 0% 10%;
+  --active-dot:      142 71% 45%;
+  --fg-subtle: 0 0% 62%;
+  --fg-faint:  0 0% 42%;
+  --surface-2: 0 0% 16%;
+  --surface-3: 0 0% 21%;
+  --border-strong: 0 0% 28%;
+  --success-soft: 142 45% 14%;  --success-deep: 142 71% 45%;
+  --warn-soft:    32 45% 14%;   --warn-deep:    32 95% 55%;
+  --danger-soft:  0 45% 16%;    --danger-deep:  0 90% 60%;
+  --primary-soft: 0 45% 16%;    --primary-deep: 0 100% 68%;
+}
+
+/* ── Obsidian (pure monochrome) ──────────────────────────────────────────────── */
+[data-theme="obsidian"] {
+  --background:      0 0% 0%;
+  --foreground:      0 0% 100%;
+  --card:            0 0% 6%;
+  --card-foreground: 0 0% 100%;
+  --popover:         0 0% 8%;
+  --popover-foreground: 0 0% 100%;
+  --primary:         0 0% 100%;    /* pure white — obsidian's signature invert-on-black */
+  --primary-foreground: 0 0% 0%;
+  --secondary:       0 0% 10%;
+  --secondary-foreground: 0 0% 80%;
+  --muted:           0 0% 10%;
+  --muted-foreground: 0 0% 60%;
+  --accent:          0 0% 100%;
+  --accent-foreground: 0 0% 0%;
+  --destructive:     0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --border:          0 0% 20%;
+  --input:           0 0% 20%;
+  --ring:            0 0% 60%;
+  --sidebar:         0 0% 0%;
+  --code-bg:         0 0% 6%;
+  --active-dot:      142 71% 45%;
+  --fg-subtle: 0 0% 60%;
+  --fg-faint:  0 0% 40%;
+  --surface-2: 0 0% 12%;
+  --surface-3: 0 0% 17%;
+  --border-strong: 0 0% 30%;
+  --success-soft: 142 45% 14%;  --success-deep: 142 71% 45%;
+  --warn-soft:    32 45% 14%;   --warn-deep:    32 95% 55%;
+  --danger-soft:  0 45% 14%;    --danger-deep:  0 72% 51%;
+  --primary-soft: 0 0% 15%;     --primary-deep: 0 0% 85%;
+}
+
+/* ── Dusk (indigo) ───────────────────────────────────────────────────────────── */
+[data-theme="dusk"] {
+  --background:      225 6% 13%;
+  --foreground:      220 8% 90%;
+  --card:            220 7% 18%;
+  --card-foreground: 220 8% 90%;
+  --popover:         223 7% 21%;
+  --popover-foreground: 220 8% 90%;
+  --primary:         235 86% 65%;  /* #5865F2 dusk indigo */
+  --primary-foreground: 0 0% 100%;
+  --secondary:       223 7% 21%;
+  --secondary-foreground: 220 6% 70%;
+  --muted:           223 7% 21%;
+  --muted-foreground: 220 5% 58%;
+  --accent:          235 86% 65%;
+  --accent-foreground: 0 0% 100%;
+  --destructive:     359 83% 59%;
+  --destructive-foreground: 0 0% 100%;
+  --border:          225 6% 24%;
+  --input:           225 6% 24%;
+  --ring:            235 86% 65%;
+  --sidebar:         225 7% 10%;
+  --code-bg:         220 7% 18%;
+  --active-dot:      139 47% 51%;
+  --fg-subtle: 220 5% 58%;
+  --fg-faint:  220 4% 42%;
+  --surface-2: 222 6% 24%;
+  --surface-3: 222 6% 29%;
+  --border-strong: 225 6% 32%;
+  --success-soft: 139 30% 16%;  --success-deep: 139 47% 51%;
+  --warn-soft:    38 45% 16%;   --warn-deep:    38 95% 55%;
+  --danger-soft:  359 45% 16%;  --danger-deep:  359 83% 59%;
+  --primary-soft: 235 45% 18%;  --primary-deep: 235 86% 75%;
+}
+
+/* ── Driftwood (warm neutral) ────────────────────────────────────────────────── */
+[data-theme="driftwood"] {
+  --background:      0 0% 10%;
+  --foreground:      60 4% 91%;
+  --card:            0 0% 14%;
+  --card-foreground: 60 4% 91%;
+  --popover:         0 0% 16%;
+  --popover-foreground: 60 4% 91%;
+  --primary:         210 77% 51%;  /* #2383E2 driftwood blue */
+  --primary-foreground: 0 0% 100%;
+  --secondary:       0 0% 18%;
+  --secondary-foreground: 60 3% 70%;
+  --muted:           0 0% 18%;
+  --muted-foreground: 60 2% 58%;
+  --accent:          210 77% 51%;
+  --accent-foreground: 0 0% 100%;
+  --destructive:     0 65% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --border:          0 0% 22%;
+  --input:           0 0% 22%;
+  --ring:            210 77% 51%;
+  --sidebar:         0 0% 8%;
+  --code-bg:         0 0% 14%;
+  --active-dot:      142 60% 45%;
+  --fg-subtle: 60 2% 58%;
+  --fg-faint:  60 2% 40%;
+  --surface-2: 0 0% 20%;
+  --surface-3: 0 0% 25%;
+  --border-strong: 0 0% 30%;
+  --success-soft: 142 40% 14%;  --success-deep: 142 60% 45%;
+  --warn-soft:    38 45% 14%;   --warn-deep:    38 90% 55%;
+  --danger-soft:  0 45% 14%;    --danger-deep:  0 65% 55%;
+  --primary-soft: 210 45% 16%;  --primary-deep: 210 77% 65%;
+}
+
+/* ── Verdant (green) ─────────────────────────────────────────────────────────── */
+[data-theme="verdant"] {
+  --background:      0 0% 7%;
+  --foreground:      0 0% 100%;
+  --card:            0 0% 9%;
+  --card-foreground: 0 0% 100%;
+  --popover:         0 0% 11%;
+  --popover-foreground: 0 0% 100%;
+  --primary:         141 76% 48%;  /* #1ED760 verdant green */
+  --primary-foreground: 0 0% 0%;
+  --secondary:       0 0% 16%;
+  --secondary-foreground: 0 0% 75%;
+  --muted:           0 0% 16%;
+  --muted-foreground: 0 0% 60%;
+  --accent:          141 76% 48%;
+  --accent-foreground: 0 0% 0%;
+  --destructive:     0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --border:          0 0% 20%;
+  --input:           0 0% 20%;
+  --ring:             141 76% 48%;
+  --sidebar:         0 0% 4%;
+  --code-bg:         0 0% 9%;
+  --active-dot:      141 76% 48%;
+  --fg-subtle: 0 0% 60%;
+  --fg-faint:  0 0% 42%;
+  --surface-2: 0 0% 18%;
+  --surface-3: 0 0% 23%;
+  --border-strong: 0 0% 30%;
+  --success-soft: 141 45% 14%;  --success-deep: 141 76% 48%;
+  --warn-soft:    32 45% 14%;   --warn-deep:    32 95% 55%;
+  --danger-soft:  0 45% 14%;    --danger-deep:  0 72% 51%;
+  --primary-soft: 141 40% 14%;  --primary-deep: 141 76% 60%;
+}
+
+/* ── System preference: light ───────────────────────────────────────────────── */
+@media (prefers-color-scheme: light) {
+  [data-theme="auto"] {
+    --background:      45 18% 96%;
+    --foreground:      40 12% 18%;
+    --card:            45 14% 92%;
+    --card-foreground: 40 12% 18%;
+    --popover:         45 14% 92%;
+    --popover-foreground: 40 12% 18%;
+    --primary:         35 90% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary:       44 10% 88%;
+    --secondary-foreground: 40 8% 38%;
+    --muted:           44 10% 88%;
+    --muted-foreground: 40 8% 48%;
+    --accent:          35 90% 42%;
+    --accent-foreground: 0 0% 100%;
+    --destructive:     0 72% 44%;
+    --destructive-foreground: 0 0% 100%;
+    --border:          40 8% 82%;
+    --input:           40 8% 82%;
+    --ring:            35 90% 42%;
+    --sidebar:         44 14% 93%;
+    --code-bg:         44 10% 89%;
+    --active-dot:      142 60% 36%;
+    --shadow-sm: 0 1px 2px hsl(40 12% 18% / 0.08);
+    --shadow-md: 0 4px 12px hsl(40 12% 18% / 0.12);
+    --shadow-lg: 0 8px 24px hsl(40 12% 18% / 0.16);
+    --fg-subtle: 40 8% 52%;
+    --fg-faint:  40 6% 66%;
+    --surface-2: 44 10% 88%;
+    --surface-3: 44 8% 84%;
+    --border-strong: 40 8% 68%;
+    --success-soft: 142 35% 88%;  --success-deep: 142 55% 28%;
+    --warn-soft:    32 55% 88%;   --warn-deep:    32 75% 36%;
+    --danger-soft:  0 50% 90%;    --danger-deep:  0 65% 33%;
+    --primary-soft: 35 80% 90%;   --primary-deep: 35 85% 33%;
+    --success: 142 55% 28%;
+    --warn:    32 75% 36%;
+    --danger:  0 65% 33%;
+  }
+}
+
+/* ── System preference: forced-colors / high-contrast ──────────────────────── */
+@media (prefers-contrast: more) {
+  [data-theme="auto"] {
+    --background:      0 0% 0%;
+    --foreground:      0 0% 100%;
+    --border:          0 0% 50%;
+    --primary:         50 100% 60%;
+    --ring:            50 100% 60%;
+  }
+}
+
+/* ── Density: compact / comfortable — session-row v-padding ─────────────────── */
+[data-density="compact"] .density-row    { padding-top: 5px; padding-bottom: 5px; }
+[data-density="comfortable"] .density-row { padding-top: 9px; padding-bottom: 9px; }
+
+/* ── Density: quiet ─────────────────────────────────────────────────────────── */
+[data-density="quiet"] {
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: 0 4px 12px hsl(0 0% 0% / 0.2);
+}
+[data-density="quiet"] .noise-overlay { display: none; }
+/* .divider: decorative horizontal/vertical rules only — NOT functional borders or focus rings */
+.divider { border-top: 1px solid hsl(var(--border) / 0.5); }
+[data-density="quiet"] .divider { opacity: 0.5; }
+
+/* ── Density: focus ─────────────────────────────────────────────────────────── */
+[data-density="focus"] {
+  --dur-fast:  60ms;
+  --dur:       100ms;
+  --dur-base:  130ms;
+  --dur-enter: 150ms;
+}
+[data-density="focus"] .noise-overlay { display: none; }
+[data-density="focus"] [data-focus-hide] { display: none; }
+
+/* ── Type role utilities (size+leading+weight bundled) ───────────────────────── */
+@utility type-micro   { font-size: var(--text-xs-minus); line-height: 1.3;  font-weight: 500; }
+@utility type-caption { font-size: var(--text-xs);       line-height: 1.4;  font-weight: 400; }
+@utility type-label   { font-size: var(--text-sm);       line-height: 1.4;  font-weight: 500; }
+@utility type-body    { font-size: var(--text-body);     line-height: 1.5;  font-weight: 400; }
+@utility type-title   { font-size: var(--text-title);    line-height: 1.4;  font-weight: 600; }
+@utility type-heading { font-size: var(--text-2xl);      line-height: 1.3;  font-weight: 600; }
+@utility type-display { font-size: var(--text-display);  line-height: 1.25; font-weight: 600; }
+
+/* ── Animations ─────────────────────────────────────────────────────────────── */
+
+/* Side-panel slide-in (legacy) */
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+.panel-enter { animation: slideIn var(--dur-enter) var(--ease-elastic); }
+
+/* Left-edge drawer slide-in — sidebar rail icons open their drawer from the left, next to
+   the rail that triggered it, not from the crowded right side by the AI panel. */
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+.panel-enter-left { animation: slideInLeft var(--dur-enter) var(--ease-elastic); }
+
+/* Settings centered modal */
+@keyframes modalEnter {
+  from { opacity: 0; transform: scale(0.96) translateY(6px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0); }
+}
+.modal-enter { animation: modalEnter 180ms var(--ease-spring); }
+.modal-backdrop {
+  background: hsl(var(--background) / 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Settings tab content switch — subtle slide from right + fade */
+@keyframes settingsTabEnter {
+  from { opacity: 0; transform: translateX(6px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.settings-tab-enter {
+  animation: settingsTabEnter var(--dur-fast) var(--ease-spring);
+}
+
+/* Theme switch: smooth color transition on every CSS var consumer */
+/* Scope to non-terminal areas so xterm self-manages its palette */
+:root {
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 120ms ease;
+}
+.xterm,
+.xterm *,
+.xterm-screen,
+.xterm-viewport {
+  transition: none !important;
+}
+
+/* Overlay / ⌘K / Toast: slide-up enter + fade-down exit */
+@keyframes overlayIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes overlayOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(10px); }
+}
+.overlay-enter { animation: overlayIn  var(--dur-base) var(--ease-spring) both; }
+.overlay-exit  { animation: overlayOut var(--dur-fast) var(--ease-in) both; }
+.toast-enter   { animation: overlayIn  var(--dur-base) var(--ease-spring) both; }
+
+/* Layout panel (AI sidebar, split pane): elastic spring enter */
+@keyframes elasticIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+.panel-elastic-enter { animation: elasticIn var(--dur-enter) var(--ease-elastic) both; }
+
+/* Tab agent-reveal: scale spring + brightness flash (Kano delight) */
+@keyframes tabAgentReveal {
+  0%   { opacity: 0; transform: scale(0.80) translateY(3px); filter: brightness(2); }
+  55%  { opacity: 1; transform: scale(1.07) translateY(-1px); filter: brightness(1.25); }
+  100% { opacity: 1; transform: scale(1)    translateY(0);    filter: brightness(1); }
+}
+@keyframes tabAgentIcon {
+  0%   { opacity: 0; transform: scale(0) rotate(-30deg); }
+  60%  { opacity: 1; transform: scale(1.2) rotate(8deg); }
+  100% { opacity: 1; transform: scale(1)   rotate(0deg); }
+}
+.tab-agent-pop  { animation: tabAgentReveal 300ms var(--ease-elastic) both; }
+.tab-agent-icon { animation: tabAgentIcon   360ms var(--ease-elastic) both; }
+
+/* Generic fade-up (small content enter) */
+@keyframes enterY {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes exitY {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(4px); }
+}
+.anim-enter { animation: enterY var(--dur-base) var(--ease-spring); }
+.anim-exit  { animation: exitY  var(--dur-fast) var(--ease-in); }
+
+/* ── Warp-style block hover ─────────────────────────────────────────────────── */
+.message-block {
+  transition: background-color var(--dur-fast) ease;
+}
+.message-block:hover {
+  background-color: hsl(var(--card));
+}
+
+/* ── Prose: markdown renderer ────────────────────────────────────────────────── */
+.prose-sparkie {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.prose-sparkie h1, .prose-sparkie h2, .prose-sparkie h3,
+.prose-sparkie h4, .prose-sparkie h5, .prose-sparkie h6 {
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 0.4em;
+  color: hsl(var(--foreground));
+}
+.prose-sparkie h1 { font-size: 1.2em; }
+.prose-sparkie h2 { font-size: 1.1em; }
+.prose-sparkie h3 { font-size: 1em; color: hsl(var(--foreground) / 0.85); }
+.prose-sparkie p { margin-top: 0.4em; margin-bottom: 0.4em; }
+.prose-sparkie p:first-child { margin-top: 0; }
+.prose-sparkie p:last-child  { margin-bottom: 0; }
+.prose-sparkie ul { list-style: disc;    padding-left: 1.4em; margin: 0.4em 0; }
+.prose-sparkie ol { list-style: decimal; padding-left: 1.4em; margin: 0.4em 0; }
+.prose-sparkie li { margin: 0.15em 0; }
+.prose-sparkie a { color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 2px; }
+.prose-sparkie strong { font-weight: 600; color: hsl(var(--foreground)); }
+.prose-sparkie em { font-style: italic; }
+.prose-sparkie code:not(pre code) {
+  font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
+  font-size: 0.9em;
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-xs);
+  background: hsl(var(--card));
+  color: hsl(var(--primary));
+}
+.prose-sparkie pre { margin: 0.5em 0; }
+.prose-sparkie hr {
+  border: none;
+  border-top: 1px solid hsl(var(--border) / 0.35);
+  margin: 0.5em 0;
+  opacity: 0.6;
+}
+
+/* Disable OpenType contextual alternates (CALT) in xterm to prevent --- from rendering as a
+   horizontal-rule ligature in JetBrains Mono / Fira Code (DOM renderer fallback only;
+   WebGL renderer renders each glyph independently so it is unaffected). */
+.xterm .xterm-rows,
+.xterm .xterm-rows span {
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+  /* Force text (non-emoji) presentation for ambiguous Unicode codepoints (①②③ etc.)
+     in DOM-renderer fallback. WebGL renderer is covered by the Menlo font-stack entry. */
+  font-variant-emoji: text;
+}
+
+/* Terminal scrollbar: hidden by default, fade in on container hover (Ghostty-style).
+   Override xterm's hardcoded background-color: #000 on .xterm-viewport since we
+   use allowTransparency=true; the terminal canvas renders on top. */
+.terminal-container .xterm-viewport {
+  background-color: transparent !important;
+}
+.terminal-container .xterm-viewport::-webkit-scrollbar {
+  width: 6px;
+}
+.terminal-container .xterm-viewport::-webkit-scrollbar-track {
+  background: transparent;
+}
+.terminal-container .xterm-viewport::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: var(--radius-xs);
+  transition: background 0.15s;
+}
+.terminal-container:hover .xterm-viewport::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+}
+.terminal-container:hover .xterm-viewport::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.4);
+}
+/* Cmd+K clear flash: 150ms white burst at 3% opacity */
+@keyframes clear-flash {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+.animate-clear-flash {
+  animation: clear-flash 150ms ease-out forwards;
+}
+
+@keyframes waiting-ring {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 0.2; transform: scale(1.15); }
+}
+.animate-waiting-ring {
+  animation: waiting-ring 2s ease-in-out infinite;
+}
+
+@keyframes waiting-dot {
+  0%, 100% { opacity: 0.8; }
+  50%       { opacity: 0.35; }
+}
+.animate-waiting-dot {
+  animation: waiting-dot 2s ease-in-out infinite;
+}
+
+.prose-sparkie blockquote {
+  border-left: 2px solid hsl(var(--primary) / 0.4);
+  padding-left: 0.75em;
+  color: hsl(var(--muted-foreground));
+  margin: 0.4em 0;
+}
+/* display:block + overflow-x lets wide tables scroll inside the narrow chat bubble
+   instead of collapsing cells and overlapping CJK text. */
+.prose-sparkie table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 0.5em 0;
+  font-size: 0.92em;
+}
+.prose-sparkie th,
+.prose-sparkie td {
+  border: 1px solid hsl(var(--border) / 0.6);
+  padding: 0.35em 0.6em;
+  text-align: left;
+  vertical-align: top;
+}
+.prose-sparkie thead th {
+  background: hsl(var(--card));
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+.prose-sparkie tbody tr:nth-child(even) td {
+  background: hsl(var(--muted) / 0.25);
+}
+
+/* ── Glass surface utilities ────────────────────────────────────────────────── */
+/* Shell surface glass — level 1: sidebar, titlebar, ai-panel */
+.glass-1 {
+  background: var(--glass-1);
+  backdrop-filter: var(--glass-blur-sm);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
+}
+/* Light/HC-light: glass-1 collapses to opaque sidebar bg */
+[data-theme="light"] .glass-1,
+[data-theme="hc-light"] .glass-1 {
+  background: hsl(var(--sidebar));
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* Card / panel glass — subtle frosted lift over dark bg */
+.glass-card {
+  background: var(--glass-card);
+  backdrop-filter: var(--glass-blur-sm);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
+  border: 1px solid rgba(148, 163, 184, 0.10);
+}
+.glass-card-hover {
+  transition: box-shadow var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+.glass-card-hover:hover {
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(148, 163, 184, 0.18);
+}
+
+/* Overlay / modal / popover glass — deep frosted dark */
+.glass-overlay {
+  background: var(--glass-overlay);
+  backdrop-filter: var(--glass-blur-lg);
+  -webkit-backdrop-filter: var(--glass-blur-lg);
+  box-shadow: var(--shadow-overlay);
+  border: 1px solid rgba(148, 163, 184, 0.10);
+}
+
+/* Ambient sky light — place as a fixed ::before on the app root so all glass
+   panels can pick it up. Applied on #app via App.tsx className. */
+.ambient-sky::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 40% at 50% 0%, rgba(56, 189, 248, 0.07) 0%, transparent 70%);
+  z-index: 0;
+}
+
+/* Reduce transparency: collapse glass layers to opaque equivalents */
+@media (prefers-reduced-transparency: reduce) {
+  .glass-1       { background: hsl(var(--sidebar)); backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .glass-card    { background: hsl(var(--card)); backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .glass-overlay { background: hsl(var(--popover)); backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .ambient-sky::before { display: none; }
+}
+
+/* ── Global interaction affordances ─────────────────────────────────────────── */
+
+/* Button: depress + darken on press (shotgun pick B2, 2026-07-10, DESIGN_SYSTEM.md#Press-feedback) */
+button:not([disabled]):active { transform: scale(0.95); filter: brightness(0.9); }
+
+/* Loading spinner: unified color/stroke/duration (shotgun pick B2, 2026-07-10, DESIGN_SYSTEM.md#Loading-spinner)
+   Applies alongside Tailwind's `animate-spin`; unlayered so it wins over the utility's defaults. */
+.spinner-icon {
+  color: hsl(var(--primary));
+  stroke-width: 2px;
+  animation-duration: 900ms;
+  animation-timing-function: linear;
+}
+.spinner-ring {
+  border-color: hsl(var(--primary) / 0.25);
+  border-top-color: hsl(var(--primary));
+  animation-duration: 900ms;
+  animation-timing-function: linear;
+}
+
+/* Input: lift + sky glow on focus */
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 2px hsl(var(--primary) / 0.35);
+  transition: transform var(--dur-fast) var(--ease-spring),
+              box-shadow var(--dur-fast) var(--ease-spring);
+}
+
