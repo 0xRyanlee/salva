@@ -14,6 +14,7 @@ import pytest
 
 from salva_core.llm import LLMPromptBundle
 from salva_core.llm_sidecar import (
+    SidecarAlreadyRunning,
     SidecarServer,
     _recv_message,
     _send_message,
@@ -22,6 +23,7 @@ from salva_core.llm_sidecar import (
     complete_with_byok,
     complete_with_sidecar,
     resolve_llm_completion_fn,
+    run_preflight,
     sidecar_reachable,
     sidecar_socket_path,
 )
@@ -133,6 +135,54 @@ def test_wrong_token_is_rejected_without_running_the_cli(instance_id) -> None:
     payload = json.loads(raw)
     assert payload["error"] == "invalid token"
     assert called["n"] == 0
+
+
+def test_serve_forever_refuses_to_steal_a_live_socket(instance_id) -> None:
+    """已經有活著的 sidecar 在聽同一個 socket path 時（leftover 的
+    manual-terminal 進程，或第二個 app instance），第二個 serve_forever()
+    必須拒絕 unlink 偷走它，而是 raise SidecarAlreadyRunning。"""
+    owner = _run_server_in_background(instance_id, lambda prompt, model_hint: ("{}", None))
+    challenger = SidecarServer(instance_id=instance_id, runner=lambda p, m: ("{}", None))
+    with pytest.raises(SidecarAlreadyRunning):
+        challenger.serve_forever()
+    # 原本的 sidecar 沒被搶占，socket 檔案還在、還能連得上。
+    assert sidecar_reachable(instance_id) is True
+    owner.socket_path.unlink(missing_ok=True)
+
+
+def test_run_preflight_reports_missing_cli(monkeypatch) -> None:
+    monkeypatch.setattr("salva_core.llm_sidecar.shutil.which", lambda cli: None)
+    result = run_preflight()
+    assert result == {
+        "claude": {"status": "missing", "path": None},
+        "codex": {"status": "missing", "path": None},
+    }
+
+
+def test_run_preflight_reports_ok_and_not_logged_in(monkeypatch) -> None:
+    monkeypatch.setattr(
+        "salva_core.llm_sidecar.shutil.which",
+        lambda cli: f"/usr/local/bin/{cli}",
+    )
+
+    def fake_run(args, **kwargs):
+        class _Result:
+            def __init__(self, returncode: int, stdout: str = "", stderr: str = "") -> None:
+                self.returncode = returncode
+                self.stdout = stdout
+                self.stderr = stderr
+
+        if args[0] == "/usr/local/bin/claude":
+            return _Result(0, stdout=json.dumps({"loggedIn": True}))
+        # 實測 codex CLI 把「Logged in / Not logged in」印到 stderr,不是 stdout。
+        return _Result(1, stderr="Not logged in")
+
+    monkeypatch.setattr("salva_core.llm_sidecar.subprocess.run", fake_run)
+    result = run_preflight()
+    assert result == {
+        "claude": {"status": "ok", "path": "/usr/local/bin/claude"},
+        "codex": {"status": "not_logged_in", "path": "/usr/local/bin/codex"},
+    }
 
 
 def test_dispatcher_prefers_byok_when_configured(monkeypatch) -> None:

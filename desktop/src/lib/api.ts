@@ -2,10 +2,6 @@
 // 子進程）。開發模式下 SALVA_API_KEY 未設定，auth 是關閉的，先不處理金鑰。
 const API_BASE = "http://127.0.0.1:8765";
 
-// 桌面端目前只有單一 campaign，先固定值讓 memory 迴路（campaign_promoted 讀取 /
-// quarantine 寫入）有 campaign_id 可用；之後有多 campaign 需求時再改成可選。
-export const CAMPAIGN_ID = "desktop-default";
-
 export interface EvidenceItem {
   source_url: string;
   source_name?: string | null;
@@ -194,6 +190,7 @@ export interface DiscoverResponse {
 export interface DiscoverParams {
   market: string;
   industry: string;
+  campaignId: string;
   objective?: string;
   product?: string;
   role?: string;
@@ -203,6 +200,57 @@ export interface DiscoverParams {
 export interface LlmSidecarStatus {
   sidecar_reachable: boolean;
   byok_configured: boolean;
+}
+
+// sidecar-managed-process.md §5：Rust 端 SidecarManager 狀態機的鏡像型別，
+// 透過 sidecar-managed-status event 送到前端，跟既有 core-status 的做法一致。
+export type SidecarManagedState =
+  | "disabled"
+  | "probing"
+  | "awaiting_login"
+  | "starting"
+  | "running"
+  | "external"
+  | "failed"
+  | "byok";
+
+export interface SidecarManagedStatus {
+  state: SidecarManagedState;
+  detail: string | null;
+}
+
+export type CampaignStatus = "active" | "archived";
+
+export interface CampaignRecord {
+  campaign_id: string;
+  name: string;
+  description?: string | null;
+  status: CampaignStatus;
+  retention_days?: number | null;
+  purge_at?: string | null;
+  cache_cleared_at?: string | null;
+  created_at: string;
+  updated_at: string;
+  archived_at?: string | null;
+  run_count: number;
+  memory_quarantine_count: number;
+  memory_promoted_count: number;
+}
+
+export interface CampaignsResponse {
+  items: CampaignRecord[];
+  total: number;
+}
+
+export interface CampaignCacheClearResponse {
+  campaign_id: string;
+  cleared: Record<string, number>;
+  cache_cleared_at: string;
+}
+
+export interface CampaignDeleteResponse {
+  campaign_id: string;
+  deleted: Record<string, number>;
 }
 
 // fetch() 本身在連線層失敗時(core離線/尚未啟動)拋出的是瀏覽器原生
@@ -226,7 +274,7 @@ export async function discover(params: DiscoverParams): Promise<DiscoverResponse
       max_results: params.maxResults ?? 10,
       execution: {
         persistence: "audit",
-        campaign_id: CAMPAIGN_ID,
+        campaign_id: params.campaignId,
         memory: { read_scope: "campaign_promoted", write_mode: "quarantine" },
       },
       intent: {
@@ -327,6 +375,106 @@ export async function searchQueryFamilies(
   if (!response.ok) {
     const detail = await response.text();
     throw new Error(`searchQueryFamilies 失敗（${response.status}）：${detail}`);
+  }
+  return response.json();
+}
+
+export async function listCampaigns(
+  status?: CampaignStatus,
+  limit = 100,
+  offset = 0,
+): Promise<CampaignsResponse> {
+  const params = new URLSearchParams({ limit: String(limit), offset: String(offset) });
+  if (status) params.set("status", status);
+  const response = await fetchCore(`/v1/campaigns?${params}`);
+  if (!response.ok) {
+    const detail = await response.text();
+    throw new Error(`listCampaigns 失敗（${response.status}）：${detail}`);
+  }
+  return response.json();
+}
+
+export async function createCampaign(
+  name: string,
+  description?: string,
+): Promise<CampaignRecord> {
+  const response = await fetchCore("/v1/campaigns", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, description: description || undefined }),
+  });
+  if (!response.ok) {
+    const detail = await response.text();
+    throw new Error(`createCampaign 失敗（${response.status}）：${detail}`);
+  }
+  return response.json();
+}
+
+export async function updateCampaign(
+  campaignId: string,
+  updates: { name?: string; description?: string },
+): Promise<CampaignRecord> {
+  const response = await fetchCore(`/v1/campaigns/${campaignId}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(updates),
+  });
+  if (!response.ok) {
+    const detail = await response.text();
+    throw new Error(`updateCampaign 失敗（${response.status}）：${detail}`);
+  }
+  return response.json();
+}
+
+export async function archiveCampaign(
+  campaignId: string,
+  retentionDays: number | null,
+): Promise<CampaignRecord> {
+  const response = await fetchCore(`/v1/campaigns/${campaignId}/archive`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ retention_days: retentionDays }),
+  });
+  if (!response.ok) {
+    const detail = await response.text();
+    throw new Error(`archiveCampaign 失敗（${response.status}）：${detail}`);
+  }
+  return response.json();
+}
+
+export async function unarchiveCampaign(campaignId: string): Promise<CampaignRecord> {
+  const response = await fetchCore(`/v1/campaigns/${campaignId}/unarchive`, { method: "POST" });
+  if (!response.ok) {
+    const detail = await response.text();
+    throw new Error(`unarchiveCampaign 失敗（${response.status}）：${detail}`);
+  }
+  return response.json();
+}
+
+export async function clearCampaignCache(
+  campaignId: string,
+): Promise<CampaignCacheClearResponse> {
+  const response = await fetchCore(`/v1/campaigns/${campaignId}/clear-cache`, {
+    method: "POST",
+  });
+  if (!response.ok) {
+    const detail = await response.text();
+    throw new Error(`clearCampaignCache 失敗（${response.status}）：${detail}`);
+  }
+  return response.json();
+}
+
+export async function deleteCampaign(
+  campaignId: string,
+  confirmName: string,
+): Promise<CampaignDeleteResponse> {
+  const params = new URLSearchParams({ confirm_name: confirmName });
+  const response = await fetchCore(`/v1/campaigns/${campaignId}?${params}`, {
+    method: "DELETE",
+  });
+  if (!response.ok) {
+    const detail = await response.text();
+    throw new Error(`deleteCampaign 失敗（${response.status}）：${detail}`);
   }
   return response.json();
 }

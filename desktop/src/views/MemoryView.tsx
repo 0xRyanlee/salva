@@ -7,7 +7,6 @@ import { EmptyState } from "@/components/ui/EmptyState";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 import {
-  CAMPAIGN_ID,
   listQueryFamilies,
   promoteQueryFamily,
   searchQueryFamilies,
@@ -30,7 +29,11 @@ function statusBadgeClassName(status: MemoryStatus) {
   return undefined; // legacy 用 Badge 預設的 secondary 灰階即可
 }
 
-export function MemoryView() {
+interface MemoryViewProps {
+  campaignId: string | null;
+}
+
+export function MemoryView({ campaignId }: MemoryViewProps) {
   const [filter, setFilter] = useState<MemoryStatus | "all">("all");
   const [records, setRecords] = useState<QueryFamilyMemoryRecord[]>([]);
   const [loading, setLoading] = useState(true);
@@ -46,11 +49,16 @@ export function MemoryView() {
   const inSearchMode = searchResults !== null;
 
   useEffect(() => {
+    if (!campaignId) {
+      setRecords([]);
+      setLoading(false);
+      return;
+    }
     let cancelled = false;
     setLoading(true);
     setError(null);
     listQueryFamilies({
-      campaignId: CAMPAIGN_ID,
+      campaignId,
       memoryStatus: filter === "all" ? undefined : filter,
       limit: 100,
     })
@@ -66,7 +74,7 @@ export function MemoryView() {
     return () => {
       cancelled = true;
     };
-  }, [filter]);
+  }, [campaignId, filter]);
 
   function selectFilter(value: MemoryStatus | "all") {
     setFilter(value);
@@ -107,10 +115,11 @@ export function MemoryView() {
   }
 
   async function handlePromote(memoryId: string) {
+    if (!campaignId) return;
     setPromotingIds((prev) => new Set(prev).add(memoryId));
     setError(null);
     try {
-      const updated = await promoteQueryFamily(memoryId, CAMPAIGN_ID);
+      const updated = await promoteQueryFamily(memoryId, campaignId);
       applyPromoted(memoryId, updated);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
@@ -125,6 +134,14 @@ export function MemoryView() {
 
   const items = inSearchMode ? searchResults! : records.map((record) => ({ record, score: undefined as number | undefined }));
   const busy = inSearchMode ? searching : loading;
+
+  if (!campaignId) {
+    return (
+      <div className="flex-1 flex flex-col p-4 max-w-3xl w-full mx-auto">
+        <EmptyState icon={Brain} label="尚未選擇 campaign——請先在右上角選擇或建立一個 campaign" />
+      </div>
+    );
+  }
 
   return (
     <div className="flex-1 flex flex-col gap-4 p-4 max-w-3xl w-full mx-auto">

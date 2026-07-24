@@ -6,9 +6,11 @@ use std::thread;
 use std::time::Duration;
 use tauri::{AppHandle, Emitter, Manager};
 
+mod sidecar;
+
 // desktop/src-tauri -> desktop -> salva repo root（Python core 所在位置）。
 #[cfg(debug_assertions)]
-fn repo_root() -> Option<PathBuf> {
+pub(crate) fn repo_root() -> Option<PathBuf> {
     // CARGO_MANIFEST_DIR 是編譯期巨集，把編譯當下這台機器的絕對路徑烤進
     // 執行檔——只在「開發者用 `pnpm tauri dev` 從原始碼跑」時成立，release
     // build 完全不該走這條（見下面 not(debug_assertions) 分支）。
@@ -19,7 +21,7 @@ fn repo_root() -> Option<PathBuf> {
 }
 
 #[cfg(not(debug_assertions))]
-fn repo_root() -> Option<PathBuf> {
+pub(crate) fn repo_root() -> Option<PathBuf> {
     // 正式打包版本尚未把 Python core 一起 bundle 進 .app（tauri.conf.json
     // 目前沒有 externalBin/resources 設定，這是已知的後續工作，見 board 卡
     // salva-desktop-tauri-core-carrier 的 environment-parity 審計發現）。
@@ -33,7 +35,7 @@ fn repo_root() -> Option<PathBuf> {
 // process 拿到的是精簡過的系統 PATH，官方安裝（~/.local/bin）或 Homebrew
 // （/opt/homebrew/bin，Apple Silicon）裝的 uv 都不在裡面。依序試已知安裝
 // 位置，最後才退回裸名讓 PATH 有機會解析。
-fn resolve_uv_binary() -> PathBuf {
+pub(crate) fn resolve_uv_binary() -> PathBuf {
     let mut candidates: Vec<PathBuf> = Vec::new();
     if let Some(home) = std::env::var_os("HOME") {
         candidates.push(PathBuf::from(&home).join(".local/bin/uv"));
@@ -48,12 +50,40 @@ fn resolve_uv_binary() -> PathBuf {
         .unwrap_or_else(|| PathBuf::from("uv"))
 }
 
+// `claude`/`codex` 被 sidecar 用裸名 subprocess 呼叫（見
+// salva_core/llm_sidecar.py 的 default_cli_runner），會繼承 sidecar 進程的
+// env——而 sidecar 進程本身又繼承 GUI app 的 env。Dock/Finder 啟動的 GUI
+// process 拿到的是精簡過的系統 PATH，官方安裝路徑（~/.local/bin，claude
+// CLI 實測所在）、Homebrew（/opt/homebrew/bin，codex CLI 實測所在）都不在
+// 裡面，不修的話 sidecar 存活檢查會綠燈，但每次 completion 都
+// FileNotFoundError，是最隱蔽的一種失敗模式。同樣的問題也套用到 core
+// spawn，一起修不用額外成本。
+pub(crate) fn augmented_path() -> String {
+    let existing = std::env::var("PATH").unwrap_or_default();
+    let mut extra: Vec<PathBuf> = Vec::new();
+    if let Some(home) = std::env::var_os("HOME") {
+        extra.push(PathBuf::from(&home).join(".local/bin"));
+        extra.push(PathBuf::from(&home).join(".cargo/bin"));
+        extra.push(PathBuf::from(&home).join(".npm-global/bin"));
+    }
+    extra.push(PathBuf::from("/opt/homebrew/bin"));
+    extra.push(PathBuf::from("/usr/local/bin"));
+
+    let mut segments: Vec<String> = extra
+        .into_iter()
+        .map(|p| p.to_string_lossy().into_owned())
+        .collect();
+    segments.push(existing);
+    segments.join(":")
+}
+
 struct CoreProcess(Mutex<Option<Child>>);
 
 fn spawn_core(repo_root: &PathBuf) -> std::io::Result<Child> {
     Command::new(resolve_uv_binary())
         .args(["run", "uvicorn", "apps.api.main:app", "--port", "8765"])
         .current_dir(repo_root)
+        .env("PATH", augmented_path())
         .stdout(Stdio::piped())
         .stderr(Stdio::piped())
         .spawn()
@@ -62,7 +92,7 @@ fn spawn_core(repo_root: &PathBuf) -> std::io::Result<Child> {
 // 轉發子進程輸出到本進程的 stdout/stderr 並記錄下來，讓「spawn() 成功但
 // process 隨後立刻死掉」（找不到 pyproject.toml、venv 壞掉等）不會是完全
 // 沉默的失敗——至少終端機/log 看得到，且會被下面的存活檢查讀到最後幾行。
-fn forward_and_capture(
+pub(crate) fn forward_and_capture(
     reader: impl std::io::Read + Send + 'static,
     prefix: &'static str,
 ) -> std::sync::Arc<Mutex<Vec<String>>> {
@@ -92,6 +122,18 @@ pub fn run() {
         .plugin(tauri_plugin_opener::init())
         .setup(|app| {
             let handle = app.handle().clone();
+
+            // sidecar 狀態機一律 manage，不管 core 的 repo_root 找不找得
+            // 到——sidecar 有自己獨立的 consent gate（前端呼叫
+            // sidecar_consent 觸發），這裡只處理 BYOK 這個唯一的例外：
+            // BYOK env vars 存在時直接跳進 Byok，不等前端的 consent 呼叫，
+            // 因為設定環境變數本身就是明確的 opt-in（spec §1）。
+            app.manage(sidecar::SidecarManager::new());
+            if sidecar::byok_configured() {
+                let manager = handle.state::<sidecar::SidecarManager>();
+                sidecar::set_state(&handle, &manager, sidecar::SidecarState::Byok);
+            }
+
             let Some(root) = repo_root() else {
                 emit_core_status(
                     &handle,
@@ -175,6 +217,12 @@ pub fn run() {
             }
             Ok(())
         })
+        .invoke_handler(tauri::generate_handler![
+            sidecar::sidecar_consent,
+            sidecar::sidecar_status,
+            sidecar::sidecar_restart,
+            sidecar::sidecar_open_login,
+        ])
         .on_window_event(|window, event| {
             if let tauri::WindowEvent::CloseRequested { .. } = event {
                 if let Some(state) = window.try_state::<CoreProcess>() {
@@ -183,6 +231,9 @@ pub fn run() {
                             let _ = child.kill();
                         }
                     }
+                }
+                if let Some(manager) = window.try_state::<sidecar::SidecarManager>() {
+                    sidecar::kill_on_close(&manager);
                 }
             }
         })

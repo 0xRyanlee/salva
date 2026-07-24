@@ -17,10 +17,11 @@ const OBJECTIVES = [
 
 interface SearchViewProps {
   coreOnline: boolean | null;
+  campaignId: string | null;
   onViewRun: (runId: string) => void;
 }
 
-export function SearchView({ coreOnline, onViewRun }: SearchViewProps) {
+export function SearchView({ coreOnline, campaignId, onViewRun }: SearchViewProps) {
   const [market, setMarket] = useState("Germany");
   const [industry, setIndustry] = useState("software");
   const [objective, setObjective] = useState("find_companies");
@@ -54,10 +55,11 @@ export function SearchView({ coreOnline, onViewRun }: SearchViewProps) {
   }
 
   async function runSearch() {
+    if (!campaignId) return;
     setLoading(true);
     setError(null);
     try {
-      const result = await discover({ market, industry, objective, maxResults: 15 });
+      const result = await discover({ market, industry, objective, campaignId, maxResults: 15 });
       setEntities(result.entities);
       setMeta(result.meta);
     } catch (err) {
@@ -104,15 +106,17 @@ export function SearchView({ coreOnline, onViewRun }: SearchViewProps) {
 
         <Button
           onClick={runSearch}
-          disabled={loading || !market || !industry || !coreOnline}
+          disabled={loading || !market || !industry || !coreOnline || !campaignId}
           className="w-full"
         >
           <Search size={14} className="mr-1.5" />
           {loading
             ? `Searching… (${elapsedSeconds}s)`
-            : coreOnline
-              ? "Search"
-              : "等待 core 連線…"}
+            : !coreOnline
+              ? "等待 core 連線…"
+              : !campaignId
+                ? "尚未選擇 campaign"
+                : "Search"}
         </Button>
       </section>
 

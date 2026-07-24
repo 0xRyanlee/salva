@@ -29,6 +29,7 @@ import json
 import logging
 import os
 import secrets
+import shutil
 import socket
 import subprocess
 import tempfile
@@ -46,6 +47,7 @@ SidecarRunner = Callable[[str, str | None], "tuple[str | None, str | None]"]
 
 DEFAULT_SOCKET_TIMEOUT = float(os.getenv("SALVA_SIDECAR_TIMEOUT", "60"))
 _CLI_ORDER = ("claude", "codex")
+PREFLIGHT_TIMEOUT = float(os.getenv("SALVA_SIDECAR_PREFLIGHT_TIMEOUT", "10"))
 
 
 def resolve_instance_id() -> str:
@@ -119,6 +121,84 @@ def _cli_invocation(cli: str, prompt: str, model_hint: str | None) -> list[str] 
     return None
 
 
+class SidecarAlreadyRunning(Exception):
+    """`serve_forever()` 發現 socket path 已經有活著的 process 在聽——
+    不可以 unlink 偷走它（app-managed spawn 下可能是 leftover 的
+    manual-terminal sidecar，或另一個 app instance）。"""
+
+
+def _probe_existing_socket(socket_path: Path, timeout: float = 0.5) -> bool:
+    """短逾時 connect() 既有 socket 檔案，只用來判斷「有沒有活的 process
+    在聽」，不送任何請求。"""
+    try:
+        with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as client:
+            client.settimeout(timeout)
+            client.connect(str(socket_path))
+        return True
+    except OSError:
+        return False
+
+
+def _check_claude_auth(cli_path: str) -> str:
+    """`claude auth status --json` 是非互動、快（實測 ~0.2s）、不打真的
+    API 的官方指令，直接回傳 loggedIn 布林——不需要 credentials 檔案位置
+    heuristic，也不需要用真的 completion 呼叫去試探。"""
+    try:
+        result = subprocess.run(
+            [cli_path, "auth", "status", "--json"],
+            capture_output=True,
+            text=True,
+            timeout=PREFLIGHT_TIMEOUT,
+        )
+    except (subprocess.TimeoutExpired, OSError):
+        return "error"
+    try:
+        payload = json.loads(result.stdout)
+    except (json.JSONDecodeError, ValueError):
+        return "error"
+    return "ok" if payload.get("loggedIn") else "not_logged_in"
+
+
+def _check_codex_auth(cli_path: str) -> str:
+    """`codex login status` 沒有 --json，登入時以 exit 0 印出「Logged in
+    using ...」——但實測（2026-07）這行是寫到 stderr，不是 stdout，兩個都要
+    檢查才不會誤判成 not_logged_in。"""
+    try:
+        result = subprocess.run(
+            [cli_path, "login", "status"],
+            capture_output=True,
+            text=True,
+            timeout=PREFLIGHT_TIMEOUT,
+        )
+    except (subprocess.TimeoutExpired, OSError):
+        return "error"
+    combined = (result.stdout + result.stderr).lower()
+    if result.returncode == 0 and "logged in" in combined:
+        return "ok"
+    return "not_logged_in"
+
+
+_AUTH_CHECKERS: dict[str, Callable[[str], str]] = {
+    "claude": _check_claude_auth,
+    "codex": _check_codex_auth,
+}
+
+
+def run_preflight() -> dict[str, dict[str, str | None]]:
+    """`--preflight` 模式用：對 `_CLI_ORDER` 每個 CLI 檢查 (a) PATH 上找不找
+    得到、(b) 有沒有登入。回傳 {cli: {"status": ..., "path": ...}}——path 用
+    絕對路徑，給 Rust 端 §3 的登入流程直接拿去開 terminal，不用再自己找一次。"""
+    results: dict[str, dict[str, str | None]] = {}
+    for cli in _CLI_ORDER:
+        path = shutil.which(cli)
+        if path is None:
+            results[cli] = {"status": "missing", "path": None}
+            continue
+        status = _AUTH_CHECKERS[cli](path)
+        results[cli] = {"status": status, "path": path}
+    return results
+
+
 class SidecarServer:
     """在 Unix domain socket 上跑 accept-loop。一次 connection 對應一次
     請求/回應（client 每次 completion 呼叫都開新連線，連線斷掉乾脆地
@@ -138,6 +218,8 @@ class SidecarServer:
 
     def serve_forever(self) -> None:
         if self.socket_path.exists():
+            if _probe_existing_socket(self.socket_path):
+                raise SidecarAlreadyRunning(str(self.socket_path))
             self.socket_path.unlink()
         token_path = _token_path(self.socket_path)
         token_path.write_text(self._token)

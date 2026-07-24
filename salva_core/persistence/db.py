@@ -56,8 +56,27 @@ CREATE TABLE IF NOT EXISTS discovery_runs (
     entities_json TEXT NOT NULL,
     relations_json TEXT NOT NULL,
     meta_json TEXT NOT NULL,
-    created_at TEXT NOT NULL
+    created_at TEXT NOT NULL,
+    cache_cleared_at TEXT
 );
+
+CREATE TABLE IF NOT EXISTS campaigns (
+    campaign_id TEXT PRIMARY KEY,
+    name TEXT NOT NULL COLLATE NOCASE,
+    description TEXT,
+    status TEXT NOT NULL DEFAULT 'active'
+        CHECK (status IN ('active', 'archived')),
+    retention_days INTEGER,
+    purge_at TEXT,
+    cache_cleared_at TEXT,
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL,
+    archived_at TEXT
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_campaigns_name ON campaigns(name);
+CREATE INDEX IF NOT EXISTS idx_campaigns_status ON campaigns(status);
+CREATE INDEX IF NOT EXISTS idx_campaigns_purge_at ON campaigns(purge_at) WHERE purge_at IS NOT NULL;
 
 CREATE TABLE IF NOT EXISTS telemetry_records (
     telemetry_id TEXT PRIMARY KEY,
@@ -442,6 +461,7 @@ def _migrate_schema(conn: sqlite3.Connection) -> None:
         "continuation_id": "TEXT",
         "persistence_mode": "TEXT NOT NULL DEFAULT 'audit'",
         "project_id": "TEXT",
+        "cache_cleared_at": "TEXT",
     }
     for column, sql_type in discovery_run_required_columns.items():
         if column not in discovery_run_columns:
@@ -671,6 +691,25 @@ def _migrate_schema(conn: sqlite3.Connection) -> None:
         conn.execute("ALTER TABLE jobs ADD COLUMN cancel_requested INTEGER NOT NULL DEFAULT 0")
     if "heartbeat_at" not in job_columns:
         conn.execute("ALTER TABLE jobs ADD COLUMN heartbeat_at TEXT")
+
+    # Backfill campaigns from historical campaign_id strings already scattered across
+    # discovery_runs / query_family_memory (e.g. the desktop's hardcoded "desktop-default")
+    # so they surface in the registered-campaign list once callers stop hardcoding ids.
+    # INSERT OR IGNORE + DISTINCT makes this safe to re-run on every ensure_db() call.
+    campaign_backfill_now = datetime.now(UTC).isoformat()
+    conn.execute(
+        """
+        INSERT OR IGNORE INTO campaigns (campaign_id, name, status, created_at, updated_at)
+        SELECT DISTINCT campaign_id, campaign_id, 'active', ?, ?
+        FROM (
+            SELECT campaign_id FROM discovery_runs WHERE campaign_id IS NOT NULL
+            UNION
+            SELECT campaign_id FROM query_family_memory WHERE campaign_id IS NOT NULL
+        )
+        WHERE campaign_id NOT LIKE 'campaign:auto:%'
+        """,
+        (campaign_backfill_now, campaign_backfill_now),
+    )
 
 
 def _ensure_hold_schema_registry(conn: sqlite3.Connection) -> None:

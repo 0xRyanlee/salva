@@ -4,6 +4,17 @@ salva_core.persistence — public API re-export shim.
 All callers import from salva_core.persistence directly; submodule structure
 is an internal detail. External API is unchanged from the monolithic module.
 """
+from .campaigns import (
+    archive_campaign,
+    clear_campaign_cache,
+    create_campaign,
+    delete_campaign,
+    get_campaign,
+    list_campaigns,
+    sweep_expired_campaigns,
+    unarchive_campaign,
+    update_campaign,
+)
 from .db import (
     DEFAULT_DB_PATH,
     FALLBACK_DB_PATH,
@@ -70,6 +81,16 @@ from .telemetry import (
 from .usage import list_usage_telemetry
 
 __all__ = [
+    # campaigns
+    "archive_campaign",
+    "clear_campaign_cache",
+    "create_campaign",
+    "delete_campaign",
+    "get_campaign",
+    "list_campaigns",
+    "sweep_expired_campaigns",
+    "unarchive_campaign",
+    "update_campaign",
     # db
     "DEFAULT_DB_PATH",
     "FALLBACK_DB_PATH",

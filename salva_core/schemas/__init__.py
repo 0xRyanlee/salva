@@ -6,6 +6,15 @@ from salva_core.schemas.benchmark import (
     BenchmarkRunRecord,
     BenchmarkSeriesPoint,
 )
+from salva_core.schemas.campaign import (
+    CampaignArchiveRequest,
+    CampaignCacheClearResponse,
+    CampaignCreateRequest,
+    CampaignDeleteResponse,
+    CampaignRecord,
+    CampaignsResponse,
+    CampaignUpdateRequest,
+)
 from salva_core.schemas.entity import CanonicalEntity, EventDetails
 from salva_core.schemas.enums import (
     CacheMode,
@@ -152,6 +161,13 @@ __all__ = [
     "BenchmarkSeriesPoint",
     "CacheMode",
     "CachePolicy",
+    "CampaignArchiveRequest",
+    "CampaignCacheClearResponse",
+    "CampaignCreateRequest",
+    "CampaignDeleteResponse",
+    "CampaignRecord",
+    "CampaignUpdateRequest",
+    "CampaignsResponse",
     "CanonicalEntity",
     "CanonicalRelation",
     "ClarificationMode",

@@ -1,6 +1,8 @@
 import asyncio
 import json
 import os
+from collections.abc import AsyncIterator
+from contextlib import asynccontextmanager
 from typing import Annotated
 
 from fastapi import Depends, FastAPI, HTTPException, Query
@@ -37,10 +39,17 @@ from salva_core.llm import list_llm_provider_descriptors, probe_omlx_health
 from salva_core.mode_resolver import explain_experience_plan
 from salva_core.navigation import build_mate_report, build_pilot_advice
 from salva_core.persistence import (
+    archive_campaign,
     cancel_job,
+    clear_campaign_cache,
+    create_campaign,
     create_job,
+    delete_campaign,
+    ensure_db,
+    get_campaign,
     get_job,
     get_run,
+    list_campaigns,
     list_evidence_chains,
     list_evidence_records,
     list_hold_schema_migrations,
@@ -56,6 +65,9 @@ from salva_core.persistence import (
     list_usage_telemetry,
     promote_query_family_memory,
     search_query_family_memory,
+    sweep_expired_campaigns,
+    unarchive_campaign,
+    update_campaign,
 )
 from salva_core.planner import build_planner_response
 from salva_core.presets import build_preset_catalog, resolve_preset_profile
@@ -69,6 +81,13 @@ from salva_core.schemas import (
     BenchmarkExportResult,
     BenchmarkReport,
     BenchmarkRequest,
+    CampaignArchiveRequest,
+    CampaignCacheClearResponse,
+    CampaignCreateRequest,
+    CampaignDeleteResponse,
+    CampaignRecord,
+    CampaignsResponse,
+    CampaignUpdateRequest,
     DiscoveryRequest,
     DiscoveryResponse,
     EvidenceChainsResponse,
@@ -124,11 +143,20 @@ from salva_core.topology import build_topology_probe_response
 from salva_core.transforms import build_output_transform_catalog, transform_entities
 from salva_core.worker import run_job
 
+
+@asynccontextmanager
+async def _lifespan(_app: FastAPI) -> AsyncIterator[None]:
+    ensure_db()
+    sweep_expired_campaigns()
+    yield
+
+
 app = FastAPI(
     title="Salva Runtime",
     version="0.1.0",
     description="Standalone discovery intelligence runtime for multi-agent use.",
     dependencies=[Depends(require_auth)],
+    lifespan=_lifespan,
 )
 
 # desktop/ 的 Tauri 前端會呼叫這個本機 API——生產環境是 tauri://localhost，
@@ -257,6 +285,7 @@ async def hold_walk(
 
 @app.post("/v1/discover", response_model=DiscoveryResponse)
 async def discover(payload: DiscoveryRequest) -> DiscoveryResponse:
+    _ensure_campaign_writable(payload.execution.campaign_id)
     tenant_id = _resolve_tenant_scope(payload.tenant_id, "discover")
     payload = payload.model_copy(update={"tenant_id": tenant_id})
     quota = evaluate_tenant_quota(tenant_id)
@@ -318,6 +347,7 @@ async def llm_sidecar_status() -> dict:
 
 @app.post("/v1/jobs", response_model=JobRecord)
 async def create_discovery_job(payload: JobCreateRequest) -> JobRecord:
+    _ensure_campaign_writable(payload.discovery.execution.campaign_id)
     tenant_id = _resolve_tenant_scope(payload.discovery.tenant_id, "job")
     payload = payload.model_copy(
         update={"discovery": payload.discovery.model_copy(update={"tenant_id": tenant_id})}
@@ -603,11 +633,112 @@ async def promote_query_family(
     memory_id: str,
     campaign_id: Annotated[str, Query(min_length=1)],
 ) -> dict:
+    _ensure_campaign_writable(campaign_id)
     try:
         item = promote_query_family_memory(memory_id, campaign_id=campaign_id)
     except KeyError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
     return item.model_dump(mode="json")
+
+
+def _ensure_campaign_writable(campaign_id: str | None) -> None:
+    if not campaign_id:
+        return
+    campaign = get_campaign(campaign_id)
+    if campaign is not None and campaign.status == "archived":
+        raise HTTPException(
+            status_code=409,
+            detail="campaign is archived; unarchive it to run new research",
+        )
+
+
+@app.get("/v1/campaigns", response_model=CampaignsResponse)
+async def campaigns(
+    status: Annotated[str | None, Query()] = None,
+    limit: Annotated[int, Query(ge=1, le=500)] = 100,
+    offset: Annotated[int, Query(ge=0)] = 0,
+) -> CampaignsResponse:
+    items, total = list_campaigns(status=status, limit=limit, offset=offset)
+    return CampaignsResponse(items=items, total=total)
+
+
+@app.post("/v1/campaigns", response_model=CampaignRecord, status_code=201)
+async def campaign_create(payload: CampaignCreateRequest) -> CampaignRecord:
+    try:
+        return create_campaign(payload.name, payload.description)
+    except ValueError as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
+
+
+@app.get("/v1/campaigns/{campaign_id}", response_model=CampaignRecord)
+async def campaign_detail(campaign_id: str) -> CampaignRecord:
+    item = get_campaign(campaign_id)
+    if item is None:
+        raise HTTPException(status_code=404, detail="Campaign not found")
+    return item
+
+
+@app.patch("/v1/campaigns/{campaign_id}", response_model=CampaignRecord)
+async def campaign_update(campaign_id: str, payload: CampaignUpdateRequest) -> CampaignRecord:
+    try:
+        return update_campaign(campaign_id, name=payload.name, description=payload.description)
+    except KeyError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+    except ValueError as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
+
+
+@app.post("/v1/campaigns/{campaign_id}/archive", response_model=CampaignRecord)
+async def campaign_archive(campaign_id: str, payload: CampaignArchiveRequest) -> CampaignRecord:
+    try:
+        return archive_campaign(campaign_id, payload.retention_days)
+    except KeyError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+
+@app.post("/v1/campaigns/{campaign_id}/unarchive", response_model=CampaignRecord)
+async def campaign_unarchive(campaign_id: str) -> CampaignRecord:
+    try:
+        return unarchive_campaign(campaign_id)
+    except KeyError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+
+
+@app.post("/v1/campaigns/{campaign_id}/clear-cache", response_model=CampaignCacheClearResponse)
+async def campaign_clear_cache(campaign_id: str) -> CampaignCacheClearResponse:
+    try:
+        cleared = clear_campaign_cache(campaign_id)
+    except KeyError as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+    campaign = get_campaign(campaign_id)
+    if campaign is None or campaign.cache_cleared_at is None:
+        raise HTTPException(status_code=500, detail="cache clear did not persist cache_cleared_at")
+    return CampaignCacheClearResponse(
+        campaign_id=campaign_id,
+        cleared=cleared,
+        cache_cleared_at=campaign.cache_cleared_at,
+    )
+
+
+@app.delete("/v1/campaigns/{campaign_id}", response_model=CampaignDeleteResponse)
+async def campaign_delete(
+    campaign_id: str,
+    confirm_name: Annotated[str, Query(min_length=1)],
+) -> CampaignDeleteResponse:
+    campaign = get_campaign(campaign_id)
+    if campaign is None:
+        raise HTTPException(status_code=404, detail="Campaign not found")
+    if campaign.status != "archived":
+        raise HTTPException(
+            status_code=409,
+            detail="campaign must be archived before it can be deleted",
+        )
+    if confirm_name.strip().lower() != campaign.name.strip().lower():
+        raise HTTPException(status_code=409, detail="confirm_name does not match campaign name")
+    deleted = delete_campaign(campaign_id)
+    return CampaignDeleteResponse(campaign_id=campaign_id, deleted=deleted)
 
 
 @app.get("/v1/semantic/query-families", response_model=SemanticQueryFamilySearchResponse)
