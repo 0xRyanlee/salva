@@ -33,7 +33,7 @@ function statusBadgeClassName(status: MemoryStatus) {
 export function MemoryView() {
   const [filter, setFilter] = useState<MemoryStatus | "all">("all");
   const [records, setRecords] = useState<QueryFamilyMemoryRecord[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [promotingIds, setPromotingIds] = useState<Set<string>>(new Set());
 

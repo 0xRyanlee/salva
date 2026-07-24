@@ -11,7 +11,7 @@ import { MemoryView } from "@/views/MemoryView";
 type View =
   | { name: "search" }
   | { name: "runs" }
-  | { name: "run-detail"; runId: string }
+  | { name: "run-detail"; runId: string; from: "search" | "runs" }
   | { name: "memory" };
 
 const NAV_ITEMS: { name: View["name"]; icon: typeof Search; label: string }[] = [
@@ -146,14 +146,19 @@ function App() {
           {view.name === "search" && (
             <SearchView
               coreOnline={coreOnline}
-              onViewRun={(runId) => setView({ name: "run-detail", runId })}
+              onViewRun={(runId) => setView({ name: "run-detail", runId, from: "search" })}
             />
           )}
           {view.name === "runs" && (
-            <RunsView onSelectRun={(runId) => setView({ name: "run-detail", runId })} />
+            <RunsView
+              onSelectRun={(runId) => setView({ name: "run-detail", runId, from: "runs" })}
+            />
           )}
           {view.name === "run-detail" && (
-            <RunDetailView runId={view.runId} onBack={() => setView({ name: "runs" })} />
+            <RunDetailView
+              runId={view.runId}
+              onBack={() => setView(view.from === "search" ? { name: "search" } : { name: "runs" })}
+            />
           )}
           {view.name === "memory" && <MemoryView />}
         </div>

@@ -263,7 +263,7 @@ export function RunDetailView({ runId, onBack }: RunDetailViewProps) {
       <div className="flex items-center gap-2">
         <Button variant="outline" size="sm" onClick={onBack}>
           <ArrowLeft size={14} className="mr-1.5" />
-          返回 Runs
+          返回
         </Button>
         <span className="type-caption text-muted-foreground">{runId}</span>
       </div>
