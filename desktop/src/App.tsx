@@ -1,26 +1,23 @@
 import { useEffect, useState } from "react";
 import { listen } from "@tauri-apps/api/event";
-import { Search, AlertTriangle, Sparkles, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import { EmptyState } from "@/components/ui/EmptyState";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { Sparkles, ChevronDown, Search, History, Brain } from "lucide-react";
 import { cn } from "@/lib/utils";
-import {
-  checkHealth,
-  checkLlmStatus,
-  discover,
-  type CanonicalEntity,
-  type DiscoverMeta,
-  type LlmSidecarStatus,
-} from "@/lib/api";
+import { checkHealth, checkLlmStatus, type LlmSidecarStatus } from "@/lib/api";
+import { SearchView } from "@/views/SearchView";
+import { RunsView } from "@/views/RunsView";
+import { RunDetailView } from "@/views/RunDetailView";
+import { MemoryView } from "@/views/MemoryView";
 
-const OBJECTIVES = [
-  { value: "find_companies", label: "Companies" },
-  { value: "find_leads", label: "Leads" },
-  { value: "find_events", label: "Events" },
-  { value: "find_market_activity", label: "Market Activity" },
+type View =
+  | { name: "search" }
+  | { name: "runs" }
+  | { name: "run-detail"; runId: string }
+  | { name: "memory" };
+
+const NAV_ITEMS: { name: View["name"]; icon: typeof Search; label: string }[] = [
+  { name: "search", icon: Search, label: "Search" },
+  { name: "runs", icon: History, label: "Runs" },
+  { name: "memory", icon: Brain, label: "Memory" },
 ];
 
 interface CoreStatusEvent {
@@ -33,13 +30,7 @@ function App() {
   const [coreError, setCoreError] = useState<string | null>(null);
   const [showCoreError, setShowCoreError] = useState(false);
   const [llmStatus, setLlmStatus] = useState<LlmSidecarStatus | null>(null);
-  const [market, setMarket] = useState("Germany");
-  const [industry, setIndustry] = useState("software");
-  const [objective, setObjective] = useState("find_companies");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [entities, setEntities] = useState<CanonicalEntity[]>([]);
-  const [meta, setMeta] = useState<DiscoverMeta | null>(null);
+  const [view, setView] = useState<View>({ name: "search" });
 
   // Rust 端 spawn core 後會 emit 一次立即結果（含失敗原因）；health-check
   // 輪詢是補強訊號（例如 core 起來後又中途掛掉），兩者互補而非取代彼此。
@@ -69,20 +60,6 @@ function App() {
       clearInterval(interval);
     };
   }, []);
-
-  async function runSearch() {
-    setLoading(true);
-    setError(null);
-    try {
-      const result = await discover({ market, industry, objective, maxResults: 15 });
-      setEntities(result.entities);
-      setMeta(result.meta);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : String(err));
-    } finally {
-      setLoading(false);
-    }
-  }
 
   const llmUnavailable = llmStatus && !llmStatus.sidecar_reachable && !llmStatus.byok_configured;
 
@@ -141,115 +118,45 @@ function App() {
         </div>
       )}
 
-      <div className="flex-1 flex flex-col gap-4 p-4 max-w-3xl w-full mx-auto">
-        <section className="glass-1 border border-border/30 rounded-lg p-3 space-y-3 overflow-hidden">
-          <div className="grid grid-cols-2 gap-3">
-            <label className="space-y-1">
-              <span className="type-label text-muted-foreground">Market</span>
-              <Input value={market} onChange={(e) => setMarket(e.target.value)} placeholder="Germany" />
-            </label>
-            <label className="space-y-1">
-              <span className="type-label text-muted-foreground">Industry</span>
-              <Input value={industry} onChange={(e) => setIndustry(e.target.value)} placeholder="software" />
-            </label>
-          </div>
+      <div className="flex-1 flex min-h-0">
+        <nav className="glass-1 border-r border-border/40 w-16 flex flex-col items-center gap-1 py-3">
+          {NAV_ITEMS.map((item) => {
+            const active = view.name === item.name || (view.name === "run-detail" && item.name === "runs");
+            const Icon = item.icon;
+            return (
+              <button
+                key={item.name}
+                type="button"
+                onClick={() => setView({ name: item.name } as View)}
+                className={cn(
+                  "flex flex-col items-center gap-0.5 w-12 py-2 rounded-md transition-colors",
+                  active
+                    ? "bg-primary/20 text-primary"
+                    : "text-muted-foreground hover:bg-secondary/60",
+                )}
+              >
+                <Icon size={16} />
+                <span className="text-xs-minus">{item.label}</span>
+              </button>
+            );
+          })}
+        </nav>
 
-          <label className="space-y-1 block">
-            <span className="type-label text-muted-foreground">Objective</span>
-            <div className="flex gap-1.5 flex-wrap">
-              {OBJECTIVES.map((opt) => (
-                <button
-                  key={opt.value}
-                  type="button"
-                  onClick={() => setObjective(opt.value)}
-                  className={cn(
-                    "rounded-full px-2.5 py-1 text-xs-minus border transition-colors",
-                    objective === opt.value
-                      ? "border-primary bg-primary/30 text-primary"
-                      : "border-border/40 text-muted-foreground hover:bg-secondary/60",
-                  )}
-                >
-                  {opt.label}
-                </button>
-              ))}
-            </div>
-          </label>
-
-          <Button
-            onClick={runSearch}
-            disabled={loading || !market || !industry || !coreOnline}
-            className="w-full"
-          >
-            <Search size={14} className="mr-1.5" />
-            {loading ? "Searching…" : coreOnline ? "Search" : "等待 core 連線…"}
-          </Button>
-        </section>
-
-        {error && (
-          <div className="rounded-md border border-destructive bg-destructive/10 text-destructive text-sm px-3 py-2">
-            {error}
-          </div>
-        )}
-
-        {meta && (
-          <div className="flex items-center gap-2 flex-wrap">
-            <Badge variant="secondary">
-              {meta.qualified_count ?? 0} / {meta.raw_count ?? 0} qualified
-            </Badge>
-            {meta.rounds != null && <Badge variant="outline">{meta.rounds} rounds</Badge>}
-            {!!meta.entities_merged_count && (
-              <Badge variant="default">{meta.entities_merged_count} merged</Badge>
-            )}
-            {meta.providers_exhausted && (
-              <span className="inline-flex items-center gap-1 text-warn text-xs-minus">
-                <AlertTriangle size={12} />
-                providers exhausted — results may be incomplete
-              </span>
-            )}
-          </div>
-        )}
-
-        <ScrollArea className="flex-1 min-h-0">
-          {entities.length === 0 && !loading ? (
-            <EmptyState
-              icon={Search}
-              label={
-                !meta
-                  ? "run a search to see results"
-                  : meta.providers_exhausted
-                    ? "資料來源用盡導致 0 筆結果，建議稍後重試"
-                    : "no qualified results"
-              }
+        <div className="flex-1 flex flex-col min-h-0 overflow-y-auto">
+          {view.name === "search" && (
+            <SearchView
+              coreOnline={coreOnline}
+              onViewRun={(runId) => setView({ name: "run-detail", runId })}
             />
-          ) : (
-            <ul className="space-y-2">
-              {entities.map((entity) => (
-                <li
-                  key={entity.entity_id}
-                  className="glass-1 border border-border/30 rounded-lg p-3 space-y-1 overflow-hidden"
-                >
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="type-body font-medium">{entity.title}</span>
-                    <Badge variant="outline">{entity.confidence.toFixed(2)}</Badge>
-                  </div>
-                  {entity.summary && (
-                    <p className="type-caption text-muted-foreground">{entity.summary}</p>
-                  )}
-                  {entity.source_urls[0] && (
-                    <a
-                      href={entity.source_urls[0]}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="type-caption text-primary hover:underline block truncate"
-                    >
-                      {entity.source_urls[0]}
-                    </a>
-                  )}
-                </li>
-              ))}
-            </ul>
           )}
-        </ScrollArea>
+          {view.name === "runs" && (
+            <RunsView onSelectRun={(runId) => setView({ name: "run-detail", runId })} />
+          )}
+          {view.name === "run-detail" && (
+            <RunDetailView runId={view.runId} onBack={() => setView({ name: "runs" })} />
+          )}
+          {view.name === "memory" && <MemoryView />}
+        </div>
       </div>
     </main>
   );
