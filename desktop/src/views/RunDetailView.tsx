@@ -3,6 +3,8 @@ import { ArrowLeft, FileText, GitBranch } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { EmptyState } from "@/components/ui/EmptyState";
+import { ErrorBanner } from "@/components/ui/ErrorBanner";
+import { LoadingState } from "@/components/ui/LoadingState";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { getRunSnapshot, type RunSnapshot, type CanonicalEntity } from "@/lib/api";
 
@@ -48,10 +50,10 @@ function EntityCard({ entity, snapshot }: { entity: CanonicalEntity; snapshot: R
       <button
         type="button"
         onClick={() => setExpanded((v) => !v)}
-        className="w-full flex items-center justify-between gap-2 text-left"
+        className="w-full flex items-center justify-between gap-2 text-left min-w-0"
       >
-        <span className="type-body font-medium">{entity.title}</span>
-        <Badge variant="outline">{entity.confidence.toFixed(2)}</Badge>
+        <span className="type-body font-medium truncate">{entity.title}</span>
+        <Badge variant="outline" className="shrink-0">{entity.confidence.toFixed(2)}</Badge>
       </button>
       {entity.summary && <p className="type-caption text-muted-foreground">{entity.summary}</p>}
 
@@ -80,7 +82,7 @@ function EntityCard({ entity, snapshot }: { entity: CanonicalEntity; snapshot: R
               </ul>
             </>
           ) : (
-            <p className="type-caption text-muted-foreground/50">no evidence chain for this entity</p>
+            <p className="type-caption text-muted-foreground/50">這個實體沒有佐證鏈</p>
           )}
         </div>
       )}
@@ -90,7 +92,7 @@ function EntityCard({ entity, snapshot }: { entity: CanonicalEntity; snapshot: R
 
 function EntitiesTab({ snapshot }: { snapshot: RunSnapshot }) {
   if (snapshot.entities.length === 0) {
-    return <EmptyState icon={FileText} label="no entities in this run" />;
+    return <EmptyState icon={FileText} label="這個 run 沒有實體" />;
   }
   return (
     <ul className="space-y-2">
@@ -104,7 +106,7 @@ function EntitiesTab({ snapshot }: { snapshot: RunSnapshot }) {
 function QueriesTab({ snapshot }: { snapshot: RunSnapshot }) {
   const telemetry = snapshot.telemetry as unknown as TelemetryRecord[];
   if (telemetry.length === 0) {
-    return <EmptyState icon={FileText} label="no query telemetry in this run" />;
+    return <EmptyState icon={FileText} label="這個 run 沒有查詢 telemetry" />;
   }
   const byRound = new Map<number, TelemetryRecord[]>();
   for (const record of telemetry) {
@@ -118,7 +120,7 @@ function QueriesTab({ snapshot }: { snapshot: RunSnapshot }) {
     <div className="space-y-4">
       {rounds.map((round) => (
         <div key={round} className="space-y-1.5">
-          <span className="type-label text-muted-foreground">round {round}</span>
+          <span className="type-label text-muted-foreground">第 {round} 輪</span>
           <ul className="space-y-1.5">
             {byRound.get(round)!.map((record, i) => (
               <li key={i} className="glass-1 border border-border/30 rounded-lg p-2.5 space-y-1">
@@ -128,9 +130,9 @@ function QueriesTab({ snapshot }: { snapshot: RunSnapshot }) {
                 </div>
                 <div className="flex items-center gap-2 flex-wrap type-caption text-muted-foreground">
                   <span>
-                    {record.results_qualified} / {record.results_total} qualified
+                    {record.results_qualified} / {record.results_total} 合格
                   </span>
-                  <span>avg score {record.avg_score.toFixed(2)}</span>
+                  <span>平均分數 {record.avg_score.toFixed(2)}</span>
                 </div>
                 {record.reject_reasons.length > 0 && (
                   <div className="flex items-center gap-1 flex-wrap">
@@ -152,7 +154,7 @@ function QueriesTab({ snapshot }: { snapshot: RunSnapshot }) {
 
 function HyperedgesTab({ snapshot }: { snapshot: RunSnapshot }) {
   if (snapshot.hyperedges.length === 0) {
-    return <EmptyState icon={GitBranch} label="no hyperedges in this run" />;
+    return <EmptyState icon={GitBranch} label="這個 run 沒有 hyperedge" />;
   }
   return (
     <ul className="space-y-2">
@@ -160,17 +162,17 @@ function HyperedgesTab({ snapshot }: { snapshot: RunSnapshot }) {
         <li key={edge.hyperedge_id} className="glass-1 border border-border/30 rounded-lg p-3 space-y-2">
           <div className="flex items-center gap-2 flex-wrap">
             <Badge variant="outline">{edge.hyperedge_type}</Badge>
-            <span className="type-caption text-muted-foreground">confidence {edge.confidence.toFixed(2)}</span>
+            <span className="type-caption text-muted-foreground">信心分數 {edge.confidence.toFixed(2)}</span>
           </div>
           {edge.summary && <p className="type-body">{edge.summary}</p>}
           {edge.members.length > 0 && (
             <table className="w-full text-xs-minus border-collapse">
               <thead>
                 <tr className="text-left text-muted-foreground border-b border-border/20">
-                  <th className="py-1 pr-2 font-medium">role</th>
-                  <th className="py-1 pr-2 font-medium">kind</th>
-                  <th className="py-1 pr-2 font-medium">member</th>
-                  <th className="py-1 pr-2 font-medium text-right">weight</th>
+                  <th className="py-1 pr-2 font-medium">角色</th>
+                  <th className="py-1 pr-2 font-medium">類型</th>
+                  <th className="py-1 pr-2 font-medium">成員</th>
+                  <th className="py-1 pr-2 font-medium text-right">權重</th>
                 </tr>
               </thead>
               <tbody>
@@ -194,18 +196,18 @@ function HyperedgesTab({ snapshot }: { snapshot: RunSnapshot }) {
 function SourcesTab({ snapshot }: { snapshot: RunSnapshot }) {
   const attempts = snapshot.source_attempts as unknown as SourceAttemptRecord[];
   if (attempts.length === 0) {
-    return <EmptyState icon={FileText} label="no source attempts in this run" />;
+    return <EmptyState icon={FileText} label="這個 run 沒有來源嘗試紀錄" />;
   }
   return (
     <table className="w-full text-sm border-collapse">
       <thead>
         <tr className="text-left type-caption text-muted-foreground border-b border-border/40">
-          <th className="py-1.5 pr-3 font-medium">base url</th>
-          <th className="py-1.5 pr-3 font-medium">strategy</th>
-          <th className="py-1.5 pr-3 font-medium">class</th>
-          <th className="py-1.5 pr-3 font-medium">status</th>
-          <th className="py-1.5 pr-3 font-medium text-right">results</th>
-          <th className="py-1.5 pr-3 font-medium">error</th>
+          <th className="py-1.5 pr-3 font-medium">網址</th>
+          <th className="py-1.5 pr-3 font-medium">策略</th>
+          <th className="py-1.5 pr-3 font-medium">類別</th>
+          <th className="py-1.5 pr-3 font-medium">狀態</th>
+          <th className="py-1.5 pr-3 font-medium text-right">結果</th>
+          <th className="py-1.5 pr-3 font-medium">錯誤</th>
         </tr>
       </thead>
       <tbody>
@@ -268,17 +270,9 @@ export function RunDetailView({ runId, onBack }: RunDetailViewProps) {
         <span className="type-caption text-muted-foreground">{runId}</span>
       </div>
 
-      {loading && (
-        <div className="flex-1 flex items-center justify-center">
-          <span className="type-caption text-muted-foreground">loading…</span>
-        </div>
-      )}
+      {loading && <LoadingState />}
 
-      {error && (
-        <div className="rounded-md border border-destructive bg-destructive/10 text-destructive text-sm px-3 py-2">
-          {error}
-        </div>
-      )}
+      {error && <ErrorBanner message={error} />}
 
       {snapshot && (
         <>
@@ -289,11 +283,11 @@ export function RunDetailView({ runId, onBack }: RunDetailViewProps) {
             </div>
             <div className="flex items-center gap-2 flex-wrap type-caption text-muted-foreground">
               {snapshot.created_at && <span>{snapshot.created_at}</span>}
-              <Badge variant="secondary">{snapshot.entity_count} entities</Badge>
-              <Badge variant="secondary">{snapshot.evidence_count} evidence</Badge>
-              <Badge variant="secondary">{snapshot.evidence_chain_count} chains</Badge>
-              <Badge variant="secondary">{snapshot.hyperedge_count} hyperedges</Badge>
-              <Badge variant="secondary">{snapshot.query_family_count} query families</Badge>
+              <Badge variant="secondary">{snapshot.entity_count} 個實體</Badge>
+              <Badge variant="secondary">{snapshot.evidence_count} 筆佐證</Badge>
+              <Badge variant="secondary">{snapshot.evidence_chain_count} 條佐證鏈</Badge>
+              <Badge variant="secondary">{snapshot.hyperedge_count} 個 hyperedge</Badge>
+              <Badge variant="secondary">{snapshot.query_family_count} 個 query family</Badge>
             </div>
 
             {audit && (
@@ -334,10 +328,10 @@ export function RunDetailView({ runId, onBack }: RunDetailViewProps) {
 
           <Tabs defaultValue="entities" className="flex-1 min-h-0">
             <TabsList>
-              <TabsTrigger value="entities">Entities</TabsTrigger>
-              <TabsTrigger value="queries">Queries</TabsTrigger>
-              <TabsTrigger value="hyperedges">Hyperedges</TabsTrigger>
-              <TabsTrigger value="sources">Sources</TabsTrigger>
+              <TabsTrigger value="entities">實體</TabsTrigger>
+              <TabsTrigger value="queries">查詢</TabsTrigger>
+              <TabsTrigger value="hyperedges">Hyperedge</TabsTrigger>
+              <TabsTrigger value="sources">來源</TabsTrigger>
             </TabsList>
             <TabsContent value="entities">
               <EntitiesTab snapshot={snapshot} />

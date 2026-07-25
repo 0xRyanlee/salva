@@ -35,7 +35,7 @@ export function LlmStatusPopover({ managedStatus, llmStatus, mismatch, onEnable 
 
   return (
     <div className="space-y-2">
-      <span className="type-label">LLM enrichment</span>
+      <span className="type-label">LLM 增強功能</span>
 
       {state === "disabled" && (
         <div className="space-y-2">

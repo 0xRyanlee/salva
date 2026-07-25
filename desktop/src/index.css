@@ -189,6 +189,11 @@
     -webkit-font-smoothing: antialiased;
     overflow: hidden;
     user-select: none;
+    /* CJK 沒有天然斷詞空格，動態內容（entity summary、campaign 描述等）長字串
+       容易溢出容器；broad base rule 涵蓋所有動態文字容器，.truncate 元素的
+       white-space: nowrap 優先權更高，不受影響仍維持單行省略。 */
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   /* Range slider track */

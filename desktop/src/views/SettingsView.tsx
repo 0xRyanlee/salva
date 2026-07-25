@@ -1,11 +1,18 @@
 import { useState } from "react";
 import { Settings as SettingsIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
+import { ErrorBanner } from "@/components/ui/ErrorBanner";
+import { SuccessBanner } from "@/components/ui/SuccessBanner";
+import { RetentionPicker } from "@/components/ui/RetentionPicker";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "@/components/ui/dialog";
 import { listCampaigns, clearCampaignCache } from "@/lib/api";
 
-const RETENTION_PRESETS = [7, 30, 90];
 const DEFAULT_RETENTION_KEY = "salva.defaultRetentionDays";
 
 export function readDefaultRetention(): number | null {
@@ -17,7 +24,7 @@ export function readDefaultRetention(): number | null {
 
 export function SettingsView() {
   const [defaultRetention, setDefaultRetention] = useState<number | null>(readDefaultRetention);
-  const [customValue, setCustomValue] = useState("");
+  const [bulkConfirmOpen, setBulkConfirmOpen] = useState(false);
   const [bulkRunning, setBulkRunning] = useState(false);
   const [bulkError, setBulkError] = useState<string | null>(null);
   const [bulkReceipt, setBulkReceipt] = useState<{ campaigns: number; counts: Record<string, number> } | null>(
@@ -29,7 +36,7 @@ export function SettingsView() {
     localStorage.setItem(DEFAULT_RETENTION_KEY, value == null ? "indefinite" : String(value));
   }
 
-  async function handleBulkClearCache() {
+  async function confirmBulkClearCache() {
     setBulkRunning(true);
     setBulkError(null);
     setBulkReceipt(null);
@@ -43,6 +50,7 @@ export function SettingsView() {
         }
       }
       setBulkReceipt({ campaigns: items.length, counts: aggregate });
+      setBulkConfirmOpen(false);
     } catch (err) {
       setBulkError(err instanceof Error ? err.message : String(err));
     } finally {
@@ -62,53 +70,7 @@ export function SettingsView() {
         <p className="type-caption text-muted-foreground">
           之後封存 campaign 時，「封存」對話框的預設選項會套用這個值；每個 campaign 仍可個別調整。
         </p>
-        <div className="flex gap-1.5 flex-wrap">
-          {RETENTION_PRESETS.map((days) => (
-            <button
-              key={days}
-              type="button"
-              onClick={() => {
-                persistRetention(days);
-                setCustomValue("");
-              }}
-              className={cn(
-                "rounded-full px-2.5 py-1 text-xs-minus border transition-colors",
-                defaultRetention === days
-                  ? "border-primary bg-primary/30 text-primary"
-                  : "border-border/40 text-muted-foreground hover:bg-secondary/60",
-              )}
-            >
-              {days} 天
-            </button>
-          ))}
-          <button
-            type="button"
-            onClick={() => persistRetention(null)}
-            className={cn(
-              "rounded-full px-2.5 py-1 text-xs-minus border transition-colors",
-              defaultRetention === null
-                ? "border-primary bg-primary/30 text-primary"
-                : "border-border/40 text-muted-foreground hover:bg-secondary/60",
-            )}
-          >
-            無限期
-          </button>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="type-caption text-muted-foreground shrink-0">自訂天數</span>
-          <Input
-            type="number"
-            min={1}
-            value={customValue}
-            onChange={(e) => {
-              setCustomValue(e.target.value);
-              const n = Number(e.target.value);
-              if (e.target.value && n >= 1) persistRetention(n);
-            }}
-            placeholder="例：14"
-            className="w-24"
-          />
-        </div>
+        <RetentionPicker value={defaultRetention} onChange={persistRetention} />
       </section>
 
       <section className="glass-1 border border-border/30 rounded-lg p-3 space-y-2">
@@ -116,23 +78,38 @@ export function SettingsView() {
         <p className="type-caption text-muted-foreground">
           對所有已封存的 campaign 逐一執行清除快取，保留 query family 記憶與已萃取的實體/關係，只清可再生的原始資料。
         </p>
-        <Button size="sm" variant="outline" disabled={bulkRunning} onClick={handleBulkClearCache}>
-          {bulkRunning ? "清除中…" : "清除所有已封存 campaign 的快取"}
+        <Button size="sm" variant="outline" disabled={bulkRunning} onClick={() => setBulkConfirmOpen(true)}>
+          清除所有已封存 campaign 的快取
         </Button>
-        {bulkError && (
-          <div className="rounded-md border border-destructive bg-destructive/10 text-destructive text-sm px-3 py-2">
-            {bulkError}
-          </div>
-        )}
+        {bulkError && <ErrorBanner message={bulkError} />}
         {bulkReceipt && (
-          <div className="rounded-md border border-success/40 bg-success/10 text-success text-sm px-3 py-2">
+          <SuccessBanner>
             已處理 {bulkReceipt.campaigns} 個已封存 campaign：
             {Object.entries(bulkReceipt.counts)
               .map(([table, n]) => `${table} ${n}`)
               .join("、") || "沒有可清除的資料"}
-          </div>
+          </SuccessBanner>
         )}
       </section>
+
+      <Dialog open={bulkConfirmOpen} onOpenChange={(open) => !bulkRunning && setBulkConfirmOpen(open)}>
+        <DialogContent>
+          <DialogTitle>清除所有已封存 campaign 的快取</DialogTitle>
+          <DialogDescription>
+            這會對每一個已封存的 campaign 執行清除快取，只清掉可再生的原始資料（原始搜尋片段/標題文字、embedding
+            向量、per-run 診斷紀錄），不會動到已萃取出的實體/關係/hyperedge 與 query family 記憶。此動作會套用到所有已封存
+            campaign，無法個別排除。
+          </DialogDescription>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setBulkConfirmOpen(false)}>
+              取消
+            </Button>
+            <Button disabled={bulkRunning} onClick={confirmBulkClearCache}>
+              {bulkRunning ? "清除中…" : "確認清除"}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

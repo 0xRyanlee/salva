@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { History } from "lucide-react";
 import { EmptyState } from "@/components/ui/EmptyState";
+import { ErrorBanner } from "@/components/ui/ErrorBanner";
+import { LoadingState } from "@/components/ui/LoadingState";
 import { listRuns, type RunRecord } from "@/lib/api";
 
 function relativeTime(iso: string): string {
@@ -56,19 +58,13 @@ export function RunsView({ onSelectRun }: RunsViewProps) {
   }, []);
 
   if (loading) {
-    return (
-      <div className="flex-1 flex items-center justify-center">
-        <span className="type-caption text-muted-foreground">loading…</span>
-      </div>
-    );
+    return <LoadingState />;
   }
 
   if (error) {
     return (
       <div className="flex-1 p-4">
-        <div className="rounded-md border border-destructive bg-destructive/10 text-destructive text-sm px-3 py-2">
-          {error}
-        </div>
+        <ErrorBanner message={error} />
       </div>
     );
   }
@@ -76,7 +72,7 @@ export function RunsView({ onSelectRun }: RunsViewProps) {
   if (runs.length === 0) {
     return (
       <div className="flex-1 flex items-center justify-center">
-        <EmptyState icon={History} label="no runs yet" />
+        <EmptyState icon={History} label="還沒有 run" />
       </div>
     );
   }
@@ -84,16 +80,16 @@ export function RunsView({ onSelectRun }: RunsViewProps) {
   return (
     <div className="flex-1 flex flex-col gap-2 p-4 overflow-y-auto">
       {total > 50 && (
-        <span className="type-caption text-muted-foreground">showing latest 50</span>
+        <span className="type-caption text-muted-foreground">顯示最新 50 筆</span>
       )}
       <table className="w-full text-sm border-collapse">
         <thead>
           <tr className="text-left type-caption text-muted-foreground border-b border-border/40">
-            <th className="py-1.5 pr-3 font-medium">created</th>
-            <th className="py-1.5 pr-3 font-medium">objective</th>
-            <th className="py-1.5 pr-3 font-medium">market / industry</th>
-            <th className="py-1.5 pr-3 font-medium text-right">entities</th>
-            <th className="py-1.5 pr-3 font-medium text-right">relations</th>
+            <th className="py-1.5 pr-3 font-medium">建立時間</th>
+            <th className="py-1.5 pr-3 font-medium">目標</th>
+            <th className="py-1.5 pr-3 font-medium">市場・產業</th>
+            <th className="py-1.5 pr-3 font-medium text-right">實體</th>
+            <th className="py-1.5 pr-3 font-medium text-right">關係</th>
           </tr>
         </thead>
         <tbody>

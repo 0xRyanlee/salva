@@ -4,8 +4,10 @@ import { Badge, pillTintClass } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { EmptyState } from "@/components/ui/EmptyState";
+import { ErrorBanner } from "@/components/ui/ErrorBanner";
+import { LoadingState } from "@/components/ui/LoadingState";
+import { ChipToggle } from "@/components/ui/ChipToggle";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { cn } from "@/lib/utils";
 import {
   listQueryFamilies,
   promoteQueryFamily,
@@ -15,7 +17,7 @@ import {
 } from "@/lib/api";
 
 const FILTERS: { value: MemoryStatus | "all"; label: string }[] = [
-  { value: "all", label: "All" },
+  { value: "all", label: "全部" },
   { value: "quarantine", label: "Quarantine" },
   { value: "promoted", label: "Promoted" },
   { value: "legacy", label: "Legacy" },
@@ -148,19 +150,13 @@ export function MemoryView({ campaignId }: MemoryViewProps) {
       <section className="glass-1 border border-border/30 rounded-lg p-3 space-y-3 overflow-hidden">
         <div className="flex gap-1.5 flex-wrap">
           {FILTERS.map((opt) => (
-            <button
+            <ChipToggle
               key={opt.value}
-              type="button"
+              selected={!inSearchMode && filter === opt.value}
               onClick={() => selectFilter(opt.value)}
-              className={cn(
-                "rounded-full px-2.5 py-1 text-xs-minus border transition-colors",
-                !inSearchMode && filter === opt.value
-                  ? "border-primary bg-primary/30 text-primary"
-                  : "border-border/40 text-muted-foreground hover:bg-secondary/60",
-              )}
             >
               {opt.label}
-            </button>
+            </ChipToggle>
           ))}
         </div>
 
@@ -183,14 +179,12 @@ export function MemoryView({ campaignId }: MemoryViewProps) {
         </div>
       </section>
 
-      {error && (
-        <div className="rounded-md border border-destructive bg-destructive/10 text-destructive text-sm px-3 py-2">
-          {error}
-        </div>
-      )}
+      {error && <ErrorBanner message={error} />}
 
       <ScrollArea className="flex-1 min-h-0">
-        {items.length === 0 && !busy ? (
+        {busy && items.length === 0 ? (
+          <LoadingState />
+        ) : items.length === 0 ? (
           <EmptyState
             icon={inSearchMode ? SearchIcon : Brain}
             label={inSearchMode ? "沒有符合的搜尋結果" : "沒有符合篩選條件的記錄"}
@@ -218,10 +212,10 @@ export function MemoryView({ campaignId }: MemoryViewProps) {
                   <span>{record.strategy}</span>
                   <span>·</span>
                   <span>
-                    {record.qualified_total} / {record.raw_total} qualified
+                    {record.qualified_total} / {record.raw_total} 合格
                   </span>
                   <span>·</span>
-                  <span>success {record.success_score.toFixed(2)}</span>
+                  <span>成功分數 {record.success_score.toFixed(2)}</span>
                   {record.domain && (
                     <>
                       <span>·</span>
@@ -242,7 +236,7 @@ export function MemoryView({ campaignId }: MemoryViewProps) {
                     disabled={promotingIds.has(record.memory_id)}
                     onClick={() => handlePromote(record.memory_id)}
                   >
-                    {promotingIds.has(record.memory_id) ? "Promoting…" : "Promote"}
+                    {promotingIds.has(record.memory_id) ? "標記 promoted 中…" : "標記為 promoted"}
                   </Button>
                 )}
               </li>

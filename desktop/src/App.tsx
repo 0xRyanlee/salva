@@ -49,11 +49,11 @@ type View =
   | { name: "settings" };
 
 const NAV_ITEMS: { name: View["name"]; icon: typeof Search; label: string }[] = [
-  { name: "search", icon: Search, label: "Search" },
-  { name: "runs", icon: History, label: "Runs" },
-  { name: "memory", icon: Brain, label: "Memory" },
-  { name: "campaigns", icon: FolderKanban, label: "Campaigns" },
-  { name: "settings", icon: SettingsIcon, label: "Settings" },
+  { name: "search", icon: Search, label: "搜尋" },
+  { name: "runs", icon: History, label: "執行紀錄" },
+  { name: "memory", icon: Brain, label: "記憶" },
+  { name: "campaigns", icon: FolderKanban, label: "活動管理" },
+  { name: "settings", icon: SettingsIcon, label: "設定" },
 ];
 
 const ACTIVE_CAMPAIGN_KEY = "salva.activeCampaignId";
@@ -285,7 +285,7 @@ function App() {
               )}
             />
             <span className="type-caption text-muted-foreground">
-              {coreOnline === null ? "connecting…" : coreOnline ? "core online" : "core offline"}
+              {coreOnline === null ? "連線中…" : coreOnline ? "core 已連線" : "core 已離線"}
             </span>
             {coreError && <ChevronDown size={12} className="text-muted-foreground" />}
           </button>
@@ -293,7 +293,7 @@ function App() {
       </header>
 
       {coreError && showCoreError && (
-        <div className="border-b border-destructive/40 bg-destructive/10 px-4 py-2 type-caption text-destructive whitespace-pre-wrap">
+        <div className="border-b border-destructive/40 bg-destructive/10 px-4 py-2 type-caption text-destructive whitespace-pre-wrap break-words">
           {coreError}
         </div>
       )}
@@ -304,7 +304,7 @@ function App() {
       )}
       {llmUnavailable && (
         <div className="border-b border-warn/40 bg-warn/10 px-4 py-2 type-caption text-warn">
-          LLM enrichment 未啟用——搜尋結果不含 rerank/追加查詢加值，搜尋本身仍會正常運作。點右上角
+          LLM 增強功能未啟用——搜尋結果不含 rerank/追加查詢加值，搜尋本身仍會正常運作。點右上角
           「LLM」標籤啟用（背景會啟動一個本機行程，呼叫你已登入的 claude/codex CLI）。
         </div>
       )}
@@ -421,7 +421,7 @@ function llmBadgeInfo(
     case "failed":
       return { text: "錯誤", tone: "destructive" };
     default:
-      return { text: "off", tone: "muted" };
+      return { text: "未啟用", tone: "muted" };
   }
 }
 

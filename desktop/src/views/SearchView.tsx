@@ -4,15 +4,17 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { EmptyState } from "@/components/ui/EmptyState";
+import { ErrorBanner } from "@/components/ui/ErrorBanner";
+import { LoadingState } from "@/components/ui/LoadingState";
+import { ChipToggle } from "@/components/ui/ChipToggle";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { cn } from "@/lib/utils";
 import { discover, type CanonicalEntity, type DiscoverMeta } from "@/lib/api";
 
 const OBJECTIVES = [
-  { value: "find_companies", label: "Companies" },
-  { value: "find_leads", label: "Leads" },
-  { value: "find_events", label: "Events" },
-  { value: "find_market_activity", label: "Market Activity" },
+  { value: "find_companies", label: "公司" },
+  { value: "find_leads", label: "名單" },
+  { value: "find_events", label: "活動" },
+  { value: "find_market_activity", label: "市場動態" },
 ];
 
 interface SearchViewProps {
@@ -74,32 +76,26 @@ export function SearchView({ coreOnline, campaignId, onViewRun }: SearchViewProp
       <section className="glass-1 border border-border/30 rounded-lg p-3 space-y-3 overflow-hidden">
         <div className="grid grid-cols-2 gap-3">
           <label className="space-y-1">
-            <span className="type-label text-muted-foreground">Market</span>
+            <span className="type-label text-muted-foreground">市場</span>
             <Input value={market} onChange={(e) => setMarket(e.target.value)} placeholder="Germany" />
           </label>
           <label className="space-y-1">
-            <span className="type-label text-muted-foreground">Industry</span>
+            <span className="type-label text-muted-foreground">產業</span>
             <Input value={industry} onChange={(e) => setIndustry(e.target.value)} placeholder="software" />
           </label>
         </div>
 
         <label className="space-y-1 block">
-          <span className="type-label text-muted-foreground">Objective</span>
+          <span className="type-label text-muted-foreground">目標</span>
           <div className="flex gap-1.5 flex-wrap">
             {OBJECTIVES.map((opt) => (
-              <button
+              <ChipToggle
                 key={opt.value}
-                type="button"
+                selected={objective === opt.value}
                 onClick={() => setObjective(opt.value)}
-                className={cn(
-                  "rounded-full px-2.5 py-1 text-xs-minus border transition-colors",
-                  objective === opt.value
-                    ? "border-primary bg-primary/30 text-primary"
-                    : "border-border/40 text-muted-foreground hover:bg-secondary/60",
-                )}
               >
                 {opt.label}
-              </button>
+              </ChipToggle>
             ))}
           </div>
         </label>
@@ -111,43 +107,39 @@ export function SearchView({ coreOnline, campaignId, onViewRun }: SearchViewProp
         >
           <Search size={14} className="mr-1.5" />
           {loading
-            ? `Searching… (${elapsedSeconds}s)`
+            ? `搜尋中…(${elapsedSeconds}秒)`
             : !coreOnline
               ? "等待 core 連線…"
               : !campaignId
                 ? "尚未選擇 campaign"
-                : "Search"}
+                : "搜尋"}
         </Button>
       </section>
 
-      {error && (
-        <div className="rounded-md border border-destructive bg-destructive/10 text-destructive text-sm px-3 py-2">
-          {error}
-        </div>
-      )}
+      {error && <ErrorBanner message={error} />}
 
       {meta && (
         <div className="flex items-center gap-2 flex-wrap">
           <Badge variant="secondary">
-            {meta.qualified_count ?? 0} / {meta.raw_count ?? 0} qualified
+            {meta.qualified_count ?? 0} / {meta.raw_count ?? 0} 合格
           </Badge>
-          {meta.rounds != null && <Badge variant="outline">{meta.rounds} rounds</Badge>}
+          {meta.rounds != null && <Badge variant="outline">{meta.rounds} 輪</Badge>}
           {!!meta.entities_merged_count && (
-            <Badge variant="default">{meta.entities_merged_count} merged</Badge>
+            <Badge variant="default">{meta.entities_merged_count} 合併</Badge>
           )}
           {meta.providers_exhausted && (
             <span className="inline-flex items-center gap-1 text-warn text-xs-minus">
               <AlertTriangle size={12} />
-              providers exhausted — results may be incomplete
+              provider 已耗盡——結果可能不完整
             </span>
           )}
           {meta.memory_seeds_used ? (
             <Badge variant="default">
               <Zap size={10} className="mr-0.5" />
-              {meta.memory_seeds_used} memory seeds reused
+              復用了 {meta.memory_seeds_used} 筆 memory seeds
             </Badge>
           ) : (
-            <span className="type-caption text-muted-foreground">no memory reused</span>
+            <span className="type-caption text-muted-foreground">沒有復用 memory</span>
           )}
           {meta.run_id && (
             <Button
@@ -155,22 +147,24 @@ export function SearchView({ coreOnline, campaignId, onViewRun }: SearchViewProp
               size="sm"
               onClick={() => meta.run_id && onViewRun(meta.run_id)}
             >
-              View run →
+              查看 run →
             </Button>
           )}
         </div>
       )}
 
       <ScrollArea className="flex-1 min-h-0">
-        {entities.length === 0 && !loading ? (
+        {loading && entities.length === 0 ? (
+          <LoadingState />
+        ) : entities.length === 0 ? (
           <EmptyState
             icon={Search}
             label={
               !meta
-                ? "run a search to see results"
+                ? "執行搜尋以查看結果"
                 : meta.providers_exhausted
                   ? "資料來源用盡導致 0 筆結果，建議稍後重試"
-                  : "no qualified results"
+                  : "沒有合格結果"
             }
           />
         ) : (
@@ -184,7 +178,9 @@ export function SearchView({ coreOnline, campaignId, onViewRun }: SearchViewProp
                   className="glass-1 border border-border/30 rounded-lg p-3 space-y-1 overflow-hidden"
                 >
                   <div className="flex items-center justify-between gap-2">
-                    <span className="type-body font-medium">{entity.title}</span>
+                    <div className="flex-1 min-w-0">
+                      <span className="type-body font-medium truncate block">{entity.title}</span>
+                    </div>
                     <div className="flex items-center gap-1.5 shrink-0">
                       <Badge variant="outline">{entity.entity_type}</Badge>
                       <Badge variant="outline">{entity.confidence.toFixed(2)}</Badge>
@@ -214,7 +210,7 @@ export function SearchView({ coreOnline, campaignId, onViewRun }: SearchViewProp
                   {isExpanded && (
                     <div className="space-y-1.5 pt-1 border-t border-border/20">
                       {evidence.length === 0 ? (
-                        <p className="type-caption text-muted-foreground">no evidence captured</p>
+                        <p className="type-caption text-muted-foreground">沒有擷取到佐證</p>
                       ) : (
                         evidence.map((item, idx) => (
                           <div key={idx} className="type-caption space-y-0.5">

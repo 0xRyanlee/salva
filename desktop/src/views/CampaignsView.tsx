@@ -4,6 +4,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { EmptyState } from "@/components/ui/EmptyState";
+import { ErrorBanner } from "@/components/ui/ErrorBanner";
+import { SuccessBanner } from "@/components/ui/SuccessBanner";
+import { LoadingState } from "@/components/ui/LoadingState";
+import { ChipToggle } from "@/components/ui/ChipToggle";
+import { RetentionPicker } from "@/components/ui/RetentionPicker";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Dialog,
@@ -12,7 +17,6 @@ import {
   DialogDescription,
   DialogFooter,
 } from "@/components/ui/dialog";
-import { cn } from "@/lib/utils";
 import {
   listCampaigns,
   createCampaign,
@@ -24,8 +28,6 @@ import {
   type CampaignRecord,
 } from "@/lib/api";
 import { readDefaultRetention } from "@/views/SettingsView";
-
-const RETENTION_PRESETS = [7, 30, 90];
 
 interface CampaignsViewProps {
   activeCampaignId: string | null;
@@ -55,7 +57,6 @@ export function CampaignsView({ activeCampaignId, onChanged }: CampaignsViewProp
 
   const [archiveTarget, setArchiveTarget] = useState<CampaignRecord | null>(null);
   const [archiveRetention, setArchiveRetention] = useState<number | null>(30);
-  const [archiveCustom, setArchiveCustom] = useState("");
 
   const [clearTarget, setClearTarget] = useState<CampaignRecord | null>(null);
   const [clearing, setClearing] = useState(false);
@@ -129,7 +130,6 @@ export function CampaignsView({ activeCampaignId, onChanged }: CampaignsViewProp
     setArchiveRetention(
       campaign.status === "archived" ? (campaign.retention_days ?? null) : readDefaultRetention(),
     );
-    setArchiveCustom("");
   }
 
   async function confirmArchive() {
@@ -212,55 +212,30 @@ export function CampaignsView({ activeCampaignId, onChanged }: CampaignsViewProp
         </div>
       </section>
 
-      {error && (
-        <div className="rounded-md border border-destructive bg-destructive/10 text-destructive text-sm px-3 py-2">
-          {error}
-        </div>
-      )}
+      {error && <ErrorBanner message={error} />}
 
       {receipt && (
-        <div className="rounded-md border border-success/40 bg-success/10 text-success text-sm px-3 py-2 flex items-center justify-between gap-2">
-          <span>
-            {receipt.label}：
-            {Object.entries(receipt.counts)
-              .map(([table, n]) => `${table} ${n}`)
-              .join("、")}
-          </span>
-          <button type="button" onClick={() => setReceipt(null)} className="shrink-0">
-            <X size={12} />
-          </button>
-        </div>
+        <SuccessBanner onDismiss={() => setReceipt(null)}>
+          {receipt.label}：
+          {Object.entries(receipt.counts)
+            .map(([table, n]) => `${table} ${n}`)
+            .join("、")}
+        </SuccessBanner>
       )}
 
       <div className="flex gap-1.5">
-        <button
-          type="button"
-          onClick={() => setShowArchived(false)}
-          className={cn(
-            "rounded-full px-2.5 py-1 text-xs-minus border transition-colors",
-            !showArchived
-              ? "border-primary bg-primary/30 text-primary"
-              : "border-border/40 text-muted-foreground hover:bg-secondary/60",
-          )}
-        >
+        <ChipToggle selected={!showArchived} onClick={() => setShowArchived(false)}>
           進行中
-        </button>
-        <button
-          type="button"
-          onClick={() => setShowArchived(true)}
-          className={cn(
-            "rounded-full px-2.5 py-1 text-xs-minus border transition-colors",
-            showArchived
-              ? "border-primary bg-primary/30 text-primary"
-              : "border-border/40 text-muted-foreground hover:bg-secondary/60",
-          )}
-        >
+        </ChipToggle>
+        <ChipToggle selected={showArchived} onClick={() => setShowArchived(true)}>
           已封存
-        </button>
+        </ChipToggle>
       </div>
 
       <ScrollArea className="flex-1 min-h-0">
-        {visible.length === 0 && !loading ? (
+        {loading && visible.length === 0 ? (
+          <LoadingState />
+        ) : visible.length === 0 ? (
           <EmptyState icon={FolderKanban} label={showArchived ? "沒有已封存的 campaign" : "還沒有 campaign"} />
         ) : (
           <ul className="space-y-2">
@@ -316,11 +291,11 @@ export function CampaignsView({ activeCampaignId, onChanged }: CampaignsViewProp
                   )}
 
                   <div className="flex items-center gap-2 flex-wrap type-caption text-muted-foreground">
-                    <span>{campaign.run_count} runs</span>
+                    <span>{campaign.run_count} 個 run</span>
                     <span>·</span>
-                    <span>{campaign.memory_promoted_count} promoted</span>
+                    <span>{campaign.memory_promoted_count} 筆 promoted</span>
                     <span>·</span>
-                    <span>{campaign.memory_quarantine_count} quarantine</span>
+                    <span>{campaign.memory_quarantine_count} 筆 quarantine</span>
                     <span>·</span>
                     <span>建立於 {new Date(campaign.created_at).toLocaleDateString()}</span>
                     <span>·</span>
@@ -384,56 +359,13 @@ export function CampaignsView({ activeCampaignId, onChanged }: CampaignsViewProp
           <DialogDescription>
             封存後，campaign 進入唯讀狀態，之後可設定自動清除時限，或選擇無限期僅封存。
           </DialogDescription>
-          <div className="flex gap-1.5 flex-wrap">
-            {RETENTION_PRESETS.map((days) => (
-              <button
-                key={days}
-                type="button"
-                onClick={() => {
-                  setArchiveRetention(days);
-                  setArchiveCustom("");
-                }}
-                className={cn(
-                  "rounded-full px-2.5 py-1 text-xs-minus border transition-colors",
-                  archiveRetention === days
-                    ? "border-primary bg-primary/30 text-primary"
-                    : "border-border/40 text-muted-foreground hover:bg-secondary/60",
-                )}
-              >
-                {days} 天後清除
-              </button>
-            ))}
-            <button
-              type="button"
-              onClick={() => setArchiveRetention(null)}
-              className={cn(
-                "rounded-full px-2.5 py-1 text-xs-minus border transition-colors",
-                archiveRetention === null
-                  ? "border-primary bg-primary/30 text-primary"
-                  : "border-border/40 text-muted-foreground hover:bg-secondary/60",
-              )}
-            >
-              無限期（僅封存）
-            </button>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="type-caption text-muted-foreground shrink-0">自訂天數</span>
-            <Input
-              type="number"
-              min={1}
-              value={archiveCustom}
-              onChange={(e) => {
-                setArchiveCustom(e.target.value);
-                const n = Number(e.target.value);
-                if (e.target.value && n >= 1) setArchiveRetention(n);
-              }}
-              placeholder="例：14"
-              className="w-24"
-            />
-          </div>
-          <p className="type-caption text-muted-foreground">
-            清除時限是機會性檢查（下次開啟 app 時才會實際執行），不是精確整點刪除。
-          </p>
+          <RetentionPicker
+            value={archiveRetention}
+            onChange={setArchiveRetention}
+            presetLabel={(days) => `${days} 天後清除`}
+            indefiniteLabel="無限期（僅封存）"
+            hint="清除時限是機會性檢查（下次開啟 app 時才會實際執行），不是精確整點刪除。"
+          />
           <DialogFooter>
             <Button variant="outline" onClick={() => setArchiveTarget(null)}>
               取消
