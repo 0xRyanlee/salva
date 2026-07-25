@@ -197,6 +197,23 @@ export interface DiscoverParams {
   maxResults?: number;
 }
 
+// 與 salva_core/transforms.py 的 build_output_transform_catalog() 對齊——
+// objective 決定 domain（見 service.py 的 _OBJECTIVE_TO_DOMAIN），profile 決定
+// transform_entities() 怎麼塑形輸出，兩者原本各走各的，SearchView 讓使用者切
+// objective 卻永遠送 company_profile。目前前端沒有畫面讀 transformed_items，
+// 所以還沒有實際輸出錯誤，但先對齊避免下一輪 GUI 開始用 transformed 輸出時
+// 拿到跟 objective 語意不符的形狀。
+const OBJECTIVE_TO_OUTPUT_PROFILE: Record<string, string> = {
+  find_companies: "company_profile",
+  find_leads: "lead",
+  find_events: "event",
+  find_market_activity: "activity_signal",
+};
+
+function outputProfileForObjective(objective: string): string {
+  return OBJECTIVE_TO_OUTPUT_PROFILE[objective] ?? "company_profile";
+}
+
 export interface LlmSidecarStatus {
   sidecar_reachable: boolean;
   byok_configured: boolean;
@@ -270,7 +287,7 @@ export async function discover(params: DiscoverParams): Promise<DiscoverResponse
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       objective: params.objective || "find_companies",
-      output_profile: "company_profile",
+      output_profile: outputProfileForObjective(params.objective || "find_companies"),
       max_results: params.maxResults ?? 10,
       execution: {
         persistence: "audit",
