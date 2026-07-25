@@ -36,6 +36,7 @@ import { LlmStatusPopover } from "@/components/LlmStatusPopover";
 import { SearchView } from "@/views/SearchView";
 import { RunsView } from "@/views/RunsView";
 import { RunDetailView } from "@/views/RunDetailView";
+import { RunDiffView } from "@/views/RunDiffView";
 import { MemoryView } from "@/views/MemoryView";
 import { CampaignsView } from "@/views/CampaignsView";
 import { SettingsView } from "@/views/SettingsView";
@@ -44,6 +45,7 @@ type View =
   | { name: "search" }
   | { name: "runs" }
   | { name: "run-detail"; runId: string; from: "search" | "runs" }
+  | { name: "run-diff"; runIdBefore: string; runIdAfter: string }
   | { name: "memory" }
   | { name: "campaigns" }
   | { name: "settings" };
@@ -312,7 +314,9 @@ function App() {
       <div className="flex-1 flex min-h-0">
         <nav className="glass-1 border-r border-border/40 w-16 flex flex-col items-center gap-1 py-3">
           {NAV_ITEMS.map((item) => {
-            const active = view.name === item.name || (view.name === "run-detail" && item.name === "runs");
+            const active =
+              view.name === item.name ||
+              ((view.name === "run-detail" || view.name === "run-diff") && item.name === "runs");
             const Icon = item.icon;
             return (
               <button
@@ -344,12 +348,20 @@ function App() {
           {view.name === "runs" && (
             <RunsView
               onSelectRun={(runId) => setView({ name: "run-detail", runId, from: "runs" })}
+              onCompareRuns={(runIdBefore, runIdAfter) => setView({ name: "run-diff", runIdBefore, runIdAfter })}
             />
           )}
           {view.name === "run-detail" && (
             <RunDetailView
               runId={view.runId}
               onBack={() => setView(view.from === "search" ? { name: "search" } : { name: "runs" })}
+            />
+          )}
+          {view.name === "run-diff" && (
+            <RunDiffView
+              runIdBefore={view.runIdBefore}
+              runIdAfter={view.runIdAfter}
+              onBack={() => setView({ name: "runs" })}
             />
           )}
           {view.name === "memory" && <MemoryView campaignId={activeCampaign?.campaign_id ?? null} />}
