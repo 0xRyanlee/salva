@@ -127,17 +127,18 @@ salva find --market Germany --industry software | jq '.entities[]'
 
 The CLI lives at `apps/cli/` (to be created). It consumes the REST API — no direct Python imports from core.
 
-## GUI Fork
+## GUI / Interface（2026-07-25 owner 拍板，推翻先前「不加前端」規則）
 
-A GUI product (working name: `salva-ui`) is explicitly out of scope for this repository.
+**先前規則已由 owner 明確推翻**：salva 定位比照 Mindset——要能被生態內其他 app 呼叫（MCP/REST），**也要能被直接使用**（獨立介面），不能只靠 Mindset/EditorsNote 投影它的視覺呈現。owner 原話：「salva 有自己的界面和 mcp，方便獨立進行檢索任務和可視化，同時也可以深度了解 nodes 之間的 hyper edges 的動態流形關係，也需要可視化的文檔查閱 diff（可以借鑑 paperclip）」。
 
-When ready, it should be:
-- A separate GitHub repository
-- Built against the stable REST API + MCP server contracts
-- Released independently (not as a branch of this repo)
-- Potentially Electron, Tauri, or a Next.js app
+**需要的能力**（新方向，取代舊的「out of scope」）：
+- Hyperedge / node 動態流形關係視覺化（HIF 超圖的互動式呈現，不只是靜態匯出）
+- 文檔查閱 + diff 檢視（借鑑 Paperclip 的審閱 UI 模式）
+- 獨立檢索任務操作介面（不透過其他 app 中介）
 
-**Do not add any frontend code to this repository.**
+`apps/desktop/`（或等效目錄）目前是否已有實作進度、要留在本 repo 還是拆成獨立的 `salva-ui` repo（原規則傾向獨立 repo + 消費穩定 REST/MCP 契約，這個結構性原則本身仍合理，只是「要不要做」這個大前提已經反轉），交給實際承接這個方向的 CC 先盤點現況再定案，不預設答案。
+
+~~舊規則（已廢止，保留供對照）~~：~~A GUI product is explicitly out of scope. Do not add any frontend code to this repository.~~
 
 ## Code Quality Standards
 
