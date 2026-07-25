@@ -1,0 +1,403 @@
+{
+  "version": "new-tiers-1",
+  "created": "2026-07-26",
+  "derived_from": "task_set_v1.json (same schema/objective/intent shape, kept as a standalone file rather than merged in-place -- see NEW_TIERS_README.md for why)",
+  "description": "12 additional business-discovery tasks across 3 new difficulty tiers (n_ary_relational, aggregation_count, negative_absence), extending task_set_v1.json's single_entity/cross_language/multi_hop tiers. Built for the salva-positioning-single-fact-vs-relational decision: gives that decision a broader reference base instead of narrowing straight to n-ary GT. Ground truth verified against live, machine-readable public registries (GLEIF LEI API, SEC EDGAR full-text search + filing cover pages) rather than free-text WebSearch -- see NEW_TIERS_README.md for the verification method and honest caveats.",
+  "tasks": [
+    {
+      "task_id": "nary-01-hon-hai-corporate-family",
+      "difficulty_tier": "n_ary_relational",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "electronics manufacturing services (EMS)",
+        "product": null,
+        "role": null,
+        "extra_keywords": [
+          "Hon Hai Precision Industry",
+          "Foxconn",
+          "corporate family",
+          "direct subsidiaries",
+          "LEI"
+        ],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "Hon Hai Precision Industry Co., Ltd. (Foxconn)",
+          "relationship": "subject -- ultimate reporting entity of this corporate-family fact",
+          "lei": "30030004CM3GSZXX7O56",
+          "source_url": "https://api.gleif.org/api/v1/lei-records/30030004CM3GSZXX7O56",
+          "confidence": "high"
+        },
+        {"name": "Fusing International Inc.", "relationship": "GLEIF direct-child of Hon Hai", "lei": "254900U756R5L2HGBE22", "jurisdiction": "US", "source_url": "https://api.gleif.org/api/v1/lei-records/30030004CM3GSZXX7O56/direct-children", "confidence": "high"},
+        {"name": "ECMMS Precision Singapore Pte. Ltd.", "relationship": "GLEIF direct-child of Hon Hai", "lei": "3003007VY5UUM23I1L19", "jurisdiction": "SG", "source_url": "https://api.gleif.org/api/v1/lei-records/30030004CM3GSZXX7O56/direct-children", "confidence": "high"},
+        {"name": "Foxconn Singapore Pte Ltd", "relationship": "GLEIF direct-child of Hon Hai", "lei": "3003001GX1DM54M7IA09", "jurisdiction": "SG", "source_url": "https://api.gleif.org/api/v1/lei-records/30030004CM3GSZXX7O56/direct-children", "confidence": "high"},
+        {"name": "Foxconn Japan K.K. (フォックスコン・ジャパン株式会社)", "relationship": "GLEIF direct-child of Hon Hai", "lei": "254900TIDPMN2687SL67", "jurisdiction": "JP", "source_url": "https://api.gleif.org/api/v1/lei-records/30030004CM3GSZXX7O56/direct-children", "confidence": "high"},
+        {"name": "Foxconn Precision International Limited", "relationship": "GLEIF direct-child of Hon Hai", "lei": "254900IRK2FGJ3GW7Q16", "jurisdiction": "HK", "source_url": "https://api.gleif.org/api/v1/lei-records/30030004CM3GSZXX7O56/direct-children", "confidence": "high"},
+        {"name": "佳騰企業有限公司 (Ka Tang Enterprise Ltd.)", "relationship": "GLEIF direct-child of Hon Hai", "lei": "2549005WO92PZZLW3209", "jurisdiction": "VG", "source_url": "https://api.gleif.org/api/v1/lei-records/30030004CM3GSZXX7O56/direct-children", "confidence": "high"},
+        {"name": "Foxconn (Far East) Limited", "relationship": "GLEIF direct-child of Hon Hai", "lei": "254900NAQSPFDWVY8H73", "jurisdiction": "KY", "source_url": "https://api.gleif.org/api/v1/lei-records/30030004CM3GSZXX7O56/direct-children", "confidence": "high"},
+        {"name": "Fast Victor Limited", "relationship": "GLEIF direct-child of Hon Hai", "lei": "254900WW41T6P6UPG223", "jurisdiction": "WS", "source_url": "https://api.gleif.org/api/v1/lei-records/30030004CM3GSZXX7O56/direct-children", "confidence": "high"},
+        {"name": "Falcon Precision Trading Limited", "relationship": "GLEIF direct-child of Hon Hai", "lei": "254900NCTWEYRAVJ9W12", "jurisdiction": "VG", "source_url": "https://api.gleif.org/api/v1/lei-records/30030004CM3GSZXX7O56/direct-children", "confidence": "high"},
+        {"name": "IPL International Limited", "relationship": "GLEIF direct-child of Hon Hai", "lei": "254900TV88BQR2HVEL77", "jurisdiction": "WS", "source_url": "https://api.gleif.org/api/v1/lei-records/30030004CM3GSZXX7O56/direct-children", "confidence": "high"},
+        {"name": "Cloud Network Technology Singapore Pte. Ltd.", "relationship": "GLEIF direct-child of Hon Hai", "lei": "254900K7C09J488P3Y81", "jurisdiction": "SG", "source_url": "https://api.gleif.org/api/v1/lei-records/30030004CM3GSZXX7O56/direct-children", "confidence": "high"},
+        {"name": "Hightech Electronics Components Inc.", "relationship": "GLEIF direct-child of Hon Hai", "lei": "254900FKP6KGV1WYWC77", "jurisdiction": "BS", "source_url": "https://api.gleif.org/api/v1/lei-records/30030004CM3GSZXX7O56/direct-children", "confidence": "high"},
+        {"name": "Competition Team Technologies Limited", "relationship": "GLEIF direct-child of Hon Hai", "lei": "254900B6P01H4XAT6880", "jurisdiction": "BS", "source_url": "https://api.gleif.org/api/v1/lei-records/30030004CM3GSZXX7O56/direct-children", "confidence": "high"},
+        {"name": "高晉企業有限公司 (Kao Chin Enterprise Ltd.)", "relationship": "GLEIF direct-child of Hon Hai", "lei": "254900OV9QAMHUP4AB68", "jurisdiction": "WS", "source_url": "https://api.gleif.org/api/v1/lei-records/30030004CM3GSZXX7O56/direct-children", "confidence": "high"},
+        {"name": "Cloud Network Technology (Samoa) Limited", "relationship": "GLEIF direct-child of Hon Hai", "lei": "2549001OR2EQQFA3Q216", "jurisdiction": "WS", "source_url": "https://api.gleif.org/api/v1/lei-records/30030004CM3GSZXX7O56/direct-children", "confidence": "high"}
+      ],
+      "confidence": "high",
+      "notes": "Genuinely n-ary, not a 2-hop chain: all 15 children are co-members of ONE 'corporate family' fact anchored on Hon Hai's LEI, spanning 8 jurisdictions (US/SG/JP/HK/VG/KY/WS/BS). Correctly answering requires the full 15-member set, not any subset -- unlike multi_hop tier where finding a handful of true positives already yields partial credit. Live-verified 2026-07-25/26 against GLEIF's golden-copy snapshot (`meta.goldenCopy.publishDate` in the API response); GLEIF re-publishes this snapshot regularly, so a re-run may see membership drift (mergers, new/deregistered LEIs) -- re-fetch `direct-children` for the LEI to re-verify rather than trusting this list to be frozen forever."
+    },
+    {
+      "task_id": "nary-02-mediatek-corporate-family",
+      "difficulty_tier": "n_ary_relational",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "fabless semiconductor / chip design",
+        "product": null,
+        "role": null,
+        "extra_keywords": [
+          "MediaTek",
+          "聯發科",
+          "ultimate corporate family",
+          "subsidiaries",
+          "LEI"
+        ],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {"name": "MediaTek Inc.", "relationship": "subject -- ultimate reporting entity", "lei": "254900UEGBK1I4DM4E14", "source_url": "https://api.gleif.org/api/v1/lei-records/254900UEGBK1I4DM4E14", "confidence": "high"},
+        {"name": "Hsu Zhan (HK) Investment Limited", "relationship": "GLEIF ultimate-child of MediaTek", "lei": "549300LUT3IHYNJBQR21", "jurisdiction": "HK", "source_url": "https://api.gleif.org/api/v1/lei-records/254900UEGBK1I4DM4E14/ultimate-children", "confidence": "high"},
+        {"name": "Cloud Ranger Limited", "relationship": "GLEIF ultimate-child of MediaTek", "lei": "254900MFMN6R6VUH7S58", "jurisdiction": "WS", "source_url": "https://api.gleif.org/api/v1/lei-records/254900UEGBK1I4DM4E14/ultimate-children", "confidence": "high"},
+        {"name": "聯發科中國有限公司 (MediaTek China Co., Ltd.)", "relationship": "GLEIF ultimate-child of MediaTek", "lei": "300300N0MY3RF8AHHP11", "jurisdiction": "HK", "source_url": "https://api.gleif.org/api/v1/lei-records/254900UEGBK1I4DM4E14/ultimate-children", "confidence": "high", "notes": "GLEIF records this entity's registered legalAddress country as HK despite the Chinese-language legal name referencing China -- reported as returned by the API without second-guessing, flagged here so a grader doesn't mark a correct HK answer wrong."},
+        {"name": "MediaTek India Technology Private Limited", "relationship": "GLEIF ultimate-child of MediaTek", "lei": "33580017G8VFIWXNQN46", "jurisdiction": "IN", "source_url": "https://api.gleif.org/api/v1/lei-records/254900UEGBK1I4DM4E14/ultimate-children", "confidence": "high"},
+        {"name": "MediaTek Bangalore Private Limited", "relationship": "GLEIF ultimate-child of MediaTek", "lei": "335800JQEONM4BRTO362", "jurisdiction": "IN", "source_url": "https://api.gleif.org/api/v1/lei-records/254900UEGBK1I4DM4E14/ultimate-children", "confidence": "high"}
+      ],
+      "confidence": "high",
+      "notes": "Deliberately uses `ultimate-children` (not `direct-children`, which returns the same 2-of-5 near-term subsidiaries) to test whether an agent under evaluation correctly scopes to 'ultimate' when the query asks for the full corporate family, not just first-tier subsidiaries -- a distinction the existing multi_hop tier never tests. Same live-verification caveat as nary-01."
+    },
+    {
+      "task_id": "nary-03-wistron-corporate-family",
+      "difficulty_tier": "n_ary_relational",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "electronics manufacturing services (EMS)",
+        "product": null,
+        "role": null,
+        "extra_keywords": [
+          "Wistron Corporation",
+          "緯創資通",
+          "direct subsidiaries",
+          "corporate family",
+          "LEI"
+        ],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {"name": "Wistron Corporation (緯創資通股份有限公司)", "relationship": "subject -- ultimate reporting entity", "lei": "254900DIEONKUALBFM06", "source_url": "https://api.gleif.org/api/v1/lei-records/254900DIEONKUALBFM06", "confidence": "high"},
+        {"name": "Wistron Hong Kong Limited", "relationship": "GLEIF direct-child of Wistron", "lei": "98450008F79OTADDD814", "jurisdiction": "HK", "source_url": "https://api.gleif.org/api/v1/lei-records/254900DIEONKUALBFM06/direct-children", "confidence": "high"},
+        {"name": "SMS Infocomm (Singapore) Pte. Ltd.", "relationship": "GLEIF direct-child of Wistron", "lei": "984500CCB690EU1D3B13", "jurisdiction": "SG", "source_url": "https://api.gleif.org/api/v1/lei-records/254900DIEONKUALBFM06/direct-children", "confidence": "high"},
+        {"name": "緯昌科技股份有限公司 (Wei Chang Technology Co., Ltd.)", "relationship": "GLEIF direct-child of Wistron", "lei": "836800V03CZ5SMBYPS10", "jurisdiction": "TW", "source_url": "https://api.gleif.org/api/v1/lei-records/254900DIEONKUALBFM06/direct-children", "confidence": "high"},
+        {"name": "ICT Service Management Solutions (India) Private Limited", "relationship": "GLEIF direct-child of Wistron", "lei": "335800EPP94CR6JBCR77", "jurisdiction": "IN", "source_url": "https://api.gleif.org/api/v1/lei-records/254900DIEONKUALBFM06/direct-children", "confidence": "high"},
+        {"name": "Cowin Worldwide Corporation", "relationship": "GLEIF direct-child of Wistron", "lei": "529900GLCJBXV5ICPM52", "jurisdiction": "VG", "source_url": "https://api.gleif.org/api/v1/lei-records/254900DIEONKUALBFM06/direct-children", "confidence": "high"}
+      ],
+      "confidence": "high",
+      "notes": "5-member n-ary corporate family across 5 distinct jurisdictions (HK/SG/TW/IN/VG) -- new entity (Wistron), added for breadth beyond the existing single_entity/cross_language/multi_hop entity roster, same discipline as task_set_v1's own 'new entities added for breadth' precedent (TASK_SET_README.md). Same live-verification caveat as nary-01."
+    },
+    {
+      "task_id": "nary-04-sec13d-bluemountain-chatham",
+      "difficulty_tier": "n_ary_relational",
+      "objective": "find_partnership_signals",
+      "intent": {
+        "market": "United States",
+        "industry": "real estate investment trust (hospitality REIT)",
+        "product": null,
+        "role": null,
+        "extra_keywords": [
+          "Chatham Lodging Trust",
+          "BlueMountain Capital Management",
+          "SC 13D acting in concert group",
+          "reporting persons"
+        ],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {"name": "Chatham Lodging Trust", "relationship": "subject of the group's SC 13D/A filing", "ticker": "CLDT", "source_url": "https://www.sec.gov/Archives/edgar/data/1476045/000119312513424143/d622634dsc13da.htm", "confidence": "high"},
+        {"name": "BlueMountain Capital Management, LLC", "relationship": "co-reporting person -- SC 13D §13(d)(3) acting-in-concert group", "source_url": "https://www.sec.gov/Archives/edgar/data/1476045/000119312513424143/d622634dsc13da.htm", "confidence": "high"},
+        {"name": "BlueMountain GP Holdings, LLC", "relationship": "co-reporting person -- same §13(d)(3) group", "source_url": "https://www.sec.gov/Archives/edgar/data/1476045/000119312513424143/d622634dsc13da.htm", "confidence": "high"},
+        {"name": "BlueMountain Credit Alternatives Master Fund L.P.", "relationship": "co-reporting person -- same §13(d)(3) group", "source_url": "https://www.sec.gov/Archives/edgar/data/1476045/000119312513424143/d622634dsc13da.htm", "confidence": "high"},
+        {"name": "BlueMountain CA Master Fund GP, Ltd.", "relationship": "co-reporting person -- same §13(d)(3) group", "source_url": "https://www.sec.gov/Archives/edgar/data/1476045/000119312513424143/d622634dsc13da.htm", "confidence": "high"},
+        {"name": "BlueMountain Long/Short Credit Master Fund L.P.", "relationship": "co-reporting person -- same §13(d)(3) group", "source_url": "https://www.sec.gov/Archives/edgar/data/1476045/000119312513424143/d622634dsc13da.htm", "confidence": "high"},
+        {"name": "BlueMountain Long/Short Credit GP, LLC", "relationship": "co-reporting person -- same §13(d)(3) group", "source_url": "https://www.sec.gov/Archives/edgar/data/1476045/000119312513424143/d622634dsc13da.htm", "confidence": "high"},
+        {"name": "BlueMountain Strategic Credit Master Fund L.P.", "relationship": "co-reporting person -- same §13(d)(3) group", "source_url": "https://www.sec.gov/Archives/edgar/data/1476045/000119312513424143/d622634dsc13da.htm", "confidence": "high"},
+        {"name": "BlueMountain Strategic Credit GP, LLC", "relationship": "co-reporting person -- same §13(d)(3) group", "source_url": "https://www.sec.gov/Archives/edgar/data/1476045/000119312513424143/d622634dsc13da.htm", "confidence": "high"},
+        {"name": "BlueMountain Timberline Ltd.", "relationship": "co-reporting person -- same §13(d)(3) group", "source_url": "https://www.sec.gov/Archives/edgar/data/1476045/000119312513424143/d622634dsc13da.htm", "confidence": "high"},
+        {"name": "BlueMountain Credit Opportunities Master Fund I L.P.", "relationship": "co-reporting person -- same §13(d)(3) group", "source_url": "https://www.sec.gov/Archives/edgar/data/1476045/000119312513424143/d622634dsc13da.htm", "confidence": "high"},
+        {"name": "BlueMountain Credit Opportunities GP I, LLC", "relationship": "co-reporting person -- same §13(d)(3) group", "source_url": "https://www.sec.gov/Archives/edgar/data/1476045/000119312513424143/d622634dsc13da.htm", "confidence": "high"},
+        {"name": "BlueMountain Kicking Horse Fund L.P.", "relationship": "co-reporting person -- same §13(d)(3) group", "source_url": "https://www.sec.gov/Archives/edgar/data/1476045/000119312513424143/d622634dsc13da.htm", "confidence": "high"},
+        {"name": "BlueMountain Kicking Horse Fund GP, LLC", "relationship": "co-reporting person -- same §13(d)(3) group", "source_url": "https://www.sec.gov/Archives/edgar/data/1476045/000119312513424143/d622634dsc13da.htm", "confidence": "high"},
+        {"name": "BlueMountain Montenvers Master Fund SCA SICAV-SIF", "relationship": "co-reporting person -- same §13(d)(3) group", "source_url": "https://www.sec.gov/Archives/edgar/data/1476045/000119312513424143/d622634dsc13da.htm", "confidence": "high"},
+        {"name": "BlueMountain Montenvers GP S.à r.l.", "relationship": "co-reporting person -- same §13(d)(3) group", "source_url": "https://www.sec.gov/Archives/edgar/data/1476045/000119312513424143/d622634dsc13da.htm", "confidence": "high"}
+      ],
+      "confidence": "high",
+      "notes": "Same real-world filing referenced descriptively in experiments/hg_penetration/README.md ('Chatham Lodging Trust, a 15-entity BlueMountain group, 2013') -- independently re-fetched and re-parsed for this task (SEC EDGAR full-text search API -> filing index -> cover-page 'NAME OF REPORTING PERSON' extraction on the actual SC 13D/A document, accession 0001193125-13-424143, filed 2013-11-04, https://www.sec.gov/Archives/edgar/data/1476045/000119312513424143/d622634dsc13da.htm), not copied from the experiment's prose claim uncritically. This is the closest thing in this benchmark to Salva's own claimed differentiator (hg_penetration's 'acting-in-concert' n-ary fact that binary FtM decomposition loses) -- a jurisdiction/source-type (SEC legal filing, not a corporate registry) genuinely distinct from the GLEIF-sourced nary-01..03 tasks. A correct answer needs all 15 co-filers under Chatham Lodging Trust as ONE group, not a partial list and not 15 independent unrelated holders."
+    },
+    {
+      "task_id": "agg-01-mediatek-subsidiary-count",
+      "difficulty_tier": "aggregation_count",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "fabless semiconductor / chip design",
+        "product": null,
+        "role": null,
+        "extra_keywords": [
+          "MediaTek",
+          "聯發科",
+          "how many subsidiaries",
+          "corporate family size",
+          "by country"
+        ],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "MediaTek Inc. -- ultimate corporate family size",
+          "aggregate_fact": "5 legal-entity ultimate children on record",
+          "breakdown_by_jurisdiction": {"HK": 2, "WS": 1, "IN": 2},
+          "member_leis": ["549300LUT3IHYNJBQR21", "254900MFMN6R6VUH7S58", "300300N0MY3RF8AHHP11", "33580017G8VFIWXNQN46", "335800JQEONM4BRTO362"],
+          "source_url": "https://api.gleif.org/api/v1/lei-records/254900UEGBK1I4DM4E14/ultimate-children",
+          "confidence": "high"
+        }
+      ],
+      "confidence": "high",
+      "notes": "Aggregation/counting task type, distinct from n_ary_relational (which asks for the member list) and from single_entity/cross_language (which ask for one fact about one named entity): the correct answer is a COUNT + a breakdown, and getting the count right while inventing a plausible-looking wrong breakdown (or vice versa) should both be scored as wrong. Same underlying registry snapshot as nary-02; asked as a distinct question shape on purpose to see whether an agent's answer is consistent across question framings of the same fact."
+    },
+    {
+      "task_id": "agg-02-pegatron-subsidiary-count",
+      "difficulty_tier": "aggregation_count",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "electronics manufacturing services (EMS)",
+        "product": null,
+        "role": null,
+        "extra_keywords": [
+          "Pegatron Corporation",
+          "和碩聯合科技",
+          "how many subsidiaries",
+          "corporate family size",
+          "by country"
+        ],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "Pegatron Corporation -- direct corporate family size",
+          "aggregate_fact": "3 legal-entity direct children on record",
+          "breakdown_by_jurisdiction": {"TW": 1, "IN": 1, "CZ": 1},
+          "member_leis": ["254900FSSOF25PNWXH97", "335800657XHM8F351G97", "31570010000000069838"],
+          "source_url": "https://api.gleif.org/api/v1/lei-records/529900M87JQS8TUO0L66/direct-children",
+          "confidence": "high"
+        }
+      ],
+      "confidence": "high",
+      "notes": "New entity (Pegatron), added for breadth. 3 children across 3 distinct single-member jurisdictions (TW/IN/CZ) -- unlike agg-01's HK×2 bucket, no jurisdiction here has more than one member, a different distractor shape worth having in the set."
+    },
+    {
+      "task_id": "agg-03-asustek-subsidiary-count-edge-one",
+      "difficulty_tier": "aggregation_count",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "consumer electronics / PC hardware",
+        "product": null,
+        "role": null,
+        "extra_keywords": [
+          "ASUSTeK Computer",
+          "華碩電腦",
+          "how many subsidiaries",
+          "corporate family size"
+        ],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "ASUSTeK Computer Inc. -- direct corporate family size",
+          "aggregate_fact": "1 legal-entity direct child on record",
+          "breakdown_by_jurisdiction": {"SG": 1},
+          "member_leis": ["2549001L9M7U4S9IAO16"],
+          "source_url": "https://api.gleif.org/api/v1/lei-records/254900B3WB4OGRB7HM13/direct-children",
+          "confidence": "high"
+        }
+      ],
+      "confidence": "high",
+      "notes": "Deliberate edge case: the correct count is exactly 1 (ASUS Global Pte. Ltd., Singapore). Tests whether an agent under-reports (says 0, missing the one real subsidiary) or over-reports (pads the count with plausible-sounding but unverified subsidiaries, e.g. assuming ASUS's many regional sales offices are separate LEI-registered legal children when they are not on record) -- both are real failure modes distinct from the mid-size counts in agg-01/agg-02."
+    },
+    {
+      "task_id": "agg-04-advantech-subsidiary-count-edge-zero",
+      "difficulty_tier": "aggregation_count",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "industrial computing / IoT hardware",
+        "product": null,
+        "role": null,
+        "extra_keywords": [
+          "Advantech Co.",
+          "研華股份有限公司",
+          "how many subsidiaries",
+          "corporate family size"
+        ],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "Advantech Co., Ltd. -- direct corporate family size",
+          "aggregate_fact": "0 GLEIF-registered direct-child legal entities on record",
+          "breakdown_by_jurisdiction": {},
+          "member_leis": [],
+          "source_url": "https://api.gleif.org/api/v1/lei-records/2549002OSTKE9HB9IY03/direct-children",
+          "confidence": "high"
+        }
+      ],
+      "confidence": "high",
+      "notes": "Deliberate edge case: correct answer is zero. Advantech has many real-world subsidiaries/branches, but none currently report an LEI-registered direct-parent relationship back to Advantech's own LEI in GLEIF's data -- this is a fact about registry participation, not a claim that Advantech has no subsidiaries in reality. A system that fabricates a confident non-zero count against this specific GLEIF-scoped question is hallucinating, not just under-reporting -- but a system correctly answering 'zero GLEIF-registered, though Advantech has real subsidiaries not required to file LEI relationship data' should score BETTER than a system that flatly says 'zero subsidiaries.' Documented explicitly per this task set's own discipline against padding/oversimplifying thin or scoped ground truth (see TASK_SET_README.md's multihop-03 precedent)."
+    },
+    {
+      "task_id": "neg-01-tsmc-no-known-parent",
+      "difficulty_tier": "negative_absence",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "semiconductor manufacturing",
+        "product": null,
+        "role": null,
+        "extra_keywords": [
+          "TSMC",
+          "台積電",
+          "controlling parent company",
+          "ultimate parent"
+        ],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "Taiwan Semiconductor Manufacturing Company Limited -- direct parent status",
+          "fact": "No direct accounting-consolidation parent is reported to GLEIF.",
+          "reason_code": "NO_KNOWN_PERSON",
+          "source_url": "https://api.gleif.org/api/v1/lei-records/549300KB6NK5SBD14S87/direct-parent-reporting-exception",
+          "confidence": "high",
+          "notes": "The reason code itself (NO_KNOWN_PERSON) is live-fetched and exactly reproducible via the source_url. Its plain-language meaning per GLEIF's standard Level-2 reporting-exception reason list is 'no natural person or legal entity is known to exercise control requiring consolidation' -- that prose paraphrase is recalled, not re-fetched from GLEIF's own spec page this session, so it is marked confidence=medium separately from the high-confidence reason code itself; re-check against GLEIF's Level 2 CDF documentation before treating the paraphrase as authoritative."
+        }
+      ],
+      "confidence": "high",
+      "notes": "The correct answer is an explicit, machine-readable absence ('no known parent'), not silence and not a fabricated parent company. TSMC is widely known to have no controlling corporate parent (broadly held, no single majority shareholder) -- this GLEIF record corroborates that at the registry level. Directly tests the honesty-over-fabrication concern raised in ROUND2_FINDINGS.md/TASK_SET_README.md (multihop-03's low-confidence-by-design precedent) but for a binary present/absent fact rather than a thin-evidence relational one."
+    },
+    {
+      "task_id": "neg-02-mediatek-non-consolidating-parent",
+      "difficulty_tier": "negative_absence",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "fabless semiconductor / chip design",
+        "product": null,
+        "role": null,
+        "extra_keywords": [
+          "MediaTek",
+          "聯發科",
+          "controlling parent company",
+          "ultimate parent"
+        ],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "MediaTek Inc. -- direct parent status",
+          "fact": "No direct accounting-consolidation parent is reported to GLEIF.",
+          "reason_code": "NON_CONSOLIDATING",
+          "source_url": "https://api.gleif.org/api/v1/lei-records/254900UEGBK1I4DM4E14/direct-parent-reporting-exception",
+          "confidence": "high",
+          "notes": "Reason code live-fetched/reproducible. Per GLEIF's standard reason list, NON_CONSOLIDATING means the entity's financial statements are not consolidated into any parent's -- a materially different legal reason from NO_KNOWN_PERSON (neg-01) even though both surface as 'no direct parent on file.' Prose meaning is recalled, confidence=medium on the paraphrase specifically, same caveat as neg-01."
+        }
+      ],
+      "confidence": "high",
+      "notes": "Subtler negative-absence case than neg-01: the correct answer is not just 'no parent' but the SPECIFIC reason, which differs from TSMC's. A grading approach that only checks 'did the system say no parent' (binary) can't tell neg-01 and neg-02 apart -- exposing whether an agent under evaluation captures the distinction or collapses all 'no parent' cases into one generic non-answer."
+    },
+    {
+      "task_id": "neg-03-advantech-non-public-parent",
+      "difficulty_tier": "negative_absence",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "industrial computing / IoT hardware",
+        "product": null,
+        "role": null,
+        "extra_keywords": [
+          "Advantech Co.",
+          "研華股份有限公司",
+          "controlling parent company",
+          "ultimate parent"
+        ],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "Advantech Co., Ltd. -- direct parent status",
+          "fact": "No direct accounting-consolidation parent is reported to GLEIF.",
+          "reason_code": "NON_PUBLIC",
+          "source_url": "https://api.gleif.org/api/v1/lei-records/2549002OSTKE9HB9IY03/direct-parent-reporting-exception",
+          "confidence": "high",
+          "notes": "Reason code live-fetched/reproducible. Per GLEIF's standard reason list, NON_PUBLIC means a parent relationship may exist but is not publicly disclosed (a legal/regulatory non-disclosure reason, not an absence-of-parent reason) -- the most likely reason code for a system to misreport as 'no parent exists' when the honest answer is 'exists but not disclosable.' Prose meaning recalled, confidence=medium on the paraphrase, same caveat as neg-01."
+        }
+      ],
+      "confidence": "high",
+      "notes": "The highest-stakes negative-absence case in this tier for hallucination-vs-honesty grading: NON_PUBLIC is easy to conflate with 'no parent' (both surface as an empty direct-parent lookup) but means something categorically different -- a correct answer must not claim 'Advantech has no parent company,' only that GLEIF-disclosed parent data is unavailable for this specific legal reason."
+    },
+    {
+      "task_id": "neg-04-hon-hai-natural-persons-parent",
+      "difficulty_tier": "negative_absence",
+      "objective": "find_companies",
+      "intent": {
+        "market": "Taiwan",
+        "industry": "electronics manufacturing services (EMS)",
+        "product": null,
+        "role": null,
+        "extra_keywords": [
+          "Hon Hai Precision Industry",
+          "Foxconn",
+          "controlling parent company",
+          "ultimate parent"
+        ],
+        "negative_keywords": [],
+        "constraints": {}
+      },
+      "ground_truth_entities": [
+        {
+          "name": "Hon Hai Precision Industry Co., Ltd. (Foxconn) -- direct parent status",
+          "fact": "No direct accounting-consolidation parent is reported to GLEIF.",
+          "reason_code": "NATURAL_PERSONS",
+          "source_url": "https://api.gleif.org/api/v1/lei-records/30030004CM3GSZXX7O56/direct-parent-reporting-exception",
+          "confidence": "high",
+          "notes": "Reason code live-fetched/reproducible. Per GLEIF's standard reason list, NATURAL_PERSONS means the entity is controlled by one or more natural persons rather than a corporate/legal-entity parent -- so 'no corporate parent' is correct, but 'no controlling party at all' would be wrong (a natural person still controls it; GLEIF just doesn't assign an LEI to individuals). Prose meaning recalled, confidence=medium on the paraphrase, same caveat as neg-01."
+        }
+      ],
+      "confidence": "high",
+      "notes": "Fourth distinct reason code in this tier (NO_KNOWN_PERSON / NON_CONSOLIDATING / NON_PUBLIC / NATURAL_PERSONS all appear across neg-01..04, deliberately not padded with a 5th task repeating an already-used code) -- covers the case where the absence is specifically about entity-type (natural vs legal person), not about disclosure or consolidation policy."
+    }
+  ]
+}
